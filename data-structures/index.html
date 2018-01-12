@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  
+  <link rel="stylesheet" href="../styles/laminal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
+
+</head>
+
+<body>
+
+  <textarea id="source">
+      class: center, middle
+
+      # .red[Title]
+      .red[Hello]
+
+      .footnote[.red.bold[*] Important footnote]
+      
+      ---
+      
+      name: agenda
+      class: middle
+      
+      # Agenda
+      
+      
+      --
+      1.  Introduction
+      --
+      
+      2.  Deep-dive
+      --
+      
+      3.  $\log(y) = \cos(x)^{2y}$
+      --
+
+      4. [add footer and header to template](https://github.com/gnab/remark/issues/229)
+      --
+      
+      
+      ```javascript
+      function add(a, b)
+        return a + b
+      end
+      ```
+      
+      ???
+      
+      -   emphasize gui applications in C++.
+      -   cheating $ y=\sin(x)$. 
+      
+      ---
+      
+      name: introduction
+      class: bottom
+      
+      # Introduction
+      
+      
+      <img style="width:70%" src="gallery/some-pigeon.jpg">
+      
+      ???
+      1. read CppCore Guidelines
+      2. read Strostroup books.
+      
+  </textarea>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/contrib/auto-render.min.js"></script>
+  <script src="../javascript/remark-latest.min.js"></script>
+  <script>
+    var options = { };
+    var renderMath = function () {
+      // renderMathInElement(document.body);
+      // or if you want to use $...$ for math,
+      renderMathInElement(document.body, {delimiters: [ // mind the order of delimiters(!?)
+          {left: "$$", right: "$$", display: true},
+          {left: "$", right: "$", display: false},
+          {left: "\\[", right: "\\]", display: true},
+          {left: "\\(", right: "\\)", display: false},
+      ]});
+    }
+    var slideshow = remark.create(options, renderMath);
+  </script>
+</body>
+
+</html>
