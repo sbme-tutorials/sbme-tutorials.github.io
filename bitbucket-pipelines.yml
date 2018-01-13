@@ -1,0 +1,10 @@
+image: aerobatic/jekyll
+pipelines:
+  branches:
+    master:
+      - step:
+          script:
+            - '[ -f Gemfile ] && bundle install'
+            - 'echo "url: https://www.aerobatic.com" >> _config.yml'
+            - bundle exec jekyll build
+            - aero deploy --directory _site
