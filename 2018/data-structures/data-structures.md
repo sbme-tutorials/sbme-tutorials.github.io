@@ -25,6 +25,6 @@ Demonstrator:  Eng. Asem Alaa
 
 ## Tutorials
 
-1. Week 0: [notes]({{ site.baseurl }}{% link 2018/data-structures/notes/0_week0.md %})[slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/0_week0 %})
+1. Week 0: \[[notes]({{ site.baseurl }}{% link 2018/data-structures/notes/0_week0.md %}){:target="_blank"}\] \[[slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/test/index.html %}){:target="_blank"}\]
 
 ### Announcements
