@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>RPC is Not Dead: Rise, Fall and the Rise of Remote Procedure Calls</title>
+  <title>Basics of C++ and Git</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/0_week0.html">
+  <link rel="canonical" href="/2018/data-structures/notes/0_week0.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
@@ -44,7 +44,7 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/0_week0.html">RPC is Not Dead: Rise, Fall and the Rise of Remote Procedure Calls</a>
+            <a class="page-link" href="/2018/data-structures/notes/0_week0.html">Basics of C++ and Git</a>
             
           
             
@@ -79,102 +79,287 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">RPC is Not Dead: Rise, Fall and the Rise of Remote Procedure Calls</h1>
+    <h1 class="post-title">Basics of C++ and Git</h1>
   </header>
 
   <div class="post-content">
     <h2 id="introduction">Introduction</h2>
 
-<pre><code class="language-XML">POST /RPC2 HTTP/1.0
-User-Agent: Frontier/5.1.2 (WinNT)
-Host: betty.userland.com
-Content-Type: text/xml
-Content-length: 181
+<h2 id="variables-and-collections">Variables and Collections</h2>
 
-&lt;?xml version="1.0"?&gt;
-&lt;methodCall&gt;
-  &lt;methodName&gt;examples.getStateName&lt;/methodName&gt;
-  &lt;params&gt;
-    &lt;param&gt;
-      &lt;value&gt;&lt;i4&gt;41&lt;/i4&gt;&lt;/value&gt;
-    &lt;/param&gt;
-  &lt;/params&gt;
-&lt;/methodCall&gt;
+<h3 id="single-variables">Single Variables</h3>
+
+<h4 id="plain-data-types-pdt-in-c">Plain Data Types (PDT) in C++</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">bool</code>: boolean variable holds logical value (i.e <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>), it occupies <strong>1 byte</strong> of memory.</li>
+  <li><code class="highlighter-rouge">char</code>: a character (e.g <code class="highlighter-rouge">'a'</code>,<code class="highlighter-rouge">'b'</code>,..) , it occupies <strong>1 byte</strong> of memory.</li>
+  <li><code class="highlighter-rouge">int</code>: an integer (e.g …,-1,0,1,2,..), it occupies <strong>4 bytes</strong> of memory (for 64-bit machines).</li>
+  <li><code class="highlighter-rouge">float</code>: a real-number-like (e.g 0.5, 3.141, 9.81), it occupies <strong>4 bytes</strong> of memory.</li>
+  <li><code class="highlighter-rouge">double</code>: it is like float, but higher precision, occupies <strong>8 bytes</strong> of memory.</li>
+  <li>pointers: it holds an address of a variable in memory, occupies <strong>8 bytes</strong> of memory (for 64-bit machines).</li>
+  <li>references: an alias to a variable (same entity, but different name/label).</li>
+</ul>
+
+<p>Short story: pointers and references are made to make life easier and flexible when controlling variables as we will see later in this course.</p>
+
+<h3 id="collections-of-variables-data-structures">Collections of Variables (Data Structures)</h3>
+
+<!-- 
+Show an array of floats representing an ECG signal. 
+Show a linked-list of tasks.
+Show a tree of life.
+-->
+
+<h3 id="construction-of-variables">Construction of Variables</h3>
+
+<p>A variable has:</p>
+
+<ol>
+  <li><strong>Data Type</strong>: <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">char</code>, <code class="highlighter-rouge">bool</code>, …, etc.</li>
+  <li><strong>Name</strong>: name of the variable to be used throughout your code.</li>
+  <li><strong>Value</strong>: the content of the variable.</li>
+</ol>
+
+<p>Don’t mix between them!</p>
+
+<p>To construct a variable you need to:</p>
+
+<ol>
+  <li>Declare a variable (Compiler Requirement).
+    <ul>
+      <li>Indicate your variable <strong>type</strong>.</li>
+      <li>Indicate your variable <strong>name</strong> that your are going to refer later.</li>
+    </ul>
+  </li>
+  <li>Initialize that variable (For god’s sake).
+    <ul>
+      <li>Give it an initial value.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="example">Example</h4>
+
+<p>First for all:</p>
+
+<pre><code class="language-C++">// What comes after double forward-slash (//) in a line is a comment.
+// Compiler Ignores comments.
+// Comments are not contributing to your application logic.
+// Comments are message to the readers of your code.
 </code></pre>
 
-<p>The response to a request will have the <code class="highlighter-rouge">methodResponse</code> with <code class="highlighter-rouge">params</code> and values, or a <code class="highlighter-rouge">fault</code> with the associated <code class="highlighter-rouge">faultCode</code> in the case of an error <a href="#Wiener">(Weiner, 1999)</a>:</p>
+<pre><code class="language-C++">// Declare a character variable.
+// Variable names are not the actual value!
+char x;
+// What is the value of x?!
+// When not initialized, x will hold a value from garbage.
 
-<pre><code class="language-XML">HTTP/1.1 200 OK
-Connection: close
-Content-Length: 158
-Content-Type: text/xml
-Date: Fri, 17 Jul 1998 19:55:08 GMT
-Server: UserLand Frontier/5.1.2-WinNT
+// Please, always initialize your variables.
 
-&lt;?xml version="1.0"?&gt;
-&lt;methodResponse&gt;
-  &lt;params&gt;
-    &lt;param&gt;
-      &lt;value&gt;&lt;string&gt;South Dakota&lt;/string&gt;&lt;/value&gt;
-    &lt;/param&gt;
-  &lt;/params&gt;
-&lt;/methodResponse&gt;
+// Declaration of character with initializng to 's'.
+char x = 's';
+
+// Declaration of float whith initializing to 3.1415.
+float pi = 3.1415;
+
+
+// If no interesting value to initialize your variable with, initialize with 0.
+int k = 0;
+
+// You can initialize a variable with the value of another variable.
+int j = k;
+
+// Another way to initialize a variable is using braces, it is up to you.
+double e {2.71828};
 </code></pre>
 
-<p>SOAP (Simple Object Access Protocol) is a successor of XML-RPC as a web-services protocol for communicating between a client and server. It was initially designed by a group at Microsoft <a href="#soaparticle1">(Ferguson, n.d.)</a>. The SOAP message is an XML-formatted message composed of an envelope inside which a header and a payload are provided(just like XML-RPC). The payload of the message contains the request and response of the message, which is transmitted over HTTP or SMTP (unlike XML-RPC).</p>
+<p>One way to avoid bugs (undefined behaviour) is initializing your variables.</p>
 
-<p>SOAP can be viewed as the superset of XML-RPC that provides support for more complex authentication schemes <a href="#soapvsxml">(Jones, 2014)</a> as well as its support for WSDL (Web Services Description Language), allowing easier discovery and integration with remote web services <a href="#soapvsxml">(Jones, 2014)</a>.</p>
+<h3 id="construction-of-collections-what">Construction of Collections (What?!)</h3>
 
-<pre><code class="language-Scala">import com.twitter.finagle.{Http, Service}
-import com.twitter.finagle.http
-import com.twitter.util.{Await, Future}
+<p>This is what we are going to study through this course:</p>
 
-object Server extends App {
-  val service = new Service[http.Request, http.Response] {
-    def apply(req: http.Request): Future[http.Response] =
-      Future.value(
-        http.Response(req.version, http.Status.Ok)
-      )
-  }
-  val server = Http.serve(":8080", service)
-  Await.ready(server)
+<ul>
+  <li>Different data structures (i.e collections of elements): Array, Linked List, Stack, Queue, Tree.</li>
+  <li>How to <strong>construct</strong> collections.</li>
+  <li>How to <strong>insert</strong> elements to our collection.</li>
+  <li>How to <strong>modify</strong> element in our collection.</li>
+  <li>How to <strong>delete</strong> an element.</li>
+  <li>How to <strong>traverse</strong> our collection (i.e print all its elements).</li>
+  <li>Applying <strong>algorithms</strong> on our collection.</li>
+  <li><strong>Searching</strong> for an element in our collection.</li>
+</ul>
+
+<h2 id="basic-operations-on-plain-data-types-pdt">Basic Operations on Plain Data Types (PDT)</h2>
+
+<h3 id="arithmetic-operations">Arithmetic Operations</h3>
+
+<pre><code class="language-C++">int x = 12;
+int y = 5;
+
+x + y; // 17
+x - y; // 7
+x * y; // 60
+x / y; // 2
+x % y; // 2
+
+
+// x = x+y
+x += y; // x is now 17.
+
+// increment: x = x+1
+++x; // x is now 18.
+
+// x = x-y
+x -= y; // x is now 13.
+
+// decrement: x = x-1
+--x; // x is now 12.
+
+double u = 12.5;
+double v { 3 };
+
+u / v;  // 4.166667
+</code></pre>
+
+<h3 id="logical-operations">Logical Operations</h3>
+
+<pre><code class="language-C++">int x = 3;
+int y = 4;
+
+// equal
+x==y; // False
+
+// not equal
+x!=y; // True
+
+// less than
+x&lt;y; // True
+
+// greater than
+x&gt;y; // False
+
+// less than or equal
+x&lt;=y; // True
+
+// greater than or equal
+x&gt;=y; // False
+
+// logical and
+x == 3 &amp;&amp; y &gt; x; // True
+x != 3 &amp;&amp; y &gt; x; // False
+true &amp;&amp; true; // True
+5 &lt; 10 &amp;&amp; 13 &gt;= 11; // True
+5 % 2 == 1 || 3 / 2 &gt; 1; // False
+5 % 2 == 1 || 3 / 2.0 &gt; 1; // True
+
+
+// logical or
+true || true; // True
+true || false; // True
+false || true; // True
+false || false; // False
+5 % 2 == 1 || 3 / 2 &gt; 1; // True
+</code></pre>
+
+<h2 id="basic-control-statements">Basic Control Statements</h2>
+
+<h3 id="conditions-if-else-if-else-switch-case">Conditions: if, else if, else, switch-case</h3>
+
+<pre><code class="language-C++">
+bool myCondition = 5 % 2 == 1 || 3 / 2 &gt; 1;
+
+if( myCondition )
+{
+  // Some operations here.
 }
-</code></pre>
-
-<p>A Filter object transforms requests for further processing in case additional customization is required from a request. These provide program-independent operations like, timeouts, etc. They take in a Service and provide a new Service object with the applied Filter. Aggregating multiple Filters is also possible in Finagle.</p>
-
-<p>A sample timeout Filter that takes in a service and creates a new service with timeouts is shown below. This example is taken from the Finagle documentation <a href="#finagletut">(Twitter, 2016)</a></p>
-
-<pre><code class="language-Scala">import com.twitter.finagle.{Service, SimpleFilter}
-import com.twitter.util.{Duration, Future, Timer}
-
-class TimeoutFilter[Req, Rep](timeout: Duration, timer: Timer)
-  extends SimpleFilter[Req, Rep] {
-
-  def apply(request: Req, service: Service[Req, Rep]): Future[Rep] = {
-    val res = service(request)
-    res.within(timer, timeout)
-  }
+else
+{
+  // Other operations here.
 }
+
+char mark = 73;
+char grade = 'D';
+
+if( mark &gt; 85 )
+{
+  grade = 'A';
+}
+else if( mark &gt; 75 )
+{
+  grade = 'B';
+}
+else if( mark &gt; 65 )
+{
+  grade = 'C';
+}
+else
+{
+  grade = 'D';
+}
+
+int minimumGrade = 0;
+
+switch (grade)
+{
+  case 'A':
+  {
+    minimumGrade = 85;
+  } break;
+  
+  case 'B':
+  {
+    minimumGrade = 75;
+  } break;
+  
+  case 'C':
+  {
+    minimumGrade = 65;
+  } break;
+  
+  default:
+  {
+    minimumGrade = 85;
+  } break;
+}
+
 </code></pre>
 
-<blockquote>
-<p align="center">
-<em>**RPC is not dead, long live RPC!**</em>
-</p>
-</blockquote>
+<h3 id="loops-for-while">Loops: for, while</h3>
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mo>±</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">
+c = \pm\sqrt{a^2 + b^2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.913389em;"></span><span class="strut bottom" style="height:1.04em;vertical-align:-0.12661100000000008em;"></span><span class="base textstyle uncramped"><span class="mord mathit">c</span><span class="mrel">=</span><span class="mord">±</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.07338899999999993em;"><span class="style-wrap reset-textstyle textstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle cramped"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span style="top:-0.8333889999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span></p>
+
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mo>±</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">
+c = \pm\sqrt{a^2 + b^2}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.0622690000000001em;"></span><span class="strut bottom" style="height:1.24001em;vertical-align:-0.17774099999999987em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">c</span><span class="mrel">=</span><span class="mord">±</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.17226900000000012em;"><span class="style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing size1">√</span></span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle cramped"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span style="top:-0.9822690000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span></span></p>
+
+<h2 id="functions">Functions</h2>
+
+<h3 id="declaration-and-definition">Declaration and Definition</h3>
+
+<h2 id="writing-your-first-application">Writing your first application</h2>
+
+<h3 id="boiler-plate-codes">Boiler-plate codes</h3>
+
+<h3 id="hello-world">Hello, world</h3>
+
+<h3 id="task-1-basic-c-operations">Task 1: Basic C++ operations</h3>
+
+<h2 id="scope-and-lifetime">Scope and Lifetime</h2>
 
 <h2 id="references">References</h2>
 
-<ol class="bibliography"><li><span id="Wiener">Weiner, D. (1999). XML-RPC. QMU. Retrieved from http://xmlrpc.scripting.com/spec.html</span></li>
-<li><span id="soaparticle1">Ferguson, D. Exclusive .NET Developer’s Journal "Indigo" Interview with Microsoft’s Don Box. Retrieved from http://dotnet.sys-con.com/node/45908</span></li>
-<li><span id="soapvsxml">Jones, M. (2014). XML-RPC. Quora. Retrieved from https://www.quora.com/What-is-the-difference-between-xml-rpc-and-soap</span></li>
-<li><span id="finagletut">Twitter. (2016). Finagle-Quickstart. Twitter. Retrieved from https://twitter.github.io/finagle/guide/Quickstart.html</span></li></ol>
+<ol class="bibliography"></ol>
 
   </div>
 
 </article>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
       </div>
     </main>
 
