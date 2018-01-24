@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Basics of C++ and Git</title>
+  <title>Week 1 - Part 1: Basics of C++</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/0_week0.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/1_week1a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
@@ -44,7 +44,17 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/0_week0.html">Basics of C++ and Git</a>
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1assignment.html">Week 1 - Assignment</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
             
           
             
@@ -79,7 +89,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Basics of C++ and Git</h1>
+    <h1 class="post-title">Week 1 - Part 1: Basics of C++</h1>
   </header>
 
   <div class="post-content">
@@ -87,7 +97,7 @@
   <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
   <li><a href="#variables-and-collections" id="markdown-toc-variables-and-collections">Variables and Collections</a>    <ul>
       <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
-      <li><a href="#plain-data-types-pdt-in-c" id="markdown-toc-plain-data-types-pdt-in-c">Plain Data Types (PDT) in C++</a></li>
+      <li><a href="#primitive-data-types-pdt-in-c" id="markdown-toc-primitive-data-types-pdt-in-c">Primitive Data Types (PDT) in C++</a></li>
       <li><a href="#collections-of-variables-data-structures" id="markdown-toc-collections-of-variables-data-structures">Collections of Variables (Data Structures)</a></li>
       <li><a href="#construction-of-variables" id="markdown-toc-construction-of-variables">Construction of Variables</a>        <ul>
           <li><a href="#example" id="markdown-toc-example">Example</a></li>
@@ -96,7 +106,7 @@
       <li><a href="#construction-of-collections-what" id="markdown-toc-construction-of-collections-what">Construction of Collections (What?!)</a></li>
     </ul>
   </li>
-  <li><a href="#basic-operations-on-plain-data-types-pdt" id="markdown-toc-basic-operations-on-plain-data-types-pdt">Basic Operations on Plain Data Types (PDT)</a>    <ul>
+  <li><a href="#basic-operations-on-primitive-data-types-pdt" id="markdown-toc-basic-operations-on-primitive-data-types-pdt">Basic Operations on Primitive Data Types (PDT)</a>    <ul>
       <li><a href="#arithmetic-operations" id="markdown-toc-arithmetic-operations">Arithmetic Operations</a></li>
       <li><a href="#logical-operations" id="markdown-toc-logical-operations">Logical Operations</a></li>
     </ul>
@@ -108,7 +118,7 @@
   </li>
   <li><a href="#functions" id="markdown-toc-functions">Functions</a>    <ul>
       <li><a href="#declaration-and-definition-of-functions" id="markdown-toc-declaration-and-definition-of-functions">Declaration and Definition of Functions</a></li>
-      <li><a href="#scopes-and-lifetime-stroustrup-2013" id="markdown-toc-scopes-and-lifetime-stroustrup-2013">Scopes and Lifetime <a href="#stroustrup2013tour">(Stroustrup, 2013)</a></a>        <ul>
+      <li><a href="#scopes-and-lifetime" id="markdown-toc-scopes-and-lifetime">Scopes and Lifetime</a>        <ul>
           <li><a href="#example-of-a-local-scope-and-a-block-scope" id="markdown-toc-example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</a></li>
           <li><a href="#example-of-namespace-scope" id="markdown-toc-example-of-namespace-scope">Example of namespace scope</a></li>
         </ul>
@@ -116,13 +126,15 @@
     </ul>
   </li>
   <li><a href="#c-programs" id="markdown-toc-c-programs">C++ Programs</a>    <ul>
-      <li><a href="#boiler-plate-codes" id="markdown-toc-boiler-plate-codes">Boiler-plate codes</a></li>
+      <li><a href="#writing-c-codes" id="markdown-toc-writing-c-codes">Writing C++ codes</a>        <ul>
+          <li><a href="#installing-vs-code" id="markdown-toc-installing-vs-code">Installing VS Code</a></li>
+        </ul>
+      </li>
+      <li><a href="#boilerplate-codes" id="markdown-toc-boilerplate-codes">Boilerplate codes</a></li>
       <li><a href="#writing-your-first-application" id="markdown-toc-writing-your-first-application">Writing your first application</a></li>
-      <li><a href="#hello-world" id="markdown-toc-hello-world">Hello, world</a></li>
-      <li><a href="#task-1-basic-c-operations" id="markdown-toc-task-1-basic-c-operations">Task 1: Basic C++ operations</a></li>
+      <li><a href="#compiling-your-code" id="markdown-toc-compiling-your-code">Compiling your code</a></li>
     </ul>
   </li>
-  <li><a href="#references" id="markdown-toc-references">References</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
@@ -131,7 +143,7 @@
 
 <h3 id="variables">Variables</h3>
 
-<h3 id="plain-data-types-pdt-in-c">Plain Data Types (PDT) in C++</h3>
+<h3 id="primitive-data-types-pdt-in-c">Primitive Data Types (PDT) in C++</h3>
 
 <ul>
   <li><code class="highlighter-rouge">bool</code>: boolean variable holds logical value (i.e <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>), it occupies <strong>1 byte</strong> of memory.</li>
@@ -231,7 +243,7 @@ Show a tree of life.
   <li><strong>Searching</strong> for an element in our collection.</li>
 </ul>
 
-<h2 id="basic-operations-on-plain-data-types-pdt">Basic Operations on Plain Data Types (PDT)</h2>
+<h2 id="basic-operations-on-primitive-data-types-pdt">Basic Operations on Primitive Data Types (PDT)</h2>
 
 <h3 id="arithmetic-operations">Arithmetic Operations</h3>
 
@@ -363,7 +375,7 @@ Show a tree of life.
 
 <h3 id="loops-for-while">Loops: <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code></h3>
 
-<p>Note: <code class="highlighter-rouge">std::cout</code> is a function used to print PDT variables into the terminal/console. Wait!! What is <code class="highlighter-rouge">std::</code>? Well, you can write your own functions and make them callable inside a <code class="highlighter-rouge">namespace</code>. Consider <code class="highlighter-rouge">namespace</code> feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called <strong>Standard Template Library (STL)</strong>. If you need to use a function from the the C++ <strong>STL</strong> just indicate the <code class="highlighter-rouge">std</code> as a <code class="highlighter-rouge">namespace</code> when you call a function from <strong>STL</strong>. <strong>Don’t panic if you feel uncomfotable! everything is going to be clear incrementally.</strong></p>
+<p>Note: <code class="highlighter-rouge">std::cout</code> is an object used to print primitive data type (PDT) variables into the terminal/console. Wait!! What is <code class="highlighter-rouge">std::</code>? Well, you can write your own functions and make them callable inside a <code class="highlighter-rouge">namespace</code>. Consider <code class="highlighter-rouge">namespace</code> feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called <strong>Standard Template Library (STL)</strong>. If you need to use a function from the the C++ <strong>STL</strong> just indicate the <code class="highlighter-rouge">std</code> as a <code class="highlighter-rouge">namespace</code> when you call a function from <strong>STL</strong>. <strong>Don’t panic if you feel uncomfotable! everything is going to be clear incrementally.</strong></p>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
 <span class="p">{</span>
@@ -427,46 +439,188 @@ Show a tree of life.
 
 <p>Thanks to C++ Type System.</p>
 
-<h3 id="scopes-and-lifetime-stroustrup-2013">Scopes and Lifetime <a href="#stroustrup2013tour">(Stroustrup, 2013)</a></h3>
+<h3 id="scopes-and-lifetime">Scopes and Lifetime</h3>
 
-<p>Variables bound to scopes where they are declared. Scopes types:</p>
-
-<ul>
-  <li>Local scope: any variable declared in a function is not accessible outside the function.</li>
-  <li>Block: any variable declared inside braces <code class="highlighter-rouge">{</code> <code class="highlighter-rouge">}</code>, like the blocks of the <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code>, <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, and <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code>.</li>
-  <li><code class="highlighter-rouge">Namespace</code> scope.</li>
-</ul>
-
-<p>Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.</p>
+<ol>
+  <li>Variables are bound to scopes where they are declared. Scopes types:
+    <ul>
+      <li>Local scope: any variable declared in a function is not accessible outside that function.</li>
+      <li>Block: any variable declared inside braces <code class="highlighter-rouge">{</code> <code class="highlighter-rouge">}</code>, like the blocks of the <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code>, <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, and <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code>.</li>
+      <li><code class="highlighter-rouge">Namespace</code> scope.</li>
+    </ul>
+  </li>
+  <li>Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.</li>
+  <li>Once the scope is terminated, all variables in that scope are destructed.</li>
+</ol>
 
 <h4 id="example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</h4>
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">squareArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
 <span class="p">{</span>
-  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="kt">double</span><span class="p">;</span>
-  <span class="k">return</span> <span class="n">area</span><span class="p">;</span>
+  <span class="c1">// The arguments width and height are local variables to this function.</span>
+  <span class="c1">// width, height, area are not accessible outside.</span>
+
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">area</span><span class="p">;</span> <span class="c1">// return by value</span>
 <span class="p">}</span>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-
+  <span class="c1">// area here is completely different than area in the squareArea function.</span>
+  <span class="c1">// They have the same value. But they are not same the variables.</span>
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">squareArea</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <h4 id="example-of-namespace-scope">Example of namespace scope</h4>
 
+<p>Consider a situation when you need to implement a function that computes the area of square and the area of right triangle. Using the same function name <code class="highlighter-rouge">area</code>!</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// This function returns the square area.</span>
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// This function return the circle area.</span>
+<span class="c1">// Compiler error! multiple definitions of `area` function!</span>
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// which definition (logic) ?!</span>
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>SOLUTION</strong> using <code class="highlighter-rouge">namespace</code> feature:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">namespace</span> <span class="n">square</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">triangle</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">squareArea</span> <span class="o">=</span> <span class="n">square</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">triangleArea</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">,</span> <span class="mf">3.0</span> <span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">squareArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now you have a little sense about <code class="highlighter-rouge">std::cout</code> and <code class="highlighter-rouge">std</code> Namespace.</p>
+
 <h2 id="c-programs">C++ Programs</h2>
 
-<h3 id="boiler-plate-codes">Boiler-plate codes</h3>
+<p>C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.</p>
+
+<p>A typical process of executable file generation is shown in this image:
+<img src="../gallery/compile.gif" alt="Compilation" /></p>
+
+<p>Courtesy to this <a href="https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&amp;srid=h6xMq">post @Quora</a>.</p>
+
+<h3 id="writing-c-codes">Writing C++ codes</h3>
+
+<p>To write a c++ source code it is recommended to use an enhanced text editors. One of the light-weight editors developed by Microsoft and released as an open-source project is <a href="https://code.visualstudio.com">Visual Studio Code</a>. For ubuntu 64-bit machines, download from this <a href="https://code.visualstudio.com/docs/?dv=linux64_deb">link</a>.</p>
+
+<h4 id="installing-vs-code">Installing VS Code</h4>
+
+<p>After downloading, open a terminal at the directory where you downloaded the package file.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>dpkg <span class="nt">-i</span> ./&lt;package file&gt;
+code</code></pre></figure>
+
+<h3 id="boilerplate-codes">Boilerplate codes</h3>
+
+<p>Boilerplate is an interesting term used to refer to the code you write that doesn’t contribute to your application logic. If you are interested in <em>Etymology</em>, you can read more on the origin of boilerplate in <a href="https://en.wikipedia.org/wiki/Boilerplate_code">wikipedia</a>.
+In C++, you usually need to link against libraries, in particular the <strong>STL</strong>. In prior to use functions of other libraries or other source files in your project, you have to include the header files that contains the functions declarations to guide your compiler when you are using these functions.</p>
+
+<p>We may consider the syntax of including header files as <em>boilerplate</em> since it doesn’t represent your project ideas (logic).</p>
 
 <h3 id="writing-your-first-application">Writing your first application</h3>
 
-<h3 id="hello-world">Hello, world</h3>
+<p>Let’s write our first source file to go through the process of compilation and execution. Copy the following code to your VS Code editor. Save the file as <code class="highlighter-rouge">firstApp4SBME.cpp</code>.</p>
 
-<h3 id="task-1-basic-c-operations">Task 1: Basic C++ operations</h3>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">namespace</span> <span class="n">square</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<h2 id="references">References</h2>
+<span class="k">namespace</span> <span class="n">triangle</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 
-<ol class="bibliography"><li><span id="stroustrup2013tour">Stroustrup, B. (2013). <i>A Tour of C++</i>. Addison-Wesley.</span></li></ol>
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">squareArea</span> <span class="o">=</span> <span class="n">square</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">triangleArea</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">,</span> <span class="mf">3.0</span> <span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">squareArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="compiling-your-code">Compiling your code</h3>
+
+<p>Make sure you have the compiler installed in your machine.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">g++ <span class="nt">--version</span></code></pre></figure>
+
+<p>this should print output like this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++ <span class="o">(</span>Ubuntu 5.4.0-6ubuntu1~16.04.5<span class="o">)</span> 5.4.0 20160609
+Copyright <span class="o">(</span>C<span class="o">)</span> 2015 Free Software Foundation, Inc.
+This is free software<span class="p">;</span> see the <span class="nb">source </span><span class="k">for </span>copying conditions.  There is NO
+warranty<span class="p">;</span> not even <span class="k">for </span>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre></div></div>
+
+<p>Otherwise, if not installed you should see:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++: <span class="nb">command </span>not found
+</code></pre></div></div>
+
+<p>To install <code class="highlighter-rouge">GCC</code> compiler on your machine:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>apt-get <span class="nb">install </span>build-essential</code></pre></figure>
+
+<p>After saving your file, open a terminal in the directory you saved the source at. And write the following command:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">g++ <span class="nt">-o</span> firstAppSBME firstAppSBME.cpp</code></pre></figure>
+
+<p><strong>CONGRATULATIONS!</strong> you have built your first application.</p>
+
+<p>Execute the application:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">./firstAppSBME</code></pre></figure>
+
+<p>you should see:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>32.25
+6
+</code></pre></div></div>
+
+<!-- ## References -->
+
+<!-- <ol class="bibliography"></ol> -->
 
   </div>
 
