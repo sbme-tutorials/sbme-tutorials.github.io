@@ -32,8 +32,10 @@ kramdown:
   syntax_highlighter: rouge
 
 theme: minima
+
 plugins:
   - jekyll-feed
+  # - jekyll-pdf
 
 # scholar:
 #   style: mla
