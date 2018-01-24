@@ -27,6 +27,10 @@ linkedin_username:  asem-alaa
 
 # Build settings
 markdown: kramdown
+
+kramdown:
+  syntax_highlighter: rouge
+
 theme: minima
 plugins:
   - jekyll-feed

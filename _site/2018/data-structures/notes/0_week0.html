@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/data-structures/notes/0_week0.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/0_week0.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   
@@ -83,13 +83,55 @@
   </header>
 
   <div class="post-content">
-    <h2 id="introduction">Introduction</h2>
+    <ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#variables-and-collections" id="markdown-toc-variables-and-collections">Variables and Collections</a>    <ul>
+      <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
+      <li><a href="#plain-data-types-pdt-in-c" id="markdown-toc-plain-data-types-pdt-in-c">Plain Data Types (PDT) in C++</a></li>
+      <li><a href="#collections-of-variables-data-structures" id="markdown-toc-collections-of-variables-data-structures">Collections of Variables (Data Structures)</a></li>
+      <li><a href="#construction-of-variables" id="markdown-toc-construction-of-variables">Construction of Variables</a>        <ul>
+          <li><a href="#example" id="markdown-toc-example">Example</a></li>
+        </ul>
+      </li>
+      <li><a href="#construction-of-collections-what" id="markdown-toc-construction-of-collections-what">Construction of Collections (What?!)</a></li>
+    </ul>
+  </li>
+  <li><a href="#basic-operations-on-plain-data-types-pdt" id="markdown-toc-basic-operations-on-plain-data-types-pdt">Basic Operations on Plain Data Types (PDT)</a>    <ul>
+      <li><a href="#arithmetic-operations" id="markdown-toc-arithmetic-operations">Arithmetic Operations</a></li>
+      <li><a href="#logical-operations" id="markdown-toc-logical-operations">Logical Operations</a></li>
+    </ul>
+  </li>
+  <li><a href="#basic-control-statements" id="markdown-toc-basic-control-statements">Basic Control Statements</a>    <ul>
+      <li><a href="#conditions-if-else-if-else-switch-case" id="markdown-toc-conditions-if-else-if-else-switch-case">Conditions: <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code></a></li>
+      <li><a href="#loops-for-while" id="markdown-toc-loops-for-while">Loops: <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#functions" id="markdown-toc-functions">Functions</a>    <ul>
+      <li><a href="#declaration-and-definition-of-functions" id="markdown-toc-declaration-and-definition-of-functions">Declaration and Definition of Functions</a></li>
+      <li><a href="#scopes-and-lifetime-stroustrup-2013" id="markdown-toc-scopes-and-lifetime-stroustrup-2013">Scopes and Lifetime <a href="#stroustrup2013tour">(Stroustrup, 2013)</a></a>        <ul>
+          <li><a href="#example-of-a-local-scope-and-a-block-scope" id="markdown-toc-example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</a></li>
+          <li><a href="#example-of-namespace-scope" id="markdown-toc-example-of-namespace-scope">Example of namespace scope</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#c-programs" id="markdown-toc-c-programs">C++ Programs</a>    <ul>
+      <li><a href="#boiler-plate-codes" id="markdown-toc-boiler-plate-codes">Boiler-plate codes</a></li>
+      <li><a href="#writing-your-first-application" id="markdown-toc-writing-your-first-application">Writing your first application</a></li>
+      <li><a href="#hello-world" id="markdown-toc-hello-world">Hello, world</a></li>
+      <li><a href="#task-1-basic-c-operations" id="markdown-toc-task-1-basic-c-operations">Task 1: Basic C++ operations</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
 
 <h2 id="variables-and-collections">Variables and Collections</h2>
 
-<h3 id="single-variables">Single Variables</h3>
+<h3 id="variables">Variables</h3>
 
-<h4 id="plain-data-types-pdt-in-c">Plain Data Types (PDT) in C++</h4>
+<h3 id="plain-data-types-pdt-in-c">Plain Data Types (PDT) in C++</h3>
 
 <ul>
   <li><code class="highlighter-rouge">bool</code>: boolean variable holds logical value (i.e <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>), it occupies <strong>1 byte</strong> of memory.</li>
@@ -113,7 +155,7 @@ Show a tree of life.
 
 <h3 id="construction-of-variables">Construction of Variables</h3>
 
-<p>A variable has:</p>
+<p>A variable basically has:</p>
 
 <ol>
   <li><strong>Data Type</strong>: <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">char</code>, <code class="highlighter-rouge">bool</code>, …, etc.</li>
@@ -143,36 +185,34 @@ Show a tree of life.
 
 <p>First for all:</p>
 
-<pre><code class="language-C++">// What comes after double forward-slash (//) in a line is a comment.
-// Compiler Ignores comments.
-// Comments are not contributing to your application logic.
-// Comments are message to the readers of your code.
-</code></pre>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// What comes after double forward-slash (//) in a line is a comment.</span>
+<span class="c1">// Compiler Ignores comments.</span>
+<span class="c1">// Comments are not contributing to your application logic.</span>
+<span class="c1">// Comments are message to the readers of your code.</span></code></pre></figure>
 
-<pre><code class="language-C++">// Declare a character variable.
-// Variable names are not the actual value!
-char x;
-// What is the value of x?!
-// When not initialized, x will hold a value from garbage.
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// Declare a character variable.</span>
+<span class="c1">// Variable names are not the actual value!</span>
+<span class="kt">char</span> <span class="n">x</span><span class="p">;</span>
+<span class="c1">// What is the value of x?!</span>
+<span class="c1">// When not initialized, x will hold a value from garbage.</span>
 
-// Please, always initialize your variables.
+<span class="c1">// Please, always initialize your variables.</span>
 
-// Declaration of character with initializng to 's'.
-char x = 's';
+<span class="c1">// Declaration of character with initializng to 's'.</span>
+<span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="sc">'s'</span><span class="p">;</span>
 
-// Declaration of float whith initializing to 3.1415.
-float pi = 3.1415;
+<span class="c1">// Declaration of float whith initializing to 3.1415.</span>
+<span class="kt">float</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
 
 
-// If no interesting value to initialize your variable with, initialize with 0.
-int k = 0;
+<span class="c1">// If no interesting value to initialize your variable with, initialize with 0.</span>
+<span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-// You can initialize a variable with the value of another variable.
-int j = k;
+<span class="c1">// You can initialize a variable with the value of another variable.</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
 
-// Another way to initialize a variable is using braces, it is up to you.
-double e {2.71828};
-</code></pre>
+<span class="c1">// Another way to initialize a variable is using braces, it is up to you.</span>
+<span class="kt">double</span> <span class="n">e</span> <span class="p">{</span><span class="mf">2.71828</span><span class="p">};</span></code></pre></figure>
 
 <p>One way to avoid bugs (undefined behaviour) is initializing your variables.</p>
 
@@ -195,171 +235,248 @@ double e {2.71828};
 
 <h3 id="arithmetic-operations">Arithmetic Operations</h3>
 
-<pre><code class="language-C++">int x = 12;
-int y = 5;
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
-x + y; // 17
-x - y; // 7
-x * y; // 60
-x / y; // 2
-x % y; // 2
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 17</span>
+<span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 7</span>
+<span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 60</span>
+<span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 2</span>
+<span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 2</span>
 
 
-// x = x+y
-x += y; // x is now 17.
+<span class="c1">// x = x+y</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// x is now 17.</span>
 
-// increment: x = x+1
-++x; // x is now 18.
+<span class="c1">// increment: x = x+1</span>
+<span class="o">++</span><span class="n">x</span><span class="p">;</span> <span class="c1">// x is now 18.</span>
 
-// x = x-y
-x -= y; // x is now 13.
+<span class="c1">// x = x-y</span>
+<span class="n">x</span> <span class="o">-=</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// x is now 13.</span>
 
-// decrement: x = x-1
---x; // x is now 12.
+<span class="c1">// decrement: x = x-1</span>
+<span class="o">--</span><span class="n">x</span><span class="p">;</span> <span class="c1">// x is now 12.</span>
 
-double u = 12.5;
-double v { 3 };
+<span class="kt">double</span> <span class="n">u</span> <span class="o">=</span> <span class="mf">12.5</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">v</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span>
 
-u / v;  // 4.166667
-</code></pre>
+<span class="n">u</span> <span class="o">/</span> <span class="n">v</span><span class="p">;</span>  <span class="c1">// 4.166667</span></code></pre></figure>
 
 <h3 id="logical-operations">Logical Operations</h3>
 
-<pre><code class="language-C++">int x = 3;
-int y = 4;
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
 
-// equal
-x==y; // False
+<span class="c1">// equal</span>
+<span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">;</span> <span class="c1">// False</span>
 
-// not equal
-x!=y; // True
+<span class="c1">// not equal</span>
+<span class="n">x</span><span class="o">!=</span><span class="n">y</span><span class="p">;</span> <span class="c1">// True</span>
 
-// less than
-x&lt;y; // True
+<span class="c1">// less than</span>
+<span class="n">x</span><span class="o">&lt;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// True</span>
 
-// greater than
-x&gt;y; // False
+<span class="c1">// greater than</span>
+<span class="n">x</span><span class="o">&gt;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// False</span>
 
-// less than or equal
-x&lt;=y; // True
+<span class="c1">// less than or equal</span>
+<span class="n">x</span><span class="o">&lt;=</span><span class="n">y</span><span class="p">;</span> <span class="c1">// True</span>
 
-// greater than or equal
-x&gt;=y; // False
+<span class="c1">// greater than or equal</span>
+<span class="n">x</span><span class="o">&gt;=</span><span class="n">y</span><span class="p">;</span> <span class="c1">// False</span>
 
-// logical and
-x == 3 &amp;&amp; y &gt; x; // True
-x != 3 &amp;&amp; y &gt; x; // False
-true &amp;&amp; true; // True
-5 &lt; 10 &amp;&amp; 13 &gt;= 11; // True
-5 % 2 == 1 || 3 / 2 &gt; 1; // False
-5 % 2 == 1 || 3 / 2.0 &gt; 1; // True
+<span class="c1">// logical and</span>
+<span class="n">x</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="n">x</span> <span class="o">!=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// False</span>
+<span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="mi">13</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// False</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// True</span>
 
 
-// logical or
-true || true; // True
-true || false; // True
-false || true; // True
-false || false; // False
-5 % 2 == 1 || 3 / 2 &gt; 1; // True
-</code></pre>
+<span class="c1">// logical or</span>
+<span class="nb">true</span> <span class="o">||</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="nb">true</span> <span class="o">||</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="nb">false</span> <span class="o">||</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="nb">false</span> <span class="o">||</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// False</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// True</span></code></pre></figure>
 
 <h2 id="basic-control-statements">Basic Control Statements</h2>
 
-<h3 id="conditions-if-else-if-else-switch-case">Conditions: if, else if, else, switch-case</h3>
+<h3 id="conditions-if-else-if-else-switch-case">Conditions: <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code></h3>
 
-<pre><code class="language-C++">
-bool myCondition = 5 % 2 == 1 || 3 / 2 &gt; 1;
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">bool</span> <span class="n">myCondition</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span>
 
-if( myCondition )
-{
-  // Some operations here.
-}
-else
-{
-  // Other operations here.
-}
+<span class="k">if</span><span class="p">(</span> <span class="n">myCondition</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Some operations here.</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+  <span class="c1">// Other operations here.</span>
+<span class="p">}</span>
 
-char mark = 73;
-char grade = 'D';
+<span class="kt">char</span> <span class="n">mark</span> <span class="o">=</span> <span class="mi">73</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">grade</span> <span class="o">=</span> <span class="sc">'D'</span><span class="p">;</span>
 
-if( mark &gt; 85 )
-{
-  grade = 'A';
-}
-else if( mark &gt; 75 )
-{
-  grade = 'B';
-}
-else if( mark &gt; 65 )
-{
-  grade = 'C';
-}
-else
-{
-  grade = 'D';
-}
+<span class="k">if</span><span class="p">(</span> <span class="n">mark</span> <span class="o">&gt;</span> <span class="mi">85</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">mark</span> <span class="o">&gt;</span> <span class="mi">75</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'B'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">mark</span> <span class="o">&gt;</span> <span class="mi">65</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'C'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'D'</span><span class="p">;</span>
+<span class="p">}</span>
 
-int minimumGrade = 0;
+<span class="kt">int</span> <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-switch (grade)
-{
-  case 'A':
-  {
-    minimumGrade = 85;
-  } break;
+<span class="k">switch</span> <span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">case</span> <span class="sc">'A'</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
   
-  case 'B':
-  {
-    minimumGrade = 75;
-  } break;
+  <span class="k">case</span> <span class="sc">'B'</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
   
-  case 'C':
-  {
-    minimumGrade = 65;
-  } break;
+  <span class="k">case</span> <span class="sc">'C'</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
   
-  default:
-  {
-    minimumGrade = 85;
-  } break;
-}
+  <span class="k">default</span><span class="o">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
 
-</code></pre>
+<h3 id="loops-for-while">Loops: <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code></h3>
 
-<h3 id="loops-for-while">Loops: for, while</h3>
+<p>Note: <code class="highlighter-rouge">std::cout</code> is a function used to print PDT variables into the terminal/console. Wait!! What is <code class="highlighter-rouge">std::</code>? Well, you can write your own functions and make them callable inside a <code class="highlighter-rouge">namespace</code>. Consider <code class="highlighter-rouge">namespace</code> feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called <strong>Standard Template Library (STL)</strong>. If you need to use a function from the the C++ <strong>STL</strong> just indicate the <code class="highlighter-rouge">std</code> as a <code class="highlighter-rouge">namespace</code> when you call a function from <strong>STL</strong>. <strong>Don’t panic if you feel uncomfotable! everything is going to be clear incrementally.</strong></p>
 
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mo>±</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">
-c = \pm\sqrt{a^2 + b^2}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.913389em;"></span><span class="strut bottom" style="height:1.04em;vertical-align:-0.12661100000000008em;"></span><span class="base textstyle uncramped"><span class="mord mathit">c</span><span class="mrel">=</span><span class="mord">±</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.07338899999999993em;"><span class="style-wrap reset-textstyle textstyle uncramped">√</span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord textstyle cramped"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span style="top:-0.8333889999999999em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span></p>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// prints:0 1 2 3 4 5 6 7 8 9</span>
 
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mo>=</mo><mo>±</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">
-c = \pm\sqrt{a^2 + b^2}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.0622690000000001em;"></span><span class="strut bottom" style="height:1.24001em;vertical-align:-0.17774099999999987em;"></span><span class="base displaystyle textstyle uncramped"><span class="mord mathit">c</span><span class="mrel">=</span><span class="mord">±</span><span class="mord sqrt"><span class="sqrt-sign" style="top:-0.17226900000000012em;"><span class="style-wrap reset-textstyle textstyle uncramped"><span class="delimsizing size1">√</span></span></span><span class="vlist"><span style="top:0em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="mord displaystyle textstyle cramped"><span class="mord"><span class="mord mathit">a</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span><span class="mbin">+</span><span class="mord"><span class="mord mathit">b</span><span class="msupsub"><span class="vlist"><span style="top:-0.289em;margin-right:0.05em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span><span class="reset-textstyle scriptstyle cramped mtight"><span class="mord mathrm mtight">2</span></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:0em;">​</span></span>​</span></span></span></span></span></span><span style="top:-0.9822690000000001em;"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span><span class="reset-textstyle textstyle uncramped sqrt-line"></span></span><span class="baseline-fix"><span class="fontsize-ensurer reset-size5 size5"><span style="font-size:1em;">​</span></span>​</span></span></span></span></span></span></span></p>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// prints:0 1 2 3 4 5 6 7 8 9</span></code></pre></figure>
 
 <h2 id="functions">Functions</h2>
 
-<h3 id="declaration-and-definition">Declaration and Definition</h3>
+<p>A function basically has:</p>
 
-<h2 id="writing-your-first-application">Writing your first application</h2>
+<ul>
+  <li><strong>Name</strong> to be used when calling this function.</li>
+  <li><strong>Return Type</strong>: a function may return <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">double</code>, <code class="highlighter-rouge">char</code>, … etc. Also, it may not return, so its return type is <code class="highlighter-rouge">void</code>.</li>
+  <li><strong>Arguments</strong>: the variables given to your function so it makes some operations on.</li>
+</ul>
+
+<h3 id="declaration-and-definition-of-functions">Declaration and Definition of Functions</h3>
+
+<p>Like variables, functions must be declared before you implement your logic in this function.</p>
+
+<ul>
+  <li><strong>Declaration</strong> a function header that indicates the function <strong>name</strong>, <strong>return type</strong>, and <strong>arguments</strong>.</li>
+  <li><strong>Definition</strong> is the function logic.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">average</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">// function header (Declaration)</span>
+<span class="p">{</span> <span class="c1">// function definition (logic) goes here</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">max</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">// declaration</span>
+<span class="p">{</span> <span class="c1">// definition</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Declare `x` as double and initialize it with the average of 13.5 and 21.0</span>
+  <span class="c1">// Note the type consistency between x and the function return type.</span>
+  <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span> <span class="mf">13.5</span> <span class="p">,</span> <span class="mf">21.0</span> <span class="p">);</span>
+
+  <span class="kt">bool</span> <span class="n">y</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span> <span class="mf">11.5</span> <span class="p">,</span> <span class="mf">15.0</span> <span class="p">);</span> <span class="c1">// Compiler Error, type mismatch!</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span> <span class="mf">15.0</span> <span class="p">,</span> <span class="mf">9.0</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// prints: 15.0</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Thanks to C++ Type System.</p>
+
+<h3 id="scopes-and-lifetime-stroustrup-2013">Scopes and Lifetime <a href="#stroustrup2013tour">(Stroustrup, 2013)</a></h3>
+
+<p>Variables bound to scopes where they are declared. Scopes types:</p>
+
+<ul>
+  <li>Local scope: any variable declared in a function is not accessible outside the function.</li>
+  <li>Block: any variable declared inside braces <code class="highlighter-rouge">{</code> <code class="highlighter-rouge">}</code>, like the blocks of the <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code>, <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, and <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code>.</li>
+  <li><code class="highlighter-rouge">Namespace</code> scope.</li>
+</ul>
+
+<p>Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.</p>
+
+<h4 id="example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</h4>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">squareArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="kt">double</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">area</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> 
+<span class="p">{</span>
+
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="example-of-namespace-scope">Example of namespace scope</h4>
+
+<h2 id="c-programs">C++ Programs</h2>
 
 <h3 id="boiler-plate-codes">Boiler-plate codes</h3>
+
+<h3 id="writing-your-first-application">Writing your first application</h3>
 
 <h3 id="hello-world">Hello, world</h3>
 
 <h3 id="task-1-basic-c-operations">Task 1: Basic C++ operations</h3>
 
-<h2 id="scope-and-lifetime">Scope and Lifetime</h2>
-
 <h2 id="references">References</h2>
 
-<ol class="bibliography"></ol>
+<ol class="bibliography"><li><span id="stroustrup2013tour">Stroustrup, B. (2013). <i>A Tour of C++</i>. Addison-Wesley.</span></li></ol>
 
   </div>
 
 </article>
 
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.8.3/katex.min.css">
+
       </div>
     </main>
 

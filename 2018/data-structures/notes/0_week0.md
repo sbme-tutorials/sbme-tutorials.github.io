@@ -4,13 +4,16 @@ title:  "Basics of C++ and Git"
 by: "Asem"
 ---
 
+* TOC
+{:toc}
+
 ## Introduction
 
 ## Variables and Collections
 
-### Single Variables
+### Variables
 
-#### Plain Data Types (PDT) in C++
+### Plain Data Types (PDT) in C++
 
 * `bool`: boolean variable holds logical value (i.e `true` or `false`), it occupies **1 byte** of memory.
 * `char`: a character (e.g `'a'`,`'b'`,..) , it occupies **1 byte** of memory.
@@ -32,7 +35,7 @@ Show a tree of life.
 
 ### Construction of Variables
 
-A variable has: 
+A variable basically has:
 
 1. **Data Type**: `int`, `char`, `bool`, ..., etc.
 2. **Name**: name of the variable to be used throughout your code.
@@ -52,14 +55,14 @@ To construct a variable you need to:
 
 First for all:
 
-```C++
+{% highlight c++ %}
 // What comes after double forward-slash (//) in a line is a comment.
 // Compiler Ignores comments.
 // Comments are not contributing to your application logic.
 // Comments are message to the readers of your code.
-```
+{% endhighlight %}
 
-```C++
+{% highlight c++ %}
 // Declare a character variable.
 // Variable names are not the actual value!
 char x;
@@ -83,7 +86,7 @@ int j = k;
 
 // Another way to initialize a variable is using braces, it is up to you.
 double e {2.71828};
-```
+{% endhighlight %}
 
 One way to avoid bugs (undefined behaviour) is initializing your variables.
 
@@ -104,7 +107,7 @@ This is what we are going to study through this course:
 
 ### Arithmetic Operations
 
-```C++
+{% highlight c++ %}
 int x = 12;
 int y = 5;
 
@@ -131,11 +134,11 @@ double u = 12.5;
 double v { 3 };
 
 u / v;  // 4.166667
-```
+{% endhighlight %}
 
 ### Logical Operations
 
-```C++
+{% highlight c++ %}
 int x = 3;
 int y = 4;
 
@@ -172,13 +175,13 @@ true || false; // True
 false || true; // True
 false || false; // False
 5 % 2 == 1 || 3 / 2 > 1; // True
-```
+{% endhighlight %}
 
 ## Basic Control Statements
 
-### Conditions: if, else if, else, switch-case
+### Conditions: `if`, `else if`, `else`, `switch`-`case`
 
-```C++
+{% highlight c++ %}
 
 bool myCondition = 5 % 2 == 1 || 3 / 2 > 1;
 
@@ -236,32 +239,115 @@ switch (grade)
   } break;
 }
 
-```
+{% endhighlight %}
 
-### Loops: for, while
+### Loops: `for`, `while`
 
-{% katex %}
-c = \pm\sqrt{a^2 + b^2}
-{% endkatex %}
+Note: `std::cout` is a function used to print PDT variables into the terminal/console. Wait!! What is `std::`? Well, you can write your own functions and make them callable inside a `namespace`. Consider `namespace` feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called **Standard Template Library (STL)**. If you need to use a function from the the C++ **STL** just indicate the `std` as a `namespace` when you call a function from **STL**. **Don't panic if you feel uncomfotable! everything is going to be clear incrementally.**
 
-{% katex display %}
-c = \pm\sqrt{a^2 + b^2}
-{% endkatex %}
+{% highlight c++ %}
+for( int i = 0; i < 10; ++i )
+{
+  std::cout << i << " ";
+}
+// prints:0 1 2 3 4 5 6 7 8 9
+
+int i = 0;
+while( i < 10 )
+{
+  std::cout << i << " ";
+}
+// prints:0 1 2 3 4 5 6 7 8 9
+{% endhighlight %}
 
 ## Functions
 
-### Declaration and Definition
+A function basically has:
 
-## Writing your first application
+* **Name** to be used when calling this function.
+* **Return Type**: a function may return `int`, `double`, `char`, ... etc. Also, it may not return, so its return type is `void`.
+* **Arguments**: the variables given to your function so it makes some operations on.
+
+### Declaration and Definition of Functions
+
+Like variables, functions must be declared before you implement your logic in this function.
+
+* **Declaration** a function header that indicates the function **name**, **return type**, and **arguments**.
+* **Definition** is the function logic.
+
+{% highlight c++ %}
+double average( double a , double b ) // function header (Declaration)
+{ // function definition (logic) goes here
+  return ( a + b ) / 2;
+}
+
+double max( double a , double b ) // declaration
+{ // definition
+  if( a > b )
+  {
+    return a;
+  }
+  else
+  {
+    return b;
+  }
+}
+
+int main()
+{
+  // Declare `x` as double and initialize it with the average of 13.5 and 21.0
+  // Note the type consistency between x and the function return type.
+  double x = average( 13.5 , 21.0 );
+
+  bool y = average( 11.5 , 15.0 ); // Compiler Error, type mismatch!
+
+  std::cout << max( 15.0 , 9.0 ) << std::endl; // prints: 15.0
+}
+
+{% endhighlight %}
+
+Thanks to C++ Type System.
+
+### Scopes and Lifetime {% cite stroustrup2013tour %}
+
+Variables bound to scopes where they are declared. Scopes types:
+
+* Local scope: any variable declared in a function is not accessible outside the function.
+* Block: any variable declared inside braces `{` `}`, like the blocks of the `for`, `while`, `if`, `else if`, `else`, and `switch`-`case`.
+* `Namespace` scope.
+
+Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.
+
+#### Example of a local scope and a block scope
+
+{% highlight c++ %}
+double squareArea( double width , double height )
+{
+  double area = width * double;
+  return area;
+}
+
+int main() 
+{
+
+}
+
+{% endhighlight %}
+
+#### Example of namespace scope
+
+## C++ Programs
+
+
 
 ### Boiler-plate codes
+
+### Writing your first application
 
 ### Hello, world
 
 ### Task 1: Basic C++ operations
 
-## Scope and Lifetime
-
 ## References
 
-{% bibliography --file data-structures --cited %}
+{% bibliography --cited %}
