@@ -13,15 +13,38 @@ Demonstrator:  Eng. Asem Alaa
 
 ## Lecture Hours
 
+**Tuesday**, **1st slot** (+2nd slot each two weeks).
+
+## Section Hours
+
+| Section | Day | Time Slot |
+|---------|-----|-----------|
+|   1     | Sunday | 3rd |
+|   2     | Sunday | 4th |
+
 ## Office Hours
 
-### Prof. Ahmed H. Kandil
+| Day | Time |
+|-----|-----------|
+| Sunday | from **10am** to **12am** |
+| Monday | from **2pm** to **4pm** |
 
-### Eng. Asem Alaa
-
-## Grading
+Exception: first two weeks you are very welcome to visit any day from **4pm** to **6pm** (exclude Monday).
 
 ## Course Outline
+
+| Week | Data Structures & C++ | Ecosystem |
+|------|----------------------|-----------|
+| 1 | Brief intro to DS, C++ Basics | Linux, Compilation, Git, Github |
+| 2 | Static and Dynamic Arrays, C++ Implementation, Categorize your logic with `namespace` scopes | Compilation of multiple files, Processing command line arguments, Basic Linux commands |
+| 3 | Array-based Linked List, C++ Implementation, Naming Conventions, Const correctness| Brief intro to build systems |
+| 4 | Array-based Stacks, Array-based Queues, C++ Implementation, Template structs | Brief intro to CMake |
+| 5 |   |   |
+| 6 |   |   |
+| 7 |   |   |
+| 8 |   |   |
+| 9 |   |   |
+| 10 |   |   |
 
 ## Tutorials
 
@@ -30,4 +53,8 @@ Demonstrator:  Eng. Asem Alaa
     * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/test/index.html %}){:target="_blank"}
     * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1assignment.md %}){:target="_blank"}
 
-### Announcements
+## Frequently Asked Questions
+
+## Students and Guests Contributions
+
+## Announcements

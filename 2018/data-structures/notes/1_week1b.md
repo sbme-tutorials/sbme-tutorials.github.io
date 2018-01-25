@@ -84,7 +84,7 @@ For your first experience with git, refer to this workflow.
 1. \[First Time Only\] Create/Clone Repository to your disk, so you have a local copy.
 2. \[Optional\] Create a branch giving it a name (e.g your new feature/function name).
 3. Make changes to your source (edit/add new file).
-4. Add new files to your repository system.
+4. Add new files to your **repository system**. (You already created the files physically, but you need to ask the git repository to take control of your new file).
 5. Commit your changes.
 6. Get latest updates.
 7. Resolve any conflict (if any).

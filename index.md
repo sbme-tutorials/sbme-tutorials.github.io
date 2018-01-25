@@ -9,6 +9,7 @@ layout: home
 ## Spring 2018
 
 * [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2018/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and Eng. Asem Alaa.
-* [Digital Signal Processing \(SBE209\)](#dsp), by Assoc. Prof. Tamer Yousef and Eng. Asem Alaa.
+* [Digital Signal Processing \(SBE209\)]({{ site.baseurl }}{% link 2018/dsp/dsp.md %}), by Assist. Prof. Tamer Yousef and Eng. Asem Alaa.
+* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2018/cv/cv.md %}), by Assist. Prof. Muhamed Rushdi, Eng. Eslam Adel, and Eng. Asem Alaa.
 
 ### Announcements
