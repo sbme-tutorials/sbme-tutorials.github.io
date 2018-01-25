@@ -404,7 +404,7 @@ Now you have a little sense about `std::cout` and `std` Namespace.
 C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.
 
 A typical process of executable file generation is shown in this image:
-![Compilation](../gallery/compile.gif)
+![Compilation](../../../gallery/compile.gif)
 
 Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&srid=h6xMq).
 

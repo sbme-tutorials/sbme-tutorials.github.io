@@ -5,7 +5,7 @@ by: "Asem"
 pdf: true
 ---
 
-![git-logo](../gallery/Git-logo.svg)
+![git-logo](../../../gallery/Git-logo.svg)
 
 * TOC
 {:toc}
@@ -70,7 +70,7 @@ And wait a minute:
 
 ### Git
 
-![Linux](../gallery/Linus_Torvalds.jpeg.jpg)
+![Linux](../../../gallery/Linus_Torvalds.jpeg.jpg)
 
 * [Linus Torvaldos](https://en.wikipedia.org/wiki/Linus_Torvalds) developed Linux Kernel in 1991.
 * Torvalds and others developed Git for management of Linux Kernel source in 2005.
@@ -149,14 +149,14 @@ Similarly, by default, *remote name* is `origin` and *branch name* is `master`, 
 
 ### But what is *Remote Repository*, What do you mean
 
-![distributed](../gallery/distributed.png)
+![distributed](../../../gallery/distributed.png)
 > This photo is from [official git website](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
 
 ### Git in the cloud
 
 Popular servers offering free remote repository hosting:
 
-![github](../gallery/github.jpg){:width="40%"} **+** ![bitbucket](../gallery/Bitbucket.svg){:width="40%"}
+![github](../../../gallery/github.jpg){:width="40%"} **+** ![bitbucket](../../../gallery/Bitbucket.svg){:width="40%"}
 
 ## Hands-on
 
