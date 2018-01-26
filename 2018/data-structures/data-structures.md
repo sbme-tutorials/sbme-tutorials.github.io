@@ -41,7 +41,7 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 | 5 | Binary Trees, C++ classes and objects  | Briefly: CMake; git on large scale; how to contribute on **this** website using pull requests? |
 | 6 | DS break: C++ access control on class members, brief intro to STL, interesting applications in C++ | Markdown vs. WYSIWYG editors |
 | 7 | Bubble sort, selection sort  | Open source vs. proprietary software  |
-| 8 | Divid and conquer: merge sort, quick sort, recursion  | Briefly: Development on Windows & MAC |
+| 8 | Divide and conquer: merge sort, quick sort, recursion  | Briefly: Development on Windows & MAC |
 | 9 | Binary search on sorted array, binary search tree (BST)  |  Conan.io, external dependencies |
 | 10 | Algorithms complexity: big O notation  | Documenting your code |
 | 11 | Project  | Documenting your project on the website using Markdown and pull requests |
