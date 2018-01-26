@@ -1,0 +1,20 @@
+--- 
+layout: default 
+---
+
+<div class="home">
+
+    {{ content }}
+
+    <h2>Students and Guests Contributions</h2>
+    <ul>
+    {% for my_page in site.pages %}
+    {% if my_page.page-category == "contribution" and my_page.course == page.course %}
+        <li> <a href="{{my_page.url}}" target="_blank">{{ my_page.title }}, {{my_page.author}}</a> </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+    
+
+    <!-- <h2>Announcements</h2> -->
+</div>
