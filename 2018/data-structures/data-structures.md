@@ -47,11 +47,12 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 | 10 | Project  |   |
 
 ## Tutorials
-
+<!-- 
 1. Week 1:
     * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
     * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/test/index.html %}){:target="_blank"}
-    * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1assignment.md %}){:target="_blank"}
+    * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1assignment.md %}){:target="_blank"} 
+    -->
 
 ## Frequently Asked Questions
 

@@ -158,6 +158,9 @@ Popular servers offering free remote repository hosting:
 
 ![github](../../../gallery/github.jpg){:width="40%"} **+** ![bitbucket](../../../gallery/Bitbucket.svg){:width="40%"}
 
+* Github is offering you unlimited repository, but in public.
+* To get the advantage of private repositories, but with charge of 7$/month (~ 125 EGP). **Unless you are student**. **Beware of the power of having institutional e-mail!** I advice you to request an institutional e-mail from the faculty (maybe from the students affairs). Much more offers are free for student at Github (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/).
+
 ## Hands-on
 
 ### Installing Git on your machine
