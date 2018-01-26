@@ -366,8 +366,7 @@ int main()
 
 {% endhighlight %}
 
-
-**SOLUTION** using `namespace` feature: 
+**SOLUTION** using `namespace` feature:
 
 {% highlight c++ %}
 

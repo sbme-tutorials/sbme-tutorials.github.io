@@ -12,12 +12,11 @@ pdf: true
 
 ## Problem Definition
 
-Recall the example of area problem from [Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}#example-of-namespace-scope){:target="_blank"}.
-
+Recall the example of area problem from [Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}#example-of-namespace-scope){:target="_blank"}. 
 
 Imagine the case when *Asem* and *Ahmed* need to collaborate on this project. Such that:
 
-* *Asem* generates the biolerplate/skeleton (i.e the files and the main function) of the project. 
+* *Asem* generates the biolerplate/skeleton (i.e the files and the main function) of the project.
 {% highlight c++ %}
 #include <iostream>
 
@@ -159,7 +158,7 @@ Popular servers offering free remote repository hosting:
 ![github](../../../gallery/github.jpg){:width="40%"} **+** ![bitbucket](../../../gallery/Bitbucket.svg){:width="40%"}
 
 * Github is offering you unlimited repository, but in public.
-* To get the advantage of private repositories, but with charge of 7$/month (~ 125 EGP). **Unless you are student**. **Beware of the power of having institutional e-mail!** I advice you to request an institutional e-mail from the faculty (maybe from the students affairs). Much more offers are free for student at Github (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/).
+* To get the advantage of private repositories, but with charge of 7$/month (~ 125 EGP). **Unless you are student**. **Beware of the power of having institutional e-mail!** I advice you to request an institutional e-mail from the faculty (maybe from the students affairs). Much more offers are free for student at Github (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/)).
 
 ## Hands-on
 
