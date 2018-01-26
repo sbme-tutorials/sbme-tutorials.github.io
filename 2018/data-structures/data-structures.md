@@ -34,16 +34,17 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 
 | Week | Data Structures & C++ | Ecosystem & Misc |
 |------|----------------------|-----------|
-| 1 | Brief intro to DS, C++ Basics | Linux, Compilation, Git, Github |
-| 2 | Static and Dynamic Arrays & C++ Implementation, Categorize your logic with `namespace` scopes | Compilation of multiple files, Processing command line arguments, Basic Linux commands |
-| 3 | Array-based Linked List & C++ Implementation, Naming Conventions, Const correctness| Brief intro to build systems |
-| 4 | Array-based Stacks + Array-based Queues & C++ Implementation, Template structs | Brief intro to  git for teams, `.gitignore` file |
-| 5 | Binary Trees & C++ Implementation, Classes and Objects  | CMake |
-| 6 | DS break: C++ data protection (public/private), brief intro to STL, interesting applications in C++ |  |
-| 7 | Bubble sort, selection sort  |   |
-| 8 | Divied and conquer: Merge sort, Quick sort  |   |
-| 9 | Binary search on sorted arrays, Binary search tree (BST)  |   |
-| 10 | Project  |   |
+| 1 | Brief intro to DS, C++ Basics | Briefly: Linux, compilation, git, github |
+| 2 | Static and Dynamic Arrays, categorize your logic with `namespace` scopes | Compilation of multiple files, processing command line arguments, basic Linux commands |
+| 3 | Array-Based Linked List, naming conventions, const correctness| Brief intro to build systems |
+| 4 | Array-Based Stack + Array-Based Queue, C++ template structs | Brief intro to  git for teams, `.gitignore` file |
+| 5 | Binary Trees, C++ classes and objects  | Briefly: CMake; git on large scale; how to contribute on **this** website using pull requests? |
+| 6 | DS break: C++ access control on class members, brief intro to STL, interesting applications in C++ | Markdown vs. WYSIWYG editors |
+| 7 | Bubble sort, selection sort  | Open source vs. proprietary software  |
+| 8 | Divied and conquer: merge sort, quick sort  | Briefly: Development on Windows & MAC |
+| 9 | Binary search on sorted array, binary search tree (BST)  |   |
+| 10 | Algorithms complexity: big O notation  |  |
+| 11 | Project  | Documenting your project on the website using Markdown and pull requests |
 
 ## Tutorials
 <!-- 
