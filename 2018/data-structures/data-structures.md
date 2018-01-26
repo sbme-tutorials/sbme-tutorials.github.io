@@ -2,8 +2,10 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
+layout: coursepage
+course: "sbe201"
 ---
+
 # Data Structures \(SBE201\) - Spring 2018
 
 ## Teaching Staff
@@ -36,14 +38,14 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 | Week | Data Structures & C++ | Ecosystem & Misc |
 |------|----------------------|-----------|
 | 1 | Brief intro to DS, C++ Basics | Linux, Compilation, Git, Github |
-| 2 | Static and Dynamic Arrays, C++ Implementation, Categorize your logic with `namespace` scopes | Compilation of multiple files, Processing command line arguments, Basic Linux commands |
-| 3 | Array-based Linked List, C++ Implementation, Naming Conventions, Const correctness| Brief intro to build systems |
-| 4 | Array-based Stacks, Array-based Queues, C++ Implementation, Template structs | Brief intro to  git for teams, `.gitignore` file |
-| 5 | Binary Trees, C++ Implementation, Classes and Objects  | CMake |
+| 2 | Static and Dynamic Arrays & C++ Implementation, Categorize your logic with `namespace` scopes | Compilation of multiple files, Processing command line arguments, Basic Linux commands |
+| 3 | Array-based Linked List & C++ Implementation, Naming Conventions, Const correctness| Brief intro to build systems |
+| 4 | Array-based Stacks + Array-based Queues & C++ Implementation, Template structs | Brief intro to  git for teams, `.gitignore` file |
+| 5 | Binary Trees & C++ Implementation, Classes and Objects  | CMake |
 | 6 | DS break: C++ data protection (public/private), brief intro to STL, interesting applications in C++ |  |
 | 7 | Bubble sort, selection sort  |   |
 | 8 | Divied and conquer: Merge sort, Quick sort  |   |
-| 9 | Binary search, search tree  |   |
+| 9 | Binary search on sorted arrays, Binary search tree (BST)  |   |
 | 10 | Project  |   |
 
 ## Tutorials
@@ -55,7 +57,3 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     -->
 
 ## Frequently Asked Questions
-
-## Students and Guests Contributions
-
-## Announcements
