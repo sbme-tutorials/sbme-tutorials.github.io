@@ -26,14 +26,6 @@ pdf: true
 
 Short story: pointers and references are made to make life easier and flexible when controlling variables as we will see later in this course.
 
-### Collections of Variables (Data Structures)
-
-<!-- 
-Show an array of floats representing an ECG signal. 
-Show a linked-list of tasks.
-Show a tree of life.
--->
-
 ### Construction of Variables
 
 A variable basically has:
@@ -90,6 +82,14 @@ double e {2.71828};
 {% endhighlight %}
 
 One way to avoid bugs (undefined behaviour) is initializing your variables.
+
+### Collections of Variables (Data Structures)
+
+<!-- 
+Show an array of floats representing an ECG signal. 
+Show a linked-list of tasks.
+Show a tree of life.
+-->
 
 ### Construction of Collections (What?!)
 
