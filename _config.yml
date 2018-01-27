@@ -47,5 +47,5 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
-  - .gitmodules
-  - .git-rewrite
+  - .gitmodules/
+  - .git-rewrite/
