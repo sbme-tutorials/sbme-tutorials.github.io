@@ -3,6 +3,9 @@
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
+cetegory: "coursepage"
+course: "sbe404"
+year: "2018"
 ---
 # Computer Vision \(SBE404\) - Spring 2018
 

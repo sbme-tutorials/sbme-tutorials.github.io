@@ -47,7 +47,7 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 | 9 | Binary search on sorted array; Binary search tree (BST)  |  Conan.io; External dependencies |
 | 10 | Algorithms complexity: big O notation  | Documenting your code |
 | 11 | Project  | Documenting your project on the website using Markdown and pull requests |
-| 12 | **Open Talk 2**: Other programming languages; Data Structures in Bioinformatics and other domains; C++ libraries, IDEs, and blogs you need to know about; STL vs. Qt vs. Boost | MOOCs: Coursera & Edx |
+| 12 | **Open Talk 2**: Other programming languages; Data Structures in Bioinformatics and other domains; C++ libraries, IDEs, and blogs you need to know about; STL vs. Qt vs. Boost | clang-tidy; MOOCs: Coursera & Edx |
 
 ## Tutorials
 
