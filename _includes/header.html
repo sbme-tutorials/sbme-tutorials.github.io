@@ -3,12 +3,16 @@
   <div class="wrapper">
     <!-- {% assign default_paths = site.pages | map: "path" %}
     {% assign page_paths = site.header_pages | default: default_paths %} -->
-    {% if page.category == "coursepage"%}
+    {% if page.category == "coursepage" %}
 
     {% elsif page.course %}
 
     {% for cpage in site.pages %}
-      {% if cpage.course and cpage.course == page.course %}
+      {% if cpage.course and 
+        cpage.category and
+        cpage.category == "coursepage" and
+        cpage.course == page.course and 
+        cpage.year == page.year %}
         <a class="site-title" href="{{ cpage.url | relative_url }}">{{ cpage.course | upcase }}</a>
       {% endif %}
     {% endfor %}
