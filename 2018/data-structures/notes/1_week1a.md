@@ -1,8 +1,10 @@
 ---
 layout: page
+course: "sbe201"
+category: "notes"
+year: "2018"
 title:  "Week 1 - Part 1: Basics of C++"
 by: "Asem"
-pdf: true
 ---
 
 * TOC
@@ -321,7 +323,7 @@ Thanks to C++ Type System.
 #### Example of a local scope and a block scope
 
 {% highlight c++ %}
-double squareArea( double width , double height )
+double rectangleArea( double width , double height )
 {
   // The arguments width and height are local variables to this function.
   // width, height, area are not accessible outside.
@@ -332,20 +334,20 @@ double squareArea( double width , double height )
 
 int main()
 {
-  // area here is completely different than area in the squareArea function.
+  // area here is completely different than area in the rectangleArea function.
   // They have the same value. But they are not same the variables.
-  double area = squareArea( 12.9 , 2.5 );
+  double area = rectangleArea( 12.9 , 2.5 );
 }
 
 {% endhighlight %}
 
 #### Example of namespace scope
 
-Consider a situation when you need to implement a function that computes the area of square and the area of right triangle. Using the same function name `area`!
+Consider a situation when you need to implement a function that computes the area of rectangle and the area of right triangle. Using the same function name `area`!
 
 {% highlight c++ %}
 
-// This function returns the square area.
+// This function returns the rectangle area.
 double area( double width , double height )
 {
   return width * height;
@@ -370,7 +372,7 @@ int main()
 
 {% highlight c++ %}
 
-namespace square
+namespace rectangle
 {
   double area( double width , double height )
   {
@@ -388,10 +390,10 @@ namespace triangle
 
 int main()
 {
-  double squareArea = square::area( 12.9 , 2.5 );
+  double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
 
-  std::cout << squareArea << std::endl << triangleArea << std::endl;
+  std::cout << rectangleArea << std::endl << triangleArea << std::endl;
 }
 
 {% endhighlight %}
@@ -434,7 +436,7 @@ Let's write our first source file to go through the process of compilation and e
 {% highlight c++ %}
 #include <iostream>
 
-namespace square
+namespace rectangle
 {
   double area( double width , double height )
   {
@@ -452,10 +454,10 @@ namespace triangle
 
 int main()
 {
-  double squareArea = square::area( 12.9 , 2.5 );
+  double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
 
-  std::cout << squareArea << std::endl << triangleArea << std::endl;
+  std::cout << rectangleArea << std::endl << triangleArea << std::endl;
 }
 
 {% endhighlight %}

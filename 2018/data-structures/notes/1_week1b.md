@@ -1,5 +1,8 @@
 ---
 layout: page
+course: "sbe201"
+category: "notes"
+year: "2018"
 title:  "Week 1 - Part 2: Basics of Git and Github"
 by: "Asem"
 pdf: true
@@ -20,7 +23,7 @@ Imagine the case when *Asem* and *Ahmed* need to collaborate on this project. Su
 {% highlight c++ %}
 #include <iostream>
 
-namespace square
+namespace rectangle
 {
     // No implementation yet!
 }
@@ -32,15 +35,15 @@ namespace triangle
 
 int main()
 {
-  double squareArea = square::area( 12.9 , 2.5 );
+  double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
 
-  std::cout << "Square area: " << squareArea << std::endl 
+  std::cout << "Rectangle area: " << squareArea << std::endl 
             << "Triangle area: " << triangleArea << std::endl;
 }
 {% endhighlight %}
-* *Ahmed* has to implement the square area function.
-* *Asem* has to implement the triangle area function.
+* *Ahmed* has to implement the rectangle area function $$A = w h $$.
+* *Asem* has to implement the triangle area function $$ A = \frac{bh}{2}$$.
 
 ~~Possible~~ Awful Scenarios:
 

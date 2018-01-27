@@ -1,6 +1,8 @@
 ---
 layout: coursepage
+category: "coursepage"
 course: "sbe201"
+year: "2018"
 ---
 
 # Data Structures \(SBE201\) - Spring 2018
@@ -25,7 +27,7 @@ Demonstrator:  Eng. Asem Alaa
 
 | Day | Time |
 |-----|-----------|
-| Sunday | from **10am** to **12am** |
+| Sunday | from **10am** to **12pm** |
 | Monday | from **2pm** to **4pm** |
 
 Exception: first two weeks you are very welcome to visit any day from **4pm** to **6pm** (exclude Monday).
@@ -34,7 +36,7 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 
 | Week | Data Structures & C++ | Ecosystem & Miscellaneous |
 |------|----------------------|-----------|
-| 1 | Brief intro to DS; C++ Basics | Briefly: Unix, compilation, git, github |
+| 1 | **Introduction**: Brief intro to DS; C++ Basics; Welcome to our guest *Ahmed Magdy Elfarrash* | Briefly: Unix, compilation, git, github |
 | 2 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes; Processing command line arguments (`argc` & `argv`)  | Compilation of multiple files; Basic Unix commands; bitbucket |
 | 3 | Array-Based Linked List; Naming conventions; Const correctness | Brief intro to build systems |
 | 4 | Array-Based Stack; Array-Based Queue; C++ template structs | Brief intro to  git for teams; `.gitignore` file |
@@ -49,8 +51,8 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 
 ## Tutorials
 
-1. Week 1:
-    * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
+<!-- 1. Week 1:
+    * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1b.md %}){:target="_blank"}\]. -->
 
 <!-- * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/test/index.html %}){:target="_blank"}
     * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1assignment.md %}){:target="_blank"} 

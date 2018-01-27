@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/data-structures/notes/1_week1a.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/1_week1a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -23,9 +23,54 @@
     <header class="site-header" role="banner">
 
   <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+        <a class="site-title" href="/2018/data-structures/notes/1_week1a.html">SBE201</a>
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/notes/1_week1assignment.html">SBE201</a>
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/notes/1_week1b.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/contrib/students/amr-ubuntu-installation.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/faq.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
-    <a class="site-title" href="/">Tutorials for SBME Students</a>
 <!--   
     
       <nav class="site-nav">
@@ -474,7 +519,7 @@ Show a tree of life.
 
 <h4 id="example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</h4>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">squareArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">rectangleArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
 <span class="p">{</span>
   <span class="c1">// The arguments width and height are local variables to this function.</span>
   <span class="c1">// width, height, area are not accessible outside.</span>
@@ -485,16 +530,16 @@ Show a tree of life.
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="c1">// area here is completely different than area in the squareArea function.</span>
+  <span class="c1">// area here is completely different than area in the rectangleArea function.</span>
   <span class="c1">// They have the same value. But they are not same the variables.</span>
-  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">squareArea</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">rectangleArea</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
 <h4 id="example-of-namespace-scope">Example of namespace scope</h4>
 
-<p>Consider a situation when you need to implement a function that computes the area of square and the area of right triangle. Using the same function name <code class="highlighter-rouge">area</code>!</p>
+<p>Consider a situation when you need to implement a function that computes the area of rectangle and the area of right triangle. Using the same function name <code class="highlighter-rouge">area</code>!</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// This function returns the square area.</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// This function returns the rectangle area.</span>
 <span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
 <span class="p">{</span>
   <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
@@ -515,7 +560,7 @@ Show a tree of life.
 
 <p><strong>SOLUTION</strong> using <code class="highlighter-rouge">namespace</code> feature:</p>
 
-<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">namespace</span> <span class="n">square</span>
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">namespace</span> <span class="n">rectangle</span>
 <span class="p">{</span>
   <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
   <span class="p">{</span>
@@ -533,10 +578,10 @@ Show a tree of life.
 
 <span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="kt">double</span> <span class="n">squareArea</span> <span class="o">=</span> <span class="n">square</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">rectangleArea</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
   <span class="kt">double</span> <span class="n">triangleArea</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">,</span> <span class="mf">3.0</span> <span class="p">);</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">squareArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rectangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <p>Now you have a little sense about <code class="highlighter-rouge">std::cout</code> and <code class="highlighter-rouge">std</code> Namespace.</p>
@@ -574,7 +619,7 @@ In C++, you usually need to link against libraries, in particular the <strong>ST
 
 <figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
 </span>
-<span class="k">namespace</span> <span class="n">square</span>
+<span class="k">namespace</span> <span class="n">rectangle</span>
 <span class="p">{</span>
   <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
   <span class="p">{</span>
@@ -592,10 +637,10 @@ In C++, you usually need to link against libraries, in particular the <strong>ST
 
 <span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="kt">double</span> <span class="n">squareArea</span> <span class="o">=</span> <span class="n">square</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">rectangleArea</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
   <span class="kt">double</span> <span class="n">triangleArea</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">,</span> <span class="mf">3.0</span> <span class="p">);</span>
 
-  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">squareArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rectangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span></code></pre></figure>
 
 <h3 id="compiling-your-code">Compiling your code</h3>
