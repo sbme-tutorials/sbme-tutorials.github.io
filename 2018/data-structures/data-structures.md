@@ -59,3 +59,9 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     -->
 
 ## Frequently Asked Questions
+
+### I have a Unix-based system installed other than Ubuntu 16, should I install Ubuntu 16 instead?
+
+* If you are using a different distribution (e.g Fedora, Suse, etc.), it is fine as long as it is still receiving support through updates.
+* If you have Ubuntu 17, it is fine but you need to know that version 17 is not long term support (LTS) version. Ubuntu 16 support will last until 2021.
+* If you have an older version (e.g Ubuntu 14.03), make sure that your version is still receiving support from [Ubuntu release end of life](https://www.ubuntu.com/info/release-end-of-life).
