@@ -36,7 +36,7 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 
 | Week | Data Structures & C++ | Ecosystem & Miscellaneous |
 |------|----------------------|-----------|
-| 1 | **Introduction**: Brief intro to DS; C++ Basics; Welcome to our guest *Ahmed Magdy Elfarrash* | Briefly: Unix, compilation, git, github |
+| 1 | **Introduction**: Brief intro to DS; C++ Basics; A welcome to our guest *Ahmed Magdy Elfarrash* | Briefly: Unix, compilation, git, github |
 | 2 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes; Processing command line arguments (`argc` & `argv`)  | Compilation of multiple files; Basic Unix commands; bitbucket |
 | 3 | Array-Based Linked List; Naming conventions; Const correctness | Brief intro to build systems |
 | 4 | Array-Based Stack; Array-Based Queue; C++ template structs | Brief intro to  git for teams; `.gitignore` file |
