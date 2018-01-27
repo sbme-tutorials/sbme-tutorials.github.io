@@ -8,11 +8,7 @@
     {% elsif page.course %}
 
     {% for cpage in site.pages %}
-      {% if cpage.course and \
-        cpage.category and \
-        cpage.category == "coursepage" and \
-        cpage.course == page.course and \
-        cpage.year == page.year %}
+      {% if cpage.course and cpage.category and cpage.category == "coursepage" and cpage.course == page.course and cpage.year == page.year %}
         <a class="site-title" href="{{ cpage.url | relative_url }}">{{ cpage.course | upcase }}</a>
       {% endif %}
     {% endfor %}
