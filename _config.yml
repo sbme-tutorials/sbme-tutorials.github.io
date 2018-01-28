@@ -15,7 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Tutorials for SBME Students 
 author: Asem Alaa
-email: asem.a.abdelaziz@eng1.cu.edu.eg
+email: asem.a.abdelaziz@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   These pages shall contain all the materials corresponding to 
   courses, assigned to me, in the SBME department at Cairo University.
