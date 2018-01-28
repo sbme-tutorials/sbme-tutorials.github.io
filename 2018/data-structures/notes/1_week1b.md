@@ -8,7 +8,7 @@ by: "Asem"
 pdf: true
 ---
 
-![git-logo](../../../gallery/Git-logo.svg)
+![git-logo](/gallery/Git-logo.svg)
 
 * TOC
 {:toc}

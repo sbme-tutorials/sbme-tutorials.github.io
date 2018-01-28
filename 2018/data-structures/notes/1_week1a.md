@@ -120,7 +120,6 @@ x * y; // 60
 x / y; // 2
 x % y; // 2
 
-
 // x = x+y
 x += y; // x is now 17.
 
@@ -170,7 +169,6 @@ true && true; // True
 5 < 10 && 13 >= 11; // True
 5 % 2 == 1 || 3 / 2 > 1; // False
 5 % 2 == 1 || 3 / 2.0 > 1; // True
-
 
 // logical or
 true || true; // True
@@ -270,6 +268,7 @@ A function basically has:
 * **Name** to be used when calling this function.
 * **Return Type**: a function may return `int`, `double`, `char`, ... etc. Also, it may not return, so its return type is `void`.
 * **Arguments**: the variables given to your function so it makes some operations on.
+* **Definition**: the logic of your function.
 
 ### Declaration and Definition of Functions
 
@@ -405,7 +404,7 @@ Now you have a little sense about `std::cout` and `std` Namespace.
 C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.
 
 A typical process of executable file generation is shown in this image:
-![Compilation](../../../gallery/compile.gif)
+![Compilation](/gallery/compile.gif)
 
 Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&srid=h6xMq).
 
