@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tutorials for SBME Students</title>
+  <title>Assignment 1 - part 2: Your first experience with Git and our Github classroom</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/week1a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -25,6 +25,42 @@
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -111,27 +147,96 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title">Assignment 1 - part 2: Your first experience with Git and our Github classroom</h1>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+  <div class="post-content">
+    <h2 id="objectives">Objectives</h2>
 
+<ul>
+  <li>Registration on both Github and Bitbucket.</li>
+  <li>Registration on our Github classroom.</li>
+  <li>First experience with git.</li>
+  <li>First experience on submitting on the Github classroom.</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Read the notes of the first week: [<a href="/2018/data-structures/notes/1_week1a.html" target="_blank">Part 1: C++ Basics</a>] [<a href="/2018/data-structures/notes/1_week1b.html" target="_blank">Part 2: Using Git and Github</a>].</p>
+
+<h2 id="grading">Grading</h2>
+
+<p>Since all steps are straightforward and dependent on each other, getting to the last step secures you the full mark of this part (50% of this week).</p>
+
+<h2 id="deadline">Deadline</h2>
+
+<p><strong>Monday 12 AM</strong>.</p>
+
+<h2 id="1-registration-on-github-and-our-classroom">1. Registration on Github and Our Classroom</h2>
+
+<ul>
+  <li>Sign-up new account, then follow any further instructions by the website. You should receive a message in your e-mail to verify your e-mail. <strong>Do not proceed to next step unless you verify your e-mail address</strong>.</li>
+  <li>
+    <p>Afterwards, send a message to me (i.e <code class="highlighter-rouge">asem.a.abdelaziz@gmail.com</code>):</p>
+
+    <ul>
+      <li>subject: [SBE201] classroom registration</li>
+      <li>
+        <p>contents:</p>
+
+        <ol>
+          <li>your github id/name</li>
+          <li>your bench number (If you don’t know your bench number, refer to this <a href="http://eng.cu.edu.eg/wp-content/uploads/StudentsLists2016/SBE/2.xls">document</a>).</li>
+          <li>first and last names.</li>
+        </ol>
+      </li>
+    </ul>
+  </li>
+  <li>Visit the <a href="https://classroom.github.com/a/1jyf5WHm">classroom registration page</a>, and give the classroom authorization to access your profile data. If you find an entry in the list that belongs to you 2_[BN]_[Firstname]_[Lastname], click on. Otherwise, skip to next page. Press <strong>Accept this assignment</strong>.</li>
+</ul>
+
+<h2 id="2-submitting-your-first-single-line-project-on-our-classroom">2. Submitting your first single line project on our classroom</h2>
+
+<ul>
+  <li>Clone the repository. You do not need to initialize that repository, it is already initialized and the current files are controlled by the repo.</li>
+  <li>Open the file <code class="highlighter-rouge">favorite-saying.txt</code> and add a line of saying that you have recently read and impacted you, also include the name of the sayer (no politics please :), be professional).</li>
+  <li>Save the file.</li>
+  <li>Commit changes on that file:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"Add a saying by &lt;the sayer&gt;"</span>
+<span class="nv">$ </span>git push origin master</code></pre></figure>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
       </div>
     </main>
 
