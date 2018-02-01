@@ -165,22 +165,65 @@ Popular servers offering free remote repository hosting:
 
 ## Hands-on
 
-### Installing Git on your machine
+### Trying git online with interactive console
+
+Follow this nice interactive tutorial from Github for using Git: [Try Git](https://try.github.io).
+
+### Trying git on your machine
+
+#### Installing Git on your machine
 
 Issue the following command in your terminal.
 {% highlight bash %}
 $ sudo apt-get install git
 {% endhighlight %}
 
-### Registration on Github and Our Classroom
+Once installed, let the Git know your name and your email. So from now on, any commit or changes you make to your source code will be signed by your name and email. This is very useful when working with teams!
 
-* [Sign-up new account](https://github.com/), then follow any further instructions by the website.
-* You should receive a message in your e-mail to verify your e-mail. **Do not proceed to next step unless you verify your e-mail address**.
-* Send a message to me (i.e `asem.a.abdelaziz@eng1.cu.edu.eg`):
-  * subject: [SBE201] classroom registration
-  * contents:
-      1. github id
-      2. your bench number (If you don't know you bench number, refer to this [document](http://eng.cu.edu.eg/wp-content/uploads/StudentsLists2016/SBE/2.xls)).
-      3. first and last names.
-* Visit the [classroom registration page](https://classroom.github.com/a/1jyf5WHm), and give the classroom authorization to access your personal data.
-* If you find an entry in the list that belongs to you `2_[BN]_[Firstname]_[Lastname]`, click on. Otherwise, **skip** to next page. Press **Accept this assignment**.
+{% highlight bash %}
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+{% endhighlight %}
+
+#### Generate the skeleton of your project
+
+* Open the terminal (`Ctrl`+`Alt`+`L`). The terminal will launch on your home directory by default (`/home/yourname`).
+* Create a directory with name `hello-git` using the following command:
+
+{% highlight bash %}
+$ mkdir hello-git
+{% endhighlight %}
+
+* Change directory from home to `hello-git` using:
+
+{% highlight bash %}
+$ cd hello-git
+{% endhighlight %}
+
+* Open the text editor with new file called `einstein-happiness-theory.txt` (For example, by the graphical `gedit` or the console-based `nano`), using the following command:
+
+{% highlight bash %}
+$ gedit einstein-happiness-theory.txt
+{% endhighlight %}
+
+* In the file, copy the following saying by *Albert Einstein*: "A calm and modest life brings more happiness than the pursuit of success combined with constant restlessness,".
+* Close the editor and save the file.
+* In your terminal, initialize a git repository to watch and take control of your source file, using the following command:
+
+{% highlight bash %}
+$ git init
+{% endhighlight %}
+
+* Let's ask our new git repository (repo for short), to take control of our new file `einstein-happiness-theory.txt`, using the following command:
+
+{% highlight bash %}
+$ git add einstein-happiness-theory.txt
+{% endhighlight %}
+
+* Let the repo confirm your new changes (i.e adding a new file to the repo system), and leave a message indicates briefly **What is the change about**.
+
+{% highlight bash %}
+$ git commit -a -m "Adding a file containing a saying by Albert Einstein"
+{% endhighlight %}
+
+* Optional: if you wish to have a remote repository to save your new project on the cloud, make sure you have registered with Github or Bitbucket. For example, for bitbucket, follow [these intructions](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html) to create a repository on bitbucket. After making your repository, you should find some instructions titled **Get started with command line** then select **I have an existing repository** and follow the instructions.
