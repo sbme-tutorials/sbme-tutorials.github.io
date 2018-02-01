@@ -26,7 +26,7 @@ Since all steps are straightforward and dependent on each other, getting to the 
 
 ## Deadline
 
-** Monday 12 AM. **.
+**Monday 12 AM**.
 
 ## 1. Registration on Github and Our Classroom
 
@@ -37,11 +37,10 @@ Since all steps are straightforward and dependent on each other, getting to the 
   * contents:
 
       1. your github id/name
-      2. your bench number (If you don’t know your bench number, refer to this document).
+      2. your bench number (If you don’t know your bench number, refer to this [document](http://eng.cu.edu.eg/wp-content/uploads/StudentsLists2016/SBE/2.xls)).
       3. first and last names.
 
-* Visit the [classroom registration page](https://classroom.github.com/a/1jyf5WHm), and give the classroom authorization to access your profile data.
-    If you find an entry in the list that belongs to you 2_[BN]_[Firstname]_[Lastname], click on. Otherwise, skip to next page. Press Accept this assignment.
+* Visit the [classroom registration page](https://classroom.github.com/a/1jyf5WHm), and give the classroom authorization to access your profile data. If you find an entry in the list that belongs to you 2\_\[BN\]\_\[Firstname\]\_\[Lastname\], click on. Otherwise, skip to next page. Press **Accept this assignment**.
 
 ## 2. Submitting your first single line project on our classroom
 

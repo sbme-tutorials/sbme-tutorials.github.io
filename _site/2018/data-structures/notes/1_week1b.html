@@ -58,6 +58,8 @@
     
       
     
+      
+    
 
     
     
@@ -127,6 +129,11 @@
           
             
             
+            <a class="page-link" href="/2018/data-structures/assignments/week1a.html">Assignment 1 - part 2: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
           
             
             
@@ -168,8 +175,12 @@
     </ul>
   </li>
   <li><a href="#hands-on" id="markdown-toc-hands-on">Hands-on</a>    <ul>
-      <li><a href="#installing-git-on-your-machine" id="markdown-toc-installing-git-on-your-machine">Installing Git on your machine</a></li>
-      <li><a href="#registration-on-github-and-our-classroom" id="markdown-toc-registration-on-github-and-our-classroom">Registration on Github and Our Classroom</a></li>
+      <li><a href="#trying-git-online-with-interactive-console" id="markdown-toc-trying-git-online-with-interactive-console">Trying git online with interactive console</a></li>
+      <li><a href="#trying-git-on-your-machine" id="markdown-toc-trying-git-on-your-machine">Trying git on your machine</a>        <ul>
+          <li><a href="#installing-git-on-your-machine" id="markdown-toc-installing-git-on-your-machine">Installing Git on your machine</a></li>
+          <li><a href="#generate-the-skeleton-of-your-project" id="markdown-toc-generate-the-skeleton-of-your-project">Generate the skeleton of your project</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -340,31 +351,66 @@
 
 <h2 id="hands-on">Hands-on</h2>
 
-<h3 id="installing-git-on-your-machine">Installing Git on your machine</h3>
+<h3 id="trying-git-online-with-interactive-console">Trying git online with interactive console</h3>
+
+<p>Follow this nice interactive tutorial from Github for using Git: <a href="https://try.github.io">Try Git</a>.</p>
+
+<h3 id="trying-git-on-your-machine">Trying git on your machine</h3>
+
+<h4 id="installing-git-on-your-machine">Installing Git on your machine</h4>
 
 <p>Issue the following command in your terminal.</p>
 
 <figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install </span>git</code></pre></figure>
 
-<h3 id="registration-on-github-and-our-classroom">Registration on Github and Our Classroom</h3>
+<p>Once installed, let the Git know your name and your email. So from now on, any commit or changes you make to your source code will be signed by your name and email. This is very useful when working with teams!</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git config <span class="nt">--global</span> user.name <span class="s2">"John Doe"</span>
+<span class="nv">$ </span>git config <span class="nt">--global</span> user.email johndoe@example.com</code></pre></figure>
+
+<h4 id="generate-the-skeleton-of-your-project">Generate the skeleton of your project</h4>
 
 <ul>
-  <li><a href="https://github.com/">Sign-up new account</a>, then follow any further instructions by the website.</li>
-  <li>You should receive a message in your e-mail to verify your e-mail. <strong>Do not proceed to next step unless you verify your e-mail address</strong>.</li>
-  <li>Send a message to me (i.e <code class="highlighter-rouge">asem.a.abdelaziz@eng1.cu.edu.eg</code>):
-    <ul>
-      <li>subject: [SBE201] classroom registration</li>
-      <li>contents:
-        <ol>
-          <li>github id</li>
-          <li>your bench number (If you don’t know you bench number, refer to this <a href="http://eng.cu.edu.eg/wp-content/uploads/StudentsLists2016/SBE/2.xls">document</a>).</li>
-          <li>first and last names.</li>
-        </ol>
-      </li>
-    </ul>
-  </li>
-  <li>Visit the <a href="https://classroom.github.com/a/1jyf5WHm">classroom registration page</a>, and give the classroom authorization to access your personal data.</li>
-  <li>If you find an entry in the list that belongs to you <code class="highlighter-rouge">2_[BN]_[Firstname]_[Lastname]</code>, click on. Otherwise, <strong>skip</strong> to next page. Press <strong>Accept this assignment</strong>.</li>
+  <li>Open the terminal (<code class="highlighter-rouge">Ctrl</code>+<code class="highlighter-rouge">Alt</code>+<code class="highlighter-rouge">L</code>). The terminal will launch on your home directory by default (<code class="highlighter-rouge">/home/yourname</code>).</li>
+  <li>Create a directory with name <code class="highlighter-rouge">hello-git</code> using the following command:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">mkdir </span>hello-git</code></pre></figure>
+
+<ul>
+  <li>Change directory from home to <code class="highlighter-rouge">hello-git</code> using:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span><span class="nb">cd </span>hello-git</code></pre></figure>
+
+<ul>
+  <li>Open the text editor with new file called <code class="highlighter-rouge">einstein-happiness-theory.txt</code> (For example, by the graphical <code class="highlighter-rouge">gedit</code> or the console-based <code class="highlighter-rouge">nano</code>), using the following command:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>gedit einstein-happiness-theory.txt</code></pre></figure>
+
+<ul>
+  <li>In the file, copy the following saying by <em>Albert Einstein</em>: “A calm and modest life brings more happiness than the pursuit of success combined with constant restlessness,”.</li>
+  <li>Close the editor and save the file.</li>
+  <li>In your terminal, initialize a git repository to watch and take control of your source file, using the following command:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git init</code></pre></figure>
+
+<ul>
+  <li>Let’s ask our new git repository (repo for short), to take control of our new file <code class="highlighter-rouge">einstein-happiness-theory.txt</code>, using the following command:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git add einstein-happiness-theory.txt</code></pre></figure>
+
+<ul>
+  <li>Let the repo confirm your new changes (i.e adding a new file to the repo system), and leave a message indicates briefly <strong>What is the change about</strong>.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"Adding a file containing a saying by Albert Einstein"</span></code></pre></figure>
+
+<ul>
+  <li>Optional: if you wish to have a remote repository to save your new project on the cloud, make sure you have registered with Github or Bitbucket. For example, for bitbucket, follow <a href="https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html">these intructions</a> to create a repository on bitbucket. After making your repository, you should find some instructions titled <strong>Get started with command line</strong> then select <strong>I have an existing repository</strong> and follow the instructions.</li>
 </ul>
 
   </div>
