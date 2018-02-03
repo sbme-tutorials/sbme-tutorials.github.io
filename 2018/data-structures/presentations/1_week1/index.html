@@ -5,6 +5,7 @@ category: "presentation"
 year: "2018"
 title: "Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
 by: "Asem"
+author: "Asem Alaa"
 --- -->
 
 <!DOCTYPE html>
@@ -33,6 +34,20 @@ class: left, middle
 ???
 * My research interests.
 * How can I help you in this semester and after.
+* Statistics about background
+
+---
+
+---
+class: left, middle
+# The very C++ basics
+
+* Creating variables.
+* Arithmetic Operations.
+* If, else if, else.
+* while-for-switch-case.
+* functions
+* namespace
 
 
 ---
@@ -42,11 +57,26 @@ class: left, top
 --
 ## A Simple Calculator Program and Memory Model
 
+* Programs are all about playing with variables and groups of variables (structures)
+
+
+<img style="width:80%" src="/gallery/mem.png">
+
+---
+class: left, middle
+# C++
+
+<img style="width:80%" src="/gallery/bjarne.jpg">
+
+--
+* Bjarne Stroustrup created C++.
+* C++ first appeared in 1985 (33 years ago).
+
 ---
 class: left, top
-### Variables
+### Variables in C++
 
-### Primitive Data Types (PDT) in C++
+#### Primitive Data Types (PDT) in C++
 
 * `bool`: boolean variable holds logical value (i.e `true` or `false`), it occupies **1 byte** of memory.
 
@@ -176,13 +206,37 @@ Any Questions
 
 ---
 class: left, top
-# Data Structures: Collections of Variables (Data Structures)
+# Collections of Variables (Data Structures)
 
-<!-- 
-Show an array of floats representing an ECG signal. 
-Show a linked-list of tasks.
-Show a tree of life.
--->
+### Data Structures in Biomedical
+
+<img style="width:60%;" src="/gallery/ecg-paper.png">
+
+--
+* Next year: Digital Signal Processing (DSP).
+* Application: analysis of ECG of the heart.
+* Diagnosis of Arrhythmia.
+
+
+---
+class: center, middle
+### Data Structures in Biomedical (cont'd)
+
+<img style="width:60%;" src="/gallery/ecg-sampled.png">
+
+--
+$ \text{Sampled Signal} = \[ 12.3, 12.7 , 14.5 , 18.0 , 16.2 , 10.1 , 8.6 , ... \] $
+
+--
+* It is pointless to construct a variable for each sample!
+```c++
+double s1 = 12.3;
+double s2 = 12.7;
+.
+.
+double s256 = -0.5;
+```
+
 
 ---
 # Collections: construction of Collections (What?!)
@@ -352,7 +406,7 @@ class: left, top
 # Cont'd
 
 ```c++
-char mark = 73;
+int mark = 73;
 char grade = 'D';
 
 if( mark > 85 )
@@ -378,8 +432,8 @@ class: left, top
 # Cont'd
 
 ```c++
-int minimumGrade = 0;
 char grade = 'C'
+int minimumGrade = 0;
 
 switch (grade)
 {
@@ -400,10 +454,15 @@ switch (grade)
   
   default:
   {
-    minimumGrade = 85;
+    minimumGrade = 0;
   } break;
 }
 ```
+
+
+???
+You can replace this with if statements. Use whatever easier for you.
+
 
 ---
 class: left, top
@@ -629,7 +688,7 @@ int main()
 }
 ```
 
-Synonyms: Skeleton, Scaffold, سطمبة.
+Synonyms: Skeleton, Scaffold.
 
 ???
 In exams and assignments, you are provided the skeleton.
@@ -778,10 +837,10 @@ class: left, middle
 # Cont'd
 
 --
-2. *Ahmed* has to implement the rectangle area function $$A = w h $$.
+2. *Ahmed* has to implement the rectangle area function $$A = w h $$
 
 --
-3. *Asem* has to implement the triangle area function $$ A = \frac{bh}{2}$$.
+3. *Asem* has to implement the triangle area function $$ A = \frac{bh}{2}$$
 
 
 --
