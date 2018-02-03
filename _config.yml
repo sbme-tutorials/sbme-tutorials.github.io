@@ -35,7 +35,10 @@ theme: minima
 
 plugins:
   - jekyll-feed
+  - jemoji
+  # sudo apt-get install build-essential patch ruby-dev zlib1g-dev
   # - jekyll-pdf
+
 
 # scholar:
 #   style: mla
