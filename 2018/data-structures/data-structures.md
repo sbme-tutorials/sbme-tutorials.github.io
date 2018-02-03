@@ -57,6 +57,15 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 <!-- * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/test/index.html %}){:target="_blank"}
     * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/assignments/week1a.md %}){:target="_blank"} 
     -->
+<!-- 
+https://sbme-tutorials.github.io/2018/data-structures/presentations/1_week1
+
+https://sbme-tutorials.github.io/2018/data-structures/notes/1_week1a
+https://sbme-tutorials.github.io/2018/data-structures/notes/1_week1b
+
+ -->
+
+
 
 ## Frequently Asked Questions
 
