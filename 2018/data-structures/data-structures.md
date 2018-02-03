@@ -63,6 +63,11 @@ https://sbme-tutorials.github.io/2018/data-structures/presentations/1_week1
 https://sbme-tutorials.github.io/2018/data-structures/notes/1_week1a
 https://sbme-tutorials.github.io/2018/data-structures/notes/1_week1b
 
+
+https://sbme-tutorials.github.io/2018/data-structures/assignments/1_week1a
+https://sbme-tutorials.github.io/2018/data-structures/assignments/1_week1b
+
+
  -->
 
 
