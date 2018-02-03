@@ -30,14 +30,20 @@ class: left, middle
 --
 * e-mail: `asem.a.abdelaziz@gmail.com`
 
+???
+* My research interests.
+* How can I help you in this semester and after.
+
+
 ---
 class: left, top
 # Introduction
 
 --
-## A Program and Memory Model
+## A Simple Calculator Program and Memory Model
 
---
+---
+class: left, top
 ### Variables
 
 ### Primitive Data Types (PDT) in C++
@@ -55,6 +61,21 @@ class: left, top
 
 --
 * `double`: it is like float, but higher precision, occupies **8 bytes** of memory.
+
+
+--
+#### Double vs float
+
+* $ \pi $ equals: `3.14159265358979323846264338327950288419716939937510582097494459230781640628620899`
+
+--
+* $ \pi $ in `float `  variable: `3.1415927`.
+
+--
+* $ \pi $ in `double` variable: `3.1415926535897931`. 
+
+???
+* We will talk about pointers and reference next week.
 
 ---
 class: left, top
@@ -149,6 +170,9 @@ double e {2.71828};
 --
 One way to avoid bugs (undefined behaviour) is initializing your variables.
 
+???
+
+Any Questions 
 
 ---
 class: left, top
@@ -581,10 +605,34 @@ code
 class: left, top
 # Boilerplate codes
 
-Boilerplate is an interesting term used to refer to the code you write that doesn't contribute to your application logic. If you are interested in *Etymology*, you can read more on the origin of boilerplate in [wikipedia](https://en.wikipedia.org/wiki/Boilerplate_code).
-In C++, you usually need to link against libraries, in particular the **STL**. In prior to use functions of other libraries or other source files in your project, you have to include the header files that contains the functions declarations to guide your compiler when you are using these functions. 
+--
+We mean by boilerplate any code or actions that you need to write before writing your ideas (logic). 
 
-We may consider the syntax of including header files as *boilerplate* since it doesn't represent your project ideas (logic). 
+--
+#### Examples
+
+* creating the project folder (directory).
+
+--
+* creating new file that will contain your source code.
+
+--
+* basic `#include`s and basic declaration (like `main()` function).
+
+--
+
+```c++
+#include <iostream>
+
+int main()
+{
+}
+```
+
+Synonyms: Skeleton, Scaffold, سطمبة.
+
+???
+In exams and assignments, you are provided the skeleton.
 
 ---
 class: left, top
