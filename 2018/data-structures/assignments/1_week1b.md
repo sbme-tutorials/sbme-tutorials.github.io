@@ -29,6 +29,6 @@ pdf: true
 
 ## Deadline
 
-**Saturday 10/2/2018 11:59 PM**.
+**Sunday 11/2/2018 11:59 PM**.
 
-## 1. 
+## 1. Soon!
