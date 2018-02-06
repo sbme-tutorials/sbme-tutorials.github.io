@@ -144,6 +144,15 @@ class: left, top
 $ cp -r (directory) (target path)
 ```
 
+---
+class: left, top
+## Create a new directory (folder)
+
+
+```terminal
+$ mkdir (new folder name)
+```
+
 
 ---
 class: left, top
@@ -177,6 +186,21 @@ $ sudo rm -rf /
 <img style="width:80%" src="/gallery/bomb.jpg">
 
 
+
+---
+class: left, top
+## Updating & Upgrading your Linux
+
+Upgrades are very important. Many hardware drivers issues are being fixed through these updates. Also, security-wise,
+updates guarantees your system to be safe against hackable vulnerabilities. For example, *Spectre* and *Meltdown* vulnerabilities that exposed all
+ Operating Systems (including Widnows and Linux), for more [info](https://www.pcworld.com/article/3245606/security/intel-x86-cpu-kernel-bug-faq-how-it-affects-pc-mac.html).
+
+```terminal
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+
 ---
 class: left, top
 ## Installing packages from the apt store
@@ -207,6 +231,72 @@ class: left, top
 | Web IDEs | VSCode, Jet-brains WebStorm | 
 
 
+---
+class: left, top
+## Practice: same logic with different constructs
+
+```c++
+
+double calculation( double a , double b , char operation )
+{
+  if( operation == '+' )
+  {
+    return a + b;
+  }
+  else if( operation == '-' )
+  {
+    return a - b;
+  }
+  else if( operation == '*' )
+  {
+    return a * b;
+  }
+  else if( operation == '/' )
+  {
+    return a / b;
+  }
+  else
+  {
+    return 0;
+  }
+}
+```
+
+---
+class: left, top
+
+```c++
+double calculation( double a , double b , char operation )
+{
+  switch( operation )
+  {
+    case '+' :
+    {
+      return a + b;
+    } break;
+
+    case '-':
+    {
+      return a - b;
+    } break;
+
+    case '*':
+    {
+      return a * b;
+    } break;
+
+    case '/':
+    {
+      return a / b;
+    } break;
+
+    default:
+    {
+      return 0;
+    }
+  }
+}
+```
 
 
 
