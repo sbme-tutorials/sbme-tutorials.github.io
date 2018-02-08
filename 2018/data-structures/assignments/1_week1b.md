@@ -29,6 +29,13 @@ pdf: true
 
 ## Deadline
 
-**Sunday 11/2/2018 11:59 PM**.
+**Tuesday 14/2/2018 11:59 PM**.
 
-## 1. Soon!
+## Writing Your First C++ Basics
+
+* First, register yourself for the assignment from this [link](https://classroom.github.com/a/A6ntQkKJ).
+* You should find this dialoge, **click on the highlighted link:** ![dialog](/gallery/assignments/ds/step1.png).
+* As you did in the first part, clone the remote repository to your local machine.
+* Jump to the assignment folder and open the `main.cpp` file.
+* You will find the questions as in-line comments. Questions `P1` and `P3` are solved for you to be get more familir.
+* If you feel uncomfortable with any question, do not panic, you can ask for explanation at office hours before deadline.
