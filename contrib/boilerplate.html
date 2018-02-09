@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Ubuntu installation alongside windows in legacy mode</title>
+  <title>&lt;Your title&gt;</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">
+  <link rel="canonical" href="http://localhost:4000/contrib/boilerplate.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -47,8 +47,6 @@
       
     
       
-        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
-      
     
       
     
@@ -81,22 +79,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
             
           
             
@@ -109,12 +107,12 @@
           
             
             
-            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
             
           
             
             
-            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -147,52 +145,14 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <h2>Ubuntu installation alongside windows in legacy mode</h2>
-<em>By Amr Abdelsalam</em>
+        <h2><Your title></h2>
+<em>By <Your name></em>
 
 <br><br>
 
 <div class="home">
-    <ul id="markdown-toc">
-  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
-  <li><a href="#steps" id="markdown-toc-steps">Steps</a></li>
-</ul>
-
-<h2 id="motivation">Motivation</h2>
-
-<p>To share experience in installing ubuntu alongside Windows 10, and the corresponding issues of Windows being installed in legacy mode.</p>
-
-<h2 id="steps">Steps</h2>
-
-<p>First, have a look at this <a href="https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/">tutorial</a>.</p>
-
-<p>Here are some extra remarks you should take care of it.</p>
-
-<ul>
-  <li>To know the boot mode restart your lab and enter bios settings (press the right <code class="highlighter-rouge">Fn</code> key probably <code class="highlighter-rouge">F2</code> before the windows logo appear) then go to boot settings and check the boot mode type. See the image: <img src="../gallery/amr-screenshot1.jpg" alt="boot" />.
-    <ul>
-      <li>Alternatively, use this <a href="https://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html">link</a></li>
-    </ul>
-  </li>
-  <li>If you have an UEFI boot mode take care of this part in the tutorial “In case your hardware uses UEFI then you should modify the EFI settings and disable Secure Boot feature.”</li>
-  <li>Make the shrink part from hard 30 Giga not 20 as the tutorial.</li>
-  <li>To burn the iso image on the flash memory use <a href="https://rufus.akeo.ie/">Rufus</a>.
-    <ul>
-      <li><strong>If your boot mode in windows is UEFI then use the UEFI mode in Rufus options</strong>. Otherwise, use the Legacy(bios)/UEFI mode.</li>
-    </ul>
-  </li>
-  <li><strong>Most important note</strong>*: the boot mode in windows must match the flash memory boot mode, as Ubuntu will be set up in this mode too.</li>
-  <li>Place the USB stick or DVD in the appropriate drive, reboot the machine and instruct the BIOS/UEFI to boot-up from the DVD/USB by pressing a special function key (usually <code class="highlighter-rouge">F12</code>, <code class="highlighter-rouge">F10</code> or <code class="highlighter-rouge">F2</code> depending on the vendor specifications).</li>
-  <li>Therefore, after restarting the lab and during after pressing the right <code class="highlighter-rouge">Fn</code> key the boot manger menu will appear so, if you have UEFI in windows use the USB option that has UEFI/EFI word. If you have Legacy (bios) mode in the windows so choose the USB option without UEFI/EFI word.
-    <ul>
-      <li>The boot manger menu will might look like this: <img src="../gallery/amr-screenshot2.jpg" alt="bootmenu" /></li>
-    </ul>
-  </li>
-  <li><strong>Critical</strong>: After the sixth step of the set-up, if you have this error message go back and quit the set up and check the USB boot mode. <img src="../gallery/amr-screenshot3.jpg" alt="ubuntu-warning" /></li>
-  <li>At the eighth step it’s preferable to make a swap part &lt;= 5 Giga and home partition is not a must.</li>
-  <li><strong>Important Info</strong>: If you are on Legacy mode the allowed number of partitions for both OSs are 4 so make sure that you have only 2 partitions in windows so that you will be able to make the root and swap partitions in Ubuntu.</li>
-  <li>If you have 3 or 4 partitions in windows you can merge them safely without losing data using this <a href="https://www.partitionwizard.com/mergepartitions/merge-partitions-without-losing-data.html">program</a> (the steps are included).</li>
-</ul>
+    
+<!-- Content goes here in Markdown -->
 
 </div>
       </div>
