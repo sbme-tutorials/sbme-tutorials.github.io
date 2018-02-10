@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/data-structures/notes/2_week2a.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/2_week2a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -161,7 +161,30 @@
   </header>
 
   <div class="post-content">
-    <h2 id="introduction">Introduction</h2>
+    <ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#memory-layout" id="markdown-toc-memory-layout">Memory Layout</a>    <ul>
+      <li><a href="#flexible-vs-opinionated-memory-management-in-programming-languages" id="markdown-toc-flexible-vs-opinionated-memory-management-in-programming-languages">Flexible vs Opinionated Memory Management in Programming Languages</a></li>
+    </ul>
+  </li>
+  <li><a href="#variables-on-stack-memory" id="markdown-toc-variables-on-stack-memory">Variables on Stack Memory</a></li>
+  <li><a href="#address-of-a-variable-in-the-memory" id="markdown-toc-address-of-a-variable-in-the-memory">Address of a Variable in the Memory</a></li>
+  <li><a href="#address-of-a-variable-in-c" id="markdown-toc-address-of-a-variable-in-c">Address of a variable in C++</a></li>
+  <li><a href="#why-using-address" id="markdown-toc-why-using-address">Why using Address</a>    <ul>
+      <li><a href="#flexibility" id="markdown-toc-flexibility">Flexibility</a></li>
+      <li><a href="#passing-arguments-by-pointer" id="markdown-toc-passing-arguments-by-pointer">Passing arguments by pointer</a></li>
+    </ul>
+  </li>
+  <li><a href="#stack-memory-vs-heap-memory" id="markdown-toc-stack-memory-vs-heap-memory">Stack Memory vs. Heap Memory</a></li>
+  <li><a href="#variables-on-heap-memory" id="markdown-toc-variables-on-heap-memory">Variables on Heap Memory</a></li>
+  <li><a href="#memory-management" id="markdown-toc-memory-management">Memory Management</a>    <ul>
+      <li><a href="#important-rule-for-memory-management" id="markdown-toc-important-rule-for-memory-management">Important Rule for memory management</a></li>
+    </ul>
+  </li>
+  <li><a href="#reference-types" id="markdown-toc-reference-types">Reference types</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
 
 <h2 id="memory-layout">Memory Layout</h2>
 
@@ -201,6 +224,10 @@
     </tr>
   </tbody>
 </table>
+
+<p>This image may convey the comparison between flexible languages and opinionated languages.</p>
+
+<p><img src="/gallery/cpp-swissknife.jpg" alt="" /></p>
 
 <h2 id="variables-on-stack-memory">Variables on Stack Memory</h2>
 
@@ -293,11 +320,11 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 
 <h3 id="passing-arguments-by-pointer">Passing arguments by pointer</h3>
 
-<p>You can pass a pointer to variable to a function, to modify that variable.</p>
+<p>You can pass a <strong>pointer to variable</strong> as argument to a function.</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">,</span> <span class="kt">double</span> <span class="o">*</span><span class="n">presults</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// Dereference the presults to access the variable results.</span>
+    <span class="c1">// Dereference the presults to access the underlying variable.</span>
     <span class="o">*</span><span class="n">presults</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -305,18 +332,26 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">results</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">results</span> <span class="p">));</span>
+    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">results</span> <span class="p">));</span> <span class="c1">// Now results has new value.</span>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">results</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">results</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Prints: 18</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>This is acceptable in C language. But in C++, we avoid this style of modifying function parameters and always prefer to return the results.</p>
+<p>By the way, this is acceptable in C language. But in C++, we avoid this style of modifying variables, and always prefer to return the results.</p>
+
+<p>This is better and simpler.</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
 <span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">results</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">);</span>
+<span class="p">}</span>
+
 </code></pre></div></div>
 
 <h2 id="stack-memory-vs-heap-memory">Stack Memory vs. Heap Memory</h2>
@@ -355,6 +390,10 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 <span class="kt">int</span> <span class="o">*</span><span class="n">pz</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
 </code></pre></div></div>
 
+<p>Physically, they would look like this:</p>
+
+<p><img src="/gallery/heapaddress.png" alt="" /></p>
+
 <h2 id="memory-management">Memory Management</h2>
 
 <p>Variables created on heap using <code class="highlighter-rouge">new</code> operator, should be deleted manually after you no longer need that variable. Otherwise, if you didn’t manually delete variables on heap, you will allocate a lot of space that will become unusable.</p>
@@ -376,6 +415,77 @@ Consider x, y, and z are three integers that created (created = allocated = decl
   <li>When you finish coding, make sure to balance heap allocations &amp; deallocations.</li>
   <li>#<code class="highlighter-rouge">new</code> = #<code class="highlighter-rouge">delete</code>.</li>
 </ul>
+
+<h2 id="reference-types">Reference types</h2>
+
+<p>References are very important type in C++, and using it in the right way makes your program very efficient. References are made to be alternative for pointers to enhance the readability of your code.</p>
+
+<p>When you make a reference to a variable, you actually making an alias to that variable. In other words, you are making another name for the same variable.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// Declaration of integer x and initializing with zero.</span>
+<span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// Declaration of reference y and to be reference for x.</span>
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+
+<span class="c1">// Now x and y, are the same variable, but with different name.</span>
+
+<span class="c1">// Chaning y value, will also affect x, and vice versa.</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// prints: 10</span>
+</code></pre></div></div>
+
+<p>Recall the example of passing pointer as argument:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">,</span> <span class="kt">double</span> <span class="o">*</span><span class="n">presults</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Dereference the presults to access the variable results.</span>
+    <span class="o">*</span><span class="n">presults</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">results</span> <span class="p">));</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">results</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This can be written in more elegant way using references:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">results</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// No need for dereference as we did in pointers, like it is a real variable!</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="c1">// No need to pass the address explicitly.</span>
+    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">results</span> <span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">results</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>But again, it is very preferred to use the simplest form as possible</strong>!</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
   </div>
 
