@@ -7,6 +7,9 @@ title:  "Week 2 - Part1: Memory, pointers, and references"
 by: "Asem"
 ---
 
+* TOC
+{:toc}
+
 ## Introduction
 
 ## Memory Layout
@@ -27,6 +30,10 @@ Languages like C and C++ we consider them offering flexible memory management. O
 | Overhead to learn | Easier to learn |
 | More complexity | Simplicity (no need to worry about memory management) |
 | Memory leakage if abused | No memory leakage |
+
+This image may convey the comparison between flexible languages and opinionated languages.
+
+![](/gallery/cpp-swissknife.jpg)
 
 ## Variables on Stack Memory
 
@@ -117,12 +124,12 @@ std::cout << "x" << std::endl; // prints 13
 
 ### Passing arguments by pointer
 
-You can pass a pointer to variable to a function, to modify that variable.
+You can pass a **pointer to variable** as argument to a function.
 
 ```c++
 void sum( double a , double b , double *presults )
 {
-    // Dereference the presults to access the variable results.
+    // Dereference the presults to access the underlying variable.
     *presults = a + b;
 }
 
@@ -130,21 +137,28 @@ int main()
 {
     int results = 0;
 
-    sum( 13 , 5 , std::addressof( results ));
+    sum( 13 , 5 , std::addressof( results )); // Now results has new value.
 
-    std::cout << results << std::endl;
+    std::cout << results << std::endl; // Prints: 18
 }
 ```
 
-This is acceptable in C language. But in C++, we avoid this style of modifying function parameters and always prefer to return the results.
+By the way, this is acceptable in C language. But in C++, we avoid this style of modifying variables, and always prefer to return the results.
+
+This is better and simpler.
 
 ```c++
 double sum( double a , double b )
 {
     return a + b;
 }
-```
 
+int main()
+{
+    int results = sum( 13 , 5 );
+}
+
+```
 
 ## Stack Memory vs. Heap Memory
 
@@ -152,7 +166,6 @@ double sum( double a , double b )
 |--------------|-------------|
 | Limited capacity | Large capacity for scalable structures |
 | Automatic memory management | Manual memory management |
-
 
 ## Variables on Heap Memory
 
@@ -169,6 +182,10 @@ int *py = new int(4);
 
 int *pz = new int(8);
 ```
+
+Physically, they would look like this: 
+
+![](/gallery/heapaddress.png)
 
 ## Memory Management
 
@@ -188,5 +205,80 @@ delete pz;
 
 ### Important Rule for memory management
 
-- When you finish coding, make sure to balance heap allocations & deallocations.
-- #`new` = #`delete`.
+* When you finish coding, make sure to balance heap allocations & deallocations.
+* #`new` = #`delete`.
+
+## Reference types
+
+References are very important type in C++, and using it in the right way makes your program very efficient. References are made to be alternative for pointers to enhance the readability of your code.
+
+When you make a reference to a variable, you actually making an alias to that variable. In other words, you are making another name for the same variable.
+
+```c++
+
+// Declaration of integer x and initializing with zero.
+int x = 0;
+
+// Declaration of reference y and to be reference for x.
+int &y = x;
+
+// Now x and y, are the same variable, but with different name.
+
+// Chaning y value, will also affect x, and vice versa.
+y = 10;
+
+std::cout << x << std::endl; // prints: 10
+```
+
+Recall the example of passing pointer as argument:
+
+```c++
+void sum( double a , double b , double *presults )
+{
+    // Dereference the presults to access the variable results.
+    *presults = a + b;
+}
+
+int main()
+{
+    double results = 0;
+
+    sum( 13 , 5 , std::addressof( results ));
+
+    std::cout << results << std::endl;
+}
+```
+
+This can be written in more elegant way using references:
+
+```c++
+void sum( double a , double b , double &results )
+{
+    // No need for dereference as we did in pointers, like it is a real variable!
+    results = a + b;
+}
+
+int main()
+{
+    double results = 0;
+
+    // No need to pass the address explicitly.
+    sum( 13 , 5 , results );
+
+    std::cout << results << std::endl;
+}
+```
+
+**But again, it is very preferred to use the simplest form as possible**!
+
+```c++
+double sum( double a , double b )
+{
+    return a + b;
+}
+
+int main()
+{
+    double results = sum( 13 , 5 );
+}
+```
