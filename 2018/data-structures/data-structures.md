@@ -56,6 +56,9 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
     * Assignment: \[[Part 1: Git]({{ site.baseurl }}{% link 2018/data-structures/assignments/1_week1a.md %}){:target="_blank"}\] \[[Part 2: C++]({{ site.baseurl }}{% link 2018/data-structures/assignments/1_week1b.md %}){:target="_blank"}\] 
     * [Special Gift from Github + Linux Basic Commands + Excercise]({{ site.baseurl }}{% link 2018/data-structures/presentations/1_week1_recap/index.html %})
+2. Week 2:
+    * Section Notes: \[[Part 1: Memory, pointers, and references]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}){:target="_blank"}\].
+
 
 <!-- 
 https://sbme-tutorials.github.io/2018/data-structures/presentations/1_week1
