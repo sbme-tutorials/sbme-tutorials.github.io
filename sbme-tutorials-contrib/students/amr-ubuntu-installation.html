@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ubuntu installation alongside windows in legacy mode</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <h2>Ubuntu installation alongside windows in legacy mode</h2>
+<em>By Amr Abdelsalam</em>
+
+<br><br>
+
+<div class="home">
+    <ul id="markdown-toc">
+  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+  <li><a href="#steps" id="markdown-toc-steps">Steps</a></li>
+</ul>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>To share experience in installing ubuntu alongside Windows 10, and the corresponding issues of Windows being installed in legacy mode.</p>
+
+<h2 id="steps">Steps</h2>
+
+<p>First, have a look at this <a href="https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/">tutorial</a>.</p>
+
+<p>Here are some extra remarks you should take care of it.</p>
+
+<ul>
+  <li>To know the boot mode restart your lab and enter bios settings (press the right <code class="highlighter-rouge">Fn</code> key probably <code class="highlighter-rouge">F2</code> before the windows logo appear) then go to boot settings and check the boot mode type. See the image: <img src="../gallery/amr-screenshot1.jpg" alt="boot" />.
+    <ul>
+      <li>Alternatively, use this <a href="https://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html">link</a></li>
+    </ul>
+  </li>
+  <li>If you have an UEFI boot mode take care of this part in the tutorial “In case your hardware uses UEFI then you should modify the EFI settings and disable Secure Boot feature.”</li>
+  <li>Make the shrink part from hard 30 Giga not 20 as the tutorial.</li>
+  <li>To burn the iso image on the flash memory use <a href="https://rufus.akeo.ie/">Rufus</a>.
+    <ul>
+      <li><strong>If your boot mode in windows is UEFI then use the UEFI mode in Rufus options</strong>. Otherwise, use the Legacy(bios)/UEFI mode.</li>
+    </ul>
+  </li>
+  <li><strong>Most important note</strong>*: the boot mode in windows must match the flash memory boot mode, as Ubuntu will be set up in this mode too.</li>
+  <li>Place the USB stick or DVD in the appropriate drive, reboot the machine and instruct the BIOS/UEFI to boot-up from the DVD/USB by pressing a special function key (usually <code class="highlighter-rouge">F12</code>, <code class="highlighter-rouge">F10</code> or <code class="highlighter-rouge">F2</code> depending on the vendor specifications).</li>
+  <li>Therefore, after restarting the lab and during after pressing the right <code class="highlighter-rouge">Fn</code> key the boot manger menu will appear so, if you have UEFI in windows use the USB option that has UEFI/EFI word. If you have Legacy (bios) mode in the windows so choose the USB option without UEFI/EFI word.
+    <ul>
+      <li>The boot manger menu will might look like this: <img src="../gallery/amr-screenshot2.jpg" alt="bootmenu" /></li>
+    </ul>
+  </li>
+  <li><strong>Critical</strong>: After the sixth step of the set-up, if you have this error message go back and quit the set up and check the USB boot mode. <img src="../gallery/amr-screenshot3.jpg" alt="ubuntu-warning" /></li>
+  <li>At the eighth step it’s preferable to make a swap part &lt;= 5 Giga and home partition is not a must.</li>
+  <li><strong>Important Info</strong>: If you are on Legacy mode the allowed number of partitions for both OSs are 4 so make sure that you have only 2 partitions in windows so that you will be able to make the root and swap partitions in Ubuntu.</li>
+  <li>If you have 3 or 4 partitions in windows you can merge them safely without losing data using this <a href="https://www.partitionwizard.com/mergepartitions/merge-partitions-without-losing-data.html">program</a> (the steps are included).</li>
+</ul>
+
+</div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
