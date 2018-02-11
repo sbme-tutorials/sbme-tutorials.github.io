@@ -28,7 +28,7 @@ Demonstrator:  Eng. Asem Alaa
 | Day | Time |
 |-----|-----------|
 | Sunday | from **10am** to **12pm** |
-| Monday | from **2pm** to **4pm** |
+| Monday | from **4pm** to **6pm** |
 
 Exception: first two weeks you are very welcome to visit any day from **4pm** to **6pm** (exclude Monday).
 

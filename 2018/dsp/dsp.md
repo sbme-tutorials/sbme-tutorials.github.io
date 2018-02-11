@@ -34,10 +34,18 @@ Demonstrator:  Eng. Asem Alaa & Eng. Eman Ibraheem
 | Sunday | from **4pm** to **6pm** |
 | Monday | from **4pm** to **6pm** |
 
-## Grading
 
 ## Course Outline
 
+| Week | DSP | Software Skills |
+|------|----------------------|-----------|
+| 1 | Introduction to Biological Signals; Signal Visualization | Briefly: Python basics; plotly for data visualization; Anaconda |
+
 ## Tutorials
+
+1. Week 1:
+    * [Slides]({{ site.baseurl }}{% link 2018/dsp/presentations/1_week1/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/dsp/notes/1_week1.md %}){:target="_blank"}.
+
 
 ## Announcements
