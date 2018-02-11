@@ -25,14 +25,14 @@ Demonstrator:  Eng. Asem Alaa & Eng. Eman Ibraheem
 | Section | Day | Time Slot |
 |---------|-----|-----------|
 |   1     | Monday | 3rd |
-|   2     | Monday | 5th |
+|   2     | Monday | 4th |
 
 ## Office Hours
 
 | Day | Time |
 |-----|-----------|
 | Sunday | from **4pm** to **6pm** |
-| Monday | from **2pm** to **4pm** |
+| Monday | from **4pm** to **6pm** |
 
 ## Grading
 
