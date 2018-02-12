@@ -13,7 +13,7 @@ A.K.A. (تشغيل الإشارات الحيوية)
 
 ## Teaching Staff
 
-Instructor: Assistant. Prof. Tamer Yousef  
+Instructor: Dr. Tamer Yousef  
 Demonstrator:  Eng. Asem Alaa & Eng. Eman Ibraheem  
 
 ## Lecture Hours

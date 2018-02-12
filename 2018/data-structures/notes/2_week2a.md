@@ -135,7 +135,7 @@ void sum( double a , double b , double *presults )
 
 int main()
 {
-    int results = 0;
+    double results = 0;
 
     sum( 13 , 5 , std::addressof( results )); // Now results has new value.
 
@@ -155,7 +155,7 @@ double sum( double a , double b )
 
 int main()
 {
-    int results = sum( 13 , 5 );
+    double results = sum( 13 , 5 );
 }
 
 ```
