@@ -23,13 +23,13 @@ Styling your code during development makes it easier to detect basic errors, lik
 
 When you work with a team, you have to make your code representing your logic very clearly. This will also guarantees a healthier friendships (if your team members are also your friends).
 
-![](/gallery/code_quality_3.png)
+![](/gallery/code_quality.png)
 
 ### Maintainability
 
 With a good code quality, you can always return back to your code after a long time to make some edits and new features.
 
-![](/gallery/code_quality.png)
+![](/gallery/code_quality_3.png)
 
 ## Formatting Your Code on Visual Studio Code
 
@@ -41,4 +41,4 @@ With a good code quality, you can always return back to your code after a long t
 
 ### Use Shortcuts During Coding
 
-After finishing several lines of code let the Visual Studio Code auto-style your code using `Ctrl+Shift+I`.
+After finishing several lines of code let the Visual Studio Code auto-style your code using `Ctrl+Shift+I`. You can also do it for the entire source code.
