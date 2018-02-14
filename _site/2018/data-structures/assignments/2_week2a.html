@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Assignment 1 - part 2: Revision on C++</title>
+  <title>Assignment 2: C++ Basic Operations on Memory</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/1_week1b.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/2_week2a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -178,58 +178,109 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Assignment 1 - part 2: Revision on C++</h1>
+    <h1 class="post-title">Assignment 2: C++ Basic Operations on Memory</h1>
   </header>
 
   <div class="post-content">
     <h2 id="objectives">Objectives</h2>
 
 <ul>
-  <li>Creating variables.</li>
-  <li>Using arithmetic operations on variables.</li>
-  <li>Using control statements: If, else if, else, while, for, switch-case.</li>
-  <li>Simple functions</li>
-  <li>Make custom namespace</li>
+  <li>Creating variables on stack and heap.</li>
+  <li>Using arithmetic operations on variables using their addresses in memory.</li>
+  <li>Memory management.</li>
+  <li>Pass-by-value (copy) vs. pass-by-reference vs. pass-by-pointer (address)</li>
+  <li>Make simple functions and using it several times.</li>
 </ul>
 
 <h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
 
+<h4 id="1-required-read-the-notes-of-the-first-week-memory-pointers-and-references">1. <strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/2_week2a.html" target="_blank">Memory, pointers, and references</a>]</h4>
+
+<h4 id="2-required-to-know-functions-can-be-declared-multiple-times-and-defined-only-once">2. <strong>Required to Know</strong>: Functions Can Be Declared Multiple Times and Defined Only Once</h4>
+
+<p>Example,</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">// Declaration (Header)</span>
+<span class="p">{</span> <span class="c1">// Definition</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="mi">12</span> <span class="p">,</span> <span class="mi">17</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Can also be written as,</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Function declaration (header) without definition</span>
+<span class="c1">// We call function declaration without a header as function prototype.</span>
+<span class="kt">double</span> <span class="n">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">);</span>
+<span class="c1">// Function prototypes allow us to define the function somewhere else.</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="mi">12</span> <span class="p">,</span> <span class="mi">17</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Another declaration, but now with a definition this time.</span>
+<span class="kt">double</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> 
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="3-recommended-to-watch-animated-explanation-between-pass-by-value-copy-and-pass-by-reference">3. <strong>Recommended to Watch</strong> animated explanation between pass-by-value (copy) and pass-by-reference</h4>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/ErMKBh1pobg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p>The video is a good example with explanation, but <strong>some bad practices in the video</strong> you need to pay attention for:</p>
+
 <ul>
-  <li><strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/1_week1a.html" target="_blank">Part 1: C++ Basics</a>] .</li>
+  <li><code class="highlighter-rouge">using namespace std</code>, is a <strong>bad practice</strong>.</li>
+  <li><code class="highlighter-rouge">int input;</code> without initialization is a <strong>bad practice</strong>.</li>
 </ul>
+
+<p>Otherwise, everything is good.</p>
+
+<p>Another good video in <em>Arabic</em>,</p>
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/dqlCK_-ArO0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p><strong>But be carefull</strong>, she said cplusplus.com is a good website for <strong>beginners</strong>, which is not true.</p>
 
 <h2 id="grading">Grading</h2>
 
 <ul>
-  <li>This part constitutes 40% of the week grades.</li>
   <li>Grading per line.</li>
   <li>+20% bonus.</li>
 </ul>
 
 <h2 id="deadline">Deadline</h2>
 
-<p><strong>Tuesday 14/2/2018 11:59 PM</strong>.</p>
+<p><strong>Monday 19/2/2018 11:59 PM</strong>.</p>
 
-<h2 id="writing-your-first-c-basics">Writing Your First C++ Basics</h2>
+<h2 id="basic-c-memory-operations">Basic C++ Memory Operations</h2>
 
 <ul>
-  <li>First, register yourself for the assignment from this <a href="https://classroom.github.com/a/A6ntQkKJ">link</a>.</li>
+  <li>First, register yourself for the assignment from this <a href="https://classroom.github.com/a/qZUcR20l">link</a>.</li>
 </ul>
 
-<p><img src="a1.png" alt="" /></p>
+<p><img src="b1.png" alt="" /></p>
 
 <p>then,</p>
 
-<p><img src="a2.png" alt="" /></p>
+<p><img src="b2.png" alt="" /></p>
 
 <p>then,</p>
 
-<p><img src="a3.png" alt="" /></p>
+<p><img src="b3.png" alt="" /></p>
 
 <ul>
   <li>As you did in the first part, clone the remote repository to your local machine.</li>
   <li>Jump to the assignment folder and open the <code class="highlighter-rouge">main.cpp</code> file.</li>
-  <li>You will find the questions as in-line comments. Questions <code class="highlighter-rouge">P1</code> and <code class="highlighter-rouge">P3</code> are solved for you to be more familir.</li>
+  <li>You will find the questions as in-line comments. If you understand the memory model explained in the notes of [<a href="/2018/data-structures/notes/2_week2a.html" target="_blank">Memory, pointers, and references</a>], you should attept the questions seamlessly.</li>
   <li>If you feel uncomfortable with any question, do not panic, you can ask for explanation at office hours before deadline.</li>
 </ul>
 
