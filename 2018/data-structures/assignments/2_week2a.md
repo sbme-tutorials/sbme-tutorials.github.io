@@ -134,7 +134,7 @@ $ ./app
 * As you did in first part, after solving problems, save the file, then commit and push.
 
 ```terminal
-$ git commit -a -m "solved all problems, where is my github sticker?!!"
+$ git commit -a -m "solved all problems of c++ memory operations, now I do understand how to make italian spagetti"
 $ git push origin master
 ```
 
