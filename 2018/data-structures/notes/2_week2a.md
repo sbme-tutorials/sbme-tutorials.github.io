@@ -79,7 +79,6 @@ Their physical presence in memory looks like this:
 
 But how to get the address of a variable?
 
-- By using `std::addressof` function.
 - By using `&` (ambersand operator).
 
 We store the address of a variable in a special type called **pointer**.
@@ -94,13 +93,13 @@ int y = 1;
 int z = 5;
 
 // Declare `pointer to integer` px and initialize with address of x.
-int *px = std::addressof( x ); // C++ style
+int *px = &x; 
 
 // Declare `pointer to integer` py and initialize with address of y.
-int *py = &y; // C style
+int *py = &y; 
 
 // Declare `pointer to integer` pz and initialize with address of z.
-int *pz = std::addressof( z );
+int *pz = &z;
 ```
 
 ## Why using Address
@@ -114,7 +113,7 @@ int x = 9;
 
 std::cout << "x" << std::endl; // prints: 9
 
-int *px = std::addressof( x );
+int *px = &x;
 
 // Derefrencing px to access x.
 *px = 13;
@@ -137,7 +136,7 @@ int main()
 {
     double results = 0;
 
-    sum( 13 , 5 , std::addressof( results )); // Now results has new value.
+    sum( 13 , 5 , &results ); // Now results has new value.
 
     std::cout << results << std::endl; // Prints: 18
 }
@@ -243,7 +242,7 @@ int main()
 {
     double results = 0;
 
-    sum( 13 , 5 , std::addressof( results ));
+    sum( 13 , 5 , &results );
 
     std::cout << results << std::endl;
 }
