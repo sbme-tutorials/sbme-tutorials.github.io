@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/data-structures/notes/2_week2a.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/2_week2a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -295,7 +295,6 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 <p>But how to get the address of a variable?</p>
 
 <ul>
-  <li>By using <code class="highlighter-rouge">std::addressof</code> function.</li>
   <li>By using <code class="highlighter-rouge">&amp;</code> (ambersand operator).</li>
 </ul>
 
@@ -312,13 +311,13 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 <span class="kt">int</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 
 <span class="c1">// Declare `pointer to integer` px and initialize with address of x.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">x</span> <span class="p">);</span> <span class="c1">// C++ style</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> 
 
 <span class="c1">// Declare `pointer to integer` py and initialize with address of y.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">py</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// C style</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">py</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">;</span> 
 
 <span class="c1">// Declare `pointer to integer` pz and initialize with address of z.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">pz</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">z</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">pz</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">z</span><span class="p">;</span>
 </code></pre></div></div>
 
 <h2 id="why-using-address">Why using Address</h2>
@@ -331,7 +330,7 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"x"</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// prints: 9</span>
 
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">x</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
 
 <span class="c1">// Derefrencing px to access x.</span>
 <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="mi">13</span><span class="p">;</span>
@@ -353,7 +352,7 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">results</span> <span class="p">));</span> <span class="c1">// Now results has new value.</span>
+    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">results</span> <span class="p">);</span> <span class="c1">// Now results has new value.</span>
 
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">results</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Prints: 18</span>
 <span class="p">}</span>
@@ -470,7 +469,7 @@ Consider x, y, and z are three integers that created (created = allocated = decl
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">addressof</span><span class="p">(</span> <span class="n">results</span> <span class="p">));</span>
+    <span class="n">sum</span><span class="p">(</span> <span class="mi">13</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">results</span> <span class="p">);</span>
 
     <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">results</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
