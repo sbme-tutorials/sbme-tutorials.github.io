@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 1: Signals in Python</title>
+  <title>Week 1: Warming up with Python Basics</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/dsp/notes/1_week1.html">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/1_week1.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -70,8 +70,6 @@
     
       
     
-      
-        <a class="site-title" href="/2018/dsp/dsp.html">SBE309</a>
       
     
       
@@ -227,12 +225,12 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 1: Signals in Python</h1>
+    <h1 class="post-title">Week 1: Warming up with Python Basics</h1>
   </header>
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#python-basics" id="markdown-toc-python-basics">Python Basics</a>    <ul>
+  <li><a href="#introduction-python-basics" id="markdown-toc-introduction-python-basics">Introduction: Python Basics</a>    <ul>
       <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
       <li><a href="#lists" id="markdown-toc-lists">Lists</a></li>
       <li><a href="#arithmetic-operations" id="markdown-toc-arithmetic-operations">Arithmetic Operations</a></li>
@@ -242,26 +240,22 @@
       <li><a href="#functions" id="markdown-toc-functions">Functions</a></li>
       <li><a href="#importing-libraries" id="markdown-toc-importing-libraries">Importing Libraries</a></li>
       <li><a href="#numpy" id="markdown-toc-numpy">Numpy</a></li>
-      <li><a href="#scipy--matplotlib" id="markdown-toc-scipy--matplotlib">Scipy &amp; Matplotlib</a></li>
-      <li><a href="#plotly---dash" id="markdown-toc-plotly---dash">Plotly - Dash</a>        <ul>
-          <li><a href="#declarative-programming" id="markdown-toc-declarative-programming">Declarative Programming</a></li>
-        </ul>
-      </li>
+      <li><a href="#matplotlib" id="markdown-toc-matplotlib">Matplotlib</a></li>
     </ul>
   </li>
-  <li><a href="#signals-examples" id="markdown-toc-signals-examples">Signals: Examples</a>    <ul>
-      <li><a href="#electrocardiography-ecg" id="markdown-toc-electrocardiography-ecg">Electrocardiography (ECG)</a></li>
-      <li><a href="#electroencephalography-eeg" id="markdown-toc-electroencephalography-eeg">Electroencephalography (EEG)</a></li>
-    </ul>
-  </li>
-  <li><a href="#task-objective" id="markdown-toc-task-objective">Task Objective</a></li>
   <li><a href="#getting-started-with-python-installing-anaconda" id="markdown-toc-getting-started-with-python-installing-anaconda">Getting Started with Python: Installing Anaconda</a>    <ul>
       <li><a href="#anaconda" id="markdown-toc-anaconda">Anaconda</a></li>
+      <li><a href="#references-image-processing-with-python" id="markdown-toc-references-image-processing-with-python">References: Image Processing with Python</a></li>
+    </ul>
+  </li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a>    <ul>
+      <li><a href="#prerequisites" id="markdown-toc-prerequisites">Prerequisites</a></li>
+      <li><a href="#downloading-the-demo" id="markdown-toc-downloading-the-demo">Downloading the Demo</a></li>
     </ul>
   </li>
 </ul>
 
-<h2 id="python-basics">Python Basics</h2>
+<h2 id="introduction-python-basics">Introduction: Python Basics</h2>
 
 <h3 id="variables">Variables</h3>
 
@@ -282,13 +276,13 @@
 <h3 id="lists">Lists</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># List construction</span>
-<span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="s">'DSP'</span><span class="p">,</span><span class="s">'Computer Graphics'</span><span class="p">]</span>
+<span class="n">subjects</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Technical Writing'</span><span class="p">,</span><span class="s">'Computer Vision'</span><span class="p">]</span>
 
 <span class="c"># Append an element</span>
 <span class="n">subjects</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'Biochemistry'</span><span class="p">)</span>
 
 <span class="c"># Append another list</span>
-<span class="n">subjects</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">'Bioelectronics'</span><span class="p">,</span><span class="s">'Clinical'</span><span class="p">])</span>
+<span class="n">subjects</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s">'Bioelectronics'</span><span class="p">,</span><span class="s">'Stochastic'</span><span class="p">])</span>
 
 <span class="k">print</span><span class="p">(</span> <span class="n">subjects</span> <span class="p">)</span> <span class="c"># ??</span>
 <span class="k">print</span><span class="p">(</span> <span class="n">subjects</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">)</span> <span class="c"># ??</span>
@@ -374,12 +368,11 @@
 <h3 id="importing-libraries">Importing Libraries</h3>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">scipy</span> <span class="k">as</span> <span class="n">sp</span>
 </code></pre></div></div>
 
 <h3 id="numpy">Numpy</h3>
 
-<p>Reference: <a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/#numpy-reference">NumPy Reference</a></p>
+<p>Reference: <a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/#numpy-reference">{NumPy Reference}</a></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
 
@@ -389,127 +382,66 @@
 <span class="k">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">a</span> <span class="p">))</span>
 </code></pre></div></div>
 
-<h3 id="scipy--matplotlib">Scipy &amp; Matplotlib</h3>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">signal</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="n">mpl</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-
-<span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="mi">100</span><span class="p">)</span>
-
-<span class="n">highpass</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">hanning</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">hann</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-
-<span class="n">filtered_hanning</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">hanning</span><span class="p">)</span>
-<span class="n">filtered_highpass</span> <span class="o">=</span> <span class="n">signal</span><span class="o">.</span><span class="n">convolve</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span> <span class="n">highpass</span><span class="p">)</span>
-
-
-<span class="c">## Plotting</span>
-
-<span class="n">mpl</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">'seaborn'</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">311</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">sig</span> <span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">312</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">filtered_highpass</span> <span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">313</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">filtered_hanning</span> <span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span> <span class="p">)</span>
-</code></pre></div></div>
-
-<h3 id="plotly---dash">Plotly - Dash</h3>
+<h3 id="matplotlib">Matplotlib</h3>
 
 <ul>
-  <li>Web based visualization.</li>
-  <li>Many features.</li>
-  <li>Declarative Style.</li>
-  <li>Web-based visualization.</li>
+  <li><code class="highlighter-rouge">Matplotlib</code> is Matlab-like visualization library.</li>
 </ul>
 
-<h4 id="declarative-programming">Declarative Programming</h4>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="n">mpimg</span>
 
-<p>This snippet is from <a href="https://plot.ly/products/dash/">Dash by plotly</a></p>
+<span class="n">image1</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">"images.jpg"</span><span class="p">)</span>
+<span class="n">image2</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">"cameraman1.png"</span><span class="p">)</span>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">dash</span>
-<span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="n">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="n">html</span>
-<span class="kn">from</span> <span class="nn">pandas_datareader</span> <span class="kn">import</span> <span class="n">data</span> <span class="k">as</span> <span class="n">web</span>
-<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">image1</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span> <span class="n">image2</span><span class="o">.</span><span class="n">shape</span> <span class="p">)</span>
 
-<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">([</span>
-    <span class="n">html</span><span class="o">.</span><span class="n">H1</span><span class="p">(</span><span class="s">'Stock Tickers'</span><span class="p">),</span>
-    <span class="n">dcc</span><span class="o">.</span><span class="n">Dropdown</span><span class="p">(</span>
-        <span class="nb">id</span><span class="o">=</span><span class="s">'my-dropdown'</span><span class="p">,</span>
-        <span class="n">options</span><span class="o">=</span><span class="p">[</span>
-            <span class="p">{</span><span class="s">'label'</span><span class="p">:</span> <span class="s">'Coke'</span><span class="p">,</span> <span class="s">'value'</span><span class="p">:</span> <span class="s">'COKE'</span><span class="p">},</span>
-            <span class="p">{</span><span class="s">'label'</span><span class="p">:</span> <span class="s">'Tesla'</span><span class="p">,</span> <span class="s">'value'</span><span class="p">:</span> <span class="s">'TSLA'</span><span class="p">},</span>
-            <span class="p">{</span><span class="s">'label'</span><span class="p">:</span> <span class="s">'Apple'</span><span class="p">,</span> <span class="s">'value'</span><span class="p">:</span> <span class="s">'AAPL'</span><span class="p">}</span>
-        <span class="p">],</span>
-        <span class="n">value</span><span class="o">=</span><span class="s">'COKE'</span>
-    <span class="p">),</span>
-    <span class="n">dcc</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="s">'my-graph'</span><span class="p">)</span>
-<span class="p">])</span>
-
-<span class="nd">@app.callback</span><span class="p">(</span><span class="n">Output</span><span class="p">(</span><span class="s">'my-graph'</span><span class="p">,</span> <span class="s">'figure'</span><span class="p">),</span> <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s">'my-dropdown'</span><span class="p">,</span> <span class="s">'value'</span><span class="p">)])</span>
-<span class="k">def</span> <span class="nf">update_graph</span><span class="p">(</span><span class="n">selected_dropdown_value</span><span class="p">):</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span>
-        <span class="n">selected_dropdown_value</span><span class="p">,</span> <span class="n">data_source</span><span class="o">=</span><span class="s">'google'</span><span class="p">,</span>
-        <span class="n">start</span><span class="o">=</span><span class="n">dt</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="n">dt</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
-    <span class="k">return</span> <span class="p">{</span>
-        <span class="s">'data'</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s">'x'</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
-            <span class="s">'y'</span><span class="p">:</span> <span class="n">df</span><span class="o">.</span><span class="n">Close</span>
-        <span class="p">}]</span>
-    <span class="p">}</span>
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">()</span>
 </code></pre></div></div>
-
-<h2 id="signals-examples">Signals: Examples</h2>
-
-<h3 id="electrocardiography-ecg">Electrocardiography (ECG)</h3>
-
-<p><img src="/gallery/ecg-paper.png" alt="" /></p>
-
-<h3 id="electroencephalography-eeg">Electroencephalography (EEG)</h3>
-
-<p><img src="../special/eeg.png" alt="" /></p>
-
-<p><a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> (by <em>Andrii Cherninskyi</em>)</p>
-
-<h2 id="task-objective">Task Objective</h2>
-
-<ul>
-  <li>Signal Viewer Application.</li>
-  <li>3 Signals X 3 Cases.</li>
-  <li>Live sound signal visualization from Microphone.</li>
-  <li>Matlab or Python Implementation.</li>
-  <li>Apply filters on your signal (convolution).</li>
-  <li>User designed filters (windows).</li>
-</ul>
 
 <h2 id="getting-started-with-python-installing-anaconda">Getting Started with Python: Installing Anaconda</h2>
 
 <h3 id="anaconda">Anaconda</h3>
 
 <ul>
-  <li>Shipped +1000 Data Science Packages (DSP, Machine Learning, AI, Statistics).</li>
+  <li>Shipped +1000 Data Science Packages (DSP, Image Processing, Machine Learning, AI, Statistics).</li>
   <li>Shipped with Python IDE (Spyder).</li>
   <li>Shipped with Jupyter Notebook.</li>
 </ul>
 
 <p><a href="https://www.anaconda.com/download">Download Anaconda 3 (Python 3)</a></p>
 
-<!-- ## References -->
+<h3 id="references-image-processing-with-python">References: Image Processing with Python</h3>
 
-<!-- <ol class="bibliography"></ol> -->
+<ul>
+  <li><a href="http://scikit-image.org/docs/dev/user_guide">Scikit-image</a></li>
+  <li><a href="http://programmingcomputervision.com/downloads/ProgrammingComputerVision_CCdraft.pdf">Programming Computer Vision with Python, <em>Jan Erik Solem</em></a></li>
+  <li><a href="https://www.cvl.isy.liu.se/education/undergraduate/tsbb15/computer-exercises/lektion_python.pdf">Image Processing in Numpy, <em>Computer Vision Laboratory, Link ̈oping Universit</em></a></li>
+</ul>
+
+<h2 id="demo">Demo</h2>
+
+<p>You can find the demo files on this repository at <em>github</em> <a href="https://github.com/sbme-tutorials/cv-week1-demo">cv-week1-demo</a></p>
+
+<h3 id="prerequisites">Prerequisites</h3>
+
+<ol>
+  <li>Anaconda3 installed.</li>
+  <li>git installed</li>
+</ol>
+
+<h3 id="downloading-the-demo">Downloading the Demo</h3>
+
+<p>Issue the following command:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git clone https://github.com/sbme-tutorials/cv-week1-demo.git
+<span class="gp">$</span> <span class="nb">cd </span>cv-week1-demo
+</code></pre></div></div>
+
+<p>Expect soon migration to Python notebooks for more convenience.</p>
 
   </div>
 
