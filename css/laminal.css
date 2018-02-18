@@ -35,6 +35,7 @@ body { font-family: 'Georgia';letter-spacing:0.025em;}
 
       .red{ color: red; }
       .green{ color: green;}
+      .blue{ color: blue;}
         
       /* Some special classes */
       .title {font-size: 3.3em; color:#606060;font-weight:bold;letter-spacing:0.05em}

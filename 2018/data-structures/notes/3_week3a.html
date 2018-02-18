@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 3 - Part1: Static Arrays, Dynamic Arrays, and Command Line Arguments</title>
+  <title>Week 3 - Part1: Static Arrays and Dynamic Arrays</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -27,6 +27,18 @@
      -->
     
 
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
       
     
@@ -92,17 +104,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
@@ -112,12 +119,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
             
           
             
@@ -127,7 +134,32 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays, Dynamic Arrays, and Command Line Arguments</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
             
           
             
@@ -136,6 +168,16 @@
             
             
             <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -171,25 +213,25 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 3 - Part1: Static Arrays, Dynamic Arrays, and Command Line Arguments</h1>
+    <h1 class="post-title">Week 3 - Part1: Static Arrays and Dynamic Arrays</h1>
   </header>
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#faq" id="markdown-toc-faq">Faq</a>    <ul>
-      <li><a href="#1-why-using-namespace-name-is-a-bad-practice" id="markdown-toc-1-why-using-namespace-name-is-a-bad-practice">1. Why <code class="highlighter-rouge">using namespace [name];</code> is a bad practice</a></li>
-      <li><a href="#2-why-int-p--x--p--x" id="markdown-toc-2-why-int-p--x--p--x">2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></a>        <ul>
-          <li><a href="#a-declarationinitialization-vs-dereferencing" id="markdown-toc-a-declarationinitialization-vs-dereferencing">A Declaration+Initialization vs. Dereferencing</a></li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li><a href="#faq-1-why-using-namespace-arbitrary_name-is-a-bad-practice" id="markdown-toc-faq-1-why-using-namespace-arbitrary_name-is-a-bad-practice">FAQ #1. Why <code class="highlighter-rouge">using namespace arbitrary_name;</code> is a bad practice</a></li>
+  <li><a href="#faq-2-why-int-p--x--p--x" id="markdown-toc-faq-2-why-int-p--x--p--x">FAQ #2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></a></li>
   <li><a href="#introduction-to-arrays" id="markdown-toc-introduction-to-arrays">Introduction to Arrays</a></li>
   <li><a href="#static-arrays" id="markdown-toc-static-arrays">Static Arrays</a>    <ul>
       <li><a href="#constructing-static-array" id="markdown-toc-constructing-static-array">Constructing Static Array</a></li>
-      <li><a href="#constructing-static-char-array-string" id="markdown-toc-constructing-static-char-array-string">Constructing Static <code class="highlighter-rouge">char</code> Array (String)</a></li>
-      <li><a href="#accessing-elements-of-array" id="markdown-toc-accessing-elements-of-array">Accessing Elements of Array</a></li>
-      <li><a href="#iterating-over-static-array" id="markdown-toc-iterating-over-static-array">Iterating Over Static Array</a></li>
+      <li><a href="#accessing-elements-of-array" id="markdown-toc-accessing-elements-of-array">Accessing Elements of Array</a>        <ul>
+          <li><a href="#example-fibionacci-sequence" id="markdown-toc-example-fibionacci-sequence">Example: Fibionacci Sequence</a></li>
+          <li><a href="#example-dna-sequence" id="markdown-toc-example-dna-sequence">Example: DNA Sequence</a></li>
+        </ul>
+      </li>
+      <li><a href="#iterating-over-static-array" id="markdown-toc-iterating-over-static-array">Iterating Over Static Array</a>        <ul>
+          <li><a href="#example-calculating-the-mean-avarage-of-array-elements" id="markdown-toc-example-calculating-the-mean-avarage-of-array-elements">Example: Calculating the mean (avarage) of array elements</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="#dynamic-arrays" id="markdown-toc-dynamic-arrays">Dynamic Arrays</a>    <ul>
@@ -197,78 +239,50 @@
       <li><a href="#deleting-dynamic-array-memory-management" id="markdown-toc-deleting-dynamic-array-memory-management">Deleting Dynamic Array: Memory Management</a></li>
     </ul>
   </li>
-  <li><a href="#command-line-arguments" id="markdown-toc-command-line-arguments">Command Line Arguments</a>    <ul>
-      <li><a href="#examples-why-command-line-arguments" id="markdown-toc-examples-why-command-line-arguments">Examples: Why Command Line Arguments</a></li>
-      <li><a href="#command-line-arguments-in-c-and-c" id="markdown-toc-command-line-arguments-in-c-and-c">Command Line Arguments in C and C++</a></li>
+  <li><a href="#special-case-array-of-characters-string" id="markdown-toc-special-case-array-of-characters-string">Special Case: Array of Characters (String)</a>    <ul>
+      <li><a href="#for-the-moment" id="markdown-toc-for-the-moment">For the moment</a></li>
     </ul>
   </li>
-  <li><a href="#coding-in-multiple-files" id="markdown-toc-coding-in-multiple-files">Coding in Multiple Files</a></li>
-  <li><a href="#compilation-of-multiple-files-of-multiple-applications" id="markdown-toc-compilation-of-multiple-files-of-multiple-applications">Compilation of Multiple Files of Multiple Applications</a></li>
-  <li><a href="#compilation-of-100-files" id="markdown-toc-compilation-of-100-files">Compilation of 100 Files</a></li>
+  <li><a href="#basic-operations-on-static-and-dynamic-arrays" id="markdown-toc-basic-operations-on-static-and-dynamic-arrays">Basic Operations on Static and Dynamic Arrays</a>    <ul>
+      <li><a href="#copying-between-arrays" id="markdown-toc-copying-between-arrays">Copying between arrays</a></li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="faq">Faq</h2>
+<h2 id="faq-1-why-using-namespace-arbitrary_name-is-a-bad-practice">FAQ #1. Why <code class="highlighter-rouge">using namespace arbitrary_name;</code> is a bad practice</h2>
 
-<h3 id="1-why-using-namespace-name-is-a-bad-practice">1. Why <code class="highlighter-rouge">using namespace [name];</code> is a bad practice</h3>
+<p>Some of your classmates have asked, “Why <code class="highlighter-rouge">using namespace std;</code> is considered a bad practice?”</p>
 
-<h3 id="2-why-int-p--x--p--x">2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></h3>
+<p>You can find an answer in <a href="/2018/data-structures/notes/3_faq1.html" target="_blank">FAQ #1: Why <code class="highlighter-rouge">using namespace arbitrary_name;</code> is a bad practice</a>.</p>
 
-<h4 id="a-declarationinitialization-vs-dereferencing">A Declaration+Initialization vs. Dereferencing</h4>
+<h2 id="faq-2-why-int-p--x--p--x">FAQ #2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></h2>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="c1">// Declaring a pointer-to-integer and initializing it to address of x.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiles!</span>
-
-<span class="c1">// Dereferencing px and assignment by address of integer</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error!</span>
-</code></pre></div></div>
-
-<p>In other words,</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>is equivalent to</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>Which is <strong>not</strong> equivalent to</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error!</span>
-</code></pre></div></div>
+<p>Also, some was confused about the language syntax regarding pointers. You may find this satisfying <a href="/2018/data-structures/notes/3_faq2.html" target="_blank">FAQ #2: Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></a></p>
 
 <h2 id="introduction-to-arrays">Introduction to Arrays</h2>
 
 <p>The main features that characterize arrays structure:</p>
 
-<ul>
-  <li>Arrays are the simplest data structure.</li>
-  <li>The array elements are placed contiguously in memory.</li>
-  <li>We refer to arrays by the address of the first element.</li>
+<ol>
+  <li>Arrays are the <strong>simplest</strong> data structure.</li>
+  <li>The array elements are <strong>placed contiguously</strong> in memory.</li>
+  <li>We <strong>refer</strong> to arrays by the <strong>address of the first element</strong>.</li>
   <li>Iteration over arrays are very straight forward.</li>
-</ul>
+</ol>
 
 <p>Arrays can be constructed on stack (Static Arrays) and can also constructed on heap (Dynamic Arrays).</p>
 
 <h2 id="static-arrays">Static Arrays</h2>
 
 <ul>
-  <li>Static Arrays are fixed in size.</li>
-  <li>Size of static arrays should be determined at compilation (before run-time).</li>
+  <li><strong>Static Arrays</strong> are <strong>fixed</strong> in size.</li>
+  <li><strong>Size</strong> of static arrays should be <strong>determined at compile-time</strong> (before run-time).</li>
   <li>No need to delete static arrays, they are deleted automatically after going out of scope.</li>
 </ul>
 
 <h3 id="constructing-static-array">Constructing Static Array</h3>
 
 <p><img src="/gallery/dna_array.svg" alt="" /></p>
-
-<h3 id="constructing-static-char-array-string">Constructing Static <code class="highlighter-rouge">char</code> Array (String)</h3>
 
 <p>Static arrays can be constructed like so,</p>
 
@@ -288,7 +302,38 @@
 
 <h3 id="accessing-elements-of-array">Accessing Elements of Array</h3>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Construction + Initialization of array-of-characters of size 6</span>
+<p>To access array elements, we use the first element address as a <strong>reference</strong>. First element address is also known as <em>base pointer</em>. Let <code class="highlighter-rouge">double a[10]</code> a declaration of static array of 10 elements:</p>
+
+<ul>
+  <li>The first element in the array is <code class="highlighter-rouge">a[0]</code>.</li>
+  <li>The array base pointer is the address of first element, i.e <code class="highlighter-rouge">&amp;a[0]</code>.</li>
+  <li>The second element is <code class="highlighter-rouge">a[1]</code>.</li>
+  <li>The index of array represents the offset (distance) from the first element.</li>
+</ul>
+
+<h4 id="example-fibionacci-sequence">Example: Fibionacci Sequence</h4>
+
+<p><img src="/gallery/34_21-FibonacciBlocks.png" alt="fib" /></p>
+
+<p>Let <code class="highlighter-rouge">fibionacci</code> an integer array holding <a href="https://en.wikipedia.org/wiki/Fibonacci_number">fibionacci sequence</a>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>
+
+<span class="n">fibionacci</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">fibionacci</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">fibionacci</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+<span class="n">fibionacci</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">fibionacci</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">fibionacci</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
+
+</code></pre></div></div>
+
+<h4 id="example-dna-sequence">Example: DNA Sequence</h4>
+
+<p><img src="/gallery/dna-rna-double-helix-rotating-animation-13.gif" alt="dna" /></p>
+
+<p>Let <code class="highlighter-rouge">dna</code> a characters array holding some genetic sequence.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Alternative way of Construction + Initialization of array-of-characters of size 6</span>
 <span class="kt">char</span> <span class="n">dna</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'A'</span> <span class="p">,</span> <span class="sc">'A'</span> <span class="p">,</span> <span class="sc">'C'</span> <span class="p">,</span> <span class="sc">'T'</span> <span class="p">,</span> <span class="sc">'G'</span> <span class="p">,</span> <span class="sc">'C'</span> <span class="p">};</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dna</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Prints: A</span>
@@ -308,12 +353,18 @@
 <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 </code></pre></div></div>
 
+<h4 id="example-calculating-the-mean-avarage-of-array-elements">Example: Calculating the mean (avarage) of array elements</h4>
+
+<p>Implement the following mean function (logic), to calculate the average of array elements.</p>
+
+<script type="math/tex; mode=display">\bar{x} = \frac{1}{n}\left (\sum_{i=1}^n{x_i}\right ) = \frac{x_1+x_2+\cdots +x_n}{n}</script>
+
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">mean</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">array</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">i</span><span class="p">;</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">array</span><span class="p">[</span> <span class="n">i</span> <span class="p">];</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">sum</span> <span class="o">/</span> <span class="n">size</span><span class="p">;</span>
 <span class="p">}</span>
@@ -321,7 +372,9 @@
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">ecg_samples</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mf">9.1</span> <span class="p">,</span> <span class="mf">12.9</span><span class="p">,</span> <span class="mf">12.4</span><span class="p">,</span> <span class="mf">15.2</span><span class="p">,</span> <span class="mf">19.0</span><span class="p">,</span> <span class="mf">23.3</span> <span class="p">};</span>
-    <span class="kt">double</span> <span class="n">ecg_mean</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span> <span class="n">ecg_samples</span> <span class="p">,</span> <span class="mi">6</span> <span class="p">);</span>
+    
+    <span class="c1">// As we said, we refer to arrays by the address of first element.</span>
+    <span class="kt">double</span> <span class="n">ecg_mean</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">ecg_samples</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="mi">6</span> <span class="p">);</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -329,10 +382,10 @@
 <h2 id="dynamic-arrays">Dynamic Arrays</h2>
 
 <ul>
-  <li>Dynamic Arrays are allocated on heap.</li>
-  <li>Size of dynamic arrays can be determined either at compilation or at run-time.</li>
-  <li>You can construct very large dynamic arrays on heap, unlike static arrays.</li>
-  <li>You need to manually delete dynamic arrays after you no longer need them.</li>
+  <li><strong>Dynamic Arrays</strong> are allocated on <strong>heap</strong>.</li>
+  <li><strong>Size</strong> of dynamic arrays can be <strong>determined either at compilation or at run-time (flexible)</strong>.</li>
+  <li>You can construct <strong>very large</strong> dynamic arrays on heap, unlike static arrays.</li>
+  <li>You <strong>need to manually delete dynamic arrays</strong> after you no longer need them.</li>
 </ul>
 
 <h3 id="constructing-dynamic-array">Constructing Dynamic Array</h3>
@@ -354,78 +407,54 @@
 
 <span class="kt">char</span> <span class="n">dna_chromosome11</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">char</span><span class="p">[</span> <span class="mi">150000</span> <span class="p">];</span>
 
-<span class="c1">// Some logic .....</span>
-<span class="c1">// Some logic .....</span>
+<span class="c1">// Do some interesting analysis on your genome.</span>
+<span class="n">someInterestingFunction</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">dna_chromosome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="mi">150000</span> <span class="p">);</span>
 
+<span class="c1">// Another operations on array1</span>
+<span class="n">anotherInterestingFunction</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">array1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="mi">900</span> <span class="p">);</span>
 
 <span class="c1">// After we no longer need array1,</span>
 <span class="k">delete</span> <span class="p">[]</span> <span class="n">array1</span><span class="p">;</span> <span class="c1">// Note the square brackets!</span>
 <span class="k">delete</span> <span class="p">[]</span> <span class="n">dna_chromosome</span><span class="p">;</span>
 </code></pre></div></div>
 
-<h2 id="command-line-arguments">Command Line Arguments</h2>
+<h2 id="special-case-array-of-characters-string">Special Case: Array of Characters (String)</h2>
 
-<h3 id="examples-why-command-line-arguments">Examples: Why Command Line Arguments</h3>
+<p>In C language, strings (or array of characters) has to be null terminated (add <code class="highlighter-rouge">\0</code> element at the end). Many libraries that processes strings assume strings to be null terminated. We can later avoid this peculiarity by using the <code class="highlighter-rouge">std::string</code> object from the standard template library to save a lot of time and prevent headache. <strong>In this semester, you are allowed to use <code class="highlighter-rouge">std::string</code> <em>after week 5</em></strong>.</p>
 
-<ul>
-  <li><code class="highlighter-rouge">apt-get install vlc</code></li>
-  <li><code class="highlighter-rouge">git commit -a -m "kill me please!"</code></li>
-  <li><code class="highlighter-rouge">cp [file] [target path]</code></li>
-</ul>
+<h3 id="for-the-moment">For the moment</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th>Application</th>
-      <th>Argument 1</th>
-      <th>Argument 2</th>
-      <th>Argument 3</th>
-      <th>Argument 4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="highlighter-rouge">apt-get</code></td>
-      <td><code class="highlighter-rouge">install</code></td>
-      <td><code class="highlighter-rouge">vlc</code></td>
-      <td><code class="highlighter-rouge">null</code></td>
-      <td><code class="highlighter-rouge">null</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">git</code></td>
-      <td><code class="highlighter-rouge">commit</code></td>
-      <td><code class="highlighter-rouge">-a</code></td>
-      <td><code class="highlighter-rouge">-m</code></td>
-      <td><code class="highlighter-rouge">"kill me please!"</code></td>
-    </tr>
-    <tr>
-      <td><code class="highlighter-rouge">cp</code></td>
-      <td><code class="highlighter-rouge">[file]</code></td>
-      <td><code class="highlighter-rouge">[target path]</code></td>
-      <td><code class="highlighter-rouge">null</code></td>
-      <td><code class="highlighter-rouge">null</code></td>
-    </tr>
-  </tbody>
-</table>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Alternative way of Construction + Initialization of array-of-characters of size 6</span>
+<span class="kt">char</span> <span class="n">dna</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'A'</span> <span class="p">,</span> <span class="sc">'A'</span> <span class="p">,</span> <span class="sc">'C'</span> <span class="p">,</span> <span class="sc">'T'</span> <span class="p">,</span> <span class="sc">'G'</span> <span class="p">,</span> <span class="sc">'C'</span> <span class="p">,</span> <span class="sc">'\0'</span><span class="p">};</span>
 
-<h3 id="command-line-arguments-in-c-and-c">Command Line Arguments in C and C++</h3>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dna</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// Prints: AACTGC</span>
+</code></pre></div></div>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<h2 id="basic-operations-on-static-and-dynamic-arrays">Basic Operations on Static and Dynamic Arrays</h2>
+
+<h3 id="copying-between-arrays">Copying between arrays</h3>
+
+<p>Assume that you want to copy an array to another array (either static or dynamic).</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt; // Needed for std::copy
+#include &lt;iostream&gt; // Needed for std::cout
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
 <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Arguments count:"</span> <span class="o">&lt;&lt;</span> <span class="n">argc</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="n">dna1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="sc">'A'</span> <span class="p">,</span> <span class="sc">'A'</span> <span class="p">,</span> <span class="sc">'C'</span> <span class="p">,</span> <span class="sc">'T'</span> <span class="p">,</span> <span class="sc">'G'</span> <span class="p">,</span> <span class="sc">'C'</span> <span class="p">,</span> <span class="sc">'\0'</span><span class="p">};</span>
 
-    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">argc</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Argument:"</span> <span class="o">&lt;&lt;</span> <span class="n">argv</span><span class="p">[</span> <span class="n">i</span> <span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="p">}</span>
+    <span class="kt">char</span> <span class="n">dna2</span><span class="p">[</span> <span class="mi">7</span> <span class="p">];</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">copy</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">dna1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">dna1</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="p">,</span> <span class="o">&amp;</span><span class="n">dna2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">dna2</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h2 id="coding-in-multiple-files">Coding in Multiple Files</h2>
+<p><code class="highlighter-rouge">std::copy</code>, to copy from <strong>source</strong> array to <strong>target</strong> array, it takes:</p>
 
-<h2 id="compilation-of-multiple-files-of-multiple-applications">Compilation of Multiple Files of Multiple Applications</h2>
-
-<h2 id="compilation-of-100-files">Compilation of 100 Files</h2>
+<p>1- Address of first element of <strong>source</strong> array.
+2- Address of last element of <strong>source</strong> array.
+3- Address of first element of <strong>target</strong> array.</p>
 
   </div>
 
