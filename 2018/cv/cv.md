@@ -38,4 +38,8 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 
 ## Tutorials
 
+1. Week 1:
+    * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/1_week1/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/cv/notes/1_week1.md %}){:target="_blank"}.
+
 ## Announcements
