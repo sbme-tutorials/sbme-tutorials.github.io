@@ -61,21 +61,12 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     * Section Notes: \[[Part 1: Memory, pointers, and references]({{ site.baseurl }}{% link 2018/data-structures/notes/2_week2a.md %}){:target="_blank"}\].
     * [Code Styling]({{ site.baseurl }}{% link 2018/data-structures/notes/2_code_formatting.md %}){:target="_blank"}
     * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/assignments/2_week2a.md %}){:target="_blank"}
-
-<!-- 
-https://sbme-tutorials.github.io/2018/data-structures/presentations/1_week1
-
-https://sbme-tutorials.github.io/2018/data-structures/notes/1_week1a
-https://sbme-tutorials.github.io/2018/data-structures/notes/1_week1b
-
-
-https://sbme-tutorials.github.io/2018/data-structures/assignments/1_week1a
-https://sbme-tutorials.github.io/2018/data-structures/assignments/1_week1b
-
-
- -->
-
-
+3. Week 3:
+    * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/3_week3/index.html %}){:target="_blank"}
+    * Section Notes: \[[Part 1: Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2018/data-structures/notes/3_week3a.md %}){:target="_blank"}\] \[[Part 2: Command Line Arguments and Compilation of Multiple Files]({{ site.baseurl }}{% link 2018/data-structures/notes/3_week3b.md %}){:target="_blank"}\].
+    * [FAQ #1: Why `using namespace arbitrary_name;` is a bad practice]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq1.md %}){:target="_blank"}
+    * [FAQ #2: Why `int *p = &x` != `*p = &x`]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq2.md %}){:target="_blank"}
+    * [FAQ #3: Why not using `std::cin` inside functions of particular logic]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq3.md %}){:target="_blank"}
 
 ## Frequently Asked Questions
 

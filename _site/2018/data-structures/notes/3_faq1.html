@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tutorials for SBME Students</title>
+  <title>FAQ #1: Why exposing namespaces is a bad practice</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/3_faq1.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -25,6 +25,60 @@
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -156,23 +210,105 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-    
-  <h1 id="tutorials-and-course-announcements">Tutorials and Course Announcements</h1>
+        <article class="post">
 
-<h2 id="spring-2018">Spring 2018</h2>
+  <header class="post-header">
+    <h1 class="post-title">FAQ #1: Why exposing namespaces is a bad practice</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="faq-1-why-using-namespace-arbitrary_name-is-a-bad-practice">FAQ #1. Why <code class="highlighter-rouge">using namespace arbitrary_name;</code> is a bad practice</h2>
+
+<p><code class="highlighter-rouge">namespace</code> is a great feature introduced in C++. It allows us to:</p>
 
 <ul>
-  <li><a href="/2018/data-structures/data-structures.html">Data Structures and Algorithms (SBE201)</a>, by Prof. Ahmed H. Kandil and Eng. Asem Alaa.</li>
-  <li><a href="/2018/dsp/dsp.html">Digital Signal Processing (SBE309)</a>, by Dr. Tamer Yousef, Eng. Asem Alaa, and Eng. Eman Ibraheem.
-<!-- * [Computer Vision \(SBE404\)](/2018/cv/cv.html), by Dr. Muhamed Rushdi, Eng. Eslam Adel, and Eng. Asem Alaa. --></li>
+  <li>Make modular projects.</li>
+  <li>Put your functions in categories.</li>
+  <li>Write more readable and self-explaining code.</li>
+  <li>Write more trustable code by means of specifying which function belongs to what library.</li>
 </ul>
 
-<h3 id="announcements">Announcements</h3>
+<p>It becomes more critical when it comes to the Standard Library of C++ that is enclosed in the namspace <code class="highlighter-rouge">std</code>. By writing <code class="highlighter-rouge">using namespace std;</code> in your global scope, this exposes huge amount of functions from the library to be used without the namespace. So What?!</p>
 
+<ul>
+  <li>
+    <p>What if you have created a function having the same name of one of the thousands functions from <code class="highlighter-rouge">std</code>?</p>
 
-</div>
+    <ul>
+      <li>Names collision,</li>
+      <li>Compiler get confused,</li>
+      <li>Your team members get angry.</li>
+    </ul>
+  </li>
+  <li>
+    <p>You will never know every function inside the <code class="highlighter-rouge">std</code> so you avoid using a reserved name, and it is pointless to know every function and name inside the <code class="highlighter-rouge">std</code>.</p>
+  </li>
+</ul>
 
+<h3 id="possible-solution">Possible Solution</h3>
+
+<p>If you are using (for example) <code class="highlighter-rouge">std::cout</code> extensively inside a function. What you can do is specifying a particular member (or members) that you are going to use:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Some function that prints a lot of text in the terminal</span>
+<span class="kt">void</span> <span class="nf">printArrayStatistics</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mean</span><span class="p">(</span> <span class="n">arr</span> <span class="p">,</span> <span class="n">size</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="c1">// More and more printing</span>
+    <span class="c1">// And more.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Again</strong>, if you insist to expose some name-space:</p>
+
+<ul>
+  <li>
+    <p>Specify particular members from the name-space, For example:</p>
+
+    <ul>
+      <li><strong>DO</strong> <code class="highlighter-rouge">using std::cout;</code>.</li>
+      <li><strong>DO NOT</strong> <code class="highlighter-rouge">using namespace std;</code>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Do it inside a local scope, not in the global scope.</p>
+  </li>
+</ul>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
       </div>
     </main>
 

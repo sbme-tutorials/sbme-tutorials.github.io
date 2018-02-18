@@ -3,75 +3,44 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2018"
-title:  "Week 3 - Part1: Static Arrays, Dynamic Arrays, and Command Line Arguments"
+title:  "Week 3 - Part1: Static Arrays and Dynamic Arrays"
 by: "Asem"
 ---
 
 * TOC
 {:toc}
 
-## Faq
 
-### 1. Why `using namespace [name];` is a bad practice
+## FAQ #1. Why `using namespace arbitrary_name;` is a bad practice
 
-### 2. Why `int *p = &x` != `*p = &x`
+Some of your classmates have asked, "Why `using namespace std;` is considered a bad practice?"
 
-#### A Declaration+Initialization vs. Dereferencing
+You can find an answer in [FAQ #1: Why `using namespace arbitrary_name;` is a bad practice]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq1.md %}){:target="_blank"}.
 
-```c++
-int x = 1;
-// Declaring a pointer-to-integer and initializing it to address of x.
-int *px = &x; // Compiles!
+## FAQ #2. Why `int *p = &x` != `*p = &x`
 
-// Dereferencing px and assignment by address of integer
-*px = &x; // Compiler Error!
-```
-
-In other words,
-
-```c++
-int x = 1;
-int *px = &x;
-```
-
-is equivalent to
-
-```c++
-int x = 1;
-int *px;
-px = &x;
-```
-
-Which is **not** equivalent to
-
-```c++
-int x = 1;
-int *px;
-*px = &x; // Compiler Error!
-```
+Also, some was confused about the language syntax regarding pointers. You may find this satisfying [FAQ #2: Why `int *p = &x` != `*p = &x`]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq2.md %}){:target="_blank"}
 
 ## Introduction to Arrays
 
 The main features that characterize arrays structure:
 
-* Arrays are the simplest data structure.
-* The array elements are placed contiguously in memory.
-* We refer to arrays by the address of the first element.
-* Iteration over arrays are very straight forward.
+1. Arrays are the **simplest** data structure.
+2. The array elements are **placed contiguously** in memory.
+3. We **refer** to arrays by the **address of the first element**.
+4. Iteration over arrays are very straight forward.
 
 Arrays can be constructed on stack (Static Arrays) and can also constructed on heap (Dynamic Arrays).
 
 ## Static Arrays
 
-* Static Arrays are fixed in size.
-* Size of static arrays should be determined at compilation (before run-time).
+* **Static Arrays** are **fixed** in size.
+* **Size** of static arrays should be **determined at compile-time** (before run-time).
 * No need to delete static arrays, they are deleted automatically after going out of scope.
 
 ### Constructing Static Array
 
 ![](/gallery/dna_array.svg)
-
-### Constructing Static `char` Array (String)
 
 Static arrays can be constructed like so,
 
@@ -92,8 +61,38 @@ char dna[] = { 'A' , 'A' , 'C' , 'T' , 'G' , 'C' };
 
 ### Accessing Elements of Array
 
+To access array elements, we use the first element address as a **reference**. First element address is also known as *base pointer*. Let `double a[10]` a declaration of static array of 10 elements:
+
+* The first element in the array is `a[0]`.
+* The array base pointer is the address of first element, i.e `&a[0]`.
+* The second element is `a[1]`.
+* The index of array represents the offset (distance) from the first element.
+
+#### Example: Fibionacci Sequence
+
+![fib](/gallery/34_21-FibonacciBlocks.png)
+
+Let `fibionacci` an integer array holding [fibionacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
+
 ```c++
-// Construction + Initialization of array-of-characters of size 6
+int fibionacci[5];
+
+fibionacci[0] = 1;
+fibionacci[1] = 1;
+fibionacci[2] = fibionacci[1] + fibionacci[0];
+fibionacci[3] = fibionacci[2] + fibionacci[1];
+fibionacci[4] = fibionacci[3] + fibionacci[2];
+
+```
+
+#### Example: DNA Sequence
+
+![dna](/gallery/dna-rna-double-helix-rotating-animation-13.gif)
+
+Let `dna` a characters array holding some genetic sequence.
+
+```c++
+// Alternative way of Construction + Initialization of array-of-characters of size 6
 char dna[] = { 'A' , 'A' , 'C' , 'T' , 'G' , 'C' };
 
 std::cout << dna[0] << std::endl; // Prints: A
@@ -114,13 +113,19 @@ for( int i = 0; i < 6 ; ++i )
 std::cout << std::endl;
 ```
 
+#### Example: Calculating the mean (avarage) of array elements
+
+Implement the following mean function (logic), to calculate the average of array elements.
+
+$$ \bar{x} = \frac{1}{n}\left (\sum_{i=1}^n{x_i}\right ) = \frac{x_1+x_2+\cdots +x_n}{n} $$
+
 ```c++
 double mean( double *array , int size )
 {
     int sum = 0;
     for( int i = 0 ; i < size ; ++i )
     {
-        sum = sum + i;
+        sum = sum + array[ i ];
     }
     return sum / size;
 }
@@ -128,17 +133,19 @@ double mean( double *array , int size )
 int main()
 {
     double ecg_samples[] = { 9.1 , 12.9, 12.4, 15.2, 19.0, 23.3 };
-    double ecg_mean = mean( ecg_samples , 6 );
+    
+    // As we said, we refer to arrays by the address of first element.
+    double ecg_mean = mean( &ecg_samples[0] , 6 );
     return 0;
 }
 ```
 
 ## Dynamic Arrays
 
-* Dynamic Arrays are allocated on heap.
-* Size of dynamic arrays can be determined either at compilation or at run-time.
-* You can construct very large dynamic arrays on heap, unlike static arrays.
-* You need to manually delete dynamic arrays after you no longer need them.
+* **Dynamic Arrays** are allocated on **heap**.
+* **Size** of dynamic arrays can be **determined either at compilation or at run-time (flexible)**.
+* You can construct **very large** dynamic arrays on heap, unlike static arrays.
+* You **need to manually delete dynamic arrays** after you no longer need them.
 
 ### Constructing Dynamic Array
 
@@ -161,45 +168,53 @@ int *array1 = new int[ 900 ];
 
 char dna_chromosome11 = new char[ 150000 ];
 
-// Some logic .....
-// Some logic .....
+// Do some interesting analysis on your genome.
+someInterestingFunction( &dna_chromosome[0] , 150000 );
 
+// Another operations on array1
+anotherInterestingFunction( &array1[0] , 900 );
 
 // After we no longer need array1,
 delete [] array1; // Note the square brackets!
 delete [] dna_chromosome;
 ```
 
-## Command Line Arguments
+## Special Case: Array of Characters (String)
 
-### Examples: Why Command Line Arguments
+In C language, strings (or array of characters) has to be null terminated (add `\0` element at the end). Many libraries that processes strings assume strings to be null terminated. We can later avoid this peculiarity by using the `std::string` object from the standard template library to save a lot of time and prevent headache. **In this semester, you are allowed to use `std::string` _after week 5_**.
 
-* `apt-get install vlc`
-* `git commit -a -m "kill me please!"`
-* `cp [file] [target path]`
-
-| Application | Argument 1 | Argument 2 | Argument 3 | Argument 4 |
-|-------------|------------|------------|------------|------------|
-| `apt-get` | `install` | `vlc` | `null` | `null` |
-| `git`  | `commit` | `-a` | `-m` | `"kill me please!"` |
-| `cp` | `[file]` | `[target path]` | `null` | `null` |
-
-### Command Line Arguments in C and C++
+### For the moment
 
 ```c++
-int main( int argc, char **argv )
-{
-    std::cout << "Arguments count:" << argc << std::endl;
+// Alternative way of Construction + Initialization of array-of-characters of size 6
+char dna[] = { 'A' , 'A' , 'C' , 'T' , 'G' , 'C' , '\0'};
 
-    for( int i = 0 ; i < argc ; ++i )
-    {
-        std::cout << "Argument:" << argv[ i ] << std::endl;
-    }
+std::cout << dna << std::endl; // Prints: AACTGC
+```
+
+## Basic Operations on Static and Dynamic Arrays
+
+### Copying between arrays
+
+Assume that you want to copy an array to another array (either static or dynamic).
+
+```c++
+#include <algorithm> // Needed for std::copy
+#include <iostream> // Needed for std::cout
+int main()
+{
+    char dna1[] = { 'A' , 'A' , 'C' , 'T' , 'G' , 'C' , '\0'};
+
+    char dna2[ 7 ];
+
+    std::copy( &dna1[0] , &dna1[6] , &dna2[0] );
+
+    std::cout << dna2 << std::endl;
 }
 ```
 
-## Coding in Multiple Files
+`std::copy`, to copy from **source** array to **target** array, it takes:
 
-## Compilation of Multiple Files of Multiple Applications
-
-## Compilation of 100 Files
+1- Address of first element of **source** array.
+2- Address of last element of **source** array.
+3- Address of first element of **target** array.
