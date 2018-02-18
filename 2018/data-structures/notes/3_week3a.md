@@ -166,7 +166,7 @@ char dna_chromosome11 = new char[ 150000 ];
 ```c++
 int *array1 = new int[ 900 ];
 
-char dna_chromosome11 = new char[ 150000 ];
+char *dna_chromosome11 = new char[ 150000 ];
 
 // Do some interesting analysis on your genome.
 someInterestingFunction( &dna_chromosome[0] , 150000 );

@@ -111,14 +111,14 @@ Adresses gives a lot of flexibility to control variables. For example, you can m
 ```c++
 int x = 9;
 
-std::cout << "x" << std::endl; // prints: 9
+std::cout << x << std::endl; // prints: 9
 
 int *px = &x;
 
 // Derefrencing px to access x.
 *px = 13;
 
-std::cout << "x" << std::endl; // prints 13
+std::cout << x << std::endl; // prints 13
 ```
 
 ### Passing arguments by pointer
