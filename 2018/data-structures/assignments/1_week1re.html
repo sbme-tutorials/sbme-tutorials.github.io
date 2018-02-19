@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</title>
+  <title>Task 1: Resubmission</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/3_faq2.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/1_week1re.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -234,59 +234,42 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</h1>
+    <h1 class="post-title">Task 1: Resubmission</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="faq-2-why-int-p--x--p--x">FAQ #2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></h2>
+    <h2 id="announcement">Announcement</h2>
 
-<h3 id="a-declarationinitialization-vs-dereferencing">A Declaration+Initialization vs. Dereferencing</h3>
+<p><a href="https://docs.google.com/spreadsheets/d/16Lye4BkT88BtFOuotDJWUGJ9gOi0QnUecLvrl7YhlvI/edit?usp=sharing">[SBE201] Deliverables</a></p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="c1">// Declaring a pointer-to-integer and initializing it to address of x.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiles (Type Match)!</span>
+<p>The sheet above contains your scores for week 1 submissions. If you have no scores for any task, it means your task has not been submitted; either because you missed some instructions in the assignment, or you had a prior excuse (e.g technical issue) for not attempting the task.</p>
 
-<span class="c1">// Dereferencing px and assignment by address of integer</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error (Type Mismatch)!</span>
-</code></pre></div></div>
-
-<p>In other words,</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>is equivalent to</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>Which is <strong>not</strong> equivalent to</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error (Type Mismatch)!</span>
-</code></pre></div></div>
-
-<h3 id="short-story">Short Story</h3>
+<h2 id="part-1-resubmission">Part 1 Resubmission</h2>
 
 <ul>
-  <li>Asterisk <code class="highlighter-rouge">*</code> in declarations expressions (<code class="highlighter-rouge">int *p;</code>) means you are declaring a pointer <code class="highlighter-rouge">p</code>.</li>
-  <li>Asterisk <code class="highlighter-rouge">*</code> in non-declaration expressions (<code class="highlighter-rouge">*p;</code>)  means you are dereferencing a pointer (get the variable pointed by the address in <code class="highlighter-rouge">p</code>).</li>
+  <li>First, register join to the assignment page <a href="https://classroom.github.com/a/Tb5royQ9">sbe201-week1-part1-resubmit</a>.</li>
+  <li>Follow the instructions until you get your own repository.</li>
+  <li>Clone.</li>
+  <li>Edit: Add your favourit saying, then save.</li>
+  <li>Commit.</li>
+  <li>Push.</li>
 </ul>
 
-<p>You can also make it simpler for your self if you wish.</p>
+<p><strong>Deadline Thursday 11:59 PM</strong></p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<h2 id="part-2-resubmission">Part 2 Resubmission</h2>
 
-<span class="c1">// To declare and initialize pointers to zero address,</span>
-<span class="c1">// you can use either nullptr or 0.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<ul>
+  <li>First, register join to the assignment page <a href="https://classroom.github.com/a/omLX1kcn">sbe201-week1-part2-resubmit</a>.</li>
+  <li>Follow the instructions until you get your own repository.</li>
+  <li>Clone.</li>
+  <li>Follow the problems as in-line comments.</li>
+  <li>After finishing, save.</li>
+  <li>Commit.</li>
+  <li>Push.</li>
+</ul>
 
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
+<p><strong>Deadline Thursday 11:59 PM</strong></p>
 
   </div>
 
