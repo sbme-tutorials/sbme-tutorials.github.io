@@ -14,19 +14,129 @@
 ---
 class: center, middle
 
-
---
-* These slides are inspired by slides made by T.A Aya Fawzy, 2015.
-
+.footnote[ These notes are inspired by slides made by my TA *Aya Fawzy*, 2015 ]
 
 ---
 class: left, top
 ## Basic Signals
 
-### Delta
+### Impulse Function (Dirac)
 
-### Unit Step
+<img style="width:50%" src="/gallery/dirac.png">
 
+---
+class: left, top
+```python
+def impulse(x):
+    return 1 * (x == 0)
+
+ts = np.arange(-10,10,1)
+impulse_sig = impulse( ts )
+stem( ts, impulse_sig )
+```
+
+--
+<img style="width:50%" src="../../special/impulse.png">
+
+---
+class: left, top
+### Plotting Signals
+
+```python
+def plot( t , y ):
+    fig = plt.figure()
+    ax = fig.gca()
+    ax.set_ylim((-2, 2))
+    ax.grid(True)
+
+    plt.plot( t , y )
+
+def plot2( t , y1 , y2 ):
+    fig = plt.figure()
+    ax = fig.gca()
+    ax.set_ylim((-5, 5))
+    ax.grid(True)
+
+    plt.plot( t , y1 , 'C1', label='C1' )
+    plt.plot( t , y2 , 'C2', label='C2')
+    plt.legend()
+```
+
+
+---
+class: left, top
+
+```python
+def stem( t , y1 ):
+
+    markerline, stemlines, baseline = plt.stem(t, y1, markerfmt='o', label='y2')
+    plt.setp(stemlines, 'color', plt.getp(markerline,'color'))
+    plt.setp(stemlines, 'linestyle', 'dotted')
+
+    plt.legend()
+    plt.show()
+
+
+def stem2( t , y1 , y2 ):
+    markerline, stemlines, baseline = plt.stem(t, y1, markerfmt='o', label='y1')
+    plt.setp(stemlines, 'color', plt.getp(markerline,'color'))
+    plt.setp(stemlines, 'linestyle', 'dotted')
+
+    markerline, stemlines, baseline = plt.stem(t, y2, markerfmt='o', label='y2')
+    plt.setp(stemlines, 'color', plt.getp(markerline,'color'))
+    plt.setp(stemlines, 'linestyle', 'dotted')
+
+    plt.legend()
+    plt.show()
+```
+
+---
+class: left, top
+### Unit Step Function (Heaviside)
+
+```python
+def step(x):
+    return 1 * (x > 0)
+
+ts = np.arange(-10,10,0.01)
+step_sig = step( ts )
+plot( ts , step_sig )
+```
+
+--
+<img style="width:50%" src="../../special/step1.png">
+
+---
+class: left, top
+### Sinusoids
+
+```python
+def periodic_signal( freq , amp , func ):
+    ts = np.arange( 0 , 0.3 , 1 / (50 * freq) )
+    phases = 2 * np.pi * freq * ts 
+    ys = amp * func( phases )
+    return ts , ys
+
+def sin_signal( freq , amp ):
+    return periodic_signal( freq, amp, np.sin )
+
+def cos_signal( freq , amp ):
+    return periodic_signal( freq, amp, np.cos )
+```
+---
+class: left, top
+### Cosine and Sine
+
+```python
+ts  ,cos_sig = cos_signal( 10 , 1 )
+plot( ts, cos_sig )
+
+ts  ,sin_sig = sin_signal( 10 , 1 )
+plot( ts, sin_sig )
+```
+
+--
+<img style="width:50%" src="../../special/cos.png">
 
 ---
 class: left, top
@@ -34,72 +144,199 @@ class: left, top
 
 ### Scaling
 
-### Time Shifting
+```python
+ts  ,cos_sig = cos_signal( 10 , 1 )
+cos_sig_scaled = 3 * cos_sig 
+plot2( ts, cos_sig , cos_sig_scaled )
+```
 
-### Time Reversal (Mirroring)
-
-### Order of Operations
+--
+<img style="width:50%" src="../../special/cos_scaled.png">
 
 ---
 class: left, top
+### Time Shifting
+
+```python
+ts = np.arange(-10,10,1)
+impulse_sig = impulse( ts )
+impulse_sig_shifted = impulse( ts - 3 )
+stem2( ts, impulse_sig , impulse_sig_shifted)
+```
+
+--
+<img style="width:50%" src="../../special/impulse_shifted.png">
+
+---
+class: left, middle
+### Time Reversal (Mirroring)
+
+```python
+ts = np.arange(-10,10,0.01)
+step_sig = step( -ts )
+plot( ts , step_sig )
+```
+
+--
+<img style="width:50%" src="../../special/mirror.png">
+
+---
+class: left, middle
+### Time Reversal + Shifting
+
+```python
+ts = np.arange(-10,10,0.01)
+step_sig = step( -(ts-3))
+plot( ts , step_sig )
+```
+
+--
+<img style="width:50%" src="../../special/reversal_shifting.png">
+
+---
+class: center, middle
 ## DSP General Scheme
 
+<img style="width:50%" src="/gallery/sp.jpg">
 
 ---
 class: left, top
 ## Sampling: Motivation
 
+* Analog signal contains an infinite number of points.
+* The infinite points cannot be processed by computer, since they require:
+  * Infinite amount of memory.
+  * Infinite amount of processing power for computations.
+* Sampling can solve such a problem by taking samples at a fixed time interval or sampling period T.
+
 ---
-class: left, top
+class: center, middle
 ## Sampling: Definition
 
+--
+<img style="width:50%" src="/gallery/Signal_Sampling.png">
+
 ---
-class: left, top
+class: center, middle
 ## Uniform Sampling
 
+$$ p(t) = \sum_{n=-\infty}^{\infty} \delta( t - nT ) $$
 
----
-class: left, top
-## Uniform Sampling
-
-
----
-class: left, top
-## Uniform Sampling
+--
+<img style="width:50%" src="/gallery/Signal_Sampling.png">
 
 
 ---
 class: left, top
-## Uniform Sampling
+## Task1 Requirement 1: Sampling Sinusoids and Exponential
 
+--
+Plot several sinusoids and exponential signals from nature, then show the sampled version of these signals.
+
+--
+* Python Implementation.
+
+--
+* Plotly, or Plotly-Dash is a plus.
+
+--
+* Porting your implementation on the cloud (github) is a plus.
 
 ---
 class: left, top
-## Uniform Sampling
+## Task1 Requirement 2: Listening to Sinusoids
 
+--
+Generate a sound signal composed from different sinusoids, and other from mixture of sinusoids and exponentials.
 
----
-class: left, top
-## Sampling Sinusoids
+--
+Recommended watching and reading:
 
-
----
-class: left, top
-## Listening to Sinusoids
+* [{Audio Signal Processing for Music Applications}](https://www.coursera.org/learn/audio-signal-processing/home/info)
+* [{Notebooks for "Python for Signal Processing" book}](https://github.com/unpingco/Python-for-Signal-Processing)
 
 ---
 class: left, top
 ## Effect of Phase Shift
 
+What is the effect of adding two sinusoids with different
+phase shift?
 
 ---
-class: left, top
+class: center, middle
 ## Aliasing
 
+--
+<img style="width:100%" src="/gallery/sampling.gif">
+
+---
+class: center, middle
+## Nyquist Criterion
+
+$$ f_{\text{sampling}} \geq 2f_\text{max} $$
+
+--
+<img style="width:100%" src="/gallery/sampling.png">
 
 ---
 class: left, top
-## Nyquist Criterion
+## Convolution: Definition
+
+--
+* Convolution plays an important role in digital filtering.
+
+--
+* Convolution notation $$y(n) = x(n) * h(n)$$
+
+--
+* Convolution formula $$y(n) = \sum_{n=-\infty}^{\infty} x(n) h( n - k )$$
+
+
+
+---
+class: center, middle
+
+--
+> From [Wikipedia](https://en.wikipedia.org/wiki/Convolution)
+
+--
+<img style="width:100%" src="/gallery/conv1wiki.gif">
+
+
+---
+class: center, middle
+
+--
+<img style="width:100%" src="/gallery/conv2wiki.gif">
+
+---
+class: left, top
+## Textbook Problems
+
+### Example
+
+Let $$ f = \big[1,4,2,5 \big] $$, $$ g = \big[3, 4, 1\big]$$
+Estimate the convolution version of $$c = f * g$$
+
+Solution:
+
+---
+class: left, top
+## Task 2: Migrating your Latest Task to Plotly
+
+Migrate a simplified version of your previous task from MATLAB to Plotly
+
+--
+* No audio recording required.
+
+---
+class: left, top
+## Code Snippets
+
+```terminal
+git clone https://github.com/sbme-tutorials/sbe309-week2-demo.git
+```
+
 
 
 
