@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/dsp/notes/2_week2.html">
+  <link rel="canonical" href="http://localhost:4000/2018/dsp/notes/2_week2.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -237,52 +237,259 @@
 
 <h2 id="basic-signals">Basic Signals</h2>
 
-<h3 id="delta">Delta</h3>
+<h3 id="impulse-function-dirac">Impulse Function (Dirac)</h3>
 
-<h3 id="unit-step">Unit Step</h3>
+<script type="math/tex; mode=display">% <![CDATA[
+\delta(x) = \left\{
+        \begin{array}{ll}
+            \infty & \quad x = 0 \\
+            0 & \quad x \neq 0
+        \end{array}
+    \right. %]]></script>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">impulse</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">impulse_sig</span> <span class="o">=</span> <span class="n">impulse</span><span class="p">(</span> <span class="n">ts</span> <span class="p">)</span>
+<span class="n">stem</span><span class="p">(</span> <span class="n">ts</span><span class="p">,</span> <span class="n">impulse_sig</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/impulse.png" alt="" /></p>
+
+<h3 id="plotting-signals">Plotting Signals</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">plot</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y</span> <span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">plot2</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y1</span> <span class="p">,</span> <span class="n">y2</span> <span class="p">):</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y1</span> <span class="p">,</span> <span class="s">'C1'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'C1'</span> <span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y2</span> <span class="p">,</span> <span class="s">'C2'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'C2'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">stem</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y1</span> <span class="p">):</span>
+
+    <span class="n">markerline</span><span class="p">,</span> <span class="n">stemlines</span><span class="p">,</span> <span class="n">baseline</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">markerfmt</span><span class="o">=</span><span class="s">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'y2'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s">'color'</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">getp</span><span class="p">(</span><span class="n">markerline</span><span class="p">,</span><span class="s">'color'</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s">'linestyle'</span><span class="p">,</span> <span class="s">'dotted'</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">stem2</span><span class="p">(</span> <span class="n">t</span> <span class="p">,</span> <span class="n">y1</span> <span class="p">,</span> <span class="n">y2</span> <span class="p">):</span>
+    <span class="n">markerline</span><span class="p">,</span> <span class="n">stemlines</span><span class="p">,</span> <span class="n">baseline</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">markerfmt</span><span class="o">=</span><span class="s">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'y1'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s">'color'</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">getp</span><span class="p">(</span><span class="n">markerline</span><span class="p">,</span><span class="s">'color'</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s">'linestyle'</span><span class="p">,</span> <span class="s">'dotted'</span><span class="p">)</span>
+
+    <span class="n">markerline</span><span class="p">,</span> <span class="n">stemlines</span><span class="p">,</span> <span class="n">baseline</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">markerfmt</span><span class="o">=</span><span class="s">'o'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'y2'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s">'color'</span><span class="p">,</span> <span class="n">plt</span><span class="o">.</span><span class="n">getp</span><span class="p">(</span><span class="n">markerline</span><span class="p">,</span><span class="s">'color'</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">stemlines</span><span class="p">,</span> <span class="s">'linestyle'</span><span class="p">,</span> <span class="s">'dotted'</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h3 id="unit-step-function-heaviside">Unit Step Function (Heaviside)</h3>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\mathcal{H(x)} = \left\{
+        \begin{array}{ll}
+            0 & \quad x \leq 0 \\
+            1 & \quad x > 0
+        \end{array}
+    \right. %]]></script>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">step_sig</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span> <span class="n">ts</span> <span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span> <span class="n">ts</span> <span class="p">,</span> <span class="n">step_sig</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/step1.png" alt="" /></p>
+
+<h3 id="sinusoids">Sinusoids</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">periodic_signal</span><span class="p">(</span> <span class="n">freq</span> <span class="p">,</span> <span class="n">amp</span> <span class="p">,</span> <span class="n">func</span> <span class="p">):</span>
+    <span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span> <span class="mi">0</span> <span class="p">,</span> <span class="mf">0.3</span> <span class="p">,</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">50</span> <span class="o">*</span> <span class="n">freq</span><span class="p">)</span> <span class="p">)</span>
+    <span class="n">phases</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">freq</span> <span class="o">*</span> <span class="n">ts</span> 
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">amp</span> <span class="o">*</span> <span class="n">func</span><span class="p">(</span> <span class="n">phases</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">ts</span> <span class="p">,</span> <span class="n">ys</span>
+
+<span class="k">def</span> <span class="nf">sin_signal</span><span class="p">(</span> <span class="n">freq</span> <span class="p">,</span> <span class="n">amp</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">periodic_signal</span><span class="p">(</span> <span class="n">freq</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">cos_signal</span><span class="p">(</span> <span class="n">freq</span> <span class="p">,</span> <span class="n">amp</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="n">periodic_signal</span><span class="p">(</span> <span class="n">freq</span><span class="p">,</span> <span class="n">amp</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="cosine-and-sine">Cosine and Sine</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ts</span>  <span class="p">,</span><span class="n">cos_sig</span> <span class="o">=</span> <span class="n">cos_signal</span><span class="p">(</span> <span class="mi">10</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span> <span class="n">ts</span><span class="p">,</span> <span class="n">cos_sig</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/cos.png" alt="" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ts</span>  <span class="p">,</span><span class="n">sin_sig</span> <span class="o">=</span> <span class="n">sin_signal</span><span class="p">(</span> <span class="mi">10</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span> <span class="n">ts</span><span class="p">,</span> <span class="n">sin_sig</span> <span class="p">)</span>
+</code></pre></div></div>
 
 <h2 id="basic-operations">Basic Operations</h2>
 
 <h3 id="scaling">Scaling</h3>
 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ts</span>  <span class="p">,</span><span class="n">cos_sig</span> <span class="o">=</span> <span class="n">cos_signal</span><span class="p">(</span> <span class="mi">10</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">)</span>
+<span class="n">cos_sig_scaled</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">cos_sig</span> 
+<span class="n">plot2</span><span class="p">(</span> <span class="n">ts</span><span class="p">,</span> <span class="n">cos_sig</span> <span class="p">,</span> <span class="n">cos_sig_scaled</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/cos_scaled.png" alt="" /></p>
+
 <h3 id="time-shifting">Time Shifting</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">impulse_sig</span> <span class="o">=</span> <span class="n">impulse</span><span class="p">(</span> <span class="n">ts</span> <span class="p">)</span>
+<span class="n">impulse_sig_shifted</span> <span class="o">=</span> <span class="n">impulse</span><span class="p">(</span> <span class="n">ts</span> <span class="o">-</span> <span class="mi">3</span> <span class="p">)</span>
+<span class="n">stem2</span><span class="p">(</span> <span class="n">ts</span><span class="p">,</span> <span class="n">impulse_sig</span> <span class="p">,</span> <span class="n">impulse_sig_shifted</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/impulse_shifted.png" alt="" /></p>
 
 <h3 id="time-reversal-mirroring">Time Reversal (Mirroring)</h3>
 
-<h3 id="order-of-operations">Order of Operations</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">step_sig</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span> <span class="o">-</span><span class="n">ts</span> <span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span> <span class="n">ts</span> <span class="p">,</span> <span class="n">step_sig</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/mirror.png" alt="" /></p>
+
+<h3 id="time-reversal--shifting">Time Reversal + Shifting</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">step_sig</span> <span class="o">=</span> <span class="n">step</span><span class="p">(</span> <span class="o">-</span><span class="p">(</span><span class="n">ts</span><span class="o">-</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">plot</span><span class="p">(</span> <span class="n">ts</span> <span class="p">,</span> <span class="n">step_sig</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../special/reversal_shiftin.png" alt="" /></p>
 
 <h2 id="dsp-general-scheme">DSP General Scheme</h2>
 
+<p><img src="/gallery/sp.jpg" alt="" /></p>
+
 <h2 id="sampling-motivation">Sampling: Motivation</h2>
+
+<ul>
+  <li>Analog signal contains an infinite number of points.</li>
+  <li>
+    <p>The infinite points cannot be processed by computer, since they require:</p>
+
+    <ul>
+      <li>Infinite amount of memory.</li>
+      <li>Infinite amount of processing power for computations.</li>
+    </ul>
+  </li>
+  <li>Sampling can solve such a problem by taking samples at a fixed time interval or sampling period T.</li>
+</ul>
 
 <h2 id="sampling-definition">Sampling: Definition</h2>
 
+<p><img src="/gallery/Signal_Sampling.png" alt="" /></p>
+
 <h2 id="uniform-sampling">Uniform Sampling</h2>
 
-<h2 id="uniform-sampling-1">Uniform Sampling</h2>
+<p><img src="/gallery/Signal_Sampling.png" alt="" /></p>
 
-<h2 id="uniform-sampling-2">Uniform Sampling</h2>
+<script type="math/tex; mode=display">p(t) = \sum_{n=-\infty}^{\infty} \delta( t - nT )</script>
 
-<h2 id="uniform-sampling-3">Uniform Sampling</h2>
+<h2 id="task1-requirement-1-sampling-sinusoids-and-exponential">Task1 Requirement 1: Sampling Sinusoids and Exponential</h2>
 
-<h2 id="uniform-sampling-4">Uniform Sampling</h2>
+<p>Plot several sinusoids and exponential signals from nature, then show the sampled version of these signals.</p>
 
-<h2 id="sampling-sinusoids">Sampling Sinusoids</h2>
+<ul>
+  <li>Python Implementation.</li>
+  <li>Plotly, or Plotly-Dash is a plus.</li>
+  <li>Porting your implementation on the cloud (github) is a plus.</li>
+</ul>
 
-<h2 id="listening-to-sinusoids">Listening to Sinusoids</h2>
+<h2 id="task1-requirement-2-listening-to-sinusoids">Task1 Requirement 2: Listening to Sinusoids</h2>
 
-<p><a href="#soundpyton">(Serra &amp; Smith, 2017)</a>
-<a href="#dsppyton">(José, 2017)</a></p>
+<p>Generate a sound signal composed from different sinusoids, and other from mixture of sinusoids and exponentials.</p>
+
+<p>Recommended watching and reading:</p>
+
+<ul>
+  <li><a href="#soundpyton">(Serra &amp; Smith, 2017)</a></li>
+  <li><a href="#dsppyton">(José, 2017)</a></li>
+</ul>
 
 <h2 id="effect-of-phase-shift">Effect of Phase Shift</h2>
 
+<p>What is the effect of adding two sinusoids with different
+phase shift?</p>
+
 <h2 id="aliasing">Aliasing</h2>
+
+<p><img src="/gallery/sampling.gif" alt="" /></p>
 
 <h2 id="nyquist-criterion">Nyquist Criterion</h2>
 
+<p><img src="/gallery/sampling.png" alt="" /></p>
+
+<script type="math/tex; mode=display">f_{\text{sampling}} \geq 2f_\text{max}</script>
+
+<h2 id="convolution-definition">Convolution: Definition</h2>
+
+<ul>
+  <li>Convolution plays an important role in digital filtering.</li>
+  <li>Convolution notation <script type="math/tex">y(n) = x(n) * h(n)</script></li>
+  <li>Convolution formula <script type="math/tex">y(n) = \sum_{n=-\infty}^{\infty} x(n) h( n - k )</script></li>
+</ul>
+
+<blockquote>
+  <p>From <a href="https://en.wikipedia.org/wiki/Convolution">Wikipedia</a></p>
+</blockquote>
+
+<p><img src="/gallery/conv1wiki.gif" alt="" /></p>
+
+<p><img src="/gallery/conv2wiki.gif" alt="" /></p>
+
 <h2 id="textbook-problems">Textbook Problems</h2>
 
-<h2 id="migrating-your-latest-task-to-python">Migrating your Latest Task to Python</h2>
+<h3 id="example">Example</h3>
+
+<p>Let <script type="math/tex">f = \big[1,4,2,5 \big]</script>, <script type="math/tex">g = \big[3, 4, 1\big]</script>
+Estimate the convolution version of <script type="math/tex">c = f * g</script></p>
+
+<p>Solution:</p>
+
+<h2 id="task-2-migrating-your-latest-task-to-plotly">Task 2: Migrating your Latest Task to Plotly</h2>
+
+<p>Migrate a simplified version of your previous task from MATLAB to Plotly</p>
+
+<ul>
+  <li>No audio recording required.</li>
+</ul>
+
+<h2 id="code-snippets">Code Snippets</h2>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">git clone https://github.com/sbme-tutorials/sbe309-week2-demo.git
+</span></code></pre></div></div>
 
 <h2 id="references">References</h2>
 
