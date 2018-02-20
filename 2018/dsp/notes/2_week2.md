@@ -250,9 +250,9 @@ Solution:
 
 ## Task 2: Migrating your Latest Task to Plotly
 
-Migrate a simplified version of your previous task from MATLAB to Plotly
+Migrate a simplified version of signal viewer task of last week, from MATLAB to Python. Also, **integrate task 1 of this week into your GUI**.
 
-* No audio recording required.
+**Deadline Wednesday of 28 Fubruary.**
 
 ## Code Snippets
 
