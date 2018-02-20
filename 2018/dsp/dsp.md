@@ -40,12 +40,16 @@ Demonstrator:  Eng. Asem Alaa & Eng. Eman Ibraheem
 | Week | DSP | Software Skills |
 |------|----------------------|-----------|
 | 1 | Introduction to Biological Signals; Signal Visualization | Briefly: Python basics; plotly for data visualization; Anaconda |
+| 2 | Basic signals in DSP, basic operations on signals, convolution | Python applications |
+
 
 ## Tutorials
 
 1. Week 1:
     * [Slides]({{ site.baseurl }}{% link 2018/dsp/presentations/1_week1/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/dsp/notes/1_week1.md %}){:target="_blank"}.
-
+2. Week 2:
+    * [Slides]({{ site.baseurl }}{% link 2018/dsp/presentations/2_week2/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/dsp/notes/2_week2.md %}){:target="_blank"}.
 
 ## Announcements
