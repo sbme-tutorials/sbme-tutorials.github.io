@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Week 2: Image Processing 1</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/2_week2.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 2: Image Processing 1</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#images-as-arrays" id="markdown-toc-images-as-arrays">Images as Arrays</a>    <ul>
+      <li><a href="#rgb-images" id="markdown-toc-rgb-images">RGB Images</a></li>
+      <li><a href="#binary-images-and-scaler-images" id="markdown-toc-binary-images-and-scaler-images">Binary Images and Scaler Images</a>        <ul>
+          <li><a href="#converting-from-rgb-to-grayscale" id="markdown-toc-converting-from-rgb-to-grayscale">Converting from RGB to Grayscale</a></li>
+          <li><a href="#converting-from-grayscale-to-binary-image" id="markdown-toc-converting-from-grayscale-to-binary-image">Converting from Grayscale to Binary Image</a></li>
+        </ul>
+      </li>
+      <li><a href="#hyperspectral-images" id="markdown-toc-hyperspectral-images">Hyperspectral Images</a></li>
+    </ul>
+  </li>
+  <li><a href="#mean-and-variance" id="markdown-toc-mean-and-variance">Mean and Variance</a></li>
+  <li><a href="#profiles" id="markdown-toc-profiles">Profiles</a></li>
+  <li><a href="#edges" id="markdown-toc-edges">Edges</a>    <ul>
+      <li><a href="#first-order-derivatives" id="markdown-toc-first-order-derivatives">First-Order Derivatives</a></li>
+    </ul>
+  </li>
+  <li><a href="#computer-vision-opportunities-in-egypt" id="markdown-toc-computer-vision-opportunities-in-egypt">Computer Vision Opportunities in Egypt</a>    <ul>
+      <li><a href="#internship-at-affectiva" id="markdown-toc-internship-at-affectiva">Internship at Affectiva</a></li>
+      <li><a href="#360imaging-in-egypt" id="markdown-toc-360imaging-in-egypt">360imaging in Egypt</a></li>
+      <li><a href="#egyptian-ai--big-data-geeks" id="markdown-toc-egyptian-ai--big-data-geeks">Egyptian AI &amp; Big Data Geeks</a>        <ul>
+          <li><a href="#follow-the-latest-news-technologies-and-vacancies-in-egypt" id="markdown-toc-follow-the-latest-news-technologies-and-vacancies-in-egypt">Follow the latest news, technologies, and vacancies in Egypt</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+  <li><a href="#interesting-application-artistic-flavor" id="markdown-toc-interesting-application-artistic-flavor">Interesting Application: Artistic Flavor</a>    <ul>
+      <li><a href="#neural-doodle" id="markdown-toc-neural-doodle">Neural Doodle</a></li>
+    </ul>
+  </li>
+  <li><a href="#exercises" id="markdown-toc-exercises">Exercises</a>    <ul>
+      <li><a href="#exercise-11" id="markdown-toc-exercise-11">Exercise 1.1</a>        <ul>
+          <li><a href="#load-a-colour-rgb-image-i-in-a-lossless-data-format-such-as-bmp--png--or-tiff--and-display-it-on-a-screen" id="markdown-toc-load-a-colour-rgb-image-i-in-a-lossless-data-format-such-as-bmp--png--or-tiff--and-display-it-on-a-screen">Load a colour (RGB) image I in a lossless data format, such as bmp , png , or tiff , and display it on a screen</a></li>
+          <li><a href="#display-the-histograms-of-all-three-colour-channels-of-i" id="markdown-toc-display-the-histograms-of-all-three-colour-channels-of-i">Display the histograms of all three colour channels of I</a></li>
+          <li><a href="#move-the-mouse-cursor-within-your-image-for-the-current-pixel-location-p-in-the-image-compute-and-display" id="markdown-toc-move-the-mouse-cursor-within-your-image-for-the-current-pixel-location-p-in-the-image-compute-and-display">Move the mouse cursor within your image. For the current pixel location p in the image, compute and display</a></li>
+        </ul>
+      </li>
+      <li><a href="#exercise-12" id="markdown-toc-exercise-12">Exercise 1.2</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="images-as-arrays">Images as Arrays</h2>
+
+<p><img src="../images/pixels.png" alt="" /></p>
+
+<h3 id="rgb-images">RGB Images</h3>
+
+<p>For RGB images, each pixel is composed of three channels, namely: red, green, and blue.</p>
+
+<p><img src="../images/sphinx_rgb.png" alt="" /></p>
+
+<h3 id="binary-images-and-scaler-images">Binary Images and Scaler Images</h3>
+
+<ul>
+  <li>A pixel in a <strong>binary</strong> image is either 0 or 1.</li>
+  <li>A pixel in a scaler image is composed of a single channel with scaler value.
+    <ul>
+      <li>Example: 256-grayscale images.</li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="converting-from-rgb-to-grayscale">Converting from RGB to Grayscale</h4>
+
+<p>For each RGB pixel, we compute a combination of the three values into single value. In literature, using a combination of <script type="math/tex">\big[0.299, 0.587, 0.114\big]</script> is extensively used.</p>
+
+<script type="math/tex; mode=display">I = \big[0.299, 0.587, 0.114\big] . \big[R, G, B\big]^T</script>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">rgb2gray</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">[</span><span class="o">...</span><span class="p">,:</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.299</span><span class="p">,</span> <span class="mf">0.587</span><span class="p">,</span> <span class="mf">0.114</span><span class="p">])</span>
+</code></pre></div></div>
+
+<p><img src="../images/sphinx_gray.png" alt="" /></p>
+
+<h4 id="converting-from-grayscale-to-binary-image">Converting from Grayscale to Binary Image</h4>
+
+<p>We can binarize an image by using a <em>threshold</em> value, such that pixel value is 1 if <script type="math/tex">I > \text{threshold}</script> and 0 otherwise.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">binarize</span><span class="p">(</span> <span class="n">gray_image</span> <span class="p">,</span> <span class="n">threshold</span> <span class="p">):</span>
+    <span class="n">threshold</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span> <span class="n">gray_image</span> <span class="p">)</span> <span class="o">*</span> <span class="n">threshold</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span> <span class="n">gray_image</span> <span class="o">&gt;</span> <span class="n">threshold</span> <span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../images/sphinx_bin.png" alt="" /></p>
+
+<h3 id="hyperspectral-images">Hyperspectral Images</h3>
+
+<p>Pixels in Hyperspectral images consists of many channels.</p>
+
+<p><img src="../images/stones_hsi.png" alt="" /></p>
+
+<p><img src="../images/surve_hsi.png" alt="" /></p>
+
+<h2 id="mean-and-variance">Mean and Variance</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span> <span class="n">image</span> <span class="p">))</span>
+
+<span class="k">print</span><span class="p">(</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span> <span class="n">image</span> <span class="p">))</span>
+</code></pre></div></div>
+
+<h2 id="profiles">Profiles</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">x1</span> <span class="o">=</span> <span class="n">gray_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">gray_image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">gray_image</span><span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">),</span> <span class="n">y</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">int</span><span class="p">)]</span>
+
+<span class="c">#-- Plot...</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gray_image</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="n">x0</span><span class="p">,</span> <span class="n">x1</span><span class="p">],</span> <span class="p">[</span><span class="n">y0</span><span class="p">,</span> <span class="n">y1</span><span class="p">],</span> <span class="s">'ro-'</span><span class="p">)</span>
+<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'image'</span><span class="p">)</span>
+
+<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="../images/pegion_profile.png" alt="" /></p>
+
+<h2 id="edges">Edges</h2>
+
+<p>In images, we are always interested to define the boundaries of objects existing in an image, and separating it from background. Edge detection is fundamental step in many Computer Vision pipelines.
+The simplest form of edge detection is applying mathematical differentiation on image data. Since we work with digital pixels, we will apply difference equations.</p>
+
+<h3 id="first-order-derivatives">First-Order Derivatives</h3>
+
+<script type="math/tex; mode=display">\nabla f=\begin{bmatrix}
+g_{x} \\
+g_{y}
+\end{bmatrix} = \begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y}
+\end{bmatrix}</script>
+
+<p>where:</p>
+
+<p><script type="math/tex">\textstyle\frac{\partial f}{\partial x}</script> is the derivative with respect to x (gradient in the x direction)</p>
+
+<p><script type="math/tex">\textstyle\frac{\partial f}{\partial y}</script> is the derivative with respect to y (gradient in the y direction).</p>
+
+<p><img src="../images/cat_gradient.png" alt="" /></p>
+
+<h2 id="computer-vision-opportunities-in-egypt">Computer Vision Opportunities in Egypt</h2>
+
+<h3 id="internship-at-affectiva">Internship at <a href="https://www.affectiva.com">Affectiva</a></h3>
+
+<p><img style="width:80%" src="../images/affectiva.png" /></p>
+
+<p><a href="https://www.affectiva.com/machine-learning-intern/">Internship 1: Machine Learning</a></p>
+
+<p><a href="https://www.affectiva.com/empath-high-school-summer-internship-program-at-affectiva/">Internship 2: Empath Summer Internship</a></p>
+
+<p>A very interesting talk by <em>Rana Elkaliouby</em> about Affectiva:</p>
+
+<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/ar/rana_el_kaliouby_this_app_knows_how_you_feel_from_the_look_on_your_face" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen=""></iframe></div></div>
+
+<h3 id="360imaging-in-egypt">360imaging in Egypt</h3>
+
+<p><img style="width:80%" src="../images/360imaging.png" /></p>
+
+<p>An intuitive and easy to use treatment planning software for accurate and predictable planning of implant cases.</p>
+
+<p><a href="http://www.360imaging.com/">Website</a></p>
+
+<ul>
+  <li>Planned Dental Surgeries.</li>
+  <li>They demand highly skilled C++ developers.</li>
+  <li>Computer Vision background is a plus</li>
+  <li>They offer opportunities through Wuzzuf.</li>
+</ul>
+
+<h3 id="egyptian-ai--big-data-geeks">Egyptian AI &amp; Big Data Geeks</h3>
+
+<h4 id="follow-the-latest-news-technologies-and-vacancies-in-egypt">Follow the latest news, technologies, and vacancies in Egypt</h4>
+
+<p><a href="https://www.facebook.com/groups/big.data.egypt/?hc_ref=ARRdEaEGxIrwkMjEnvNxD81ZxbGlFmE6i92Dd4Vdw0vboAUOg05qsCcMkLJNv3-28OE">Egyptian AI &amp; Big Data Geeks</a></p>
+
+<p>Also visit the <a href="https://www.facebook.com/groups/big.data.egypt/permalink/1762260707366456/"><strong>pinned</strong> post</a> for lots of info about many related topics.</p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://github.com/jbhuang0604/awesome-computer-vision">Awsome Computer Vision</a>, <strong>+5K</strong> starts.</li>
+  <li><a href="https://github.com/josephmisiti/awesome-machine-learning">Awesome Machine Learning</a>, <strong>30K</strong> starts.</li>
+  <li><a href="https://stanfordmlgroup.github.io/">Stanford Machine Learning Group</a></li>
+</ul>
+
+<h2 id="interesting-application-artistic-flavor">Interesting Application: Artistic Flavor</h2>
+
+<h3 id="neural-doodle">Neural Doodle</h3>
+
+<p><a href="https://github.com/alexjc/neural-doodle">Neural Doodle</a></p>
+
+<p><img src="../images/doodle.png" alt="" /></p>
+
+<h2 id="exercises">Exercises</h2>
+
+<h3 id="exercise-11">Exercise 1.1</h3>
+
+<p>Implement a program that does the following:</p>
+
+<h4 id="load-a-colour-rgb-image-i-in-a-lossless-data-format-such-as-bmp--png--or-tiff--and-display-it-on-a-screen">Load a colour (RGB) image I in a lossless data format, such as bmp , png , or tiff , and display it on a screen</h4>
+
+<h4 id="display-the-histograms-of-all-three-colour-channels-of-i">Display the histograms of all three colour channels of I</h4>
+
+<h4 id="move-the-mouse-cursor-within-your-image-for-the-current-pixel-location-p-in-the-image-compute-and-display">Move the mouse cursor within your image. For the current pixel location p in the image, compute and display</h4>
+
+<ol>
+  <li>the outer border (see grey box) of the <em>11 × 11</em> square window <script type="math/tex">W_p</script> around pixel <em>p</em> in your image <em>I</em> (i.e., <em>p</em> is the reference point of this window),</li>
+  <li>(above this window or in a separate command window) the location p (i.e., its coordinates) of the mouse cursor and the RGB values of your image I at p,</li>
+  <li>(below this window or in a separate command window) the intensity value <script type="math/tex">\frac{R(p) + G(p) + B(p)}{3}</script> at <em>p</em>, and</li>
+  <li>the mean <script type="math/tex">\mu( W_p )</script> and standard deviation <script type="math/tex">\sigma( W_p )</script> .</li>
+  <li>Discuss examples of image windows W p (within your selected input images) where you see “homogeneous distributions of image values”, and windows showing “inhomogeneous areas”. Try to define your definition of “homogeneous” or “inhomogeneous” in terms of histograms, means, or variances.</li>
+</ol>
+
+<h3 id="exercise-12">Exercise 1.2</h3>
+
+<p>transform a few more (easy) RGB values manually into corresponding HSI values.</p>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
