@@ -154,6 +154,18 @@ An intuitive and easy to use treatment planning software for accurate and predic
 
 Also visit the [**pinned** post](https://www.facebook.com/groups/big.data.egypt/permalink/1762260707366456/) for lots of info about many related topics.
 
+### Other International Internships
+
+#### AI Residency Programs
+
+* [Google](http://g.co/airesidency)
+* [Facebook](https://research.fb.com/programs/facebook-ai-research-residency-program/)
+* [OpenAI (ML Fellow)](https://openai.com/jobs/#lever-54ddfefe-6483-4bba-a828-11a156eae7eb)
+* [Microsoft (NERD AI Program)](http://microsoftnewengland.com/nerdAI/)
+* [Microsoft](https://www.microsoft.com/en-us/research/academic-program/microsoft-ai-residency-program/)
+* [Uber](https://eng.uber.com/uber-ai-residency/)
+
+
 ## Resources
 
 * [Awsome Computer Vision](https://github.com/jbhuang0604/awesome-computer-vision), **+5K** starts.
