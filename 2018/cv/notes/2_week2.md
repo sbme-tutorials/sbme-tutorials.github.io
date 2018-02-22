@@ -179,28 +179,10 @@ Also visit the [**pinned** post](https://www.facebook.com/groups/big.data.egypt/
 
 [Neural Doodle](https://github.com/alexjc/neural-doodle)
 
-![](../images/doodle.png)
+![x](../images/doodle.png)
 
-## Exercises
+## Week 2: Demo and Lab Source Files
 
-### Exercise 1.1
-
-Implement a program that does the following:
-
-#### Load a colour (RGB) image I in a lossless data format, such as bmp , png , or tiff , and display it on a screen
-
-
-#### Display the histograms of all three colour channels of I
-
-
-#### Move the mouse cursor within your image. For the current pixel location p in the image, compute and display
-
-1. the outer border (see grey box) of the *11 × 11* square window $$W_p$$ around pixel *p* in your image *I* (i.e., *p* is the reference point of this window),
-2. (above this window or in a separate command window) the location p (i.e., its coordinates) of the mouse cursor and the RGB values of your image I at p,
-3. (below this window or in a separate command window) the intensity value $$ \frac{R(p) + G(p) + B(p)}{3}$$ at *p*, and
-4. the mean $$\mu( W_p )$$ and standard deviation $$\sigma( W_p )$$ .
-5. Discuss examples of image windows W p (within your selected input images) where you see “homogeneous distributions of image values”, and windows showing “inhomogeneous areas”. Try to define your definition of “homogeneous” or “inhomogeneous” in terms of histograms, means, or variances.
-
-### Exercise 1.2
-
-transform a few more (easy) RGB values manually into corresponding HSI values.
+```bash
+$ git clone https://github.com/sbme-tutorials/sbe401-week2-demo.git
+```
