@@ -7,6 +7,12 @@ title:  "Week 4 - Part1: Stacks, Queues, and Linked Lists"
 by: "Asem"
 ---
 
+## General
+
+* classroom rules.
+* ما حك جلدك مثل ظفرك
+
+
 ## Stack as Data Structure != Stack Memory
 
 ## Struct
