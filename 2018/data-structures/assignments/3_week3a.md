@@ -36,6 +36,9 @@ pdf: true
 
 * Compilation of multiple files.
 
+## Deadline
+
+**Wednesday 28/2/2018 11:59 PM**.
 
 ## Assignment: Part 1
 
