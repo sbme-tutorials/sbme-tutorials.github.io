@@ -293,7 +293,7 @@ function implemented in `dna.hpp`.
 $ g++ analyzeDNA.cpp -o AnalyzeDNA
 $ ./AnalyzeDNA datasets/genetic_data.txt
 Adenine (A) content:75
-Guanine (G) content:83
+Guanine (G) content:84
 Cytocine(C) content:83
 Thymine (T) content:76
 
