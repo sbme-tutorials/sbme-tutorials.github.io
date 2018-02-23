@@ -252,7 +252,7 @@ $ ./Calculator 24 / 7
 $ ./Calculator 24 \* 7
 ```
 
-**Note: asterisk `*` is a special character for the terminal. You need to explicitly use `\*` to specify multiplication operation.
+**Note: asterisk `*` is a special character for the terminal. You need to explicitly use `\*` to specify multiplication operation.**
 
 ### Compiling and Testing heron.cpp
 
