@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 4 - Part1: Stacks, Queues, and Linked Lists</title>
+  <title>Week 4 - Part1: Struct, Stacks, Queues, and Linked Lists</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/data-structures/notes/4_week4a.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -220,7 +220,7 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Stacks, Queues, and Linked Lists</a>
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Queues, and Linked Lists</a>
             
           
             
@@ -276,7 +276,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 4 - Part1: Stacks, Queues, and Linked Lists</h1>
+    <h1 class="post-title">Week 4 - Part1: Struct, Stacks, Queues, and Linked Lists</h1>
   </header>
 
   <div class="post-content">
@@ -287,11 +287,145 @@
   <li>ما حك جلدك مثل ظفرك</li>
 </ul>
 
-<h2 id="stack-as-data-structure--stack-memory">Stack as Data Structure != Stack Memory</h2>
+<h2 id="before-starting-stack-as-data-structure--stack-memory">Before starting: Stack as Data Structure != Stack Memory</h2>
+
+<p>Stack as a data structure is not related to the <strong>stack memory</strong> area we learned about last weeks, and they are completely different things. So just refer to <em>stack as a data structure</em> by <strong>Stack</strong>, and the stack memory area by <strong>Stack memory</strong>. Make yourself a glossary on your notebook.</p>
 
 <h2 id="struct">Struct</h2>
 
+<p>In first week, we have walked through different primitive data types (PDTs), or the first-class citizens in the C++. However, we can make our own types, that consists of multiple members, using <code class="highlighter-rouge">struct</code> feature. <em>Members</em> in <code class="highlighter-rouge">struct</code> can either be primitive data types (PDT) or other <code class="highlighter-rouge">struct</code>s. Let’s recall our example of <code class="highlighter-rouge">rectangle::area</code> function.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">namespace</span> <span class="n">rectangle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">w</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">h</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">w</span> <span class="o">*</span> <span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We could have made a <em>custom</em> type using <code class="highlighter-rouge">struct</code>, using the following syntax.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Rectangle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">w</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">h</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">Rectangle</code> is now a custom type, consists of two <code class="highlighter-rouge">double</code>s. Think of it as a package.
+We can now make our <code class="highlighter-rouge">rectangle::area</code> function more simpler, or much readable using the following implementation.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">namespace</span> <span class="n">rectangle</span>
+<span class="p">{</span>
+    <span class="k">struct</span> <span class="n">Rectangle</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">w</span><span class="p">;</span> <span class="c1">// First member</span>
+        <span class="kt">double</span> <span class="n">h</span><span class="p">;</span> <span class="c1">// Second member</span>
+    <span class="p">};</span> <span class="c1">// Don't forget a semicolon here!</span>
+
+    <span class="c1">// Now this function is more readable. The input type explains itself.</span>
+    <span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="n">Rectangle</span> <span class="n">rectangle</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">rectangle</span><span class="p">.</span><span class="n">w</span> <span class="o">*</span> <span class="n">rectangle</span><span class="p">.</span><span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">rectangle</span><span class="o">::</span><span class="n">Rectangle</span> <span class="n">rect</span><span class="p">{</span> <span class="mi">3</span> <span class="p">,</span> <span class="mi">5</span> <span class="p">};</span> <span class="c1">// declaration+initialization of Rectangle type!</span>
+    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rectangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="n">rect</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We may also package an array (either static or dynamic) with its size, using <code class="highlighter-rouge">struct</code></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">struct</span> <span class="n">IntegerArray</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">base</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="n">sumArray1</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">base</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">sumArray2</span><span class="p">(</span> <span class="n">IntegerArray</span> <span class="n">array</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">.</span><span class="n">size</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">sum</span> <span class="o">+=</span> <span class="n">array</span><span class="p">.</span><span class="n">base</span><span class="p">[</span> <span class="n">i</span> <span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span><span class="p">;</span>
+
+    <span class="c1">// DRY solution ==&gt; return sumArray1( array.base , array.size );</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="o">*</span><span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+    <span class="n">IntegerArray</span> <span class="n">array</span><span class="p">{</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">};</span> <span class="c1">// Initializes base and size members.</span>
+    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sumArray1</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">buffer</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">,</span> <span class="mi">10</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sumArray2</span><span class="p">(</span> <span class="n">array</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    
+    <span class="c1">// We still need to delete the array on the heap</span>
+    <span class="k">delete</span> <span class="p">[]</span> <span class="n">array</span><span class="p">.</span><span class="n">base</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We can also use <code class="highlighter-rouge">struct</code> to <strong>return multiple values</strong>, which is more safe and clean than using multiple references as input and mofifying our interesting results into these input references.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="k">struct</span> <span class="n">ECGArray</span> <span class="c1">// We could name it also DoubleArray</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="o">*</span><span class="n">samples</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">struct</span> <span class="n">Statistics</span>
+<span class="p">{</span>
+    <span class="c1">// Members can have default values after declaration of Statistic type variable.</span>
+    <span class="c1">// So you don't need to explicitly to initialize them from outside.</span>
+    <span class="kt">double</span> <span class="n">mean</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+    <span class="kt">double</span> <span class="n">variance</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span>
+    <span class="kt">double</span> <span class="n">min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Very self-explaining function header!</span>
+<span class="n">Statistics</span> <span class="n">analyzeECG</span><span class="p">(</span> <span class="n">ECGArray</span> <span class="n">ecg</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Statistics</span> <span class="n">analysis</span><span class="p">;</span> <span class="c1">// Declaration, and no need for explicit initialization now</span>
+
+    <span class="n">analysis</span><span class="p">.</span><span class="n">mean</span> <span class="o">=</span> <span class="c1">// Some logic here</span>
+    <span class="n">analysis</span><span class="p">.</span><span class="n">variance</span> <span class="o">=</span> <span class="c1">// Some logic there</span>
+    <span class="c1">// And so on.</span>
+
+    <span class="k">return</span> <span class="n">analysis</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
 <h2 id="stacks">Stacks</h2>
+
+<p>In fact, <strong>Stack</strong> is more of <em>behaviour</em> of structure than being a structure itself. We can turn a regular array (either static or dynamic) into a <strong>stack</strong> with simple modification.</p>
 
 <h2 id="queues">Queues</h2>
 

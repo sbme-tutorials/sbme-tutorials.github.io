@@ -93,7 +93,7 @@ int main( int argc , char *argv[] )
     char *op_string = argv[2];
     char op = op_string[0];
 
-    std::cout << calculcation( a , b , op ) << std::endl;
+    std::cout << calculation( a , b , op ) << std::endl;
     return 0;
 }
 
