@@ -249,7 +249,10 @@ char *analyzeDNA( char *base, int size, int &countA, int &countC, int &countG, i
 $ g++ calculator.cpp -o Calculator
 $ ./Calculator 24 / 7
 3.42857
+$ ./Calculator 24 \* 7
 ```
+
+**Note: asterisk `*` is a special character for the terminal. You need to explicitly use `\*` to specify multiplication operation.
 
 ### Compiling and Testing heron.cpp
 
