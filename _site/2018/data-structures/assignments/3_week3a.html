@@ -132,22 +132,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
             
           
             
@@ -172,12 +172,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
             
           
             
@@ -202,12 +202,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
             
           
             
@@ -235,12 +235,12 @@
           
             
             
-            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
             
           
             
             
-            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -282,6 +282,10 @@
   <div class="post-content">
     <h2 id="prerequisites">Prerequisites</h2>
 
+<ul>
+  <li><strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/3_week3a.html" target="_blank">Part 1: Static Arrays and Dynamic Arrays</a>] [<a href="/2018/data-structures/notes/3_week3b.html" target="_blank">Part 2: Command Line Arguments and Compilation of Multiple Files</a>].</li>
+</ul>
+
 <h2 id="objectives">Objectives</h2>
 
 <ul>
@@ -295,10 +299,10 @@
     <ul>
       <li>print (traverse)</li>
       <li>mean</li>
-      <li>standard deviation</li>
+      <li>variance</li>
       <li>max</li>
       <li>min</li>
-      <li>counter</li>
+      <li>counters</li>
     </ul>
   </li>
   <li>
@@ -308,13 +312,15 @@
       <li>Analyze DNA</li>
       <li>Return the complementary sequence of DNA</li>
       <li>Count a specific base pair in DNA</li>
-      <li>Analyze ECG: mean, standard deviation, max, and min.</li>
+      <li>Analyze ECG: mean, variance, max, and min.</li>
     </ul>
   </li>
   <li>Compilation of multiple files.</li>
 </ul>
 
 <h2 id="assignment-part-1">Assignment: Part 1</h2>
+
+<p>Go to the <a href="https://classroom.github.com/a/41rIEp0C">assignment page</a> and git clone your own repository.</p>
 
 <h3 id="overview">Overview</h3>
 
@@ -370,7 +376,7 @@
 <h3 id="requirement-1-mathematicshpp-file">Requirement 1: <strong>mathematics.hpp</strong> file</h3>
 
 <ul>
-  <li><strong>R1.1</strong> Make a <code class="highlighter-rouge">namespace mathematics</code> that will contain our functions.</li>
+  <li><strong>R1.1 (Done for you)</strong> Make a <code class="highlighter-rouge">namespace mathematics</code> that will contain our functions.</li>
   <li><strong>R1.2</strong> Implement our <code class="highlighter-rouge">calculation</code> function using either <strong>if, else if, else</strong> or <strong>switch-case</strong>.</li>
   <li><strong>R1.3</strong> Implement <a href="https://en.wikipedia.org/wiki/Heron%27s_formula">Heron Formula</a>, that is used to compute the <strong>triangle area</strong> given its three sides, hmmmm very interesting.</li>
 </ul>
@@ -391,10 +397,10 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<p>You also need to <code class="highlighter-rouge">#include &lt;cmath&gt;</code> an an external header, to use <code class="highlighter-rouge">std::sqrt</code> function that computes the square root.</p>
+<p>You also need to <code class="highlighter-rouge">#include &lt;cmath&gt;</code> as an external header, to use <code class="highlighter-rouge">std::sqrt</code> function that computes the square root.</p>
 
 <ul>
-  <li><strong>R1.4</strong> It is your job now to implement the <code class="highlighter-rouge">main</code> function in <code class="highlighter-rouge">heron.cpp</code> file. It is required to make the <em>Heron Formula</em> application to receive the three dimensions of the triangle through terminal. So you will retrieve the three parameters through the <code class="highlighter-rouge">argv</code>. Remember that you will need to use <code class="highlighter-rouge">std::atof</code> function and <code class="highlighter-rouge">#include &lt;string&gt;</code>. To use <code class="highlighter-rouge">mathematics::heron</code>, add <code class="highlighter-rouge">#include "mathematics.hpp"</code>.</li>
+  <li><strong>R1.4</strong> It is your job now to implement the <code class="highlighter-rouge">main</code> function in <code class="highlighter-rouge">heron.cpp</code> file. It is required to make the <em>Heron Formula</em> application to <strong>receive the three parameters of the triangle through terminal</strong>. So you will retrieve the three parameters through the <code class="highlighter-rouge">argv</code> in <code class="highlighter-rouge">main</code> function. Remember that you will need to use <code class="highlighter-rouge">std::atof</code> function and <code class="highlighter-rouge">#include &lt;string&gt;</code>. To use <code class="highlighter-rouge">mathematics::heron</code>, add <code class="highlighter-rouge">#include "mathematics.hpp"</code>. Hint, you may cheat from <code class="highlighter-rouge">calculation.cpp</code> source file (but with receiving three doubles in this case).</li>
 </ul>
 
 <h3 id="requirement-2-arrayshpp-file">Requirement 2: <strong>arrays.hpp</strong> file</h3>
@@ -424,8 +430,9 @@
     <span class="c1">// Logic here</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
 <ul>
-  <li><strong>R2.5</strong>+<strong>R2.6</strong> Implement a function that returns the <strong>mean (average)</strong> of array elements and another one that returns the <strong>standard deviation</strong>, using the following declaration:</li>
+  <li><strong>R2.5</strong>+<strong>R2.6</strong> Implement a function that returns the <strong>mean (average)</strong> of array elements and another one that returns the <strong>variance</strong>, using the following declaration:</li>
 </ul>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">meanArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
@@ -434,22 +441,31 @@
 <span class="p">}</span>
 
 
-<span class="kt">double</span> <span class="nf">stdArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="kt">double</span> <span class="nf">varianceArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Logic here</span>
+
+    <span class="c1">// Hint: use meanArray ;)</span>
+    <span class="c1">// Do you need a square function?</span>
+    <span class="c1">// Maybe you can implement one in mathematics.hpp</span>
+    <span class="c1">// then include "mathematics.hpp" to use mathematics::square here</span>
 <span class="p">}</span>
 </code></pre></div></div>
+
+<p>If you don’t know variance,</p>
+
+<script type="math/tex; mode=display">var = \frac{1}{N} \sum_{n=1}^{N} ( \text{mean} - x_i )^2</script>
 
 <h3 id="requirement-3-ecghpp-file">Requirement 3: <strong>ecg.hpp</strong> file</h3>
 
 <ul>
   <li><strong>R3.1</strong> Make a <code class="highlighter-rouge">namespace ecg</code> that will contain our function.</li>
-  <li><strong>R3.2</strong> Make a function that computes the <strong>average</strong>, <strong>standard deviation</strong>, <strong>max</strong>, and <strong>min</strong> of <strong>ECG</strong> signal. But these are not single variables so we can return. Alternatively, we will use <strong>4 reference</strong> variable in function declaration.</li>
+  <li><strong>R3.2</strong> Make a function that computes the <strong>average</strong>, <strong>variance</strong>, <strong>max</strong>, and <strong>min</strong> of <strong>ECG</strong> signal. But these are not single variables so we can return. Alternatively, we will use <strong>4 reference</strong> variable in function declaration.</li>
 </ul>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">analyzeECG</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">average</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">standardDev</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">max</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">min</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">analyzeECG</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">mean</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">variance</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">max</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">min</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// Logic here</span>
+    <span class="c1">// Logic here (4 lines)</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -473,7 +489,7 @@
 
 <ul>
   <li><strong>R4.1</strong> Make a <code class="highlighter-rouge">namespace dna</code> that will contain our functions.</li>
-  <li><strong>R4.2</strong> Implement <code class="highlighter-rouge">complementaryBase</code> function using either <strong>if, else if, else</strong> or <strong>switch-case</strong>, using the following declaration:</li>
+  <li><strong>R4.2</strong> Implement <code class="highlighter-rouge">complementaryBase</code> you did in the first week using either <strong>if, else if, else</strong> or <strong>switch-case</strong>, with the following declaration:</li>
 </ul>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">complementaryBase</span><span class="p">(</span> <span class="kt">char</span> <span class="n">base</span> <span class="p">)</span>
@@ -492,7 +508,7 @@
 
 <p>So in your for loop, you may read the <em>original</em> sequence from begining, and write the complementary sequence starting from the <em>end</em> of the complementary sequence array.</p>
 
-<p>By the way, you have to allocate the complementary sequence on the heap (dynamic array).</p>
+<p>By the way, you have to allocate the complementary sequence on the heap (dynamic array) at the begining of function (using the given size).</p>
 
 <p>Use the following declaration:</p>
 
@@ -503,15 +519,76 @@
 </code></pre></div></div>
 
 <ul>
-  <li><strong>R4.4</strong> Implement <code class="highlighter-rouge">analyzeDNA</code> function that counts the 4 bases in a sequence, and returns the complementary sequence. Again, you have four counters and a complementary sequence. So you only return the complementary sequence, and the counters will saved back to reference integers. Use the following declaration:</li>
+  <li><strong>R4.4</strong> Implement <code class="highlighter-rouge">analyzeDNA</code> function that counts the 4 bases in a sequence, and returns the complementary sequence. Again, you have four counters and a complementary sequence. So you only return the complementary sequence, and the counters will saved back to reference integers. Remember to use <code class="highlighter-rouge">arrays::countChar</code> and to <code class="highlighter-rouge">#include "arrays.hpp"</code> in the current file. Use the following declaration:</li>
 </ul>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="nf">analyzeDNA</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countA</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countC</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countG</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countT</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="c1">// Your logic here.</span>
-
-    <span class="c1">// It is safer to re-initialize thr four counters to zeros. Don't trust the caller function ;)</span>
+    <span class="c1">// Your logic here (5 lines).</span>
 <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="submission-and-bonus-policy">Submission and Bonus Policy</h2>
+
+<ul>
+  <li>As usual, commit and push your changes.</li>
+  <li><strong>Requirement 4</strong> is completely counted as bonus.</li>
+  <li>Also, you may obtain bonus with correct logic by consistent adoption of <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> and <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> principles. Also, make your code clean, well-aligned, and use descriptive variable names.</li>
+</ul>
+
+<h2 id="generating-executables-and-testing-output">Generating Executables and Testing Output</h2>
+
+<h3 id="compiling-and-testing-calculatorcpp">Compiling and Testing calculator.cpp</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ calculator.cpp <span class="nt">-o</span> Calculator
+<span class="nv">$ </span>./Calculator 24 / 7
+3.42857
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-heroncpp">Compiling and Testing heron.cpp</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ heron.cpp <span class="nt">-o</span> Heron
+<span class="nv">$ </span>./Heron 3 4 5
+6
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-heroncpp-1">Compiling and Testing heron.cpp</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ heron.cpp <span class="nt">-o</span> Heron
+<span class="nv">$ </span>./Heron 3 4 5
+6
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-analyzeecgcpp">Compiling and Testing analyzeECG.cpp</h3>
+
+<p>We compile and test using an ECG dataset stored in <code class="highlighter-rouge">datasets/ecg_data.txt</code>.</p>
+
+<p>Our application in the <code class="highlighter-rouge">main</code> function loads data from the file then use <code class="highlighter-rouge">ecg::analyzeECG</code>
+function implemented in <code class="highlighter-rouge">ecg.hpp</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ analyzeECG.cpp <span class="nt">-o</span> AnalyzeECG
+<span class="nv">$ </span>./AnalyzeECG datasets/ecg_data.txt
+ECG average : 0.785639
+ECG variance: 0.00780314
+ECG range   : <span class="o">(</span>0,1.288<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-analyzednacpp">Compiling and Testing analyzeDNA.cpp</h3>
+
+<p>We compile and test using a DNA dataset stored in <code class="highlighter-rouge">datasets/genetic_data.txt</code>.</p>
+
+<p>Our application in the <code class="highlighter-rouge">main</code> function loads data from the file then use <code class="highlighter-rouge">dna::analyzeDNA</code>
+function implemented in <code class="highlighter-rouge">dna.hpp</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ analyzeDNA.cpp <span class="nt">-o</span> AnalyzeDNA
+<span class="nv">$ </span>./AnalyzeDNA datasets/genetic_data.txt
+Adenine <span class="o">(</span>A<span class="o">)</span> content:75
+Guanine <span class="o">(</span>G<span class="o">)</span> content:83
+Cytocine<span class="o">(</span>C<span class="o">)</span> content:83
+Thymine <span class="o">(</span>T<span class="o">)</span> content:76
+
+Complementary Sequence:
+CCAGTATTTGACAGGCTGGACTGAGCTACTTGCCGTTCCGGGATAAGTAGTTCAGACAGGCTGCCCACAACGTACAAAGACGGCCAGTTCTCCGCATATCGCGGCATTCGAGTCCGGCAAATAGCGAGTTAGCCTCTTCTTGCGCTGGACCTTTTCTAGCCGCATGACTAGTTGCCAAGGCTGAAGCCCAAGTTAGAGTGGCATGTAGTCCCTCAGTGAAGGGAATGGCTCGAGTCGAAGCAGCTTACAGCACAGCTCTCGACTCCTAATTGGGTCGAAGCCTATCAACTATCCACGTAGTGTCCAGTATTTGACAGT
 </code></pre></div></div>
 
   </div>
