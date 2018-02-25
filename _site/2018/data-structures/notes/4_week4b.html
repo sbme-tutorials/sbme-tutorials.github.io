@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 4 - Part2: More on Structs, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</title>
+  <title>Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4b.html">
+  <link rel="canonical" href="/2018/data-structures/notes/4_week4b.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -27,6 +27,10 @@
      -->
     
 
+    
+      
+    
+      
     
       
     
@@ -118,12 +122,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
@@ -158,12 +162,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
@@ -216,17 +220,27 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Queues, and Linked Lists</a>
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
             
           
             
             
             <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -262,17 +276,45 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 4 - Part2: More on Structs, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</h1>
+    <h1 class="post-title">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="structs">Structs</h2>
+    <ul id="markdown-toc">
+  <li><a href="#linked-lists" id="markdown-toc-linked-lists">Linked Lists</a></li>
+  <li><a href="#ll-based-stacks" id="markdown-toc-ll-based-stacks">LL-Based Stacks</a>    <ul>
+      <li><a href="#home-demo" id="markdown-toc-home-demo">Home Demo</a></li>
+    </ul>
+  </li>
+  <li><a href="#ll-based-queues" id="markdown-toc-ll-based-queues">LL-Based Queues</a></li>
+  <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
+  <li><a href="#this-pointer" id="markdown-toc-this-pointer">This Pointer</a></li>
+  <li><a href="#preprocessing" id="markdown-toc-preprocessing">Preprocessing</a>    <ul>
+      <li><a href="#library-includes" id="markdown-toc-library-includes">Library Includes</a></li>
+      <li><a href="#circular-dependencies" id="markdown-toc-circular-dependencies">Circular Dependencies</a></li>
+      <li><a href="#defines" id="markdown-toc-defines">Defines</a></li>
+      <li><a href="#functions-as-defines" id="markdown-toc-functions-as-defines">Functions as Defines</a></li>
+    </ul>
+  </li>
+  <li><a href="#naming-conventions" id="markdown-toc-naming-conventions">Naming Conventions</a></li>
+  <li><a href="#const-correctness" id="markdown-toc-const-correctness">Const Correctness</a></li>
+  <li><a href="#intro-to-build-systems" id="markdown-toc-intro-to-build-systems">Intro to Build Systems</a></li>
+  <li><a href="#git-for-teams" id="markdown-toc-git-for-teams">Git for Teams</a></li>
+</ul>
 
-<h3 id="methods">Methods</h3>
+<h2 id="linked-lists">Linked Lists</h2>
 
-<h3 id="this-pointer">This Pointer</h3>
+<h2 id="ll-based-stacks">LL-Based Stacks</h2>
 
-<h2 id="functions-overloading">Functions overloading</h2>
+<h3 id="home-demo">Home Demo</h3>
+
+<p>Open <a href="https://www.cs.usfca.edu/~galles/visualization/StackLL.html">StackLL</a> and play with the stack to realize its behaviour. This demo shows a <strong>Stack</strong> implemented with <strong>linked list</strong>.</p>
+
+<h2 id="ll-based-queues">LL-Based Queues</h2>
+
+<h2 id="methods">Methods</h2>
+
+<h2 id="this-pointer">This Pointer</h2>
 
 <h2 id="preprocessing">Preprocessing</h2>
 

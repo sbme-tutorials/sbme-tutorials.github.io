@@ -3,18 +3,26 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2018"
-title:  "Week 4 - Part2: More on Structs, Naming Conventions, Const-correctness, Build Systems, and Git for Teams"
+title:  "Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams"
 by: "Asem"
 ---
 
+* TOC
+{:toc}
 
-## Structs
+## Linked Lists
 
-### Methods
+## LL-Based Stacks
 
-### This Pointer
+### Home Demo
 
-## Functions overloading
+Open [StackLL](https://www.cs.usfca.edu/~galles/visualization/StackLL.html) and play with the stack to realize its behaviour. This demo shows a **Stack** implemented with **linked list**.
+
+## LL-Based Queues
+
+## Methods
+
+## This Pointer
 
 ## Preprocessing
 
