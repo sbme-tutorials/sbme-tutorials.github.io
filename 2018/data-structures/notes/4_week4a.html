@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 4 - Part1: Struct, Stacks, and Queues</title>
+  <title>Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4a.html">
+  <link rel="canonical" href="/2018/data-structures/notes/4_week4a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -220,7 +220,7 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, and Queues</a>
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
             
           
             
@@ -276,7 +276,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 4 - Part1: Struct, Stacks, and Queues</h1>
+    <h1 class="post-title">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</h1>
   </header>
 
   <div class="post-content">
@@ -315,6 +315,7 @@
       <li><a href="#home-demo-1" id="markdown-toc-home-demo-1">Home Demo</a></li>
       <li><a href="#more-intuition-about-queue-as-adt" id="markdown-toc-more-intuition-about-queue-as-adt">More intuition about Queue as ADT</a></li>
       <li><a href="#biomedical-application-queues-of-biological-signals" id="markdown-toc-biomedical-application-queues-of-biological-signals"><strong>Biomedical Application</strong>: Queues of Biological Signals</a></li>
+      <li><a href="#implementing-queue-using-ll" id="markdown-toc-implementing-queue-using-ll">Implementing Queue using LL</a></li>
       <li><a href="#implementing-queue-using-concrete-array" id="markdown-toc-implementing-queue-using-concrete-array">Implementing Queue using concrete array</a>        <ul>
           <li><a href="#1-the-circular-buffer" id="markdown-toc-1-the-circular-buffer">1. The circular buffer</a></li>
           <li><a href="#finally-lets-make-two-variables-indicating-the-front-and-the-back-of-our-queue" id="markdown-toc-finally-lets-make-two-variables-indicating-the-front-and-the-back-of-our-queue">Finally, let’s make two variables indicating the front and the back of our Queue</a></li>
@@ -823,6 +824,10 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 <p>For example, every <strong>10 ms</strong> a <strong>Queue</strong> of <strong>ECG</strong> signal may <em>enqueue</em> new sample to the back (right to the figure), and <em>dequeue</em> old sample from the front (left to the figure). So, this way you can view an <strong>ECG</strong> signal of the last <strong>30 seconds</strong>. Therefore, we are interested to have a <strong>queue</strong> with capacity of:</p>
 
 <script type="math/tex; mode=display">\text{Queue (window) size} = \frac{30}{10^{-3}} = 3000  \text{ sample}</script>
+
+<h3 id="implementing-queue-using-ll">Implementing Queue using LL</h3>
+
+<p>Soon.</p>
 
 <h3 id="implementing-queue-using-concrete-array">Implementing Queue using concrete array</h3>
 
