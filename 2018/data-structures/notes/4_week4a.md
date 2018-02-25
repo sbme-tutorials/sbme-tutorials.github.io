@@ -435,8 +435,8 @@ void printLL( node* front )
 
     while( current != nullptr )
     {
-        std::cout << node->data;
-        current = node->next;
+        std::cout << current->data;
+        current = current->next;
     }
 }
 ```
@@ -476,8 +476,8 @@ If we need to *insert* element on the back:
 ```c++
 void insertToList( CharLinkedList &list , char newElement )
 {
-    tail->next = new node{ newElement , nullptr };
-    tail = tail->next;
+    list.tail->next = new node{ newElement , nullptr };
+    list.tail = list.tail->next;
 }
 ```
 
