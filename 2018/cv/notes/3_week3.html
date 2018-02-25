@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 3: Image Processing 2</title>
+  <title>Week 3: Images in Frequency Domian</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -195,7 +195,7 @@
           
             
             
-            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Image Processing 2</a>
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domian</a>
             
           
             
@@ -274,15 +274,50 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 3: Image Processing 2</h1>
+    <h1 class="post-title">Week 3: Images in Frequency Domian</h1>
   </header>
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#asdasd" id="markdown-toc-asdasd">asdasd</a></li>
+  <li><a href="#discrete-fourier-transform-dft" id="markdown-toc-discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</a></li>
+  <li><a href="#properties-of-dft" id="markdown-toc-properties-of-dft">Properties of DFT</a></li>
+  <li><a href="#inverse-fourier-transform" id="markdown-toc-inverse-fourier-transform">Inverse Fourier Transform</a></li>
 </ul>
 
-<h2 id="asdasd">asdasd</h2>
+<h2 id="discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</h2>
+<p>Fourier transform is a decompisition of a signal into some basis functions. Here basis functions are wiegted sum of sin and cos functions 
+Geiven a discrete image I(x,y) the fourier transform of it is  :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I(u,v) = sum_{x= 0}^{N_{clos} - 1 } sum_{y = 0}^{N_{rows} - 1}  I(x,y) .e^{-i2pi(\frac{xu}{N_cols)}+\frac{yv}{N_rows}}
+</code></pre></div></div>
+
+<h2 id="properties-of-dft">Properties of DFT</h2>
+
+<ul>
+  <li>FT is a complex representation of the image. So it includes a magnitude and a phase 
+  Magnitude component is the desired one in visualization. It represents the weight of each frequency component and give an intuitive impression about frequcy spectrum of the image. Due to large variations in magnitudes (Center of the image has a high value compared with other values) we display it in a log scale to compress dynamic range  see link https://homepages.inf.ed.ac.uk/rbf/HIPR2/pixlog.htm
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> log 10 (1 + ||I(u, v )|| 2 )
+</code></pre></div>    </div>
+    <p>Phase is very important for image recovery but has no significance in visulaization</p>
+  </li>
+  <li>In Fourier domain central regions represent the low frequency components and prepheral regions represent the high frequency components and the center of the image represents the DC value with zero frequency which is the average intensity of the image. Note (image profile within a scan line gives you an impression about the frequncy in that direction)</li>
+  <li>Direction of change in intensity has the same direcion in frequency domain</li>
+  <li>No one to one corresponding where each point in frequency domain is calculated from the whole spatial image
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> I(u,v) = T(I)(x,y) not T(I(x,y)) 
+</code></pre></div>    </div>
+  </li>
+  <li>Fourier transfor of the image is symmetric which mean that we can recover the image if we have only the half of fourier domain. This is a very important property in fourier transfrom and used in MRI imaging see partial fourier imaging http://mriquestions.com/partial-fourier.html</li>
+</ul>
+
+<p>Question: Where redundancy comes from ?? 
+ Answer : Each point in fourier domain is a complex with two informations magnitude and phase or real part and imaginary part. So half of fourier image actually hold up the whole information of the spatial domain image.</p>
+<ul>
+  <li>DFT is periodic (remember discretization implies periodicity) and aliasing in frequecny domain leads to overlapping in image domain.</li>
+</ul>
+
+<h2 id="inverse-fourier-transform">Inverse Fourier Transform</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I(u,v) = 1 / N *M sum_{x= 0}^{N_{clos} - 1 } sum_{y = 0}^{N_{rows} - 1}  I(x,y) .e^{-i2pi(\frac{xu}{N_cols)}+\frac{yv}{N_rows}}
+</code></pre></div></div>
+
 
   </div>
 
