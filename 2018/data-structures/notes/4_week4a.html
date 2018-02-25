@@ -748,8 +748,8 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 
     <span class="k">while</span><span class="p">(</span> <span class="n">current</span> <span class="o">!=</span> <span class="nb">nullptr</span> <span class="p">)</span>
     <span class="p">{</span>
-        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">node</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -785,8 +785,8 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertToList</span><span class="p">(</span> <span class="n">CharLinkedList</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">newElement</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">node</span><span class="p">{</span> <span class="n">newElement</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
-    <span class="n">tail</span> <span class="o">=</span> <span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">node</span><span class="p">{</span> <span class="n">newElement</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
