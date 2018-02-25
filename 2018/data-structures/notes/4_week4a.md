@@ -3,7 +3,7 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2018"
-title:  "Week 4 - Part1: Struct, Stacks, and Queues"
+title:  "Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues"
 by: "Asem"
 ---
 
@@ -513,6 +513,10 @@ To get more inuition about **Queue** properties as an ADT:
 For example, every **10 ms** a **Queue** of **ECG** signal may *enqueue* new sample to the back (right to the figure), and *dequeue* old sample from the front (left to the figure). So, this way you can view an **ECG** signal of the last **30 seconds**. Therefore, we are interested to have a **queue** with capacity of:
 
 $$ \text{Queue (window) size} = \frac{30}{10^{-3}} = 3000  \text{ sample} $$
+
+### Implementing Queue using LL
+
+Soon.
 
 ### Implementing Queue using concrete array
 
