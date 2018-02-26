@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 1: Basic Operations on Signals in Python</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+---
+## Euler's Identity
+
+--
+$$e^{j\theta} = \cos(\theta) + j\sin(\theta) \qquad\qquad \mbox{(Euler's Identity)}$$
+
+--
+### Properties of Exponents
+
+--
+$$  a^{n_1} a^{n_2} = a^{n_1 + n_2} $$
+
+
+--
+$$  \left(a^{n_1}\right)^{n_2} = a^{n_1 n_2} $$
+
+
+---
+### The Exponent Zero
+
+--
+$$ a^0  a = a^0 a^1 = a^{0+1} = a^1 = a $$
+
+
+--
+$$ a^0  a = a $$
+
+
+--
+$$ {a^0 = 1.} $$
+
+
+---
+### Negative Exponents
+
+
+--
+$$ a^{-1} \cdot a = a^{-1} a^1 = a^{-1+1} = a^0 = 1. $$
+
+
+--
+$$ {a^{-1} = \frac{1}{a}.} $$
+
+
+--
+$$ {a^{-M} = \frac{1}{a^M}} $$
+
+
+---
+### Rationale Exponents
+
+
+--
+A *rational* number is a real number that can be expressed as a ratio of two finite integers:
+
+
+--
+$$ \displaystyle x = \frac{L}{M}, \quad L\in\mathbb{Z},\quad M\in\mathbb{Z} $$
+
+
+---
+#### Applying property (2) of exponents, we have
+
+--
+$$ \displaystyle a^x = a^{L/M} = \left(a^{\frac{1}{M}}\right)^L. $$
+
+--
+Thus, the only thing new is $$ a^{1/M} $$ . Since
+
+
+--
+$$ \displaystyle \left(a^{\frac{1}{M}}\right)^M = a^{\frac{M}{M}} = a $$
+
+
+---
+we see that $$ a^{1/M}$$ is the M-th root of a. This is sometimes written
+
+
+--
+$$  {a^{\frac{1}{M}} =  \sqrt[M]{a}.} $$
+
+
+---
+### e^(j theta)
+
+$ f(x)=e^x$ is one of the simplest imaginable infinite series: 
+
+--
+$$ e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!} + \cdots $$
+
+
+--
+The simplicity comes about because $ f^{(n)}(0)=1$ for all $ n$ 
+
+
+--
+$ e^{j\theta} = \sum_{n=0}^\infty \frac{(j\theta)^n}{n!} = 1 + j\theta - \frac{\theta^2}{2} - j\frac{\theta^3}{3!} + \cdots \,. $ 
+
+
+--
+$$ \text{Re} \left(e^{j\theta}\right) = 1 - \frac{\theta^2}{2} + \frac{\theta^4}{4!} - \cdots $$
+
+
+--
+$$ \text{Im} \left(e^{j\theta}\right) = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots\ $$
+
+
+---
+### Polar form
+
+--
+$\displaystyle z = r e^{j\theta} $ 
+
+
+---
+## In-Phase & Quadrature Sinusoidal Components
+
+--
+From the trig identity $ \sin(A+B)=\sin(A)\cos(B)+\cos(A)\sin(B)$ , we have
+
+
+--
+### Derive
+
+
+---
+* every sinusoid can be expressed:
+  1. as the sum of a sine function (phase zero) 
+  2. a cosine function (phase $ \pi/2$ ). 
+
+--
+* sine part is called the **in-phase** component, 
+
+--
+* the cosine part called the **phase-quadrature** component. 
+
+--
+*In general, **phase quadrature** means **90 degrees out of phase.
+
+
+---
+## Complex Sinusoids in Frequency Domain
+
+--
+$\displaystyle x(t) = A_x e^{j\omega_x t} $ 
+
+---
+<img src="/gallery/img474.png" style="width:70%">
+
+
+---
+## Fourier Analysis
+
+--
+* Fourier analysis is the process of decomposing a function into simple sinusoids known as basis functions.
+
+--
+$$ X_k = \sum_0^{N-1} x_n\cdot e^{-i 2 \pi k n / N}  $$
+
+
+--
+
+$$ t_n = nT = \mbox{$n$th sampling instant (sec)} $$
+$$ \omega_k =  k\Omega = \mbox{$k$th frequency sample (rad/sec)} $$
+$$ T = 1/f_s = \mbox{time sampling interval (sec)} $$
+$$ \Omega = 2\pi f_s/N = \mbox{frequency sampling interval (rad/sec)} $$
+
+
+---
+#### The transform *kernel*:
+
+--
+$\displaystyle e^{-j\omega_k t_n} = \cos(\omega_k t_n) - j \sin(\omega_k t_n) $ 
+
+---
+#### **Inner Product** = **Projection**
+
+--
+$ X(\omega_k)$ , the DFT at frequency $ \omega_k$ , is a measure of the amplitude and phase.
+
+
+---
+### Signals: Vector View
+
+--
+* A signal consists of $N $ samples, is equivalent to a two-dimensional vector. 
+
+--
+* Each sample is a corrdinate in the N-dimensional space.
+
+--
+* We already have that intuition when carrying signals in `Numpy` arrays, just as vectors.
+
+
+---
+### DFT not decomposing into sinusoids
+
+
+--
+**DFT** decompose singals up into complex exponentials.
+
+
+--
+## DFT Matrix
+
+--
+The transformation matrix W can be defined as 
+$$ W = \left( \frac{\omega^{jk}}{ \sqrt{N} } \right )_{\left(j,k=0,\ldots ,N-1\right)} $$, 
+
+---
+#### or equivalently:
+
+--
+<img src="/gallery/dftmat.svg" style="width:70%">
+
+
+--
+where $${\displaystyle \omega =e^{-2\pi i/N}}$$
+
+
+---
+<img src="/gallery/Fourierop_rows_only.svg" style="width:70%">
+
+
+---
+### Examples
+
+--
+#### Two-point
+
+* The two-point DFT is a simple case, in which the first entry is the DC (sum) and the second entry is the AC (difference).
+
+--
+<img src="/gallery/22mat.svg" style="width:20%">
+
+--
+* The first row performs the sum, and the second row performs the difference.
+
+--
+* The factor of $ \frac{1}{\sqrt{2}} $ is to make the transform unitary
+
+
+
+---
+#### The four-point DFT matrix is as follows:
+
+
+--
+<img src="/gallery/44mat.svg" style="width:50%">
+
+--
+* where $ \left(\displaystyle \omega =e^{-{\frac {\pi i}{2}}}=-i\right) $.
+
+
+---
+#### Eight-point
+
+
+--
+* The first non-trivial integer power of two case is for eight points:
+
+
+---
+<img src="/gallery/88mat.svg" style="width:90%">
+
+--
+* where
+
+$ \omega = e^{-{\frac{2\pi i}{8}}} = \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}} $
+
+(Note that $\omega^{8 + n} = \omega^{n}$.)
+
+---
+## New Task: Writing Python/MATLAB Wrappers for C/C++
+
+--
+### Hints
+
+--
+* [{Boost.Python}](http://www.boost.org/doc/libs/1_66_0/libs/python/doc/html/index.html)
+* [{Wrapping C/C++ for Python}](http://intermediate-and-advanced-software-carpentry.readthedocs.io/en/latest/c++-wrapping.html)
+* [{How to use C library in python? (Generating Python wrappers for C library)}](http://karuppuswamy.com/wordpress/2012/01/28/how-to-use-c-library-in-python-generating-python-wrappers-for-c-library/)
+* [{Build MEX function from C/C++ or Fortran source code}](https://www.mathworks.com/help/matlab/ref/mex.html?requestedDomain=true)
+
+
+---
+## References
+
+
+--
+1. Digital Signal Processing, **2nd Edition**, *Fundamentals and Applications*. Authors: Li Tan Jean Jiang.
+2. Signals and Systems using MATLAB. by Luis Chaparro Ph.D. University of California Berkeley.
+3. Mitra Digital Signale Processing, Computer Based Approach.
+4. Oppenheim Discrete-Time Signal Processing.
+
+
+---
+## Readings
+
+
+--
+* [{Complex Numbers}](https://ccrma.stanford.edu/~jos/mdft/Complex_Numbers.html)
+* [{Proof of Euler's Identity}](https://ccrma.stanford.edu/~jos/mdft/Proof_Euler_s_Identity.html)
+* [{In-Phase & Quadrature Sinusoidal Components}](https://ccrma.stanford.edu/~jos/mdft/In_Phase_Quadrature_Sinusoidal.html)
+* [{The DFT}](https://ccrma.stanford.edu/~jos/mdft/DFT.html)
+* [{DFT matrix}](https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/DFT_matrix.html)
+
+
+</textarea>
+    
+    
+
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+  <script src="/javascript/remark-latest.min.js"></script>
+
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    var options = {
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
+
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+  </script>
+
+  <script src="/mathjax/MathJax.js"></script>
+
+  <script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+  
+  </body>
+</html>
