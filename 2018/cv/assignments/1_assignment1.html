@@ -1,10 +1,3 @@
-<<<<<<< HEAD
----
-layout: default
----
-
-<style type="text/css" media="screen">
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +6,11 @@ layout: default
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tutorials for SBME Students</title>
+  <title>Assignment 1: Images, Histograms, Gradients</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/404.html">
+  <link rel="canonical" href="/2018/cv/assignments/1_assignment1.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -32,6 +25,76 @@ layout: default
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -208,30 +271,156 @@ layout: default
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
->>>>>>> c5703b7a29e4d85213359206638fd6a5cd93f743
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title">Assignment 1: Images, Histograms, Gradients</h1>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
-<<<<<<< HEAD
-=======
+  <div class="post-content">
+    <h2 id="objectives">Objectives</h2>
 
+<ul>
+  <li>Loading images.</li>
+  <li>Visualizing images.</li>
+  <li>Visualizing histograms of images.</li>
+  <li>Computing image gradients.</li>
+  <li>Interacting with images.</li>
+  <li>Basic statistics on images.</li>
+  <li>Realizing the explicit for-loops vs. vectorized operatoins in Python.</li>
+  <li>Using <em>Markdown</em> as a technical writing syntax.</li>
+</ul>
+
+<h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
+
+<ul>
+  <li>Read <a href="/2018/cv/notes/1_week1.html" target="_blank">Section 1 Notes</a>.</li>
+  <li>Read <a href="/2018/cv/notes/2_week2.html" target="_blank">Section 2 Notes</a>.</li>
+</ul>
+
+<h2 id="deadline">Deadline</h2>
+
+<p><strong>Thursday 1/3/2018 10:00 AM.</strong></p>
+
+<h2 id="joining-to-assignment-repository">Joining to Assignment Repository</h2>
+
+<p>Refer to this sheet to know your <strong>gourp</strong> number: <a href="https://docs.google.com/spreadsheets/d/1DeAFPmF4OixVt4D_meMFvU3Q5n7KE0w2Ys4sdC11Jwo/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1DeAFPmF4OixVt4D_meMFvU3Q5n7KE0w2Ys4sdC11Jwo/edit?usp=sharing</a></p>
+
+<ol>
+  <li>Go to the<a href="https://classroom.github.com/g/LDCqi5HI">assignment page</a>.</li>
+  <li>You may need to authorize the classroom to access your repository.</li>
+  <li><img src="group1.png" width="500" /></li>
+  <li><img src="group2.png" width="500" /></li>
+  <li>You either join to an existing team, or create a team, referring to the <a href="(https://docs.google.com/spreadsheets/d/1DeAFPmF4OixVt4D_meMFvU3Q5n7KE0w2Ys4sdC11Jwo/edit?usp=sharing)">sheet</a>.</li>
+  <li><img src="group3.png" width="500" /></li>
+</ol>
+
+<h2 id="part-1-programming">Part 1: Programming</h2>
+
+<p>Your implementations for this part should be included in <code class="highlighter-rouge">Part1.py</code> of your repository.</p>
+
+<p>Implement a program that does the following:</p>
+
+<h3 id="1-load-colour-rgb-images">1. Load colour (RGB) images</h3>
+
+<h3 id="2-display-rgb-images-on-a-screen">2. Display (RGB) images on a screen</h3>
+
+<ul>
+  <li>Hint: you may use code snippets from section notes. But it is recommended to find your own way.</li>
+</ul>
+
+<h3 id="3-display-the-histograms-of-all-three-colour-channels-for-each-image-on-the-same-figure">3. Display the histograms of all three colour channels, for each Image, on the same figure</h3>
+
+<h3 id="4-select-the-image-of-our-visitor-of-this-week-sir-pegion-move-the-mouse-cursor-within-your-image-for-the-current-pixel-location-p-in-the-image-compute-and-display">4. Select the image of our visitor of this week, Sir Pegion. Move the mouse cursor within your image. For the current pixel location p in the image, compute and display</h3>
+
+<p><img src="/gallery/some-pigeon.jpg" width="500" /></p>
+
+<ol>
+  <li>the outer border (see grey box) of the <em>11 × 11</em> square window <script type="math/tex">W_p</script> around pixel <em>p</em> in your image <em>I</em> (i.e., <em>p</em> is the reference point of this window),</li>
+  <li>(above this window or in a separate command window) the location p (i.e., its coordinates) of the mouse cursor and the RGB values of your image I at p,</li>
+  <li>(below this window or in a separate command window) the intensity value <script type="math/tex">\frac{R(p) + G(p) + B(p)}{3}</script> at <em>p</em>, and</li>
+  <li>the mean <script type="math/tex">\mu( W_p )</script> and standard deviation <script type="math/tex">\sigma( W_p )</script> .</li>
+  <li>Discuss examples of image windows W p (within your selected input images) where you see “homogeneous distributions of image values”, and windows showing “inhomogeneous areas”. Try to define your definition of “homogeneous” or “inhomogeneous” in terms of histograms, means, or variances.</li>
+</ol>
+
+<h3 id="5-compute-the-gradient-of-the-image">5. Compute the gradient of the image</h3>
+
+<script type="math/tex; mode=display">\nabla f=\begin{bmatrix}
+g_{x} \\
+g_{y}
+\end{bmatrix} = \begin{bmatrix}
+\frac{\partial f}{\partial x} \\
+\frac{\partial f}{\partial y}
+\end{bmatrix}</script>
+
+<p>where:</p>
+
+<p><script type="math/tex">\textstyle\frac{\partial f}{\partial x}</script> is the derivative with respect to x (gradient in the x direction)</p>
+
+<p><script type="math/tex">\textstyle\frac{\partial f}{\partial y}</script> is the derivative with respect to y (gradient in the y direction).</p>
+
+<p>Afterwards, combine the two gradients on a single image using the following formula:</p>
+
+<script type="math/tex; mode=display">g = \sqrt{ g_x^2 + g_y^2 }</script>
+
+<ol>
+  <li>Implement a version with explicit for loops.</li>
+  <li>Implement another version without using explicit for loops.
+    <ul>
+      <li>Hint1: you can use <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.roll.html">numpy.roll</a> function, see its documentation for further details.</li>
+      <li>Hint2: you can also use <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.pad.html">numpy.pad</a> function, then using <a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.indexing.html">array slicing</a> to drop columns or rows to match dimensions.</li>
+    </ul>
+  </li>
+  <li>Report the execution time for both versions.</li>
+</ol>
+
+<h2 id="part-2-written">Part 2: Written</h2>
+
+<p>You answers to this part should be included in the <code class="highlighter-rouge">Part2.md</code> file in the repository of your assignment.</p>
+
+<p>Also, your answers should be formatted as <em>Markdown</em> syntax.</p>
+
+<h3 id="q1">Q1</h3>
+
+<p>Transform a few more (easy) RGB values manually into corresponding HSI values.</p>
+
+<h3 id="q2">Q2</h3>
+
+<p>In the CIE’s RGB colour space (which models human colour perception), the scalars R, G, or B may also be negative. Provide a physical interpretation (obviously, we cannot subtract light from a given spectrum).</p>
+
+<h3 id="submitting">Submitting</h3>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"solved all problems!"</span>
+<span class="gp">$</span> git push origin master
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
       </div>
     </main>
 
@@ -287,4 +476,3 @@ layout: default
   </body>
 
 </html>
->>>>>>> c5703b7a29e4d85213359206638fd6a5cd93f743

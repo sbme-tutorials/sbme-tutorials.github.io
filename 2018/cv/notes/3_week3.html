@@ -1,10 +1,3 @@
-<<<<<<< HEAD
----
-layout: default
----
-
-<style type="text/css" media="screen">
-=======
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,11 +6,11 @@ layout: default
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tutorials for SBME Students</title>
+  <title>Week 3: Images in Frequency Domian</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/404.html">
+  <link rel="canonical" href="/2018/cv/notes/3_week3.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -32,6 +25,76 @@ layout: default
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -208,30 +271,83 @@ layout: default
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
->>>>>>> c5703b7a29e4d85213359206638fd6a5cd93f743
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <article class="post">
 
-<div class="container">
-  <h1>404</h1>
+  <header class="post-header">
+    <h1 class="post-title">Week 3: Images in Frequency Domian</h1>
+  </header>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
-<<<<<<< HEAD
-=======
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#discrete-fourier-transform-dft" id="markdown-toc-discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</a></li>
+  <li><a href="#properties-of-dft" id="markdown-toc-properties-of-dft">Properties of DFT</a></li>
+  <li><a href="#inverse-fourier-transform" id="markdown-toc-inverse-fourier-transform">Inverse Fourier Transform</a></li>
+  <li><a href="#fourier-filtering" id="markdown-toc-fourier-filtering">Fourier Filtering</a></li>
+</ul>
 
+<h2 id="discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</h2>
+<p>Fourier transform is a decompisition of a signal into some basis functions. Here basis functions are wiegted sum of sin and cos functions 
+Geiven a discrete image I(x,y) the fourier transform of it is  :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I(u,v) = sum_{x= 0}^{N_{clos} - 1 } sum_{y = 0}^{N_{rows} - 1}  I(x,y) .e^{-i2pi(\frac{xu}{N_cols)}+\frac{yv}{N_rows}}
+</code></pre></div></div>
+
+<h2 id="properties-of-dft">Properties of DFT</h2>
+
+<ul>
+  <li>FT is a complex representation of the image. So it includes a magnitude and a phase 
+  Magnitude component is the desired one in visualization. It represents the weight of each frequency component and give an intuitive impression about frequcy spectrum of the image. Due to large variations in magnitudes (Center of the image has a high value compared with other values) we display it in a log scale to compress dynamic range  see link https://homepages.inf.ed.ac.uk/rbf/HIPR2/pixlog.htm
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> log 10 (1 + ||I(u, v )|| 2 )
+</code></pre></div>    </div>
+    <p>Phase is very important for image recovery but has no significance in visulaization</p>
+  </li>
+  <li>In Fourier domain central regions represent the low frequency components and prepheral regions represent the high frequency components and the center of the image represents the DC value with zero frequency which is the average intensity of the image. Note (image profile within a scan line gives you an impression about the frequncy in that direction)</li>
+  <li>Direction of change in intensity has the same direcion in frequency domain</li>
+  <li>No one to one corresponding where each point in frequency domain is calculated from the whole spatial image
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> I(u,v) = T(I)(x,y) not T(I(x,y)) 
+</code></pre></div>    </div>
+  </li>
+  <li>Fourier transfor of the image is symmetric which mean that we can recover the image if we have only the half of fourier domain. This is a very important property in fourier transfrom and used in MRI imaging see partial fourier imaging http://mriquestions.com/partial-fourier.html</li>
+</ul>
+
+<p>Question: Where redundancy comes from ?? 
+ Answer : Each point in fourier domain is a complex with two informations magnitude and phase or real part and imaginary part. So half of fourier image actually hold up the whole information of the spatial domain image.</p>
+<ul>
+  <li>DFT is periodic (remember discretization implies periodicity) and aliasing in frequecny domain leads to overlapping in image domain.</li>
+</ul>
+
+<h2 id="inverse-fourier-transform">Inverse Fourier Transform</h2>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>I(u,v) = 1 / N *M sum_{x= 0}^{N_{clos} - 1 } sum_{y = 0}^{N_{rows} - 1}  I(x,y) .e^{-i2pi(\frac{xu}{N_cols)}+\frac{yv}{N_rows}}
+</code></pre></div></div>
+<h2 id="fourier-filtering">Fourier Filtering</h2>
+
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
       </div>
     </main>
 
@@ -287,4 +403,3 @@ layout: default
   </body>
 
 </html>
->>>>>>> c5703b7a29e4d85213359206638fd6a5cd93f743
