@@ -202,6 +202,13 @@ $ \omega = e^{-{\frac{2\pi i}{8}}} = \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}} $
 * [How to use C library in python? (Generating Python wrappers for C library)](http://karuppuswamy.com/wordpress/2012/01/28/how-to-use-c-library-in-python-generating-python-wrappers-for-c-library/)
 * [Build MEX function from C/C++ or Fortran source code](https://www.mathworks.com/help/matlab/ref/mex.html?requestedDomain=true)
 
+## Demo file
+
+```bash
+$ git clone https://github.com/sbme-tutorials/sbe309-week3-demo.git
+```
+
+
 ## References
 
 {% bibliography --cited %}
