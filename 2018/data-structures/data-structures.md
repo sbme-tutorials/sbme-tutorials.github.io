@@ -68,7 +68,7 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     * [FAQ #1: Why `using namespace arbitrary_name;` is a bad practice]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq1.md %}){:target="_blank"}
     * [FAQ #2: Why `int *p = &x` != `*p = &x`]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq2.md %}){:target="_blank"}
     * [FAQ #3: Why not using `std::cin` inside functions of particular logic]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq3.md %}){:target="_blank"}
-    * Assignments: \[[Assignment: Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3a.md %}){:target="_blank"}\]
+    * Assignments: \[[Assignment: Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3a.md %}){:target="_blank"}\]\[[Assignment: Part 2]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3b.md %}){:target="_blank"}\]
 4. Week 4:
     * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}
     * Section Notes: \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
