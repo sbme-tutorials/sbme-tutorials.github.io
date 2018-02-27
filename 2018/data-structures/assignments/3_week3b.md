@@ -3,19 +3,23 @@ layout: page
 course: "sbe201"
 category: "assignment"
 year: "2018"
-title:  "Assignment 3 - Part 2: Structs and Function Overloading"
+title:  "Assignment 3 - Part 2: Struct and Functions Overloading"
 by: "Asem"
 pdf: true
 ---
 
 ## Prerequisites
 
+<<<<<<< HEAD
 * **Required**: Read the **struct** and **function overloading** in \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
 
 ## Objectives
 
-* Using `struct` to encapsulate objects.
-* Use `struct` to return multiple values instead of **pass-by-reference**.
+* Functions Overloading: make functions with **same name**, **but different parameters types/count**.
+* Make your own types by using `struct` feature of C++.
+* Make another version of your functions implemented in **Part 1** but with using your own types (`struct`s).
+* Realize importance of `struct` to encapsulate objects.
+* Realize the importance of `struct` to return multiple values instead of **pass-by-reference**.
 * Realize the readability gains by using `struct`.
 * Understand *function overloading*.
 
