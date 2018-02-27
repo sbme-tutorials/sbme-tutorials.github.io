@@ -169,7 +169,7 @@ step_sig = step( -(ts-3))
 plot( ts , step_sig )
 ```
 
-![](../special/reversal_shiftin.png)
+![](../special/reversal_shifting.png)
 
 ## DSP General Scheme
 

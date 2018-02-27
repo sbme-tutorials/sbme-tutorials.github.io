@@ -41,6 +41,7 @@ Demonstrator:  Eng. Asem Alaa & Eng. Eman Ibraheem
 |------|----------------------|-----------|
 | 1 | Introduction to Biological Signals; Signal Visualization | Briefly: Python basics; plotly for data visualization; Anaconda |
 | 2 | Basic signals in DSP, basic operations on signals, convolution | Python applications |
+| 3 | Euler's Identity, Sinusoids, Fourier, DFT, 2D-DFT | Python applications |
 
 
 ## Tutorials
@@ -51,5 +52,9 @@ Demonstrator:  Eng. Asem Alaa & Eng. Eman Ibraheem
 2. Week 2:
     * [Slides]({{ site.baseurl }}{% link 2018/dsp/presentations/2_week2/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/dsp/notes/2_week2.md %}){:target="_blank"}.
+3. Week 3:
+    * [Slides]({{ site.baseurl }}{% link 2018/dsp/presentations/3_week3/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/dsp/notes/3_week3.md %}){:target="_blank"}.
+
 
 ## Announcements
