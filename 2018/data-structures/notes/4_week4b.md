@@ -41,3 +41,20 @@ Open [StackLL](https://www.cs.usfca.edu/~galles/visualization/StackLL.html) and 
 ## Intro to Build Systems
 
 ## Git for Teams
+
+
+https://upbeat-pie.surge.sh/
+
+https://www.coursera.org/learn/data-structures
+
+
+https://www.coursera.org/learn/algorithms-part1
+
+
+https://github.com/no-stack-dub-sack/algos-and-data-structures
+
+https://www.codewars.com/?language=cpp
+
+http://www.pythontutor.com/
+
+http://www.pythontutor.com/
