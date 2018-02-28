@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4b.html">
+  <link rel="canonical" href="/2018/data-structures/notes/4_week4b.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -27,6 +27,10 @@
      -->
     
 
+    
+      
+    
+      
     
       
     
@@ -118,17 +122,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
@@ -138,12 +137,17 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
             
           
             
@@ -158,22 +162,22 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
@@ -193,17 +197,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -213,12 +212,17 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
             
           
             
@@ -234,6 +238,16 @@
             
             
             <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -271,12 +285,21 @@
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#linked-lists" id="markdown-toc-linked-lists">Linked Lists</a></li>
-  <li><a href="#ll-based-stacks" id="markdown-toc-ll-based-stacks">LL-Based Stacks</a>    <ul>
+  <li><a href="#stacks-using-linked-lists" id="markdown-toc-stacks-using-linked-lists">Stacks using Linked Lists</a>    <ul>
+      <li><a href="#node-type" id="markdown-toc-node-type">Node type</a></li>
+      <li><a href="#stack-ll" id="markdown-toc-stack-ll">Stack-LL</a></li>
+      <li><a href="#push-operation" id="markdown-toc-push-operation">Push operation</a></li>
+      <li><a href="#pop-operation" id="markdown-toc-pop-operation">Pop operation</a></li>
+      <li><a href="#asking-a-stack-if-it-is-empty" id="markdown-toc-asking-a-stack-if-it-is-empty">Asking a Stack if it is Empty</a></li>
       <li><a href="#home-demo" id="markdown-toc-home-demo">Home Demo</a></li>
     </ul>
   </li>
-  <li><a href="#ll-based-queues" id="markdown-toc-ll-based-queues">LL-Based Queues</a></li>
+  <li><a href="#ll-based-queues" id="markdown-toc-ll-based-queues">LL-Based Queues</a>    <ul>
+      <li><a href="#asking-if-the-ll-is-empty" id="markdown-toc-asking-if-the-ll-is-empty">Asking if the LL is Empty</a></li>
+      <li><a href="#enqueuing-a-new-element" id="markdown-toc-enqueuing-a-new-element">Enqueuing a New Element</a></li>
+      <li><a href="#dequeueing-an-element" id="markdown-toc-dequeueing-an-element">Dequeueing an Element</a></li>
+    </ul>
+  </li>
   <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
   <li><a href="#this-pointer" id="markdown-toc-this-pointer">This Pointer</a></li>
   <li><a href="#preprocessing" id="markdown-toc-preprocessing">Preprocessing</a>    <ul>
@@ -292,15 +315,188 @@
   <li><a href="#git-for-teams" id="markdown-toc-git-for-teams">Git for Teams</a></li>
 </ul>
 
-<h2 id="linked-lists">Linked Lists</h2>
+<h2 id="stacks-using-linked-lists">Stacks using Linked Lists</h2>
 
-<h2 id="ll-based-stacks">LL-Based Stacks</h2>
+<p><img src="/gallery/dna_array.svg" style="width:400" /></p>
+
+<p><img src="/gallery/dna_ll.svg" style="width:400" /></p>
+
+<h3 id="node-type">Node type</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>TODO: add a figure for each operation</p>
+
+<h3 id="stack-ll">Stack-LL</h3>
+
+<p>In case of LL-based stack, we can represent a stack using only <strong>a single pointer</strong>, i.e the front of the stack.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharacterStackLL</span>
+<span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Initially, when stack is empty, the front pointer points to nothing, i.e <code class="highlighter-rouge">nullptr</code>.</p>
+
+<h3 id="push-operation">Push operation</h3>
+
+<p>When we push a new element, we add that element to the front. We make sure that we link the new node correctly.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">;</span>
+
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
+
+    <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>or, equivalently</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="pop-operation">Pop operation</h3>
+
+<p>When popping an element from the front,</p>
+
+<p>TODO: decompose into 6 steps in the presentation.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Save the value of the front-&gt;data, before we delete it from the stack</span>
+        <span class="kt">char</span> <span class="n">lifo</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+        
+        <span class="c1">// Save the pointer of the front, so we delete it later</span>
+        <span class="n">Node</span> <span class="o">*</span><span class="n">oldFront</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
+
+        <span class="c1">// Update the front of the stack</span>
+        <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">front</span><span class="p">;</span>
+
+        <span class="c1">// Now delete the old pointer</span>
+        <span class="k">delete</span> <span class="n">oldFront</span><span class="p">;</span>
+
+        <span class="c1">// Return the lifo</span>
+        <span class="k">return</span> <span class="n">lifo</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="c1">// If the stack is empty, make the program to terminate (crash)!</span>
+        <span class="c1">// The user of this function should have checked if the stack is not empty.</span>
+        <span class="n">exit</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="asking-a-stack-if-it-is-empty">Asking a Stack if it is Empty</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Again, could be done that way:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h3 id="home-demo">Home Demo</h3>
 
 <p>Open <a href="https://www.cs.usfca.edu/~galles/visualization/StackLL.html">StackLL</a> and play with the stack to realize its behaviour. This demo shows a <strong>Stack</strong> implemented with <strong>linked list</strong>.</p>
 
 <h2 id="ll-based-queues">LL-Based Queues</h2>
+
+<p>The same node <code class="highlighter-rouge">struct</code>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">NumberNode</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">NumberNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>    
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>And the whole <strong>Queue</strong> is represented by two elements: <strong>Front</strong> (or <strong>Head</strong>) and <strong>Back</strong> (or <strong>Rear</strong>). We can wrap these element in the following <code class="highlighter-rouge">struct</code>:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">NumbersQueueLL</span>
+<span class="p">{</span>
+    <span class="n">NumberNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">NumberNode</span> <span class="o">*</span><span class="n">back</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="asking-if-the-ll-is-empty">Asking if the LL is Empty</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">NumbersQueueLL</span> <span class="n">queue</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Or equivalently,</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">NumbersQueueLL</span> <span class="n">queue</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="enqueuing-a-new-element">Enqueuing a New Element</h3>
+
+<p>As you guessed, new elements will be added to the <strong>back</strong>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">enqueue</span><span class="p">(</span> <span class="n">NumbersQueueLL</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">newSample</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">queue</span> <span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NumberNode</span><span class="p">{</span> <span class="n">newSample</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
+        <span class="n">queue</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">NumbersNode</span> <span class="o">*</span><span class="n">oldBack</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span><span class="p">;</span>
+        <span class="n">NumbersNode</span> <span class="o">*</span><span class="n">newBack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NumbersNode</span><span class="p">{</span> <span class="n">newSample</span> <span class="p">,</span> <span class="n">oldBack</span> <span class="p">};</span>
+        <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">=</span> <span class="n">newBack</span><span class="p">;</span>
+
+        <span class="c1">// Short solution: queue.back = new NumbersNode{ newSample , queue.back };</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="dequeueing-an-element">Dequeueing an Element</h3>
+
+<p>Left for the assignment.</p>
 
 <h2 id="methods">Methods</h2>
 
@@ -333,8 +529,6 @@
 <p>https://github.com/no-stack-dub-sack/algos-and-data-structures</p>
 
 <p>https://www.codewars.com/?language=cpp</p>
-
-<p>http://www.pythontutor.com/</p>
 
 <p>http://www.pythontutor.com/</p>
 
