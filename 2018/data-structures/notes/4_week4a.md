@@ -408,30 +408,30 @@ Linked lists are very flexible in size. Our **Arrays** once constructed we canno
 
 ### Pointers revisited
 
-Each element in the linked list is denoted by a *node*. To connect between nodes, we may use **pointers**. So, each *node* has a **pointer** pointing to the *next node*.
+Each element in the linked list is denoted by a *Node*. To connect between nodes, we may use **pointers**. So, each *Node* has a **pointer** pointing to the *Next Node*.
 The **DNA** sequence as a Linked List (LL), can be achieved with the following
 
 ```c++
-struct node
+struct Node
 {
     char data;
-    node* next;
+    Node* next;
 };
 ```
 
 <img src="/gallery/dna_ll_annotated.svg" style="width:400">
 
-#### The last node (back)
+#### The last Node (back)
 
-How to recognize that we are on the latest *node*?. In this case, we will make the **next** pointer equals to `nullptr`. So we know then we are reached the last element.
+How to recognize that we are on the latest *Node*?. In this case, we will make the **next** pointer equals to `nullptr`. So we know then we are reached the last element.
 
 
 For example, if we need to print all elements on a list, we will use this very simple logic:
 
 ```c++
-void printLL( node* front )
+void printLL( Node* front )
 {
-    node *current = front;
+    Node *current = front;
 
     while( current != nullptr )
     {
@@ -447,12 +447,12 @@ We need to make a `struct` that will define our **LL**.
 
 ### Head (front)
 
-If we have a **pointer** pointing to the first element in our **LL**, then we have an access to the whole list, because every *node* can see the *next node*.
+If we have a **pointer** pointing to the first element in our **LL**, then we have an access to the whole list, because every *Node* can see the *Next Node*.
 
 ```c++
 struct CharLinkedList
 {
-    node *head;
+    Node *head;
 }
 ```
 
@@ -466,8 +466,8 @@ So our **LL** `struct` is now consisting of:
 ```c++
 struct CharLinkedList
 {
-    node *head;
-    node *tail;
+    Node *head;
+    Node *tail;
 }
 ```
 
@@ -476,7 +476,7 @@ If we need to *insert* element on the back:
 ```c++
 void insertToList( CharLinkedList &list , char newElement )
 {
-    list.tail->next = new node{ newElement , nullptr };
+    list.tail->next = new Node{ newElement , nullptr };
     list.tail = list.tail->next;
 }
 ```

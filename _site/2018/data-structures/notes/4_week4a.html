@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4a.html">
+  <link rel="canonical" href="/2018/data-structures/notes/4_week4a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -27,6 +27,10 @@
      -->
     
 
+    
+      
+    
+      
     
       
     
@@ -118,17 +122,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
@@ -138,12 +137,17 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
             
           
             
@@ -158,22 +162,22 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
@@ -193,17 +197,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -213,12 +212,17 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
             
           
             
@@ -234,6 +238,16 @@
             
             
             <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -293,7 +307,7 @@
       <li><a href="#why-linked-lists" id="markdown-toc-why-linked-lists">Why linked lists</a></li>
       <li><a href="#the-memory-mode-array-vs-linked-list" id="markdown-toc-the-memory-mode-array-vs-linked-list">The Memory Mode: Array vs. Linked List</a></li>
       <li><a href="#pointers-revisited" id="markdown-toc-pointers-revisited">Pointers revisited</a>        <ul>
-          <li><a href="#the-last-node-back" id="markdown-toc-the-last-node-back">The last node (back)</a></li>
+          <li><a href="#the-last-node-back" id="markdown-toc-the-last-node-back">The last Node (back)</a></li>
         </ul>
       </li>
       <li><a href="#the-ll-structure" id="markdown-toc-the-ll-structure">The LL Structure</a></li>
@@ -714,27 +728,27 @@ We can now make our <code class="highlighter-rouge">rectangle::area</code> funct
 
 <h3 id="pointers-revisited">Pointers revisited</h3>
 
-<p>Each element in the linked list is denoted by a <em>node</em>. To connect between nodes, we may use <strong>pointers</strong>. So, each <em>node</em> has a <strong>pointer</strong> pointing to the <em>next node</em>.
+<p>Each element in the linked list is denoted by a <em>Node</em>. To connect between nodes, we may use <strong>pointers</strong>. So, each <em>Node</em> has a <strong>pointer</strong> pointing to the <em>Next Node</em>.
 The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with the following</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">node</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Node</span>
 <span class="p">{</span>
     <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
-    <span class="n">node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+    <span class="n">Node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
 <p><img src="/gallery/dna_ll_annotated.svg" style="width:400" /></p>
 
-<h4 id="the-last-node-back">The last node (back)</h4>
+<h4 id="the-last-node-back">The last Node (back)</h4>
 
-<p>How to recognize that we are on the latest <em>node</em>?. In this case, we will make the <strong>next</strong> pointer equals to <code class="highlighter-rouge">nullptr</code>. So we know then we are reached the last element.</p>
+<p>How to recognize that we are on the latest <em>Node</em>?. In this case, we will make the <strong>next</strong> pointer equals to <code class="highlighter-rouge">nullptr</code>. So we know then we are reached the last element.</p>
 
 <p>For example, if we need to print all elements on a list, we will use this very simple logic:</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">printLL</span><span class="p">(</span> <span class="n">node</span><span class="o">*</span> <span class="n">front</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">printLL</span><span class="p">(</span> <span class="n">Node</span><span class="o">*</span> <span class="n">front</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">front</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">front</span><span class="p">;</span>
 
     <span class="k">while</span><span class="p">(</span> <span class="n">current</span> <span class="o">!=</span> <span class="nb">nullptr</span> <span class="p">)</span>
     <span class="p">{</span>
@@ -750,11 +764,11 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 
 <h3 id="head-front">Head (front)</h3>
 
-<p>If we have a <strong>pointer</strong> pointing to the first element in our <strong>LL</strong>, then we have an access to the whole list, because every <em>node</em> can see the <em>next node</em>.</p>
+<p>If we have a <strong>pointer</strong> pointing to the first element in our <strong>LL</strong>, then we have an access to the whole list, because every <em>Node</em> can see the <em>Next Node</em>.</p>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharLinkedList</span>
 <span class="p">{</span>
-    <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -766,8 +780,8 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharLinkedList</span>
 <span class="p">{</span>
-    <span class="n">node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
-    <span class="n">node</span> <span class="o">*</span><span class="n">tail</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">tail</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -775,7 +789,7 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertToList</span><span class="p">(</span> <span class="n">CharLinkedList</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">newElement</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">list</span><span class="p">.</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">node</span><span class="p">{</span> <span class="n">newElement</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
+    <span class="n">list</span><span class="p">.</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">{</span> <span class="n">newElement</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
     <span class="n">list</span><span class="p">.</span><span class="n">tail</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">tail</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
