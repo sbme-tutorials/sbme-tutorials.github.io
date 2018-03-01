@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</title>
+  <title>Assignment 4: Stacks and Queues</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/3_faq2.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/4_week4.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -294,59 +294,78 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</h1>
+    <h1 class="post-title">Assignment 4: Stacks and Queues</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="faq-2-why-int-p--x--p--x">FAQ #2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></h2>
-
-<h3 id="a-declarationinitialization-vs-dereferencing">A Declaration+Initialization vs. Dereferencing</h3>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="c1">// Declaring a pointer-to-integer and initializing it to address of x.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiles (Type Match)!</span>
-
-<span class="c1">// Dereferencing px and assignment by address of integer</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error (Type Mismatch)!</span>
-</code></pre></div></div>
-
-<p>In other words,</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>is equivalent to</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
-
-<p>Which is <strong>not</strong> equivalent to</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error (Type Mismatch)!</span>
-</code></pre></div></div>
-
-<h3 id="short-story">Short Story</h3>
+    <h2 id="prerequisites">Prerequisites</h2>
 
 <ul>
-  <li>Asterisk <code class="highlighter-rouge">*</code> in declarations expressions (<code class="highlighter-rouge">int *p;</code>) means you are declaring a pointer <code class="highlighter-rouge">p</code>.</li>
-  <li>Asterisk <code class="highlighter-rouge">*</code> in non-declaration expressions (<code class="highlighter-rouge">*p;</code>)  means you are dereferencing a pointer (get the variable pointed by the address in <code class="highlighter-rouge">p</code>).</li>
+  <li><strong>Required</strong>: Read the [<a href="/2018/data-structures/notes/4_week4a.html" target="_blank">Part1: Struct, Stacks, Linked Lists, and Queues</a>]</li>
+  <li><strong>Required</strong>: Read [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>], the following sections:
+    <ul>
+      <li><a href="/2018/data-structures/notes/4_week4b.html#assignment-of-week-4">Assignment of Week 4</a></li>
+      <li><a href="/2018/data-structures/notes/4_week4b.html#ll-based-queues">LL-Based Queues</a></li>
+    </ul>
+  </li>
+  <li><strong>Optional</strong>: The rest of the notes [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>]</li>
 </ul>
 
-<p>You can also make it simpler for your self if you wish.</p>
+<h2 id="assignment-4">Assignment 4</h2>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<h3 id="concrete-implementation-linked-list-of-doubles-doublell">Concrete Implementation Linked List of Doubles (DoubleLL)</h3>
 
-<span class="c1">// To declare and initialize pointers to zero address,</span>
-<span class="c1">// you can use either nullptr or 0.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DoubleNode</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
 
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<span class="k">struct</span> <span class="n">DoubleLL</span>
+<span class="p">{</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="p">};</span>
 </code></pre></div></div>
+
+<p><strong>Supported Operations</strong>:</p>
+
+<ol>
+  <li>Insertions</li>
+</ol>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertFront</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertBack</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertAt</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">target</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Removals</li>
+</ol>
+
+<p>```c++</p>
+
+<h4 id="implement-another-version-but-for-characters-charll">Implement Another Version But for Characters (CharLL)</h4>
+
+<h3 id="stack-implementation-of-doubles-using-ll-doublestackll">Stack Implementation of Doubles using LL (DoubleStackLL)</h3>
+
+<h4 id="implement-another-version-but-for-characters-charstackll">Implement Another Version But for Characters (CharStackLL)</h4>
+
+<h3 id="queue-implementation-of-doubles-using-ll-doublequeuell">Queue Implementation of Doubles using LL (DoubleQueueLL)</h3>
+
+<h3 id="bonus-stack-implementation-using-arrays-doublestackarray">Bonus: Stack Implementation using Arrays (DoubleStackArray)</h3>
+
+<h3 id="bonus-queue-implementation-using-arrays-doublequeuearray">Bonus: Queue Implementation using Arrays (DoubleQueueArray)</h3>
 
   </div>
 

@@ -234,8 +234,14 @@ or, a DRY solution (optional):
 ```c++
 void push( CharStackLL &stack , char data )
 {
-    CharLL asLL{ stack.front };
-    lists::pushFront( asLL , data );
+    // 1. Make list interface
+    CharLL list{ stack.front };
+
+    // 2. DRY
+    lists::pushFront( list , data );
+
+    // 3. Update Stack front
+    stack.front = list.front; // update the front of the stack
 }
 ```
 
@@ -278,11 +284,17 @@ char pop( CharStackLL &stack )
 or DRY solution,
 
 ```c++
-char pop( CharStack &list )
+char pop( CharStack &stack )
 {
-    CharLL asLL{ list.front };
-    char toPop = lists::front( asLL );
-    lists::removeFront( asLL );
+    // 1. Make list interface
+    CharLL list{ stack.front };
+
+    // 2. DRY
+    char toPop = lists::front( list );
+    lists::removeFront( list );
+    
+    // 3. Update Stack front
+    stack.front = list.front;
     return toPop;
 }
 ```

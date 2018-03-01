@@ -83,6 +83,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
@@ -120,17 +126,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
@@ -140,12 +141,17 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
             
           
             
@@ -160,22 +166,22 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
@@ -195,17 +201,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -215,12 +216,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4.html">Assignment 4: Stacks and Queues</a>
             
           
             
@@ -241,6 +252,16 @@
             
             
             <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -562,8 +583,14 @@
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">CharLL</span> <span class="n">asLL</span><span class="p">{</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
-    <span class="n">lists</span><span class="o">::</span><span class="n">pushFront</span><span class="p">(</span> <span class="n">asLL</span> <span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+    <span class="c1">// 1. Make list interface</span>
+    <span class="n">CharLL</span> <span class="n">list</span><span class="p">{</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+
+    <span class="c1">// 2. DRY</span>
+    <span class="n">lists</span><span class="o">::</span><span class="n">pushFront</span><span class="p">(</span> <span class="n">list</span> <span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+
+    <span class="c1">// 3. Update Stack front</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">front</span><span class="p">;</span> <span class="c1">// update the front of the stack</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -584,7 +611,7 @@
         <span class="n">CharNode</span> <span class="o">*</span><span class="n">oldFront</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
 
         <span class="c1">// Update the front of the stack</span>
-        <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">front</span><span class="p">;</span>
+        <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
 
         <span class="c1">// Now delete the old pointer</span>
         <span class="k">delete</span> <span class="n">oldFront</span><span class="p">;</span>
@@ -603,11 +630,17 @@
 
 <p>or DRY solution,</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">CharStack</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">CharStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">CharLL</span> <span class="n">asLL</span><span class="p">{</span> <span class="n">list</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
-    <span class="kt">char</span> <span class="n">toPop</span> <span class="o">=</span> <span class="n">lists</span><span class="o">::</span><span class="n">front</span><span class="p">(</span> <span class="n">asLL</span> <span class="p">);</span>
-    <span class="n">lists</span><span class="o">::</span><span class="n">removeFront</span><span class="p">(</span> <span class="n">asLL</span> <span class="p">);</span>
+    <span class="c1">// 1. Make list interface</span>
+    <span class="n">CharLL</span> <span class="n">list</span><span class="p">{</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+
+    <span class="c1">// 2. DRY</span>
+    <span class="kt">char</span> <span class="n">toPop</span> <span class="o">=</span> <span class="n">lists</span><span class="o">::</span><span class="n">front</span><span class="p">(</span> <span class="n">list</span> <span class="p">);</span>
+    <span class="n">lists</span><span class="o">::</span><span class="n">removeFront</span><span class="p">(</span> <span class="n">list</span> <span class="p">);</span>
+    
+    <span class="c1">// 3. Update Stack front</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
     <span class="k">return</span> <span class="n">toPop</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
