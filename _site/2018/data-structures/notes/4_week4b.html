@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="/2018/data-structures/notes/4_week4b.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4b.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -27,6 +27,8 @@
      -->
     
 
+    
+      
     
       
     
@@ -132,22 +134,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
             
           
             
@@ -172,12 +174,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
             
           
             
@@ -207,12 +209,17 @@
           
             
             
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
             <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
             
           
             
@@ -222,7 +229,7 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -242,12 +249,12 @@
           
             
             
-            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
             
           
             
             
-            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -285,7 +292,25 @@
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#stacks-using-linked-lists" id="markdown-toc-stacks-using-linked-lists">Stacks using Linked Lists</a>    <ul>
+  <li><a href="#assignment-of-week-3" id="markdown-toc-assignment-of-week-3">Assignment of Week 3</a>    <ul>
+      <li><a href="#part-1" id="markdown-toc-part-1">Part 1</a></li>
+      <li><a href="#part-2" id="markdown-toc-part-2">Part 2</a></li>
+    </ul>
+  </li>
+  <li><a href="#c-milestones" id="markdown-toc-c-milestones">C++ Milestones</a>    <ul>
+      <li><a href="#other-important-g-compiler-flag" id="markdown-toc-other-important-g-compiler-flag">Other Important g++ Compiler Flag</a>        <ul>
+          <li><a href="#-wall-flag" id="markdown-toc--wall-flag"><code class="highlighter-rouge">-Wall</code> flag</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#assignment-of-week-4" id="markdown-toc-assignment-of-week-4">Assignment of Week 4</a>    <ul>
+      <li><a href="#general-ll-11-operations" id="markdown-toc-general-ll-11-operations">General LL: 11 operations</a>        <ul>
+          <li><a href="#a-ll-of-integers" id="markdown-toc-a-ll-of-integers">A: LL of Integers</a></li>
+          <li><a href="#b-ll-of-characters" id="markdown-toc-b-ll-of-characters">B: LL of Characters</a></li>
+        </ul>
+      </li>
+      <li><a href="#stacks-using-ll" id="markdown-toc-stacks-using-ll">Stacks using LL</a></li>
       <li><a href="#node-type" id="markdown-toc-node-type">Node type</a></li>
       <li><a href="#stack-ll" id="markdown-toc-stack-ll">Stack-LL</a></li>
       <li><a href="#push-operation" id="markdown-toc-push-operation">Push operation</a></li>
@@ -298,47 +323,224 @@
       <li><a href="#asking-if-the-ll-is-empty" id="markdown-toc-asking-if-the-ll-is-empty">Asking if the LL is Empty</a></li>
       <li><a href="#enqueuing-a-new-element" id="markdown-toc-enqueuing-a-new-element">Enqueuing a New Element</a></li>
       <li><a href="#dequeueing-an-element" id="markdown-toc-dequeueing-an-element">Dequeueing an Element</a></li>
+      <li><a href="#bonus-array-based-queues" id="markdown-toc-bonus-array-based-queues">Bonus: Array-Based Queues</a></li>
     </ul>
   </li>
-  <li><a href="#methods" id="markdown-toc-methods">Methods</a></li>
-  <li><a href="#this-pointer" id="markdown-toc-this-pointer">This Pointer</a></li>
-  <li><a href="#preprocessing" id="markdown-toc-preprocessing">Preprocessing</a>    <ul>
-      <li><a href="#library-includes" id="markdown-toc-library-includes">Library Includes</a></li>
-      <li><a href="#circular-dependencies" id="markdown-toc-circular-dependencies">Circular Dependencies</a></li>
-      <li><a href="#defines" id="markdown-toc-defines">Defines</a></li>
-      <li><a href="#functions-as-defines" id="markdown-toc-functions-as-defines">Functions as Defines</a></li>
+  <li><a href="#regular-functions-and-methods" id="markdown-toc-regular-functions-and-methods">Regular Functions and Methods</a>    <ul>
+      <li><a href="#which-is-more-elegant" id="markdown-toc-which-is-more-elegant">Which is more elegant?</a></li>
+      <li><a href="#procedural-paradigm" id="markdown-toc-procedural-paradigm">Procedural Paradigm</a></li>
+      <li><a href="#object-oriented-paradigm-oop" id="markdown-toc-object-oriented-paradigm-oop">Object Oriented Paradigm (OOP)</a></li>
     </ul>
   </li>
-  <li><a href="#naming-conventions" id="markdown-toc-naming-conventions">Naming Conventions</a></li>
+  <li><a href="#preprocessing" id="markdown-toc-preprocessing">Preprocessing</a></li>
+  <li><a href="#naming-conventions" id="markdown-toc-naming-conventions">Naming Conventions</a>    <ul>
+      <li><a href="#variables-naming" id="markdown-toc-variables-naming">Variables naming</a></li>
+      <li><a href="#types-naming" id="markdown-toc-types-naming">Types naming</a></li>
+      <li><a href="#functions-naming" id="markdown-toc-functions-naming">Functions naming</a></li>
+      <li><a href="#namespace-naming" id="markdown-toc-namespace-naming">Namespace naming</a></li>
+      <li><a href="#popular-naming-conventions" id="markdown-toc-popular-naming-conventions">Popular Naming Conventions</a></li>
+    </ul>
+  </li>
   <li><a href="#const-correctness" id="markdown-toc-const-correctness">Const Correctness</a></li>
-  <li><a href="#intro-to-build-systems" id="markdown-toc-intro-to-build-systems">Intro to Build Systems</a></li>
+  <li><a href="#advanced-intro-to-build-systems" id="markdown-toc-advanced-intro-to-build-systems">Advanced: Intro to Build Systems</a>    <ul>
+      <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
+      <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+    </ul>
+  </li>
   <li><a href="#git-for-teams" id="markdown-toc-git-for-teams">Git for Teams</a></li>
+  <li><a href="#teaser-c-awesome-gui" id="markdown-toc-teaser-c-awesome-gui">Teaser: C++ Awesome GUI</a>    <ul>
+      <li><a href="#summer-and-next-year-expectations" id="markdown-toc-summer-and-next-year-expectations">Summer and Next Year Expectations</a>        <ul>
+          <li><a href="#agenda" id="markdown-toc-agenda">Agenda</a></li>
+          <li><a href="#patience" id="markdown-toc-patience">Patience</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#quiz-next-tuesday" id="markdown-toc-quiz-next-tuesday">Quiz Next Tuesday</a></li>
 </ul>
 
-<h2 id="stacks-using-linked-lists">Stacks using Linked Lists</h2>
+<h2 id="assignment-of-week-3">Assignment of Week 3</h2>
+
+<h3 id="part-1">Part 1</h3>
+
+<ul>
+  <li>Issue 1: Command Line Arguments.</li>
+  <li>Issue 2: Functions and Calling Functions.</li>
+  <li>Issue 3: Header Files and Source Files.</li>
+</ul>
+
+<h3 id="part-2">Part 2</h3>
+
+<ul>
+  <li>C++ Feature: <code class="highlighter-rouge">struct</code>s</li>
+  <li>C++ Feature: function overloading</li>
+  <li>C++ Feature: Type Alias</li>
+</ul>
+
+<h2 id="c-milestones">C++ Milestones</h2>
+
+<p><img src="/gallery/c++milestones.jpg" style="width:100%" /></p>
+
+<p><img src="/gallery/c++milestones2.png" style="width:100%" /></p>
+
+<p>Compiling C++ of 2003</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">g++ source_code.cpp -o output_name
+</span></code></pre></div></div>
+
+<p>Compiling C++ of 2011</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">g++ -std=c++11 source_code.cpp -o output_name
+</span></code></pre></div></div>
+
+<h3 id="other-important-g-compiler-flag">Other Important g++ Compiler Flag</h3>
+
+<h4 id="-wall-flag"><code class="highlighter-rouge">-Wall</code> flag</h4>
+
+<ul>
+  <li>Your <code class="highlighter-rouge">g++</code> is compiler is your friend.</li>
+  <li>Let your compiler not just reports you errors.</li>
+  <li>Let him report you all the <strong>warnings</strong>.</li>
+  <li>Fixing <strong>warning</strong> avoids many run-time issues.</li>
+</ul>
+
+<p>Compiling C++ of 2003</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">g++ -Wall source_code.cpp -o output_name
+</span></code></pre></div></div>
+
+<p>Compiling C++ of 2011</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">g++ -Wall -std=c++11 source_code.cpp -o output_name
+</span></code></pre></div></div>
+
+<h2 id="assignment-of-week-4">Assignment of Week 4</h2>
+
+<h3 id="general-ll-11-operations">General LL: 11 operations</h3>
+
+<p>operations:</p>
+
+<ol>
+  <li>insertion at front.</li>
+  <li>insertion at back.</li>
+  <li>remove front.</li>
+  <li>remove back.</li>
+  <li>return front.</li>
+  <li>return back.</li>
+  <li>remove a node <strong>next to</strong> a given node.</li>
+  <li>remove nodes with given data.</li>
+  <li>is empty?</li>
+  <li>printAll.</li>
+  <li>delete the whole list from the heap.</li>
+</ol>
+
+<h4 id="a-ll-of-integers">A: LL of Integers</h4>
+
+<iframe allowfullscreen="" src="http://www.algomation.com/embeddedplayer?embedded=true&amp;algorithm=593432766bee1c0400365b82" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">IntegerNode</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">IntegerNode</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">IntegerLL</span>
+<span class="p">{</span>
+    <span class="n">IntegerNode</span> <span class="o">*</span><span class="n">front</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">insertBack</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertFront</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">front</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">back</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeBack</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeFront</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeNode</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="n">IntegerNode</span> <span class="o">*</span><span class="n">node</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeData</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">printAll</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">clear</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="b-ll-of-characters">B: LL of Characters</h4>
 
 <p><img src="/gallery/dna_array.svg" style="width:400" /></p>
 
 <p><img src="/gallery/dna_ll.svg" style="width:400" /></p>
 
-<h3 id="node-type">Node type</h3>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Node</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharNode</span>
 <span class="p">{</span>
     <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
-    <span class="n">Node</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">CharLL</span>
+<span class="p">{</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
-<p>TODO: add a figure for each operation</p>
+<h3 id="stacks-using-ll">Stacks using LL</h3>
+
+<h3 id="node-type">Node type</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharNode</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">CharNode</span><span class="o">*</span> <span class="n">next</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <h3 id="stack-ll">Stack-LL</h3>
 
 <p>In case of LL-based stack, we can represent a stack using only <strong>a single pointer</strong>, i.e the front of the stack.</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharacterStackLL</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharStackLL</span>
 <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
@@ -348,9 +550,11 @@
 
 <p>When we push a new element, we add that element to the front. We make sure that we link the new node correctly.</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
+<iframe allowfullscreen="" src="http://www.algomation.com/embeddedplayer?embedded=true&amp;algorithm=58a0caa54833c1040095d574" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">;</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CharNode</span><span class="p">;</span>
 
     <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
     <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
@@ -361,10 +565,19 @@
 
 <p>or, equivalently</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
 <span class="p">{</span>
-    <span class="n">Node</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CharNode</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
     <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>or, a DRY solution (optional):</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CharLL</span> <span class="n">asLL</span><span class="p">{</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+    <span class="n">lists</span><span class="o">::</span><span class="n">pushFront</span><span class="p">(</span> <span class="n">asLL</span> <span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -372,9 +585,9 @@
 
 <p>When popping an element from the front,</p>
 
-<p>TODO: decompose into 6 steps in the presentation.</p>
+<iframe allowfullscreen="" src="http://www.algomation.com/embeddedplayer?embedded=true&amp;algorithm=58a0d1144833c1040095d586" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">CharStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">)</span>
     <span class="p">{</span>
@@ -382,7 +595,7 @@
         <span class="kt">char</span> <span class="n">lifo</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
         
         <span class="c1">// Save the pointer of the front, so we delete it later</span>
-        <span class="n">Node</span> <span class="o">*</span><span class="n">oldFront</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
+        <span class="n">CharNode</span> <span class="o">*</span><span class="n">oldFront</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
 
         <span class="c1">// Update the front of the stack</span>
         <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span><span class="o">-&gt;</span><span class="n">front</span><span class="p">;</span>
@@ -399,6 +612,17 @@
         <span class="c1">// The user of this function should have checked if the stack is not empty.</span>
         <span class="n">exit</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
     <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>or DRY solution,</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">pop</span><span class="p">(</span> <span class="n">CharStack</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CharLL</span> <span class="n">asLL</span><span class="p">{</span> <span class="n">list</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+    <span class="kt">char</span> <span class="n">toPop</span> <span class="o">=</span> <span class="n">lists</span><span class="o">::</span><span class="n">front</span><span class="p">(</span> <span class="n">asLL</span> <span class="p">);</span>
+    <span class="n">lists</span><span class="o">::</span><span class="n">removeFront</span><span class="p">(</span> <span class="n">asLL</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="n">toPop</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -433,19 +657,19 @@
 
 <p>The same node <code class="highlighter-rouge">struct</code>.</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">NumberNode</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DoubleNode</span>
 <span class="p">{</span>
     <span class="kt">double</span> <span class="n">data</span><span class="p">;</span>
-    <span class="n">NumberNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>    
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
 <p>And the whole <strong>Queue</strong> is represented by two elements: <strong>Front</strong> (or <strong>Head</strong>) and <strong>Back</strong> (or <strong>Rear</strong>). We can wrap these element in the following <code class="highlighter-rouge">struct</code>:</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">NumbersQueueLL</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DoublesQueueLL</span>
 <span class="p">{</span>
-    <span class="n">NumberNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
-    <span class="n">NumberNode</span> <span class="o">*</span><span class="n">back</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">back</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
 <span class="p">};</span>
 </code></pre></div></div>
 
@@ -480,16 +704,16 @@
 <span class="p">{</span>
     <span class="k">if</span><span class="p">(</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">queue</span> <span class="p">))</span>
     <span class="p">{</span>
-        <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NumberNode</span><span class="p">{</span> <span class="n">newSample</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
+        <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DoubleNode</span><span class="p">{</span> <span class="n">newSample</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
         <span class="n">queue</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">else</span>
     <span class="p">{</span>
-        <span class="n">NumbersNode</span> <span class="o">*</span><span class="n">oldBack</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span><span class="p">;</span>
-        <span class="n">NumbersNode</span> <span class="o">*</span><span class="n">newBack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">NumbersNode</span><span class="p">{</span> <span class="n">newSample</span> <span class="p">,</span> <span class="n">oldBack</span> <span class="p">};</span>
+        <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">oldBack</span> <span class="o">=</span> <span class="n">queue</span><span class="p">.</span><span class="n">back</span><span class="p">;</span>
+        <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">newBack</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DoubleNode</span><span class="p">{</span> <span class="n">newSample</span> <span class="p">,</span> <span class="n">oldBack</span> <span class="p">};</span>
         <span class="n">queue</span><span class="p">.</span><span class="n">back</span> <span class="o">=</span> <span class="n">newBack</span><span class="p">;</span>
 
-        <span class="c1">// Short solution: queue.back = new NumbersNode{ newSample , queue.back };</span>
+        <span class="c1">// Short solution: queue.back = new DoubleNode{ newSample , queue.back };</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></div>
@@ -498,39 +722,287 @@
 
 <p>Left for the assignment.</p>
 
-<h2 id="methods">Methods</h2>
+<h3 id="bonus-array-based-queues">Bonus: Array-Based Queues</h3>
 
-<h2 id="this-pointer">This Pointer</h2>
+<ul>
+  <li>Trick: Circular Buffer.</li>
+</ul>
+
+<h2 id="regular-functions-and-methods">Regular Functions and Methods</h2>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">CharStackLL</span> <span class="n">cstack</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h4 id="which-is-more-elegant">Which is more elegant?</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">push</span><span class="p">(</span> <span class="n">cstack</span> <span class="p">,</span> <span class="sc">'A'</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>What if we can do</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cstack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="sc">'A'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<ul>
+  <li>First version =&gt; regular function.</li>
+  <li>Second version =&gt; method.</li>
+</ul>
+
+<h4 id="procedural-paradigm">Procedural Paradigm</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharStackLL</span>
+<span class="p">{</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="n">CharStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CharNode</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="p">};</span>
+    <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="object-oriented-paradigm-oop">Object Oriented Paradigm (OOP)</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">CharStackLL</span>
+<span class="p">{</span>
+    <span class="n">CharNode</span> <span class="o">*</span><span class="n">front</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    
+    <span class="kt">void</span> <span class="nf">push</span><span class="p">(</span> <span class="kt">char</span> <span class="n">newElement</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">CharNode</span> <span class="o">*</span><span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">CharNode</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="k">this</span><span class="o">-&gt;</span><span class="n">front</span> <span class="p">};</span>
+        <span class="k">this</span><span class="o">-&gt;</span><span class="n">front</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>A method inside a <code class="highlighter-rouge">struct</code> has an access to a very special pointer called <code class="highlighter-rouge">this</code>.</li>
+  <li><code class="highlighter-rouge">this</code> pointer gives a method access to all the <code class="highlighter-rouge">struct</code> members.</li>
+</ul>
 
 <h2 id="preprocessing">Preprocessing</h2>
 
-<h3 id="library-includes">Library Includes</h3>
+<p><img src="/gallery/compile.gif" alt="Compilation" /></p>
 
-<h3 id="circular-dependencies">Circular Dependencies</h3>
+<p><a href="http://www.cplusplus.com/doc/tutorial/preprocessor/">Preprocessor directives</a></p>
 
-<h3 id="defines">Defines</h3>
+<ul>
+  <li>Includes.</li>
+  <li>Include guards.</li>
+  <li>Macros.</li>
+  <li>Macro functions.</li>
+</ul>
 
-<h3 id="functions-as-defines">Functions as Defines</h3>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#ifndef MATHEMATICS_HPP
+#define MATHEMATICS_HPP
+</span>
+<span class="c1">// includes of external headers here</span>
+
+<span class="c1">// Your functions here</span>
+
+<span class="cp">#endif // MATHEMATICS_HPP
+</span></code></pre></div></div>
+
+<p><a href="https://en.wikipedia.org/wiki/Include_guard">Include guards</a></p>
 
 <h2 id="naming-conventions">Naming Conventions</h2>
 
+<p>You should agree with your teammates on naming conventions. This makes your whole project consistent and easier to read.</p>
+
+<ul>
+  <li>No matter what name convention you settle with your team. <strong>Consistency</strong> what matters.</li>
+  <li>Descriptive names.</li>
+</ul>
+
+<h3 id="variables-naming">Variables naming</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">adenine_counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// all lower_case</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">adenineCounter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// camelCase</span>
+</code></pre></div></div>
+
+<ul>
+  <li>It is optional for the team.</li>
+  <li>But afterwards, the team should be consistent.</li>
+</ul>
+
+<h3 id="types-naming">Types naming</h3>
+
+<p><code class="highlighter-rouge">struct</code> (or equivalently <code class="highlighter-rouge">class</code>) naming.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">IntegerArray</span> <span class="c1">// PascalCase</span>
+<span class="p">{</span>
+    <span class="c1">// some data</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><em>PascalCase</em> is usually recommended for <code class="highlighter-rouge">struct</code> and <code class="highlighter-rouge">class</code> names.</li>
+  <li><code class="highlighter-rouge">struct</code> and <code class="highlighter-rouge">class</code> are the same. They both define new types.</li>
+</ul>
+
+<h3 id="functions-naming">Functions naming</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">countChar</span><span class="p">(</span> <span class="n">CharArray</span> <span class="o">&amp;</span><span class="n">array</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">query</span> <span class="p">)</span> <span class="c1">// camelCase</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">count_char</span><span class="p">(</span> <span class="n">CharArray</span> <span class="o">&amp;</span><span class="n">array</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">query</span> <span class="p">)</span> <span class="c1">// lower_case</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="namespace-naming">Namespace naming</h3>
+
+<ul>
+  <li>recommended to be all <em>lower_case</em></li>
+</ul>
+
+<h3 id="popular-naming-conventions">Popular Naming Conventions</h3>
+
+<ul>
+  <li><a href="https://google.github.io/styleguide/cppguide.html#Naming">Google</a></li>
+  <li><a href="http://geosoft.no/development/cppstyle.html">Geosoft</a></li>
+</ul>
+
 <h2 id="const-correctness">Const Correctness</h2>
 
-<h2 id="intro-to-build-systems">Intro to Build Systems</h2>
+<p>When passing a <em>pointer</em> or <em>reference</em> that <strong>should not be modified</strong>, It is very recommended to add <code class="highlighter-rouge">const</code> qualifier, so you guarantee the used function <strong>won’t modify its contents</strong>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">IntegerNode</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">IntegerNode</span> <span class="o">*</span><span class="n">next</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">IntegerLL</span>
+<span class="p">{</span>
+    <span class="n">IntegerNode</span> <span class="o">*</span><span class="n">front</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">void</span> <span class="nf">insertBack</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertFront</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">front</span><span class="p">(</span> <span class="k">const</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">back</span><span class="p">(</span> <span class="k">const</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeBack</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeFront</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeNode</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="n">IntegerNode</span> <span class="o">*</span><span class="n">node</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">removeData</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="k">const</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">printAll</span><span class="p">(</span> <span class="k">const</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">clear</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="advanced-intro-to-build-systems">Advanced: Intro to Build Systems</h2>
+
+<p><a href="http://bme-ws.yolasite.com/resources/Software%20Build%20Systems.pdf">An introduction to build systems by <em>Marwan Abdellah, Ph.D, Blue Brain Project, EPFL</em></a></p>
+
+<p>To access the workshop pages and materials: <a href="http://bme-workshop.weebly.com/material.html">The Second Biomedical Engineering Workshop</a>.</p>
+
+<p>In depth:</p>
+
+<iframe src="https://player.vimeo.com/video/32212195" width="640" height="360" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="https://vimeo.com/32212195">Introduction to CMake</a> from <a href="https://vimeo.com/kitware">Kitware</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+<h3 id="installation">Installation</h3>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo apt-get install cmake
+</span></code></pre></div></div>
+
+<h3 id="demo">Demo</h3>
 
 <h2 id="git-for-teams">Git for Teams</h2>
 
-<p>https://upbeat-pie.surge.sh/</p>
+<p><img src="/gallery/distributed.png" style="width:70%" /></p>
 
-<p>https://www.coursera.org/learn/data-structures</p>
+<h2 id="teaser-c-awesome-gui">Teaser: C++ Awesome GUI</h2>
 
-<p>https://www.coursera.org/learn/algorithms-part1</p>
+<h3 id="summer-and-next-year-expectations">Summer and Next Year Expectations</h3>
 
-<p>https://github.com/no-stack-dub-sack/algos-and-data-structures</p>
+<h4 id="agenda">Agenda</h4>
 
-<p>https://www.codewars.com/?language=cpp</p>
+<ul>
+  <li>Object Oriented Programming in C++.</li>
+  <li>STL and Qt in more depth.</li>
+  <li>GUI using Qt.</li>
+</ul>
 
-<p>http://www.pythontutor.com/</p>
+<p><img src="/gallery/Autodesk-Maya-Tips-and-Tricks-7.jpg" style="width:70%" /></p>
+
+<p><img src="/gallery/google-earth-22.jpg" style="width:70%" /></p>
+
+<h4 id="patience">Patience</h4>
+
+<p><img src="/gallery/knowledge-is-power.jpeg" style="width:90%" /></p>
+
+<h2 id="quiz-next-tuesday">Quiz Next Tuesday</h2>
+
+<p>Prepare for a quiz next Tuesday. Solving week 4 task qualifies you to solve the quiz.</p>
+
+<!-- 
+https://upbeat-pie.surge.sh/
+
+https://www.coursera.org/learn/data-structures
+
+https://www.coursera.org/learn/algorithms-part1
+
+https://github.com/no-stack-dub-sack/algos-and-data-structures
+
+https://www.codewars.com/?language=cpp
+
+http://www.pythontutor.com/
+
+http://www.algomation.com/
+
+https://www.coursera.org/learn/algorithms-graphs-data-structures -->
 
   </div>
 

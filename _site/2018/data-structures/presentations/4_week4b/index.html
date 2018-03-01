@@ -1,92 +1,171 @@
----
-layout: page
+<!-- ---
+layout: presentation
 course: "sbe201"
-category: "notes"
+category: "presentation"
 year: "2018"
-title:  "Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams"
+title: "Week3: Arrays, Command Line Arguments, and Libraries"
 by: "Asem"
+author: "Asem Alaa"
+--- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
 ---
-
-* TOC
-{:toc}
-
 ## Assignment of Week 3
 
+--
 ### Part 1
 
 * Issue 1: Command Line Arguments.
 * Issue 2: Functions and Calling Functions.
 * Issue 3: Header Files and Source Files.
 
+
+--
 ### Part 2
 
 * C++ Feature: `struct`s
 * C++ Feature: function overloading
 * C++ Feature: Type Alias
 
+
+---
+### Type Aliasing
+
+```c++
+struct Position
+{
+    double x;
+    double y;
+}
+
+using Coordinates = Position;
+```
+
+---
 ## C++ Milestones
 
+--
 <img src="/gallery/c++milestones.jpg" style="width:100%">
 
+---
 <img src="/gallery/c++milestones2.png" style="width:100%">
 
-Compiling C++ of 2003
+---
+### Compiling C++ of 2003
 
+--
 ```terminal
 g++ source_code.cpp -o output_name
 ```
 
-Compiling C++ of 2011
+---
+### Compiling C++ of 2011
 
+add flag `-std=c++11`
+
+--
 ```terminal
 g++ -std=c++11 source_code.cpp -o output_name
 ```
 
+---
 ### Other Important g++ Compiler Flag
 
+--
 #### `-Wall` flag
 
-* Your `g++` is compiler is your friend.
-* Let your compiler not just reports you errors.
+--
+* `g++` is your compiler as well as your friend.
+
+--
+* Let `g++` not just reports you errors.
+
+--
 * Let him report you all the **warnings**.
+
+--
 * Fixing **warning** avoids many run-time issues.
 
+
+
+--
 Compiling C++ of 2003
 
+--
 ```terminal
 g++ -Wall source_code.cpp -o output_name
 ```
 
+--
 Compiling C++ of 2011
 
 ```terminal
 g++ -Wall -std=c++11 source_code.cpp -o output_name
 ```
 
-
+---
 ## Assignment of Week 4
 
-### General LL: 11 operations
+### General Linked List (LL): 11 operations
 
-operations:
 
-1. insertion at front.
-2. insertion at back.
-3. remove front.
-4. remove back.
-5. return front.
-6. return back.
-7. remove a node **next to** a given node.
-8. remove nodes with given data.
-9. is empty?
-10. printAll.
-11. delete the whole list from the heap.
+--
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=593432766bee1c0400365b82" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
 
+---
+### LL operations:
+
+--
+* insertion at front.
+
+--
+* insertion at back.
+
+--
+* remove front.
+
+--
+* remove back.
+
+--
+* return front.
+
+--
+* return back.
+
+--
+* remove a node **next to** a given node.
+
+--
+* remove nodes with given data.
+
+--
+* is empty?
+
+--
+* printAll.
+
+--
+* delete the whole list from the heap.
+
+---
 #### A: LL of Integers
 
-<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=593432766bee1c0400365b82" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+--
+##### Define Your New Types
 
-
+--
 ```c++
 struct IntegerNode
 {
@@ -98,7 +177,13 @@ struct IntegerLL
 {
     IntegerNode *front;
 };
+```
 
+---
+##### Insertions
+
+--
+```c++
 void insertBack( IntegerLL &list )
 {
     // Logic
@@ -108,7 +193,13 @@ void insertFront( IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+##### Access Terminals
+
+--
+```c++
 int front( IntegerLL &list )
 {
     // Logic
@@ -118,7 +209,13 @@ int back( IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+##### Remove at Terminals
+
+--
+```c++
 void removeBack( IntegerLL &list )
 {
     // Logic
@@ -128,7 +225,13 @@ void removeFront( IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+##### Remove an Arbitrary Point
+
+--
+```c++
 void removeNode( IntegerLL &list , IntegerNode *node )
 {
     // Logic
@@ -138,12 +241,23 @@ void removeData( IntegerLL &list , int data )
 {
     // Logic
 }
+```
 
+---
+##### Are you empty?
+
+--
+```c++
 bool isEmpty( IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+##### Display, clear
+
+```c++
 void printAll( IntegerLL &list )
 {
     // Logic
@@ -152,15 +266,12 @@ void printAll( IntegerLL &list )
 void clear( IntegerLL &list )
 {
     // Logic
+    // Memory Management
 }
 ```
 
+---
 #### B: LL of Characters
-
-<img src="/gallery/dna_array.svg" style="width:400">
-
-<img src="/gallery/dna_ll.svg" style="width:400">
-
 
 ```c++
 struct CharNode
@@ -175,8 +286,27 @@ struct CharLL
 };
 ```
 
+---
+#### Copy your logic
+
+Copy-paste the same logic of the Integers Linked List, but change each:
+
+--
+* `int` to `char`,
+* `IntegerLL` to `CharLL`, and
+* `IntegerNode` to `CharNode`.
+
+
+---
+<img src="/gallery/dna_array.svg" style="width:80%">
+
+<img src="/gallery/dna_ll.svg" style="width:80%">
+
+---
 ### Stacks using LL
 
+
+--
 ### Node type
 
 ```c++
@@ -187,9 +317,9 @@ struct CharNode
 };
 ```
 
+--
 ### Stack-LL
 
-In case of LL-based stack, we can represent a stack using only **a single pointer**, i.e the front of the stack.
 
 ```c++
 struct CharStackLL
@@ -198,14 +328,13 @@ struct CharStackLL
 };
 ```
 
-Initially, when stack is empty, the front pointer points to nothing, i.e `nullptr`.
+---
+### Stack-LL: Push-to-front operation
 
-### Push operation
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0caa54833c1040095d574" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
 
-When we push a new element, we add that element to the front. We make sure that we link the new node correctly.
-
-<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0caa54833c1040095d574" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
-
+---
+### Stack-LL: Push-to-front operation
 
 ```c++
 void push( CharStackLL &stack , char data )
@@ -229,7 +358,8 @@ void push( CharStackLL &stack , char data )
 }
 ```
 
-or, a DRY solution (optional):
+---
+DRY solution: (optional):
 
 ```c++
 void push( CharStackLL &stack , char data )
@@ -239,13 +369,15 @@ void push( CharStackLL &stack , char data )
 }
 ```
 
+---
 ### Pop operation
 
 When popping an element from the front,
 
-<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0d1144833c1040095d586" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0d1144833c1040095d586" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
 
 
+---
 ```c++
 char pop( CharStackLL &stack )
 {
@@ -275,6 +407,7 @@ char pop( CharStackLL &stack )
 }
 ```
 
+---
 or DRY solution,
 
 ```c++
@@ -287,6 +420,7 @@ char pop( CharStack &list )
 }
 ```
 
+---
 ### Asking a Stack if it is Empty
 
 ```c++
@@ -303,6 +437,7 @@ bool isEmpty( CharacterStackLL &stack )
 }
 ```
 
+--
 Again, could be done that way:
 
 ```c++
@@ -312,13 +447,13 @@ bool isEmpty( CharacterStackLL &stack )
 }
 ```
 
+---
 ### Home Demo
 
-Open [StackLL](https://www.cs.usfca.edu/~galles/visualization/StackLL.html) and play with the stack to realize its behaviour. This demo shows a **Stack** implemented with **linked list**.
+Open [{StackLL}](https://www.cs.usfca.edu/~galles/visualization/StackLL.html) and play with the stack to realize its behaviour. This demo shows a **Stack** implemented with **linked list**.
 
+---
 ## LL-Based Queues
-
-The same node `struct`.
 
 ```c++
 struct DoubleNode
@@ -326,11 +461,7 @@ struct DoubleNode
     double data;
     DoubleNode *next;
 };
-```
 
-And the whole **Queue** is represented by two elements: **Front** (or **Head**) and **Back** (or **Rear**). We can wrap these element in the following `struct`:
-
-```c++
 struct DoublesQueueLL
 {
     DoubleNode *front = nullptr;
@@ -338,6 +469,7 @@ struct DoublesQueueLL
 };
 ```
 
+---
 ### Asking if the LL is Empty
 
 ```c++
@@ -354,6 +486,7 @@ bool isEmpty( NumbersQueueLL queue )
 }
 ```
 
+---
 Or equivalently,
 
 ```c++
@@ -363,6 +496,8 @@ bool isEmpty( NumbersQueueLL queue )
 }
 ```
 
+
+---
 ### Enqueuing a New Element
 
 As you guessed, new elements will be added to the **back**.
@@ -386,37 +521,61 @@ void enqueue( NumbersQueueLL &queue , double newSample )
 }
 ```
 
+---
 ### Dequeueing an Element
 
 Left for the assignment.
 
+---
 ### Bonus: Array-Based Queues
 
 * Trick: Circular Buffer.
 
+
+---
+## Git for Teams
+
+<img src="/gallery/distributed.png" style="width:70%">
+
+
+---
+## Quiz Next Tuesday
+
+Prepare for a quiz next Tuesday. Solving week 4 task qualifies you to solve the quiz.
+
+---
 ## Regular Functions and Methods
 
 ```c++
 CharStackLL cstack;
 ```
 
+--
 #### Which is more elegant?
 
+--
 ```c++
 push( cstack , 'A' );
 ```
 
+--
 What if we can do
 
 ```c++
 cstack.push('A');
 ```
 
+
+--
 * First version => regular function.
 * Second version => method.
 
+
+---
 #### Procedural Paradigm
 
+
+--
 ```c++
 struct CharStackLL
 {
@@ -430,8 +589,10 @@ void push( CharStackLL &stack , char data )
 }
 ```
 
+---
 #### Object Oriented Paradigm (OOP)
 
+--
 ```c++
 struct CharStackLL
 {
@@ -445,53 +606,77 @@ struct CharStackLL
 };
 ```
 
+--
 * A method inside a `struct` has an access to a very special pointer called `this`.
 * `this` pointer gives a method access to all the `struct` members.
 
+
+---
 ## Preprocessing
 
 ![Compilation](/gallery/compile.gif)
 
-[Preprocessor directives](http://www.cplusplus.com/doc/tutorial/preprocessor/)
 
-* Includes.
-* Include guards.
-* Macros.
-* Macro functions.
+---
+[{Preprocessor directives}](http://www.cplusplus.com/doc/tutorial/preprocessor/)
 
+
+--
 ```c++
 #ifndef MATHEMATICS_HPP
 #define MATHEMATICS_HPP
 
-// includes of external headers here
-
-// Your functions here
-
+#include <iostream>
+    
 #endif // MATHEMATICS_HPP
 ```
 
-[Include guards](https://en.wikipedia.org/wiki/Include_guard)
+--
+* Includes.
+* [{Include guards}](https://en.wikipedia.org/wiki/Include_guard).
+* Macros.
+* Macro functions.
 
+---
 ## Naming Conventions
 
-You should agree with your teammates on naming conventions. This makes your whole project consistent and easier to read.
+--
+* Teammates should agree on naming conventions. 
 
-* No matter what name convention you settle with your team. **Consistency** what matters.
+--
+* Makes Project .green[consistent] and .green[easier to read].
+
+--
+* No matter what name convention you settle with your team. 
+
+--
+* **Consistency** what matters.
+
+--
 * Descriptive names.
 
+
+
+---
 ### Variables naming
 
+
+--
 ```c++
 int adenine_counter = 0; // all lower_case
 ```
 
+--
 ```c++
 int adenineCounter = 0; // camelCase
-```
+``
 
+--
 * It is optional for the team.
 * But afterwards, the team should be consistent.
 
+
+---
 ### Types naming
 
 `struct` (or equivalently `class`) naming.
@@ -506,6 +691,7 @@ struct IntegerArray // PascalCase
 * *PascalCase* is usually recommended for `struct` and `class` names.
 * `struct` and `class` are the same. They both define new types.
 
+---
 ### Functions naming
 
 ```c++
@@ -522,19 +708,24 @@ int count_char( CharArray &array , char query ) // lower_case
 }
 ```
 
+
+---
 ### Namespace naming
 
 * recommended to be all *lower\_case*
 
+
+---
 ### Popular Naming Conventions
 
-* [Google](https://google.github.io/styleguide/cppguide.html#Naming)
-* [Geosoft](http://geosoft.no/development/cppstyle.html)
+* [{Google}](https://google.github.io/styleguide/cppguide.html#Naming)
+* [{Geosoft}](http://geosoft.no/development/cppstyle.html)
 
 
+---
 ## Const Correctness
 
-When passing a *pointer* or *reference* that **should not be modified**, It is very recommended to add `const` qualifier, so you guarantee the used function **won't modify its contents**.
+When passing a *pointer* or *reference* that **should not be modified**. It is very recommended to add `const` qualifier, so you guarantee the function **won't modify its contents**.
 
 ```c++
 struct IntegerNode
@@ -547,75 +738,150 @@ struct IntegerLL
 {
     IntegerNode *front;
 };
+```
 
+---
+```c++
 void insertBack( IntegerLL &list )
 {
     // Logic
 }
+```
 
+
+---
+```c++
 void insertFront( IntegerLL &list )
 {
     // Logic
 }
+```
 
+
+---
+
+```c++
+int front( IntegerLL &list )
+{
+    list.front = nullptr; // !!!
+    // Logic
+}
+```
+
+--
+```c++
 int front( const IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+```c++
+int back( IntegerLL &list )
+{
+    // What if your frind missed up with the list!
+    
+    nuke( list );
+    // Logic
+}
+```
+
+--
+```c++
 int back( const IntegerLL &list )
 {
     // Logic
 }
+```
 
+
+---
+```c++
 void removeBack( IntegerLL &list )
 {
     // Logic
 }
+```
 
+```c++
 void removeFront( IntegerLL &list )
 {
     // Logic
 }
+```
 
+
+---
+```c++
 void removeNode( IntegerLL &list , IntegerNode *node )
 {
     // Logic
 }
+```
 
+```c++
 void removeData( IntegerLL &list , int data )
 {
     // Logic
 }
+```
 
+
+---
+```c++
+bool isEmpty( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+--
+
+```c++
 bool isEmpty( const IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+```c++
+void printAll( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+--
+```c++
 void printAll( const IntegerLL &list )
 {
     // Logic
 }
+```
 
+---
+```c++
 void clear( IntegerLL &list )
 {
     // Logic
 }
 ```
 
+---
 ## Advanced: Intro to Build Systems
 
 [An introduction to build systems by *Marwan Abdellah, Ph.D, Blue Brain Project, EPFL*](http://bme-ws.yolasite.com/resources/Software%20Build%20Systems.pdf)
 
-To access the workshop pages and materials: [The Second Biomedical Engineering Workshop](http://bme-workshop.weebly.com/material.html).
+To access the workshop pages and materials: [{The Second Biomedical Engineering Workshop}](http://bme-workshop.weebly.com/material.html).
 
 In depth:
 
 <iframe src="https://player.vimeo.com/video/32212195" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 <p><a href="https://vimeo.com/32212195">Introduction to CMake</a> from <a href="https://vimeo.com/kitware">Kitware</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-
+---
 ### Installation
 
 ```terminal
@@ -624,47 +890,82 @@ sudo apt-get install cmake
 
 ### Demo
 
-## Git for Teams
 
-<img src="/gallery/distributed.png" style="width:70%">
-
+---
 ## Teaser: C++ Awesome GUI
 
+--
 ### Summer and Next Year Expectations
 
+--
 #### Agenda
 
 * Object Oriented Programming in C++.
 * STL and Qt in more depth.
 * GUI using Qt.
 
-<img src="/gallery/Autodesk-Maya-Tips-and-Tricks-7.jpg" style="width:70%">
+---
+<img src="/gallery/Autodesk-Maya-Tips-and-Tricks-7.jpg" style="width:100%">
+
+---
+<img src="/gallery/google-earth-22.jpg" style="width:100%">
 
 
-<img src="/gallery/google-earth-22.jpg" style="width:70%">
-
-
+---
 #### Patience
 
-<img src="/gallery/knowledge-is-power.jpeg" style="width:90%">
+<img src="/gallery/knowledge-is-power.jpeg" style="width:100%">
 
-## Quiz Next Tuesday
 
-Prepare for a quiz next Tuesday. Solving week 4 task qualifies you to solve the quiz.
 
-<!-- 
-https://upbeat-pie.surge.sh/
 
-https://www.coursera.org/learn/data-structures
 
-https://www.coursera.org/learn/algorithms-part1
+    </textarea>
+    
+    
 
-https://github.com/no-stack-dub-sack/algos-and-data-structures
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
 
-https://www.codewars.com/?language=cpp
+  <script src="/javascript/remark-latest.min.js"></script>
 
-http://www.pythontutor.com/
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
 
-http://www.algomation.com/
+  <script type="text/javascript">
+    var options = {
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
 
-https://www.coursera.org/learn/algorithms-graphs-data-structures -->
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+  </script>
+
+  <script src="/mathjax/MathJax.js"></script>
+
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+      jax: ["input/TeX", "output/HTML-CSS"],
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+      },
+      MathMenu: {
+       showRenderer: false,
+       showFontMenu: false,
+       showLocale: false
+      }
+    });
+  </script>
+  
+  </body>
+</html>
+

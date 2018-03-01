@@ -36,13 +36,13 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 
 | Week | Data Structures & C++ | Ecosystem & Miscellaneous |
 |------|----------------------|-----------|
-| 1 | **Introduction**: Brief intro to DS; C++ Basics; A welcome to our guest *Ahmed Magdy Elfarrash* | Briefly: Unix, compilation, git, github |
-| 2 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes; Processing command line arguments (`argc` & `argv`)  | Compilation of multiple files; Basic Unix commands; bitbucket |
-| 3 | Array-Based Linked List; Naming conventions; Const correctness | Brief intro to build systems |
-| 4 | Array-Based Stack; Array-Based Queue; C++ template structs | Brief intro to  git for teams; `.gitignore` file |
-| 5 | Binary Trees; C++ classes and objects  | Briefly: CMake; Git on large scale; How to contribute on **this** website using pull requests? |
+| 1 | **Introduction**: Brief intro to DS; C++ Basics  | Briefly: Unix, compilation, git, github |
+| 2 | C++ Memory Model, C++ Pointers and References | Your Code Readability |
+| 3 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes;  | Processing command line arguments (`argc` & `argv`); Compilation of multiple files; Basic Unix commands; bitbucket |
+| 4 | Stacks (ADT); Queues (ADT); Linked Lists; Array-Based Stack; LL-Based Stack; Array-Based Queue; LL-Based Queue; Functions Overloading;  Naming conventions; Const correctness | Brief intro to  git for teams; `.gitignore` file;  Brief intro to build systems |
+| 5 | Recurion; C++ template structs; C++ classes and objects  | Briefly: CMake; Git on large scale; How to contribute on **this** website using pull requests? |
 | 6 | **Open Talk 1**: C++ access control on class members; Brief intro to STL; Interesting applications in C++ | Markdown vs. WYSIWYG editors; Mercurial |
-| 7 | Bubble sort; Selection sort  | Open source vs. proprietary software  |
+| 7 | Bubble sort; Selection sort; Binary Trees  | Open source vs. proprietary software  |
 | 8 | Divide and conquer: merge sort, quick sort; Recursion  | Briefly: Development on Windows |
 | 9 | Binary search on sorted array; Binary search tree (BST)  |  Conan.io; External dependencies |
 | 10 | Algorithms complexity: big O notation  | Documenting your code |
@@ -70,8 +70,8 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     * [FAQ #3: Why not using `std::cin` inside functions of particular logic]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq3.md %}){:target="_blank"}
     * Assignments: \[[Assignment: Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3a.md %}){:target="_blank"}\]\[[Assignment: Part 2]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3b.md %}){:target="_blank"}\]
 4. Week 4:
-    * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}
-    * Section Notes: \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
+    * Slides: \[[Part 1]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}\] \[[Part 2]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4b/index.html %}){:target="_blank"}\]
+    * Section Notes: \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4a.md %}){:target="_blank"}\] \[[Part2: Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4b.md %}){:target="_blank"}\]
 
 ## Frequently Asked Questions
 

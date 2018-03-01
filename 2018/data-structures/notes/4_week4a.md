@@ -481,6 +481,31 @@ void insertToList( CharLinkedList &list , char newElement )
 }
 ```
 
+If we only have an access to the **head** of the **LL**, or in other words, if we don't have a **tail**, and need to insert an element to the back, then we have to start iterating from the front until we reach the last element in the **LL**.
+
+```c++
+void insertToList( CharLinkedList &list , char newElement )
+{
+    Node *current = front;
+    
+    if( current == nullptr )
+    {
+        current = new Node{ newElement , nullptr };
+    }
+    else
+    {
+        while( current->next != nullptr )
+        {
+            std::cout << current->data;
+            current = current->next;
+        }
+        current->next = nullptr;
+    }
+}
+```
+
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0cb534833c1040095d576" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+
 ## Queues
 
 **Queues** are another Abstract Data Type (ADT), that might be implemented using concrete structures like arrays and linked lists. We refer to **Queue** behaviour by **FIFO** (first in, first out).
