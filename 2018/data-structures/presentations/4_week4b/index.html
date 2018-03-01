@@ -1,0 +1,971 @@
+<!-- ---
+layout: presentation
+course: "sbe201"
+category: "presentation"
+year: "2018"
+title: "Week3: Arrays, Command Line Arguments, and Libraries"
+by: "Asem"
+author: "Asem Alaa"
+--- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+---
+## Assignment of Week 3
+
+--
+### Part 1
+
+* Issue 1: Command Line Arguments.
+* Issue 2: Functions and Calling Functions.
+* Issue 3: Header Files and Source Files.
+
+
+--
+### Part 2
+
+* C++ Feature: `struct`s
+* C++ Feature: function overloading
+* C++ Feature: Type Alias
+
+
+---
+### Type Aliasing
+
+```c++
+struct Position
+{
+    double x;
+    double y;
+}
+
+using Coordinates = Position;
+```
+
+---
+## C++ Milestones
+
+--
+<img src="/gallery/c++milestones.jpg" style="width:100%">
+
+---
+<img src="/gallery/c++milestones2.png" style="width:100%">
+
+---
+### Compiling C++ of 2003
+
+--
+```terminal
+g++ source_code.cpp -o output_name
+```
+
+---
+### Compiling C++ of 2011
+
+add flag `-std=c++11`
+
+--
+```terminal
+g++ -std=c++11 source_code.cpp -o output_name
+```
+
+---
+### Other Important g++ Compiler Flag
+
+--
+#### `-Wall` flag
+
+--
+* `g++` is your compiler as well as your friend.
+
+--
+* Let `g++` not just reports you errors.
+
+--
+* Let him report you all the **warnings**.
+
+--
+* Fixing **warning** avoids many run-time issues.
+
+
+
+--
+Compiling C++ of 2003
+
+--
+```terminal
+g++ -Wall source_code.cpp -o output_name
+```
+
+--
+Compiling C++ of 2011
+
+```terminal
+g++ -Wall -std=c++11 source_code.cpp -o output_name
+```
+
+---
+## Assignment of Week 4
+
+### General Linked List (LL): 11 operations
+
+
+--
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=593432766bee1c0400365b82" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+
+---
+### LL operations:
+
+--
+* insertion at front.
+
+--
+* insertion at back.
+
+--
+* remove front.
+
+--
+* remove back.
+
+--
+* return front.
+
+--
+* return back.
+
+--
+* remove a node **next to** a given node.
+
+--
+* remove nodes with given data.
+
+--
+* is empty?
+
+--
+* printAll.
+
+--
+* delete the whole list from the heap.
+
+---
+#### A: LL of Integers
+
+--
+##### Define Your New Types
+
+--
+```c++
+struct IntegerNode
+{
+    int data;
+    IntegerNode *next = nullptr;
+};
+
+struct IntegerLL
+{
+    IntegerNode *front;
+};
+```
+
+---
+##### Insertions
+
+--
+```c++
+void insertBack( IntegerLL &list )
+{
+    // Logic
+}
+
+void insertFront( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+##### Access Terminals
+
+--
+```c++
+int front( IntegerLL &list )
+{
+    // Logic
+}
+
+int back( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+##### Remove at Terminals
+
+--
+```c++
+void removeBack( IntegerLL &list )
+{
+    // Logic
+}
+
+void removeFront( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+##### Remove an Arbitrary Point
+
+--
+```c++
+void removeNode( IntegerLL &list , IntegerNode *node )
+{
+    // Logic
+}
+
+void removeData( IntegerLL &list , int data )
+{
+    // Logic
+}
+```
+
+---
+##### Are you empty?
+
+--
+```c++
+bool isEmpty( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+##### Display, clear
+
+```c++
+void printAll( IntegerLL &list )
+{
+    // Logic
+}
+
+void clear( IntegerLL &list )
+{
+    // Logic
+    // Memory Management
+}
+```
+
+---
+#### B: LL of Characters
+
+```c++
+struct CharNode
+{
+    char data;
+    CharNode *next = nullptr;
+};
+
+struct CharLL
+{
+    CharNode *front = nullptr;
+};
+```
+
+---
+#### Copy your logic
+
+Copy-paste the same logic of the Integers Linked List, but change each:
+
+--
+* `int` to `char`,
+* `IntegerLL` to `CharLL`, and
+* `IntegerNode` to `CharNode`.
+
+
+---
+<img src="/gallery/dna_array.svg" style="width:80%">
+
+<img src="/gallery/dna_ll.svg" style="width:80%">
+
+---
+### Stacks using LL
+
+
+--
+### Node type
+
+```c++
+struct CharNode
+{
+    char data;
+    CharNode* next = nullptr;
+};
+```
+
+--
+### Stack-LL
+
+
+```c++
+struct CharStackLL
+{
+    CharNode *front = nullptr;
+};
+```
+
+---
+### Stack-LL: Push-to-front operation
+
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0caa54833c1040095d574" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+
+---
+### Stack-LL: Push-to-front operation
+
+```c++
+void push( CharStackLL &stack , char data )
+{
+    CharNode *newNode = new CharNode;
+
+    newNode->data = data;
+    newNode->next = stack.front;
+
+    stack.front = newNode;
+}
+```
+
+or, equivalently
+
+```c++
+void push( CharStackLL &stack , char data )
+{
+    CharNode *newNode = new CharNode{ data , stack.front };
+    stack.front = newNode;
+}
+```
+
+---
+DRY solution: (optional):
+
+```c++
+void push( CharStackLL &stack , char data )
+{
+    CharLL asLL{ stack.front };
+    lists::pushFront( asLL , data );
+}
+```
+
+---
+### Pop operation
+
+When popping an element from the front,
+
+<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0d1144833c1040095d586" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+
+
+---
+```c++
+char pop( CharStackLL &stack )
+{
+    if( stack.front )
+    {
+        // Save the value of the front->data, before we delete it from the stack
+        char lifo = stack.front->data;
+        
+        // Save the pointer of the front, so we delete it later
+        CharNode *oldFront = stack.front;
+
+        // Update the front of the stack
+        stack.front = stack.front->front;
+
+        // Now delete the old pointer
+        delete oldFront;
+
+        // Return the lifo
+        return lifo;
+    }
+    else
+    {
+        // If the stack is empty, make the program to terminate (crash)!
+        // The user of this function should have checked if the stack is not empty.
+        exit( 1 );
+    }
+}
+```
+
+---
+or DRY solution,
+
+```c++
+char pop( CharStack &list )
+{
+    CharLL asLL{ list.front };
+    char toPop = lists::front( asLL );
+    lists::removeFront( asLL );
+    return toPop;
+}
+```
+
+---
+### Asking a Stack if it is Empty
+
+```c++
+bool isEmpty( CharacterStackLL &stack )
+{
+    if( stack.front == nullptr )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
+
+--
+Again, could be done that way:
+
+```c++
+bool isEmpty( CharacterStackLL &stack )
+{
+    return stack.front == nullptr;
+}
+```
+
+---
+### Home Demo
+
+Open [{StackLL}](https://www.cs.usfca.edu/~galles/visualization/StackLL.html) and play with the stack to realize its behaviour. This demo shows a **Stack** implemented with **linked list**.
+
+---
+## LL-Based Queues
+
+```c++
+struct DoubleNode
+{
+    double data;
+    DoubleNode *next;
+};
+
+struct DoublesQueueLL
+{
+    DoubleNode *front = nullptr;
+    DoubleNode *back = nullptr;
+};
+```
+
+---
+### Asking if the LL is Empty
+
+```c++
+bool isEmpty( NumbersQueueLL queue )
+{
+    if( queue.back == nullptr )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
+
+---
+Or equivalently,
+
+```c++
+bool isEmpty( NumbersQueueLL queue )
+{
+    return queue.back == nullptr;
+}
+```
+
+
+---
+### Enqueuing a New Element
+
+As you guessed, new elements will be added to the **back**.
+
+```c++
+void enqueue( NumbersQueueLL &queue , double newSample )
+{
+    if( isEmpty( queue ))
+    {
+        queue.back = new DoubleNode{ newSample , nullptr };
+        queue.front = queue.back;
+    }
+    else
+    {
+        DoubleNode *oldBack = queue.back;
+        DoubleNode *newBack = new DoubleNode{ newSample , oldBack };
+        queue.back = newBack;
+
+        // Short solution: queue.back = new DoubleNode{ newSample , queue.back };
+    }
+}
+```
+
+---
+### Dequeueing an Element
+
+Left for the assignment.
+
+---
+### Bonus: Array-Based Queues
+
+* Trick: Circular Buffer.
+
+
+---
+## Git for Teams
+
+<img src="/gallery/distributed.png" style="width:70%">
+
+
+---
+## Quiz Next Tuesday
+
+Prepare for a quiz next Tuesday. Solving week 4 task qualifies you to solve the quiz.
+
+---
+## Regular Functions and Methods
+
+```c++
+CharStackLL cstack;
+```
+
+--
+#### Which is more elegant?
+
+--
+```c++
+push( cstack , 'A' );
+```
+
+--
+What if we can do
+
+```c++
+cstack.push('A');
+```
+
+
+--
+* First version => regular function.
+* Second version => method.
+
+
+---
+#### Procedural Paradigm
+
+
+--
+```c++
+struct CharStackLL
+{
+    CharNode *front = nullptr;
+};
+
+void push( CharStackLL &stack , char data )
+{
+    CharNode *newNode = new CharNode{ data , stack.front };
+    stack.front = newNode;
+}
+```
+
+---
+#### Object Oriented Paradigm (OOP)
+
+--
+```c++
+struct CharStackLL
+{
+    CharNode *front = nullptr;
+    
+    void push( char newElement )
+    {
+        CharNode *newNode = new CharNode{ data , this->front };
+        this->front = newNode;
+    }
+};
+```
+
+--
+* A method inside a `struct` has an access to a very special pointer called `this`.
+* `this` pointer gives a method access to all the `struct` members.
+
+
+---
+## Preprocessing
+
+![Compilation](/gallery/compile.gif)
+
+
+---
+[{Preprocessor directives}](http://www.cplusplus.com/doc/tutorial/preprocessor/)
+
+
+--
+```c++
+#ifndef MATHEMATICS_HPP
+#define MATHEMATICS_HPP
+
+#include <iostream>
+    
+#endif // MATHEMATICS_HPP
+```
+
+--
+* Includes.
+* [{Include guards}](https://en.wikipedia.org/wiki/Include_guard).
+* Macros.
+* Macro functions.
+
+---
+## Naming Conventions
+
+--
+* Teammates should agree on naming conventions. 
+
+--
+* Makes Project .green[consistent] and .green[easier to read].
+
+--
+* No matter what name convention you settle with your team. 
+
+--
+* **Consistency** what matters.
+
+--
+* Descriptive names.
+
+
+
+---
+### Variables naming
+
+
+--
+```c++
+int adenine_counter = 0; // all lower_case
+```
+
+--
+```c++
+int adenineCounter = 0; // camelCase
+``
+
+--
+* It is optional for the team.
+* But afterwards, the team should be consistent.
+
+
+---
+### Types naming
+
+`struct` (or equivalently `class`) naming.
+
+```c++
+struct IntegerArray // PascalCase
+{
+    // some data
+}
+```
+
+* *PascalCase* is usually recommended for `struct` and `class` names.
+* `struct` and `class` are the same. They both define new types.
+
+---
+### Functions naming
+
+```c++
+int countChar( CharArray &array , char query ) // camelCase
+{
+    // Logic
+}
+```
+
+```c++
+int count_char( CharArray &array , char query ) // lower_case
+{
+    // Logic
+}
+```
+
+
+---
+### Namespace naming
+
+* recommended to be all *lower\_case*
+
+
+---
+### Popular Naming Conventions
+
+* [{Google}](https://google.github.io/styleguide/cppguide.html#Naming)
+* [{Geosoft}](http://geosoft.no/development/cppstyle.html)
+
+
+---
+## Const Correctness
+
+When passing a *pointer* or *reference* that **should not be modified**. It is very recommended to add `const` qualifier, so you guarantee the function **won't modify its contents**.
+
+```c++
+struct IntegerNode
+{
+    int data;
+    IntegerNode *next = nullptr;
+};
+
+struct IntegerLL
+{
+    IntegerNode *front;
+};
+```
+
+---
+```c++
+void insertBack( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+void insertFront( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+
+---
+
+```c++
+int front( IntegerLL &list )
+{
+    list.front = nullptr; // !!!
+    // Logic
+}
+```
+
+--
+```c++
+int front( const IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+```c++
+int back( IntegerLL &list )
+{
+    // What if your frind missed up with the list!
+    
+    nuke( list );
+    // Logic
+}
+```
+
+--
+```c++
+int back( const IntegerLL &list )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+void removeBack( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+```c++
+void removeFront( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+void removeNode( IntegerLL &list , IntegerNode *node )
+{
+    // Logic
+}
+```
+
+```c++
+void removeData( IntegerLL &list , int data )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+bool isEmpty( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+--
+
+```c++
+bool isEmpty( const IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+```c++
+void printAll( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+--
+```c++
+void printAll( const IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+```c++
+void clear( IntegerLL &list )
+{
+    // Logic
+}
+```
+
+---
+## Advanced: Intro to Build Systems
+
+[An introduction to build systems by *Marwan Abdellah, Ph.D, Blue Brain Project, EPFL*](http://bme-ws.yolasite.com/resources/Software%20Build%20Systems.pdf)
+
+To access the workshop pages and materials: [{The Second Biomedical Engineering Workshop}](http://bme-workshop.weebly.com/material.html).
+
+In depth:
+
+<iframe src="https://player.vimeo.com/video/32212195" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/32212195">Introduction to CMake</a> from <a href="https://vimeo.com/kitware">Kitware</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+---
+### Installation
+
+```terminal
+sudo apt-get install cmake
+```
+
+### Demo
+
+
+---
+## Teaser: C++ Awesome GUI
+
+--
+### Summer and Next Year Expectations
+
+--
+#### Agenda
+
+* Object Oriented Programming in C++.
+* STL and Qt in more depth.
+* GUI using Qt.
+
+---
+<img src="/gallery/Autodesk-Maya-Tips-and-Tricks-7.jpg" style="width:100%">
+
+---
+<img src="/gallery/google-earth-22.jpg" style="width:100%">
+
+
+---
+#### Patience
+
+<img src="/gallery/knowledge-is-power.jpeg" style="width:100%">
+
+
+
+
+
+    </textarea>
+    
+    
+
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+  <script src="/javascript/remark-latest.min.js"></script>
+
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    var options = {
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
+
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+  </script>
+
+  <script src="/mathjax/MathJax.js"></script>
+
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+      jax: ["input/TeX", "output/HTML-CSS"],
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+      },
+      MathMenu: {
+       showRenderer: false,
+       showFontMenu: false,
+       showLocale: false
+      }
+    });
+  </script>
+  
+  </body>
+</html>
+

@@ -81,6 +81,12 @@
       
     
       
+    
+      
+    
+      
+    
+      
         <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
@@ -118,12 +124,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
@@ -158,12 +164,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
@@ -193,12 +199,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -223,6 +229,11 @@
           
             
             
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
             <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
             
           
@@ -234,6 +245,16 @@
             
             
             <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -402,8 +423,10 @@
 
 <p>We can just make a new <strong>type alias</strong> of <code class="highlighter-rouge">DoubleArray</code> with using an interesting name, using the following syntax:</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">ECGArray</span> <span class="o">=</span> <span class="n">DoubleArray</span><span class="p">;</span>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">using</span> <span class="n">ECGArray</span> <span class="o">=</span> <span class="n">arrays</span><span class="o">::</span><span class="n">DoubleArray</span><span class="p">;</span>
 </code></pre></div></div>
+
+<p>To use the above feature in C++, the feature of <code class="highlighter-rouge">using TypeAlias = SomeType</code>, is supported in C++ standard of 2011. When you compile make sure to inform the compiler what standard you are using. So you will need to add an additional flag to the compiler <code class="highlighter-rouge">-std=c++11</code>.</p>
 
 <p>This line declares a new type equivalent to <code class="highlighter-rouge">DoubleArray</code> but with another name (alias).</p>
 
@@ -473,7 +496,7 @@
 
 <h3 id="compiling-and-testing-calculatorcpp">Compiling and Testing calculator.cpp</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ calculator.cpp <span class="nt">-o</span> Calculator
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ <span class="nt">-std</span><span class="o">=</span>c++11 calculator.cpp <span class="nt">-o</span> Calculator
 <span class="nv">$ </span>./Calculator 24 / 7
 3.42857
 <span class="nv">$ </span>./Calculator 24 <span class="se">\*</span> 7
@@ -483,14 +506,14 @@
 
 <h3 id="compiling-and-testing-heroncpp">Compiling and Testing heron.cpp</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ heron.cpp <span class="nt">-o</span> Heron
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ <span class="nt">-std</span><span class="o">=</span>c++11 heron.cpp <span class="nt">-o</span> Heron
 <span class="nv">$ </span>./Heron 3 4 5
 6
 </code></pre></div></div>
 
 <h3 id="compiling-and-testing-heroncpp-1">Compiling and Testing heron.cpp</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ heron.cpp <span class="nt">-o</span> Heron
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ <span class="nt">-std</span><span class="o">=</span>c++11 heron.cpp <span class="nt">-o</span> Heron
 <span class="nv">$ </span>./Heron 3 4 5
 6
 </code></pre></div></div>
@@ -502,7 +525,7 @@
 <p>Our application in the <code class="highlighter-rouge">main</code> function loads data from the file then use <code class="highlighter-rouge">ecg::analyzeECG</code>
 function implemented in <code class="highlighter-rouge">ecg.hpp</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ analyzeECG.cpp <span class="nt">-o</span> AnalyzeECG
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ <span class="nt">-std</span><span class="o">=</span>c++11 analyzeECG.cpp <span class="nt">-o</span> AnalyzeECG
 <span class="nv">$ </span>./AnalyzeECG datasets/ecg_data.txt
 ECG average : 0.785639
 ECG variance: 0.00780314
@@ -516,7 +539,7 @@ ECG range   : <span class="o">(</span>0,1.288<span class="o">)</span>
 <p>Our application in the <code class="highlighter-rouge">main</code> function loads data from the file then use <code class="highlighter-rouge">dna::analyzeDNA</code>
 function implemented in <code class="highlighter-rouge">dna.hpp</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ analyzeDNA.cpp <span class="nt">-o</span> AnalyzeDNA
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ <span class="nt">-std</span><span class="o">=</span>c++11 analyzeDNA.cpp <span class="nt">-o</span> AnalyzeDNA
 <span class="nv">$ </span>./AnalyzeDNA datasets/genetic_data.txt
 Adenine <span class="o">(</span>A<span class="o">)</span> content:75
 Guanine <span class="o">(</span>G<span class="o">)</span> content:84
