@@ -258,7 +258,7 @@ char pop( CharStackLL &stack )
         CharNode *oldFront = stack.front;
 
         // Update the front of the stack
-        stack.front = stack.front->front;
+        stack.front = stack.front->next;
 
         // Now delete the old pointer
         delete oldFront;
