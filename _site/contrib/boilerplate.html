@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Assignment 1 - part 2: Revision on C++</title>
+  <title>&lt;Your title&gt;</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/1_week1b.html">
+  <link rel="canonical" href="http://localhost:4000/contrib/boilerplate.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -86,8 +86,6 @@
     
       
     
-      
-        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
       
@@ -284,135 +282,16 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <h2><Your title></h2>
+<em>By <Your name></em>
 
-  <header class="post-header">
-    <h1 class="post-title">Assignment 1 - part 2: Revision on C++</h1>
-  </header>
+<br><br>
 
-  <div class="post-content">
-    <h2 id="objectives">Objectives</h2>
+<div class="home">
+    
+<!-- Content goes here in Markdown -->
 
-<ul>
-  <li>Creating variables.</li>
-  <li>Using arithmetic operations on variables.</li>
-  <li>Using control statements: If, else if, else, while, for, switch-case.</li>
-  <li>Simple functions</li>
-  <li>Make custom namespace</li>
-</ul>
-
-<h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
-
-<ul>
-  <li><strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/1_week1a.html" target="_blank">Part 1: C++ Basics</a>] .</li>
-</ul>
-
-<h2 id="grading">Grading</h2>
-
-<ul>
-  <li>This part constitutes 40% of the week grades.</li>
-  <li>Grading per line.</li>
-  <li>+20% bonus.</li>
-</ul>
-
-<h2 id="deadline">Deadline</h2>
-
-<p><strong>Tuesday 14/2/2018 11:59 PM</strong>.</p>
-
-<h2 id="writing-your-first-c-basics">Writing Your First C++ Basics</h2>
-
-<ul>
-  <li>First, register yourself for the assignment from this <a href="https://classroom.github.com/a/A6ntQkKJ">link</a>.</li>
-</ul>
-
-<p><img src="a1.png" alt="" /></p>
-
-<p>then,</p>
-
-<p><img src="a2.png" alt="" /></p>
-
-<p>then,</p>
-
-<p><img src="a3.png" alt="" /></p>
-
-<ul>
-  <li>As you did in the first part, clone the remote repository to your local machine.</li>
-  <li>Jump to the assignment folder and open the <code class="highlighter-rouge">main.cpp</code> file.</li>
-  <li>You will find the questions as in-line comments. Questions <code class="highlighter-rouge">P1</code> and <code class="highlighter-rouge">P3</code> are solved for you to be more familir.</li>
-  <li>If you feel uncomfortable with any question, do not panic, you can ask for explanation at office hours before deadline.</li>
-</ul>
-
-<h2 id="important-notes">Important notes</h2>
-
-<h3 id="how-to-compile-my-source-code">How to compile my source code</h3>
-
-<p>After you attempt all problems, open the terminal on the task folder. Make sure you are on the right directory by listing the files and finding <code class="highlighter-rouge">main.cpp</code> file.</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">ls</span>
-<span class="go">main.cpp
-</span></code></pre></div></div>
-
-<p>To compile, you need to introduce to your compiler the <code class="highlighter-rouge">main.cpp</code> and the executable name (which is an arbitrary name)</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> g++ main.cpp <span class="nt">-o</span> app
-</code></pre></div></div>
-
-<p>To run,</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ./app
-</code></pre></div></div>
-
-<p>🎉🎉🎉</p>
-
-<h3 id="about-submitting">About submitting</h3>
-
-<ul>
-  <li>As you did in first part, after solving problems, save the file, then commit and push.</li>
-</ul>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"solved all problems, where is my github sticker?!!"</span>
-<span class="gp">$</span> git push origin master
-</code></pre></div></div>
-
-<ul>
-  <li>You can push all solutions with a single <code class="highlighter-rouge">commit</code> and a single <code class="highlighter-rouge">push</code>.</li>
-  <li>
-    <p>You can also solve each problem separately and <code class="highlighter-rouge">commit</code> and <code class="highlighter-rouge">push</code> for each problem you solve:</p>
-
-    <ul>
-      <li>So you practice yourself with <code class="highlighter-rouge">git</code> commands.</li>
-      <li>So you realize some significance of using <code class="highlighter-rouge">git</code> to work on large projects.</li>
-    </ul>
-  </li>
-</ul>
-
-  </div>
-
-</article>
-
-<!-- 
-Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
-https://ro-che.info/articles/2017-04-02-deploying-mathjax 
--->
-
-<script src="/mathjax/MathJax.js"></script>
-
-<script type="text/javascript">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-    jax: ["input/TeX", "output/HTML-CSS"],
-    "HTML-CSS": {
-      availableFonts: ["TeX"],
-      imageFont: null
-    },
-    MathMenu: {
-      showRenderer: false,
-      showFontMenu: false,
-      showLocale: false
-    }
-  });
-</script>
+</div>
       </div>
     </main>
 

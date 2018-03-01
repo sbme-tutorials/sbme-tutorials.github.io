@@ -140,8 +140,11 @@ struct ECGArray
 We can just make a new **type alias** of `DoubleArray` with using an interesting name, using the following syntax:
 
 ```c++
-using ECGArray = DoubleArray;
+using ECGArray = arrays::DoubleArray;
 ```
+
+To use the above feature in C++, the feature of `using TypeAlias = SomeType`, is supported in C++ standard of 2011. When you compile make sure to inform the compiler what standard you are using. So you will need to add an additional flag to the compiler `-std=c++11`.
+
 
 This line declares a new type equivalent to `DoubleArray` but with another name (alias).
 
@@ -207,7 +210,7 @@ Feel free to add your own `struct`s in `dna.hpp`. The objective of using `struct
 ### Compiling and Testing calculator.cpp
 
 ```bash
-$ g++ calculator.cpp -o Calculator
+$ g++ -std=c++11 calculator.cpp -o Calculator
 $ ./Calculator 24 / 7
 3.42857
 $ ./Calculator 24 \* 7
@@ -218,7 +221,7 @@ $ ./Calculator 24 \* 7
 ### Compiling and Testing heron.cpp
 
 ```bash
-$ g++ heron.cpp -o Heron
+$ g++ -std=c++11 heron.cpp -o Heron
 $ ./Heron 3 4 5
 6
 ```
@@ -226,7 +229,7 @@ $ ./Heron 3 4 5
 ### Compiling and Testing heron.cpp
 
 ```bash
-$ g++ heron.cpp -o Heron
+$ g++ -std=c++11 heron.cpp -o Heron
 $ ./Heron 3 4 5
 6
 ```
@@ -239,7 +242,7 @@ Our application in the `main` function loads data from the file then use `ecg::a
 function implemented in `ecg.hpp`.
 
 ```bash
-$ g++ analyzeECG.cpp -o AnalyzeECG
+$ g++ -std=c++11 analyzeECG.cpp -o AnalyzeECG
 $ ./AnalyzeECG datasets/ecg_data.txt
 ECG average : 0.785639
 ECG variance: 0.00780314
@@ -254,7 +257,7 @@ Our application in the `main` function loads data from the file then use `dna::a
 function implemented in `dna.hpp`.
 
 ```bash
-$ g++ analyzeDNA.cpp -o AnalyzeDNA
+$ g++ -std=c++11 analyzeDNA.cpp -o AnalyzeDNA
 $ ./AnalyzeDNA datasets/genetic_data.txt
 Adenine (A) content:75
 Guanine (G) content:84

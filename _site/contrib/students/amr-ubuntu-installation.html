@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Assignment 1 - part 2: Revision on C++</title>
+  <title>Ubuntu installation alongside windows in legacy mode</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/1_week1b.html">
+  <link rel="canonical" href="http://localhost:4000/contrib/students/amr-ubuntu-installation.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -284,135 +284,54 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <h2>Ubuntu installation alongside windows in legacy mode</h2>
+<em>By Amr Abdelsalam</em>
 
-  <header class="post-header">
-    <h1 class="post-title">Assignment 1 - part 2: Revision on C++</h1>
-  </header>
+<br><br>
 
-  <div class="post-content">
-    <h2 id="objectives">Objectives</h2>
-
-<ul>
-  <li>Creating variables.</li>
-  <li>Using arithmetic operations on variables.</li>
-  <li>Using control statements: If, else if, else, while, for, switch-case.</li>
-  <li>Simple functions</li>
-  <li>Make custom namespace</li>
+<div class="home">
+    <ul id="markdown-toc">
+  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+  <li><a href="#steps" id="markdown-toc-steps">Steps</a></li>
 </ul>
 
-<h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
+<h2 id="motivation">Motivation</h2>
+
+<p>To share experience in installing ubuntu alongside Windows 10, and the corresponding issues of Windows being installed in legacy mode.</p>
+
+<h2 id="steps">Steps</h2>
+
+<p>First, have a look at this <a href="https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/">tutorial</a>.</p>
+
+<p>Here are some extra remarks you should take care of it.</p>
 
 <ul>
-  <li><strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/1_week1a.html" target="_blank">Part 1: C++ Basics</a>] .</li>
-</ul>
-
-<h2 id="grading">Grading</h2>
-
-<ul>
-  <li>This part constitutes 40% of the week grades.</li>
-  <li>Grading per line.</li>
-  <li>+20% bonus.</li>
-</ul>
-
-<h2 id="deadline">Deadline</h2>
-
-<p><strong>Tuesday 14/2/2018 11:59 PM</strong>.</p>
-
-<h2 id="writing-your-first-c-basics">Writing Your First C++ Basics</h2>
-
-<ul>
-  <li>First, register yourself for the assignment from this <a href="https://classroom.github.com/a/A6ntQkKJ">link</a>.</li>
-</ul>
-
-<p><img src="a1.png" alt="" /></p>
-
-<p>then,</p>
-
-<p><img src="a2.png" alt="" /></p>
-
-<p>then,</p>
-
-<p><img src="a3.png" alt="" /></p>
-
-<ul>
-  <li>As you did in the first part, clone the remote repository to your local machine.</li>
-  <li>Jump to the assignment folder and open the <code class="highlighter-rouge">main.cpp</code> file.</li>
-  <li>You will find the questions as in-line comments. Questions <code class="highlighter-rouge">P1</code> and <code class="highlighter-rouge">P3</code> are solved for you to be more familir.</li>
-  <li>If you feel uncomfortable with any question, do not panic, you can ask for explanation at office hours before deadline.</li>
-</ul>
-
-<h2 id="important-notes">Important notes</h2>
-
-<h3 id="how-to-compile-my-source-code">How to compile my source code</h3>
-
-<p>After you attempt all problems, open the terminal on the task folder. Make sure you are on the right directory by listing the files and finding <code class="highlighter-rouge">main.cpp</code> file.</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">ls</span>
-<span class="go">main.cpp
-</span></code></pre></div></div>
-
-<p>To compile, you need to introduce to your compiler the <code class="highlighter-rouge">main.cpp</code> and the executable name (which is an arbitrary name)</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> g++ main.cpp <span class="nt">-o</span> app
-</code></pre></div></div>
-
-<p>To run,</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ./app
-</code></pre></div></div>
-
-<p>🎉🎉🎉</p>
-
-<h3 id="about-submitting">About submitting</h3>
-
-<ul>
-  <li>As you did in first part, after solving problems, save the file, then commit and push.</li>
-</ul>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"solved all problems, where is my github sticker?!!"</span>
-<span class="gp">$</span> git push origin master
-</code></pre></div></div>
-
-<ul>
-  <li>You can push all solutions with a single <code class="highlighter-rouge">commit</code> and a single <code class="highlighter-rouge">push</code>.</li>
-  <li>
-    <p>You can also solve each problem separately and <code class="highlighter-rouge">commit</code> and <code class="highlighter-rouge">push</code> for each problem you solve:</p>
-
+  <li>To know the boot mode restart your lab and enter bios settings (press the right <code class="highlighter-rouge">Fn</code> key probably <code class="highlighter-rouge">F2</code> before the windows logo appear) then go to boot settings and check the boot mode type. See the image: <img src="../gallery/amr-screenshot1.jpg" alt="boot" />.
     <ul>
-      <li>So you practice yourself with <code class="highlighter-rouge">git</code> commands.</li>
-      <li>So you realize some significance of using <code class="highlighter-rouge">git</code> to work on large projects.</li>
+      <li>Alternatively, use this <a href="https://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html">link</a></li>
     </ul>
   </li>
+  <li>If you have an UEFI boot mode take care of this part in the tutorial “In case your hardware uses UEFI then you should modify the EFI settings and disable Secure Boot feature.”</li>
+  <li>Make the shrink part from hard 30 Giga not 20 as the tutorial.</li>
+  <li>To burn the iso image on the flash memory use <a href="https://rufus.akeo.ie/">Rufus</a>.
+    <ul>
+      <li><strong>If your boot mode in windows is UEFI then use the UEFI mode in Rufus options</strong>. Otherwise, use the Legacy(bios)/UEFI mode.</li>
+    </ul>
+  </li>
+  <li><strong>Most important note</strong>*: the boot mode in windows must match the flash memory boot mode, as Ubuntu will be set up in this mode too.</li>
+  <li>Place the USB stick or DVD in the appropriate drive, reboot the machine and instruct the BIOS/UEFI to boot-up from the DVD/USB by pressing a special function key (usually <code class="highlighter-rouge">F12</code>, <code class="highlighter-rouge">F10</code> or <code class="highlighter-rouge">F2</code> depending on the vendor specifications).</li>
+  <li>Therefore, after restarting the lab and during after pressing the right <code class="highlighter-rouge">Fn</code> key the boot manger menu will appear so, if you have UEFI in windows use the USB option that has UEFI/EFI word. If you have Legacy (bios) mode in the windows so choose the USB option without UEFI/EFI word.
+    <ul>
+      <li>The boot manger menu will might look like this: <img src="../gallery/amr-screenshot2.jpg" alt="bootmenu" /></li>
+    </ul>
+  </li>
+  <li><strong>Critical</strong>: After the sixth step of the set-up, if you have this error message go back and quit the set up and check the USB boot mode. <img src="../gallery/amr-screenshot3.jpg" alt="ubuntu-warning" /></li>
+  <li>At the eighth step it’s preferable to make a swap part &lt;= 5 Giga and home partition is not a must.</li>
+  <li><strong>Important Info</strong>: If you are on Legacy mode the allowed number of partitions for both OSs are 4 so make sure that you have only 2 partitions in windows so that you will be able to make the root and swap partitions in Ubuntu.</li>
+  <li>If you have 3 or 4 partitions in windows you can merge them safely without losing data using this <a href="https://www.partitionwizard.com/mergepartitions/merge-partitions-without-losing-data.html">program</a> (the steps are included).</li>
 </ul>
 
-  </div>
-
-</article>
-
-<!-- 
-Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
-https://ro-che.info/articles/2017-04-02-deploying-mathjax 
--->
-
-<script src="/mathjax/MathJax.js"></script>
-
-<script type="text/javascript">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-    jax: ["input/TeX", "output/HTML-CSS"],
-    "HTML-CSS": {
-      availableFonts: ["TeX"],
-      imageFont: null
-    },
-    MathMenu: {
-      showRenderer: false,
-      showFontMenu: false,
-      showLocale: false
-    }
-  });
-</script>
+</div>
       </div>
     </main>
 
