@@ -650,21 +650,4 @@ sudo apt-get install cmake
 
 ## Quiz Next Tuesday
 
-Prepare for a quiz next Tuesday. Solving week 4 task qualifies you to solve the quiz.
-
-<!-- 
-https://upbeat-pie.surge.sh/
-
-https://www.coursera.org/learn/data-structures
-
-https://www.coursera.org/learn/algorithms-part1
-
-https://github.com/no-stack-dub-sack/algos-and-data-structures
-
-https://www.codewars.com/?language=cpp
-
-http://www.pythontutor.com/
-
-http://www.algomation.com/
-
-https://www.coursera.org/learn/algorithms-graphs-data-structures -->
+Prepare for a quiz on **Tuesday of 13/3**. Solving week 4 task qualifies you to solve the quiz.

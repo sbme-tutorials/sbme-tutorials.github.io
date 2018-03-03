@@ -24,7 +24,7 @@ pdf: true
 
 ## Deadline
 
-**Friday 2/3/2018 10 AM**.
+**Sunday 4/3/2018 11:59 PM**.
 
 ## Assignment: Part 2
 
