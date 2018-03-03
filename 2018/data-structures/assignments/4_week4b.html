@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tutorials for SBME Students</title>
+  <title>Assignment 4: Stacks and Queues</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/4_week4b.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -25,6 +25,88 @@
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -230,23 +312,109 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <div class="home">
-    
-  <h1 id="tutorials-and-course-announcements">Tutorials and Course Announcements</h1>
+        <article class="post">
 
-<h2 id="spring-2018">Spring 2018</h2>
+  <header class="post-header">
+    <h1 class="post-title">Assignment 4: Stacks and Queues</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="prerequisites">Prerequisites</h2>
 
 <ul>
-  <li><a href="/2018/data-structures/data-structures.html">Data Structures and Algorithms (SBE201)</a>, by Prof. Ahmed H. Kandil and Eng. Asem Alaa.</li>
-  <li><a href="/2018/dsp/dsp.html">Digital Signal Processing (SBE309)</a>, by Dr. Tamer Yousef, Eng. Asem Alaa, and Eng. Eman Ibraheem.</li>
-  <li><a href="/2018/cv/cv.html">Computer Vision (SBE404)</a>, by Dr. Muhamed Rushdi, Eng. Eslam Adel, and Eng. Asem Alaa.</li>
+  <li><strong>Required</strong>: Read the [<a href="/2018/data-structures/notes/4_week4a.html" target="_blank">Part1: Struct, Stacks, Linked Lists, and Queues</a>]</li>
+  <li><strong>Required</strong>: Read [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>], the following sections:
+    <ul>
+      <li><a href="/2018/data-structures/notes/4_week4b.html#assignment-of-week-4">Assignment of Week 4</a></li>
+      <li><a href="/2018/data-structures/notes/4_week4b.html#ll-based-queues">LL-Based Queues</a></li>
+    </ul>
+  </li>
+  <li><strong>Optional</strong>: The rest of the notes [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>]</li>
 </ul>
 
-<h3 id="announcements">Announcements</h3>
+<h2 id="assignment-4">Assignment 4</h2>
 
+<h3 id="concrete-implementation-linked-list-of-doubles-doublell">Concrete Implementation Linked List of Doubles (DoubleLL)</h3>
 
-</div>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DoubleNode</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
 
+<span class="k">struct</span> <span class="n">DoubleLL</span>
+<span class="p">{</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><strong>Supported Operations</strong>:</p>
+
+<ol>
+  <li>Insertions</li>
+</ol>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertFront</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertBack</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertAt</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">target</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Removals</li>
+</ol>
+
+<p>```c++</p>
+
+<h4 id="implement-another-version-but-for-characters-charll">Implement Another Version But for Characters (CharLL)</h4>
+
+<h3 id="stack-implementation-of-doubles-using-ll-doublestackll">Stack Implementation of Doubles using LL (DoubleStackLL)</h3>
+
+<h4 id="implement-another-version-but-for-characters-charstackll">Implement Another Version But for Characters (CharStackLL)</h4>
+
+<h3 id="queue-implementation-of-doubles-using-ll-doublequeuell">Queue Implementation of Doubles using LL (DoubleQueueLL)</h3>
+
+<h3 id="bonus-stack-implementation-using-arrays-doublestackarray">Bonus: Stack Implementation using Arrays (DoubleStackArray)</h3>
+
+<h3 id="bonus-queue-implementation-using-arrays-doublequeuearray">Bonus: Queue Implementation using Arrays (DoubleQueueArray)</h3>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
       </div>
     </main>
 
