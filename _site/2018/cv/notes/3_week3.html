@@ -96,6 +96,8 @@
     
       
     
+      
+    
 
     
     
@@ -132,22 +134,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
             
           
             
@@ -172,12 +174,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
@@ -207,12 +209,17 @@
           
             
             
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
             <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
             
           
             
@@ -222,7 +229,7 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4.html">Assignment 4: Stacks and Queues</a>
             
           
             
@@ -247,12 +254,12 @@
           
             
             
-            <a class="page-link" href="/contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
             
           
             
             
-            <a class="page-link" href="/contrib/boilerplate.html">&lt;Your title&gt;</a>
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -290,11 +297,27 @@
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#discrete-fourier-transform-dft" id="markdown-toc-discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</a></li>
-  <li><a href="#properties-of-dft" id="markdown-toc-properties-of-dft">Properties of DFT</a></li>
+  <li><a href="#discrete-fourier-transform-dft" id="markdown-toc-discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</a>    <ul>
+      <li><a href="#example" id="markdown-toc-example">Example</a></li>
+      <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
+    </ul>
+  </li>
+  <li><a href="#properties-of-dft" id="markdown-toc-properties-of-dft">Properties of DFT</a>    <ul>
+      <li><a href="#complex" id="markdown-toc-complex">Complex</a></li>
+      <li><a href="#high-and-low-frequency-components" id="markdown-toc-high-and-low-frequency-components">High and low frequency components</a></li>
+      <li><a href="#no-one-to-one-corresponding" id="markdown-toc-no-one-to-one-corresponding">No one to one corresponding</a></li>
+      <li><a href="#symmetric" id="markdown-toc-symmetric">Symmetric</a></li>
+      <li><a href="#periodic" id="markdown-toc-periodic">Periodic</a></li>
+    </ul>
+  </li>
   <li><a href="#inverse-fourier-transform" id="markdown-toc-inverse-fourier-transform">Inverse Fourier Transform</a></li>
-  <li><a href="#fourier-filtering" id="markdown-toc-fourier-filtering">Fourier Filtering</a></li>
+  <li><a href="#fourier-filtering" id="markdown-toc-fourier-filtering">Fourier Filtering</a>    <ul>
+      <li><a href="#ideal-lpf-example" id="markdown-toc-ideal-lpf-example">Ideal LPF Example</a></li>
+      <li><a href="#ideal-hpf-example" id="markdown-toc-ideal-hpf-example">Ideal HPF Example</a></li>
+    </ul>
+  </li>
   <li><a href="#color-image-processing-block-diagram" id="markdown-toc-color-image-processing-block-diagram">Color Image Processing Block Diagram</a></li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
 </ul>
 
 <h2 id="discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</h2>
@@ -303,33 +326,120 @@ Given a discrete image I(x,y) the fourier transform of it is  :</p>
 
 <script type="math/tex; mode=display">I(u,v) = \sum_{x= 0}^{N_{clos} - 1 } \sum_{y = 0}^{N_{rows} - 1}  I(x,y) e^{-i2 \pi (\frac{xu}{N_{cols}}+\frac{yv}{N_{rows}})}</script>
 
+<p><img src="../images/Basis_functions.png" alt="" /></p>
+
+<p>Low frequency components are found at the central regions while high frequency components are in peripherals.</p>
+
+<p>The Original Image
+<img src="../images/Original_Image.png" alt="" /></p>
+
+<p>Fourier Transform of the image Without shifting</p>
+
+<p><img src="../images/FT_noShift.png" alt="" /></p>
+
+<p>Fourier Transform of the image after shifting. Shifting is done to move zero frequency component to the center of the image.</p>
+
+<p><img src="../images/Fourier_Spectrum_of_the_image.png" alt="" /></p>
+<h3 id="example">Example</h3>
+
+<p>For the image shown find Fourier transform at points I(0,0), I(0,1) and I(1,0)</p>
+
+<p><img src="../images/FT_ex.png" alt="" /></p>
+
+<h3 id="solution">Solution</h3>
+<ul>
+  <li>
+    <p><strong>F(0,0)</strong></p>
+
+    <ol>
+      <li>
+        <script type="math/tex; mode=display">I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{x*0}{4}+\frac{y*0}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{0}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y)  = 12</script>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>F(0 , 1)</strong></p>
+
+    <ol>
+      <li>
+        <script type="math/tex; mode=display">I(0,1) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{y}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(0,1) = 2 e^{-2 \pi j(0)} +  e^{-2 \pi j(0)} + 2 e^{-2 \pi j(\frac{1}{4})} +</script>
+      </li>
+    </ol>
+
+    <script type="math/tex; mode=display">e^{-2 \pi j(\frac{1}{4})} + 2 e^{-2 \pi j(\frac{2}{4})} + e^{-2 \pi j(\frac{2}{4})} + 2 e^{-2 \pi j(\frac{3}{4})}  +  e^{-2 \pi j(\frac{3}{4})} = 0</script>
+  </li>
+  <li>
+    <p><strong>F(1, 0)</strong></p>
+    <ol>
+      <li>
+        <script type="math/tex; mode=display">I(1,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{x}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(1,0) = 6 e^{-2 \pi j(\frac{1}{4})}+ 4 e^{-2 \pi j(\frac{2}{4})}  + 2 e^{-2 \pi j(\frac{3}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(1,0) = -4 - 4j</script>
+      </li>
+    </ol>
+  </li>
+</ul>
+
 <h2 id="properties-of-dft">Properties of DFT</h2>
 
 <ul>
-  <li>FT is a complex representation of the image. So it includes a magnitude and a phase 
-  Magnitude component is the desired one in visualization. It represents the weight of each frequency component and give an intuitive impression about frequency spectrum of the image. Due to large variations in magnitudes (Center of the image has a high value compared with other values) we display it in a log scale to compress dynamic range  see <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/pixlog.htm">link</a></li>
+  <li>
+    <h3 id="complex">Complex</h3>
+    <p>It is a complex representation of the image. So it includes a magnitude and a phase.  Magnitude component is the desired one in visualization. It represents the weight of each frequency component and gives an intuitive impression about frequency spectrum of the image. Due to large variations in magnitudes (Center of the image has a high value compared with other values) we display it in a log scale to compress dynamic range  see <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/pixlog.htm">link</a></p>
+  </li>
 </ul>
 
 <script type="math/tex; mode=display">log_{10} (1 + ||I(u, v )||)</script>
 
+<ol>
+  <li>Magnitude image without log transformation
+  <img style="width:150%" src="../images/FT_Nolog.png" /></li>
+  <li>Magnitude image with log transformation
+  <img style="width:175%" src="../images/Fourier_Spectrum_of_the_image.png" /></li>
+</ol>
+
 <p>Phase is very important for image recovery but has no significance in visualization</p>
 <ul>
-  <li>In Fourier domain central regions represent the low frequency components and peripheral regions represent the high frequency components and the center of the image represents the DC value with zero frequency which is the average intensity of the image. Note (image profile within a scan line gives you an impression about the frequency in that direction)</li>
-  <li>Direction of change in intensity has the same direction in frequency domain</li>
   <li>
-    <p>No one to one corresponding where each point in frequency domain is calculated from the whole spatial image</p>
+    <h3 id="high-and-low-frequency-components">High and low frequency components</h3>
+    <p>In Fourier domain central regions represent the low frequency components and peripheral regions represent the high frequency components and the center of the image represents the DC value with zero frequency which is the total intensity of the image.</p>
+  </li>
+  <li>
+    <h3 id="no-one-to-one-corresponding">No one to one corresponding</h3>
+    <p>where each point in frequency domain is calculated from the whole spatial image</p>
 
     <p><script type="math/tex">I(u,v) = T(I)(x,y)</script> not <script type="math/tex">T(I(x,y))</script></p>
   </li>
-  <li>Fourier transform of the image is symmetric which mean that we can recover the image if we have only the half of fourier domain. This is a very important property in fourier transform and used in MRI imaging see [partial fourier imaging] (http://mriquestions.com/partial-fourier.html).</li>
+  <li>
+    <h3 id="symmetric">Symmetric</h3>
+    <p>which means that we can recover the image if we have only the half of fourier domain. This is a very important property in fourier transform and used in MRI imaging see <a href="http://mriquestions.com/partial-fourier.html">partial fourier imaging</a>.</p>
+  </li>
 </ul>
 
-<p>Question: Where redundancy comes from ??</p>
+<p><img style="scale:80%" src="../images/HFI.png" /></p>
 
-<p>Answer : Each point in fourier domain is a complex with two information magnitude and phase or real part and imaginary part. So half of fourier image actually hold up the whole information of the spatial domain image.</p>
+<p><strong>Question</strong>: Where redundancy comes from ??</p>
+
+<p><strong>Answer</strong> : Each point in fourier domain is a complex with two information magnitude and phase or real part and imaginary part. So half of fourier image actually hold up the whole information of the spatial domain image.</p>
 
 <ul>
-  <li>DFT is periodic (remember discretization (Sampling) implies periodicity) and aliasing in frequency domain leads to overlapping in image domain.</li>
+  <li>
+    <h3 id="periodic">Periodic</h3>
+    <p>As we deal with a digital images (Sampled) and sampling implies periodicity so 2D FT is periodic.</p>
+  </li>
 </ul>
 
 <h2 id="inverse-fourier-transform">Inverse Fourier Transform</h2>
@@ -339,113 +449,43 @@ Given a discrete image I(x,y) the fourier transform of it is  :</p>
 <p>Inverse transformation from  spatial domain to spatial domain. Looks like fourier transform except for the sign of exponential and the weight of the function.</p>
 <h2 id="fourier-filtering">Fourier Filtering</h2>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># import the necessary packages</span>
-<span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">isfile</span> <span class="p">,</span> <span class="n">join</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">matplotlib.colors</span> <span class="k">as</span> <span class="n">col</span>
-<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="n">mpimg</span>
-<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">fftpack</span>
+<p>Basic concept of fourier filtering is to mask desired frequencies and suppress undesired components. It is just multiplication process alternative to convolution in spatial domain which is computationally expensive. the block diagram of fourier filtering process 
+<img style="scale:80%" src="../images/Fourier_Filtering.png" /></p>
 
-<span class="k">def</span> <span class="nf">rgb2gray</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c"># Check if it has three channels or not </span>
-        <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="c">#If not so it is already gray image</span>
-        <span class="k">return</span> <span class="n">rgb_image</span>
-    <span class="c">#Else it is a colored image</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">rgb_image</span><span class="p">[</span><span class="o">...</span><span class="p">,:</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.299</span><span class="p">,</span> <span class="mf">0.587</span><span class="p">,</span> <span class="mf">0.114</span><span class="p">])</span>
+<h3 id="ideal-lpf-example">Ideal LPF Example</h3>
+<p>This is the filter that masks the low frequency components 
+<img src="../images/Ideal_Low_Pass_Filter_in_frequency_domain.png" alt="" /></p>
 
-<span class="k">def</span> <span class="nf">extractValueChannel</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="c"># Check if it has three channels or not </span>
-        <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">image</span>
-    <span class="n">hsvImage</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">rgb_to_hsv</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">hsvImage</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-    
+<p>Spectrum of the image after applying the ideal LPF 
+<img src="../images/Spectrum_After_applying_LPF.png" alt="" /></p>
 
-<span class="k">def</span> <span class="nf">multi_view</span><span class="p">(</span> <span class="n">images</span> <span class="p">):</span>
-    <span class="n">images_count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span> <span class="n">images</span> <span class="p">)</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span> <span class="n">images_count</span>  <span class="p">):</span>
-        <span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span> <span class="n">images_count</span> <span class="p">,</span> <span class="mi">1</span> <span class="p">,</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>    
-        <span class="n">ax1</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span> <span class="n">images</span><span class="p">[</span> <span class="n">row</span> <span class="p">]</span> <span class="p">)</span>
+<p>the effect of suppression high frequency components is blurring the image
+<img src="../images/ValueChannelLPF.png" alt="" /></p>
 
-<span class="k">def</span> <span class="nf">generateLPF</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">,</span> <span class="n">filtType</span><span class="p">):</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-    <span class="n">LPF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">HPF</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">xi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">((</span><span class="mf">0.5</span> <span class="o">-</span> <span class="n">w</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span>
-    <span class="n">xf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">((</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">w</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">m</span><span class="p">)</span>
-    <span class="n">yi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">((</span><span class="mf">0.5</span> <span class="o">-</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
-    <span class="n">yf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">((</span><span class="mf">0.5</span> <span class="o">+</span> <span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
-    <span class="n">LPF</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">xi</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">xf</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">yi</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">yf</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">HPF</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">xi</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">xf</span><span class="p">),</span><span class="nb">int</span><span class="p">(</span><span class="n">yi</span><span class="p">):</span><span class="nb">int</span><span class="p">(</span><span class="n">yf</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="k">if</span> <span class="n">filtType</span> <span class="o">==</span> <span class="s">"LPF"</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">LPF</span>
-    <span class="k">elif</span> <span class="n">filtType</span> <span class="o">==</span> <span class="s">"HPF"</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">HPF</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">"Only Ideal LPF and HPF are supported"</span><span class="p">)</span>
-        <span class="nb">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<h3 id="ideal-hpf-example">Ideal HPF Example</h3>
+<p>This is the filter that masks the high frequency components 
+<img src="../images/Ideal_High_Pass_Filter_in_frequency_domain.png" alt="" /></p>
 
+<p>Spectrum of the image after applying the HPF 
+<img src="../images/Spectrum_After_applying_HPF.png" alt="" /></p>
 
+<p>Suppression of low frequency components will produce an edge image</p>
 
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
-    <span class="c"># Get file names in current directory</span>
-    <span class="n">images_files</span> <span class="o">=</span> <span class="p">[</span> <span class="n">join</span><span class="p">(</span><span class="s">"./images"</span> <span class="p">,</span> <span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">listdir</span><span class="p">(</span><span class="s">"images"</span><span class="p">)</span> <span class="k">if</span> <span class="n">isfile</span><span class="p">(</span><span class="n">join</span><span class="p">(</span><span class="s">"images"</span> <span class="p">,</span> <span class="n">f</span><span class="p">))</span> <span class="p">]</span>
-    <span class="n">images</span> <span class="o">=</span> <span class="p">[</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span> <span class="n">f</span> <span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">images_files</span> <span class="p">]</span>
-    <span class="n">vImages</span> <span class="o">=</span> <span class="p">[</span> <span class="n">extractValueChannel</span><span class="p">(</span> <span class="n">img</span> <span class="p">)</span> <span class="k">for</span> <span class="n">img</span> <span class="ow">in</span> <span class="n">images</span> <span class="p">]</span>
-    <span class="n">selectedImage</span> <span class="o">=</span> <span class="n">images</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">"Original Image"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">selectedImage</span><span class="p">)</span>
-    <span class="n">myImage</span> <span class="o">=</span> <span class="n">vImages</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-    <span class="c"># Take the fourier transform of the image.</span>
-    <span class="n">F1</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">myImage</span><span class="p">)</span>
-    <span class="n">F2</span> <span class="o">=</span> <span class="n">fftpack</span><span class="o">.</span><span class="n">fftshift</span><span class="p">(</span> <span class="n">F1</span> <span class="p">)</span>
-    <span class="n">F3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">F2</span><span class="p">)</span>
-    <span class="n">F4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">F3</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">"Fourier Spectrum of the image"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">F4</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">set_cmap</span><span class="p">(</span><span class="s">'gray'</span><span class="p">)</span>
-    
-    <span class="c">#Generate Ideal Low pass filter </span>
-    <span class="n">LPF</span> <span class="o">=</span> <span class="n">generateLPF</span><span class="p">(</span><span class="n">myImage</span><span class="p">,</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="s">"LPF"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">"Ideal Low Pass Filter in frequency domain"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">LPF</span><span class="p">)</span>
-    
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">"Spectrum After applying LPF"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">LPF</span> <span class="o">*</span> <span class="n">F4</span><span class="p">)</span>
-    <span class="c">#Apply the filter</span>
-    <span class="n">filteredImg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">abs</span><span class="p">(</span><span class="n">fftpack</span><span class="o">.</span><span class="n">ifft2</span><span class="p">(</span><span class="n">LPF</span> <span class="o">*</span> <span class="n">F2</span><span class="p">))</span>
-    <span class="n">filteredImg</span> <span class="o">=</span> <span class="n">filteredImg</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="nb">max</span><span class="p">(</span><span class="n">filteredImg</span><span class="p">)</span>
-    
-    <span class="n">hsvImage</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">rgb_to_hsv</span><span class="p">(</span><span class="n">selectedImage</span><span class="p">)</span>
-    <span class="n">hsvImage</span><span class="p">[</span><span class="o">...</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">filteredImg</span>
-    <span class="n">finalImage</span> <span class="o">=</span> <span class="n">col</span><span class="o">.</span><span class="n">hsv_to_rgb</span><span class="p">(</span><span class="n">hsvImage</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">"Filtered Image"</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">finalImage</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-<p><img src="../images/Original_Image.png" alt="" />
-<img src="../images/Fourier_Spectrum_of_the_image.png" alt="" />
-<img src="../images/Ideal_Low_Pass_Filter_in_frequency_domain.png" alt="" />
-<img src="../images/Spectrum_After_applying_LPF.png" alt="" />
-<img src="../images/Filtered_Image.png" alt="" />
-<img src="../images/Ideal_High_Pass_Filter_in_frequency_domain.png" alt="" />
-<img src="../images/Spectrum_After_applying_HPF.png" alt="" />
-<img src="../images/Filtered_Image-1.png" alt="" /></p>
+<p><img src="../images/ValueChannelHPF.png" alt="" /></p>
 
 <h2 id="color-image-processing-block-diagram">Color Image Processing Block Diagram</h2>
 
 <p>Dealing with colored images is not applicable in RGB color space. So we need to move to another color space for example HSV color space and applying our filtering on the channel associated with intensity (Here value channel). Now region channels again and finally return back to RGB color space. The block diagram is illustrated in the following figure.</p>
 
 <p><img src="../images/block_diagram.png" alt="" /></p>
+
+<p>This is the result of applying this block diagram on the previous filtered images. We can see that color information returned back to the image.</p>
+
+<p><img style="width:90%" src="../images/Filtered_Image.png" />
+<img style="width:80%" src="../images/Filtered_Image-1.png" /></p>
+
+<h2 id="demo">Demo</h2>
+<p>You can download the demo from <a href="https://github.com/sbme-tutorials/cv_week3_demo.git">cv_week3_demo</a>.</p>
 
   </div>
 
