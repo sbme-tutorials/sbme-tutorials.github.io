@@ -496,10 +496,9 @@ void insertToList( CharLinkedList &list , char newElement )
     {
         while( current->next != nullptr )
         {
-            std::cout << current->data;
             current = current->next;
         }
-        current->next = nullptr;
+        current->next = new Node{ newElement , nullptr };
     }
 }
 ```
