@@ -6,11 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>About</title>
+  <title>Assignment 4: Stacks and Queues</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/about/">
+<<<<<<< HEAD:_site/sbme-tutorials-contrib/students/amr-ubuntu-installation.html
+  <link rel="canonical" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">
+=======
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/4_week4b.html">
+>>>>>>> 5a0d7f6cac5ea7557edfd6495079b0ee4e0f5eda:2018/data-structures/assignments/4_week4b.html
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -25,6 +29,88 @@
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -233,20 +319,78 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">About</h1>
+    <h1 class="post-title">Assignment 4: Stacks and Queues</h1>
   </header>
 
   <div class="post-content">
-    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="https://jekyllrb.com/">jekyllrb.com</a></p>
+    <h2 id="prerequisites">Prerequisites</h2>
 
-<p>You can find the source code for Minima at GitHub:
-<a href="https://github.com/jekyll">jekyll</a> /
-<a href="https://github.com/jekyll/minima">minima</a></p>
+<ul>
+  <li><strong>Required</strong>: Read the [<a href="/2018/data-structures/notes/4_week4a.html" target="_blank">Part1: Struct, Stacks, Linked Lists, and Queues</a>]</li>
+  <li><strong>Required</strong>: Read [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>], the following sections:
+    <ul>
+      <li><a href="/2018/data-structures/notes/4_week4b.html#assignment-of-week-4">Assignment of Week 4</a></li>
+      <li><a href="/2018/data-structures/notes/4_week4b.html#ll-based-queues">LL-Based Queues</a></li>
+    </ul>
+  </li>
+  <li><strong>Optional</strong>: The rest of the notes [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>]</li>
+</ul>
 
-<p>You can find the source code for Jekyll at GitHub:
-<a href="https://github.com/jekyll">jekyll</a> /
-<a href="https://github.com/jekyll/jekyll">jekyll</a></p>
+<h2 id="assignment-4">Assignment 4</h2>
 
+<h3 id="concrete-implementation-linked-list-of-doubles-doublell">Concrete Implementation Linked List of Doubles (DoubleLL)</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DoubleNode</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">DoubleLL</span>
+<span class="p">{</span>
+    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p><strong>Supported Operations</strong>:</p>
+
+<ol>
+  <li>Insertions</li>
+</ol>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertFront</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertBack</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">insertAt</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">target</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ol>
+  <li>Removals</li>
+</ol>
+
+<p>```c++</p>
+
+<h4 id="implement-another-version-but-for-characters-charll">Implement Another Version But for Characters (CharLL)</h4>
+
+<h3 id="stack-implementation-of-doubles-using-ll-doublestackll">Stack Implementation of Doubles using LL (DoubleStackLL)</h3>
+
+<h4 id="implement-another-version-but-for-characters-charstackll">Implement Another Version But for Characters (CharStackLL)</h4>
+
+<h3 id="queue-implementation-of-doubles-using-ll-doublequeuell">Queue Implementation of Doubles using LL (DoubleQueueLL)</h3>
+
+<h3 id="bonus-stack-implementation-using-arrays-doublestackarray">Bonus: Stack Implementation using Arrays (DoubleStackArray)</h3>
+
+<h3 id="bonus-queue-implementation-using-arrays-doublequeuearray">Bonus: Queue Implementation using Arrays (DoubleQueueArray)</h3>
 
   </div>
 

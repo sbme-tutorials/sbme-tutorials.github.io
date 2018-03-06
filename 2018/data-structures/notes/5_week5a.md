@@ -244,7 +244,7 @@ int countCharacter( char *basePointer , int size , char query )
         if ( query == basePointer[i] ) T3(n) = 1
             ++x;
     }
-    return x; T4(n) = 1
+    return x; //T4(n) = 1
 }
 // T(n) = T1 + T2 + T4 = 1 + n * T3 + 1 = 2 + n
 // O(T(n)) = O(n)
