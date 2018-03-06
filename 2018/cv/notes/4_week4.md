@@ -242,7 +242,7 @@ For pixels with values in-between $T_l$ and $T_h$ we check the 8 neighbors if it
 
 ## Demo 
 ```bash
-$ git clone 
+$ git clone https://github.com/sbme-tutorials/cv-week4-demo
 ```
 ## Useful links
 
