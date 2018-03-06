@@ -310,7 +310,12 @@
   </header>
 
   <div class="post-content">
-    <ul id="markdown-toc">
+    <blockquote>
+  <p>These notes are inspired by slides made by TA Eng.Mohamed Hisham</p>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#readings" id="markdown-toc-readings">Readings</a></li>
   <li><a href="#2d-convolution" id="markdown-toc-2d-convolution">2D Convolution</a>    <ul>
       <li><a href="#example" id="markdown-toc-example">Example</a></li>
     </ul>
@@ -336,6 +341,14 @@
       <li><a href="#edge-tracking-by-hysteresis" id="markdown-toc-edge-tracking-by-hysteresis">Edge tracking by hysteresis</a></li>
     </ul>
   </li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+  <li><a href="#useful-links" id="markdown-toc-useful-links">Useful links</a></li>
+</ul>
+<h2 id="readings">Readings</h2>
+<ul>
+  <li><a href="http://www.scipy-lectures.org/advanced/image_processing/#denoising">Image Denoising</a></li>
+  <li><a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html">Edge Detection</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny Edge Detector</a></li>
 </ul>
 
 <h2 id="2d-convolution">2D Convolution</h2>
@@ -363,6 +376,14 @@
 <h2 id="smoothing-kernels">Smoothing Kernels</h2>
 <p>Smoothing filters are used in preprocessing step mainly for noise removal. There ar different kernels for smoothing</p>
 
+<p>Original Image</p>
+
+<p><img src="../images/Original_Image_w4.png" alt="" /></p>
+
+<p>Adding Noise</p>
+
+<p><img src="../images/Noisy_Image.png" alt="" /></p>
+
 <h3 id="box-mean-or-average-filter">Box, mean or average filter</h3>
 <p>Example 3x3 box filter</p>
 
@@ -373,6 +394,8 @@
  1 & 1 & 1 \\
  1 & 1 & 1 \\
  \end{bmatrix} %]]></script>
+
+<p><img src="../images/Smoothing_Box.png" alt="" /></p>
 
 <h3 id="gaussian-filter">Gaussian filter</h3>
 
@@ -392,8 +415,12 @@ h(u,v) = \frac{1}{2 \pi \sigma^2} e^{(- \frac{u^2 + v^2}{\sigma^2})}
 1 & 2 & 1 \\
 \end{bmatrix} %]]></script>
 
+<p><img src="../images/Smoothing_Gauss.png" alt="" /></p>
+
 <h3 id="median-filter">Median Filter</h3>
 <p>It is nonlinear digital filter. It is efficient in removal of what so called salt and pepper noise.</p>
+
+<p><img src="../images/Median_Filter.png" alt="" /></p>
 
 <h2 id="edge-detection-kernels">Edge detection kernels</h2>
 
@@ -494,9 +521,16 @@ I_{\theta} = tan^{-1}(\frac{I_y(x,y)}{I_x(x,y)})
 2 & 4  & 5  & 4  & 2 \\
 \end{bmatrix} %]]></script>
 
+<p>Original Image</p>
+
+<p><img src="../images/Lines.jpg" alt="" />
+<img src="../images/guassianBlur.jpg" alt="" /></p>
+
 <h3 id="finding-gradients">Finding Gradients</h3>
 
 <p>This is done using sobel operator in both x and y direction and getting gradient magnitude as described later.</p>
+
+<p><img src="../images/GradientMag.jpg" alt="" /></p>
 
 <h3 id="none-maximum-suppression">None-maximum suppression</h3>
 
@@ -507,11 +541,17 @@ I_{\theta} = tan^{-1}(\frac{I_y(x,y)}{I_x(x,y)})
   <li>Suppress that pixel (set to zero) if its value is lower than pixels in same direction.</li>
 </ol>
 
+<p><strong>Gradient Direction</strong></p>
+
+<p><img src="../images/GradientDir.jpg" alt="" /></p>
+
 <p>Direction must be quantized to 8 directions or angles to use 8-Connectivity.</p>
 
 <p><img src="../images/CannyEdgeWheel.gif" alt="" /> <img src="../images/Connectivity.png" alt="" /></p>
 
 <p>The result of this stage would be an edge image with thin edges.</p>
+
+<p><img src="../images/none-max-supp.jpg" alt="" /></p>
 
 <h3 id="double-thresholding">Double thresholding</h3>
 
@@ -523,6 +563,8 @@ I_{\theta} = tan^{-1}(\frac{I_y(x,y)}{I_x(x,y)})
     <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 </code></pre></div></div>
 
+<p><img src="../images/double-thr.jpg" alt="" /></p>
+
 <p>What about pixels with in-between values ?</p>
 
 <p>Next section tells us.</p>
@@ -531,6 +573,17 @@ I_{\theta} = tan^{-1}(\frac{I_y(x,y)}{I_x(x,y)})
 
 <p>For pixels with values in-between $T_l$ and $T_h$ we check the 8 neighbors if it has a strong point in its neighbors so it is a part of the edge and if not suppress it.</p>
 
+<p><img src="../images/FinalCanny.jpg" alt="" /></p>
+
+<h2 id="demo">Demo</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone 
+</code></pre></div></div>
+<h2 id="useful-links">Useful links</h2>
+
+<ul>
+  <li><a href="https://matplotlib.org/gallery/index.html">matplotlib gallery</a></li>
+  <li><a href="http://scikit-image.org/docs/dev/auto_examples/">scikit-image examples</a></li>
+</ul>
 
   </div>
 
