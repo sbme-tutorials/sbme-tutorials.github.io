@@ -6,9 +6,14 @@ year: "2018"
 title:  "Week 4: Image Filtering and Edge Detection"
 by: "Eslam"
 ---
+> These notes are inspired by slides made by TA Eng.Mohamed Hisham
 
 * TOC
 {:toc}
+## Readings 
+* [Image Denoising](http://www.scipy-lectures.org/advanced/image_processing/#denoising)
+* [Edge Detection](http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html)
+* [Canny Edge Detector](https://en.wikipedia.org/wiki/Canny_edge_detector)
 
 ## 2D Convolution 
 
@@ -33,7 +38,16 @@ Size of output must be same size of input and we need to pad image for not defin
 
 ## Smoothing Kernels 
 Smoothing filters are used in preprocessing step mainly for noise removal. There ar different kernels for smoothing 
- 
+
+Original Image
+
+![](../images/Original_Image_w4.png)
+
+Adding Noise
+
+![](../images/Noisy_Image.png)
+
+
 ### Box, mean or average filter 
  Example 3x3 box filter 
 
@@ -43,6 +57,8 @@ Smoothing filters are used in preprocessing step mainly for noise removal. There
  1 & 1 & 1 \\
  1 & 1 & 1 \\
  \end{bmatrix} $$
+
+![](../images/Smoothing_Box.png)
 
 ### Gaussian filter 
 
@@ -63,8 +79,12 @@ Example: This kernel is approximation of gaussian  function
 1 & 2 & 1 \\
 \end{bmatrix} $$
 
+![](../images/Smoothing_Gauss.png)
+
 ### Median Filter 
 It is nonlinear digital filter. It is efficient in removal of what so called salt and pepper noise.
+
+![](../images/Median_Filter.png)
 
 ## Edge detection kernels
 
@@ -166,9 +186,16 @@ $$ \frac{1}{159}
 2 & 4  & 5  & 4  & 2 \\
 \end{bmatrix} $$
 
+Original Image 
+
+![](../images/Lines.jpg)
+![](../images/guassianBlur.jpg)
+
 ### Finding Gradients
 
 This is done using sobel operator in both x and y direction and getting gradient magnitude as described later.
+
+![](../images/GradientMag.jpg)
 
 ### None-maximum suppression
 
@@ -177,12 +204,18 @@ We aim to suppress all weak edges except local maxima. To do that we have to use
 1. Compare the edge strength of the current pixel with the edge strength of the pixel in the positive and negative gradient directions.
 2. Suppress that pixel (set to zero) if its value is lower than pixels in same direction.
 
+**Gradient Direction**
+
+![](../images/GradientDir.jpg)
+
 Direction must be quantized to 8 directions or angles to use 8-Connectivity. 
 
 ![](../images/CannyEdgeWheel.gif) ![](../images/Connectivity.png)
 
 
 The result of this stage would be an edge image with thin edges.
+
+![](../images/none-max-supp.jpg)
 
 ### Double thresholding
 
@@ -195,6 +228,8 @@ elif image(x,y) > TH:
     image[x,y] = 1
 ```
 
+![](../images/double-thr.jpg)
+
 What about pixels with in-between values ? 
 
 Next section tells us.
@@ -203,4 +238,13 @@ Next section tells us.
 
 For pixels with values in-between $T_l$ and $T_h$ we check the 8 neighbors if it has a strong point in its neighbors so it is a part of the edge and if not suppress it.
 
+![](../images/FinalCanny.jpg)
 
+## Demo 
+```bash
+$ git clone 
+```
+## Useful links
+
+* [matplotlib gallery](https://matplotlib.org/gallery/index.html)
+* [scikit-image examples](http://scikit-image.org/docs/dev/auto_examples/)
