@@ -13,10 +13,12 @@
 
 
 class: center, middle
- ##   Image Filtering and Edge Detection
+ ##   Image Filtering & Edge Detection
  By: Eslam Adel 
 
  email: eslam.a.mahmoud@eng1.cu.edu.eg
+
+Inspired by slides of TA.Mohamed Hisham 2016
         
 ---
 class: top, left
@@ -45,10 +47,10 @@ Basic Steps are :
 ---
 
 class: top, left
-## Smoothing Kernels 
+## Image Denoising
 
 --
-used in noise removal. 
+Clear Image 
 
 --
 
@@ -57,7 +59,7 @@ used in noise removal.
 ---
 
 class:top,left
-## Smoothing Kernels Cont'd
+## Image Denoising Cont'd
 
 --
 
@@ -117,23 +119,9 @@ Edge detection is a very important preprocessing step object detection
 
 ### Prewitt operator 
 
-For $$I_x(x,y)$$
+For Ix(x,y) and Iy(x,y)
 
- $$
-\begin{bmatrix}
-    -1 & 0 & 1 \\
-  -1 & 0 & 1 \\
-   -1 & 0 & 1 \\
-\end{bmatrix} $$
-
-For $$I_y(x,y)$$
-
- $$
-\begin{bmatrix}
-    -1 & -1 & -1 \\
-  0 & 0 & 0 \\
-   1 & 1 & 1 \\
-\end{bmatrix} $$
+<img style="width:40%" src="../../images/Preww.png">
 
 ---
 
@@ -141,23 +129,11 @@ class: top, left
 ## Edge detection kernels Cont'd
 ### Sobel operator
 
-For $$I_x(x,y)$$
+For Ix(x,y) and Iy(x,y)
 
- $$
-\begin{bmatrix}
--1 & 0 & 1 \\
--2 & 0 & 2 \\
--1 & 0 & 1 \\
-\end{bmatrix} $$
 
-For $$I_y(x,y)$$ 
+<img style="width:40%" src="../../images/sobel.png">
 
-$$
-\begin{bmatrix}
--1 & -2 & -1 \\
-0 & 0 & 0 \\
-1 & 2 & 1 \\
-\end{bmatrix} $$
 ---
 
 class: top, left
@@ -167,12 +143,8 @@ class: top, left
 It is an approximation of second order derivative that defines zeros crossing. 
 For Example 3x3 laplacian is : 
 
-$$
-\begin{bmatrix}
-0 & 1 & 0 \\
-1 & -4 & 1 \\
-0 & 1 & 0 \\
-\end{bmatrix} $$
+
+<img style="width:25%" src="../../images/lapl.png">
 
 Laplacian usually is applied after gaussian smoothing. So LOG refers to laplacian of gaussian.
 ---
@@ -203,7 +175,7 @@ class: left, top
 It was developed by [John F. Canny](https://en.wikipedia.org/wiki/John_Canny) in 1986. 
 
 **Stages**
-1. Smoothing for noise removal.
+1. **Smoothing for noise removal.**
 2. Finding Gradients.
 3. None-maximum suppression.
 4. Double Thresholding.
@@ -214,14 +186,8 @@ class:top ,left
 ## Smoothing 
 The first stage in canny edge detection algorithm is smoothing to remove noise that may cause false edges. Kernel used in this step is 5x5 gaussian kernel with $\sigma = 1.4$ and that it
 
-$$ \frac{1}{159}
-\begin{bmatrix}
-2 & 4  & 5  & 4  & 2 \\
-4 & 9  & 12 & 9  & 4 \\
-5 & 12 & 15 & 12 & 5 \\
-4 & 9  & 12 & 9  & 4 \\
-2 & 4  & 5  & 4  & 2 \\
-\end{bmatrix} $$
+<img style="width:65%" src="../../images/guassCanny.png">
+
 ---
 
 class: top, left
@@ -231,7 +197,7 @@ Original Image
 
 ---
 
-<img style="width:90%" src="../../images/guassianBlur.jpg">
+<img style="width:100%" src="../../images/guassianBlur.jpg">
 
 ---
 
@@ -240,7 +206,7 @@ class: left, top
 
 **Stages**
 1. Smoothing for noise removal.
-2. Finding Gradients.
+2. **Finding Gradients.**
 3. None-maximum suppression.
 4. Double Thresholding.
 5. Edge Tracking by hysteresis.
@@ -261,7 +227,7 @@ class: left, top
 **Stages**
 1. Smoothing for noise removal.
 2. Finding Gradients.
-3. None-maximum suppression.
+3. **None-maximum suppression.**
 4. Double Thresholding.
 5. Edge Tracking by hysteresis.
 ---
@@ -269,11 +235,9 @@ class: left, top
 class: top, left
 ### None-maximum suppression
 
-1. Compare pixel with pixels in the positive and negative gradient directions.
-2. Suppress that pixel (set to zero) if its value is lower.
+Compare pixel with pixels in the gradient directions and Suppress if not max.
 
-**Gradient Direction**
-<img style="scale:10" src="../../images/GradientDir.jpg">
+<img style="width:85%" src="../../images/GradientDir.jpg">
 
 ---
 class: top, left
@@ -289,7 +253,7 @@ class: top, left
 ### None-maximum suppression Cont'd
 The result of this stage would be an edge image with thin edges.
 
-<img style="width:70" src="../../images/none-max-supp.jpg">
+<img style="width:90%" src="../../images/none-max-supp.jpg">
 
 ---
 
@@ -301,7 +265,7 @@ class: left, top
 1. Smoothing for noise removal.
 2. Finding Gradients.
 3. None-maximum suppression.
-4. Double Thresholding.
+4. **Double Thresholding.**
 5. Edge Tracking by hysteresis.
 
 ---
@@ -338,14 +302,14 @@ class: left, top
 2. Finding Gradients.
 3. None-maximum suppression.
 4. Double Thresholding.
-5. Edge Tracking by hysteresis.
+5. **Edge Tracking by hysteresis.**
 
 ---
 class: top, left
 ### Edge tracking by hysteresis
 
 For in-between $T_l$ and $T_h$ check neighbors keep it if strong else Suppress.
-<img style="width:70" src="../../images/FinalCanny.jpg">
+<img style="width:95%" src="../../images/FinalCanny.jpg">
 
 ---
 class: top, left
@@ -357,7 +321,10 @@ $ git clone https://github.com/sbme-tutorials/cv-week4-demo
 
 * [matplotlib gallery](https://matplotlib.org/gallery/index.html)
 * [scikit-image examples](http://scikit-image.org/docs/dev/auto_examples/)
+---
 
+class: center, middle
+# Thanks :) 
 </textarea>
     
     
