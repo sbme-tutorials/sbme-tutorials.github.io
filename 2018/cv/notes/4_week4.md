@@ -217,7 +217,7 @@ The result of this stage would be an edge image with thin edges.
 
 ![](../images/none-max-supp.jpg)
 
-### Double thresholding
+### Double thresholding 
 
 After none-maxima suppression we need to suppress pixels with low gradient values to have only strong edges. None-maxima suppression eliminates only local weak edges but here we globally eliminate weak edges. We have two threshlods $T_l$ and $T_h$ selected by user. 
 

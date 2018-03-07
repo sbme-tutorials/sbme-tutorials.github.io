@@ -38,7 +38,7 @@ For the image shown find Fourier transform at points I(0,0), I(0,1) and I(1,0)
 
 ### Solution 
 * **F(0,0)**
-    
+        
     1. $$ I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{x*0}{4}+\frac{y*0}{4})}$$    
     2. $$ I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{0}$$
     3. $$ I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y)  = 12 $$
