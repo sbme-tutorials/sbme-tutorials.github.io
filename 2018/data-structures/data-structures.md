@@ -72,7 +72,7 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 4. Week 4:
     * Slides: \[[Part 1]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}\] \[[Part 2]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4b/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4a.md %}){:target="_blank"}\] \[[Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4b.md %}){:target="_blank"}\]
-    * Group Assignments: \[[Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/4_week4a.md %}){:target="_blank"}\]
+    * Group Assignments: \[[Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/4_week4a.md %}){:target="_blank"}\] \[[Part 2]({{ site.baseurl }}{% link 2018/data-structures/assignments/4_week4b.md %}){:target="_blank"}\]
 5. Week 5:
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/5_week5/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Recursion, Big-Oh Notation, Markdown]({{ site.baseurl }}{% link 2018/data-structures/notes/5_week5a.md %}){:target="_blank"}\]
