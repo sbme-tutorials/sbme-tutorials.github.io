@@ -131,8 +131,8 @@ Supported Operations:
 
 ### Applications
 
-1. Using stack of `int`, make an application (i.e a source file with `main` funciton) that solves [The Stock Span Problem](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#The_Stock_Span_Problem).
-2. Using stack of `char`, make an application (i.e source file with `main` function) that validates the balancing of prenthesis in a string.
+* **A1**: Using stack of `int`, make an application (i.e a source file with `main` funciton) that solves [The Stock Span Problem](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#The_Stock_Span_Problem).
+* **A2**: Using stack of `char`, make an application (i.e source file with `main` function) that validates the balancing of prenthesis in a string.
 
 **Examples**:
 
@@ -145,7 +145,7 @@ Supported Operations:
 * Input: `"()((()(((())))))"`
     * Output: `"balanced"`
 
-3. **Your are required** to develop some interesting and useful application that depends on the **queues** you implemented earlier. It is preferably to apply some useful logic on biological data. Remember to **keep it simple and stupid**.
+* **A3**: **Your are required** to develop some interesting and useful application that depends on the **queues** you implemented earlier. It is preferably to apply some useful logic on biological data. Remember to **keep it simple and stupid**.
 
 ## Guidelines
 
