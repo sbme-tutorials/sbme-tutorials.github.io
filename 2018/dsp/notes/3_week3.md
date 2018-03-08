@@ -23,26 +23,26 @@ $$e^{j\theta} = \cos(\theta) + j\sin(\theta) \qquad\qquad \mbox{(Euler's Identit
 
 ### Properties of Exponents
 
-$$  $a^{n_1} a^{n_2} = a^{n_1 + n_2}$ $$
+$  a^{n_1} a^{n_2} = a^{n_1 + n_2} $
 
-$$  $\left(a^{n_1}\right)^{n_2} = a^{n_1 n_2}$ $$
+$  \left(a^{n_1}\right)^{n_2} = a^{n_1 n_2} $
 
 ### The Exponent Zero
 
-$$ a^0  a = a^0 a^1 = a^{0+1} = a^1 = a $$
+$ a^0  a = a^0 a^1 = a^{0+1} = a^1 = a $
 
-$$ a^0  a = a $$
+$ a^0  a = a $
 
-$$ {a^0 = 1.} $$
+$ {a^0 = 1.} $
 
 
 ### Negative Exponents
 
-$$ a^{-1} \cdot a = a^{-1} a^1 = a^{-1+1} = a^0 = 1. $$
+$ a^{-1} \cdot a = a^{-1} a^1 = a^{-1+1} = a^0 = 1. $
 
-$$ {a^{-1} = \frac{1}{a}.} $$
+$ {a^{-1} = \frac{1}{a}.} $
 
-$$ {a^{-M} = \frac{1}{a^M}} $$
+$ {a^{-M} = \frac{1}{a^M}} $
 
 ### Rationale Exponents
 
@@ -136,7 +136,7 @@ $$ W = \left( \frac{\omega^{jk}}{ \sqrt{N} } \right )_{\{j,k=0,\ldots ,N-1\}} $$
 
 or equivalently:
 
-$$ {\displaystyle W={\frac{1}{\sqrt{N}}}{\begin{bmatrix}1&1&1&1&\cdots &1 \\ 1&\omega &\omega ^{2}&\omega ^{3}&\cdots &\omega ^{N-1} \\ 1&\omega ^{2}&\omega ^{4}&\omega ^{6}&\cdots &\omega ^{2(N-1)} \\ 1&\omega ^{3}&\omega ^{6}&\omega ^{9}&\cdots &\omega ^{3(N-1)}\\ \vdots &\vdots &\vdots &\vdots &\ddots &\vdots \\ 1&\omega ^{N-1}&\omega ^{2(N-1)}&\omega ^{3(N-1)}&\cdots &\omega ^{(N-1)(N-1)}\end{bmatrix}},} $$
+$$ {\displaystyle W={\begin{bmatrix}1&1&1&1&\cdots &1 \\ 1&\omega &\omega ^{2}&\omega ^{3}&\cdots &\omega ^{N-1} \\ 1&\omega ^{2}&\omega ^{4}&\omega ^{6}&\cdots &\omega ^{2(N-1)} \\ 1&\omega ^{3}&\omega ^{6}&\omega ^{9}&\cdots &\omega ^{3(N-1)}\\ \vdots &\vdots &\vdots &\vdots &\ddots &\vdots \\ 1&\omega ^{N-1}&\omega ^{2(N-1)}&\omega ^{3(N-1)}&\cdots &\omega ^{(N-1)(N-1)}\end{bmatrix}},} $$
 
 where {\displaystyle \omega =e^{-2\pi i/N}}
 
