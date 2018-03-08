@@ -332,61 +332,239 @@
   <li><strong>Optional</strong>: The rest of the notes [<a href="/2018/data-structures/notes/4_week4b.html" target="_blank">More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>]</li>
 </ul>
 
-<h2 id="assignment-4">Assignment 4</h2>
+<h2 id="abstract-data-type-overview">Abstract Data Type Overview</h2>
 
-<h3 id="concrete-implementation-linked-list-of-doubles-doublell">Concrete Implementation Linked List of Doubles (DoubleLL)</h3>
+<p>Abstract Data Types (ADT), as explained earlier are abstract specifications of a structure; <strong>ADT</strong> do not specify a particular implementation. <strong>ADTs</strong> we have been through so far:</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DoubleNode</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">data</span><span class="p">;</span>
-    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
-<span class="p">};</span>
+<ul>
+  <li>List</li>
+  <li>Stack</li>
+  <li>Queue</li>
+</ul>
 
-<span class="k">struct</span> <span class="n">DoubleLL</span>
-<span class="p">{</span>
-    <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">head</span><span class="p">;</span>
-<span class="p">};</span>
-</code></pre></div></div>
+<p>While concrete data types that we use to implement the above <strong>ADTs</strong> are:</p>
 
-<p><strong>Supported Operations</strong>:</p>
+<ul>
+  <li>Arrays</li>
+  <li>Linked Lists</li>
+</ul>
 
-<ol>
-  <li>Insertions</li>
-</ol>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertFront</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
-<span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">insertBack</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
-<span class="p">{</span>
-
-<span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">insertAt</span><span class="p">(</span> <span class="n">DoubleLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="n">DoubleNode</span> <span class="o">*</span><span class="n">target</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">data</span> <span class="p">)</span>
-<span class="p">{</span>
-
-<span class="p">}</span>
-</code></pre></div></div>
+<h2 id="objectives">Objectives</h2>
 
 <ol>
-  <li>Removals</li>
+  <li>Collaboration in groups, using <strong>git</strong>.</li>
+  <li>Implement concrete linked list of few premitive data types (<code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">double</code>, and <code class="highlighter-rouge">char</code>).</li>
+  <li>Implement <strong>stacks</strong> of few primitive data types, using:
+    <ul>
+      <li>Arrays.</li>
+      <li>Linked Lists.</li>
+    </ul>
+  </li>
+  <li>Implement <strong>queues</strong> of few primitive data types, using:
+    <ul>
+      <li>Linked Lists.</li>
+      <li>Arrays (Bonus).</li>
+    </ul>
+  </li>
+  <li>Use your new data structures in interesting applications.</li>
 </ol>
 
-<p>```c++</p>
+<h2 id="clone-your-asssignment">Clone Your Asssignment</h2>
 
-<h4 id="implement-another-version-but-for-characters-charll">Implement Another Version But for Characters (CharLL)</h4>
+<p>Join your group assignment from this <a href="https://classroom.github.com/g/GJ_0Dc9T">link</a></p>
 
-<h3 id="stack-implementation-of-doubles-using-ll-doublestackll">Stack Implementation of Doubles using LL (DoubleStackLL)</h3>
+<h2 id="deadlines">Deadlines</h2>
 
-<h4 id="implement-another-version-but-for-characters-charstackll">Implement Another Version But for Characters (CharStackLL)</h4>
+<p><strong>Soft deadline</strong> Tuesday of 13/3, at 11:59 PM.</p>
 
-<h3 id="queue-implementation-of-doubles-using-ll-doublequeuell">Queue Implementation of Doubles using LL (DoubleQueueLL)</h3>
+<p>Before <em>soft deadline</em> you are ecncouraged to ask your TA for  guidance concerning any difficulties working on the assignment.</p>
 
-<h3 id="bonus-stack-implementation-using-arrays-doublestackarray">Bonus: Stack Implementation using Arrays (DoubleStackArray)</h3>
+<p><strong>Hard deadline</strong> Thursday of 15/3, at 11:59 PM.</p>
 
-<h3 id="bonus-queue-implementation-using-arrays-doublequeuearray">Bonus: Queue Implementation using Arrays (DoubleQueueArray)</h3>
+<p>Guidance are not offered after the <em>soft deadline</em>. Just make sure to submit before the <strong>hard deadline</strong> to avoid late penalties.</p>
+
+<h2 id="grading-policy">Grading Policy</h2>
+
+<p>Grades will be determined by:</p>
+
+<ul>
+  <li><strong>50%</strong> <em>Group score</em>: each group will receive a score to be assigned to each member in that group.
+    <ol>
+      <li>Reasonable Load distribution.</li>
+      <li>Seamless collaboration on the same repository.</li>
+      <li>Overall consistency (see naming conventions of the notes of Thursday of 1st of March).</li>
+    </ol>
+  </li>
+  <li><strong>50%</strong> <em>Individual score</em>: depends on the contribution of each member in the group.</li>
+</ul>
+
+<h3 id="bonus-grades">Bonus Grades</h3>
+
+<p>Bonus grades will be assigned to the whole group by considering the following points:</p>
+
+<ul>
+  <li><strong>Adoption</strong> of <strong>KISS</strong> and <strong>DRY</strong> solutions.</li>
+  <li><strong>Representative</strong> and <strong>optimum</strong> use of:
+    <ul>
+      <li><code class="highlighter-rouge">struct</code></li>
+      <li><code class="highlighter-rouge">namespace</code></li>
+      <li><strong>const-correctness</strong></li>
+      <li><strong>Basic OOP</strong> (see <strong>Thursday of 1st of March notes on methods vs. functions</strong>).</li>
+    </ul>
+  </li>
+  <li><strong>overusing certain feature has negative impact</strong>, so be careful and rational.</li>
+</ul>
+
+<h2 id="assignment-4-requirements">Assignment 4 Requirements</h2>
+
+<p>A submission won’t be accepted (zero score) if any requirement is not satisfied.</p>
+
+<h3 id="concrete-implementation-linked-list">Concrete Implementation Linked List</h3>
+
+<p>Supported Operations:</p>
+
+<ol>
+  <li>insertion at front <code class="highlighter-rouge">insertFront</code>.</li>
+  <li>insertion at back <code class="highlighter-rouge">insertBack</code>.</li>
+  <li>remove front <code class="highlighter-rouge">removeFront</code>.</li>
+  <li>remove back <code class="highlighter-rouge">removeBack</code>.</li>
+  <li>return front <code class="highlighter-rouge">front</code>.</li>
+  <li>return back <code class="highlighter-rouge">back</code>.</li>
+  <li>remove a node <strong>next to</strong> a given node <code class="highlighter-rouge">removeAfter</code>.</li>
+  <li>remove nodes with given data <code class="highlighter-rouge">filter</code>.</li>
+  <li>is empty <code class="highlighter-rouge">isEmpty</code>?</li>
+  <li>size of the linked list <code class="highlighter-rouge">size</code>.</li>
+  <li>printAll <code class="highlighter-rouge">printAll</code>.</li>
+  <li>delete the whole list from the heap <code class="highlighter-rouge">clear</code>.</li>
+</ol>
+
+<p>Implement the <strong>linked list</strong> for <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">double</code>, and <code class="highlighter-rouge">char</code>.</p>
+
+<h3 id="stack">Stack</h3>
+
+<p>Supported Operations:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">push</code>.</li>
+  <li><code class="highlighter-rouge">pop</code>.</li>
+  <li><code class="highlighter-rouge">size</code>.</li>
+  <li>is empty? <code class="highlighter-rouge">isEmpty</code>.</li>
+  <li>return front <code class="highlighter-rouge">front</code> (LIFO).</li>
+  <li>delete the whole stack <code class="highlighter-rouge">clear</code>.</li>
+</ol>
+
+<ul>
+  <li>Implement stacks of <code class="highlighter-rouge">char</code> and <code class="highlighter-rouge">int</code> using <strong>arrays</strong>.</li>
+</ul>
+
+<h3 id="queue">Queue</h3>
+
+<p>Supported Operations:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">enqueue</code>.</li>
+  <li><code class="highlighter-rouge">dequeue</code>.</li>
+  <li><code class="highlighter-rouge">size</code>.</li>
+  <li><code class="highlighter-rouge">isEmpty</code>.</li>
+  <li>return <code class="highlighter-rouge">front</code> (FIFO).</li>
+  <li>delete the whole queue <code class="highlighter-rouge">clear</code>.</li>
+</ol>
+
+<ul>
+  <li>Implement queues of <code class="highlighter-rouge">char</code> and <code class="highlighter-rouge">double</code> using <strong>linked lists</strong>.</li>
+  <li>Bonus: implement queues of <code class="highlighter-rouge">char</code> and <code class="highlighter-rouge">double</code> using <strong>arrays</strong>.</li>
+</ul>
+
+<h3 id="applications">Applications</h3>
+
+<ol>
+  <li>Using stack of <code class="highlighter-rouge">int</code>, make an application (i.e a source file with <code class="highlighter-rouge">main</code> funciton) that solves <a href="https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#The_Stock_Span_Problem">The Stock Span Problem</a>.</li>
+  <li>Using stack of <code class="highlighter-rouge">char</code>, make an application (i.e source file with <code class="highlighter-rouge">main</code> function) that validates the balancing of prenthesis in a string.</li>
+</ol>
+
+<p><strong>Examples</strong>:</p>
+
+<ul>
+  <li>Input: <code class="highlighter-rouge">"()"</code>
+    <ul>
+      <li>Output: <code class="highlighter-rouge">"balanced"</code></li>
+    </ul>
+  </li>
+  <li>Input: <code class="highlighter-rouge">"())"</code>
+    <ul>
+      <li>Output: <code class="highlighter-rouge">"not balanced"</code></li>
+    </ul>
+  </li>
+  <li>Input: <code class="highlighter-rouge">"(()"</code>
+    <ul>
+      <li>Output: <code class="highlighter-rouge">"not balanced"</code></li>
+    </ul>
+  </li>
+  <li>Input: <code class="highlighter-rouge">"()((()(((())))))"</code>
+    <ul>
+      <li>Output: <code class="highlighter-rouge">"balanced"</code></li>
+    </ul>
+  </li>
+</ul>
+
+<ol>
+  <li><strong>Your are required</strong> to develop some interesting and useful application that depends on the <strong>queues</strong> you implemented earlier. It is preferably to apply some useful logic on biological data. Remember to <strong>keep it simple and stupid</strong>.</li>
+</ol>
+
+<h2 id="guidelines">Guidelines</h2>
+
+<p>These are suggested guidelines to follow, i.e not mandatory.</p>
+
+<h3 id="collaboration">Collaboration</h3>
+
+<ol>
+  <li>To avoid conflicts, each member would create a unique header file (e.g <code class="highlighter-rouge">member3.hpp</code>), to implement his share in the task.</li>
+  <li>After creating (or renaming) a file (e.g <code class="highlighter-rouge">member3.hpp</code>):
+    <ul>
+      <li><code class="highlighter-rouge">git add member3.hpp</code></li>
+      <li><code class="highlighter-rouge">git commit -a -m "add/rename file for member3"</code></li>
+      <li><code class="highlighter-rouge">git pull origin master</code></li>
+      <li><code class="highlighter-rouge">git push origin master</code></li>
+    </ul>
+  </li>
+  <li>It is recommended that each member wrap his/her own work in a <code class="highlighter-rouge">namespace</code> representing the data structure he/she works on. For example, <code class="highlighter-rouge">lists</code>, <code class="highlighter-rouge">stacks</code>, and <code class="highlighter-rouge">queues</code>.</li>
+  <li>At the begining, you need for a meeting to settle on a plan for collaboration on the remote repository.</li>
+  <li>It is recommended that each team has a leader, who distributes the load, writes any necessary skeleton codes.</li>
+</ol>
+
+<h3 id="declaring-namespace-across-mutiple-files">Declaring namespace across mutiple files</h3>
+
+<p>Assume that both <strong>member1</strong> and <strong>member2</strong> implement functions related to <strong>queue</strong> in <code class="highlighter-rouge">member1.hpp</code> and <code class="highlighter-rouge">member2.hpp</code> files, respectively. It is <strong>perfectly Okay</strong> that they declare the same <code class="highlighter-rouge">namespace</code> of <code class="highlighter-rouge">queue</code>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// member1.hpp</span>
+<span class="c1">// ..</span>
+<span class="c1">// ..</span>
+<span class="c1">// ..</span>
+<span class="k">namespace</span> <span class="n">queue</span>
+<span class="p">{</span>
+
+<span class="kt">void</span> <span class="n">enqueue</span><span class="p">(</span> <span class="n">IntegerLL</span> <span class="o">&amp;</span><span class="n">l</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">element</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Some logic</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// member2.hpp</span>
+<span class="c1">// ..</span>
+<span class="c1">// ..</span>
+<span class="c1">// ..</span>
+<span class="k">namespace</span> <span class="n">queue</span>
+<span class="p">{</span>
+
+<span class="kt">void</span> <span class="n">enqueue</span><span class="p">(</span> <span class="n">CharLL</span> <span class="o">&amp;</span><span class="n">l</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">element</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Some logic</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
 
   </div>
 
