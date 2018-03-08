@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FAQ #3: Why not using `std::cin` inside functions of particular logic</title>
+  <title>Assignment 2</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/3_faq3.html">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/assignments/2_assignment2.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -94,8 +94,6 @@
     
       
     
-      
-        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
       
@@ -315,113 +313,146 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">FAQ #3: Why not using `std::cin` inside functions of particular logic</h1>
+    <h1 class="post-title">Assignment 2</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="faq-3-why-not-using-stdcin-inside-functions-of-particular-logic">FAQ #3. Why not using <code class="highlighter-rouge">std::cin</code> inside functions of particular logic</h2>
-
-<p>Most of functions implement some logic (ideas); physical, mathematical, or biological theories. Using Input/Output functions like <code class="highlighter-rouge">std::cin</code> or <code class="highlighter-rouge">std::cout</code> in such functions is limiting their usage. What if you are interested in input from:</p>
+    <h2 id="objectives">Objectives</h2>
 
 <ul>
-  <li>The command line arguments (e.g through <code class="highlighter-rouge">argv</code> and <code class="highlighter-rouge">argc</code>).</li>
-  <li>The user input (e.g through <code class="highlighter-rouge">std::cin</code> and <code class="highlighter-rouge">std::cout</code>).</li>
-  <li>Some file in your disk (e.g through <code class="highlighter-rouge">std::ifstream</code>).</li>
-  <li>Some input from the internet (e.g using <em>CURL</em> library).</li>
+  <li>2D Convolution.</li>
+  <li>Image Histograms.</li>
+  <li>Histogram Equalization.</li>
+  <li>2D Fourier Transform.</li>
+  <li>Image Gradients.</li>
 </ul>
 
-<p>You have to make your functions usable with any input. Simply, you just isolate your interesting functions from Input/Output operations.</p>
+<h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
 
-<h3 id="example">Example</h3>
+<ul>
+  <li>Read <a href="/2018/cv/notes/3_week3.html" target="_blank">Section 3 Notes</a>.</li>
+  <li>Read <a href="/2018/cv/notes/4_week4.html" target="_blank">Section 4 Notes</a>.</li>
+</ul>
 
-<p>In this application we have a <code class="highlighter-rouge">calculation</code> function that takes two operands and operation symbol, and returns the numerical results. <strong>We intended not to include any <code class="highlighter-rouge">std::cin</code> or <code class="highlighter-rouge">std::cout</code> in that function. So we can use it with any kind of Input/Output sources.</strong></p>
+<h2 id="deadline">Deadline</h2>
 
-<p>Use case #1: use <code class="highlighter-rouge">calculation</code> with input from the command line arguments.</p>
+<p><strong>Tuesday 13/3/2018 12:00 PM.</strong></p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
-#include &lt;cstdlib&gt;
-</span>
-<span class="c1">// Our logic, interesting function</span>
-<span class="kt">double</span> <span class="nf">calculation</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">operation</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'+'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'-'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'*'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'/'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<h2 id="required">Required</h2>
+<p>Each individual student is required to submit the solution of assignment problems. You can submit it as a hard-copy or scan it and send by mail providing this title (CV2018-Assignment2-[YOUR_NAME])</p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
-    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">);</span>
+<h2 id="problem-1">Problem 1</h2>
+<p>Consider the following small image:</p>
 
-    <span class="kt">char</span> <span class="o">*</span><span class="n">op_string</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span> <span class="c1">// op_string == "+" == {'+','\0'} (null-terminated)</span>
-    <span class="kt">char</span> <span class="n">op</span> <span class="o">=</span> <span class="n">op_string</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span> <span class="c1">// op == '+'</span>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+1 & 2 & 3 & 94 & 5 & 6 & 7\\
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+1 & 2 & 3 & 4 & 5 & 6 & 7\\
+\end{bmatrix} %]]></script>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">calculation</span><span class="p">(</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="p">,</span> <span class="n">op</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<p><strong>a)</strong> Calculate the image that results from convolution with the following kernel:</p>
 
-<p>Use case #2: use <code class="highlighter-rouge">calculation</code> and our input is now from user.</p>
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+ 1 & 1 & 1\\
+ 1 & 1 & 1\\
+ 1 & 1 & 1\\
+\end{bmatrix} %]]></script>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
-</span>
-<span class="c1">// Our logic, interesting function.</span>
-<span class="kt">double</span> <span class="nf">calculation</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">operation</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'+'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'-'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'*'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">operation</span> <span class="o">==</span> <span class="sc">'/'</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">else</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<p>Just provide the result for the central 5 by 5 part of the image.</p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">,</span> <span class="kt">char</span> <span class="o">*</span><span class="n">argv</span><span class="p">[]</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">op</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<p><strong>b)</strong> Calculate the image that results from applying a 3 × 3 median filter</p>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">op</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+<p>Just provide the result for the central 5 by 5 part of the image.</p>
 
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">calculation</span><span class="p">(</span> <span class="n">a</span> <span class="p">,</span> <span class="n">b</span> <span class="p">,</span> <span class="n">op</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h2 id="problem-2">Problem 2</h2>
 
-<p>So we used the same function without any changes, because our interesting function is isolated from any Input/Output operations. We made our Input/Output operations in both cases inside the <code class="highlighter-rouge">main</code> function.</p>
+<p><img src="../images/P2.png" alt="" /></p>
+
+<p>Calculate the following</p>
+
+<p><strong>a)</strong> The output of 3x3 mean filter</p>
+
+<p><strong>b)</strong> The output of 3x3 laplacian filter</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+ 0 & 1 & 0\\
+ 1 & -4 & 1\\
+ 0 & 1 & 0\\
+\end{bmatrix} %]]></script>
+
+<p><strong>c)</strong> The Histogram of the image</p>
+
+<p><strong>d)</strong> The output of histogram equalization. Show cumulative curve</p>
+
+<h2 id="problem-3">Problem 3</h2>
+
+<p>Let <script type="math/tex">F(u,v)</script> is the 2D DFT of the image <script type="math/tex">f(x,y)</script></p>
+
+<p><img src="../images/P3.png" alt="" /></p>
+
+<p>Calculate :</p>
+
+<p><strong>a)</strong> <script type="math/tex">F(0,0)</script></p>
+
+<p><strong>b)</strong> <script type="math/tex">F(0,1)</script></p>
+
+<p><strong>c)</strong> <script type="math/tex">F(1,1)</script></p>
+
+<h2 id="problem-4">Problem 4</h2>
+
+<p>The gradient of a two-dimensional function is a vector-valued derivative. The x component of the gradient is defined by</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+\frac{\partial f(x,y)}{ \partial x} 
+\end{equation}</script>
+
+<p>Consider the following three discrete approximations to the x component of the gradient of an image f. For each case, determine a convolution kernel that produces an image containing the given approximation of the x component of the gradient.</p>
+
+<p><strong>a)</strong> <script type="math/tex">f(n_1 + 1, n_2) − f(n_1, n_2)</script></p>
+
+<p><strong>b)</strong> <script type="math/tex">f(n_1, n_2) − f(n_1 − 1, n_2)</script></p>
+
+<p><strong>c)</strong> <script type="math/tex">5 ∗ [f(n_1 + 1, n_2) − f(n_1 − 1, n_2)]</script></p>
+
+<h2 id="problem-5">Problem 5</h2>
+
+<p>Consider the 48×48 input image in shown figure.</p>
+
+<p><img src="../images/P5_1.png" alt="" /></p>
+
+<p>Identify which of the output images in result from applying <script type="math/tex">h_1[n_1, n_2]</script> and <script type="math/tex">h_2[n_1, n_2]</script> to the original input image, where:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+h_1[n_1, n_2] = 
+\begin{bmatrix}
+0 & \frac{-1}{3} & 0\\
+0 & \frac{-1}{6} & 0\\
+0 & 0 & 0\\
+0 & \frac{1}{6} & 0\\
+0 & \frac{1}{3} & 0\\
+\end{bmatrix} %]]></script>
+
+<p>and</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+h_2[n_1, n_2] = 
+\begin{bmatrix}
+\frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} \\
+\frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} \\
+\frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} \\
+\frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} \\
+\frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} & \frac{1}{25} \\
+\end{bmatrix} %]]></script>
+
+<p><img src="../images/P5_2.png" alt="" /></p>
+
 
   </div>
 
