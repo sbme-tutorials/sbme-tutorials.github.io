@@ -435,15 +435,33 @@
   <li>insertion at back <code class="highlighter-rouge">insertBack</code>.</li>
   <li>remove front <code class="highlighter-rouge">removeFront</code>.</li>
   <li>remove back <code class="highlighter-rouge">removeBack</code>.</li>
+  <li>remove the kth-element <code class="highlighter-rouge">removeAt</code>.</li>
   <li>return front <code class="highlighter-rouge">front</code>.</li>
   <li>return back <code class="highlighter-rouge">back</code>.</li>
-  <li>remove a node <strong>next to</strong> a given node <code class="highlighter-rouge">removeAfter</code>.</li>
+  <li>get arbitrary kth-element <code class="highlighter-rouge">getAt</code>.</li>
   <li>remove nodes with given data <code class="highlighter-rouge">filter</code>.</li>
   <li>is empty <code class="highlighter-rouge">isEmpty</code>?</li>
   <li>size of the linked list <code class="highlighter-rouge">size</code>.</li>
   <li>printAll <code class="highlighter-rouge">printAll</code>.</li>
   <li>delete the whole list from the heap <code class="highlighter-rouge">clear</code>.</li>
 </ol>
+
+<p>You can use the following function prototypes (declarations), for integers linked list.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">insertFront</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">insertBack</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">removeFront</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">removeBack</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">removeAt</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">front</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">back</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">getAt</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">filter</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">);</span>
+<span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">printAll</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">clear</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">);</span>
+</code></pre></div></div>
 
 <p>Implement the <strong>linked list</strong> for <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">double</code>, and <code class="highlighter-rouge">char</code>.</p>
 
@@ -460,6 +478,16 @@
   <li>delete the whole stack <code class="highlighter-rouge">clear</code>.</li>
 </ol>
 
+<p>You can use the following function prototypes (declarations), for stack of integers.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">push</span><span class="p">(</span> <span class="n">IntegersStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">pop</span><span class="p">(</span> <span class="n">IntegersStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">front</span><span class="p">(</span> <span class="n">IntegersStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">);</span>
+<span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">IntegersStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">size</span><span class="p">(</span> <span class="n">IntegersStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">clear</span><span class="p">(</span> <span class="n">IntegersStack</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">);</span>
+</code></pre></div></div>
+
 <ul>
   <li>Implement stacks of <code class="highlighter-rouge">char</code> and <code class="highlighter-rouge">int</code> using <strong>arrays</strong>.</li>
 </ul>
@@ -473,9 +501,19 @@
   <li><code class="highlighter-rouge">dequeue</code>.</li>
   <li><code class="highlighter-rouge">size</code>.</li>
   <li><code class="highlighter-rouge">isEmpty</code>.</li>
-  <li>return <code class="highlighter-rouge">front</code> (FIFO).</li>
+  <li>return <code class="highlighter-rouge">front</code> (FIFO), <strong>without dequeue</strong>.</li>
   <li>delete the whole queue <code class="highlighter-rouge">clear</code>.</li>
 </ol>
+
+<p>You can use the following function prototypes (declarations), for queue of integers.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="n">enqueue</span><span class="p">(</span> <span class="n">DoublesQueue</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">dequeue</span><span class="p">(</span> <span class="n">DoublesQueue</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">front</span><span class="p">(</span> <span class="n">DoublesQueue</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">);</span>
+<span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">DoublesQueue</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">);</span>
+<span class="kt">int</span> <span class="n">size</span><span class="p">(</span> <span class="n">DoublesQueue</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">);</span>
+<span class="kt">void</span> <span class="n">clear</span><span class="p">(</span> <span class="n">DoublesQueue</span> <span class="o">&amp;</span><span class="n">queue</span> <span class="p">);</span>
+</code></pre></div></div>
 
 <ul>
   <li>Implement queues of <code class="highlighter-rouge">char</code> and <code class="highlighter-rouge">double</code> using <strong>linked lists</strong>.</li>
