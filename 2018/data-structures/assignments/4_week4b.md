@@ -143,6 +143,7 @@ int size( IntegersStack &stack );
 void clear( IntegersStack &stack );
 ```
 
+* Implement stacks of `char` and `int` using **linked lists**.
 * Implement stacks of `char` and `int` using **arrays**.
 
 ### Queue
