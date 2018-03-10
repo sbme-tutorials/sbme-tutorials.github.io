@@ -11,13 +11,24 @@ by: "Asem"
 
 ## External Resources
 
+Lippman
+Youssef
+
+* References are not meant to teach C++.
+* Use references to revise particular conecpts.
+* Learn by practicing, and only practicing.
+
 ### References
 
 ### Online Courses
 
-## Template Structs
+* Bioinformatics Algorithms
+
+#### How to download from coursera
 
 ## Sorting Algorithms
+
+https://www.youtube.com/watch?v=kPRA0W1kECg
 
 ### Why Sorting Algorithms
 
@@ -61,3 +72,7 @@ by: "Asem"
 ## Excercism
 
 ## Install Qt
+
+## Template Structs
+
+Templates.
