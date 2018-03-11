@@ -3,7 +3,7 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2018"
-title:  "Week 6 - Part1"
+title:  "Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources"
 by: "Asem"
 ---
 
