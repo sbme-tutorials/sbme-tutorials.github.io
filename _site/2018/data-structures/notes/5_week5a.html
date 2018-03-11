@@ -97,6 +97,8 @@
       
     
       
+    
+      
         <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
@@ -284,6 +286,11 @@
           
             
             
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a">Week 7 - Part1</a>
+            
+          
+            
+            
             <a class="page-link" href="/about/">About</a>
             
           
@@ -326,7 +333,35 @@
   </header>
 
   <div class="post-content">
-    <h2 id="recursion">Recursion</h2>
+    <ul id="markdown-toc">
+  <li><a href="#recursion" id="markdown-toc-recursion">Recursion</a>    <ul>
+      <li><a href="#how-to-make-your-computer-compute-any-factorial-using-two-lines" id="markdown-toc-how-to-make-your-computer-compute-any-factorial-using-two-lines">How to make your computer compute any factorial using two lines</a></li>
+      <li><a href="#how-recursion-work-in-stack-memory" id="markdown-toc-how-recursion-work-in-stack-memory">How recursion work in stack memory</a></li>
+      <li><a href="#recursion-is-not-function-overloading" id="markdown-toc-recursion-is-not-function-overloading">Recursion is not Function Overloading</a></li>
+      <li><a href="#example-factorial-function" id="markdown-toc-example-factorial-function"><strong>Example</strong>: Factorial Function</a></li>
+      <li><a href="#exercise-power-function" id="markdown-toc-exercise-power-function"><strong>Exercise</strong>: Power Function</a></li>
+      <li><a href="#very-important-in-tree-data-structures" id="markdown-toc-very-important-in-tree-data-structures">Very important in Tree Data Structures</a></li>
+    </ul>
+  </li>
+  <li><a href="#big-oh-notation" id="markdown-toc-big-oh-notation">Big-Oh Notation</a>    <ul>
+      <li><a href="#what-is-an-algorithm" id="markdown-toc-what-is-an-algorithm">What is an Algorithm</a></li>
+      <li><a href="#how-to-measure-an-algorithm-performance" id="markdown-toc-how-to-measure-an-algorithm-performance">How to measure an algorithm performance</a>        <ul>
+          <li><a href="#measurement-should-be-in-terms-of-the-input" id="markdown-toc-measurement-should-be-in-terms-of-the-input">Measurement should be in terms of the input</a></li>
+          <li><a href="#constant-performance" id="markdown-toc-constant-performance">Constant Performance</a></li>
+          <li><a href="#linear-performance" id="markdown-toc-linear-performance">Linear Performance</a></li>
+          <li><a href="#quadratic-performance" id="markdown-toc-quadratic-performance">Quadratic Performance</a></li>
+        </ul>
+      </li>
+      <li><a href="#further-orders-of-common-function" id="markdown-toc-further-orders-of-common-function">Further: Orders of Common Function</a></li>
+      <li><a href="#exercises" id="markdown-toc-exercises">Exercises</a></li>
+    </ul>
+  </li>
+  <li><a href="#markdown" id="markdown-toc-markdown">Markdown</a></li>
+  <li><a href="#how-to-ask-for-help-like-a-pro" id="markdown-toc-how-to-ask-for-help-like-a-pro">How to ask for help like a pro!</a></li>
+  <li><a href="#how-to-bring-your-ta-diabetes" id="markdown-toc-how-to-bring-your-ta-diabetes">How to bring your TA diabetes</a></li>
+</ul>
+
+<h2 id="recursion">Recursion</h2>
 
 <script type="math/tex; mode=display">% <![CDATA[
 \begin{eqnarray*} 5! &=& 5 \times 4!  \\ 4! &=& 4 \times 3! \\ 3! &=&  3 \times 2! \\ 2! &=& 2 \times 1! \\ 1! &=& 1 \times 0! \\ 0! &=& 1 \end{eqnarray*} %]]></script>

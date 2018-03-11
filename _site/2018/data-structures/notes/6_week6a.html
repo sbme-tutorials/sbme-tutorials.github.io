@@ -97,6 +97,8 @@
       
     
       
+    
+      
         <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
@@ -284,6 +286,11 @@
           
             
             
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a">Week 7 - Part1</a>
+            
+          
+            
+            
             <a class="page-link" href="/about/">About</a>
             
           
@@ -326,12 +333,246 @@
   </header>
 
   <div class="post-content">
-    <h2 id="basic-adt-review">Basic ADT: review</h2>
+    <ul id="markdown-toc">
+  <li><a href="#sorting-algorithms" id="markdown-toc-sorting-algorithms">Sorting Algorithms</a>    <ul>
+      <li><a href="#bubble-sort" id="markdown-toc-bubble-sort">Bubble Sort</a>        <ul>
+          <li><a href="#visualized-bubble-sort-1" id="markdown-toc-visualized-bubble-sort-1">Visualized Bubble Sort 1</a></li>
+          <li><a href="#visualized-bubble-sort-2" id="markdown-toc-visualized-bubble-sort-2">Visualized Bubble Sort 2</a></li>
+          <li><a href="#implementation" id="markdown-toc-implementation">Implementation</a></li>
+          <li><a href="#complexity-analysis" id="markdown-toc-complexity-analysis">Complexity Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="#selection-sort" id="markdown-toc-selection-sort">Selection Sort</a>        <ul>
+          <li><a href="#implementation-1" id="markdown-toc-implementation-1">Implementation</a></li>
+          <li><a href="#complexity-analysis-1" id="markdown-toc-complexity-analysis-1">Complexity Analysis</a></li>
+        </ul>
+      </li>
+      <li><a href="#why-sorting-algorithms" id="markdown-toc-why-sorting-algorithms">Why Sorting Algorithms</a>        <ul>
+          <li><a href="#searching" id="markdown-toc-searching">Searching</a></li>
+          <li><a href="#closest-pair" id="markdown-toc-closest-pair">Closest Pair</a>            <ul>
+              <li><a href="#application-1-gene-expression-clustering" id="markdown-toc-application-1-gene-expression-clustering">Application 1: Gene Expression Clustering</a></li>
+              <li><a href="#application-2-tree-of-life-evolutionary-bioinformatics" id="markdown-toc-application-2-tree-of-life-evolutionary-bioinformatics">Application 2: Tree of Life (Evolutionary Bioinformatics)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#resources-textbooks-and-moocs" id="markdown-toc-resources-textbooks-and-moocs">Resources: Textbooks and MOOCs</a>    <ul>
+      <li><a href="#data-structures-and-algorithms-theory" id="markdown-toc-data-structures-and-algorithms-theory">Data Structures and Algorithms (Theory)</a>        <ul>
+          <li><a href="#reference-1-algorithms-by-sanjoy-dasgupta-christos-h-papadimitriou-umesh-vazirani" id="markdown-toc-reference-1-algorithms-by-sanjoy-dasgupta-christos-h-papadimitriou-umesh-vazirani">Reference 1: Algorithms, <em>by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani</em></a>            <ul>
+              <li><a href="#chapter-10-quantum-algorithms" id="markdown-toc-chapter-10-quantum-algorithms">Chapter 10: Quantum algorithms?</a></li>
+            </ul>
+          </li>
+          <li><a href="#reference-2-introduction-to-algorithms-by-thomas-h-cormen-charles-e-leiserson-ronald-l-rivest-clifford-stein" id="markdown-toc-reference-2-introduction-to-algorithms-by-thomas-h-cormen-charles-e-leiserson-ronald-l-rivest-clifford-stein">Reference 2: Introduction to Algorithms, <em>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</em></a></li>
+        </ul>
+      </li>
+      <li><a href="#c" id="markdown-toc-c">C++</a>        <ul>
+          <li><a href="#reference-1-c-primer-by-stanley-b-lippman-josée-lajoie-barbara-e-moo" id="markdown-toc-reference-1-c-primer-by-stanley-b-lippman-josée-lajoie-barbara-e-moo">Reference 1: C++ Primer, <em>by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo</em></a></li>
+        </ul>
+      </li>
+      <li><a href="#automated-tested-exercises" id="markdown-toc-automated-tested-exercises">Automated Tested Exercises</a>        <ul>
+          <li><a href="#exercismio" id="markdown-toc-exercismio">Exercism.io</a></li>
+        </ul>
+      </li>
+      <li><a href="#online-courses" id="markdown-toc-online-courses">Online Courses</a>        <ul>
+          <li><a href="#specialization-1bioinformatics-algorithms-specialization" id="markdown-toc-specialization-1bioinformatics-algorithms-specialization">Specialization 1:Bioinformatics Algorithms Specialization</a></li>
+          <li><a href="#specialization-2-data-structures-and-algorithms" id="markdown-toc-specialization-2-data-structures-and-algorithms">Specialization 2: Data Structures and Algorithms</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#contributing-on-this-website-using-pull-requests" id="markdown-toc-contributing-on-this-website-using-pull-requests">Contributing on This Website Using Pull Requests</a>    <ul>
+      <li><a href="#report-big-oh-notation" id="markdown-toc-report-big-oh-notation">Report: Big-Oh Notation</a>        <ul>
+          <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
+        </ul>
+      </li>
+      <li><a href="#the-final-project" id="markdown-toc-the-final-project">The Final Project</a>        <ul>
+          <li><a href="#1-decide-your-topic-of-interest" id="markdown-toc-1-decide-your-topic-of-interest">1. Decide your Topic of Interest</a></li>
+          <li><a href="#2-determine-the-extra-features-you-like-to-integrate" id="markdown-toc-2-determine-the-extra-features-you-like-to-integrate">2. Determine the Extra Features you Like to Integrate</a></li>
+          <li><a href="#3-iterative-plans-with-your-ta" id="markdown-toc-3-iterative-plans-with-your-ta">3. Iterative Plans with Your TA</a></li>
+          <li><a href="#4-extra-intensive-sessions-when-necessary" id="markdown-toc-4-extra-intensive-sessions-when-necessary">4. Extra Intensive Sessions when Necessary</a></li>
+          <li><a href="#key-dates-for-the-project-planning" id="markdown-toc-key-dates-for-the-project-planning">Key Dates for the Project Planning</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-<h2 id="external-resources">External Resources</h2>
+<h2 id="sorting-algorithms">Sorting Algorithms</h2>
 
-<p>Lippman
-Youssef</p>
+<p><strong>Problem</strong> given a collection of <strong>n</strong> elements, it is required to sort the elements in ascending order.</p>
+
+<p><strong>Example</strong> the following arbitrary array:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>9</td>
+      <td>4</td>
+      <td>7</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>After applying sorting in ascending order will result as:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>3</td>
+      <td>4</td>
+      <td>7</td>
+      <td>9</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="bubble-sort">Bubble Sort</h3>
+
+<h4 id="visualized-bubble-sort-1">Visualized Bubble Sort 1</h4>
+
+<iframe width="560" height="315" src="/gallery/bubblesort.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<h4 id="visualized-bubble-sort-2">Visualized Bubble Sort 2</h4>
+
+<p><img src="/gallery/Bubble-sort-example-300px.gif" alt="" /></p>
+<blockquote>
+  <p>Credits: <a href="https://commons.wikimedia.org/w/index.php?title=User:Swfung8&amp;action=edit&amp;redlink=1">CC BY-SA 3.0</a></p>
+</blockquote>
+
+<h4 id="implementation">Implementation</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+</span><span class="c1">// A function to implement bubble sort</span>
+<span class="kt">void</span> <span class="nf">bubbleSort</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="complexity-analysis">Complexity Analysis</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+</span><span class="c1">// A function to implement bubble sort</span>
+<span class="kt">void</span> <span class="nf">bubbleSort</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">array</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span> <span class="p">)</span> <span class="c1">// T1 = n * T2</span>
+    <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span> <span class="p">)</span> <span class="n">T2</span> <span class="o">=</span> <span class="n">n</span> <span class="o">*</span> <span class="n">T3</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">)</span> <span class="c1">// T3 = 1</span>
+                <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">,</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>$ T(n) = T_1 = n \times T_2 = n \times n = n^2 $</p>
+
+<p>$ O(T(n)) = O(n^2) $</p>
+
+<h3 id="selection-sort">Selection Sort</h3>
+
+<p><img src="/gallery/selectionsort.gif" alt="" /></p>
+
+<blockquote>
+  <p>credits: <a href="https://en.wikipedia.org/wiki/Joestape89">GNU license</a></p>
+</blockquote>
+
+<h4 id="implementation-1">Implementation</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+</span><span class="kt">void</span> <span class="nf">selectionSort</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// One by one move boundary of unsorted subarray</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Find the minimum element in unsorted array</span>
+        <span class="kt">int</span> <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="p">)</span>
+                <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Swap the found minimum element with the first element</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="p">,</span>  <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="complexity-analysis-1">Complexity Analysis</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
+</span><span class="kt">void</span> <span class="nf">selectionSort</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// One by one move boundary of unsorted subarray</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">// T1 = n * ( T2 + T3 + T4 )</span>
+    <span class="p">{</span>
+        <span class="c1">// Find the minimum element in unsorted array</span>
+        <span class="kt">int</span> <span class="n">min_idx</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// T2 = 1</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="c1">// T3 = O(n)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">array</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="p">)</span>
+                <span class="n">min_idx</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// Swap the found minimum element with the first element</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">swap</span><span class="p">(</span> <span class="n">array</span><span class="p">[</span><span class="n">min_idx</span><span class="p">]</span> <span class="p">,</span>  <span class="n">array</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">);</span> <span class="c1">// T4 = 1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>$ T(n) = T_1 = n \times (T_2 + T_3 + T_4) = n \times( O(n) + 2 ) $</p>
+
+<p>$ O(T(n)) = O(n^2)$</p>
+
+<h3 id="why-sorting-algorithms">Why Sorting Algorithms</h3>
+
+<p>Thoughts about the importance of sorting algorithm.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hOkPg3rXt34" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p><span class="quora-content-embed" data-name="What-are-the-uses-of-different-sorting-algorithms-like-bubble-selection-insertion-shell-merge-heap-quick-tree-radix-counting-and-bucket-sort-in-real-life-scenarios/answer/Arundhati-Kanungo">Read <a class="quora-content-link" data-width="560" data-height="260" href="https://www.quora.com/What-are-the-uses-of-different-sorting-algorithms-like-bubble-selection-insertion-shell-merge-heap-quick-tree-radix-counting-and-bucket-sort-in-real-life-scenarios/answer/Arundhati-Kanungo" data-type="answer" data-id="24461889" data-key="a102aaed07458fee9dd204c2ae2b57fc" load-full-answer="False" data-embed="egnuzjm"><a href="https://www.quora.com/Arundhati-Kanungo">Arundhati Kanungo</a>'s <a href="/What-are-the-uses-of-different-sorting-algorithms-like-bubble-selection-insertion-shell-merge-heap-quick-tree-radix-counting-and-bucket-sort-in-real-life-scenarios#ans24461889">answer</a> to <a href="/What-are-the-uses-of-different-sorting-algorithms-like-bubble-selection-insertion-shell-merge-heap-quick-tree-radix-counting-and-bucket-sort-in-real-life-scenarios" ref="canonical"><span class="rendered_qtext">What are the uses of different sorting algorithms like bubble, selection, insertion, shell, merge, heap, quick, tree, radix, counting and bucket sort in real-life scenarios?</span></a></a> on <a href="https://www.quora.com">Quora</a><script type="text/javascript" src="https://www.quora.com/widgets/content"></script></span></p>
+
+<h4 id="searching">Searching</h4>
+
+<p><img src="/gallery/binary-and-linear-search-animations.gif" alt="" /></p>
+
+<!-- https://blog.penjee.com/binary-vs-linear-search-animated-gifs/ -->
+
+<h4 id="closest-pair">Closest Pair</h4>
+
+<h5 id="application-1-gene-expression-clustering">Application 1: Gene Expression Clustering</h5>
+
+<p><a href="https://en.wikipedia.org/wiki/Gene_expression_profiling">{Gene expression profiling}</a></p>
+
+<p><img src="/gallery/Heatmap.png" alt="" /></p>
+
+<ul>
+  <li><a href="https://www.nature.com/articles/nbt1205-1499">How does gene expression clustering work?</a></li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7xHsRkOdVwo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<h5 id="application-2-tree-of-life-evolutionary-bioinformatics">Application 2: Tree of Life (Evolutionary Bioinformatics)</h5>
+
+<p><a href="https://itol.embl.de/itol.cgi">Interactive Tree of Life (iTOL)</a></p>
+
+<h2 id="resources-textbooks-and-moocs">Resources: Textbooks and MOOCs</h2>
 
 <ul>
   <li>References are not meant to teach C++.</li>
@@ -339,47 +580,95 @@ Youssef</p>
   <li>Learn by practicing, and only practicing.</li>
 </ul>
 
-<h3 id="references">References</h3>
+<h3 id="data-structures-and-algorithms-theory">Data Structures and Algorithms (Theory)</h3>
+
+<h4 id="reference-1-algorithms-by-sanjoy-dasgupta-christos-h-papadimitriou-umesh-vazirani">Reference 1: Algorithms, <em>by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani</em></h4>
+
+<p><img src="/gallery/algobook.png" alt="" /></p>
+
+<p>Intuitive, informal language</p>
+
+<ul>
+  <li><a href="https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402">{Amazon}</a></li>
+  <li><a href="https://www.goodreads.com/book/show/138563.Algorithms">{Goodreads}</a></li>
+</ul>
+
+<h5 id="chapter-10-quantum-algorithms">Chapter 10: Quantum algorithms?</h5>
+
+<blockquote>
+  <p>Quantum physics is a beautiful and mysterious theory that describes Nature in the
+small, at the level of elementary particles. One of the major discoveries of the nineties
+was that quantum computers—computers based on quantum physics principles—
+are radically different from those that operate according to the more familiar prin-
+ciples of classical physics. Surprisingly, they can be exponentially more powerful:
+as we shall see, quantum computers can solve <strong>FACTORING</strong> in polynomial time! As a
+result, in a world with quantum computers, the systems that currently safeguard
+business transactions on the Internet (and are based on the RSA cryptosystem) will
+no longer be secure.</p>
+</blockquote>
+
+<h4 id="reference-2-introduction-to-algorithms-by-thomas-h-cormen-charles-e-leiserson-ronald-l-rivest-clifford-stein">Reference 2: Introduction to Algorithms, <em>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein</em></h4>
+
+<p><img src="/gallery/cormen.png" alt="" /></p>
+
+<ul>
+  <li><a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844">{Amazon}</a></li>
+  <li><a href="https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms">{Goodreads}</a></li>
+  <li><a href="http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BCormen-AL2011%5DIntroduction_To_Algorithms-A3.pdf">{PDF}</a></li>
+</ul>
+
+<h3 id="c">C++</h3>
+
+<h4 id="reference-1-c-primer-by-stanley-b-lippman-josée-lajoie-barbara-e-moo">Reference 1: C++ Primer, <em>by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo</em></h4>
+
+<p><img src="/gallery/lippman.png" alt="" /></p>
+
+<ul>
+  <li><a href="https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113">{Amazon}</a></li>
+  <li><a href="https://www.goodreads.com/book/show/768080.C_Primer">{Goodreads}</a></li>
+</ul>
+
+<h3 id="automated-tested-exercises">Automated Tested Exercises</h3>
+
+<h4 id="exercismio">Exercism.io</h4>
+
+<p>Soon!</p>
 
 <h3 id="online-courses">Online Courses</h3>
 
-<ul>
-  <li>Bioinformatics Algorithms</li>
-</ul>
+<h4 id="specialization-1bioinformatics-algorithms-specialization">Specialization 1:<a href="https://www.coursera.org/specializations/bioinformatics">Bioinformatics Algorithms Specialization</a></h4>
 
-<h4 id="how-to-download-from-coursera">How to download from coursera</h4>
+<p><img src="/gallery/UCSanDiego-Coursera-wide.png" alt="" /></p>
 
-<h2 id="sorting-algorithms">Sorting Algorithms</h2>
+<ol>
+  <li>Finding Hidden Messages in DNA (Bioinformatics I)</li>
+  <li>Genome Sequencing (Bioinformatics II)</li>
+  <li>Comparing Genes, Proteins, and Genomes (Bioinformatics III)</li>
+  <li>Molecular Evolution (Bioinformatics IV)</li>
+  <li>Genomic Data Science and Clustering (Bioinformatics V)</li>
+  <li>Finding Mutations in DNA and Proteins (Bioinformatics VI)</li>
+  <li>Bioinformatics Capstone: Big Data in Biology</li>
+</ol>
 
-<p>https://www.youtube.com/watch?v=kPRA0W1kECg</p>
+<blockquote>
+  <p>Although this Specialization centers on computational topics, you do not need to know how to program in order to complete it. If you are interested in programming, we feature an “Honors Track” (called “hacker track” in previous runs of the course). The Honors Track allows you to implement the bioinformatics algorithms that you will encounter along the way in dozens of automatically graded coding challenges. By completing the Honors Track, you will be a bioinformatics software professional!</p>
+</blockquote>
 
-<h3 id="why-sorting-algorithms">Why Sorting Algorithms</h3>
+<p><strong>Introductory Video</strong></p>
 
-<h3 id="bubble-sort">Bubble Sort</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/yfXeKPt0nw4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
-<h4 id="complexity-analysis">Complexity Analysis</h4>
+<p>Accompanied Competitive Bioinformatics Challenges</p>
 
-<h3 id="selection-sort">Selection Sort</h3>
+<p><a href="http://rosalind.info/problems/locations/">Rosalind.info</a></p>
 
-<h4 id="complexity-analysis-1">Complexity Analysis</h4>
+<p><a href="https://github.com/A-Alaa/rosalind-cpp">Some C++ Implementations, by Me</a></p>
 
-<h3 id="insertion-sort">Insertion Sort</h3>
+<h4 id="specialization-2-data-structures-and-algorithms">Specialization 2: <a href="https://www.coursera.org/specializations/data-structures-algorithms">Data Structures and Algorithms</a></h4>
 
-<h4 id="complexity-analysis-2">Complexity Analysis</h4>
+<p><img src="/gallery/UCSanDiego-Coursera-wide.png" alt="" /></p>
 
-<h2 id="markdown-vs-wygiwys-editors">Markdown vs. WYGIWYS Editors</h2>
-
-<h3 id="jekyll">Jekyll</h3>
-
-<h3 id="remarkjs">Remarkjs</h3>
-
-<h3 id="resumes">Resumes</h3>
-
-<h3 id="latex">Latex</h3>
-
-<p>اذا قامت الساعة و في يد أحدكم فسيلة فليغرسها</p>
-
-<h2 id="contributing-on-this-website-using-pull-requests">Contributing on this website using pull requests</h2>
+<h2 id="contributing-on-this-website-using-pull-requests">Contributing on This Website Using Pull Requests</h2>
 
 <h3 id="report-big-oh-notation">Report: Big-Oh Notation</h3>
 
@@ -389,18 +678,90 @@ Youssef</p>
   <li><strong>Use your own words</strong>.</li>
   <li>Markdown Syntax.</li>
   <li>Graphs, equations, code snippets, reasoning.</li>
-  <li>Pull request to upload your report</li>
+  <li>Pull request to upload your report on the website.</li>
 </ol>
 
-<h2 id="cmake-revisited">CMake: revisited</h2>
+<p><strong>Deadline 5 April (After Midterms Week)</strong></p>
 
-<h2 id="excercism">Excercism</h2>
+<h3 id="the-final-project">The Final Project</h3>
 
-<h2 id="install-qt">Install Qt</h2>
+<h4 id="1-decide-your-topic-of-interest">1. Decide your Topic of Interest</h4>
 
-<h2 id="template-structs">Template Structs</h2>
+<p>Read on the web an interesting topic of your choice. For example, you may read about applications in the following domains:</p>
 
-<p>Templates.</p>
+<ul>
+  <li>Supervised Classification Systems</li>
+  <li>Unsupervised Classification Systems</li>
+  <li>Computer Vision</li>
+  <li>Bioinformatics and Molecular Biology</li>
+</ul>
+
+<p>Once you find an interesting application, discuss it with your TA how to set a plan and proceed in your project.</p>
+
+<h4 id="2-determine-the-extra-features-you-like-to-integrate">2. Determine the Extra Features you Like to Integrate</h4>
+
+<p>Also, discuss with your teammates whether you would need an extra feature/technique to learn that should be integrated into your application in order to be more interesting. If you think your project will be distributed accross multiple files and applications, you may ask your TA about using <em>Build Systems</em> like <em>CMake</em>. Also, if you are interested to develop a simple Graphical User Interface (GUI) for your project, consult your TA to organize extra sessions for teaching:</p>
+
+<ul>
+  <li><strong>Qt</strong>,</li>
+  <li>more on <strong>OOP</strong>,</li>
+  <li><strong>QObjects</strong>,</li>
+  <li>Qt’s <strong>Singal and Slots</strong>,</li>
+  <li><strong>Qt Designer</strong></li>
+</ul>
+
+<h4 id="3-iterative-plans-with-your-ta">3. Iterative Plans with Your TA</h4>
+
+<p>Each group is <strong>recommended</strong> to organize weekly meeting with the TA to discuss issues and the recent progress of the project.</p>
+
+<h4 id="4-extra-intensive-sessions-when-necessary">4. Extra Intensive Sessions when Necessary</h4>
+
+<p>In case of more than one group need for extra sessions, organize with your class representative to allocate suitable place for sessions.</p>
+
+<h4 id="key-dates-for-the-project-planning">Key Dates for the Project Planning</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Phase</th>
+      <th>Window</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Topic Selection and Approval</td>
+      <td><strong>11/3</strong> to <strong>5/4</strong></td>
+    </tr>
+    <tr>
+      <td>Design Plan</td>
+      <td><strong>1/4</strong> to  <strong>10/4</strong></td>
+    </tr>
+    <tr>
+      <td>Extra Features Plans</td>
+      <td><strong>5/4</strong> to <strong>10/4</strong></td>
+    </tr>
+    <tr>
+      <td>Intensive Sessions (if needed)</td>
+      <td><strong>10/4</strong> to <strong>26/4</strong></td>
+    </tr>
+    <tr>
+      <td>First Prototype</td>
+      <td><strong>15/4</strong> to <strong>26/4</strong></td>
+    </tr>
+    <tr>
+      <td>Documentation</td>
+      <td><strong>22/4</strong> to <strong>26/4</strong></td>
+    </tr>
+    <tr>
+      <td>Final Output</td>
+      <td><strong>10/5</strong> to <strong>TBD</strong></td>
+    </tr>
+    <tr>
+      <td>Discussion</td>
+      <td><strong>TBD</strong></td>
+    </tr>
+  </tbody>
+</table>
 
   </div>
 
