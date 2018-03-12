@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 4: Image Filtering and Edge Detection</title>
+  <title>Week 4: Hough Transform and Corner Detector</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/4_week4.html">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/5_week5.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -334,284 +334,82 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 4: Image Filtering and Edge Detection</h1>
+    <h1 class="post-title">Week 4: Hough Transform and Corner Detector</h1>
   </header>
 
   <div class="post-content">
-    <blockquote>
-  <p>These notes are inspired by slides made by TA Eng.Mohamed Hisham</p>
-</blockquote>
-
-<ul id="markdown-toc">
+    <ul id="markdown-toc">
   <li><a href="#readings" id="markdown-toc-readings">Readings</a></li>
-  <li><a href="#2d-convolution" id="markdown-toc-2d-convolution">2D Convolution</a>    <ul>
-      <li><a href="#example" id="markdown-toc-example">Example</a></li>
+  <li><a href="#review" id="markdown-toc-review">Review</a></li>
+  <li><a href="#hough-line" id="markdown-toc-hough-line">Hough Line</a>    <ul>
+      <li><a href="#original-hough-transform" id="markdown-toc-original-hough-transform">Original Hough transform</a></li>
+      <li><a href="#alternative-parameter-space" id="markdown-toc-alternative-parameter-space">Alternative Parameter Space</a></li>
+      <li><a href="#algorithm" id="markdown-toc-algorithm">Algorithm</a></li>
     </ul>
   </li>
-  <li><a href="#smoothing-kernels" id="markdown-toc-smoothing-kernels">Smoothing Kernels</a>    <ul>
-      <li><a href="#box-mean-or-average-filter" id="markdown-toc-box-mean-or-average-filter">Box, mean or average filter</a></li>
-      <li><a href="#gaussian-filter" id="markdown-toc-gaussian-filter">Gaussian filter</a></li>
-      <li><a href="#median-filter" id="markdown-toc-median-filter">Median Filter</a></li>
+  <li><a href="#hough-circle" id="markdown-toc-hough-circle">Hough Circle</a>    <ul>
+      <li><a href="#parameter-space-3d-space" id="markdown-toc-parameter-space-3d-space">Parameter Space (3D Space)</a></li>
+      <li><a href="#algorithm-1" id="markdown-toc-algorithm-1">Algorithm</a></li>
     </ul>
   </li>
-  <li><a href="#edge-detection-kernels" id="markdown-toc-edge-detection-kernels">Edge detection kernels</a>    <ul>
-      <li><a href="#prewitt-operator" id="markdown-toc-prewitt-operator">Prewitt operator</a></li>
-      <li><a href="#sobel-operator" id="markdown-toc-sobel-operator">Sobel operator</a></li>
-      <li><a href="#laplacian" id="markdown-toc-laplacian">Laplacian</a></li>
+  <li><a href="#general-hough-transform" id="markdown-toc-general-hough-transform">General Hough Transform</a>    <ul>
+      <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic Algorithm</a></li>
     </ul>
   </li>
-  <li><a href="#gradient-magnitude-and-direction" id="markdown-toc-gradient-magnitude-and-direction">Gradient magnitude and direction</a></li>
-  <li><a href="#canny-edge-detection-algorithm" id="markdown-toc-canny-edge-detection-algorithm">Canny edge detection algorithm</a>    <ul>
-      <li><a href="#smoothing" id="markdown-toc-smoothing">Smoothing</a></li>
-      <li><a href="#finding-gradients" id="markdown-toc-finding-gradients">Finding Gradients</a></li>
-      <li><a href="#none-maximum-suppression" id="markdown-toc-none-maximum-suppression">None-maximum suppression</a></li>
-      <li><a href="#double-thresholding" id="markdown-toc-double-thresholding">Double thresholding</a></li>
-      <li><a href="#edge-tracking-by-hysteresis" id="markdown-toc-edge-tracking-by-hysteresis">Edge tracking by hysteresis</a></li>
+  <li><a href="#corner-detection" id="markdown-toc-corner-detection">Corner detection</a>    <ul>
+      <li><a href="#hessian-matrix" id="markdown-toc-hessian-matrix">Hessian Matrix</a></li>
+      <li><a href="#harris-operator" id="markdown-toc-harris-operator">Harris operator</a></li>
     </ul>
   </li>
-  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
-  <li><a href="#useful-links" id="markdown-toc-useful-links">Useful links</a></li>
+  <li><a href="#whats-next" id="markdown-toc-whats-next">What’s Next</a></li>
 </ul>
+
 <h2 id="readings">Readings</h2>
-<ul>
-  <li><a href="http://www.scipy-lectures.org/advanced/image_processing/#denoising">Image Denoising</a></li>
-  <li><a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html">Edge Detection</a></li>
-  <li><a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny Edge Detector</a></li>
-</ul>
-
-<h2 id="2d-convolution">2D Convolution</h2>
-
-<p>Convolution is the process to apply a filtering kernel on the image in spatial domain.</p>
-
-<p>Basic Steps are</p>
-<ol>
-  <li>Flip the Kernel in both horizontal and vertical directions (center of the kernel must be provided)</li>
-  <li>Move over the array with kernel centered at interested point.</li>
-  <li>Multiply kernel data with overlapped area.</li>
-  <li>Sum or accumulate the output.</li>
-</ol>
-
-<p><strong>Note :</strong></p>
-
-<p>Size of output must be same size of input and we need to pad image for not defined pixels.</p>
-
-<h3 id="example">Example</h3>
-
-<p><a href="http://www.songho.ca/dsp/convolution/convolution2d_example.html">source</a></p>
-
-<p><img src="../images/2DConv.png" alt="" /></p>
-
-<h2 id="smoothing-kernels">Smoothing Kernels</h2>
-<p>Smoothing filters are used in preprocessing step mainly for noise removal. There ar different kernels for smoothing</p>
-
-<p>Original Image</p>
-
-<p><img src="../images/Original_Image_w4.png" alt="" /></p>
-
-<p>Adding Noise</p>
-
-<p><img src="../images/Noisy_Image.png" alt="" /></p>
-
-<h3 id="box-mean-or-average-filter">Box, mean or average filter</h3>
-<p>Example 3x3 box filter</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\frac{1}{9}
- \begin{bmatrix}
- 1 & 1 & 1 \\
- 1 & 1 & 1 \\
- 1 & 1 & 1 \\
- \end{bmatrix} %]]></script>
-
-<p><img src="../images/Smoothing_Box.png" alt="" /></p>
-
-<h3 id="gaussian-filter">Gaussian filter</h3>
-
-<p>Derived from 2D gaussian function</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-h(u,v) = \frac{1}{2 \pi \sigma^2} e^{(- \frac{u^2 + v^2}{\sigma^2})}
-\end{equation}</script>
-
-<p>Example: This kernel is approximation of gaussian  function</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\frac{1}{16}
-\begin{bmatrix}
-1 & 2 & 1 \\
-2 & 4 & 2 \\
-1 & 2 & 1 \\
-\end{bmatrix} %]]></script>
-
-<p><img src="../images/Smoothing_Gauss.png" alt="" /></p>
-
-<h3 id="median-filter">Median Filter</h3>
-<p>It is nonlinear digital filter. It is efficient in removal of what so called salt and pepper noise.</p>
-
-<p><img src="../images/Median_Filter.png" alt="" /></p>
-
-<h2 id="edge-detection-kernels">Edge detection kernels</h2>
-
-<p>Edges represents the object boundaries. So edge detection is a very important preprocessing step for any object detection or recognition process. Simple edge detection kernels are based on approximation of gradient images. Another advanced edge detection algorithms will discussed in details.</p>
-
-<h3 id="prewitt-operator">Prewitt operator</h3>
-
-<p>For <script type="math/tex">I_x(x,y)</script></p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{bmatrix}
-    -1 & 0 & 1 \\
-  -1 & 0 & 1 \\
-   -1 & 0 & 1 \\
-\end{bmatrix} %]]></script>
-
-<p>For <script type="math/tex">I_y(x,y)</script></p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{bmatrix}
-    -1 & -1 & -1 \\
-  0 & 0 & 0 \\
-   1 & 1 & 1 \\
-\end{bmatrix} %]]></script>
-
-<h3 id="sobel-operator">Sobel operator</h3>
-
-<p>For <script type="math/tex">I_x(x,y)</script></p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{bmatrix}
--1 & 0 & 1 \\
--2 & 0 & 2 \\
--1 & 0 & 1 \\
-\end{bmatrix} %]]></script>
-
-<p>For <script type="math/tex">I_y(x,y)</script></p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{bmatrix}
--1 & -2 & -1 \\
-0 & 0 & 0 \\
-1 & 2 & 1 \\
-\end{bmatrix} %]]></script>
-
-<h3 id="laplacian">Laplacian</h3>
-<p>It is an approximation of second order derivative that defines zeros crossing. 
-For Example 3x3 laplacian is :</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{bmatrix}
-0 & 1 & 0 \\
-1 & -4 & 1 \\
-0 & 1 & 0 \\
-\end{bmatrix} %]]></script>
-
-<p>Laplacian usually is applied after gaussian smoothing. So LOG refers to laplacian of gaussian.</p>
-
-<h2 id="gradient-magnitude-and-direction">Gradient magnitude and direction</h2>
-
-<p>Gradient magnitude of the image relates both directions <script type="math/tex">I_x(x,y)</script> and <script type="math/tex">I_y(x,y)</script>. It represents the strength of the edge. While gradient angle represents the direction of the edge or direction of intensity variation.</p>
-
-<p>Gradient magnitude is given by</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-I_{xy} = \sqrt{I_x(x,y)^2 + I_y(x,y)^2}
-\end{equation}</script>
-
-<p>and Gradient direction:</p>
-
-<script type="math/tex; mode=display">\begin{equation}
-I_{\theta} = tan^{-1}(\frac{I_y(x,y)}{I_x(x,y)})
-\end{equation}</script>
-
-<h2 id="canny-edge-detection-algorithm">Canny edge detection algorithm</h2>
-
-<p>It was developed by <a href="https://en.wikipedia.org/wiki/John_Canny">John F. Canny</a> in 1986. Canny operator is a multi-stage algorithm that detects wide range of edges.</p>
-
-<p><strong>Stages</strong></p>
-<ol>
-  <li>Smoothing for noise removal.</li>
-  <li>Finding Gradients.</li>
-  <li>None-maximum suppression.</li>
-  <li>Double Thresholding.</li>
-  <li>Edge Tracking by hysteresis.</li>
-</ol>
-
-<h3 id="smoothing">Smoothing</h3>
-<p>The first stage in canny edge detection algorithm is smoothing to remove noise that may cause false edges. Kernel used in this step is 5x5 gaussian kernel with $\sigma = 1.4$ and that it</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\frac{1}{159}
-\begin{bmatrix}
-2 & 4  & 5  & 4  & 2 \\
-4 & 9  & 12 & 9  & 4 \\
-5 & 12 & 15 & 12 & 5 \\
-4 & 9  & 12 & 9  & 4 \\
-2 & 4  & 5  & 4  & 2 \\
-\end{bmatrix} %]]></script>
-
-<p>Original Image</p>
-
-<p><img src="../images/Lines.jpg" alt="" />
-<img src="../images/guassianBlur.jpg" alt="" /></p>
-
-<h3 id="finding-gradients">Finding Gradients</h3>
-
-<p>This is done using sobel operator in both x and y direction and getting gradient magnitude as described later.</p>
-
-<p><img src="../images/GradientMag.jpg" alt="" /></p>
-
-<h3 id="none-maximum-suppression">None-maximum suppression</h3>
-
-<p>We aim to suppress all weak edges except local maxima. To do that we have to use gradient direction image.</p>
-
-<ol>
-  <li>Compare the edge strength of the current pixel with the edge strength of the pixel in the positive and negative gradient directions.</li>
-  <li>Suppress that pixel (set to zero) if its value is lower than pixels in same direction.</li>
-</ol>
-
-<p><strong>Gradient Direction</strong></p>
-
-<p><img src="../images/GradientDir.jpg" alt="" /></p>
-
-<p>Direction must be quantized to 8 directions or angles to use 8-Connectivity.</p>
-
-<p><img src="../images/CannyEdgeWheel.gif" alt="" /> <img src="../images/Connectivity.png" alt="" /></p>
-
-<p>The result of this stage would be an edge image with thin edges.</p>
-
-<p><img src="../images/none-max-supp.jpg" alt="" /></p>
-
-<h3 id="double-thresholding">Double thresholding</h3>
-
-<p>After none-maxima suppression we need to suppress pixels with low gradient values to have only strong edges. None-maxima suppression eliminates only local weak edges but here we globally eliminate weak edges. We have two threshlods $T_l$ and $T_h$ selected by user.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">TL</span><span class="p">:</span>
-    <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">elif</span> <span class="n">image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">TH</span><span class="p">:</span>
-    <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<p><a href="https://arxiv.org/pdf/1502.02160.pdf">Survey of Hough transform</a></p>
+<h2 id="review">Review</h2>
+<p>What we have taken ?? 
+Image Filtering as preprocessing, edge detection. 
+What will we do with edge images?
+object detection and shape recognition.
+How can we detect lines and circles in images ?<br />
+What is the applications? 
+Object recognition and tracking. Medical Application A real-time tracking system of surgical instruments in laparoscopic operations</p>
+<h2 id="hough-line">Hough Line</h2>
+<h3 id="original-hough-transform">Original Hough transform</h3>
+<p>Mapping pixels to another space based on equation of line.</p>
+<h3 id="alternative-parameter-space">Alternative Parameter Space</h3>
+<p>Limitation of equation of line for division by zero. so move to polar coordinate</p>
+<h3 id="algorithm">Algorithm</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Extract edges of the image How ?? Canny
+initialize parameter space rs, thetas
+Create accumulator array and initialize to zero
+for each edge pixel     
+    for each theta
+        calculate r = x cos(theta) + y sin(theta)
+        Increment accumulator at r, theta
+Find Maximum values in accumulator (lines)
+Extract related r, theta
 </code></pre></div></div>
+<p><strong>Lets try to implement</strong></p>
 
-<p><img src="../images/double-thr.jpg" alt="" /></p>
+<h2 id="hough-circle">Hough Circle</h2>
+<h3 id="parameter-space-3d-space">Parameter Space (3D Space)</h3>
 
-<p>What about pixels with in-between values ?</p>
+<h3 id="algorithm-1">Algorithm</h3>
 
-<p>Next section tells us.</p>
+<h2 id="general-hough-transform">General Hough Transform</h2>
 
-<h3 id="edge-tracking-by-hysteresis">Edge tracking by hysteresis</h3>
+<h3 id="basic-algorithm">Basic Algorithm</h3>
 
-<p>For pixels with values in-between $T_l$ and $T_h$ we check the 8 neighbors if it has a strong point in its neighbors so it is a part of the edge and if not suppress it.</p>
-
-<p><img src="../images/FinalCanny.jpg" alt="" /></p>
-
-<h2 id="demo">Demo</h2>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/sbme-tutorials/cv-week4-demo
-</code></pre></div></div>
-<h2 id="useful-links">Useful links</h2>
-
-<ul>
-  <li><a href="https://matplotlib.org/gallery/index.html">matplotlib gallery</a></li>
-  <li><a href="http://scikit-image.org/docs/dev/auto_examples/">scikit-image examples</a></li>
-</ul>
+<h2 id="corner-detection">Corner detection</h2>
+<p>Why Corners ? 
+Uniqueness 
+Corner as an image feature?
+Strong and unique feature.</p>
+<h3 id="hessian-matrix">Hessian Matrix</h3>
+<h3 id="harris-operator">Harris operator</h3>
+<h2 id="whats-next">What’s Next</h2>
+<p>Feature descriptor.</p>
 
   </div>
 
