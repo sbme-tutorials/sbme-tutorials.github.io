@@ -76,11 +76,12 @@ operations:
 4. remove back.
 5. return front.
 6. return back.
-7. remove a node **next to** a given node.
-8. remove nodes with given data.
-9. is empty?
-10. printAll.
-11. delete the whole list from the heap.
+7. return node at arbitrary index.
+8. remove the kth-node.
+9. remove nodes with given data, i.e filtaration.
+10. is empty?
+11. printAll.
+12. delete the whole list from the heap.
 
 #### A: LL of Integers
 
@@ -99,12 +100,12 @@ struct IntegerLL
     IntegerNode *front;
 };
 
-void insertBack( IntegerLL &list )
+void insertBack( IntegerLL &list , int data )
 {
     // Logic
 }
 
-void insertFront( IntegerLL &list )
+void insertFront( IntegerLL &list, int data  )
 {
     // Logic
 }
@@ -119,6 +120,11 @@ int back( IntegerLL &list )
     // Logic
 }
 
+int getAt( IntegerLL &list , int k )
+{
+    // Logic
+}
+
 void removeBack( IntegerLL &list )
 {
     // Logic
@@ -129,12 +135,12 @@ void removeFront( IntegerLL &list )
     // Logic
 }
 
-void removeNode( IntegerLL &list , IntegerNode *node )
+void removeAt( IntegerLL &list , int index )
 {
     // Logic
 }
 
-void removeData( IntegerLL &list , int data )
+void filter( IntegerLL &list , int data )
 {
     // Logic
 }

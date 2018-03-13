@@ -91,14 +91,33 @@ Supported Operations:
 2. insertion at back `insertBack`.
 3. remove front `removeFront`.
 4. remove back `removeBack`.
-5. return front `front`.
-6. return back `back`.
-7. remove a node **next to** a given node `removeAfter`.
-8. remove nodes with given data `filter`.
-9. is empty `isEmpty`?
-10. size of the linked list `size`.
-11. printAll `printAll`.
-12. delete the whole list from the heap `clear`.
+5. remove the kth-element `removeAt`.
+6. return front `front`.
+7. return back `back`.
+8. get arbitrary kth-element `getAt`.
+9. remove nodes with given data `filter`.
+10. is empty `isEmpty`?
+11. size of the linked list `size`.
+12. printAll `printAll`.
+13. delete the whole list from the heap `clear`.
+
+You can use the following function prototypes (declarations), for integers linked list.
+
+```c++
+void insertFront( IntegersLL &list , int data );
+void insertBack( IntegersLL &list, int data );
+void removeFront( IntegersLL &list );
+void removeBack( IntegersLL &list );
+void removeAt( IntegersLL &list , int index );
+int front( IntegersLL &list );
+int back( IntegersLL &list );
+int getAt( IntegersLL &list, int index );
+void filter( IntegersLL &list, int data );
+bool isEmpty( IntegersLL &list );
+int size( IntegersLL &list );
+void printAll( IntegersLL &list );
+void clear( IntegersLL &list );
+```
 
 Implement the **linked list** for `int`, `double`, and `char`.
 
@@ -113,6 +132,18 @@ Supported Operations:
 5. return front `front` (LIFO).
 6. delete the whole stack `clear`.
 
+You can use the following function prototypes (declarations), for stack of integers.
+
+```c++
+void push( IntegersStack &stack , int data );
+int pop( IntegersStack &stack );
+int front( IntegersStack &stack );
+bool isEmpty( IntegersStack &stack );
+int size( IntegersStack &stack );
+void clear( IntegersStack &stack );
+```
+
+* Implement stacks of `char` and `int` using **linked lists**.
 * Implement stacks of `char` and `int` using **arrays**.
 
 ### Queue
@@ -123,16 +154,27 @@ Supported Operations:
 2. `dequeue`.
 3. `size`.
 4. `isEmpty`.
-5. return `front` (FIFO).
+5. return `front` (FIFO), **without dequeue**.
 6. delete the whole queue `clear`.
+
+You can use the following function prototypes (declarations), for queue of integers.
+
+```c++
+void enqueue( DoublesQueue &queue , int data );
+int dequeue( DoublesQueue &queue );
+int front( DoublesQueue &queue );
+bool isEmpty( DoublesQueue &queue );
+int size( DoublesQueue &queue );
+void clear( DoublesQueue &queue );
+```
 
 * Implement queues of `char` and `double` using **linked lists**.
 * Bonus: implement queues of `char` and `double` using **arrays**.
 
 ### Applications
 
-1. Using stack of `int`, make an application (i.e a source file with `main` funciton) that solves [The Stock Span Problem](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#The_Stock_Span_Problem).
-2. Using stack of `char`, make an application (i.e source file with `main` function) that validates the balancing of prenthesis in a string.
+* **A1**: Using stack of `int`, make an application (i.e a source file with `main` funciton) that solves [The Stock Span Problem](https://en.wikibooks.org/wiki/Data_Structures/Stacks_and_Queues#The_Stock_Span_Problem).
+* **A2**: Using stack of `char`, make an application (i.e source file with `main` function) that validates the balancing of prenthesis in a string.
 
 **Examples**:
 
@@ -145,7 +187,7 @@ Supported Operations:
 * Input: `"()((()(((())))))"`
     * Output: `"balanced"`
 
-3. **Your are required** to develop some interesting and useful application that depends on the **queues** you implemented earlier. It is preferably to apply some useful logic on biological data. Remember to **keep it simple and stupid**.
+* **A3**: **Your are required** to develop some interesting and useful application that depends on the **queues** you implemented earlier. It is preferably to apply some useful logic on biological data. Remember to **keep it simple and stupid**.
 
 ## Guidelines
 

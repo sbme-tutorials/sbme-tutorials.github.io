@@ -7,6 +7,9 @@ title:  "Week 5 - Part1: Recursion, Big-Oh Notation, Markdown"
 by: "Asem"
 ---
 
+* TOC
+{:toc}
+
 ## Recursion
 
 
