@@ -10,7 +10,7 @@
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/4_week4a.html">
+  <link rel="canonical" href="/2018/data-structures/notes/4_week4a.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -99,6 +99,15 @@
       
     
       
+<<<<<<< HEAD
+=======
+    
+      
+    
+      
+    
+      
+>>>>>>> 6dd3790d07e1251b080fc04f5987596f59fa7941
         <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
@@ -136,12 +145,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
@@ -181,12 +190,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
@@ -216,12 +225,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -246,12 +255,12 @@
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
             
           
             
             
-            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
@@ -296,7 +305,17 @@
           
             
             
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
             <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
             
           
             
@@ -847,11 +866,16 @@ The <strong>DNA</strong> sequence as a Linked List (LL), can be achieved with th
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insertToList</span><span class="p">(</span> <span class="n">CharLinkedList</span> <span class="o">&amp;</span><span class="n">list</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">newElement</span> <span class="p">)</span>
 <span class="p">{</span>
+<span class="o">&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span> <span class="n">HEAD</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">head</span><span class="p">;</span>
+<span class="o">=======</span>
     <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">list</span><span class="p">.</span><span class="n">front</span><span class="p">;</span>
+<span class="o">&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span> <span class="n">d55a6c157f32f09eba8a5d622f7789dc18961ad4</span>
     
     <span class="k">if</span><span class="p">(</span> <span class="n">current</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">current</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">{</span> <span class="n">newElement</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
+        <span class="n">list</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">current</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">else</span>
     <span class="p">{</span>
