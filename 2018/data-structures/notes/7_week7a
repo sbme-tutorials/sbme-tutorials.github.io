@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FAQ #1: Why exposing namespaces is a bad practice</title>
+  <title>Week 7 - Part1</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/3_faq1.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/7_week7a">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -27,6 +28,8 @@
      -->
     
 
+    
+      
     
       
     
@@ -146,22 +149,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
             
           
             
@@ -191,12 +194,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
@@ -226,22 +229,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
             
           
             
@@ -256,22 +259,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
             
           
             
@@ -287,6 +290,11 @@
             
             
             <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a">Week 7 - Part1</a>
             
           
             
@@ -329,75 +337,46 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">FAQ #1: Why exposing namespaces is a bad practice</h1>
+    <h1 class="post-title">Week 7 - Part1</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="faq-1-why-using-namespace-arbitrary_name-is-a-bad-practice">FAQ #1. Why <code class="highlighter-rouge">using namespace arbitrary_name;</code> is a bad practice</h2>
+    https://www.youtube.com/watch?v=kPRA0W1kECg
+=======
+---
+layout: page
+course: "sbe201"
+category: "notes"
+year: "2018"
+title:  "Week 7 - Part1"
+by: "Asem"
+---
 
-<p><code class="highlighter-rouge">namespace</code> is a great feature introduced in C++. It allows us to:</p>
+https://www.youtube.com/watch?v=kPRA0W1kECg
+>>>>>>> d55a6c157f32f09eba8a5d622f7789dc18961ad4
 
-<ul>
-  <li>Make modular projects.</li>
-  <li>Put your functions in categories.</li>
-  <li>Write more readable and self-explaining code.</li>
-  <li>Write more trustable code by means of specifying which function belongs to what library.</li>
-</ul>
+### How to download from coursera
 
-<p>It becomes more critical when it comes to the Standard Library of C++ that is enclosed in the namspace <code class="highlighter-rouge">std</code>. By writing <code class="highlighter-rouge">using namespace std;</code> in your global scope, this exposes huge amount of functions from the library to be used without the namespace. So What?!</p>
+#### 1. Coursera Account
 
-<ul>
-  <li>
-    <p>What if you have created a function having the same name of one of the thousands functions from <code class="highlighter-rouge">std</code>?</p>
+#### 2. Install Python
 
-    <ul>
-      <li>Names collision,</li>
-      <li>Compiler get confused,</li>
-      <li>Your team members get angry.</li>
-    </ul>
-  </li>
-  <li>
-    <p>You will never know every function inside the <code class="highlighter-rouge">std</code> so you avoid using a reserved name, and it is pointless to know every function and name inside the <code class="highlighter-rouge">std</code>.</p>
-  </li>
-</ul>
+#### 3. Install pip
 
-<h3 id="possible-solution">Possible Solution</h3>
+## Markdown vs. WYGIWYS Editors
 
-<p>If you are using (for example) <code class="highlighter-rouge">std::cout</code> extensively inside a function. What you can do is specifying a particular member (or members) that you are going to use:</p>
+### Jekyll
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Some function that prints a lot of text in the terminal</span>
-<span class="kt">void</span> <span class="nf">printArrayStatistics</span><span class="p">(</span> <span class="kt">int</span> <span class="o">*</span><span class="n">array</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">using</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="p">;</span>
+### Remarkjs
 
-    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">array</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
-    <span class="p">}</span>
+### Resumes
 
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">mean</span><span class="p">(</span> <span class="n">arr</span> <span class="p">,</span> <span class="n">size</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+### Latex
 
-    <span class="c1">// More and more printing</span>
-    <span class="c1">// And more.</span>
-<span class="p">}</span>
-</code></pre></div></div>
+## Template Structs
 
-<p><strong>Again</strong>, if you insist to expose some name-space:</p>
-
-<ul>
-  <li>
-    <p>Specify particular members from the name-space, For example:</p>
-
-    <ul>
-      <li><strong>DO</strong> <code class="highlighter-rouge">using std::cout;</code>.</li>
-      <li><strong>DO NOT</strong> <code class="highlighter-rouge">using namespace std;</code>.</li>
-    </ul>
-  </li>
-  <li>
-    <p>Do it inside a local scope, not in the global scope.</p>
-  </li>
-</ul>
-
+<<<<<<< HEAD
+Templates.
   </div>
 
 </article>
@@ -480,3 +459,6 @@ https://ro-che.info/articles/2017-04-02-deploying-mathjax
   </body>
 
 </html>
+=======
+Templates.
+>>>>>>> d55a6c157f32f09eba8a5d622f7789dc18961ad4
