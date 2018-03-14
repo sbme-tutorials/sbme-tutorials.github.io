@@ -40,10 +40,10 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 | 2 | C++ Memory Model, C++ Pointers and References | Your Code Readability |
 | 3 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes;  | Processing command line arguments (`argc` & `argv`); Compilation of multiple files; Basic Unix commands; bitbucket |
 | 4 | Stacks (ADT); Queues (ADT); Linked Lists; Array-Based Stack; LL-Based Stack; Array-Based Queue; LL-Based Queue; Functions Overloading;  Naming conventions; Const correctness | Brief intro to  git for teams; `.gitignore` file;  Brief intro to build systems |
-| 5 | Recurion; C++ template structs; C++ classes and objects  | Briefly: CMake; Git on large scale; How to contribute on **this** website using pull requests? |
+| 5 | Recursion; C++ template structs; C++ classes and objects  | Briefly: CMake; Git on large scale; How to contribute on **this** website using pull requests? |
 | 6 | **Open Talk 1**: C++ access control on class members; Brief intro to STL; Interesting applications in C++ | Markdown vs. WYSIWYG editors; Mercurial |
 | 7 | Bubble sort; Selection sort; Binary Trees  | Open source vs. proprietary software  |
-| 8 | Divide and conquer: merge sort, quick sort; Recursion  | Briefly: Development on Windows |
+| 8 | Divide and conquer: merge sort, quick sort  | Briefly: Development on Windows |
 | 9 | Binary search on sorted array; Binary search tree (BST)  |  Conan.io; External dependencies |
 | 10 | Algorithms complexity: big O notation  | Documenting your code |
 | 11 | Project  | Documenting your project on the website using Markdown and pull requests |
