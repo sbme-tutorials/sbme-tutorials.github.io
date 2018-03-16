@@ -36,6 +36,15 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 
 ## Course Outline
 
+| Week | Content |  
+|------|-----------------|
+|   1  | Warming up with Python Basics |
+|   2  | Image Processing 1            |
+|   3  | Images in Frequency Domain    |
+|   4  | Image Processing 2 (Image Filtering and Edge Detection) |  
+|   5  | Hough Transform (Line and Circle Detection) |  
+
+
 ## Tutorials
 
 1. Week 1:
