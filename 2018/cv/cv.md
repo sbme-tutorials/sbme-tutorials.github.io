@@ -52,6 +52,10 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
     * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/4_week4/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/cv/notes/4_week4.md %}){:target="_blank"}
     * [Assignment 2]({% link 2018/cv/assignments/2_assignment2.md %}){:target="_blank"}
+5. Week 5:
+    * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/5_week5/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/cv/notes/5_week5.md %}){:target="_blank"}
+
 
 
     
