@@ -486,11 +486,12 @@ If we only have an access to the **head** of the **LL**, or in other words, if w
 ```c++
 void insertToList( CharLinkedList &list , char newElement )
 {
-    Node *current = list.front;
+    Node *current = list.head;
     
     if( current == nullptr )
     {
         current = new Node{ newElement , nullptr };
+        list.head = current;
     }
     else
     {
