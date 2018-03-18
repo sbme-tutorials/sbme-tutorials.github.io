@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 7 - Part1: Revision</title>
+  <title>Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
@@ -304,7 +304,7 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision</a>
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
             
           
             
@@ -362,7 +362,7 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 7 - Part1: Revision</h1>
+    <h1 class="post-title">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</h1>
   </header>
 
   <div class="post-content">
@@ -420,9 +420,12 @@
   <li><a href="#c-templates-towards-polymorphism-and-dry-solutions" id="markdown-toc-c-templates-towards-polymorphism-and-dry-solutions">C++ Templates: Towards Polymorphism and DRY Solutions</a></li>
   <li><a href="#type-normalization-in-c" id="markdown-toc-type-normalization-in-c">Type Normalization in C++</a></li>
   <li><a href="#basic-oop-revisited" id="markdown-toc-basic-oop-revisited">Basic OOP: Revisited</a></li>
-  <li><a href="#stdstring" id="markdown-toc-stdstring">std::string</a></li>
-  <li><a href="#stdvector" id="markdown-toc-stdvector">std::vector</a></li>
-  <li><a href="#stdarray" id="markdown-toc-stdarray">std::array</a></li>
+  <li><a href="#main-data-structures-in-the-standard-template-library-stl" id="markdown-toc-main-data-structures-in-the-standard-template-library-stl">Main Data Structures in the Standard Template Library (STL)</a>    <ul>
+      <li><a href="#stdstring" id="markdown-toc-stdstring">std::string</a></li>
+      <li><a href="#stdvector" id="markdown-toc-stdvector">std::vector</a></li>
+      <li><a href="#stdarray" id="markdown-toc-stdarray">std::array</a></li>
+    </ul>
+  </li>
   <li><a href="#more-exercises" id="markdown-toc-more-exercises">More Exercises</a>    <ul>
       <li><a href="#central-dogma-transcription-and-translation" id="markdown-toc-central-dogma-transcription-and-translation">Central Dogma (Transcription and Translation)</a>        <ul>
           <li><a href="#queues" id="markdown-toc-queues">Queues</a></li>
@@ -431,6 +434,7 @@
       <li><a href="#pangrams" id="markdown-toc-pangrams">Pangrams</a></li>
     </ul>
   </li>
+  <li><a href="#demo-files" id="markdown-toc-demo-files">Demo files</a></li>
 </ul>
 
 <h2 id="practices-and-common-issues">Practices and Common Issues</h2>
@@ -989,33 +993,97 @@ So far, errors in C++ development can be classified into:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/sbme-tutorials/sbe201-week7-demo.git
 </code></pre></div></div>
 
-<h2 id="stdstring">std::string</h2>
+<h2 id="main-data-structures-in-the-standard-template-library-stl">Main Data Structures in the Standard Template Library (STL)</h2>
 
-<p>To be completed</p>
+<h3 id="stdstring">std::string</h3>
 
-<h2 id="stdvector">std::vector</h2>
+<p><a href="http://en.cppreference.com/w/cpp/string/basic_string"><code class="highlighter-rouge">std::string</code> official documentation</a>. <code class="highlighter-rouge">std::string</code> represents a dynamic array of characters, with a lot of functionalities to avoid the pain of working with concrete array of characters (i.e <code class="highlighter-rouge">char *</code>).</p>
 
-<p>To be completed</p>
+<ul>
+  <li><code class="highlighter-rouge">operator=</code> assigns values to the string</li>
+</ul>
 
-<h2 id="stdarray">std::array</h2>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text</span><span class="p">;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s">"Hello there!"</span><span class="p">;</span> <span class="c1">// Here we invoke the operator=</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">text</span><span class="p">;</span>
+</code></pre></div></div>
 
-<p>To be completed</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">input</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// Invoked operator=</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">input</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">operator[]</code>  accesses the specified character at given index</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text</span> <span class="o">=</span> <span class="s">"Yello SBME"</span><span class="p">;</span>
+<span class="n">text</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'H'</span><span class="p">;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">text</span><span class="p">;</span> <span class="c1">// prints: Hello SBME</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">back</code> returns last character, e.g (<code class="highlighter-rouge">text.back()</code>).</li>
+  <li><code class="highlighter-rouge">front</code> returns first character, e.g (<code class="highlighter-rouge">text.front()</code>).</li>
+  <li><code class="highlighter-rouge">size</code> returns the size of the string (<code class="highlighter-rouge">text.back()</code>).</li>
+  <li><code class="highlighter-rouge">empty</code> returns <code class="highlighter-rouge">true</code> if the string is empty, <code class="highlighter-rouge">false</code> otherwise (<code class="highlighter-rouge">text.empty()</code>).</li>
+  <li><code class="highlighter-rouge">clear</code> clears the content of the string, i.e becomes empty (<code class="highlighter-rouge">text.clear()</code>).</li>
+  <li><code class="highlighter-rouge">push_back</code> adds a character to the end (<code class="highlighter-rouge">text.push_back('?')</code>).</li>
+  <li><code class="highlighter-rouge">pop_back</code> removes the last element (<code class="highlighter-rouge">text.pop_back()</code>).</li>
+</ul>
+
+<h3 id="stdvector">std::vector</h3>
+
+<p><a href="http://en.cppreference.com/w/cpp/container/vector"><code class="highlighter-rouge">std::vector</code> official documentation</a>. <code class="highlighter-rouge">std::vector</code> is a template <code class="highlighter-rouge">class</code>/<code class="highlighter-rouge">struct</code> that represents a dynamic array, with several functionalities.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">operator[]</code>  accesses the specified character at given index</li>
+  <li><code class="highlighter-rouge">back</code> returns last element, e.g (<code class="highlighter-rouge">samples.back()</code>).</li>
+  <li><code class="highlighter-rouge">front</code> returns first element, e.g (<code class="highlighter-rouge">samples.front()</code>).</li>
+  <li><code class="highlighter-rouge">size</code> returns the size of the vector.</li>
+  <li><code class="highlighter-rouge">empty</code> returns <code class="highlighter-rouge">true</code> if the vector is empty, <code class="highlighter-rouge">false</code> otherwise.</li>
+  <li><code class="highlighter-rouge">clear</code> clears the content of the string, i.e becomes empty.</li>
+  <li><code class="highlighter-rouge">push_back</code> adds an element to the end.</li>
+  <li><code class="highlighter-rouge">pop_back</code> removes the last element.</li>
+</ul>
+
+<h3 id="stdarray">std::array</h3>
+
+<p><a href="http://en.cppreference.com/w/cpp/container/array"><code class="highlighter-rouge">std::array</code> official documentation</a>. <code class="highlighter-rouge">std::array</code> is a template <code class="highlighter-rouge">class</code>/<code class="highlighter-rouge">struct</code> that represents a static array, with several functionalities. As expected you should introduce a <strong>type</strong> and the <strong>array</strong> size at compilation-time. E.g, to instantiate an <code class="highlighter-rouge">std::array</code> of 250 integers:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span> <span class="kt">int</span> <span class="p">,</span> <span class="mi">250</span> <span class="o">&gt;</span> <span class="n">samples</span><span class="p">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">operator[]</code>  accesses the specified character at given index</li>
+  <li><code class="highlighter-rouge">back</code> returns last element, e.g (<code class="highlighter-rouge">samples.back()</code>).</li>
+  <li><code class="highlighter-rouge">front</code> returns first element, e.g (<code class="highlighter-rouge">samples.front()</code>).</li>
+  <li><code class="highlighter-rouge">size</code> returns the size of the vector.</li>
+  <li><code class="highlighter-rouge">empty</code> returns <code class="highlighter-rouge">true</code> if the vector is empty, <code class="highlighter-rouge">false</code> otherwise.</li>
+</ul>
 
 <h2 id="more-exercises">More Exercises</h2>
 
-<p>To be completed</p>
+<p>Soon</p>
 
 <h3 id="central-dogma-transcription-and-translation">Central Dogma (Transcription and Translation)</h3>
 
-<p>To be completed</p>
+<p>Soon</p>
 
 <h4 id="queues">Queues</h4>
 
 <h3 id="pangrams">Pangrams</h3>
 
-<p>To be completed</p>
+<p>Soon</p>
 
 <p>http://exercism.io/exercises/cpp/pangram/readme</p>
+
+<h2 id="demo-files">Demo files</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://asem_abdelaziz@bitbucket.org/sbmetutorials/sbe201-week3-demo.git
+</code></pre></div></div>
 
   </div>
 
