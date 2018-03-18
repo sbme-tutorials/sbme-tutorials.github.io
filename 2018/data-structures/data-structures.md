@@ -79,6 +79,9 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 6. Week 6:
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/6_week6/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Sorting, Bubble Sort, Selection Sort, Learning Resources]({{ site.baseurl }}{% link 2018/data-structures/notes/6_week6a.md %}){:target="_blank"}\]
+7. Week 7:
+    * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/7_week7/index.html %}){:target="_blank"}\]
+    * Section Notes: \[[Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates]({{ site.baseurl }}{% link 2018/data-structures/notes/7_week7a.md %}){:target="_blank"}\]
 
 ## Frequently Asked Questions
 

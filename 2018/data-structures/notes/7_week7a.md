@@ -3,7 +3,7 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2018"
-title:  "Week 7 - Part1: Revision"
+title:  "Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates"
 by: "Asem"
 ---
 
@@ -512,30 +512,92 @@ To clone the whole demo:
 git clone https://github.com/sbme-tutorials/sbe201-week7-demo.git
 ```
 
-## std::string
+## Main Data Structures in the Standard Template Library (STL)
 
-To be completed
+### std::string
 
-## std::vector
+[`std::string` official documentation](http://en.cppreference.com/w/cpp/string/basic_string). `std::string` represents a dynamic array of characters, with a lot of functionalities to avoid the pain of working with concrete array of characters (i.e `char *`).
 
-To be completed
+* `operator=` assigns values to the string 
 
-## std::array
+```c++
+std::string text;
+text = "Hello there!"; // Here we invoke the operator=
+std::cout << text;
+```
 
-To be completed
+```c++
+int main( int argc, char **argv )
+{
+    std::string input = argv[1]; // Invoked operator=
+    std::cout << input;
+}
+```
+
+* `operator[]`  accesses the specified character at given index
+
+```c++
+std::string text = "Yello SBME";
+text[0] = 'H';
+std::cout << text; // prints: Hello SBME
+```
+
+* `back` returns last character, e.g (`text.back()`).
+* `front` returns first character, e.g (`text.front()`).
+* `size` returns the size of the string (`text.back()`).
+* `empty` returns `true` if the string is empty, `false` otherwise (`text.empty()`).
+* `clear` clears the content of the string, i.e becomes empty (`text.clear()`).
+* `push_back` adds a character to the end (`text.push_back('?')`).
+* `pop_back` removes the last element (`text.pop_back()`).
+
+### std::vector
+
+[`std::vector` official documentation](http://en.cppreference.com/w/cpp/container/vector). `std::vector` is a template `class`/`struct` that represents a dynamic array, with several functionalities.
+
+
+* `operator[]`  accesses the specified character at given index
+* `back` returns last element, e.g (`samples.back()`).
+* `front` returns first element, e.g (`samples.front()`).
+* `size` returns the size of the vector.
+* `empty` returns `true` if the vector is empty, `false` otherwise.
+* `clear` clears the content of the string, i.e becomes empty.
+* `push_back` adds an element to the end.
+* `pop_back` removes the last element.
+
+### std::array
+
+[`std::array` official documentation](http://en.cppreference.com/w/cpp/container/array). `std::array` is a template `class`/`struct` that represents a static array, with several functionalities. As expected you should introduce a **type** and the **array** size at compilation-time. E.g, to instantiate an `std::array` of 250 integers:
+
+```c++
+std::array< int , 250 > samples;
+```
+
+
+* `operator[]`  accesses the specified character at given index
+* `back` returns last element, e.g (`samples.back()`).
+* `front` returns first element, e.g (`samples.front()`).
+* `size` returns the size of the vector.
+* `empty` returns `true` if the vector is empty, `false` otherwise.
 
 ## More Exercises
 
-To be completed
+Soon
 
 ### Central Dogma (Transcription and Translation)
 
-To be completed
+Soon
 
 #### Queues
 
 ### Pangrams
 
-To be completed
+Soon
 
 http://exercism.io/exercises/cpp/pangram/readme
+
+
+## Demo files
+
+```bash
+git clone https://asem_abdelaziz@bitbucket.org/sbmetutorials/sbe201-week3-demo.git
+```
