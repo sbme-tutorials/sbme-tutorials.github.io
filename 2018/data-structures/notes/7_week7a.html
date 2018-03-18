@@ -103,6 +103,8 @@
       
     
       
+    
+      
         <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
@@ -303,6 +305,11 @@
           
             
             
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 7 - Part1</a>
+            
+          
+            
+            
             <a class="page-link" href="/about/">About</a>
             
           
@@ -348,14 +355,14 @@
     <ul id="markdown-toc">
   <li><a href="#practices-and-common-issues" id="markdown-toc-practices-and-common-issues">Practices and Common Issues</a>    <ul>
       <li><a href="#names-and-scopes" id="markdown-toc-names-and-scopes">Names and Scopes</a>        <ul>
-          <li><a href="#common-mistake-a-custom-type--a-variable-name" id="markdown-toc-common-mistake-a-custom-type--a-variable-name">Common Mistake: a custom type != a variable name</a></li>
+          <li><a href="#common-mistake-type--variable-name" id="markdown-toc-common-mistake-type--variable-name">Common Mistake: type != variable name</a></li>
         </ul>
       </li>
       <li><a href="#common-mistake-when-passing-by-reference-dont-mess-with-input-data" id="markdown-toc-common-mistake-when-passing-by-reference-dont-mess-with-input-data">Common Mistake: when passing by reference don’t mess with input data</a></li>
-      <li><a href="#common-mistake-pointer-to-a-struct-vs-reference-to-a-struct-vs-name-to-a-struct" id="markdown-toc-common-mistake-pointer-to-a-struct-vs-reference-to-a-struct-vs-name-to-a-struct">Common Mistake: Pointer to a Struct vs. Reference to a Struct vs. Name to a Struct</a></li>
+      <li><a href="#common-mistake-pointer-to-struct--reference-to-a-struct--name-to-a-struct" id="markdown-toc-common-mistake-pointer-to-struct--reference-to-a-struct--name-to-a-struct">Common Mistake: Pointer to struct != Reference to a struct != Name to a struct</a></li>
       <li><a href="#functions" id="markdown-toc-functions">Functions</a>        <ul>
           <li><a href="#bad-practice-global-variables" id="markdown-toc-bad-practice-global-variables">Bad Practice: Global Variables</a></li>
-          <li><a href="#calling-a-function" id="markdown-toc-calling-a-function">Calling a Function</a></li>
+          <li><a href="#common-mistakes-in-calling-functions" id="markdown-toc-common-mistakes-in-calling-functions">Common mistakes in calling functions</a></li>
         </ul>
       </li>
       <li><a href="#main-function" id="markdown-toc-main-function">Main Function</a>        <ul>
@@ -368,22 +375,7 @@
       </li>
     </ul>
   </li>
-  <li><a href="#revision-on-data-structures" id="markdown-toc-revision-on-data-structures">Revision on Data Structures</a>    <ul>
-      <li><a href="#arrays" id="markdown-toc-arrays">Arrays</a>        <ul>
-          <li><a href="#dynamic-arrays" id="markdown-toc-dynamic-arrays">Dynamic Arrays</a></li>
-          <li><a href="#static-arrays" id="markdown-toc-static-arrays">Static Arrays</a></li>
-        </ul>
-      </li>
-      <li><a href="#linked-lists" id="markdown-toc-linked-lists">Linked Lists</a>        <ul>
-          <li><a href="#linked-lists-using-pointers" id="markdown-toc-linked-lists-using-pointers">Linked Lists using Pointers</a></li>
-          <li><a href="#linked-lists-using-arrays-new" id="markdown-toc-linked-lists-using-arrays-new">Linked Lists using Arrays (new)</a></li>
-        </ul>
-      </li>
-      <li><a href="#abstract-data-types-adt" id="markdown-toc-abstract-data-types-adt">Abstract Data Types (ADT)</a>        <ul>
-          <li><a href="#adt-queue" id="markdown-toc-adt-queue">ADT: Queue</a></li>
-          <li><a href="#adt-stacks" id="markdown-toc-adt-stacks">ADT: Stacks</a></li>
-        </ul>
-      </li>
+  <li><a href="#data-structures-big-picture" id="markdown-toc-data-structures-big-picture">Data Structures: Big Picture</a>    <ul>
       <li><a href="#complexity-analysis-big-oh-notation" id="markdown-toc-complexity-analysis-big-oh-notation">Complexity Analysis: Big-Oh Notation</a></li>
     </ul>
   </li>
@@ -394,16 +386,44 @@
           <li><a href="#running-valgrind" id="markdown-toc-running-valgrind">Running Valgrind</a></li>
         </ul>
       </li>
+      <li><a href="#how-to-interpret-a-commit-at-github" id="markdown-toc-how-to-interpret-a-commit-at-github">How to interpret a commit at github</a></li>
     </ul>
   </li>
-  <li><a href="#more-exercises" id="markdown-toc-more-exercises">More Exercises</a></li>
+  <li><a href="#where-are-we-now" id="markdown-toc-where-are-we-now">Where are we now</a></li>
+  <li><a href="#data-structures-and-algorithms-what-you-must-know-for-this-semester-until-week-7" id="markdown-toc-data-structures-and-algorithms-what-you-must-know-for-this-semester-until-week-7">Data Structures and Algorithms: What you must know for this semester until week 7</a>    <ul>
+      <li><a href="#focus-on-concepts" id="markdown-toc-focus-on-concepts">Focus on concepts</a>        <ul>
+          <li><a href="#week-1-c-basics" id="markdown-toc-week-1-c-basics"><strong>Week 1</strong>: C++ Basics</a></li>
+          <li><a href="#week-2-c-memory-model" id="markdown-toc-week-2-c-memory-model"><strong>Week 2</strong>: C++ Memory Model</a></li>
+          <li><a href="#week-3-arrays" id="markdown-toc-week-3-arrays"><strong>Week 3</strong>: Arrays</a></li>
+          <li><a href="#week-4-linked-lists-stacks-and-queues" id="markdown-toc-week-4-linked-lists-stacks-and-queues"><strong>Week 4</strong>: Linked Lists, Stacks, and Queues</a></li>
+          <li><a href="#week-5-recursion-and-big-oh-notation" id="markdown-toc-week-5-recursion-and-big-oh-notation"><strong>Week 5</strong>: Recursion and Big-Oh Notation</a></li>
+          <li><a href="#week-6-recursion-and-big-oh-notation" id="markdown-toc-week-6-recursion-and-big-oh-notation"><strong>Week 6</strong>: Recursion and Big-Oh Notation</a></li>
+          <li><a href="#week-7-revision-common-mistakes-and-best-practices" id="markdown-toc-week-7-revision-common-mistakes-and-best-practices"><strong>Week 7</strong>: Revision, Common Mistakes, and Best Practices</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#c-templates-towards-polymorphism-and-dry-solutions" id="markdown-toc-c-templates-towards-polymorphism-and-dry-solutions">C++ Templates: Towards Polymorphism and DRY Solutions</a></li>
+  <li><a href="#type-normalization-in-c" id="markdown-toc-type-normalization-in-c">Type Normalization in C++</a></li>
+  <li><a href="#basic-oop-revisited" id="markdown-toc-basic-oop-revisited">Basic OOP: Revisited</a></li>
+  <li><a href="#stdstring" id="markdown-toc-stdstring">std::string</a></li>
+  <li><a href="#stdvector" id="markdown-toc-stdvector">std::vector</a></li>
+  <li><a href="#stdarray" id="markdown-toc-stdarray">std::array</a></li>
+  <li><a href="#more-exercises" id="markdown-toc-more-exercises">More Exercises</a>    <ul>
+      <li><a href="#central-dogma-transcription-and-translation" id="markdown-toc-central-dogma-transcription-and-translation">Central Dogma (Transcription and Translation)</a>        <ul>
+          <li><a href="#queues" id="markdown-toc-queues">Queues</a></li>
+        </ul>
+      </li>
+      <li><a href="#pangrams" id="markdown-toc-pangrams">Pangrams</a></li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="practices-and-common-issues">Practices and Common Issues</h2>
 
 <h3 id="names-and-scopes">Names and Scopes</h3>
 
-<h4 id="common-mistake-a-custom-type--a-variable-name">Common Mistake: a custom type != a variable name</h4>
+<h4 id="common-mistake-type--variable-name">Common Mistake: type != variable name</h4>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">IntegerNode</span>
 <span class="p">{</span>
@@ -419,7 +439,7 @@
 <span class="kt">int</span> <span class="nf">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="c1">// Find mistakes</span>
-    <span class="n">front</span> <span class="o">=</span> <span class="n">IntegersLL</span><span class="p">.</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">front</span> <span class="o">=</span> <span class="n">IntegersLL</span><span class="p">.</span><span class="n">head</span><span class="p">;</span> <span class="c1">// Error</span>
 
     <span class="c1">// Who is front?</span>
 
@@ -449,7 +469,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h3 id="common-mistake-pointer-to-a-struct-vs-reference-to-a-struct-vs-name-to-a-struct">Common Mistake: Pointer to a Struct vs. Reference to a Struct vs. Name to a Struct</h3>
+<h3 id="common-mistake-pointer-to-struct--reference-to-a-struct--name-to-a-struct">Common Mistake: Pointer to struct != Reference to a struct != Name to a struct</h3>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">IntegerNode</span>
 <span class="p">{</span>
@@ -467,12 +487,12 @@
 <span class="p">{</span>
     <span class="c1">// Find two mistakes</span>
     <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="n">IntegersNode</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">lst</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">IntegersNode</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">lst</span><span class="o">-&gt;</span><span class="n">head</span><span class="p">;</span> <span class="c1">// Error</span>
 
     <span class="k">while</span><span class="p">(</span> <span class="n">current</span> <span class="o">!=</span> <span class="nb">nullptr</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">next</span><span class="p">;</span> <span class="c1">// Error</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
 <span class="p">}</span>
@@ -496,9 +516,9 @@
 <span class="p">};</span>
 
 <span class="c1">// Never do this. You are breaking the concept of a function!</span>
-<span class="n">IntegersLL</span> <span class="n">myList</span><span class="p">;</span>
+<span class="n">IntegersLL</span> <span class="n">myList</span><span class="p">;</span> <span class="c1">// A global variable</span>
 
-<span class="kt">int</span> <span class="nf">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">)</span>
+<span class="kt">int</span> <span class="nf">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">)</span> <span class="c1">// unused input lst!</span>
 <span class="p">{</span>
     <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
@@ -509,7 +529,7 @@
     <span class="k">while</span><span class="p">(</span> <span class="n">current</span> <span class="o">!=</span> <span class="nb">nullptr</span> <span class="p">)</span>
     <span class="p">{</span>
         <span class="n">count</span><span class="o">++</span><span class="p">;</span>
-        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="p">.</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
 <span class="p">}</span>
@@ -542,7 +562,7 @@
 <span class="p">}</span>
 </code></pre></div></div>
 
-<h4 id="calling-a-function">Calling a Function</h4>
+<h4 id="common-mistakes-in-calling-functions">Common mistakes in calling functions</h4>
 
 <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include "linkedlist.hpp"
 #include &lt;iostream&gt;
@@ -552,13 +572,13 @@
     <span class="n">list</span><span class="o">::</span><span class="n">IntegersLL</span> <span class="n">samples</span><span class="p">;</span>
 
     <span class="c1">// Why you do this?</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size:"</span> <span class="o">&lt;&lt;</span> <span class="n">list</span><span class="o">::</span><span class="n">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size:"</span> <span class="o">&lt;&lt;</span> <span class="n">list</span><span class="o">::</span><span class="n">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">);</span> <span class="c1">// error</span>
 
     <span class="c1">// Or this?</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size:"</span> <span class="o">&lt;&lt;</span> <span class="n">list</span><span class="o">::</span><span class="n">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">samples</span> <span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size:"</span> <span class="o">&lt;&lt;</span> <span class="n">list</span><span class="o">::</span><span class="n">size</span><span class="p">(</span> <span class="n">IntegersLL</span> <span class="o">&amp;</span><span class="n">samples</span> <span class="p">);</span> <span class="c1">// error</span>
 
     <span class="c1">// We already declared samples of type list::IntegersLL</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size:"</span> <span class="o">&lt;&lt;</span> <span class="n">list</span><span class="o">::</span><span class="n">size</span><span class="p">(</span> <span class="n">samples</span> <span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"size:"</span> <span class="o">&lt;&lt;</span> <span class="n">list</span><span class="o">::</span><span class="n">size</span><span class="p">(</span> <span class="n">samples</span> <span class="p">);</span> <span class="c1">// good</span>
 <span class="p">}</span>
 </code></pre></div></div>
 
@@ -592,25 +612,9 @@
   <li><a href="https://github.com/catchorg/Catch2">Catch2</a>.</li>
 </ul>
 
-<h2 id="revision-on-data-structures">Revision on Data Structures</h2>
+<h2 id="data-structures-big-picture">Data Structures: Big Picture</h2>
 
-<h3 id="arrays">Arrays</h3>
-
-<h4 id="dynamic-arrays">Dynamic Arrays</h4>
-
-<h4 id="static-arrays">Static Arrays</h4>
-
-<h3 id="linked-lists">Linked Lists</h3>
-
-<h4 id="linked-lists-using-pointers">Linked Lists using Pointers</h4>
-
-<h4 id="linked-lists-using-arrays-new">Linked Lists using Arrays (new)</h4>
-
-<h3 id="abstract-data-types-adt">Abstract Data Types (ADT)</h3>
-
-<h4 id="adt-queue">ADT: Queue</h4>
-
-<h4 id="adt-stacks">ADT: Stacks</h4>
+<p><img src="/gallery/ds1.svg" style="width:90%;" /></p>
 
 <h3 id="complexity-analysis-big-oh-notation">Complexity Analysis: Big-Oh Notation</h3>
 
@@ -621,9 +625,7 @@ So far, errors in C++ development can be classified into:</p>
 
 <ol>
   <li>Compilation errors.</li>
-  <li>
-    <p>Run-time errors (bugs).</p>
-
+  <li>Run-time errors (bugs), and can be classified into:
     <ul>
       <li>Logical error: you don’t get the expected output.</li>
       <li>Critical error: you are abusing the memory access. This will result in a <strong>crash</strong> with an ambiguous message emitted <code class="highlighter-rouge">Segmentation fault (Code Dumped)</code>.</li>
@@ -672,8 +674,185 @@ So far, errors in C++ development can be classified into:</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>valgrind <span class="nt">-v</span> <span class="nt">--leak-check</span><span class="o">=</span>full <span class="nt">--show-leak-kinds</span><span class="o">=</span>all ./test
 </code></pre></div></div>
 
+<h3 id="how-to-interpret-a-commit-at-github">How to interpret a commit at github</h3>
+
+<p>As you already know, <strong>git</strong> commits are line-oriented, i.e documents changes in lines.
+<strong>green</strong> lines represents added lines in that commit, while <strong>red</strong> lines represents removed lines from that commit.</p>
+
+<p><img src="/gallery/commit.png" style="width:90%;" /></p>
+
+<p>Each team member at github can be visualized his/her contribution in the repository.</p>
+
+<p><img src="/gallery/team.png" style="width:90%;" /></p>
+
+<blockquote>
+  <p>If we wish to count lines of code, we should not regard them as “lines produced” but as “lines spent”. — Edsger Dijkstra</p>
+</blockquote>
+
+<h2 id="where-are-we-now">Where are we now</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Week</th>
+      <th>Data Structures &amp; C++</th>
+      <th>Ecosystem &amp; Miscellaneous</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>Introduction</strong>: Brief intro to DS; C++ Basics</td>
+      <td>Briefly: Unix, compilation, git, github</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>C++ Memory Model, C++ Pointers and References</td>
+      <td>Your Code Readability</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Static and Dynamic Arrays; Categorize your logic with <code class="highlighter-rouge">namespace</code> scopes;</td>
+      <td>Processing command line arguments (<code class="highlighter-rouge">argc</code> &amp; <code class="highlighter-rouge">argv</code>); Compilation of multiple files; Basic Unix commands; bitbucket</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Stacks (ADT); Queues (ADT); Linked Lists; Array-Based Stack; LL-Based Stack; Array-Based Queue; LL-Based Queue; Functions Overloading;  Naming conventions; Const correctness; C++ classes and objects</td>
+      <td>Brief intro to  git for teams;  Brief intro to build systems</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Recursion;</td>
+      <td>Briefly: CMake; Git on large scale</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Bubble sort; Selection sort; Binary Trees</td>
+      <td>Open source vs. proprietary software</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>C++ template structs and template functions; <code class="highlighter-rouge">std::string</code>; <code class="highlighter-rouge">std::vector</code>; <code class="highlighter-rouge">std::array</code>; <code class="highlighter-rouge">std::list</code>; <code class="highlighter-rouge">std::stack</code></td>
+      <td>…</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-structures-and-algorithms-what-you-must-know-for-this-semester-until-week-7">Data Structures and Algorithms: What you must know for this semester until week 7</h2>
+
+<p>C++ is just a powerful tool to prove our computation theories!</p>
+
+<h3 id="focus-on-concepts">Focus on concepts</h3>
+
+<h4 id="week-1-c-basics"><strong>Week 1</strong>: C++ Basics</h4>
+
+<ul>
+  <li><strong>Essential</strong>: Primitive data types (PDT)</li>
+  <li><strong>Essential</strong>: Variables, declaration, and initialization</li>
+  <li><strong>Essential</strong>: Functions, namespaces, and scopes</li>
+  <li><strong>Essential</strong>: <code class="highlighter-rouge">main</code> function and basic compilation</li>
+  <li><strong>Extra</strong>: git, github, bitbucket, and Linux.</li>
+</ul>
+
+<h4 id="week-2-c-memory-model"><strong>Week 2</strong>: C++ Memory Model</h4>
+
+<ul>
+  <li><strong>Essential</strong>: Pointers and references</li>
+  <li><strong>Essential</strong>: Static allocations (static)</li>
+  <li><strong>Essential</strong>: Heap allocations (dynamic)</li>
+  <li><strong>Extra</strong>: Code styling and best practices</li>
+</ul>
+
+<h4 id="week-3-arrays"><strong>Week 3</strong>: Arrays</h4>
+
+<ul>
+  <li><strong>Essential</strong>: Static arrays</li>
+  <li><strong>Essential</strong>: Dynamic arrays</li>
+  <li><strong>Extra</strong>: Processing command line arguments</li>
+  <li><strong>Extra</strong>: Compilation of multiple files</li>
+  <li><strong>Extra</strong>: Separating libraries and application files</li>
+</ul>
+
+<h4 id="week-4-linked-lists-stacks-and-queues"><strong>Week 4</strong>: Linked Lists, Stacks, and Queues</h4>
+
+<ul>
+  <li><strong>Essential</strong>: Stack (ADT)</li>
+  <li><strong>Essential</strong>: Queue (ADT)</li>
+  <li><strong>Essential</strong>: Linked list</li>
+  <li><strong>Essential</strong>: Array implementation of stack</li>
+  <li><strong>Essential</strong>: Linked list implementation of stack</li>
+  <li><strong>Essential</strong>: Linked list implementation of queue</li>
+  <li><strong>Essential</strong>: Custom types using <code class="highlighter-rouge">struct</code></li>
+  <li><strong>Extra</strong>: Function overloading</li>
+  <li><strong>Extra</strong>: Naming conventions</li>
+  <li><strong>Extra</strong>: Const-correctness</li>
+  <li><strong>Extra</strong>: Basic OOP at glance</li>
+  <li><strong>Extra</strong>: Build Systems (CMake)</li>
+  <li><strong>Extra</strong>: Git for teams</li>
+</ul>
+
+<h4 id="week-5-recursion-and-big-oh-notation"><strong>Week 5</strong>: Recursion and Big-Oh Notation</h4>
+
+<ul>
+  <li><strong>Essential</strong>: Big-Oh notation</li>
+  <li><strong>Essential</strong>: Recursion</li>
+  <li><strong>Extra</strong>: Markdown</li>
+</ul>
+
+<h4 id="week-6-recursion-and-big-oh-notation"><strong>Week 6</strong>: Recursion and Big-Oh Notation</h4>
+
+<ul>
+  <li><strong>Essential</strong>: Sorting</li>
+  <li><strong>Essential</strong>: Bubble sort and Selection Sort</li>
+</ul>
+
+<h4 id="week-7-revision-common-mistakes-and-best-practices"><strong>Week 7</strong>: Revision, Common Mistakes, and Best Practices</h4>
+
+<ul>
+  <li><strong>Essential</strong>: List using array</li>
+  <li><strong>Extra</strong>: Type normalization: C++ templates</li>
+  <li><strong>Extra</strong>: <code class="highlighter-rouge">std::string</code>, <code class="highlighter-rouge">std::vector</code>, <code class="highlighter-rouge">std::array</code>, <code class="highlighter-rouge">std::list</code>, <code class="highlighter-rouge">std::stack</code>.</li>
+</ul>
+
+<h2 id="c-templates-towards-polymorphism-and-dry-solutions">C++ Templates: Towards Polymorphism and DRY Solutions</h2>
+
+<p>To be completed</p>
+
+<h2 id="type-normalization-in-c">Type Normalization in C++</h2>
+
+<p>To be completed</p>
+
+<h2 id="basic-oop-revisited">Basic OOP: Revisited</h2>
+
+<p>To be completed</p>
+
+<h2 id="stdstring">std::string</h2>
+
+<p>To be completed</p>
+
+<h2 id="stdvector">std::vector</h2>
+
+<p>To be completed</p>
+
+<h2 id="stdarray">std::array</h2>
+
+<p>To be completed</p>
+
 <h2 id="more-exercises">More Exercises</h2>
 
+<p>To be completed</p>
+
+<h3 id="central-dogma-transcription-and-translation">Central Dogma (Transcription and Translation)</h3>
+
+<p>To be completed</p>
+
+<h4 id="queues">Queues</h4>
+
+<h3 id="pangrams">Pangrams</h3>
+
+<p>To be completed</p>
+
+<p>http://exercism.io/exercises/cpp/pangram/readme</p>
 
   </div>
 
