@@ -14,7 +14,7 @@ by: "Asem"
 
 ### Names and Scopes
 
-#### Common Mistake: a custom type != a variable name
+#### Common Mistake: type != variable name
 
 ```c++
 struct IntegerNode
@@ -31,7 +31,7 @@ struct IntegersLL
 int size( IntegersLL &lst )
 {
     // Find mistakes
-    front = IntegersLL.head;
+    front = IntegersLL.head; // Error
 
     // Who is front?
 
@@ -60,7 +60,7 @@ int size( IntegersLL &lst )
 }
 ```
 
-### Common Mistake: Pointer to a Struct vs. Reference to a Struct vs. Name to a Struct
+### Common Mistake: Pointer to struct != Reference to a struct != Name to a struct
 
 ```c++
 struct IntegerNode
@@ -79,12 +79,12 @@ int size( IntegersLL &lst )
 {
     // Find two mistakes
     int count = 0;
-    IntegersNode *current = lst->head;
+    IntegersNode *current = lst->head; // Error
 
     while( current != nullptr )
     {
         count++;
-        current = current.next;
+        current = current.next; // Error
     }
     return count;
 }
@@ -109,9 +109,9 @@ struct IntegersLL
 };
 
 // Never do this. You are breaking the concept of a function!
-IntegersLL myList;
+IntegersLL myList; // A global variable
 
-int size( IntegersLL &lst )
+int size( IntegersLL &lst ) // unused input lst!
 {
     int count = 0;
 
@@ -122,7 +122,7 @@ int size( IntegersLL &lst )
     while( current != nullptr )
     {
         count++;
-        current = current.next;
+        current = current->next;
     }
     return count;
 }
@@ -156,7 +156,7 @@ int size( IntegersLL &lst )
 }
 ```
 
-#### Calling a Function
+#### Common mistakes in calling functions
 
 ```c++
 #include "linkedlist.hpp"
@@ -167,13 +167,13 @@ int main()
     list::IntegersLL samples;
 
     // Why you do this?
-    std::cout << "size:" << list::size( IntegersLL &lst );
+    std::cout << "size:" << list::size( IntegersLL &lst ); // error
 
     // Or this?
-    std::cout << "size:" << list::size( IntegersLL &samples );
+    std::cout << "size:" << list::size( IntegersLL &samples ); // error
 
     // We already declared samples of type list::IntegersLL
-    std::cout << "size:" << list::size( samples );
+    std::cout << "size:" << list::size( samples ); // good
 }
 ```
 
@@ -194,6 +194,7 @@ It is always useful to make a file with a `main` function to test the functions 
 1. You feel satisfied about what you have developed.
 2. Detecting any unexpected behavior, and accordingly helps you debug your code.
 
+
 Each member in a group assignment is required to make a file with a `main` function to test his/her developed functions. **Due discussion date**.
 
 ##### Advanced: Unit Testing
@@ -203,25 +204,9 @@ In practice, testing libraries is carried out in a more formal and standardized 
 * [Google Test](https://github.com/google/googletest).
 * [Catch2](https://github.com/catchorg/Catch2).
 
-## Revision on Data Structures
+## Data Structures: Big Picture
 
-### Arrays
-
-#### Dynamic Arrays
-
-#### Static Arrays
-
-### Linked Lists
-
-#### Linked Lists using Pointers
-
-#### Linked Lists using Arrays (new)
-
-### Abstract Data Types (ADT)
-
-#### ADT: Queue
-
-#### ADT: Stacks
+<img src="/gallery/ds1.svg" style="width:90%;">
 
 ### Complexity Analysis: Big-Oh Notation
 
@@ -231,10 +216,9 @@ In practice, testing libraries is carried out in a more formal and standardized 
 So far, errors in C++ development can be classified into:
 
 1. Compilation errors.
-2. Run-time errors (bugs).
-
-    * Logical error: you don't get the expected output.
-    * Critical error: you are abusing the memory access. This will result in a **crash** with an ambiguous message emitted `Segmentation fault (Code Dumped)`.
+2. Run-time errors (bugs), and can be classified into:
+  * Logical error: you don't get the expected output.
+  * Critical error: you are abusing the memory access. This will result in a **crash** with an ambiguous message emitted `Segmentation fault (Code Dumped)`.
 
 The **Segmentation fault** error typically results after:
 
@@ -273,5 +257,130 @@ g++ -g -std=c++11 -Wall test.cpp -o test
 valgrind -v --leak-check=full --show-leak-kinds=all ./test
 ```
 
+### How to interpret a commit at github
+
+As you already know, **git** commits are line-oriented, i.e documents changes in lines.
+**green** lines represents added lines in that commit, while **red** lines represents removed lines from that commit.
+
+<img src="/gallery/commit.png" style="width:90%;">
+
+
+Each team member at github can be visualized his/her contribution in the repository.
+
+<img src="/gallery/team.png" style="width:90%;">
+
+> If we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent". --- Edsger Dijkstra
+
+## Where are we now
+
+| Week | Data Structures & C++ | Ecosystem & Miscellaneous |
+|------|----------------------|-----------|
+| 1 | **Introduction**: Brief intro to DS; C++ Basics  | Briefly: Unix, compilation, git, github |
+| 2 | C++ Memory Model, C++ Pointers and References | Your Code Readability |
+| 3 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes;  | Processing command line arguments (`argc` & `argv`); Compilation of multiple files; Basic Unix commands; bitbucket |
+| 4 | Stacks (ADT); Queues (ADT); Linked Lists; Array-Based Stack; LL-Based Stack; Array-Based Queue; LL-Based Queue; Functions Overloading;  Naming conventions; Const correctness; C++ classes and objects | Brief intro to  git for teams;  Brief intro to build systems |
+| 5 | Recursion;   | Briefly: CMake; Git on large scale |
+| 6 | Bubble sort; Selection sort; Binary Trees  | Open source vs. proprietary software  |
+| 7 | C++ template structs and template functions; `std::string`; `std::vector`; `std::array`; `std::list`; `std::stack` | ... |
+
+## Data Structures and Algorithms: What you must know for this semester until week 7
+
+C++ is just a powerful tool to prove our computation theories!
+
+### Focus on concepts
+
+#### **Week 1**: C++ Basics
+
+* **Essential**: Primitive data types (PDT)
+* **Essential**: Variables, declaration, and initialization
+* **Essential**: Functions, namespaces, and scopes
+* **Essential**: `main` function and basic compilation
+* **Extra**: git, github, bitbucket, and Linux.
+
+#### **Week 2**: C++ Memory Model
+
+* **Essential**: Pointers and references
+* **Essential**: Static allocations (static)
+* **Essential**: Heap allocations (dynamic)
+* **Extra**: Code styling and best practices
+
+#### **Week 3**: Arrays
+
+* **Essential**: Static arrays
+* **Essential**: Dynamic arrays
+* **Extra**: Processing command line arguments
+* **Extra**: Compilation of multiple files
+* **Extra**: Separating libraries and application files
+
+#### **Week 4**: Linked Lists, Stacks, and Queues
+
+* **Essential**: Stack (ADT)
+* **Essential**: Queue (ADT)
+* **Essential**: Linked list
+* **Essential**: Array implementation of stack
+* **Essential**: Linked list implementation of stack
+* **Essential**: Linked list implementation of queue
+* **Essential**: Custom types using `struct`
+* **Extra**: Function overloading
+* **Extra**: Naming conventions
+* **Extra**: Const-correctness
+* **Extra**: Basic OOP at glance
+* **Extra**: Build Systems (CMake)
+* **Extra**: Git for teams
+
+#### **Week 5**: Recursion and Big-Oh Notation
+
+* **Essential**: Big-Oh notation
+* **Essential**: Recursion
+* **Extra**: Markdown
+
+#### **Week 6**: Recursion and Big-Oh Notation
+
+* **Essential**: Sorting
+* **Essential**: Bubble sort and Selection Sort
+
+#### **Week 7**: Revision, Common Mistakes, and Best Practices
+
+* **Essential**: List using array
+* **Extra**: Type normalization: C++ templates
+* **Extra**: `std::string`, `std::vector`, `std::array`, `std::list`, `std::stack`.
+
+## C++ Templates: Towards Polymorphism and DRY Solutions
+
+To be completed
+
+## Type Normalization in C++
+
+To be completed
+
+## Basic OOP: Revisited
+
+To be completed
+
+## std::string
+
+To be completed
+
+## std::vector
+
+To be completed
+
+## std::array
+
+To be completed
+
 ## More Exercises
 
+To be completed
+
+### Central Dogma (Transcription and Translation)
+
+To be completed
+
+#### Queues
+
+### Pangrams
+
+To be completed
+
+http://exercism.io/exercises/cpp/pangram/readme
