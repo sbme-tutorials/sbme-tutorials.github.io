@@ -1,19 +1,20 @@
----
-layout: page
-course: "sbe201"
-category: "notes"
-year: "2018"
-title:  "Week 7 - Part1: Revision"
-by: "Asem"
----
 
-* TOC
-{:toc}
+<!DOCTYPE html>
+<html>
+  <head>
 
+    <meta charset="utf-8">
+    <title>Week 7 - Part1: Revision, Templates, Valgrind</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+---
 ## Practices and Common Issues
 
-### Names and Scopes
-
+---
 #### Common Mistake: type != variable name
 
 ```c++
@@ -22,7 +23,6 @@ struct IntegerNode
     int data;
     IntegerNode *next;
 };
-
 struct IntegersLL
 {
     IntegerNode *head;
@@ -34,9 +34,7 @@ int size( IntegersLL &lst )
     front = IntegersLL.head; // Error
 
     // Who is front?
-
     // Who is IntegersLL?
-
     // Who is IntegersLL.head?
 }
 ```
@@ -44,6 +42,8 @@ int size( IntegersLL &lst )
 * Don't use any name unless it is **declared**. `front` is undeclared.
 * `IntegersLL` is a **type** not a **name** of a variable.
 
+
+---
 ### Common Mistake: when passing by reference don't mess with input data
 
 ```c++
@@ -60,6 +60,7 @@ int size( IntegersLL &lst )
 }
 ```
 
+---
 ### Common Mistake: Pointer to struct != Reference to a struct != Name to a struct
 
 ```c++
@@ -68,12 +69,10 @@ struct IntegerNode
     int data;
     IntegerNode *next;
 };
-
 struct IntegersLL
 {
     IntegerNode *head;
 };
-
 
 int size( IntegersLL &lst )
 {
@@ -90,33 +89,29 @@ int size( IntegersLL &lst )
 }
 ```
 
+---
 ### Functions
-
 #### Bad Practice: Global Variables
 
-**As a rule of thumb**, inside a function, all what you have got is the function input.
+--
+##### **As a rule of thumb**, inside a function, all what you have got is the function input.
 
+--
 ```c++
 struct IntegerNode
 {
     int data;
     IntegerNode *next;
 };
-
 struct IntegersLL
 {
     IntegerNode *head;
 };
-
-// Never do this. You are breaking the concept of a function!
 IntegersLL myList; // A global variable
 
 int size( IntegersLL &lst ) // unused input lst!
 {
     int count = 0;
-
-    // This function will only work with the global variable `myList`
-    // We cannot apply this function to any other Linked List of integers!
     IntegersNode *current = myList.head;
 
     while( current != nullptr )
@@ -128,7 +123,8 @@ int size( IntegersLL &lst ) // unused input lst!
 }
 ```
 
-The **correct** solution
+---
+#### The **correct** solution
 
 ```c++
 struct IntegerNode
@@ -156,6 +152,7 @@ int size( IntegersLL &lst )
 }
 ```
 
+---
 #### Common mistakes in calling functions
 
 ```c++
@@ -177,51 +174,67 @@ int main()
 }
 ```
 
+---
 ### Main Function
 
 #### Useful Application
 
-The `main` function is the program entry point. In practice, developers build libraries over libraries, in order to be finally used in the `main` function. Recall the diagrams of **week 3**.
+<img src="/gallery/multiplefiles.svg" style="width:80%">
 
-![multiple](/gallery/multiplefiles.svg)
+---
+<img src="../../assignments/task3.svg" style="width:80%">
 
-![dependencies](../assignments/task3.svg)
 
+---
 #### Testing Application
 
-It is always useful to make a file with a `main` function to test the functions and structures you have just developed so:
+##### `main` function to test the functions and structures you developed so:
 
 1. You feel satisfied about what you have developed.
 2. Detecting any unexpected behavior, and accordingly helps you debug your code.
 
 
-Each member in a group assignment is required to make a file with a `main` function to test his/her developed functions. **Due discussion date**.
+###### Each member in a group assignment is **encouraged** to make a file with a `main` function to test his/her developed functions. **Due discussion date**.
 
+---
 ##### Advanced: Unit Testing
 
+---
 In practice, testing libraries is carried out in a more formal and standardized methodologies. Although it is currently an advanced topic, you can read about [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development) in the summer. In C++, there are famous unit testing frameworks, for example:
 
-* [Google Test](https://github.com/google/googletest).
-* [Catch2](https://github.com/catchorg/Catch2).
+* [{Google Test}](https://github.com/google/googletest).
+* [{Catch2}](https://github.com/catchorg/Catch2).
 * [{Boost.Test}](http://www.boost.org/doc/libs/1_66_0/libs/test/doc/html/index.html)
 
+
+---
 ## Data Structures: Big Picture
 
+--
 <img src="/gallery/ds1.svg" style="width:90%;">
 
+---
 ### Complexity Analysis: Big-Oh Notation
 
-## Segmentation Fault (Core Dumped)
+
+---
+## C++ Errors
+
 
 **Fact** Although your application did compile without errors, doesn't mean it is logically correct or should run as expected.
-So far, errors in C++ development can be classified into:
+
+--
+#### C++ Errors
 
 1. Compilation errors.
 2. Run-time errors (bugs), and can be classified into:
   * Logical error: you don't get the expected output.
   * Critical error: you are abusing the memory access. This will result in a **crash** with an ambiguous message emitted `Segmentation fault (Code Dumped)`.
 
-The **Segmentation fault** error typically results after:
+
+
+---
+#### The **Segmentation fault** error:
 
 * Dereferencing a `nullptr`.
 * Dereferencing an un-initialized pointer, as a side-effect of undefined behavior.
@@ -229,17 +242,22 @@ The **Segmentation fault** error typically results after:
   * De-allocated place in stack memory after going out of scope.
   * De-allocated place in heap memory after `delete`ing that place using its pointer.
 * Exceeding array boundaries.
+* Stack overflow
 
+
+---
 ### Memory Management and Memory Leakage
 
 ### Valgrind
 
+---
 #### Installing Valgrind
 
 ```terminal
 sudo apt-get install valgrind
 ```
 
+---
 #### Running Valgrind
 
 In order to trace your code to the point of the crash you need to compile your code with an additional flag `-g`. The flag `-g` tells your compiler to compiler your program in *Debugging* mode.
@@ -258,20 +276,19 @@ g++ -g -std=c++11 -Wall test.cpp -o test
 valgrind -v --leak-check=full --show-leak-kinds=all ./test
 ```
 
+---
 ### How to interpret a commit at github
-
-As you already know, **git** commits are line-oriented, i.e documents changes in lines.
-**green** lines represents added lines in that commit, while **red** lines represents removed lines from that commit.
 
 <img src="/gallery/commit.png" style="width:90%;">
 
 
-Each team member at github can be visualized his/her contribution in the repository.
+---
+> If we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent". --- Edsger Dijkstra
 
 <img src="/gallery/team.png" style="width:90%;">
 
-> If we wish to count lines of code, we should not regard them as "lines produced" but as "lines spent". --- Edsger Dijkstra
 
+---
 ## Where are we now
 
 | Week | Data Structures & C++ | Ecosystem & Miscellaneous |
@@ -284,12 +301,17 @@ Each team member at github can be visualized his/her contribution in the reposit
 | 6 | Bubble sort; Selection sort; Binary Trees  | Open source vs. proprietary software  |
 | 7 | C++ template structs and template functions; `std::string`; `std::vector`; `std::array`; `std::list`; `std::stack` | ... |
 
-## Data Structures and Algorithms: What you must know for this semester until week 7
+
+---
+#### Data Structures and Algorithms: What you must know for this semester until week 7
 
 C++ is just a powerful tool to prove our computation theories!
 
+
 ### Focus on concepts
 
+
+---
 #### **Week 1**: C++ Basics
 
 * **Essential**: Primitive data types (PDT)
@@ -298,6 +320,8 @@ C++ is just a powerful tool to prove our computation theories!
 * **Essential**: `main` function and basic compilation
 * **Extra**: git, github, bitbucket, and Linux.
 
+
+---
 #### **Week 2**: C++ Memory Model
 
 * **Essential**: Pointers and references
@@ -305,6 +329,8 @@ C++ is just a powerful tool to prove our computation theories!
 * **Essential**: Heap allocations (dynamic)
 * **Extra**: Code styling and best practices
 
+
+---
 #### **Week 3**: Arrays
 
 * **Essential**: Static arrays
@@ -313,6 +339,8 @@ C++ is just a powerful tool to prove our computation theories!
 * **Extra**: Compilation of multiple files
 * **Extra**: Separating libraries and application files
 
+
+---
 #### **Week 4**: Linked Lists, Stacks, and Queues
 
 * **Essential**: Stack (ADT)
@@ -329,26 +357,30 @@ C++ is just a powerful tool to prove our computation theories!
 * **Extra**: Build Systems (CMake)
 * **Extra**: Git for teams
 
+
+---
 #### **Week 5**: Recursion and Big-Oh Notation
 
 * **Essential**: Big-Oh notation
 * **Essential**: Recursion
 * **Extra**: Markdown
 
+---
 #### **Week 6**: Recursion and Big-Oh Notation
 
 * **Essential**: Sorting
 * **Essential**: Bubble sort and Selection Sort
 
+---
 #### **Week 7**: Revision, Common Mistakes, and Best Practices
 
 * **Essential**: List using array
 * **Extra**: Type normalization: C++ templates
 * **Extra**: `std::string`, `std::vector`, `std::array`, `std::list`, `std::stack`.
 
-## C++ Templates: Towards Polymorphism and DRY Solutions
 
-As some of you have realized the latest assignment you have implemented a **linked list**, **stack**, or a **queue** for a certain data type, then you **repeated** your logic for the other data types. In C++, there are many polymorphism techniques can be employed to achieve more DRY solutions for such situations.
+---
+## C++ Templates: Towards Polymorphism and DRY Solutions
 
 ## Type Normalization in C++
 
@@ -377,7 +409,11 @@ void insertFront( LL< T > &lst ,  T data )
     auto newNode = new Node< T >{ data , lst.head };
     lst.head = newNode;
 }
+```
 
+---
+
+```c++
 template< typename T >
 void removeFront( LL< T > &lst )
 {
@@ -403,22 +439,17 @@ bool isEmpty( LL< T > &lst )
 }
 ```
 
-In the `main` function you just need to **specialize** your template `struct` at the point of usage. See the following example of the DNA complementary sequence solved using **templates**.
+---
+#### Using your template struct and template functions
 
+In the `main` function you just need to **instantiate** your template `struct` at the point of usage. See the following example of the DNA complementary sequence solved using **templates**.
+
+---
 ```c++
 // main.cpp
 #include "mylist.hpp"
-#include "helpers.hpp"
 #include <iostream>
 #include <string>
-
-char complementaryBase( char base )
-{
-    if( base == 'A' ) return 'T';
-    else if( base == 'T' ) return 'A';
-    else if( base == 'G' ) return 'C';
-    else return 'G';
-}
 
 int main( int argc , char **argv )
 {
@@ -443,34 +474,78 @@ int main( int argc , char **argv )
 }
 ```
 
+---
 ## Basic OOP: Revisited
 
-To be completed
 
+---
 ## std::string
 
-To be completed
 
+---
 ## std::vector
 
-To be completed
 
+---
 ## std::array
 
-To be completed
 
+---
 ## More Exercises
-
-To be completed
-
 ### Central Dogma (Transcription and Translation)
-
-To be completed
-
 #### Queues
 
+---
+## More Exercises
 ### Pangrams
 
-To be completed
 
-http://exercism.io/exercises/cpp/pangram/readme
+    </textarea>
+    
+    
+
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+  <script src="/javascript/remark-latest.min.js"></script>
+
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    var options = {
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
+
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+  </script>
+
+  <script src="/mathjax/MathJax.js"></script>
+
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+      jax: ["input/TeX", "output/HTML-CSS"],
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+      },
+      MathMenu: {
+       showRenderer: false,
+       showFontMenu: false,
+       showLocale: false
+      }
+    });
+  </script>
+  
+  </body>
+</html>
+

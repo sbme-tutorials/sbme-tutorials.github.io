@@ -610,6 +610,7 @@
 <ul>
   <li><a href="https://github.com/google/googletest">Google Test</a>.</li>
   <li><a href="https://github.com/catchorg/Catch2">Catch2</a>.</li>
+  <li><a href="http://www.boost.org/doc/libs/1_66_0/libs/test/doc/html/index.html">{Boost.Test}</a></li>
 </ul>
 
 <h2 id="data-structures-big-picture">Data Structures: Big Picture</h2>
@@ -816,11 +817,98 @@ So far, errors in C++ development can be classified into:</p>
 
 <h2 id="c-templates-towards-polymorphism-and-dry-solutions">C++ Templates: Towards Polymorphism and DRY Solutions</h2>
 
-<p>To be completed</p>
+<p>As some of you have realized the latest assignment you have implemented a <strong>linked list</strong>, <strong>stack</strong>, or a <strong>queue</strong> for a certain data type, then you <strong>repeated</strong> your logic for the other data types. In C++, there are many polymorphism techniques can be employed to achieve more DRY solutions for such situations.</p>
 
 <h2 id="type-normalization-in-c">Type Normalization in C++</h2>
 
-<p>To be completed</p>
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// mylist.hpp</span>
+<span class="cp">#include &lt;cstdlib&gt;
+</span><span class="k">namespace</span> <span class="n">list</span>
+<span class="p">{</span>
+
+<span class="k">template</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">Node</span>
+<span class="p">{</span>
+    <span class="n">T</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span>
+<span class="k">struct</span> <span class="n">LL</span>
+<span class="p">{</span>
+    <span class="n">Node</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">*</span><span class="n">head</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">template</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">insertFront</span><span class="p">(</span> <span class="n">LL</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">,</span>  <span class="n">T</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="n">lst</span><span class="p">.</span><span class="n">head</span> <span class="p">};</span>
+    <span class="n">lst</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span>
+<span class="kt">void</span> <span class="n">removeFront</span><span class="p">(</span> <span class="n">LL</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">auto</span> <span class="n">discard</span> <span class="o">=</span> <span class="n">lst</span><span class="p">.</span><span class="n">head</span><span class="p">;</span>
+    <span class="n">lst</span><span class="p">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">lst</span><span class="p">.</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">discard</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span>
+<span class="n">T</span> <span class="n">front</span><span class="p">(</span> <span class="n">LL</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">lst</span><span class="p">.</span><span class="n">head</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="n">lst</span><span class="p">.</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+    <span class="k">else</span> <span class="n">exit</span><span class="p">(</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="k">template</span><span class="o">&lt;</span> <span class="k">typename</span> <span class="n">T</span> <span class="o">&gt;</span>
+<span class="kt">bool</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">LL</span><span class="o">&lt;</span> <span class="n">T</span> <span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">lst</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">lst</span><span class="p">.</span><span class="n">head</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>In the <code class="highlighter-rouge">main</code> function you just need to <strong>specialize</strong> your template <code class="highlighter-rouge">struct</code> at the point of usage. See the following example of the DNA complementary sequence solved using <strong>templates</strong>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// main.cpp</span>
+<span class="cp">#include "mylist.hpp"
+#include "helpers.hpp"
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+</span>
+<span class="kt">char</span> <span class="nf">complementaryBase</span><span class="p">(</span> <span class="kt">char</span> <span class="n">base</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">base</span> <span class="o">==</span> <span class="sc">'A'</span> <span class="p">)</span> <span class="k">return</span> <span class="sc">'T'</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">base</span> <span class="o">==</span> <span class="sc">'T'</span> <span class="p">)</span> <span class="k">return</span> <span class="sc">'A'</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">base</span> <span class="o">==</span> <span class="sc">'G'</span> <span class="p">)</span> <span class="k">return</span> <span class="sc">'C'</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="sc">'G'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span> <span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">dna</span> <span class="o">=</span> <span class="n">helpers</span><span class="o">::</span><span class="n">getLines</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+
+    <span class="n">list</span><span class="o">::</span><span class="n">LL</span><span class="o">&lt;</span> <span class="kt">char</span> <span class="o">&gt;</span> <span class="n">ls</span><span class="p">;</span> <span class="c1">// Declaration + Instantiation of template LL</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">cdna</span><span class="p">;</span>
+
+    <span class="k">for</span><span class="p">(</span> <span class="kt">char</span> <span class="n">base</span> <span class="o">:</span> <span class="n">dna</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">list</span><span class="o">::</span><span class="n">insertFront</span><span class="p">(</span> <span class="n">ls</span> <span class="p">,</span> <span class="n">complementaryBase</span><span class="p">(</span> <span class="n">base</span> <span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="k">while</span><span class="p">(</span> <span class="o">!</span> <span class="n">list</span><span class="o">::</span><span class="n">isEmpty</span><span class="p">(</span> <span class="n">ls</span> <span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">cdna</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span> <span class="n">list</span><span class="o">::</span><span class="n">front</span><span class="p">(</span> <span class="n">ls</span> <span class="p">));</span>
+        <span class="n">list</span><span class="o">::</span><span class="n">removeFront</span><span class="p">(</span> <span class="n">ls</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cdna</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
 
 <h2 id="basic-oop-revisited">Basic OOP: Revisited</h2>
 
