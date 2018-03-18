@@ -445,7 +445,72 @@ int main( int argc , char **argv )
 
 ## Basic OOP: Revisited
 
-To be completed
+```c++
+template< typename T >
+struct Node
+{
+    T data;
+    Node *next;
+};
+
+template <typename T>
+struct Node
+{
+    T data;
+    Node *next;
+};
+
+template <typename T>
+struct LL
+{
+    Node<T> *head = nullptr;
+
+    void insertFront( T data)
+    {
+        auto newNode = new Node<T>{data, head};
+        head = newNode;
+    }
+
+    void removeFront( )
+    {
+        auto discard = head;
+        head = head->next;
+        delete discard;
+};
+```
+
+
+Now we can use our template structure as:
+
+```c++
+int main( int argc , char **argv )
+{
+    std::string dna = helpers::getLines( argv[1] )[0];
+
+    list::LL< char > ls;
+
+    std::string cdna;
+
+    for( char base : dna )
+    {
+        ls.insertFront( complementaryBase( base ));
+    }
+
+    while( ! ls.isEmpty())
+    {
+        cdna.push_back( ls.front());
+        ls.removeFront();
+    }
+
+    std::cout << cdna;
+}
+```
+
+To clone the whole demo:
+
+```bash
+git clone https://github.com/sbme-tutorials/sbe201-week7-demo.git
+```
 
 ## std::string
 
