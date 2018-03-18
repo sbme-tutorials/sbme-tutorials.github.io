@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 7 - Part1</title>
+  <title>Ubuntu installation alongside windows in legacy mode</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/8_week8a.html">
+  <link rel="canonical" href="http://localhost:4000/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -359,113 +359,54 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <h2>Ubuntu installation alongside windows in legacy mode</h2>
+<em>By Amr Abdelsalam</em>
 
-  <header class="post-header">
-    <h1 class="post-title">Week 7 - Part1</h1>
-  </header>
+<br><br>
 
-  <div class="post-content">
-    <p>https://www.youtube.com/watch?v=kPRA0W1kECg</p>
-
-<h3 id="how-to-download-from-coursera">How to download from coursera</h3>
-
-<h4 id="1-coursera-account">1. Coursera Account</h4>
-
-<h4 id="2-install-python">2. Install Python</h4>
-
-<h4 id="3-install-pip">3. Install pip</h4>
-
-<h2 id="markdown-vs-wygiwys-editors">Markdown vs. WYGIWYS Editors</h2>
-
-<h3 id="jekyll">Jekyll</h3>
-
-<h3 id="remarkjs">Remarkjs</h3>
-
-<h3 id="resumes">Resumes</h3>
-
-<h3 id="latex">Latex</h3>
-
-<h2 id="template-structs">Template Structs</h2>
-
-<p>Templates.</p>
-
-<h3 id="exercism">Exercism</h3>
-
-<h4 id="login-with-your-github-account">Login with your github account</h4>
-
-<h4 id="install-the-command-line-tool">Install the command line tool</h4>
-
-<p><a href="http://exercism.io/clients/cli/linux">Follow the instructions here</a></p>
-
-<ol>
-  <li>Download the command line tool: <a href="https://github.com/exercism/cli/releases/download/v2.4.1/exercism-linux-64bit.tgz">(64-bit)</a><a href="https://github.com/exercism/cli/releases/download/v2.4.1/exercism-linux-32bit.tgz">(32-bit)</a>.</li>
-  <li>Extract the downloaded binary file <code class="highlighter-rouge">tar -xzvf exercism-linux-64bit.tgz</code></li>
-  <li>Make new folder at your home <code class="highlighter-rouge">~/bin</code> and move the executable to that folder, using the following commands:</li>
-</ol>
-
-<ul>
-  <li><code class="highlighter-rouge">mkdir ~/bin</code></li>
-  <li><code class="highlighter-rouge">mv exercism ~/bin/</code></li>
-  <li><code class="highlighter-rouge">echo 'export PATH=$HOME/bin:$PATH' &gt;&gt; ~/.bashrc</code></li>
+<div class="home">
+    <ul id="markdown-toc">
+  <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+  <li><a href="#steps" id="markdown-toc-steps">Steps</a></li>
 </ul>
 
-<h4 id="connect-the-command-line-tool-to-your-profile-at-exercismio">Connect the command line tool to your profile at exercism.io</h4>
+<h2 id="motivation">Motivation</h2>
 
-<p>Go to <a href="http://exercism.io/account/key">this page</a>, and execute the provided command in your terminal.
-For example:</p>
+<p>To share experience in installing ubuntu alongside Windows 10, and the corresponding issues of Windows being installed in legacy mode.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exercism configure <span class="nt">--key</span><span class="o">=</span>SOME_WORDY_KEY
-</code></pre></div></div>
+<h2 id="steps">Steps</h2>
 
-<h4 id="start-fetching-c-exercises">Start fetching C++ Exercises</h4>
+<p>First, have a look at this <a href="https://www.tecmint.com/install-ubuntu-16-04-alongside-with-windows-10-or-8-in-dual-boot/">tutorial</a>.</p>
 
-<p>By issuing the command <code class="highlighter-rouge">exercism fetch cpp</code>, you will have a new exercise downloaded at <code class="highlighter-rouge">~/exercism/cpp</code>.</p>
+<p>Here are some extra remarks you should take care of it.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>exercism fetch cpp
+<ul>
+  <li>To know the boot mode restart your lab and enter bios settings (press the right <code class="highlighter-rouge">Fn</code> key probably <code class="highlighter-rouge">F2</code> before the windows logo appear) then go to boot settings and check the boot mode type. See the image: <img src="../gallery/amr-screenshot1.jpg" alt="boot" />.
+    <ul>
+      <li>Alternatively, use this <a href="https://www.eightforums.com/tutorials/29504-bios-mode-see-if-windows-boot-uefi-legacy-mode.html">link</a></li>
+    </ul>
+  </li>
+  <li>If you have an UEFI boot mode take care of this part in the tutorial “In case your hardware uses UEFI then you should modify the EFI settings and disable Secure Boot feature.”</li>
+  <li>Make the shrink part from hard 30 Giga not 20 as the tutorial.</li>
+  <li>To burn the iso image on the flash memory use <a href="https://rufus.akeo.ie/">Rufus</a>.
+    <ul>
+      <li><strong>If your boot mode in windows is UEFI then use the UEFI mode in Rufus options</strong>. Otherwise, use the Legacy(bios)/UEFI mode.</li>
+    </ul>
+  </li>
+  <li><strong>Most important note</strong>*: the boot mode in windows must match the flash memory boot mode, as Ubuntu will be set up in this mode too.</li>
+  <li>Place the USB stick or DVD in the appropriate drive, reboot the machine and instruct the BIOS/UEFI to boot-up from the DVD/USB by pressing a special function key (usually <code class="highlighter-rouge">F12</code>, <code class="highlighter-rouge">F10</code> or <code class="highlighter-rouge">F2</code> depending on the vendor specifications).</li>
+  <li>Therefore, after restarting the lab and during after pressing the right <code class="highlighter-rouge">Fn</code> key the boot manger menu will appear so, if you have UEFI in windows use the USB option that has UEFI/EFI word. If you have Legacy (bios) mode in the windows so choose the USB option without UEFI/EFI word.
+    <ul>
+      <li>The boot manger menu will might look like this: <img src="../gallery/amr-screenshot2.jpg" alt="bootmenu" /></li>
+    </ul>
+  </li>
+  <li><strong>Critical</strong>: After the sixth step of the set-up, if you have this error message go back and quit the set up and check the USB boot mode. <img src="../gallery/amr-screenshot3.jpg" alt="ubuntu-warning" /></li>
+  <li>At the eighth step it’s preferable to make a swap part &lt;= 5 Giga and home partition is not a must.</li>
+  <li><strong>Important Info</strong>: If you are on Legacy mode the allowed number of partitions for both OSs are 4 so make sure that you have only 2 partitions in windows so that you will be able to make the root and swap partitions in Ubuntu.</li>
+  <li>If you have 3 or 4 partitions in windows you can merge them safely without losing data using this <a href="https://www.partitionwizard.com/mergepartitions/merge-partitions-without-losing-data.html">program</a> (the steps are included).</li>
+</ul>
 
-Not Submitted:    1 problem
-cpp <span class="o">(</span>Hello World<span class="o">)</span> /home/asem/exercism/cpp/hello-world
-
-New:              1 problem
-cpp <span class="o">(</span>Hello World<span class="o">)</span> /home/asem/exercism/cpp/hello-world
-
-unchanged: 0, updated: 0, new: 1
-
-</code></pre></div></div>
-
-<p>Go to the exercise folder</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/exercism/cpp/hello-world
-</code></pre></div></div>
-
-  </div>
-
-</article>
-
-<!-- 
-Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
-https://ro-che.info/articles/2017-04-02-deploying-mathjax 
--->
-
-<script src="/mathjax/MathJax.js"></script>
-
-<script type="text/javascript">
-  MathJax.Hub.Config({
-    extensions: ["tex2jax.js"],
-    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-    jax: ["input/TeX", "output/HTML-CSS"],
-    "HTML-CSS": {
-      availableFonts: ["TeX"],
-      imageFont: null
-    },
-    MathMenu: {
-      showRenderer: false,
-      showFontMenu: false,
-      showLocale: false
-    }
-  });
-</script>
+</div>
       </div>
     </main>
 
