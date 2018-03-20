@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 6: Corner Detection</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: center, middle
+ ##   Corner Detection
+ By: Eslam Adel 
+
+ email: eslam.a.mahmoud@eng1.cu.edu.eg
+---
+
+class: top, left
+## Feature Detection
+
+### Challenges
+
+* Geometric transformations (Translation, Rotation, Scale)
+* Photometric (Brightness, exposure )
+
+### Good Feature
+
+* Distinctive (unique)
+* Robust & efficient 
+* General
+---
+
+class: top, left
+## Corner Detector
+
+* Flat region 
+
+* Edge 
+
+* Corner
+
+<img style="width:90%" src="../../images/Corners.png">
+--
+
+Variation in all directions
+
+--
+
+Corner is a good feature
+---
+
+class: left, top
+## How to detect corners
+* Hessian matrix
+<img style="width:60%" src="../../images/Hmat.png">
+
+* Eigen vectors and Eigen values
+
+  values (amount of variation), vector (variation direction)
+
+ <img style="width:60%" src="../../images/eig1.png">
+
+
+---
+
+class:center ,middle
+
+<img style="width:70%" src="../../images/eig2.png">
+
+  $$|H - \lambda I | = 0$$
+--
+Complex computation.
+
+---
+
+class: top, left
+## Harris operator
+* Instead of calculating $$\lambda_1, \lambda_2$$ 
+* Lower complexity
+
+ $$  Harris = det(H(p)) - a * trace(H(p))$$ 
+
+where a is  a constant. 
+
+* Trace is sum of diagonal elements 
+
+**Lets try to implement it**.
+
+---
+
+
+class: top, left
+## Harris and Stephens operator
+* Instead of second order derivative Hessian matrix
+* first-order derivatives of smoothed version (gaussian). 
+
+<img style="width:100%" src="../../images/Harr.png">
+
+ $$ H = \frac{det(G)}{trace(G)}  $$ 
+ 
+ or 
+ $$  H = det(G) - a * trace(G)$$ 
+ 
+
+ Select large values 
+
+ **Lets See implementation**
+
+---
+
+calss: top, left
+## FAST Corner Detector
+* Features from Accelerated Segment Test (FAST)
+* Real-time applications.
+
+<img style="width:100%" src="../../images/fast.png">
+---
+
+calss: top, left
+## FAST Corner Detector
+* Basic Algorithm
+
+```python
+1. Select Pixel p with intensity $$I_p$$ 
+2. Select Threshold t
+3. Consider circle with 16 pixels.
+4. Calculate absolute difference $$I_p - I_i$$ and i =1 to 16
+5. P is a corner if n points have absolute difference > t and n >= 3
+6. Suppress weak corners (None-Max suppression)
+```
+
+--
+* High Speed Test 
+
+```python
+4. Calculate absolute difference $$I_p - I_i$$ Considering i =1, 9, 5, 13 only.
+5. P is a corner if n points have absolute difference > t and n >= 3
+6. Suppress weak corners (None-Max suppression)
+```
+--
+* None-Max suppression
+
+```python
+For successive corners.
+1. For each corner point p
+1. Compute score V which is sum of absolute difference between point p and 16 circle points.
+2. Suppress if not local maximum. 
+```
+**Lets See Implementation**
+---
+
+class: center, middle
+# Thanks        
+
+</textarea>
+    
+    
+
+<script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<script src="/javascript/remark-latest.min.js"></script>
+
+<script type="text/javascript">
+  var hljs = remark.highlighter.engine;
+</script>
+<script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var options = {
+    highlightStyle: 'monokai',
+    countIncrementalSlides: false
+  };
+  var slideshow = remark.create(options);
+
+  // extract the embedded styling from ansi spans
+  $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+    return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+  });
+
+</script>
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+     showRenderer: false,
+     showFontMenu: false,
+     showLocale: false
+    }
+  });
+</script>
+
+</body>
+</html>
