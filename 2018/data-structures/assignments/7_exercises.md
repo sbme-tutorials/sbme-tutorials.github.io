@@ -19,3 +19,4 @@ https://www.khanacademy.org/science/biology/gene-expression-central-dogma/modal/
 
 ### Translate an RNA to Protein
 
+rosalind.info/problems/ba4a/
