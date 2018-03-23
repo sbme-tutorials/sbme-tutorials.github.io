@@ -3,7 +3,7 @@ layout: page
 course: "sbe404"
 category: "notes"
 year: "2018"
-title:  "Week 4: Hough Transform (Line and Circle Detection)"
+title:  "Week 5: Hough Transform (Line and Circle Detection)"
 by: "Eslam"
 ---
 
