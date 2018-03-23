@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</title>
+  <title>Exercises 1: C++ Basics and Linear Data Structures</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/3_faq2.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/7_exercises.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -362,59 +362,31 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</h1>
+    <h1 class="post-title">Exercises 1: C++ Basics and Linear Data Structures</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="faq-2-why-int-p--x--p--x">FAQ #2. Why <code class="highlighter-rouge">int *p = &amp;x</code> != <code class="highlighter-rouge">*p = &amp;x</code></h2>
+    <p>https://www.khanacademy.org/science/biology/gene-expression-central-dogma/modal/a/translation-overview</p>
 
-<h3 id="a-declarationinitialization-vs-dereferencing">A Declaration+Initialization vs. Dereferencing</h3>
+<h2 id="more-on-central-dogma">More on Central Dogma</h2>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="c1">// Declaring a pointer-to-integer and initializing it to address of x.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiles (Type Match)!</span>
+<p><img src="/gallery/centraldogma.png" alt="" /></p>
 
-<span class="c1">// Dereferencing px and assignment by address of integer</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error (Type Mismatch)!</span>
-</code></pre></div></div>
+<p><em>Image modified from “<a href="https://commons.wikimedia.org/wiki/File:Central_Dogma_of_Molecular_Biochemistry_with_Enzymes.jpg">Central dogma of molecular biochemistry with enzymes,</a>” by Daniel Horspool (CC BY-SA 3.0). The modified image is licensed under a <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.en">CC BY-SA 3.0</a> license.</em></p>
 
-<p>In other words,</p>
+<h3 id="transcript-a-dna-to-rna">Transcript a DNA to RNA</h3>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
+<h3 id="translate-an-rna-to-protein">Translate an RNA to Protein</h3>
 
-<p>is equivalent to</p>
+<p><img src="/gallery/aminoacids.png" alt="" /></p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
+<p><em>Image credit: “<a href="http://cnx.org/contents/GFy_h8cu@9.87:QEibhJMi@8/The-Genetic-Code">The genetic code</a>,” by OpenStax College, Biology (CC BY 3.0).</em></p>
 
-<p>Which is <strong>not</strong> equivalent to</p>
+<p>rosalind.info/problems/ba4a/</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span><span class="p">;</span>
-<span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span> <span class="c1">// Compiler Error (Type Mismatch)!</span>
-</code></pre></div></div>
+<p><img src="/gallery/rna2aa.png" alt="" /></p>
 
-<h3 id="short-story">Short Story</h3>
-
-<ul>
-  <li>Asterisk <code class="highlighter-rouge">*</code> in declarations expressions (<code class="highlighter-rouge">int *p;</code>) means you are declaring a pointer <code class="highlighter-rouge">p</code>.</li>
-  <li>Asterisk <code class="highlighter-rouge">*</code> in non-declaration expressions (<code class="highlighter-rouge">*p;</code>)  means you are dereferencing a pointer (get the variable pointed by the address in <code class="highlighter-rouge">p</code>).</li>
-</ul>
-
-<p>You can also make it simpler for your self if you wish.</p>
-
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-
-<span class="c1">// To declare and initialize pointers to zero address,</span>
-<span class="c1">// you can use either nullptr or 0.</span>
-<span class="kt">int</span> <span class="o">*</span><span class="n">px</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
-
-<span class="n">px</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
-</code></pre></div></div>
+<p><em>Image modified from “RNA-codons-aminoacids,” by Thomas Splettstoesser (CC BY-SA 4.0). The modified image is licensed under a CC BY-SA 4.0 license.</em></p>
 
   </div>
 
