@@ -379,16 +379,20 @@
     </ul>
   </li>
   <li><a href="#corner-detector-using-eigen-values" id="markdown-toc-corner-detector-using-eigen-values">Corner Detector using eigen values</a></li>
-  <li><a href="#harris-operator" id="markdown-toc-harris-operator">Harris Operator</a></li>
-  <li><a href="#harris-and-stephens-operator" id="markdown-toc-harris-and-stephens-operator">Harris and Stephens operator</a>    <ul>
+  <li><a href="#harris-operator" id="markdown-toc-harris-operator">Harris Operator</a>    <ul>
+      <li><a href="#basic-implementation" id="markdown-toc-basic-implementation">Basic Implementation</a></li>
       <li><a href="#results" id="markdown-toc-results">Results</a></li>
+    </ul>
+  </li>
+  <li><a href="#harris-and-stephens-operator" id="markdown-toc-harris-and-stephens-operator">Harris and Stephens operator</a>    <ul>
+      <li><a href="#results-1" id="markdown-toc-results-1">Results</a></li>
     </ul>
   </li>
   <li><a href="#features-from-accelerated-segment-test-fast" id="markdown-toc-features-from-accelerated-segment-test-fast">Features from Accelerated Segment Test (FAST)</a>    <ul>
       <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic Algorithm</a></li>
       <li><a href="#high-speed-test" id="markdown-toc-high-speed-test">High Speed Test</a></li>
       <li><a href="#none-max-suppression" id="markdown-toc-none-max-suppression">None-Max suppression</a></li>
-      <li><a href="#result" id="markdown-toc-result">Result</a></li>
+      <li><a href="#results-2" id="markdown-toc-results-2">Results</a></li>
     </ul>
   </li>
   <li><a href="#useful-links" id="markdown-toc-useful-links">Useful links</a></li>
@@ -451,6 +455,8 @@ I_{xx}(p) & I_{xy}(p) \\ I_{xy}(p) & I_{yy}(p) &
 <h2 id="corner-detector-using-eigen-values">Corner Detector using eigen values</h2>
 <p>Getting the two eigen values of hessian matrix for all points will tell us category of that point. If both values are small so we in a flat region and no variation in any direction. If one of eigen values larger than the other So we have an edge point. And if both eigen values are large so we have a corner. Next figure illustrates that.</p>
 
+<p><img style="width:70%" src="../images/eig2.png" /></p>
+
 <p>But calculating eigen values of hessian matrix for all image pixels is computationally complicated. So another operators was proposed.</p>
 <h2 id="harris-operator">Harris Operator</h2>
 <p>Harris operator or harris corner detector is more simple. It identifies corner from hessian matrix as follow:</p>
@@ -460,6 +466,8 @@ I_{xx}(p) & I_{xy}(p) \\ I_{xy}(p) & I_{yy}(p) &
 <p>Where <script type="math/tex">a</script> is a constant and <script type="math/tex">trace(H)</script> is the sum of diagonal elements of hessian matrix. Corners will have a high value of its harris operator.</p>
 
 <p><strong>Lets Try to implement it</strong></p>
+
+<h3 id="basic-implementation">Basic Implementation</h3>
 
 <ul>
   <li>Load some libraries</li>
@@ -541,22 +549,29 @@ As we know sobel operator is an approximation of first order derivative
 <span class="c"># Get harris </span>
 <span class="n">harris</span> <span class="o">=</span> <span class="n">myHarris</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 </code></pre></div></div>
-<p><strong>Results :</strong></p>
+<h3 id="results">Results</h3>
 <ul>
-  <li>Original Image</li>
+  <li>Original Image
+<img src="../images/original_image-w6.png" alt="" /></li>
   <li>2nd Derivative in x <script type="math/tex">I_{xx}</script>
+<img src="../images/ixx.png" alt="" />
 derivative in x direction will produce a vertical edges</li>
   <li>2nd Derivative in y <script type="math/tex">I_{yy}</script>
+<img src="../images/iyy.png" alt="" />
 derivative in y direction will produce a horizontal edges</li>
   <li>Partial derivative of x and y <script type="math/tex">I_{xy}</script>
+<img src="../images/ixy.png" alt="" />
 derivative of both direction will distinct corner points.</li>
-  <li>Harris operator</li>
+  <li>Harris operator
+<img src="../images/harris.png" alt="" /></li>
 </ul>
 
 <p><strong>What’s next?</strong>
 We can then get maximum points in harris image according to threshold value, identify its coordinates and overlie it on the original image.</p>
 
 <p>Result of harris on real images will be like that</p>
+
+<p><img style="width:170%" src="../images/harrissR.png" align="middle" /></p>
 
 <h2 id="harris-and-stephens-operator">Harris and Stephens operator</h2>
 <p>It is not a new method for corner detection. It computes the harris operator also not from hessian matrix but from G matrix where G matrix is</p>
@@ -568,10 +583,16 @@ L_x^2(\rho, \sigma) &   L_x(\rho, \sigma)L_y(\rho, \sigma) \\  L_x(\rho, \sigma)
 
 <p>instead of calculating second derivative. Use square of first derivative image that has smoothed with gaussian filter.</p>
 
-<h3 id="results">Results</h3>
+<h3 id="results-1">Results</h3>
 <p>This is the result of custom implementation</p>
+
+<p><img style="width:170%" src="../images/harr2R.png" align="middle" /></p>
+
 <h2 id="features-from-accelerated-segment-test-fast">Features from Accelerated Segment Test (FAST)</h2>
 <p>It is used for real time applications with limited computing resource. It identifies the corner from surrounding 16 pixels on a circle of radius 3 from interested point.</p>
+
+<p><img style="width:100%" src="../images/fast.png" /></p>
+
 <h3 id="basic-algorithm">Basic Algorithm</h3>
 <p>Psedo code for basic algorithm is</p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mf">1.</span> <span class="n">Select</span> <span class="n">Pixel</span> <span class="n">p</span> <span class="k">with</span> <span class="n">intensity</span> <span class="n">Ip</span> 
@@ -598,12 +619,17 @@ L_x^2(\rho, \sigma) &   L_x(\rho, \sigma)L_y(\rho, \sigma) \\  L_x(\rho, \sigma)
 <span class="mf">2.</span> <span class="n">Suppress</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">local</span> <span class="n">maximum</span><span class="o">.</span> 
 </code></pre></div></div>
 
-<h3 id="result">Result</h3>
+<h3 id="results-2">Results</h3>
 <p>This is the result of high speed test custom implementation.</p>
+
+<p><img style="width=150" src="../images/Fast.png" /></p>
+
 <h2 id="useful-links">Useful links</h2>
-<p><a href="https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_features_harris/py_features_harris.html">Harris OpenCV</a>
-<a href="https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_fast/py_fast.html">Fast Algorithm</a>
-<a href="https://www.edwardrosten.com/work/fast.html">FAST Corner Detection Edward Rosten</a></p>
+<p><a href="https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_features_harris/py_features_harris.html">Harris OpenCV</a></p>
+
+<p><a href="https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_fast/py_fast.html">Fast Algorithm</a></p>
+
+<p><a href="https://www.edwardrosten.com/work/fast.html">FAST Corner Detection Edward Rosten</a></p>
 
   </div>
 
