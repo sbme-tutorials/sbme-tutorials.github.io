@@ -71,6 +71,9 @@ $$
 ## Corner Detector using eigen values
 Getting the two eigen values of hessian matrix for all points will tell us category of that point. If both values are small so we in a flat region and no variation in any direction. If one of eigen values larger than the other So we have an edge point. And if both eigen values are large so we have a corner. Next figure illustrates that. 
 
+<img style="width:70%" src="../images/eig2.png">
+
+
 But calculating eigen values of hessian matrix for all image pixels is computationally complicated. So another operators was proposed. 
 ## Harris Operator
 Harris operator or harris corner detector is more simple. It identifies corner from hessian matrix as follow: 
@@ -82,6 +85,8 @@ $$
 Where $$a$$ is a constant and $$trace(H)$$ is the sum of diagonal elements of hessian matrix. Corners will have a high value of its harris operator.
 
 **Lets Try to implement it**
+
+### Basic Implementation
 
 * Load some libraries
 
@@ -159,20 +164,29 @@ image[50:150,50:150] = 255
 # Get harris 
 harris = myHarris(image)
 ```
-**Results :**
+### Results 
 * Original Image
+![](../images/original_image-w6.png)
 * 2nd Derivative in x $$I_{xx}$$
+![](../images/ixx.png)
 derivative in x direction will produce a vertical edges
 * 2nd Derivative in y $$I_{yy}$$
+![](../images/iyy.png)
 derivative in y direction will produce a horizontal edges
 * Partial derivative of x and y $$I_{xy}$$
+![](../images/ixy.png)
 derivative of both direction will distinct corner points.
 * Harris operator
+![](../images/harris.png)
 
 **What's next?**
 We can then get maximum points in harris image according to threshold value, identify its coordinates and overlie it on the original image.
 
 Result of harris on real images will be like that
+
+
+<img style="width:170%" src="../images/harrissR.png" align="middle">
+
 
 ## Harris and Stephens operator
 It is not a new method for corner detection. It computes the harris operator also not from hessian matrix but from G matrix where G matrix is
@@ -187,8 +201,14 @@ instead of calculating second derivative. Use square of first derivative image t
 
 ### Results 
 This is the result of custom implementation
+
+<img style="width:170%" src="../images/harr2R.png" align="middle">
+
 ## Features from Accelerated Segment Test (FAST) 
 It is used for real time applications with limited computing resource. It identifies the corner from surrounding 16 pixels on a circle of radius 3 from interested point.
+
+<img style="width:100%" src="../images/fast.png">
+
 ### Basic Algorithm
 Psedo code for basic algorithm is 
 ```python
@@ -219,9 +239,14 @@ For successive corners.
 2. Suppress if not local maximum. 
 ```
 
-### Result 
+### Results 
 This is the result of high speed test custom implementation.
+
+<img style="width=150" src="../images/Fast.png">
+
 ## Useful links
 [Harris OpenCV](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_features_harris/py_features_harris.html)
+
 [Fast Algorithm](https://docs.opencv.org/3.0-beta/doc/py_tutorials/py_feature2d/py_fast/py_fast.html)
+
 [FAST Corner Detection Edward Rosten](https://www.edwardrosten.com/work/fast.html)
