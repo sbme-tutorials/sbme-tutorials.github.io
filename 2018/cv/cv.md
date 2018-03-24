@@ -43,6 +43,7 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 |   3  | Images in Frequency Domain    |
 |   4  | Image Processing 2 (Image Filtering and Edge Detection) |  
 |   5  | Hough Transform (Line and Circle Detection) |  
+|   6  | Corner Detection (Harris and Fast corner detectors) |  
 
 
 ## Tutorials
@@ -64,6 +65,9 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 5. Week 5:
     * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/5_week5/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/cv/notes/5_week5.md %}){:target="_blank"}
+6. Week 6:
+    * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/6_week6/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/cv/notes/6_week6.md %}){:target="_blank"}
 
 
 
