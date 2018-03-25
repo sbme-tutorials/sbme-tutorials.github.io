@@ -216,7 +216,7 @@ Psedo code for basic algorithm is
 2. Select Threshold t
 3. Consider circle with 16 pixels.
 4. Calculate absolute difference between Ip,Ii and i =1 to 16
-5. P is a corner if n points have absolute difference > t and n >= 3
+5. P is a corner if n points have absolute difference > t and n >= 6
 6. Suppress weak corners (None-Max suppression)
 ```
 
