@@ -68,6 +68,9 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 6. Week 6:
     * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/6_week6/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/cv/notes/6_week6.md %}){:target="_blank"}
+7. Week 7:
+    * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/7_week7/index.html %}){:target="_blank"}
+    * [Assignment 3]({% link 2018/cv/assignments/3_assignment3.md %}){:target="_blank"}
 
 
 
