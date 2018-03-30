@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Assignment 1: Images, Histograms, Gradients</title>
+  <title>Week 7: Segmentation (Thresholding and Region growing)</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/cv/assignments/1_assignment1.html">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/7_week7.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -374,125 +374,145 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Assignment 1: Images, Histograms, Gradients</h1>
+    <h1 class="post-title">Week 7: Segmentation (Thresholding and Region growing)</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="objectives">Objectives</h2>
-
-<ul>
-  <li>Loading images.</li>
-  <li>Visualizing images.</li>
-  <li>Visualizing histograms of images.</li>
-  <li>Computing image gradients.</li>
-  <li>Interacting with images.</li>
-  <li>Basic statistics on images.</li>
-  <li>Realizing the explicit for-loops vs. vectorized operatoins in Python.</li>
-  <li>Using <em>Markdown</em> as a technical writing syntax.</li>
+    <ul id="markdown-toc">
+  <li><a href="#image-segmentation" id="markdown-toc-image-segmentation">Image Segmentation</a></li>
+  <li><a href="#histogram-based-segmentation" id="markdown-toc-histogram-based-segmentation">Histogram Based Segmentation</a></li>
+  <li><a href="#optimal-threshold" id="markdown-toc-optimal-threshold">Optimal Threshold</a></li>
+  <li><a href="#otsu-thresholding" id="markdown-toc-otsu-thresholding">Otsu Thresholding</a></li>
+  <li><a href="#otsu-thresholding-contd" id="markdown-toc-otsu-thresholding-contd">Otsu Thresholding cont’d</a></li>
+  <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic Algorithm</a></li>
+  <li><a href="#seed-pixels-region-growing" id="markdown-toc-seed-pixels-region-growing">Seed Pixels (Region Growing)</a></li>
 </ul>
 
-<h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
+<h2 id="image-segmentation">Image Segmentation</h2>
+
+<p>Image segmentation is the process of partitioning the image into isolated areas or segment. Each segment has similar features, for example have same intensity or same color etc, and is considered as an object in the image.</p>
+
+<p>There are many applications of image segmentation of medical images including automatic diagnostic applications and other application related to treatment. Treatment planning is an example of 3D image segmentation.</p>
+
+<p>3D object is reconstructed from series of images. Here an example of reconstruction of 3D human skull.</p>
+
+<p><span style="display:block;text-align:center"><img style="width:45%" src="../images/Selection_061.png" /></span></p>
+
+<p>From that skull we can segment different interested regions or object. Here we are interested in segmentation of mandible, maxilla, upper and lower tooth. Each object now is separated and we can treat with it independently. Using these object dentist can plane process of dental implant or orthodontic treatment or any other process.</p>
+
+<p><span style="display:block;text-align:center"><img style="width:60%" src="../images/results.png" /></span></p>
+
+<p>This was a project I worked on for a subject in my pre-master year under title “An optimized technique for 3D segmentation for orthodontic treatment plane”. I used <a href="https://www.vtk.org/">VTK</a> for reconstruction and segmentation processes and <a href="https://www.qt.io/">Qt</a> for GUI design. Segmentation was based on thresholding and connectivity testing which is similar to region growing approach but in 3D.</p>
+
+<h2 id="histogram-based-segmentation">Histogram Based Segmentation</h2>
 
 <ul>
-  <li>Read <a href="/2018/cv/notes/1_week1.html" target="_blank">Section 1 Notes</a>.</li>
-  <li>Read <a href="/2018/cv/notes/2_week2.html" target="_blank">Section 2 Notes</a>.</li>
-</ul>
-
-<h2 id="deadline">Deadline</h2>
-
-<p><strong>Thursday 1/3/2018 10:00 AM.</strong></p>
-
-<h2 id="joining-to-assignment-repository">Joining to Assignment Repository</h2>
-
-<p>Refer to this sheet to know your <strong>gourp</strong> number: <a href="https://docs.google.com/spreadsheets/d/1DeAFPmF4OixVt4D_meMFvU3Q5n7KE0w2Ys4sdC11Jwo/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1DeAFPmF4OixVt4D_meMFvU3Q5n7KE0w2Ys4sdC11Jwo/edit?usp=sharing</a></p>
-
-<ol>
-  <li>Go to the<a href="https://classroom.github.com/g/LDCqi5HI">assignment page</a>.</li>
-  <li>You may need to authorize the classroom to access your repository.</li>
-  <li><img src="group1.png" width="500" /></li>
-  <li><img src="group2.png" width="500" /></li>
-  <li>You either join to an existing team, or create a team, referring to the <a href="(https://docs.google.com/spreadsheets/d/1DeAFPmF4OixVt4D_meMFvU3Q5n7KE0w2Ys4sdC11Jwo/edit?usp=sharing)">sheet</a>.</li>
-  <li><img src="group3.png" width="500" /></li>
-</ol>
-
-<h2 id="part-1-programming">Part 1: Programming</h2>
-
-<p>Your implementations for this part should be included in <code class="highlighter-rouge">Part1.py</code> of your repository.</p>
-
-<p>Implement a program that does the following:</p>
-
-<h3 id="1-load-colour-rgb-images">1. Load colour (RGB) images</h3>
-
-<h3 id="2-display-rgb-images-on-a-screen">2. Display (RGB) images on a screen</h3>
-
-<ul>
-  <li>Hint: you may use code snippets from section notes. But it is recommended to find your own way.</li>
-</ul>
-
-<h3 id="3-display-the-histograms-of-all-three-colour-channels-for-each-image-on-the-same-figure">3. Display the histograms of all three colour channels, for each Image, on the same figure</h3>
-
-<h3 id="4-select-the-image-of-our-visitor-of-this-week-sir-pegion-move-the-mouse-cursor-within-your-image-for-the-current-pixel-location-p-in-the-image-compute-and-display">4. Select the image of our visitor of this week, Sir Pegion. Move the mouse cursor within your image. For the current pixel location p in the image, compute and display</h3>
-
-<p><img src="/gallery/some-pigeon.jpg" width="500" /></p>
-
-<ol>
-  <li>the outer border (see grey box) of the <em>11 × 11</em> square window <script type="math/tex">W_p</script> around pixel <em>p</em> in your image <em>I</em> (i.e., <em>p</em> is the reference point of this window),</li>
-  <li>(above this window or in a separate command window) the location p (i.e., its coordinates) of the mouse cursor and the RGB values of your image I at p,</li>
-  <li>(below this window or in a separate command window) the intensity value <script type="math/tex">\frac{R(p) + G(p) + B(p)}{3}</script> at <em>p</em>, and</li>
-  <li>the mean <script type="math/tex">\mu( W_p )</script> and standard deviation <script type="math/tex">\sigma( W_p )</script> .</li>
-  <li>Discuss examples of image windows W p (within your selected input images) where you see “homogeneous distributions of image values”, and windows showing “inhomogeneous areas”. Try to define your definition of “homogeneous” or “inhomogeneous” in terms of histograms, means, or variances.</li>
-</ol>
-
-<h3 id="5-compute-the-gradient-of-the-image">5. Compute the gradient of the image</h3>
-
-<script type="math/tex; mode=display">\nabla f=\begin{bmatrix}
-g_{x} \\
-g_{y}
-\end{bmatrix} = \begin{bmatrix}
-\frac{\partial f}{\partial x} \\
-\frac{\partial f}{\partial y}
-\end{bmatrix}</script>
-
-<p>where:</p>
-
-<p><script type="math/tex">\textstyle\frac{\partial f}{\partial x}</script> is the derivative with respect to x (gradient in the x direction)</p>
-
-<p><script type="math/tex">\textstyle\frac{\partial f}{\partial y}</script> is the derivative with respect to y (gradient in the y direction).</p>
-
-<p>Afterwards, combine the two gradients on a single image using the following formula:</p>
-
-<script type="math/tex; mode=display">g = \sqrt{ g_x^2 + g_y^2 }</script>
-
-<ol>
-  <li>Implement a version with explicit for loops.</li>
-  <li>Implement another version without using explicit for loops.
-    <ul>
-      <li>Hint1: you can use <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.roll.html">numpy.roll</a> function, see its documentation for further details.</li>
-      <li>Hint2: you can also use <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.pad.html">numpy.pad</a> function, then using <a href="https://docs.scipy.org/doc/numpy-1.13.0/reference/arrays.indexing.html">array slicing</a> to drop columns or rows to match dimensions.</li>
-    </ul>
+  <li>
+    <p>Image Binarization</p>
   </li>
-  <li>Report the execution time for both versions.</li>
+  <li>
+    <p>Only two classes (object , background)</p>
+  </li>
+  <li>
+    <p>Basic Idea 
+<script type="math/tex">% <![CDATA[
+I(x,y) = 
+\begin{cases}
+0, I(x,y) < T \\\ 
+1, I(x,y) > T 
+\end{cases} %]]></script></p>
+  </li>
+  <li>
+    <p>How to select threshold ?</p>
+  </li>
+</ul>
+
+<p>class: left, top</p>
+<h2 id="optimal-threshold">Optimal Threshold</h2>
+<ul>
+  <li>
+    <p>Object, background histogram 
+<img style="width:85%" src="../images/Selection_065.png" /></p>
+  </li>
+  <li>
+    <p>Example</p>
+  </li>
+</ul>
+
+<p><img style="width:85%" src="../images/Selection_064.png" /></p>
+
+<h2 id="otsu-thresholding">Otsu Thresholding</h2>
+<ul>
+  <li>
+    <p>Trying to find Optimal threshold</p>
+  </li>
+  <li>
+    <p>Optimal threshold in range 0 to 255</p>
+  </li>
+  <li>
+    <p>Recall (We have two classes)</p>
+  </li>
+  <li>
+    <p>Criteria</p>
+    <ol>
+      <li>Select t that minimize within class variance.</li>
+    </ol>
+  </li>
+</ul>
+
+<ol>
+  <li>Select t that maximize between class variance.</li>
 </ol>
 
-<h2 id="part-2-written">Part 2: Written</h2>
+<h2 id="otsu-thresholding-contd">Otsu Thresholding cont’d</h2>
+<ul>
+  <li>Calculating within class variance 
+<script type="math/tex">\sigma_w^2  = c_1 \sigma_1^2 + (1-c_1) \sigma_2^2</script></li>
+  <li>Calculating Between class variance 
+<script type="math/tex">\sigma_b^2  = c_1 (1-c_1) (\mu_1 - \mu_2)^2</script>
+Where <script type="math/tex">c_1</script> is cumulative sum at t</li>
+  <li>Recall 
+<script type="math/tex">E[x] = \sum x p(x)</script>
+and 
+<script type="math/tex">\sigma^2 = E[x^2] - \mu^2</script></li>
+</ul>
 
-<p>You answers to this part should be included in the <code class="highlighter-rouge">Part2.md</code> file in the repository of your assignment.</p>
+<h2 id="basic-algorithm">Basic Algorithm</h2>
+<ul>
+  <li>Basic algorithm is</li>
+  <li>Maximize between class variance
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get</span> <span class="n">Histogram</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span>
+<span class="n">Get</span> <span class="n">relative</span> <span class="n">histogram</span> <span class="p">(</span><span class="n">PDF</span><span class="p">)</span>
+<span class="n">Get</span> <span class="n">cumulative</span> <span class="n">Histogram</span> <span class="p">(</span><span class="n">CDF</span><span class="p">)</span>
+<span class="n">initialize</span> <span class="n">OptThreshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">maxVariance</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">For</span> <span class="n">each</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">255</span> 
+<span class="n">m1</span> <span class="o">=</span>  <span class="n">mean</span> <span class="n">value</span> <span class="k">class</span> <span class="err">1 
+</span><span class="nc">m2</span> <span class="o">=</span>  <span class="n">mean</span> <span class="n">value</span> <span class="k">class</span> <span class="err">2  
+</span><span class="nc">c1</span> <span class="o">=</span> <span class="n">CDF</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+<span class="n">varBet</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>   
+<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">maxVariance</span> 
+    <span class="n">maxVariance</span> <span class="o">=</span> <span class="n">value</span>
+    <span class="n">OptThreshold</span> <span class="o">=</span> <span class="n">t</span>  
+</code></pre></div>    </div>
+  </li>
+</ul>
 
-<p>Also, your answers should be formatted as <em>Markdown</em> syntax.</p>
+<p><strong>Lets try to implement it</strong></p>
 
-<h3 id="q1">Q1</h3>
+<ul>
+  <li>What about minimizing within class variance</li>
+</ul>
 
-<p>Transform a few more (easy) RGB values manually into corresponding HSI values.</p>
+<h2 id="seed-pixels-region-growing">Seed Pixels (Region Growing)</h2>
+<ul>
+  <li>Initial Seed</li>
+  <li>Check connected pixels</li>
+  <li>Add them to region (Intensity , colored based)</li>
+  <li>repeat.</li>
+</ul>
 
-<h3 id="q2">Q2</h3>
+<p><img style="width:85%" src="../images/Selection_066.png" /></p>
 
-<p>In the CIE’s RGB colour space (which models human colour perception), the scalars R, G, or B may also be negative. Provide a physical interpretation (obviously, we cannot subtract light from a given spectrum).</p>
-
-<h3 id="submitting">Submitting</h3>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"solved all problems!"</span>
-<span class="gp">$</span> git push origin master
-</code></pre></div></div>
 
   </div>
 
