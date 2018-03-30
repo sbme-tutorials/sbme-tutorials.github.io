@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Week 4: Image Filtering and Edge Detection</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/4_week4.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees and Sets (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8b.html">Week 8 - Part2: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 7 - Part1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 4: Image Filtering and Edge Detection</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
+  <p>These notes are inspired by slides made by TA Eng.Mohamed Hisham</p>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#readings" id="markdown-toc-readings">Readings</a></li>
+  <li><a href="#2d-convolution" id="markdown-toc-2d-convolution">2D Convolution</a>    <ul>
+      <li><a href="#example" id="markdown-toc-example">Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#smoothing-kernels" id="markdown-toc-smoothing-kernels">Smoothing Kernels</a>    <ul>
+      <li><a href="#box-mean-or-average-filter" id="markdown-toc-box-mean-or-average-filter">Box, mean or average filter</a></li>
+      <li><a href="#gaussian-filter" id="markdown-toc-gaussian-filter">Gaussian filter</a></li>
+      <li><a href="#median-filter" id="markdown-toc-median-filter">Median Filter</a></li>
+    </ul>
+  </li>
+  <li><a href="#edge-detection-kernels" id="markdown-toc-edge-detection-kernels">Edge detection kernels</a>    <ul>
+      <li><a href="#prewitt-operator" id="markdown-toc-prewitt-operator">Prewitt operator</a></li>
+      <li><a href="#sobel-operator" id="markdown-toc-sobel-operator">Sobel operator</a></li>
+      <li><a href="#laplacian" id="markdown-toc-laplacian">Laplacian</a></li>
+    </ul>
+  </li>
+  <li><a href="#gradient-magnitude-and-direction" id="markdown-toc-gradient-magnitude-and-direction">Gradient magnitude and direction</a></li>
+  <li><a href="#canny-edge-detection-algorithm" id="markdown-toc-canny-edge-detection-algorithm">Canny edge detection algorithm</a>    <ul>
+      <li><a href="#smoothing" id="markdown-toc-smoothing">Smoothing</a></li>
+      <li><a href="#finding-gradients" id="markdown-toc-finding-gradients">Finding Gradients</a></li>
+      <li><a href="#none-maximum-suppression" id="markdown-toc-none-maximum-suppression">None-maximum suppression</a></li>
+      <li><a href="#double-thresholding" id="markdown-toc-double-thresholding">Double thresholding</a></li>
+      <li><a href="#edge-tracking-by-hysteresis" id="markdown-toc-edge-tracking-by-hysteresis">Edge tracking by hysteresis</a></li>
+    </ul>
+  </li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+  <li><a href="#useful-links" id="markdown-toc-useful-links">Useful links</a></li>
+</ul>
+<h2 id="readings">Readings</h2>
+<ul>
+  <li><a href="http://www.scipy-lectures.org/advanced/image_processing/#denoising">Image Denoising</a></li>
+  <li><a href="http://scikit-image.org/docs/dev/auto_examples/edges/plot_edge_filter.html">Edge Detection</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Canny_edge_detector">Canny Edge Detector</a></li>
+</ul>
+
+<h2 id="2d-convolution">2D Convolution</h2>
+
+<p>Convolution is the process to apply a filtering kernel on the image in spatial domain.</p>
+
+<p>Basic Steps are</p>
+<ol>
+  <li>Flip the Kernel in both horizontal and vertical directions (center of the kernel must be provided)</li>
+  <li>Move over the array with kernel centered at interested point.</li>
+  <li>Multiply kernel data with overlapped area.</li>
+  <li>Sum or accumulate the output.</li>
+</ol>
+
+<p><strong>Note :</strong></p>
+
+<p>Size of output must be same size of input and we need to pad image for not defined pixels.</p>
+
+<h3 id="example">Example</h3>
+
+<p><a href="http://www.songho.ca/dsp/convolution/convolution2d_example.html">source</a></p>
+
+<p><img src="../images/2DConv.png" alt="" /></p>
+
+<h2 id="smoothing-kernels">Smoothing Kernels</h2>
+<p>Smoothing filters are used in preprocessing step mainly for noise removal. There ar different kernels for smoothing</p>
+
+<p>Original Image</p>
+
+<p><img src="../images/Original_Image_w4.png" alt="" /></p>
+
+<p>Adding Noise</p>
+
+<p><img src="../images/Noisy_Image.png" alt="" /></p>
+
+<h3 id="box-mean-or-average-filter">Box, mean or average filter</h3>
+<p>Example 3x3 box filter</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\frac{1}{9}
+ \begin{bmatrix}
+ 1 & 1 & 1 \\
+ 1 & 1 & 1 \\
+ 1 & 1 & 1 \\
+ \end{bmatrix} %]]></script>
+
+<p><img src="../images/Smoothing_Box.png" alt="" /></p>
+
+<h3 id="gaussian-filter">Gaussian filter</h3>
+
+<p>Derived from 2D gaussian function</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+h(u,v) = \frac{1}{2 \pi \sigma^2} e^{(- \frac{u^2 + v^2}{\sigma^2})}
+\end{equation}</script>
+
+<p>Example: This kernel is approximation of gaussian  function</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\frac{1}{16}
+\begin{bmatrix}
+1 & 2 & 1 \\
+2 & 4 & 2 \\
+1 & 2 & 1 \\
+\end{bmatrix} %]]></script>
+
+<p><img src="../images/Smoothing_Gauss.png" alt="" /></p>
+
+<h3 id="median-filter">Median Filter</h3>
+<p>It is nonlinear digital filter. It is efficient in removal of what so called salt and pepper noise.</p>
+
+<p><img src="../images/Median_Filter.png" alt="" /></p>
+
+<h2 id="edge-detection-kernels">Edge detection kernels</h2>
+
+<p>Edges represents the object boundaries. So edge detection is a very important preprocessing step for any object detection or recognition process. Simple edge detection kernels are based on approximation of gradient images. Another advanced edge detection algorithms will discussed in details.</p>
+
+<h3 id="prewitt-operator">Prewitt operator</h3>
+
+<p>For <script type="math/tex">I_x(x,y)</script></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+    -1 & 0 & 1 \\
+  -1 & 0 & 1 \\
+   -1 & 0 & 1 \\
+\end{bmatrix} %]]></script>
+
+<p>For <script type="math/tex">I_y(x,y)</script></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+    -1 & -1 & -1 \\
+  0 & 0 & 0 \\
+   1 & 1 & 1 \\
+\end{bmatrix} %]]></script>
+
+<h3 id="sobel-operator">Sobel operator</h3>
+
+<p>For <script type="math/tex">I_x(x,y)</script></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+-1 & 0 & 1 \\
+-2 & 0 & 2 \\
+-1 & 0 & 1 \\
+\end{bmatrix} %]]></script>
+
+<p>For <script type="math/tex">I_y(x,y)</script></p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+-1 & -2 & -1 \\
+0 & 0 & 0 \\
+1 & 2 & 1 \\
+\end{bmatrix} %]]></script>
+
+<h3 id="laplacian">Laplacian</h3>
+<p>It is an approximation of second order derivative that defines zeros crossing. 
+For Example 3x3 laplacian is :</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+0 & 1 & 0 \\
+1 & -4 & 1 \\
+0 & 1 & 0 \\
+\end{bmatrix} %]]></script>
+
+<p>Laplacian usually is applied after gaussian smoothing. So LOG refers to laplacian of gaussian.</p>
+
+<h2 id="gradient-magnitude-and-direction">Gradient magnitude and direction</h2>
+
+<p>Gradient magnitude of the image relates both directions <script type="math/tex">I_x(x,y)</script> and <script type="math/tex">I_y(x,y)</script>. It represents the strength of the edge. While gradient angle represents the direction of the edge or direction of intensity variation.</p>
+
+<p>Gradient magnitude is given by</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+I_{xy} = \sqrt{I_x(x,y)^2 + I_y(x,y)^2}
+\end{equation}</script>
+
+<p>and Gradient direction:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+I_{\theta} = tan^{-1}(\frac{I_y(x,y)}{I_x(x,y)})
+\end{equation}</script>
+
+<h2 id="canny-edge-detection-algorithm">Canny edge detection algorithm</h2>
+
+<p>It was developed by <a href="https://en.wikipedia.org/wiki/John_Canny">John F. Canny</a> in 1986. Canny operator is a multi-stage algorithm that detects wide range of edges.</p>
+
+<p><strong>Stages</strong></p>
+<ol>
+  <li>Smoothing for noise removal.</li>
+  <li>Finding Gradients.</li>
+  <li>None-maximum suppression.</li>
+  <li>Double Thresholding.</li>
+  <li>Edge Tracking by hysteresis.</li>
+</ol>
+
+<h3 id="smoothing">Smoothing</h3>
+<p>The first stage in canny edge detection algorithm is smoothing to remove noise that may cause false edges. Kernel used in this step is 5x5 gaussian kernel with $\sigma = 1.4$ and that it</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\frac{1}{159}
+\begin{bmatrix}
+2 & 4  & 5  & 4  & 2 \\
+4 & 9  & 12 & 9  & 4 \\
+5 & 12 & 15 & 12 & 5 \\
+4 & 9  & 12 & 9  & 4 \\
+2 & 4  & 5  & 4  & 2 \\
+\end{bmatrix} %]]></script>
+
+<p>Original Image</p>
+
+<p><img src="../images/Lines.jpg" alt="" />
+<img src="../images/guassianBlur.jpg" alt="" /></p>
+
+<h3 id="finding-gradients">Finding Gradients</h3>
+
+<p>This is done using sobel operator in both x and y direction and getting gradient magnitude as described later.</p>
+
+<p><img src="../images/GradientMag.jpg" alt="" /></p>
+
+<h3 id="none-maximum-suppression">None-maximum suppression</h3>
+
+<p>We aim to suppress all weak edges except local maxima. To do that we have to use gradient direction image.</p>
+
+<ol>
+  <li>Compare the edge strength of the current pixel with the edge strength of the pixel in the positive and negative gradient directions.</li>
+  <li>Suppress that pixel (set to zero) if its value is lower than pixels in same direction.</li>
+</ol>
+
+<p><strong>Gradient Direction</strong></p>
+
+<p><img src="../images/GradientDir.jpg" alt="" /></p>
+
+<p>Direction must be quantized to 8 directions or angles to use 8-Connectivity.</p>
+
+<p><img src="../images/CannyEdgeWheel.gif" alt="" /> <img src="../images/Connectivity.png" alt="" /></p>
+
+<p>The result of this stage would be an edge image with thin edges.</p>
+
+<p><img src="../images/none-max-supp.jpg" alt="" /></p>
+
+<h3 id="double-thresholding">Double thresholding</h3>
+
+<p>After none-maxima suppression we need to suppress pixels with low gradient values to have only strong edges. None-maxima suppression eliminates only local weak edges but here we globally eliminate weak edges. We have two threshlods $T_l$ and $T_h$ selected by user.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">TL</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">elif</span> <span class="n">image</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">TH</span><span class="p">:</span>
+    <span class="n">image</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div></div>
+
+<p><img src="../images/double-thr.jpg" alt="" /></p>
+
+<p>What about pixels with in-between values ?</p>
+
+<p>Next section tells us.</p>
+
+<h3 id="edge-tracking-by-hysteresis">Edge tracking by hysteresis</h3>
+
+<p>For pixels with values in-between $T_l$ and $T_h$ we check the 8 neighbors if it has a strong point in its neighbors so it is a part of the edge and if not suppress it.</p>
+
+<p><img src="../images/FinalCanny.jpg" alt="" /></p>
+
+<h2 id="demo">Demo</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/sbme-tutorials/cv-week4-demo
+</code></pre></div></div>
+<h2 id="useful-links">Useful links</h2>
+
+<ul>
+  <li><a href="https://matplotlib.org/gallery/index.html">matplotlib gallery</a></li>
+  <li><a href="http://scikit-image.org/docs/dev/auto_examples/">scikit-image examples</a></li>
+</ul>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
