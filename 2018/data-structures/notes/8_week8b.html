@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</title>
+  <title>Week 8 - Part2: Heaps, Priority Queues (ADT), and Shortest Path Problem</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/dsp/notes/3_week3.html">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/8_week8b.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -115,9 +115,9 @@
       
     
       
-    
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
-        <a class="site-title" href="/2018/dsp/dsp.html">SBE309</a>
+    
       
     
       
@@ -383,222 +383,61 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</h1>
+    <h1 class="post-title">Week 8 - Part2: Heaps, Priority Queues (ADT), and Shortest Path Problem</h1>
   </header>
 
   <div class="post-content">
-    <blockquote>
-  <p>These notes are inspired by  <a href="#MDFTWEB07">(Smith, accessed (date accessed)</a></p>
-</blockquote>
-
-<h2 id="readings">Readings</h2>
-
-<ul>
-  <li><a href="https://ccrma.stanford.edu/~jos/mdft/Complex_Numbers.html">Complex Numbers</a></li>
-  <li><a href="https://ccrma.stanford.edu/~jos/mdft/Proof_Euler_s_Identity.html">Proof of Euler’s Identity</a></li>
-  <li><a href="https://ccrma.stanford.edu/~jos/mdft/In_Phase_Quadrature_Sinusoidal.html">In-Phase &amp; Quadrature Sinusoidal Components</a></li>
-  <li><a href="https://ccrma.stanford.edu/~jos/mdft/DFT.html">The DFT</a></li>
-  <li><a href="https://ipfs.io/ipfs/QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco/wiki/DFT_matrix.html">DFT matrix</a></li>
+    <ul id="markdown-toc">
+  <li><a href="#objectives" id="markdown-toc-objectives">Objectives</a></li>
+  <li><a href="#heaps" id="markdown-toc-heaps">Heaps</a>    <ul>
+      <li><a href="#operations" id="markdown-toc-operations">Operations</a>        <ul>
+          <li><a href="#insertion" id="markdown-toc-insertion">Insertion</a></li>
+          <li><a href="#removal" id="markdown-toc-removal">Removal</a></li>
+        </ul>
+      </li>
+      <li><a href="#implementation-using-arrays" id="markdown-toc-implementation-using-arrays">Implementation using arrays</a></li>
+    </ul>
+  </li>
+  <li><a href="#priority-queue-adt" id="markdown-toc-priority-queue-adt">Priority Queue (ADT)</a>    <ul>
+      <li><a href="#implementation-using-sorted-list" id="markdown-toc-implementation-using-sorted-list">Implementation using sorted list</a></li>
+      <li><a href="#implementation-using-heap" id="markdown-toc-implementation-using-heap">Implementation using heap</a>        <ul>
+          <li><a href="#priority-queue-application-shortest-path-problem" id="markdown-toc-priority-queue-application-shortest-path-problem">Priority Queue Application: Shortest Path Problem</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="eulers-identity">Euler’s Identity</h2>
-
-<script type="math/tex; mode=display">e^{j\theta} = \cos(\theta) + j\sin(\theta) \qquad\qquad \mbox{(Euler's Identity)}</script>
-
-<h3 id="properties-of-exponents">Properties of Exponents</h3>
-
-<p>$  a^{n_1} a^{n_2} = a^{n_1 + n_2} $</p>
-
-<p>$  \left(a^{n_1}\right)^{n_2} = a^{n_1 n_2} $</p>
-
-<h3 id="the-exponent-zero">The Exponent Zero</h3>
-
-<p>$ a^0  a = a^0 a^1 = a^{0+1} = a^1 = a $</p>
-
-<p>$ a^0  a = a $</p>
-
-<p>$ {a^0 = 1.} $</p>
-
-<h3 id="negative-exponents">Negative Exponents</h3>
-
-<p>$ a^{-1} \cdot a = a^{-1} a^1 = a^{-1+1} = a^0 = 1. $</p>
-
-<p>$ {a^{-1} = \frac{1}{a}.} $</p>
-
-<p>$ {a^{-M} = \frac{1}{a^M}} $</p>
-
-<h3 id="rationale-exponents">Rationale Exponents</h3>
-
-<p>A <em>rational</em> number is a real number that can be expressed as a ratio of two finite integers:</p>
-
-<script type="math/tex; mode=display">\displaystyle x = \frac{L}{M}, \quad L\in\mathbb{Z},\quad M\in\mathbb{Z}</script>
-
-<p>Applying property (2) of exponents, we have</p>
-
-<script type="math/tex; mode=display">\displaystyle a^x = a^{L/M} = \left(a^{\frac{1}{M}}\right)^L.</script>
-
-<p>Thus, the only thing new is <script type="math/tex">a^{1/M}</script> . Since</p>
-
-<script type="math/tex; mode=display">\displaystyle \left(a^{\frac{1}{M}}\right)^M = a^{\frac{M}{M}} = a</script>
-
-<p>we see that <script type="math/tex">a^{1/M}</script> is the <script type="math/tex">M</script> th root of <script type="math/tex">a</script> . This is sometimes written</p>
-
-<script type="math/tex; mode=display">{a^{\frac{1}{M}} =  \sqrt[M]{a}.}</script>
-
-<h3 id="ej-theta">e^(j theta)</h3>
-
-<p>We’ve now defined $ a^z$ for any positive real number $ a$ and any complex number $ z$ . Setting $ a=e$ and $ z=j\theta$ gives us the special case we need for Euler’s identity. Since $ e^x$ is its own derivative, the Taylor series expansion for $ f(x)=e^x$ is one of the simplest imaginable infinite series:</p>
-
-<script type="math/tex; mode=display">e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{3!} + \cdots</script>
-
-<p>The simplicity comes about because $ f^{(n)}(0)=1$ for all $ n$ and because we chose to expand about the point $ x=0$ . We of course define</p>
-
-<p>$\displaystyle e^{j\theta} = \sum_{n=0}^\infty \frac{(j\theta)^n}{n!} = 1 + j\theta - \frac{\theta^2}{2} - j\frac{\theta^3}{3!} + \cdots \,. $</p>
-
-<p>Note that all even-order terms are real while all odd-order terms are imaginary. Separating out the real and imaginary parts gives</p>
-
-<script type="math/tex; mode=display">\mbox{Re} \big\{e^{j\theta}\big\} = 1 - \frac{\theta^2}{2} + \frac{\theta^4}{4!} - \cdots</script>
-
-<script type="math/tex; mode=display">\mbox{Im} \big\{e^{j\theta}\big\} = \theta - \frac{\theta^3}{3!} + \frac{\theta^5}{5!} - \cdots\</script>
-
-<h3 id="polar-form">Polar form</h3>
-
-<p>$\displaystyle z = r e^{j\theta} $</p>
-
-<h2 id="in-phase--quadrature-sinusoidal-components">In-Phase &amp; Quadrature Sinusoidal Components</h2>
-
-<p>From the trig identity $ \sin(A+B)=\sin(A)\cos(B)+\cos(A)\sin(B)$ , we have</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\begin{eqnarray*} x(t) &= & A \sin(\omega t + \phi) = A \sin(\phi + \omega t) \\ &=& \left[A \sin(\phi)\right] \cos(\omega t) + \left[A \cos(\phi)\right] \sin(\omega t) \\ &= & A_1 \cos(\omega t) + A_2 \sin(\omega t). \end{eqnarray*} %]]></script>
-
-<p>From this we may conclude that every sinusoid can be expressed as the sum of a sine function (phase zero) and a cosine function (phase $ \pi/2$ ). If the sine part is called the <strong>in-phase</strong> component, the cosine part can be called the <strong>phase-quadrature</strong> component. In general, <strong>phase quadrature</strong> means <strong>90 degrees out of phase,</strong> i.e., a relative phase shift of $ \pm\pi/2$.</p>
-
-<p>It is also the case that every sum of an in-phase and quadrature component can be expressed as a single sinusoid at some amplitude and phase. The proof is obtained by working the previous derivation backwards.</p>
-
-<h2 id="complex-sinusoids-in-frequency-domain">Complex Sinusoids in Frequency Domain</h2>
-
-<p>$\displaystyle x(t) = A_x e^{j\omega_x t} $</p>
-
-<p><img src="/gallery/img474.png" style="width:70%" /></p>
-
-<h2 id="fourier-analysis">Fourier Analysis</h2>
-
-<p>Fourier analysis is the process of decomposing a function into simple sinusoids known as basis functions.</p>
-
-<p>$\displaystyle X(\omega_k) = \sum_{n=0}^{N-1}x(n) e^{-j\omega_k t_n} = \sum_{n=0}^{N-1}x(n) e^{-j 2\pi kn/N}, \quad k=0,1,2,\ldots N-1 $</p>
-
-<p><script type="math/tex">t_n = nT = \mbox{$n$th sampling instant (sec)}</script>
-<script type="math/tex">\omega_k =  k\Omega = \mbox{$k$th frequency sample (rad/sec)}</script>
-<script type="math/tex">T = 1/f_s = \mbox{time sampling interval (sec)}</script>
-<script type="math/tex">\Omega = 2\pi f_s/N = \mbox{frequency sampling interval (rad/sec)}</script></p>
-
-<p>The transform <em>kernel</em>:</p>
-
-<p>$\displaystyle e^{-j\omega_k t_n} = \cos(\omega_k t_n) - j \sin(\omega_k t_n) $</p>
-
-<p><strong>Inner Product</strong> = <strong>Projection</strong></p>
-
-<p>$ X(\omega_k)$ , the DFT at frequency $ \omega_k$ , is a measure of the amplitude and phase of the complex sinusoid which is present in the input signal $ x$ at that frequency.</p>
-
-<h3 id="signals-vector-view">Signals: Vector View</h3>
-
-<p>A signal consists of $N $ samples, is equivalent to a two-dimensional vector. Each sample is a corrdinate in the N-dimensional space.</p>
-
-<p>We already have that intuition when carrying signals in <code class="highlighter-rouge">Numpy</code> arrays, just as vectors.</p>
-
-<h3 id="dft-not-decomposing-into-sinusoids">DFT not decomposing into sinusoids</h3>
-
-<p><strong>DFT</strong> decompose singals up into complex exponentials.</p>
-
-<h2 id="dft-matrix">DFT Matrix</h2>
-
-<p>The transformation matrix W can be defined as 
-<script type="math/tex">W = \left( \frac{\omega^{jk}}{ \sqrt{N} } \right )_{\{j,k=0,\ldots ,N-1\}}</script>,</p>
-
-<p>or equivalently:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-{\displaystyle W={\begin{bmatrix}1&1&1&1&\cdots &1 \\ 1&\omega &\omega ^{2}&\omega ^{3}&\cdots &\omega ^{N-1} \\ 1&\omega ^{2}&\omega ^{4}&\omega ^{6}&\cdots &\omega ^{2(N-1)} \\ 1&\omega ^{3}&\omega ^{6}&\omega ^{9}&\cdots &\omega ^{3(N-1)}\\ \vdots &\vdots &\vdots &\vdots &\ddots &\vdots \\ 1&\omega ^{N-1}&\omega ^{2(N-1)}&\omega ^{3(N-1)}&\cdots &\omega ^{(N-1)(N-1)}\end{bmatrix}},} %]]></script>
-
-<p>where {\displaystyle \omega =e^{-2\pi i/N}}</p>
-
-<p><img src="/gallery/Fourierop_rows_only.svg" style="width:70%" /></p>
-
-<p>The following summarizes how the 8-point DFT works, row by row, in terms of fractional frequency:</p>
-
-<ul>
-  <li>0 measures how much DC is in the signal</li>
-  <li>−1/8 measures how much of the signal has a fractional frequency of +1/8</li>
-  <li>−1/4 measures how much of the signal has a fractional frequency of +1/4</li>
-  <li>−3/8 measures how much of the signal has a fractional frequency of +3/8</li>
-  <li>−1/2 measures how much of the signal has a fractional frequency of +1/2</li>
-  <li>−5/8 measures how much of the signal has a fractional frequency of +5/8</li>
-  <li>−3/4 measures how much of the signal has a fractional frequency of +3/4</li>
-  <li>−7/8 measures how much of the signal has a fractional frequency of +7/8</li>
-</ul>
-
-<h3 id="examples">Examples</h3>
-
-<p>Two-point</p>
-
-<p>The two-point DFT is a simple case, in which the first entry is the DC (sum) and the second entry is the AC (difference).</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\{\displaystyle {\begin{bmatrix}1 & 1 \\ 1 & -1 \end{bmatrix}}\} %]]></script>
-
-<p>The first row performs the sum, and the second row performs the difference.</p>
-
-<p>The factor of $ 1/{\sqrt{2}} $ is to make the transform unitary (see below).
-Four-point</p>
-
-<p>The four-point DFT matrix is as follows:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\displaystyle W={\begin{bmatrix}\omega^{0} & \omega^{0} & \omega^{0} & \omega^{0}\\ \omega^{0} & \omega^{1}&\omega^{2} & \omega^{3} \\ \omega^{0} & \omega^{2} & \omega^{0} & \omega^{2} \\ \omega^{0} & \omega^{3} & \omega^{2} & \omega^{1} \\ \end{bmatrix}} = { \begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & -i & -1 & i \\ 1 & -1 & 1 & -1 \\ 1 & i & -1 & -i \end{bmatrix}} %]]></script>
-
-<p>where $ {\displaystyle \omega =e^{-{\frac {\pi i}{2}}}=-i} $.
-Eight-point</p>
-
-<p>The first non-trivial integer power of two case is for eight points:</p>
-
-<script type="math/tex; mode=display">% <![CDATA[
-\displaystyle W={\begin{bmatrix}\omega ^{0}&\omega ^{0}&\omega ^{0}&\omega ^{0}&\omega ^{0}&\omega ^{0}&\omega ^{0}&\omega ^{0} \\ \omega ^{0}&\omega ^{1}&\omega ^{2}&\omega ^{3}&\omega ^{4}&\omega ^{5}&\omega ^{6}&\omega ^{7} \\ \omega ^{0}&\omega ^{2}&\omega ^{4}&\omega ^{6}&\omega ^{0}&\omega ^{2}&\omega ^{4}&\omega ^{6} \\ \omega ^{0}&\omega ^{3}&\omega ^{6}&\omega ^{1}&\omega ^{4}&\omega ^{7}&\omega ^{2}&\omega ^{5}\\ \omega ^{0}&\omega ^{4}&\omega ^{0}&\omega ^{4}&\omega ^{0}&\omega ^{4}&\omega ^{0}&\omega ^{4} \\ \omega ^{0}&\omega ^{5}&\omega ^{2}&\omega ^{7}&\omega ^{4}&\omega ^{1}&\omega ^{6}&\omega ^{3}\\\omega ^{0}&\omega ^{6}&\omega ^{4}&\omega ^{2}&\omega ^{0}&\omega ^{6}&\omega ^{4}&\omega ^{2} \\ \omega ^{0}&\omega ^{7}&\omega ^{6}&\omega ^{5}&\omega ^{4}&\omega ^{3}&\omega ^{2}&\omega ^{1} \\ \end{bmatrix}}={\begin{bmatrix}1&1&1&1&1&1&1&1 \\ 1&\omega &-i&-i\omega &-1&-\omega &i&i\omega \\ 1&-i&-1&i&1&-i&-1&i \\ 1&-i\omega &i&\omega &-1&i\omega &-i&-\omega \\ 1&-1&1&-1&1&-1&1&-1 \\ 1&-\omega &-i&i\omega &-1&\omega &i&-i\omega \\ 1&i&-1&-i&1&i&-1&-i \\ 1&i\omega &i&-\omega &-1&-i\omega &-i&\omega \\ \end{bmatrix}} %]]></script>
-
-<p>where</p>
-
-<p>$ \omega = e^{-{\frac{2\pi i}{8}}} = \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}} $</p>
-
-<p>(Note that $\omega^{8 + n} = \omega^{n}$.)</p>
-
-<h2 id="references">References</h2>
+<h2 id="objectives">Objectives</h2>
 
 <ol>
-  <li>Digital Signal Processing, <strong>2nd Edition</strong>, <em>Fundamentals and Applications</em>. Authors: Li Tan Jean Jiang.</li>
-  <li>Signals and Systems using MATLAB. by Luis Chaparro Ph.D. University of California Berkeley.</li>
-  <li>Mitra Digital Signale Processing, Computer Based Approach.</li>
-  <li>Oppenheim Discrete-Time Signal Processing.</li>
+  <li>Learn about <strong>heap</strong> structure</li>
+  <li>Implementing <strong>heap</strong> using arrays</li>
+  <li>Implementing <strong>priority queue (ADT)</strong> using <strong>heap</strong></li>
+  <li>The Shortest Path Problem (TSP)</li>
 </ol>
 
-<h2 id="new-task-writing-pythonmatlab-wrappers-for-cc">New Task: Writing Python/MATLAB Wrappers for C/C++</h2>
+<h2 id="heaps">Heaps</h2>
 
-<h3 id="hints">Hints</h3>
+<h3 id="operations">Operations</h3>
 
-<ul>
-  <li><a href="http://www.boost.org/doc/libs/1_66_0/libs/python/doc/html/index.html">Boost.Python</a></li>
-  <li><a href="http://intermediate-and-advanced-software-carpentry.readthedocs.io/en/latest/c++-wrapping.html">Wrapping C/C++ for Python</a></li>
-  <li><a href="http://karuppuswamy.com/wordpress/2012/01/28/how-to-use-c-library-in-python-generating-python-wrappers-for-c-library/">How to use C library in python? (Generating Python wrappers for C library)</a></li>
-  <li><a href="https://www.mathworks.com/help/matlab/ref/mex.html?requestedDomain=true">Build MEX function from C/C++ or Fortran source code</a></li>
-</ul>
+<h4 id="insertion">Insertion</h4>
 
-<h2 id="demo-file">Demo file</h2>
+<h4 id="removal">Removal</h4>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git clone https://github.com/sbme-tutorials/sbe309-week3-demo.git
-</code></pre></div></div>
+<h3 id="implementation-using-arrays">Implementation using arrays</h3>
 
-<h2 id="references-1">References</h2>
+<h2 id="priority-queue-adt">Priority Queue (ADT)</h2>
 
-<ol class="bibliography"><li><span id="MDFTWEB07">Smith, J. O. (accessed (date accessed). <i>Mathematics of the Discrete Fourier Transform (DFT)</i>. \htmladdnormallink\texttthttp:http://ccrma.stanford.edu/ jos/mdft/\texttt//\-ccrma.stanford.edu/\-~jos/\-mdft/.</span></li></ol>
+<h3 id="implementation-using-sorted-list">Implementation using sorted list</h3>
+
+<h3 id="implementation-using-heap">Implementation using heap</h3>
+
+<h4 id="priority-queue-application-shortest-path-problem">Priority Queue Application: Shortest Path Problem</h4>
+
+<p><img src="/gallery/trees/map.png" style="width:80%;" /></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U9Raj6rAqqs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
 
   </div>
 
