@@ -152,12 +152,12 @@
           
             
             
-            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
             
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
             
           
             
@@ -197,12 +197,12 @@
           
             
             
-            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
             
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
             
           
             
@@ -237,12 +237,12 @@
           
             
             
-            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
             
           
             
@@ -270,12 +270,12 @@
           
             
             
-            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
             
           
             
             
-            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
             
           
             
@@ -393,139 +393,212 @@
 
   <div class="post-content">
     <ul id="markdown-toc">
-  <li><a href="#image-segmentation" id="markdown-toc-image-segmentation">Image Segmentation</a></li>
-  <li><a href="#histogram-based-segmentation" id="markdown-toc-histogram-based-segmentation">Histogram Based Segmentation</a></li>
+  <li><a href="#image-segmentation" id="markdown-toc-image-segmentation">Image Segmentation</a>    <ul>
+      <li><a href="#3d-segmentation" id="markdown-toc-3d-segmentation">3D Segmentation</a></li>
+    </ul>
+  </li>
+  <li><a href="#histogram-based-segmentation-image-binarization" id="markdown-toc-histogram-based-segmentation-image-binarization">Histogram Based Segmentation (Image Binarization)</a></li>
   <li><a href="#optimal-threshold" id="markdown-toc-optimal-threshold">Optimal Threshold</a></li>
-  <li><a href="#otsu-thresholding" id="markdown-toc-otsu-thresholding">Otsu Thresholding</a></li>
-  <li><a href="#otsu-thresholding-contd" id="markdown-toc-otsu-thresholding-contd">Otsu Thresholding cont’d</a></li>
-  <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic Algorithm</a></li>
+  <li><a href="#otsu-thresholding" id="markdown-toc-otsu-thresholding">Otsu Thresholding</a>    <ul>
+      <li><a href="#basic-idea" id="markdown-toc-basic-idea">Basic Idea</a></li>
+      <li><a href="#within-class-variance" id="markdown-toc-within-class-variance">Within class variance</a></li>
+      <li><a href="#between-class-variance" id="markdown-toc-between-class-variance">Between class variance</a></li>
+      <li><a href="#mean-and-variance-calculation" id="markdown-toc-mean-and-variance-calculation">Mean and variance calculation</a>        <ul>
+          <li><a href="#how-to-get-pdf-of-both-classes-" id="markdown-toc-how-to-get-pdf-of-both-classes-">How to get pdf of both classes ?</a></li>
+        </ul>
+      </li>
+      <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic Algorithm</a></li>
+    </ul>
+  </li>
   <li><a href="#seed-pixels-region-growing" id="markdown-toc-seed-pixels-region-growing">Seed Pixels (Region Growing)</a></li>
 </ul>
 
 <h2 id="image-segmentation">Image Segmentation</h2>
 
-<p>Image segmentation is the process of partitioning the image into isolated areas or segment. Each segment has similar features, for example have same intensity or same color etc, and is considered as an object in the image.</p>
+<p>Image segmentation is the process of partitioning the image into isolated areas or segment. Each segment has similar features, for example have same intensity or same color etc, and is considered as an object in the image. There are many applications of image segmentation of medical images including automatic diagnostic applications and other application related to treatment. Treatment planning is an example of 3D image segmentation.</p>
 
-<p>There are many applications of image segmentation of medical images including automatic diagnostic applications and other application related to treatment. Treatment planning is an example of 3D image segmentation.</p>
-
-<p>3D object is reconstructed from series of images. Here an example of reconstruction of 3D human skull.</p>
+<h3 id="3d-segmentation">3D Segmentation</h3>
+<p>3D object is reconstructed from series of medical images. Here an example of reconstruction of 3D human skull from a series of dicom images scanned by CT scanner.</p>
 
 <p><span style="display:block;text-align:center"><img style="width:45%" src="../images/Selection_061.png" /></span></p>
 
-<p>From that skull we can segment different interested regions or object. Here we are interested in segmentation of mandible, maxilla, upper and lower tooth. Each object now is separated and we can treat with it independently. Using these object dentist can plane process of dental implant or orthodontic treatment or any other process.</p>
+<p>From that skull we can segment different interested regions or object. Here we are interested in segmentation of mandible, maxilla, upper and lower teeth. Each object now is separated and we can treat with it independently. Using these object dentists can plane process of dental implant or orthodontic treatment or any similar operation.</p>
 
 <p><span style="display:block;text-align:center"><img style="width:60%" src="../images/results.png" /></span></p>
 
 <p>This was a project I worked on for a subject in my pre-master year under title “An optimized technique for 3D segmentation for orthodontic treatment plane”. I used <a href="https://www.vtk.org/">VTK</a> for reconstruction and segmentation processes and <a href="https://www.qt.io/">Qt</a> for GUI design. Segmentation was based on thresholding and connectivity testing which is similar to region growing approach but in 3D.</p>
 
-<h2 id="histogram-based-segmentation">Histogram Based Segmentation</h2>
+<h2 id="histogram-based-segmentation-image-binarization">Histogram Based Segmentation (Image Binarization)</h2>
 
-<ul>
-  <li>
-    <p>Image Binarization</p>
-  </li>
-  <li>
-    <p>Only two classes (object , background)</p>
-  </li>
-  <li>
-    <p>Basic Idea 
-<script type="math/tex">% <![CDATA[
+<p>Histogram based segmentation or image binarization segment the image into two classes, object and background based on a certain threshold. Image will be a binary image according to following equation</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
 I(x,y) = 
 \begin{cases}
 0, I(x,y) < T \\\ 
 1, I(x,y) > T 
-\end{cases} %]]></script></p>
-  </li>
-  <li>
-    <p>How to select threshold ?</p>
-  </li>
-</ul>
+\end{cases} %]]></script>
 
-<p>class: left, top</p>
+<p>The question here is How to select threshold ?</p>
+
 <h2 id="optimal-threshold">Optimal Threshold</h2>
-<ul>
-  <li>
-    <p>Object, background histogram 
-<img style="width:85%" src="../images/Selection_065.png" /></p>
-  </li>
-  <li>
-    <p>Example</p>
-  </li>
-</ul>
+
+<p>Assume we have the following histogram. For ideal case object and background would be totally isolated, optimal threshold is well defined here.</p>
+
+<p><img style="width:85%" src="../images/Selection_065.png" /></p>
+
+<p>Here an example of real image with isolated object, background histograms.</p>
 
 <p><img style="width:85%" src="../images/Selection_064.png" /></p>
 
+<p>For general case histogram of object and background are merged together, we had to define performance measure of selected threshold.</p>
+
 <h2 id="otsu-thresholding">Otsu Thresholding</h2>
-<ul>
-  <li>
-    <p>Trying to find Optimal threshold</p>
-  </li>
-  <li>
-    <p>Optimal threshold in range 0 to 255</p>
-  </li>
-  <li>
-    <p>Recall (We have two classes)</p>
-  </li>
-  <li>
-    <p>Criteria</p>
-    <ol>
-      <li>Select t that minimize within class variance.</li>
-    </ol>
-  </li>
-</ul>
 
-<ol>
-  <li>Select t that maximize between class variance.</li>
-</ol>
+<h3 id="basic-idea">Basic Idea</h3>
 
-<h2 id="otsu-thresholding-contd">Otsu Thresholding cont’d</h2>
-<ul>
-  <li>Calculating within class variance 
-<script type="math/tex">\sigma_w^2  = c_1 \sigma_1^2 + (1-c_1) \sigma_2^2</script></li>
-  <li>Calculating Between class variance 
-<script type="math/tex">\sigma_b^2  = c_1 (1-c_1) (\mu_1 - \mu_2)^2</script>
-Where <script type="math/tex">c_1</script> is cumulative sum at t</li>
-  <li>Recall 
-<script type="math/tex">E[x] = \sum x p(x)</script>
-and 
-<script type="math/tex">\sigma^2 = E[x^2] - \mu^2</script></li>
-</ul>
+<p>Otsu thresholding aims to automatically find optimal threshold for image binarization. It assumes two classes object and background. The idea is to select the threshold that will minimize within class variance or maximize between class variance. That’s means that we need to calculate these values for all gray levels and select one that has minimum within class variance and maximum between class variance.</p>
 
-<h2 id="basic-algorithm">Basic Algorithm</h2>
-<ul>
-  <li>Basic algorithm is</li>
-  <li>Maximize between class variance
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get</span> <span class="n">Histogram</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span>
+<p>But what that mean ? It means that optimal threshold is that one who divide histogram into two parts given that distribution of values at same partition has minimum variance (Values are close to each other) or distributions of different partitions are isolated (far from each other).</p>
+
+<p><img src="../images/Otsu's_Method_Visualization.gif" alt="" />
+<a href="https://en.wikipedia.org/wiki/Otsu%27s_method">source</a></p>
+
+<p>Maximizing between class variance</p>
+
+<h3 id="within-class-variance">Within class variance</h3>
+
+<p>Within class variance <script type="math/tex">\sigma_w^2</script> can be calculated at specific threshold value <script type="math/tex">t</script> as follow</p>
+
+<script type="math/tex; mode=display">\sigma_w^2  = c_1 \sigma_1^2 + (1-c_1) \sigma_2^2</script>
+
+<p>Where <script type="math/tex">c_1</script> is the cumulative sum at that threshold <script type="math/tex">t</script>, <script type="math/tex">\sigma_1^2</script> is the variance of first class and <script type="math/tex">\sigma_2^2</script> is the variance of second class. We can conclude that <script type="math/tex">\sigma_w^2</script> is a weighted sum of variances of both classes.</p>
+
+<h3 id="between-class-variance">Between class variance</h3>
+
+<p>For between class variance <script type="math/tex">\sigma_b^2</script> it is calculated for specific value of threshold <script type="math/tex">t</script> as follow</p>
+
+<script type="math/tex; mode=display">\sigma_b^2  = c_1 (1-c_1) (\mu_1 - \mu_2)^2</script>
+
+<p>where <script type="math/tex">\mu_1</script> and <script type="math/tex">\mu_2</script> is the mean of class 1 and 2 respectively.</p>
+<h3 id="mean-and-variance-calculation">Mean and variance calculation</h3>
+
+<p>Recall that mean or expected of variable <script type="math/tex">x</script> with probability density function <script type="math/tex">p(x)</script> is defined as</p>
+
+<script type="math/tex; mode=display">E[x] = \sum x p(x)</script>
+
+<p>and variance</p>
+
+<script type="math/tex; mode=display">\sigma^2 = E[x^2] - \mu^2</script>
+
+<h4 id="how-to-get-pdf-of-both-classes-">How to get pdf of both classes ?</h4>
+
+<p>Given the relative histogram that represent the pdf of all the image. We can determine the pdf of class 1 with gray levels &lt; threshold t by dividing the relative histogram by the total probabilities till that threshold t which is cumulative probability at that threshold CDF(t). For second class we can get its pdf by dividing by (1 - CDF(t)).</p>
+<h3 id="basic-algorithm">Basic Algorithm</h3>
+<p>Basic algorithm for determining threshold that maximize between class variance is</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Get</span> <span class="n">Histogram</span> <span class="n">of</span> <span class="n">the</span> <span class="n">image</span>
 <span class="n">Get</span> <span class="n">relative</span> <span class="n">histogram</span> <span class="p">(</span><span class="n">PDF</span><span class="p">)</span>
 <span class="n">Get</span> <span class="n">cumulative</span> <span class="n">Histogram</span> <span class="p">(</span><span class="n">CDF</span><span class="p">)</span>
 <span class="n">initialize</span> <span class="n">OptThreshold</span> <span class="o">=</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">maxVariance</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">For</span> <span class="n">each</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span> <span class="mi">1</span> <span class="n">to</span> <span class="mi">255</span> 
-<span class="n">m1</span> <span class="o">=</span>  <span class="n">mean</span> <span class="n">value</span> <span class="k">class</span> <span class="err">1 
-</span><span class="nc">m2</span> <span class="o">=</span>  <span class="n">mean</span> <span class="n">value</span> <span class="k">class</span> <span class="err">2  
-</span><span class="nc">c1</span> <span class="o">=</span> <span class="n">CDF</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
-<span class="n">varBet</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>   
-<span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">maxVariance</span> 
-    <span class="n">maxVariance</span> <span class="o">=</span> <span class="n">value</span>
-    <span class="n">OptThreshold</span> <span class="o">=</span> <span class="n">t</span>  
-</code></pre></div>    </div>
-  </li>
-</ul>
+  <span class="n">m1</span> <span class="o">=</span>  <span class="n">mean</span> <span class="n">value</span> <span class="k">class</span> <span class="err">1 
+  </span><span class="nc">m2</span> <span class="o">=</span>  <span class="n">mean</span> <span class="n">value</span> <span class="k">class</span> <span class="err">2  
+  </span><span class="nc">c1</span> <span class="o">=</span> <span class="n">CDF</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+  <span class="n">varBet</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">c1</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">m1</span> <span class="o">-</span> <span class="n">m2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>   
+  <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="n">maxVariance</span> 
+      <span class="n">maxVariance</span> <span class="o">=</span> <span class="n">value</span>
+      <span class="n">OptThreshold</span> <span class="o">=</span> <span class="n">t</span>  
+</code></pre></div></div>
 
 <p><strong>Lets try to implement it</strong></p>
 
-<ul>
-  <li>What about minimizing within class variance</li>
-</ul>
+<p>Import some libraries</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+</code></pre></div></div>
+
+<p>Defining otsu function that returns the optimal threshold of input image.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">otsuThresholdB</span><span class="p">(</span><span class="n">image</span><span class="p">):</span>
+    <span class="c">#Get size of image</span>
+    <span class="n">rows</span><span class="p">,</span> <span class="n">cols</span> <span class="o">=</span>  <span class="n">image</span><span class="o">.</span><span class="n">shape</span>
+    <span class="c">#Plotting image histogram</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="c">#We are interested on H (histogram), other values that plt.hist returns will be ignored here</span>
+    <span class="n">H</span><span class="p">,</span> <span class="n">binEdges</span><span class="p">,</span> <span class="n">patches</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span><span class="mi">256</span><span class="p">)</span>
+    <span class="c"># Getting relative histogram (pdf)</span>
+    <span class="n">pdf</span> <span class="o">=</span> <span class="n">H</span> <span class="o">/</span><span class="p">(</span><span class="n">rows</span><span class="o">*</span><span class="n">cols</span><span class="p">)</span>
+    <span class="c"># Get cdf for all gray levels</span>
+    <span class="n">cdf</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+    <span class="c">#Initialization</span>
+    <span class="n">othresh</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">maxVarB</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+<p>Calculation of between class variance of all gray levels and extract threshold with max variance</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">255</span><span class="p">):</span>
+        <span class="c">#gray levels belongs to background </span>
+        <span class="n">bg</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">t</span><span class="p">)</span>
+        <span class="c">#object gray levels</span>
+        <span class="n">obj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+        <span class="c">#Calculation of mean gray level for object and background</span>
+        <span class="n">mBg</span>    <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">bg</span><span class="o">*</span><span class="n">pdf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">t</span><span class="p">])</span><span class="o">/</span><span class="n">cdf</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+        <span class="n">mObj</span>   <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">obj</span><span class="o">*</span><span class="n">pdf</span><span class="p">[</span><span class="n">t</span><span class="p">:</span><span class="mi">256</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cdf</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+        <span class="c"># Calculate between class variance</span>
+        <span class="n">varB</span> <span class="o">=</span> <span class="n">cdf</span><span class="p">[</span><span class="n">t</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">cdf</span><span class="p">[</span><span class="n">t</span><span class="p">])</span> <span class="o">*</span><span class="p">(</span><span class="n">mObj</span> <span class="o">-</span> <span class="n">mBg</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+        <span class="c">#Pick up max variance and corresponding threshold</span>
+        <span class="k">if</span> <span class="n">varB</span> <span class="o">&gt;</span> <span class="n">maxVarB</span><span class="p">:</span>
+            <span class="n">maxVarB</span><span class="o">=</span> <span class="n">varB</span>
+            <span class="n">othresh</span> <span class="o">=</span> <span class="n">t</span>
+    <span class="k">return</span> <span class="n">othresh</span>
+</code></pre></div></div>
+<p>We didn’t finished yet. we will use that threshold to binarize the image so lets define that function</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">binarize</span><span class="p">(</span> <span class="n">gray_image</span> <span class="p">,</span> <span class="n">threshold</span> <span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span> <span class="o">*</span> <span class="p">(</span> <span class="n">gray_image</span> <span class="o">&gt;</span> <span class="n">threshold</span> <span class="p">)</span>
+</code></pre></div></div>
+<p>Here is the main function</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#Read an image</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'images/MRIbrain3.jpg'</span><span class="p">)</span>
+<span class="c">#Extract value channel (intensity)</span>
+<span class="n">hsvImage</span> <span class="o">=</span> <span class="n">colors</span><span class="o">.</span><span class="n">rgb_to_hsv</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">myIm</span> <span class="o">=</span> <span class="n">hsvImage</span><span class="p">[</span><span class="o">...</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="c">#Show original image</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">myIm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">set_cmap</span><span class="p">(</span><span class="s">"gray"</span><span class="p">)</span>
+<span class="c">#Get optimal threshold</span>
+<span class="n">oTb</span> <span class="o">=</span> <span class="n">otsuThresholdB</span><span class="p">(</span><span class="n">myIm</span><span class="p">)</span>
+<span class="c">#Binarize the image and show it</span>
+<span class="n">binaryIm</span> <span class="o">=</span> <span class="n">binarize</span><span class="p">(</span><span class="n">myIm</span><span class="p">,</span> <span class="n">oTw</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">binaryIm</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+<p><strong>Results</strong></p>
+
+<p>Original Image</p>
+
+<p><img src="../images/MRIbrain3.png" alt="" /></p>
+
+<p>Histogram of the image</p>
+
+<p><img src="../images/hist.png" alt="" /></p>
+
+<p>The binary image optimal threshold value was 66</p>
+
+<p><img src="../images/MRIThr.png" alt="" /></p>
+
+<p>What about minimizing within class variance ?</p>
 
 <h2 id="seed-pixels-region-growing">Seed Pixels (Region Growing)</h2>
-<ul>
-  <li>Initial Seed</li>
-  <li>Check connected pixels</li>
-  <li>Add them to region (Intensity , colored based)</li>
-  <li>repeat.</li>
-</ul>
+<p>Segmentation starts with initial seed point. Neighbors of that pixel will be merged if they similar to it. Similarity criteria may be defined as intensity or color. Process continues till no more similar neighbors found. For example next figure shows segmented regions for different seed points.</p>
 
-<p><img style="width:85%" src="../images/Selection_066.png" /></p>
+<p><img style="width:95%" src="../images/Selection_066.png" /></p>
 
 
   </div>
