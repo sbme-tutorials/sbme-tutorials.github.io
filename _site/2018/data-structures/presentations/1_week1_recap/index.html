@@ -1,0 +1,359 @@
+<!-- ---
+layout: presentation
+course: "sbe201"
+category: "presentation"
+year: "2018"
+title: "Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
+by: "Asem"
+author: "Asem Alaa"
+--- -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Special Gift from Github! + Linux Basics</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+
+---
+class: center, middle
+# A Special Gift for Bio2020 Class
+
+---
+class: center, middle
+# Git cheat sheets
+
+<img style="width:90%" src="/gallery/gh-cheatsheet.png">
+
+[{PDF}](https://education.github.com/git-cheat-sheet-education.pdf)
+
+---
+class: center, middle
+# GitHub Flow guide
+
+<img style="width:90%" src="/gallery/gh-flow.png">
+
+[{PDF}](https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf)
+
+---
+class: center, middle
+# GitHub-Flavored Markdown guide
+
+<img style="width:80%" src="/gallery/gh-markdown.png">
+
+[{PDF}](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
+
+---
+class: center, middle
+# GitHub for Robotics comic book 
+#### explains the basics of using GitHub
+
+<img style="width:50%" src="/gallery/gh-robot.png">
+
+[{CBR}](https://discourse-cdn-sjc2.com/standard16/uploads/github/original/2X/1/175452fc42e0a4e34b0dd52d4c923ab47fd1619f.cbr)
+
+---
+class: center, middle
+# How to show gratitude!
+### [{#ThanksGitHub}](https://twitter.com/hashtag/thanksgithub?f=tweets&vertical=default&src=hash)
+
+---
+class: center, middle
+## Mates from US
+<img style="width:70%" src="/gallery/thanks-gh.png">
+
+
+---
+class: center, middle
+## Mates from Japan
+<img style="width:70%" src="/gallery/thanks-gh.jpeg">
+
+
+---
+class: center, middle
+## Special Gifts for Best Students
+
+<img style="width:70%" src="/gallery/gh-tshirts.png">
+
+
+
+---
+class: left, middle
+## Linux Spaces
+### System-wise space vs. User space
+
+<img style="width:80%" src="/gallery/linux-spaces.png">
+
+* When working on your projects, you are a **USER**.
+* When installing/upgrading system-wise application/library, you are an **ADMIN**. 
+
+
+---
+class: left, top
+## Jumping between folders (changing directories)
+
+```terminal
+$ cd (Relative Path|Absolute Path)
+```
+
+* In terminal commands, with `A|B`, I mean "Either A or B". 
+
+---
+class: left, top
+## Listing files in the current directory (folder)
+
+### List files/directories inside the current directory of the terminal
+```terminal
+$ ls 
+```
+
+### List files/directories on from other directory
+```terminal
+$ ls (Relative Path|Relative Path)
+```
+
+
+---
+class: left, top
+## Change folder name or moving folder name
+
+```terminal
+$ mv (file|directory) (new file|new directory)
+```
+
+---
+class: left, top
+## Copy file 
+
+
+```terminal 
+$ cp (file) (target path)
+```
+
+---
+class: left, top
+## Copy directory
+
+```terminal
+$ cp -r (directory) (target path)
+```
+
+---
+class: left, top
+## Create a new directory (folder)
+
+
+```terminal
+$ mkdir (new folder name)
+```
+
+
+---
+class: left, top
+## Removing a file
+
+```terminal
+$ rm (file)
+```
+
+---
+class: left, top
+## Remove a directory  
+
+```terminal
+$ rm -r (directory)
+```
+
+
+---
+class: left, top
+## WARNING: Did you say `rm`?
+
+### HOW ABOUT `sudo rm -rf /`
+
+DO NOT DO THIS!
+```terminal
+$ sudo rm -rf /
+```
+
+--
+<img style="width:80%" src="/gallery/bomb.jpg">
+
+
+
+---
+class: left, top
+## Updating & Upgrading your Linux
+
+Upgrades are very important. Many hardware drivers issues are being fixed through these updates. Also, security-wise,
+updates guarantees your system to be safe against hackable vulnerabilities. For example, *Spectre* and *Meltdown* vulnerabilities that exposed all
+ Operating Systems (including Widnows and Linux), for more [info](https://www.pcworld.com/article/3245606/security/intel-x86-cpu-kernel-bug-faq-how-it-affects-pc-mac.html).
+
+```terminal
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+
+---
+class: left, top
+## Installing packages from the apt store
+
+```terminal
+$ sudo apt-get install (package name)
+```
+
+---
+class: left, top
+## Installing local `.deb` packages
+
+```terminal
+$ sudo dpkg -i (package path)
+```
+
+---
+class: left, top
+## Interesting Appliactions
+
+| Category | package name | 
+|----------|--------------|
+| Music & Video | vlc, rhythm box (shipped with Ubuntu) |
+| PDFs | Okular, Foxit, PdfShuffler |
+| Screenshots | Shutter | 
+| C++ IDEs | Qt Creator, Jet-brains CLion, VSCode |
+| Python IDEs | Pycharm, Anaconda (Spyder) |
+| Web IDEs | VSCode, Jet-brains WebStorm | 
+
+
+---
+class: left, top
+## Practice: same logic with different constructs
+
+```c++
+
+double calculation( double a , double b , char operation )
+{
+  if( operation == '+' )
+  {
+    return a + b;
+  }
+  else if( operation == '-' )
+  {
+    return a - b;
+  }
+  else if( operation == '*' )
+  {
+    return a * b;
+  }
+  else if( operation == '/' )
+  {
+    return a / b;
+  }
+  else
+  {
+    return 0;
+  }
+}
+```
+
+---
+class: left, top
+
+```c++
+double calculation( double a , double b , char operation )
+{
+  switch( operation )
+  {
+    case '+' :
+    {
+      return a + b;
+    } break;
+
+    case '-':
+    {
+      return a - b;
+    } break;
+
+    case '*':
+    {
+      return a * b;
+    } break;
+
+    case '/':
+    {
+      return a / b;
+    } break;
+
+    default:
+    {
+      return 0;
+    }
+  }
+}
+```
+---
+class: left, top
+
+Thanks for Mostafa Hisham and Emmanuel for solving this problem!
+
+
+
+
+
+
+
+    </textarea>
+    
+    
+
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+  <script src="/javascript/remark-latest.min.js"></script>
+
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    var options = {
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
+
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+  </script>
+
+  <script src="/mathjax/MathJax.js"></script>
+
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+      jax: ["input/TeX", "output/HTML-CSS"],
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+      },
+      MathMenu: {
+       showRenderer: false,
+       showFontMenu: false,
+       showLocale: false
+      }
+    });
+  </script>
+  
+  </body>
+</html>
+
