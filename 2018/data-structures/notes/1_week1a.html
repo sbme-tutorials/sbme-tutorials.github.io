@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Week 1 - Part 1: Basics of C++</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/1_week1a.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees and Sets (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8b.html">Week 8 - Part2: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 7 - Part1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 1 - Part 1: Basics of C++</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#variables-and-collections" id="markdown-toc-variables-and-collections">Variables and Collections</a>    <ul>
+      <li><a href="#variables" id="markdown-toc-variables">Variables</a></li>
+      <li><a href="#primitive-data-types-pdt-in-c" id="markdown-toc-primitive-data-types-pdt-in-c">Primitive Data Types (PDT) in C++</a></li>
+      <li><a href="#construction-of-variables" id="markdown-toc-construction-of-variables">Construction of Variables</a>        <ul>
+          <li><a href="#example" id="markdown-toc-example">Example</a></li>
+        </ul>
+      </li>
+      <li><a href="#collections-of-variables-data-structures" id="markdown-toc-collections-of-variables-data-structures">Collections of Variables (Data Structures)</a></li>
+      <li><a href="#construction-of-collections-what" id="markdown-toc-construction-of-collections-what">Construction of Collections (What?!)</a></li>
+    </ul>
+  </li>
+  <li><a href="#basic-operations-on-primitive-data-types-pdt" id="markdown-toc-basic-operations-on-primitive-data-types-pdt">Basic Operations on Primitive Data Types (PDT)</a>    <ul>
+      <li><a href="#arithmetic-operations" id="markdown-toc-arithmetic-operations">Arithmetic Operations</a></li>
+      <li><a href="#logical-operations" id="markdown-toc-logical-operations">Logical Operations</a></li>
+    </ul>
+  </li>
+  <li><a href="#basic-control-statements" id="markdown-toc-basic-control-statements">Basic Control Statements</a>    <ul>
+      <li><a href="#conditions-if-else-if-else-switch-case" id="markdown-toc-conditions-if-else-if-else-switch-case">Conditions: <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code></a></li>
+      <li><a href="#loops-for-while" id="markdown-toc-loops-for-while">Loops: <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code></a></li>
+    </ul>
+  </li>
+  <li><a href="#functions" id="markdown-toc-functions">Functions</a>    <ul>
+      <li><a href="#declaration-and-definition-of-functions" id="markdown-toc-declaration-and-definition-of-functions">Declaration and Definition of Functions</a></li>
+      <li><a href="#scopes-and-lifetime" id="markdown-toc-scopes-and-lifetime">Scopes and Lifetime</a>        <ul>
+          <li><a href="#example-of-a-local-scope-and-a-block-scope" id="markdown-toc-example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</a></li>
+          <li><a href="#example-of-namespace-scope" id="markdown-toc-example-of-namespace-scope">Example of namespace scope</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#c-programs" id="markdown-toc-c-programs">C++ Programs</a>    <ul>
+      <li><a href="#writing-c-codes" id="markdown-toc-writing-c-codes">Writing C++ codes</a>        <ul>
+          <li><a href="#installing-vs-code" id="markdown-toc-installing-vs-code">Installing VS Code</a></li>
+        </ul>
+      </li>
+      <li><a href="#boilerplate-codes" id="markdown-toc-boilerplate-codes">Boilerplate codes</a></li>
+      <li><a href="#writing-your-first-application" id="markdown-toc-writing-your-first-application">Writing your first application</a></li>
+      <li><a href="#compiling-your-code" id="markdown-toc-compiling-your-code">Compiling your code</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<h2 id="variables-and-collections">Variables and Collections</h2>
+
+<h3 id="variables">Variables</h3>
+
+<h3 id="primitive-data-types-pdt-in-c">Primitive Data Types (PDT) in C++</h3>
+
+<ul>
+  <li><code class="highlighter-rouge">bool</code>: boolean variable holds logical value (i.e <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>), it occupies <strong>1 byte</strong> of memory.</li>
+  <li><code class="highlighter-rouge">char</code>: a character (e.g <code class="highlighter-rouge">'a'</code>,<code class="highlighter-rouge">'b'</code>,..) , it occupies <strong>1 byte</strong> of memory.</li>
+  <li><code class="highlighter-rouge">int</code>: an integer (e.g …,-1,0,1,2,..), it occupies <strong>4 bytes</strong> of memory (for 64-bit machines).</li>
+  <li><code class="highlighter-rouge">float</code>: a real-number-like (e.g 0.5, 3.141, 9.81), it occupies <strong>4 bytes</strong> of memory.</li>
+  <li><code class="highlighter-rouge">double</code>: it is like float, but higher precision, occupies <strong>8 bytes</strong> of memory.</li>
+  <li>pointers: it holds an address of a variable in memory, occupies <strong>8 bytes</strong> of memory (for 64-bit machines).</li>
+  <li>references: an alias to a variable (same entity, but different name/label).</li>
+</ul>
+
+<p>Short story: pointers and references are made to make life easier and flexible when controlling variables as we will see later in this course.</p>
+
+<h3 id="construction-of-variables">Construction of Variables</h3>
+
+<p>A variable basically has:</p>
+
+<ol>
+  <li><strong>Data Type</strong>: <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">char</code>, <code class="highlighter-rouge">bool</code>, …, etc.</li>
+  <li><strong>Name</strong>: name of the variable to be used throughout your code.</li>
+  <li><strong>Value</strong>: the content of the variable.</li>
+</ol>
+
+<p>Don’t mix between them!</p>
+
+<p>To construct a variable you need to:</p>
+
+<ol>
+  <li>Declare a variable (Compiler Requirement).
+    <ul>
+      <li>Indicate your variable <strong>type</strong>.</li>
+      <li>Indicate your variable <strong>name</strong> that your are going to refer later.</li>
+    </ul>
+  </li>
+  <li>Initialize that variable (For god’s sake).
+    <ul>
+      <li>Give it an initial value.</li>
+    </ul>
+  </li>
+</ol>
+
+<h4 id="example">Example</h4>
+
+<p>First for all:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// What comes after double forward-slash (//) in a line is a comment.</span>
+<span class="c1">// Compiler Ignores comments.</span>
+<span class="c1">// Comments are not contributing to your application logic.</span>
+<span class="c1">// Comments are message to the readers of your code.</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// Declare a character variable.</span>
+<span class="c1">// Variable names are not the actual value!</span>
+<span class="kt">char</span> <span class="n">x</span><span class="p">;</span>
+<span class="c1">// What is the value of x?!</span>
+<span class="c1">// When not initialized, x will hold a value from garbage.</span>
+
+<span class="c1">// Please, always initialize your variables.</span>
+
+<span class="c1">// Declaration of character with initializng to 's'.</span>
+<span class="kt">char</span> <span class="n">x</span> <span class="o">=</span> <span class="sc">'s'</span><span class="p">;</span>
+
+<span class="c1">// Declaration of float whith initializing to 3.1415.</span>
+<span class="kt">float</span> <span class="n">pi</span> <span class="o">=</span> <span class="mf">3.1415</span><span class="p">;</span>
+
+
+<span class="c1">// If no interesting value to initialize your variable with, initialize with 0.</span>
+<span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">// You can initialize a variable with the value of another variable.</span>
+<span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span><span class="p">;</span>
+
+<span class="c1">// Another way to initialize a variable is using braces, it is up to you.</span>
+<span class="kt">double</span> <span class="n">e</span> <span class="p">{</span><span class="mf">2.71828</span><span class="p">};</span></code></pre></figure>
+
+<p>One way to avoid bugs (undefined behaviour) is initializing your variables.</p>
+
+<h3 id="collections-of-variables-data-structures">Collections of Variables (Data Structures)</h3>
+
+<!-- 
+Show an array of floats representing an ECG signal. 
+Show a linked-list of tasks.
+Show a tree of life.
+-->
+
+<h3 id="construction-of-collections-what">Construction of Collections (What?!)</h3>
+
+<p>This is what we are going to study through this course:</p>
+
+<ul>
+  <li>Different data structures (i.e collections of elements): Array, Linked List, Stack, Queue, Tree.</li>
+  <li>How to <strong>construct</strong> collections.</li>
+  <li>How to <strong>insert</strong> elements to our collection.</li>
+  <li>How to <strong>modify</strong> element in our collection.</li>
+  <li>How to <strong>delete</strong> an element.</li>
+  <li>How to <strong>traverse</strong> our collection (i.e print all its elements).</li>
+  <li>Applying <strong>algorithms</strong> on our collection.</li>
+  <li><strong>Searching</strong> for an element in our collection.</li>
+</ul>
+
+<h2 id="basic-operations-on-primitive-data-types-pdt">Basic Operations on Primitive Data Types (PDT)</h2>
+
+<h3 id="arithmetic-operations">Arithmetic Operations</h3>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">12</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+<span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 17</span>
+<span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 7</span>
+<span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 60</span>
+<span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 2</span>
+<span class="n">x</span> <span class="o">%</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// 2</span>
+
+<span class="c1">// x = x+y</span>
+<span class="n">x</span> <span class="o">+=</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// x is now 17.</span>
+
+<span class="c1">// increment: x = x+1</span>
+<span class="o">++</span><span class="n">x</span><span class="p">;</span> <span class="c1">// x is now 18.</span>
+
+<span class="c1">// x = x-y</span>
+<span class="n">x</span> <span class="o">-=</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// x is now 13.</span>
+
+<span class="c1">// decrement: x = x-1</span>
+<span class="o">--</span><span class="n">x</span><span class="p">;</span> <span class="c1">// x is now 12.</span>
+
+<span class="kt">double</span> <span class="n">u</span> <span class="o">=</span> <span class="mf">12.5</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">v</span> <span class="p">{</span> <span class="mi">3</span> <span class="p">};</span>
+
+<span class="n">u</span> <span class="o">/</span> <span class="n">v</span><span class="p">;</span>  <span class="c1">// 4.166667</span></code></pre></figure>
+
+<h3 id="logical-operations">Logical Operations</h3>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="c1">// equal</span>
+<span class="n">x</span><span class="o">==</span><span class="n">y</span><span class="p">;</span> <span class="c1">// False</span>
+
+<span class="c1">// not equal</span>
+<span class="n">x</span><span class="o">!=</span><span class="n">y</span><span class="p">;</span> <span class="c1">// True</span>
+
+<span class="c1">// less than</span>
+<span class="n">x</span><span class="o">&lt;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// True</span>
+
+<span class="c1">// greater than</span>
+<span class="n">x</span><span class="o">&gt;</span><span class="n">y</span><span class="p">;</span> <span class="c1">// False</span>
+
+<span class="c1">// less than or equal</span>
+<span class="n">x</span><span class="o">&lt;=</span><span class="n">y</span><span class="p">;</span> <span class="c1">// True</span>
+
+<span class="c1">// greater than or equal</span>
+<span class="n">x</span><span class="o">&gt;=</span><span class="n">y</span><span class="p">;</span> <span class="c1">// False</span>
+
+<span class="c1">// logical and</span>
+<span class="n">x</span> <span class="o">==</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="n">x</span> <span class="o">!=</span> <span class="mi">3</span> <span class="o">&amp;&amp;</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// False</span>
+<span class="nb">true</span> <span class="o">&amp;&amp;</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="o">&amp;&amp;</span> <span class="mi">13</span> <span class="o">&gt;=</span> <span class="mi">11</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// False</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mf">2.0</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// True</span>
+
+<span class="c1">// logical or</span>
+<span class="nb">true</span> <span class="o">||</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="nb">true</span> <span class="o">||</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="nb">false</span> <span class="o">||</span> <span class="nb">true</span><span class="p">;</span> <span class="c1">// True</span>
+<span class="nb">false</span> <span class="o">||</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// False</span>
+<span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// True</span></code></pre></figure>
+
+<h2 id="basic-control-statements">Basic Control Statements</h2>
+
+<h3 id="conditions-if-else-if-else-switch-case">Conditions: <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code></h3>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">bool</span> <span class="n">myCondition</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="mi">3</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="n">myCondition</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// Some operations here.</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+  <span class="c1">// Other operations here.</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="n">mark</span> <span class="o">=</span> <span class="mi">73</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">grade</span> <span class="o">=</span> <span class="sc">'D'</span><span class="p">;</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="n">mark</span> <span class="o">&gt;</span> <span class="mi">85</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'A'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">mark</span> <span class="o">&gt;</span> <span class="mi">75</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'B'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">mark</span> <span class="o">&gt;</span> <span class="mi">65</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'C'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">else</span>
+<span class="p">{</span>
+  <span class="n">grade</span> <span class="o">=</span> <span class="sc">'D'</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+<span class="k">switch</span> <span class="p">(</span><span class="n">grade</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">case</span> <span class="sc">'A'</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
+  
+  <span class="k">case</span> <span class="sc">'B'</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">75</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
+  
+  <span class="k">case</span> <span class="sc">'C'</span><span class="p">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">65</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
+  
+  <span class="k">default</span><span class="o">:</span>
+  <span class="p">{</span>
+    <span class="n">minimumGrade</span> <span class="o">=</span> <span class="mi">85</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="loops-for-while">Loops: <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code></h3>
+
+<p>Note: <code class="highlighter-rouge">std::cout</code> is an object used to print primitive data type (PDT) variables into the terminal/console. Wait!! What is <code class="highlighter-rouge">std::</code>? Well, you can write your own functions and make them callable inside a <code class="highlighter-rouge">namespace</code>. Consider <code class="highlighter-rouge">namespace</code> feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called <strong>Standard Template Library (STL)</strong>. If you need to use a function from the the C++ <strong>STL</strong> just indicate the <code class="highlighter-rouge">std</code> as a <code class="highlighter-rouge">namespace</code> when you call a function from <strong>STL</strong>. <strong>Don’t panic if you feel uncomfotable! everything is going to be clear incrementally.</strong></p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// prints:0 1 2 3 4 5 6 7 8 9</span>
+
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">while</span><span class="p">(</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// prints:0 1 2 3 4 5 6 7 8 9</span></code></pre></figure>
+
+<h2 id="functions">Functions</h2>
+
+<p>A function basically has:</p>
+
+<ul>
+  <li><strong>Name</strong> to be used when calling this function.</li>
+  <li><strong>Return Type</strong>: a function may return <code class="highlighter-rouge">int</code>, <code class="highlighter-rouge">double</code>, <code class="highlighter-rouge">char</code>, … etc. Also, it may not return, so its return type is <code class="highlighter-rouge">void</code>.</li>
+  <li><strong>Arguments</strong>: the variables given to your function so it makes some operations on.</li>
+  <li><strong>Definition</strong>: the logic of your function.</li>
+</ul>
+
+<h3 id="declaration-and-definition-of-functions">Declaration and Definition of Functions</h3>
+
+<p>Like variables, functions must be declared before you implement your logic in this function.</p>
+
+<ul>
+  <li><strong>Declaration</strong> a function header that indicates the function <strong>name</strong>, <strong>return type</strong>, and <strong>arguments</strong>.</li>
+  <li><strong>Definition</strong> is the function logic.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">average</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">// function header (Declaration)</span>
+<span class="p">{</span> <span class="c1">// function definition (logic) goes here</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">max</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">// declaration</span>
+<span class="p">{</span> <span class="c1">// definition</span>
+  <span class="k">if</span><span class="p">(</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">else</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// Declare `x` as double and initialize it with the average of 13.5 and 21.0</span>
+  <span class="c1">// Note the type consistency between x and the function return type.</span>
+  <span class="kt">double</span> <span class="n">x</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span> <span class="mf">13.5</span> <span class="p">,</span> <span class="mf">21.0</span> <span class="p">);</span>
+
+  <span class="kt">bool</span> <span class="n">y</span> <span class="o">=</span> <span class="n">average</span><span class="p">(</span> <span class="mf">11.5</span> <span class="p">,</span> <span class="mf">15.0</span> <span class="p">);</span> <span class="c1">// Compiler Error, type mismatch!</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span> <span class="mf">15.0</span> <span class="p">,</span> <span class="mf">9.0</span> <span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span> <span class="c1">// prints: 15.0</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Thanks to C++ Type System.</p>
+
+<h3 id="scopes-and-lifetime">Scopes and Lifetime</h3>
+
+<ol>
+  <li>Variables are bound to scopes where they are declared. Scopes types:
+    <ul>
+      <li>Local scope: any variable declared in a function is not accessible outside that function.</li>
+      <li>Block: any variable declared inside braces <code class="highlighter-rouge">{</code> <code class="highlighter-rouge">}</code>, like the blocks of the <code class="highlighter-rouge">for</code>, <code class="highlighter-rouge">while</code>, <code class="highlighter-rouge">if</code>, <code class="highlighter-rouge">else if</code>, <code class="highlighter-rouge">else</code>, and <code class="highlighter-rouge">switch</code>-<code class="highlighter-rouge">case</code>.</li>
+      <li><code class="highlighter-rouge">Namespace</code> scope.</li>
+    </ul>
+  </li>
+  <li>Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.</li>
+  <li>Once the scope is terminated, all variables in that scope are destructed.</li>
+</ol>
+
+<h4 id="example-of-a-local-scope-and-a-block-scope">Example of a local scope and a block scope</h4>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="kt">double</span> <span class="nf">rectangleArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="c1">// The arguments width and height are local variables to this function.</span>
+  <span class="c1">// width, height, area are not accessible outside.</span>
+
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">area</span><span class="p">;</span> <span class="c1">// return by value</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// area here is completely different than area in the rectangleArea function.</span>
+  <span class="c1">// They have the same value. But they are not same the variables.</span>
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">rectangleArea</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="example-of-namespace-scope">Example of namespace scope</h4>
+
+<p>Consider a situation when you need to implement a function that computes the area of rectangle and the area of right triangle. Using the same function name <code class="highlighter-rouge">area</code>!</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="c1">// This function returns the rectangle area.</span>
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// This function return the circle area.</span>
+<span class="c1">// Compiler error! multiple definitions of `area` function!</span>
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="c1">// which definition (logic) ?!</span>
+  <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>SOLUTION</strong> using <code class="highlighter-rouge">namespace</code> feature:</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="k">namespace</span> <span class="n">rectangle</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">triangle</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">rectangleArea</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">triangleArea</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">,</span> <span class="mf">3.0</span> <span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rectangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now you have a little sense about <code class="highlighter-rouge">std::cout</code> and <code class="highlighter-rouge">std</code> Namespace.</p>
+
+<h2 id="c-programs">C++ Programs</h2>
+
+<p>C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.</p>
+
+<p>A typical process of executable file generation is shown in this image:
+<img src="/gallery/compile.gif" alt="Compilation" /></p>
+
+<p>Courtesy to this <a href="https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&amp;srid=h6xMq">post @Quora</a>.</p>
+
+<h3 id="writing-c-codes">Writing C++ codes</h3>
+
+<p>To write a c++ source code it is recommended to use an enhanced text editors. One of the light-weight editors developed by Microsoft and released as an open-source project is <a href="https://code.visualstudio.com">Visual Studio Code</a>. For ubuntu 64-bit machines, download from this <a href="https://code.visualstudio.com/docs/?dv=linux64_deb">link</a>.</p>
+
+<h4 id="installing-vs-code">Installing VS Code</h4>
+
+<p>After downloading, open a terminal at the directory where you downloaded the package file.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>dpkg <span class="nt">-i</span> ./&lt;package file&gt;
+code</code></pre></figure>
+
+<h3 id="boilerplate-codes">Boilerplate codes</h3>
+
+<p>Boilerplate is an interesting term used to refer to the code you write that doesn’t contribute to your application logic. If you are interested in <em>Etymology</em>, you can read more on the origin of boilerplate in <a href="https://en.wikipedia.org/wiki/Boilerplate_code">wikipedia</a>.
+In C++, you usually need to link against libraries, in particular the <strong>STL</strong>. In prior to use functions of other libraries or other source files in your project, you have to include the header files that contains the functions declarations to guide your compiler when you are using these functions.</p>
+
+<p>We may consider the syntax of including header files as <em>boilerplate</em> since it doesn’t represent your project ideas (logic).</p>
+
+<h3 id="writing-your-first-application">Writing your first application</h3>
+
+<p>Let’s write our first source file to go through the process of compilation and execution. Copy the following code to your VS Code editor. Save the file as <code class="highlighter-rouge">firstApp4SBME.cpp</code>.</p>
+
+<figure class="highlight"><pre><code class="language-c--" data-lang="c++"><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">namespace</span> <span class="n">rectangle</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">namespace</span> <span class="n">triangle</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+  <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="n">base</span> <span class="o">*</span> <span class="n">height</span> <span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span>
+<span class="p">{</span>
+  <span class="kt">double</span> <span class="n">rectangleArea</span> <span class="o">=</span> <span class="n">rectangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">12.9</span> <span class="p">,</span> <span class="mf">2.5</span> <span class="p">);</span>
+  <span class="kt">double</span> <span class="n">triangleArea</span> <span class="o">=</span> <span class="n">triangle</span><span class="o">::</span><span class="n">area</span><span class="p">(</span> <span class="mf">4.0</span> <span class="p">,</span> <span class="mf">3.0</span> <span class="p">);</span>
+
+  <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">rectangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span> <span class="o">&lt;&lt;</span> <span class="n">triangleArea</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="compiling-your-code">Compiling your code</h3>
+
+<p>Make sure you have the compiler installed in your machine.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">g++ <span class="nt">--version</span></code></pre></figure>
+
+<p>this should print output like this:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++ <span class="o">(</span>Ubuntu 5.4.0-6ubuntu1~16.04.5<span class="o">)</span> 5.4.0 20160609
+Copyright <span class="o">(</span>C<span class="o">)</span> 2015 Free Software Foundation, Inc.
+This is free software<span class="p">;</span> see the <span class="nb">source </span><span class="k">for </span>copying conditions.  There is NO
+warranty<span class="p">;</span> not even <span class="k">for </span>MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre></div></div>
+
+<p>Otherwise, if not installed you should see:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>g++: <span class="nb">command </span>not found
+</code></pre></div></div>
+
+<p>To install <code class="highlighter-rouge">GCC</code> compiler on your machine:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="nb">sudo </span>apt-get <span class="nb">install </span>build-essential</code></pre></figure>
+
+<p>After saving your file, open a terminal in the directory you saved the source at. And write the following command:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">g++ <span class="nt">-o</span> firstAppSBME firstAppSBME.cpp</code></pre></figure>
+
+<p><strong>CONGRATULATIONS!</strong> you have built your first application.</p>
+
+<p>Execute the application:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">./firstAppSBME</code></pre></figure>
+
+<p>you should see:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>32.25
+6
+</code></pre></div></div>
+
+<!-- ## References -->
+
+<!-- <ol class="bibliography"></ol> -->
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
