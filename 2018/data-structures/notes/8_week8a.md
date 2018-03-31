@@ -247,6 +247,125 @@ void postorder( BSTNode *tree )
 |-------------|
 | *Breadth-first Traversal in BST. Created by Stephanie Wong* |
 
-#### Removal
+#### Clear the whole tree
 
-#### Clear the tree
+```c++
+void clear( BSTNode *&tree )
+{
+    if ( !isEmpty( tree ))
+    {
+        clear( tree->left );
+        clear( tree->right );
+        delete tree;
+        tree = nullptr;
+    }
+}
+```
+
+#### Removal of element
+
+| Case | Action |Example |
+|------|--------|--------|
+| **Case I:** Node to be removed **has no children** | Simplest case. Algorithm **sets corresponding link of the parent to NULL and deletes the node** |`remove( tree , -4 )`<br>![bst-del1](/gallery/trees/bst-remove-case-1.png) |
+| **Case II:** Node to be removed **has one child** | It this case, node is cut from the tree and algorithm **links single child (with it's subtree) directly to the parent of the removed node** |`remove( tree , 18 )`<br>![bst-del2a](/gallery/trees/bst-remove-case-2-1.png)<br>![bst-del2b](/gallery/trees/bst-remove-case-2-2.png)<br>![bst-del2c](/gallery/trees/bst-remove-case-2-3.png) |
+| **Case III:** Node to be removed **has two children** | This is the most complex case. To solve it, <br>**(1)** **find a minimum value in the right subtree;** <br>**(2)** **replace value of the node to be removed with found minimum**. Now, right subtree contains a duplicate! <br>**(3)** **apply remove to the right subtree to remove a duplicate.** | ![bst-del3a](/gallery/trees/bst-remove-case-3-3.png) <br> ![bst-del3b](/gallery/trees/bst-remove-case-3-4.png) <br> ![bst-del3c](/gallery/trees/bst-remove-case-3-5.png) <br> ![bst-del3d](/gallery/trees/bst-remove-case-3-6.png) <br> |
+| *Source: [http://www.algolist.net/](http://www.algolist.net/Data_structures/Binary_search_tree/Removal)* |
+
+```c++
+void remove( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree )) return;
+
+    if ( data == tree->data )
+    {
+        if ( !isEmpty( tree->left ) && !isEmpty( tree->right ))
+        {
+            BSTNode *minRight = minNode( tree->right );
+            tree->data = minRight->data;
+            remove( tree->right, minRight->data );
+        } else
+        {
+            BSTNode *discard = tree;
+
+            if ( isLeaf( tree ))
+                tree = nullptr;
+            else if ( !isEmpty( tree->left ))
+                tree = tree->left;
+            else
+                tree = tree->right;
+
+            delete discard;
+        }
+
+    } else if ( data < tree->data )
+        remove( tree->left, data );
+    else remove( tree->right, data );
+}
+```
+
+## Asbtract Data Types Built Upon BST
+
+### Set
+
+http://homepage.divms.uiowa.edu/~ghosh/2116.11.pdf
+
+#### Operations
+
+http://www.shsu.edu/~csc_tjm/summer2000/cs165/CS165L3.html
+
+1. `isEmpty`
+1. `size`
+1. `insert`
+1. `remove`
+1. `union`
+1. `intersect`
+1. `contains`
+1. `equals`
+
+### Map
+
+Synonyms: Associative containers, dictionary, symbol table.
+
+A **map** is a collection of searchable key-value pairs, where each key has a value.
+
+**Example 1**, we can have a **map** representing count of words in a page or textbook, so the **key** here is the *word*, while the **value** is the count of this word.
+
+**Example 2**, for the function that counts characters in **DNA**:
+
+```c++
+int countCharacter( char *basePointer , int size , char query )
+    {
+        int count = 0;
+        for ( int i = 0; i < size; ++i)
+        {
+            if ( query == basePointer[i] )
+                ++count; 
+        }
+        return count;
+}
+```
+
+This function was called four times (i.e to count **A**, **C**, **G**, and **T**). However, by using **map** data structure we can run this function to count all characters in a single run!
+
+```c++
+std::map< char , int > countCharacter( char *basePointer , int size , char query )
+{
+    std::map< char , int > counter;
+    for ( int i = 0; i < size; ++i)
+        ++counter[ basePointer[i] ];
+
+    return counter;
+}
+```
+
+Another important usage of **map (ADT)** is to implement a **graph (ADT)** by:
+
+1. representing each node in the graph as a **key**,
+1. and the associated **value** to that key is a list of the connected nodes.
+
+1. `isEmpty`
+1. `size`
+1. `insert`
+1. `remove`
+1. `at`
+1. `conatins`
