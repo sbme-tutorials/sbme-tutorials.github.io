@@ -11,6 +11,13 @@ by: "Asem"
 * TOC
 {:toc}
 
+
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+https://en.wikipedia.org/wiki/Priority_queue
+https://en.wikipedia.org/wiki/Binary_heap
+https://www.cs.auckland.ac.nz/software/AlgAnim/heaps.html
+https://www.cs.auckland.ac.nz/software/AlgAnim/heapsort.html
+
 ## Objectives
 
 1. Learn about **heap** structure
