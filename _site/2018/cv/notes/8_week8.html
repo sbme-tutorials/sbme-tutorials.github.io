@@ -6,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Assignment 2: C++ Basic Operations on Memory</title>
+  <title>Week 7: Segmentation (Clustering Segmentation)</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/2_week2a.html">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/8_week8.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -118,8 +118,6 @@
     
       
     
-      
-        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
       
     
       
@@ -397,155 +395,34 @@
         <article class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Assignment 2: C++ Basic Operations on Memory</h1>
+    <h1 class="post-title">Week 7: Segmentation (Clustering Segmentation)</h1>
   </header>
 
   <div class="post-content">
-    <h2 id="objectives">Objectives</h2>
-
-<ul>
-  <li>Creating variables on stack and heap.</li>
-  <li>Using arithmetic operations on variables using their addresses in memory.</li>
-  <li>Memory management.</li>
-  <li>Pass-by-value (copy) vs. pass-by-reference vs. pass-by-pointer (address)</li>
-  <li>Make simple functions and using it several times.</li>
+    <ul id="markdown-toc">
+  <li><a href="#clustering-segmentation" id="markdown-toc-clustering-segmentation">Clustering Segmentation</a></li>
+  <li><a href="#k-means-clustering" id="markdown-toc-k-means-clustering">K means Clustering</a></li>
+  <li><a href="#mean-shift-clustering" id="markdown-toc-mean-shift-clustering">Mean shift Clustering</a></li>
 </ul>
 
-<h2 id="prerequisites-before-you-start">Prerequisites (Before you start)</h2>
+<h2 id="clustering-segmentation">Clustering Segmentation</h2>
+<p>Clustering is the process of grouping similar data points together and marking them as a cluster. It is used in many fields including machine learning, data analysis and data mining. We can consider segmentation as a clustering problem. We need to cluster image into different object, each object pixels has common features for example same color or same intensity.</p>
 
-<h4 id="1-required-read-the-notes-of-the-first-week-memory-pointers-and-references">1. <strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/2_week2a.html" target="_blank">Memory, pointers, and references</a>]</h4>
+<p>Talking about similarity criteria takes us to what so called feature. A feature is a value that measures or identify characteristic of subject, it must discriminate between different subjects. Good feature with simple classifier is more accurate that bad feature with robust classifier.</p>
 
-<h4 id="2-required-to-know-functions-can-be-declared-multiple-times-and-defined-only-once">2. <strong>Required to Know</strong>: Functions Can Be Declared Multiple Times and Defined Only Once</h4>
+<p>Feature space is an alternative space of ordinary data space. Its coordinates are feature values and each data point is represented by its value of different features.</p>
 
-<p>Example,</p>
+<p>For example, color components R, G, and B are the coordinates of our feature space. Each pixel in the image will be represented as a 3D vector of its R, G, and B values.</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> <span class="c1">// Declaration (Header)</span>
-<span class="p">{</span> <span class="c1">// Definition</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
+<p>K means assumes spherical clusters so it is sensitive to outliers. Number of clusters must be specified by user.</p>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="mi">12</span> <span class="p">,</span> <span class="mi">17</span> <span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h2 id="k-means-clustering">K means Clustering</h2>
 
-<p>Can also be written as,</p>
+<p>K means clustering assumes random initial cluster centers in feature space. cluster data to these centers according to the distance between these data points and our centers. Now we can update the value of the center for each cluster, it is the mean of its points. Process is repeated and data are re-clustered for each iteration, new mean is calculated till convergence. Finally we have our centers and related data points. The process is shown in the following figure.</p>
 
-<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Function declaration (header) without definition</span>
-<span class="c1">// We call function declaration without a header as function prototype.</span>
-<span class="kt">double</span> <span class="n">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">);</span>
-<span class="c1">// Function prototypes allow us to define the function somewhere else.</span>
+<h2 id="mean-shift-clustering">Mean shift Clustering</h2>
 
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">double</span> <span class="n">results</span> <span class="o">=</span> <span class="n">sum</span><span class="p">(</span> <span class="mi">12</span> <span class="p">,</span> <span class="mi">17</span> <span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Another declaration, but now with a definition this time.</span>
-<span class="kt">double</span> <span class="nf">sum</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span> 
-<span class="p">{</span>
-    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<h4 id="3-recommended-to-watch-animated-explanation-between-pass-by-value-copy-and-pass-by-reference">3. <strong>Recommended to Watch</strong> animated explanation between pass-by-value (copy) and pass-by-reference</h4>
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/ErMKBh1pobg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-
-<p>The video is a good example with explanation, but <strong>some bad practices in the video</strong> you need to pay attention for:</p>
-
-<ul>
-  <li><code class="highlighter-rouge">using namespace std</code>, is a <strong>bad practice</strong>.</li>
-  <li><code class="highlighter-rouge">int input;</code> without initialization is a <strong>bad practice</strong>.</li>
-</ul>
-
-<p>Otherwise, everything is good.</p>
-
-<p>Another good video in <em>Arabic</em>,</p>
-
-<iframe width="640" height="360" src="https://www.youtube.com/embed/dqlCK_-ArO0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-
-<p><strong>But be carefull</strong>, she said cplusplus.com is a good website for <strong>beginners</strong>, which is not true.</p>
-
-<h2 id="grading">Grading</h2>
-
-<ul>
-  <li>Grading per line.</li>
-  <li>+20% bonus.</li>
-</ul>
-
-<h2 id="deadline">Deadline</h2>
-
-<p><strong>Monday 19/2/2018 11:59 PM</strong>.</p>
-
-<h2 id="basic-c-memory-operations">Basic C++ Memory Operations</h2>
-
-<ul>
-  <li>First, register yourself for the assignment from this <a href="https://classroom.github.com/a/qZUcR20l">link</a>.</li>
-</ul>
-
-<p><img src="b1.png" alt="" /></p>
-
-<p>then,</p>
-
-<p><img src="b2.png" alt="" /></p>
-
-<p>then,</p>
-
-<p><img src="b3.png" alt="" /></p>
-
-<ul>
-  <li>As you did in the first part, clone the remote repository to your local machine.</li>
-  <li>Jump to the assignment folder and open the <code class="highlighter-rouge">main.cpp</code> file.</li>
-  <li>You will find the questions as in-line comments. If you understand the memory model explained in the notes of [<a href="/2018/data-structures/notes/2_week2a.html" target="_blank">Memory, pointers, and references</a>], you should attept the questions seamlessly.</li>
-  <li>If you feel uncomfortable with any question, do not panic, you can ask for explanation at office hours before deadline.</li>
-</ul>
-
-<h2 id="important-notes">Important notes</h2>
-
-<h3 id="how-to-compile-my-source-code">How to compile my source code</h3>
-
-<p>After you attempt all problems, open the terminal on the task folder. Make sure you are on the right directory by listing the files and finding <code class="highlighter-rouge">main.cpp</code> file.</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> <span class="nb">ls</span>
-<span class="go">main.cpp
-</span></code></pre></div></div>
-
-<p>To compile, you need to introduce to your compiler the <code class="highlighter-rouge">main.cpp</code> and the executable name (which is an arbitrary name)</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> g++ main.cpp <span class="nt">-o</span> app
-</code></pre></div></div>
-
-<p>To run,</p>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> ./app
-</code></pre></div></div>
-
-<p>🎉🎉🎉</p>
-
-<h3 id="about-submitting">About submitting</h3>
-
-<ul>
-  <li>As you did in first part, after solving problems, save the file, then commit and push.</li>
-</ul>
-
-<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span> git commit <span class="nt">-a</span> <span class="nt">-m</span> <span class="s2">"solved all problems of c++ memory operations, now I do understand how to make italian spagetti"</span>
-<span class="gp">$</span> git push origin master
-</code></pre></div></div>
-
-<ul>
-  <li>You can push all solutions with a single <code class="highlighter-rouge">commit</code> and a single <code class="highlighter-rouge">push</code>.</li>
-  <li>
-    <p>You can also solve each problem separately and <code class="highlighter-rouge">commit</code> and <code class="highlighter-rouge">push</code> for each problem you solve:</p>
-
-    <ul>
-      <li>So you practice yourself with <code class="highlighter-rouge">git</code> commands.</li>
-      <li>So you realize some significance of using <code class="highlighter-rouge">git</code> to work on large projects.</li>
-    </ul>
-  </li>
-</ul>
+<p>Mean shift clustering is non-parametric technique for clustering, it doesn’t require specifying number of clusters. Also it is robust for outliers as clusters aren’t in spherical shape it takes a random shape according to clustering procedure. It is computationally complex so it will fail for higher dimensions</p>
 
   </div>
 
