@@ -57,31 +57,34 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     * Assignment: \[[Part 1: Git]({{ site.baseurl }}{% link 2018/data-structures/assignments/1_week1a.md %}){:target="_blank"}\] \[[Part 2: C++]({{ site.baseurl }}{% link 2018/data-structures/assignments/1_week1b.md %}){:target="_blank"}\]
     * [Assignment resubmission]({{ site.baseurl }}{% link 2018/data-structures/assignments/1_week1re.md %}){:target="_blank"}
     * [Special Gift from Github + Linux Basic Commands + Excercise]({{ site.baseurl }}{% link 2018/data-structures/presentations/1_week1_recap/index.html %})
-2. Week 2:
+1. Week 2:
     * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/2_week2/index.html %}){:target="_blank"}
     * Section Notes: \[[Part 1: Memory, pointers, and references]({{ site.baseurl }}{% link 2018/data-structures/notes/2_week2a.md %}){:target="_blank"}\].
     * [Code Styling]({{ site.baseurl }}{% link 2018/data-structures/notes/2_code_formatting.md %}){:target="_blank"}
     * [Assignment]({{ site.baseurl }}{% link 2018/data-structures/assignments/2_week2a.md %}){:target="_blank"}
-3. Week 3:
+1. Week 3:
     * [Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/3_week3/index.html %}){:target="_blank"}
     * Section Notes: \[[Part 1: Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2018/data-structures/notes/3_week3a.md %}){:target="_blank"}\] \[[Part 2: Command Line Arguments and Compilation of Multiple Files]({{ site.baseurl }}{% link 2018/data-structures/notes/3_week3b.md %}){:target="_blank"}\].
     * [FAQ #1: Why `using namespace arbitrary_name;` is a bad practice]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq1.md %}){:target="_blank"}
     * [FAQ #2: Why `int *p = &x` != `*p = &x`]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq2.md %}){:target="_blank"}
     * [FAQ #3: Why not using `std::cin` inside functions of particular logic]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq3.md %}){:target="_blank"}
     * Assignments: \[[Assignment: Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3a.md %}){:target="_blank"}\]\[[Assignment: Part 2]({{ site.baseurl }}{% link 2018/data-structures/assignments/3_week3b.md %}){:target="_blank"}\]
-4. Week 4:
+1. Week 4:
     * Slides: \[[Part 1]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}\] \[[Part 2]({{ site.baseurl }}{% link 2018/data-structures/presentations/4_week4b/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4a.md %}){:target="_blank"}\] \[[Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams]({{ site.baseurl }}{% link 2018/data-structures/notes/4_week4b.md %}){:target="_blank"}\]
     * Group Assignments: \[[Part 1]({{ site.baseurl }}{% link 2018/data-structures/assignments/4_week4a.md %}){:target="_blank"}\] \[[Part 2]({{ site.baseurl }}{% link 2018/data-structures/assignments/4_week4b.md %}){:target="_blank"}\]
-5. Week 5:
+1. Week 5:
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/5_week5/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Recursion, Big-Oh Notation, Markdown]({{ site.baseurl }}{% link 2018/data-structures/notes/5_week5a.md %}){:target="_blank"}\]
-6. Week 6:
+1. Week 6:
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/6_week6/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Sorting, Bubble Sort, Selection Sort, Learning Resources]({{ site.baseurl }}{% link 2018/data-structures/notes/6_week6a.md %}){:target="_blank"}\]
-7. Week 7:
+1. Week 7:
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/7_week7/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates]({{ site.baseurl }}{% link 2018/data-structures/notes/7_week7a.md %}){:target="_blank"}\]
+1. Week 8:
+    * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/8_week8a/index.html %}){:target="_blank"}\]
+    * Section Notes: \[[Binary Search Trees, Sets (ADT) and Maps (ADT)]({{ site.baseurl }}{% link 2018/data-structures/notes/8_week8a.md %}){:target="_blank"}\]
 
 ## Frequently Asked Questions
 
