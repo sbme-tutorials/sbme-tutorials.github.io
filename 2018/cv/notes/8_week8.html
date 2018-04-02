@@ -164,22 +164,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
             
           
             
@@ -209,12 +209,12 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
             
           
             
@@ -249,22 +249,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
             
           
             
@@ -282,22 +282,22 @@
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
-            
-          
-            
-            
             <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
             
           
             
             
-            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
             
           
             
             
             <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
             
           
             
@@ -406,19 +406,39 @@
 </ul>
 
 <h2 id="clustering-segmentation">Clustering Segmentation</h2>
-<p>Clustering is the process of grouping similar data points together and marking them as a cluster. It is used in many fields including machine learning, data analysis and data mining. We can consider segmentation as a clustering problem. We need to cluster image into different object, each object pixels has common features for example same color or same intensity.</p>
 
-<p>Talking about similarity criteria takes us to what so called feature. A feature is a value that measures or identify characteristic of subject, it must discriminate between different subjects. Good feature with simple classifier is more accurate that bad feature with robust classifier.</p>
+<p>Clustering is the process of grouping similar data points together and marking them as a same cluster or group. It is used in many fields including machine learning, data analysis and data mining. We can consider segmentation as a clustering problem. We need to cluster image into different object, each object pixels has common features for example same color or same intensity.</p>
 
-<p>Feature space is an alternative space of ordinary data space. Its coordinates are feature values and each data point is represented by its value of different features.</p>
+<p>[Put illustration image here]</p>
 
-<p>For example, color components R, G, and B are the coordinates of our feature space. Each pixel in the image will be represented as a 3D vector of its R, G, and B values.</p>
+<p>Talking about similarity criteria takes us to what so called feature. A feature is a value that measures or identify characteristic of subject, it must discriminate between different subjects. One of important rules in machine learning is that Good feature with simple classifier is more accurate that bad feature with robust classifier.</p>
 
-<p>K means assumes spherical clusters so it is sensitive to outliers. Number of clusters must be specified by user.</p>
+<p>Feature space is an alternative space of ordinary data space. Its coordinates are feature values and each data point is represented by its value of different features. For example, color components R, G, and B are the coordinates of our feature space. Each pixel in the image will be represented as a 3D vector of its R, G, and B values.</p>
 
 <h2 id="k-means-clustering">K means Clustering</h2>
 
 <p>K means clustering assumes random initial cluster centers in feature space. cluster data to these centers according to the distance between these data points and our centers. Now we can update the value of the center for each cluster, it is the mean of its points. Process is repeated and data are re-clustered for each iteration, new mean is calculated till convergence. Finally we have our centers and related data points. The process is shown in the following figure.</p>
+
+<p><img src="../images/K-means_convergence.gif" alt="" /></p>
+
+<p>So basic Algorithm steps for k means segmentation are</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Construct</span> <span class="n">feature</span> <span class="n">space</span> <span class="k">from</span> <span class="n">your</span> <span class="n">image</span> <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">data</span> <span class="n">point</span> <span class="o">=</span> <span class="n">number</span> <span class="n">of</span> <span class="n">pixels</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">number</span> <span class="n">of</span> <span class="n">required</span> <span class="n">clusters</span> <span class="n">k</span> 
+<span class="n">Set</span> <span class="n">Max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="n">clustering</span>
+<span class="n">Get</span> <span class="n">random</span> <span class="n">k</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">feature</span> <span class="n">space</span> <span class="p">(</span><span class="n">initial</span> <span class="n">centers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span><span class="p">)</span>
+    <span class="c">#Cluster remaining data points to centers according to distance</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">data</span> <span class="n">point</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">each</span> <span class="n">cluster</span><span class="p">:</span>
+            <span class="n">distances</span> <span class="o">=</span>  <span class="n">distance</span> <span class="n">between</span> <span class="n">it</span> <span class="n">cluster</span> <span class="n">center</span>
+        <span class="n">its</span> <span class="n">cluster</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+    <span class="c">#Calculate the new centers </span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">cluster</span><span class="p">:</span>
+        <span class="n">newCenter</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">RelatedPoints</span><span class="p">)</span>
+    <span class="c">#Check distance between new and old centers.</span>
+    <span class="n">distances</span> <span class="o">=</span> <span class="n">new</span> <span class="o">-</span> <span class="n">old</span> 
+</code></pre></div></div>
 
 <h2 id="mean-shift-clustering">Mean shift Clustering</h2>
 
