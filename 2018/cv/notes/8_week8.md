@@ -6,6 +6,7 @@ year: "2018"
 title:  "Week 8: Segmentation (Clustering Segmentation)"
 by: "Eslam"
 ---
+> These notes are inspired by slides made by TA Eng.Mohamed Hisham
 
 * TOC
 {:toc}
@@ -42,6 +43,112 @@ for i in range(max number of iterations)
     for each cluster:
         newCenter = mean(RelatedPoints)
 ```
+
+**Let's Try to implement it**
+### K means basic implementation
+* Import some libraries 
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import colors
+from scipy import  misc
+```
+* Function Definition 
+```python
+def kmeans(image, k, num_iterations, d):
+    '''
+    K means clustering segmentation algorithm 
+    inputs: 
+    k : number of clusters. 
+    num_iterations : for convergence
+    d : dimension of feature space 1, 2, or 3D
+    '''
+```
+* Construction of feature space 
+```python
+    #1. Construct feature space
+    m, n = image.shape[0:2]
+    num_points = m*n
+    # extract_feature_space is another function (Don't care about it now)
+    feature_space = extract_feature_space(image, d)
+```
+* Getting Initial centers 
+```python 
+    idxs = np.round(num_points * np.random.rand(k))
+    #Boundary condition
+    idxs[np.where(idxs >= m*n)] -= 1 
+    initial_centers = np.zeros((d,k))
+    for i in range(k):
+        initial_centers[:,i] = feature_space[:,int(idxs[i])]
+    clusters_centers = initial_centers
+    # Initialize distance vector 
+    distance = np.zeros((k,1))
+    #cluster points determines cluster of each point in space
+    cluster_points = np.zeros((num_points, 1))
+```
+* start clustering for number of iterations
+```python
+    for j in range(num_iterations):
+        #Cluster all points according min distance
+        for l in range(num_points):
+            #Get distance to all centers 
+            for h in range(k):
+                distance[h] = np.sqrt(np.sum((feature_space[:,l]-clusters_centers[:,h])**2))
+            #Select minimum one
+            cluster_points[l] = np.argmin(distance)
+        # Update centers of clusters according new points 
+        for c in range(k):
+            # Get points associated with that cluster
+            idxs = np.where(cluster_points == c)
+            points = feature_space[:,idxs[0]]
+            # Get its new center
+            clusters_centers[:,c] = np.mean(points, 1)
+```
+* Back to Image Space
+```python
+        # extract_segmented_image is another function (Don't care about it now)
+        segmented_image = extract_segmented_image(cluster_points, clusters_centers, image)
+        return segmented_image
+```
+* Testing 
+```python
+if __name__=='__main__':
+    #Load the image
+    image = plt.imread('images/seg3.png')
+    # Rescale image down for speedup    
+    image = misc.imresize(image, (150,150))
+    #Show original Image
+    plt.figure('Original Image')
+    plt.imshow(image)
+    #Apply k means segmentation and show the result
+    segmented_image = kmeans(image, 5,10, 1)
+    plt.figure('segmented image')
+    plt.set_cmap('gray')
+    plt.imshow(segmented_image)
+    plt.show()
+```
+### K means Results
+
+* Results for k = 5 classes 
+
+Original Image
+
+![](../images/original_image-1.png)
+
+1. 1D feature space (Gray level) 
+
+![](../images/segmented_image1.png)
+
+2. 2D feature space (Colors HS channels)
+
+![](../images/segmented_image2.png)
+
+3. 3D feature space (Colors RGB) 
+
+![](../images/segmented_image3.png)
+
+We can see that convergence in 3D space is slower so classes picked none relevant colors.
 
 ## Mean shift Clustering
 
@@ -103,6 +210,34 @@ While number of unvisited points > 0
 The effect of changing bandwidth is that number of clusters will change. Larger bandwidth tends to lower number of clusters while smaller bandwidth tends to more number of clusters.
 
 ![](../images/mean_shift_search.gif)
+
+### Results of mean shift segmentation
+
+Original Image
+
+![](../images/original_image-m.png)
+
+1. 1D feature space (Gray level) 
+
+![](../images/segmented_imagem1.png)
+
+2. 2D feature space (Colors HS channels)
+
+![](../images/segmented_imagem2.png)
+
+3. 3D feature space (Colors RGB) 
+
+![](../images/segmented_imagem3.png)
+
+As we can see mean shift is a robust segmentation algorithm. It more efficient than k means algorithm. It provides clusters with irregular shape and its points share same attraction basin.
+
+## Demo
+
+You can download week demo using  
+
+```shell
+git clone https://github.com/sbme-tutorials/cv-week8-demo.git
+```
 
 ## Useful links
 [Clustering with scikit](https://dashee87.github.io/data%20science/general/Clustering-with-Scikit-with-GIFs/)
