@@ -399,15 +399,25 @@
   </header>
 
   <div class="post-content">
-    <ul id="markdown-toc">
+    <blockquote>
+  <p>These notes are inspired by slides made by TA Eng.Mohamed Hisham</p>
+</blockquote>
+
+<ul id="markdown-toc">
   <li><a href="#clustering-segmentation" id="markdown-toc-clustering-segmentation">Clustering Segmentation</a></li>
-  <li><a href="#k-means-clustering" id="markdown-toc-k-means-clustering">K means Clustering</a></li>
+  <li><a href="#k-means-clustering" id="markdown-toc-k-means-clustering">K means Clustering</a>    <ul>
+      <li><a href="#k-means-basic-implementation" id="markdown-toc-k-means-basic-implementation">K means basic implementation</a></li>
+      <li><a href="#k-means-results" id="markdown-toc-k-means-results">K means Results</a></li>
+    </ul>
+  </li>
   <li><a href="#mean-shift-clustering" id="markdown-toc-mean-shift-clustering">Mean shift Clustering</a>    <ul>
       <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic algorithm</a></li>
       <li><a href="#merging-clusters" id="markdown-toc-merging-clusters">Merging clusters</a></li>
       <li><a href="#bandwidth-selection" id="markdown-toc-bandwidth-selection">Bandwidth selection</a></li>
+      <li><a href="#results-of-mean-shift-segmentation" id="markdown-toc-results-of-mean-shift-segmentation">Results of mean shift segmentation</a></li>
     </ul>
   </li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
   <li><a href="#useful-links" id="markdown-toc-useful-links">Useful links</a></li>
 </ul>
 
@@ -441,6 +451,120 @@
     <span class="k">for</span> <span class="n">each</span> <span class="n">cluster</span><span class="p">:</span>
         <span class="n">newCenter</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">RelatedPoints</span><span class="p">)</span>
 </code></pre></div></div>
+
+<p><strong>Let’s Try to implement it</strong></p>
+<h3 id="k-means-basic-implementation">K means basic implementation</h3>
+<ul>
+  <li>Import some libraries</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span>  <span class="n">misc</span>
+</code></pre></div></div>
+<ul>
+  <li>Function Definition
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+  <span class="s">'''
+  K means clustering segmentation algorithm 
+  inputs: 
+  k : number of clusters. 
+  num_iterations : for convergence
+  d : dimension of feature space 1, 2, or 3D
+  '''</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Construction of feature space
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c">#1. Construct feature space</span>
+  <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+  <span class="n">num_points</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">n</span>
+  <span class="c"># extract_feature_space is another function (Don't care about it now)</span>
+  <span class="n">feature_space</span> <span class="o">=</span> <span class="n">extract_feature_space</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Getting Initial centers
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">(</span><span class="n">num_points</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+  <span class="c">#Boundary condition</span>
+  <span class="n">idxs</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">idxs</span> <span class="o">&gt;=</span> <span class="n">m</span><span class="o">*</span><span class="n">n</span><span class="p">)]</span> <span class="o">-=</span> <span class="mi">1</span> 
+  <span class="n">initial_centers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">d</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="n">initial_centers</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">feature_space</span><span class="p">[:,</span><span class="nb">int</span><span class="p">(</span><span class="n">idxs</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+  <span class="n">clusters_centers</span> <span class="o">=</span> <span class="n">initial_centers</span>
+  <span class="c"># Initialize distance vector </span>
+  <span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+  <span class="c">#cluster points determines cluster of each point in space</span>
+  <span class="n">cluster_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_points</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>start clustering for number of iterations
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">):</span>
+      <span class="c">#Cluster all points according min distance</span>
+      <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+          <span class="c">#Get distance to all centers </span>
+          <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+              <span class="n">distance</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">((</span><span class="n">feature_space</span><span class="p">[:,</span><span class="n">l</span><span class="p">]</span><span class="o">-</span><span class="n">clusters_centers</span><span class="p">[:,</span><span class="n">h</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+          <span class="c">#Select minimum one</span>
+          <span class="n">cluster_points</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+      <span class="c"># Update centers of clusters according new points </span>
+      <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+          <span class="c"># Get points associated with that cluster</span>
+          <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cluster_points</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
+          <span class="n">points</span> <span class="o">=</span> <span class="n">feature_space</span><span class="p">[:,</span><span class="n">idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+          <span class="c"># Get its new center</span>
+          <span class="n">clusters_centers</span><span class="p">[:,</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Back to Image Space
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># extract_segmented_image is another function (Don't care about it now)</span>
+      <span class="n">segmented_image</span> <span class="o">=</span> <span class="n">extract_segmented_image</span><span class="p">(</span><span class="n">cluster_points</span><span class="p">,</span> <span class="n">clusters_centers</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">segmented_image</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Testing
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">'__main__'</span><span class="p">:</span>
+  <span class="c">#Load the image</span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'images/seg3.png'</span><span class="p">)</span>
+  <span class="c"># Rescale image down for speedup    </span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">misc</span><span class="o">.</span><span class="n">imresize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">))</span>
+  <span class="c">#Show original Image</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">'Original Image'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+  <span class="c">#Apply k means segmentation and show the result</span>
+  <span class="n">segmented_image</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">'segmented image'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">set_cmap</span><span class="p">(</span><span class="s">'gray'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">segmented_image</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>    </div>
+    <h3 id="k-means-results">K means Results</h3>
+  </li>
+  <li>Results for k = 5 classes</li>
+</ul>
+
+<p>Original Image</p>
+
+<p><img src="../images/original_image-1.png" alt="" /></p>
+
+<ol>
+  <li>1D feature space (Gray level)</li>
+</ol>
+
+<p><img src="../images/segmented_image1.png" alt="" /></p>
+
+<ol>
+  <li>2D feature space (Colors HS channels)</li>
+</ol>
+
+<p><img src="../images/segmented_image2.png" alt="" /></p>
+
+<ol>
+  <li>3D feature space (Colors RGB)</li>
+</ol>
+
+<p><img src="../images/segmented_image3.png" alt="" /></p>
+
+<p>We can see that convergence in 3D space is slower so classes picked none relevant colors.</p>
 
 <h2 id="mean-shift-clustering">Mean shift Clustering</h2>
 
@@ -500,6 +624,39 @@
 <p>The effect of changing bandwidth is that number of clusters will change. Larger bandwidth tends to lower number of clusters while smaller bandwidth tends to more number of clusters.</p>
 
 <p><img src="../images/mean_shift_search.gif" alt="" /></p>
+
+<h3 id="results-of-mean-shift-segmentation">Results of mean shift segmentation</h3>
+
+<p>Original Image</p>
+
+<p><img src="../images/original_image-m.png" alt="" /></p>
+
+<ol>
+  <li>1D feature space (Gray level)</li>
+</ol>
+
+<p><img src="../images/segmented_imagem1.png" alt="" /></p>
+
+<ol>
+  <li>2D feature space (Colors HS channels)</li>
+</ol>
+
+<p><img src="../images/segmented_imagem2.png" alt="" /></p>
+
+<ol>
+  <li>3D feature space (Colors RGB)</li>
+</ol>
+
+<p><img src="../images/segmented_imagem3.png" alt="" /></p>
+
+<p>As we can see mean shift is a robust segmentation algorithm. It more efficient than k means algorithm. It provides clusters with irregular shape and its points share same attraction basin.</p>
+
+<h2 id="demo">Demo</h2>
+
+<p>You can download week demo using</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/sbme-tutorials/cv-week8-demo.git
+</code></pre></div></div>
 
 <h2 id="useful-links">Useful links</h2>
 <p><a href="https://dashee87.github.io/data%20science/general/Clustering-with-Scikit-with-GIFs/">Clustering with scikit</a></p>
