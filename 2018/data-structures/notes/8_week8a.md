@@ -127,7 +127,7 @@ bool isLeaf( BSTNode *tree )
 ```c++
 int size( BSTNode *tree )
 {
-    if ( node )
+    if ( !isEmpty( tree ))
         return 1 + size( tree->left ) + size( tree->right );
     else return 0;
 }
