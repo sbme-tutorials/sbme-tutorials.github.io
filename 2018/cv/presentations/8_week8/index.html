@@ -17,36 +17,60 @@ class: center, middle
  By: Eslam Adel 
         
  email: eslam.a.mahmoud@eng1.cu.edu.eg
+
+ Inspired by slides of TA.Mohamed Hisham 2016
 ---
 
 class: top, left
 ## Clustering Segmentation 
 
+--
+
 * Clustering is grouping of similar 
+
+--
 
 * Machine learning, Data analysis and Data mining. 
 
+--
+
 * Segmentation is as a clustering problem.
+
 ---
 
 class: top, left
 ## Feature Space
+
+--
+
 * Feature
-    * Identifies characteristic of subject
-    
-    * Must discriminate different subjects.
-    
-    * Good feature vs robust classifier. 
+
+  * Identifies characteristic of subject
+
+  * Must discriminate different subjects.
+
+  * Good feature vs robust classifier. 
+--
 
 * Feature space is an alternative space 
 
+--
+
 * Coordinates are values of features. 
+
 ---
+
 class: top, left
 ## Feature Space cont'd 
+
 * For example, color as a feature 
 
+--
+
 * Coordinates will be  R, G, and B.
+
+--
+
 <img style="width:85%" src="../../images/Selection_030.png">
 
 ---
@@ -56,11 +80,18 @@ class: top, left
 
 * K is number of clusters 
 
+--
+
 * Assumes spherical clusters
+
+--
 
 * Sensitive to outliers
 
+--
+
 <img style="width:85%" src="../../images/kmeans.gif">
+
 ---
 
 ## 
@@ -86,19 +117,32 @@ for i in range(max number of iterations)
 class: top, left
 ## Mean shift Clustering
 
+--
+
 * Non-parametric technique for clustering.
+
+--
 
 * Robust and not sensitive to outliers 
 
+--
+
 * Clusters take a none-linear shape. 
+
+--
 
 <img style="width:55%" src="../../images/mean_shift_0.gif">
 
 ---
 
 class: top,left
-### Basic algorithm 
+## Basic algorithm 
+
+--
+
 Pseudo code of basic mean shift algorithm with uniform kernel 
+
+--
 
 ```python 
 Extract feature space from image
@@ -113,23 +157,38 @@ While number of unvisited points > 0
         update number of visited points 
         break
 ```
+
 ---
+
 class: top, left
 ## Basic algorithm Cont'd
 
+--
+
 <img style="width:65%" src="../../images/mean_shift_tutorial.gif">
 
+--
+
 **Wait, we didn't finish yet!**
+
 ---
 
 class:top, left
-### Merging clusters
+## Merging clusters
+
+--
 
 * For uniform kernel center may not move 
 
+--
+
 * Merging is the solution.
 
+--
+
 * Distance between the two centers < 0.5 bandwidth.
+
+--
 
 ```python 
 Extract feature space from image
@@ -151,16 +210,21 @@ While number of unvisited points > 0
         update number of visited points 
         break
 ```
---- 
+---
 
-class: top, left
-### Bandwidth selection 
+## Bandwidth selection 
+
+--
 
 * Larger bandwidth lower number of clusters
 
+--
+
 * Smaller bandwidth more number of clusters.
 
-<img style="width:65%" src="../../images/mean_shift_search.gif">
+--
+
+<img style="width:85%" src="../../images/mean_shift_search.gif">
 
 ---
 
