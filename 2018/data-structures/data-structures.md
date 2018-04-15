@@ -85,6 +85,9 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 1. Week 8:
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/8_week8a/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Binary Search Trees, Sets (ADT) and Maps (ADT)]({{ site.baseurl }}{% link 2018/data-structures/notes/8_week8a.md %}){:target="_blank"}\]
+1. Week 9:
+    * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/9_week9/index.html %}){:target="_blank"}\]
+    * Section Notes: \[[Heaps, Priority Queues (ADT), and Shortest Path Problem]({{ site.baseurl }}{% link 2018/data-structures/notes/9_week9.md %}){:target="_blank"}\]
 
 ## Frequently Asked Questions
 
