@@ -11,13 +11,6 @@ by: "Asem"
 * TOC
 {:toc}
 
-
-https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
-https://en.wikipedia.org/wiki/Priority_queue
-https://en.wikipedia.org/wiki/Binary_heap
-https://www.cs.auckland.ac.nz/software/AlgAnim/heaps.html
-https://www.cs.auckland.ac.nz/software/AlgAnim/heapsort.html
-
 ## Objectives
 
 1. Learn about **heap** structure
@@ -26,6 +19,20 @@ https://www.cs.auckland.ac.nz/software/AlgAnim/heapsort.html
 1. The Shortest Path Problem (TSP)
 
 ## Heaps
+
+Heap is a very useful data structure which is potential in many applications (e.g Heapsort and Priority Queues (ADT)). Heap elements are typically allocated as a dynamic array. However, the elements are conceptually forming a tree.
+
+| Heap as array |
+|---------------|
+| ![heap1](/gallery/Heap-as-array.svg) |
+|  Creative Commons - [Maxinator](https://commons.wikimedia.org/w/index.php?title=User:Maxiantor&action=edit&redlink=1) |
+
+| Conceptual Representation |
+|---------------------|
+| ![heaptree](/gallery/heaptree.png) |
+|---------------------|
+| ![heapconcrete](/gallery/heapconcrete.png) |
+
 
 ### Operations
 
@@ -42,6 +49,14 @@ https://www.cs.auckland.ac.nz/software/AlgAnim/heapsort.html
 ### Implementation using heap
 
 #### Priority Queue Application: Shortest Path Problem
+
+
+https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+https://en.wikipedia.org/wiki/Priority_queue
+https://en.wikipedia.org/wiki/Binary_heap
+https://www.cs.auckland.ac.nz/software/AlgAnim/heaps.html
+https://www.cs.auckland.ac.nz/software/AlgAnim/heapsort.html
+
 
 <img src="/gallery/trees/map.png" style="width:80%;">
 
