@@ -45,6 +45,9 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 |   5  | Hough Transform (Line and Circle Detection) |  
 |   6  | Corner Detection (Harris and Fast corner detectors) |  
 |   7  | Image segmentation (Thresholding, Region growing) |  
+|   8  | Image segmentation (Clustering segmentation: k means and mean shift) |  
+
+
 
 
 
@@ -74,8 +77,10 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
     * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/7_week7/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/cv/notes/7_week7.md %}){:target="_blank"}
     * [Assignment 3]({% link 2018/cv/assignments/3_assignment3.md %}){:target="_blank"}
-
-
+8. Week 8:
+    * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/8_week8/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2018/cv/notes/8_week8.md %}){:target="_blank"}
+    
 
     
 ## Announcements

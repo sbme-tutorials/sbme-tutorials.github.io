@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Week 8: Segmentation (Clustering Segmentation)</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/8_week8.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/8_week8.html">Week 8: Segmentation (Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8b.html">Week 8 - Part2: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 7 - Part1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/students/amr-ubuntu-installation.html">Ubuntu installation alongside windows in legacy mode</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+            <a class="page-link" href="/sbme-tutorials-contrib/boilerplate.html">&lt;Your title&gt;</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 8: Segmentation (Clustering Segmentation)</h1>
+  </header>
+
+  <div class="post-content">
+    <blockquote>
+  <p>These notes are inspired by slides made by TA Eng.Mohamed Hisham</p>
+</blockquote>
+
+<ul id="markdown-toc">
+  <li><a href="#clustering-segmentation" id="markdown-toc-clustering-segmentation">Clustering Segmentation</a></li>
+  <li><a href="#k-means-clustering" id="markdown-toc-k-means-clustering">K means Clustering</a>    <ul>
+      <li><a href="#k-means-basic-implementation" id="markdown-toc-k-means-basic-implementation">K means basic implementation</a></li>
+      <li><a href="#k-means-results" id="markdown-toc-k-means-results">K means Results</a></li>
+    </ul>
+  </li>
+  <li><a href="#mean-shift-clustering" id="markdown-toc-mean-shift-clustering">Mean shift Clustering</a>    <ul>
+      <li><a href="#basic-algorithm" id="markdown-toc-basic-algorithm">Basic algorithm</a></li>
+      <li><a href="#merging-clusters" id="markdown-toc-merging-clusters">Merging clusters</a></li>
+      <li><a href="#bandwidth-selection" id="markdown-toc-bandwidth-selection">Bandwidth selection</a></li>
+      <li><a href="#results-of-mean-shift-segmentation" id="markdown-toc-results-of-mean-shift-segmentation">Results of mean shift segmentation</a></li>
+    </ul>
+  </li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+  <li><a href="#useful-links" id="markdown-toc-useful-links">Useful links</a></li>
+</ul>
+
+<h2 id="clustering-segmentation">Clustering Segmentation</h2>
+
+<p>Clustering is the process of grouping similar data points together and marking them as a same cluster or group. It is used in many fields including machine learning, data analysis and data mining. We can consider segmentation as a clustering problem. We need to cluster image into different object, each object pixels has common features for example same color or same intensity.</p>
+
+<p>Talking about similarity criteria takes us to what so called feature. A feature is a value that measures or identify characteristic of subject, it must discriminate between different subjects. One of important rules in machine learning is that Good feature with simple classifier is more accurate that bad feature with robust classifier.</p>
+
+<p>Feature space is an alternative space of ordinary data space. Its coordinates are feature values and each data point is represented by its value of different features. For example, color components R, G, and B are the coordinates of our feature space. Each pixel in the image will be represented as a 3D vector of its R, G, and B values.</p>
+
+<h2 id="k-means-clustering">K means Clustering</h2>
+
+<p>K means clustering assumes random initial cluster centers in feature space. cluster data to these centers according to the distance between these data points and our centers. Now we can update the value of the center for each cluster, it is the mean of its points. Process is repeated and data are re-clustered for each iteration, new mean is calculated till convergence. Finally we have our centers and related data points. The process is shown in the following figure.</p>
+
+<p><img src="../images/kmeans.gif" alt="" /></p>
+
+<p>So basic Algorithm steps for k means segmentation are</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Construct</span> <span class="n">feature</span> <span class="n">space</span> <span class="k">from</span> <span class="n">your</span> <span class="n">image</span> <span class="p">(</span><span class="n">number</span> <span class="n">of</span> <span class="n">data</span> <span class="n">point</span> <span class="o">=</span> <span class="n">number</span> <span class="n">of</span> <span class="n">pixels</span><span class="p">)</span>
+<span class="n">Set</span> <span class="n">number</span> <span class="n">of</span> <span class="n">required</span> <span class="n">clusters</span> <span class="n">k</span> 
+<span class="n">Set</span> <span class="n">Max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span> <span class="k">for</span> <span class="n">clustering</span>
+<span class="n">Get</span> <span class="n">random</span> <span class="n">k</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">your</span> <span class="n">feature</span> <span class="n">space</span> <span class="p">(</span><span class="n">initial</span> <span class="n">centers</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">max</span> <span class="n">number</span> <span class="n">of</span> <span class="n">iterations</span><span class="p">)</span>
+    <span class="c">#Cluster remaining data points to centers according to distance</span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">data</span> <span class="n">point</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">each</span> <span class="n">cluster</span><span class="p">:</span>
+            <span class="n">distances</span> <span class="o">=</span>  <span class="n">distance</span> <span class="n">between</span> <span class="n">it</span> <span class="n">cluster</span> <span class="n">centers</span>
+        <span class="n">its</span> <span class="n">cluster</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">distances</span><span class="p">)</span>
+    <span class="c">#Calculate the new centers </span>
+    <span class="k">for</span> <span class="n">each</span> <span class="n">cluster</span><span class="p">:</span>
+        <span class="n">newCenter</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">RelatedPoints</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Let’s Try to implement it</strong></p>
+<h3 id="k-means-basic-implementation">K means basic implementation</h3>
+<ul>
+  <li>Import some libraries</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">colors</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span>  <span class="n">misc</span>
+</code></pre></div></div>
+<ul>
+  <li>Function Definition
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">kmeans</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">num_iterations</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+  <span class="s">'''
+  K means clustering segmentation algorithm 
+  inputs: 
+  k : number of clusters. 
+  num_iterations : for convergence
+  d : dimension of feature space 1, 2, or 3D
+  '''</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Construction of feature space
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c">#1. Construct feature space</span>
+  <span class="n">m</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+  <span class="n">num_points</span> <span class="o">=</span> <span class="n">m</span><span class="o">*</span><span class="n">n</span>
+  <span class="c"># extract_feature_space is another function (Don't care about it now)</span>
+  <span class="n">feature_space</span> <span class="o">=</span> <span class="n">extract_feature_space</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Getting Initial centers
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="nb">round</span><span class="p">(</span><span class="n">num_points</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+  <span class="c">#Boundary condition</span>
+  <span class="n">idxs</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">idxs</span> <span class="o">&gt;=</span> <span class="n">m</span><span class="o">*</span><span class="n">n</span><span class="p">)]</span> <span class="o">-=</span> <span class="mi">1</span> 
+  <span class="n">initial_centers</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">d</span><span class="p">,</span><span class="n">k</span><span class="p">))</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+      <span class="n">initial_centers</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">feature_space</span><span class="p">[:,</span><span class="nb">int</span><span class="p">(</span><span class="n">idxs</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span>
+  <span class="n">clusters_centers</span> <span class="o">=</span> <span class="n">initial_centers</span>
+  <span class="c"># Initialize distance vector </span>
+  <span class="n">distance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">k</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+  <span class="c">#cluster points determines cluster of each point in space</span>
+  <span class="n">cluster_points</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">num_points</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+  <li>start clustering for number of iterations
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_iterations</span><span class="p">):</span>
+      <span class="c">#Cluster all points according min distance</span>
+      <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_points</span><span class="p">):</span>
+          <span class="c">#Get distance to all centers </span>
+          <span class="k">for</span> <span class="n">h</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+              <span class="n">distance</span><span class="p">[</span><span class="n">h</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="nb">sum</span><span class="p">((</span><span class="n">feature_space</span><span class="p">[:,</span><span class="n">l</span><span class="p">]</span><span class="o">-</span><span class="n">clusters_centers</span><span class="p">[:,</span><span class="n">h</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+          <span class="c">#Select minimum one</span>
+          <span class="n">cluster_points</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+      <span class="c"># Update centers of clusters according new points </span>
+      <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+          <span class="c"># Get points associated with that cluster</span>
+          <span class="n">idxs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">cluster_points</span> <span class="o">==</span> <span class="n">c</span><span class="p">)</span>
+          <span class="n">points</span> <span class="o">=</span> <span class="n">feature_space</span><span class="p">[:,</span><span class="n">idxs</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
+          <span class="c"># Get its new center</span>
+          <span class="n">clusters_centers</span><span class="p">[:,</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Back to Image Space
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># extract_segmented_image is another function (Don't care about it now)</span>
+      <span class="n">segmented_image</span> <span class="o">=</span> <span class="n">extract_segmented_image</span><span class="p">(</span><span class="n">cluster_points</span><span class="p">,</span> <span class="n">clusters_centers</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">segmented_image</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Testing
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s">'__main__'</span><span class="p">:</span>
+  <span class="c">#Load the image</span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s">'images/seg3.png'</span><span class="p">)</span>
+  <span class="c"># Rescale image down for speedup    </span>
+  <span class="n">image</span> <span class="o">=</span> <span class="n">misc</span><span class="o">.</span><span class="n">imresize</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">))</span>
+  <span class="c">#Show original Image</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">'Original Image'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+  <span class="c">#Apply k means segmentation and show the result</span>
+  <span class="n">segmented_image</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="s">'segmented image'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">set_cmap</span><span class="p">(</span><span class="s">'gray'</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">segmented_image</span><span class="p">)</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div>    </div>
+    <h3 id="k-means-results">K means Results</h3>
+  </li>
+  <li>Results for k = 5 classes</li>
+</ul>
+
+<p>Original Image</p>
+
+<p><img src="../images/original_image-1.png" alt="" /></p>
+
+<ol>
+  <li>1D feature space (Gray level)</li>
+</ol>
+
+<p><img src="../images/segmented_image1.png" alt="" /></p>
+
+<ol>
+  <li>2D feature space (Colors HS channels)</li>
+</ol>
+
+<p><img src="../images/segmented_image2.png" alt="" /></p>
+
+<ol>
+  <li>3D feature space (Colors RGB)</li>
+</ol>
+
+<p><img src="../images/segmented_image3.png" alt="" /></p>
+
+<p>We can see that convergence in 3D space is slower so classes picked none relevant colors.</p>
+
+<h2 id="mean-shift-clustering">Mean shift Clustering</h2>
+
+<p>Mean shift clustering is non-parametric technique for clustering, it doesn’t require specifying number of clusters. Also it is robust for outliers as clusters aren’t in spherical shape it takes a none-linear shape according to clustering procedure.</p>
+
+<h3 id="basic-algorithm">Basic algorithm</h3>
+<p>Pseudo code of basic mean shift algorithm with uniform kernel</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Extract</span> <span class="n">feature</span> <span class="n">space</span> <span class="k">from</span> <span class="n">image</span>
+<span class="n">While</span> <span class="n">number</span> <span class="n">of</span> <span class="n">unvisited</span> <span class="n">points</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">Select</span> <span class="n">a</span> <span class="n">random</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">feature</span> <span class="n">space</span> <span class="p">(</span><span class="n">Initial</span> <span class="n">mean</span><span class="p">)</span>
+    <span class="n">While</span> <span class="n">true</span><span class="p">:</span> 
+    <span class="n">Get</span> <span class="n">distance</span> <span class="n">between</span> <span class="n">mean</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">feature</span> <span class="n">space</span>
+    <span class="n">For</span> <span class="n">uniform</span> <span class="n">window</span><span class="p">,</span> <span class="n">select</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">specified</span> <span class="n">bandwidth</span> <span class="ow">and</span> <span class="n">track</span> <span class="n">that</span> <span class="n">points</span>
+    <span class="n">Get</span> <span class="n">the</span> <span class="n">new</span> <span class="n">mean</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">points</span> <span class="n">within</span> <span class="n">bandwidth</span>
+    <span class="k">if</span> <span class="n">distance</span> <span class="n">between</span> <span class="n">new</span> <span class="ow">and</span> <span class="n">old</span> <span class="n">means</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="n">cluster</span> <span class="nb">all</span> <span class="n">tracked</span> <span class="n">points</span> <span class="n">to</span> <span class="n">new</span> <span class="n">mean</span> 
+        <span class="n">update</span> <span class="n">number</span> <span class="n">of</span> <span class="n">visited</span> <span class="n">points</span> 
+        <span class="k">break</span>
+</code></pre></div></div>
+<p>This algorithm is shown in that figure</p>
+
+<p><img src="../images/mean_shift_0.gif" alt="" /></p>
+
+<p>So the process will repeated till all points in feature space are clustered.</p>
+
+<p><img src="../images/mean_shift_tutorial.gif" alt="" /></p>
+
+<p><strong>Wait, we didn’t finish yet!</strong></p>
+
+<h3 id="merging-clusters">Merging clusters</h3>
+
+<p>One of drawbacks of uniform kernel is that center may not move for uniform regions. Merging nearby centers is the solution of such problem. Merge condition is that distance between the two centers is lower than half the bandwidth. Algorithm will be modified as follow</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Extract</span> <span class="n">feature</span> <span class="n">space</span> <span class="k">from</span> <span class="n">image</span>
+<span class="n">While</span> <span class="n">number</span> <span class="n">of</span> <span class="n">unvisited</span> <span class="n">points</span> <span class="o">&gt;</span> <span class="mi">0</span>
+    <span class="n">Select</span> <span class="n">a</span> <span class="n">random</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">feature</span> <span class="n">space</span> <span class="p">(</span><span class="n">Initial</span> <span class="n">mean</span><span class="p">)</span>
+    <span class="n">While</span> <span class="n">true</span><span class="p">:</span> 
+    <span class="n">Get</span> <span class="n">distance</span> <span class="n">between</span> <span class="n">mean</span> <span class="ow">and</span> <span class="nb">all</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">feature</span> <span class="n">space</span>
+    <span class="n">For</span> <span class="n">uniform</span> <span class="n">window</span><span class="p">,</span> <span class="n">select</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">the</span> <span class="nb">range</span> <span class="n">of</span> <span class="n">specified</span> <span class="n">bandwidth</span> <span class="ow">and</span> <span class="n">track</span> <span class="n">that</span> <span class="n">points</span>
+    <span class="n">Get</span> <span class="n">the</span> <span class="n">new</span> <span class="n">mean</span><span class="p">,</span> <span class="n">it</span> <span class="ow">is</span> <span class="n">the</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">points</span> <span class="n">within</span> <span class="n">bandwidth</span>
+    <span class="k">if</span> <span class="n">distance</span> <span class="n">between</span> <span class="n">new</span> <span class="ow">and</span> <span class="n">old</span> <span class="n">means</span> <span class="o">&lt;</span> <span class="n">threshold</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">:</span>
+            <span class="c">#Check merge condition</span>
+            <span class="k">if</span> <span class="n">distance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">center</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="o">*</span> <span class="n">Bandwidth</span><span class="p">:</span>
+                <span class="n">mean</span> <span class="n">of</span> <span class="n">cluster</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">distance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span><span class="n">center</span><span class="p">)</span>
+                <span class="n">cluster</span> <span class="nb">all</span> <span class="n">tracked</span> <span class="n">points</span> <span class="n">to</span> <span class="n">cluster</span> <span class="n">c</span>
+        <span class="c">#No merge</span>
+        <span class="n">cluster</span> <span class="nb">all</span> <span class="n">tracked</span> <span class="n">points</span> <span class="n">to</span> <span class="n">new</span> <span class="n">mean</span> 
+        <span class="c">#Update visited points</span>
+        <span class="n">update</span> <span class="n">number</span> <span class="n">of</span> <span class="n">visited</span> <span class="n">points</span> 
+        <span class="k">break</span>
+</code></pre></div></div>
+
+<h3 id="bandwidth-selection">Bandwidth selection</h3>
+
+<p>The effect of changing bandwidth is that number of clusters will change. Larger bandwidth tends to lower number of clusters while smaller bandwidth tends to more number of clusters.</p>
+
+<p><img src="../images/mean_shift_search.gif" alt="" /></p>
+
+<h3 id="results-of-mean-shift-segmentation">Results of mean shift segmentation</h3>
+
+<p>Original Image</p>
+
+<p><img src="../images/original_image-m.png" alt="" /></p>
+
+<ol>
+  <li>1D feature space (Gray level)</li>
+</ol>
+
+<p><img src="../images/segmented_imagem1.png" alt="" /></p>
+
+<ol>
+  <li>2D feature space (Colors HS channels)</li>
+</ol>
+
+<p><img src="../images/segmented_imagem2.png" alt="" /></p>
+
+<ol>
+  <li>3D feature space (Colors RGB)</li>
+</ol>
+
+<p><img src="../images/segmented_imagem3.png" alt="" /></p>
+
+<p>As we can see mean shift is a robust segmentation algorithm. It more efficient than k means algorithm. It provides clusters with irregular shape and its points share same attraction basin.</p>
+
+<h2 id="demo">Demo</h2>
+
+<p>You can download week demo using</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/sbme-tutorials/cv-week8-demo.git
+</code></pre></div></div>
+
+<h2 id="useful-links">Useful links</h2>
+<p><a href="https://dashee87.github.io/data%20science/general/Clustering-with-Scikit-with-GIFs/">Clustering with scikit</a></p>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
