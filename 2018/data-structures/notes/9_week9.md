@@ -195,6 +195,12 @@ void bubbleDown(Heap &h, int parent)
 }
 ```
 
+### Clone the source code
+
+```bash
+git clone git@github.com:sbme-tutorials/sbe201-heap-pq.git
+```
+
 ## Heapsort
 
 | Heapsort |
