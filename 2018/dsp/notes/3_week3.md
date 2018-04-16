@@ -7,7 +7,7 @@ title:  "Week 3: Euler's Identity, Sinusoids, and Fourier"
 by: "Asem"
 ---
 
-> These notes are inspired by  {% cite MDFTWEB07 %}
+> These notes are inspired by  [Mathematics of the Discrete Fourier Transform (DFT)](http://ccrma.stanford.edu/~jos/mdft/)
 
 ## Readings
 
@@ -207,8 +207,3 @@ $ \omega = e^{-{\frac{2\pi i}{8}}} = \frac{1}{\sqrt{2}} - \frac{i}{\sqrt{2}} $
 ```bash
 $ git clone https://github.com/sbme-tutorials/sbe309-week3-demo.git
 ```
-
-
-## References
-
-{% bibliography --cited %}

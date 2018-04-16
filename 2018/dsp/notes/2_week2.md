@@ -209,8 +209,8 @@ Generate a sound signal composed from different sinusoids, and other from mixtur
 
 Recommended watching and reading:
 
-* {% cite soundpyton %}
-* {% cite dsppyton %}
+* [Audio Signal Processing for Music Applications](https://www.coursera.org/learn/audio-signal-processing/home/info)
+* [Notebooks for "Python for Signal Processing" book](https://github.com/unpingco/Python-for-Signal-Processing)
 
 ## Effect of Phase Shift
 
@@ -259,7 +259,3 @@ Migrate a simplified version of signal viewer task of last week, from MATLAB to 
 ```terminal
 git clone https://github.com/sbme-tutorials/sbe309-week2-demo.git
 ```
-
-## References
-
-{% bibliography --cited %}

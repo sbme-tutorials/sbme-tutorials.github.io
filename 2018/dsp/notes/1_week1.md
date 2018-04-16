@@ -265,7 +265,3 @@ if __name__ == '__main__':
 
 [Download Anaconda 3 (Python 3)](https://www.anaconda.com/download)
 
-
-<!-- ## References -->
-
-<!-- {% bibliography --cited %} -->
