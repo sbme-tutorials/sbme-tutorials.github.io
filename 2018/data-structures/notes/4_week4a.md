@@ -217,7 +217,8 @@ For both implementations, the following requirements should be satisfied in orde
 * **push**, which adds an element to the collection, and.
 * **pop**, which removes the most recently added element that was not yet removed.
 
-*The order in which elements come off a stack gives rise to its alternative name, **LIFO** (last in, first out). Additionally, a **peek** operation may give access to the top without modifying the stack.* {% cite stackwiki %}
+*The order in which elements come off a stack gives rise to its alternative name, **LIFO** (last in, first out). Additionally, a **peek** operation may give access to the top without modifying the stack.* -- [Stack (Abstract Data Type)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
+
 
 <img src="/gallery/Lifo_stack.png" style="width:400">
 
@@ -515,7 +516,7 @@ The ADT **Queue** should satisfy the following requirements (from [wikipedia](ht
 * **enqueue**, which adds an element to the collection end (back), and.
 * **dequeue**, which removes the first element added (front) that was not yet removed.
 
-*This makes the queue a First-In-First-Out (FIFO) data structure. In a FIFO data structure, the first element added to the queue will be the first one to be removed. Additionally, a **peek** operation may give access to the front element without dequeuing it.* {% cite queuekwiki %}
+*This makes the queue a First-In-First-Out (FIFO) data structure. In a FIFO data structure, the first element added to the queue will be the first one to be removed. Additionally, a **peek** operation may give access to the front element without dequeuing it.* -- [Queue (Abstract Data Type)](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
 
 <img src="/gallery/Data_Queue.svg" style="width:400">
 
@@ -580,7 +581,3 @@ We need to make our buffer to be flexible such that we don't need to shift all e
 
 * the **blue pointer** is the front, where we *dequeue* elements.
 * the **red pointer** is the back, where we *enqueue* new elements.
-
-## References
-
-{% bibliography --cited %}

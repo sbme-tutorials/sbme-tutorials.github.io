@@ -80,7 +80,7 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 8. Week 8:
     * [Slides]({{ site.baseurl }}{% link 2018/cv/presentations/8_week8/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2018/cv/notes/8_week8.md %}){:target="_blank"}
-    
+    * [Assignment 4]({% link 2018/cv/assignments/4_assignment4.md %}){:target="_blank"}
 
     
 ## Announcements

@@ -12,6 +12,3 @@ https://bl.ocks.org/jinroh/7524988
 
 
 https://github.com/enjalot/algovis
-
-
-{% bibliography --cited %}

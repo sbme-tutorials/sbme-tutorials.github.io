@@ -511,6 +511,3 @@ you should see:
 6
 ```
 
-<!-- ## References -->
-
-<!-- {% bibliography --cited %} -->
