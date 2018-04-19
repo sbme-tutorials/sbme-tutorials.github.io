@@ -5,17 +5,16 @@
 
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
+        <p><em>Correspondence:</em></p>
         <ul class="contact-list">
-          <li>
+          <li><a href="mailto:{{ site.email }}">
             {% if site.author %}
               {{ site.author | escape }}
             {% else %}
               {{ site.title | escape }}
             {% endif %}
-            </li>
-            {% if site.email %}
-            <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-            {% endif %}
+          </a></li>
+            <li><a href="mailto:eslam.a.mahmoud@eng1.cu.edu.eg">Eslam Adel</a></li>
         </ul>
       </div>
 
@@ -27,13 +26,10 @@
           </li>
           {% endif %}
 
-          {% if site.linkedin_username %}
-            <li>
-              <a href="https://linkedin.com/in/{{ site.linkedin_username }}">
-                <i class="fa fa-linkedin"></i> LinkedIn
-              </a>
-            </li>
-          {% endif %}
+          <li>
+              {% include icon-github.html username="EslamAdel" %}
+          </li>
+          
         </ul>
       </div>
 
