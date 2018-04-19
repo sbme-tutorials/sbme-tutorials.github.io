@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/5_week5a.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/10_week10.html">Week 7 - Part1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/8_week8.html">Week 8: Segmentation (Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 9: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#recursion" id="markdown-toc-recursion">Recursion</a>    <ul>
+      <li><a href="#how-to-make-your-computer-compute-any-factorial-using-two-lines" id="markdown-toc-how-to-make-your-computer-compute-any-factorial-using-two-lines">How to make your computer compute any factorial using two lines</a></li>
+      <li><a href="#how-recursion-work-in-stack-memory" id="markdown-toc-how-recursion-work-in-stack-memory">How recursion work in stack memory</a></li>
+      <li><a href="#recursion-is-not-function-overloading" id="markdown-toc-recursion-is-not-function-overloading">Recursion is not Function Overloading</a></li>
+      <li><a href="#example-factorial-function" id="markdown-toc-example-factorial-function"><strong>Example</strong>: Factorial Function</a></li>
+      <li><a href="#exercise-power-function" id="markdown-toc-exercise-power-function"><strong>Exercise</strong>: Power Function</a></li>
+      <li><a href="#very-important-in-tree-data-structures" id="markdown-toc-very-important-in-tree-data-structures">Very important in Tree Data Structures</a></li>
+    </ul>
+  </li>
+  <li><a href="#big-oh-notation" id="markdown-toc-big-oh-notation">Big-Oh Notation</a>    <ul>
+      <li><a href="#what-is-an-algorithm" id="markdown-toc-what-is-an-algorithm">What is an Algorithm</a></li>
+      <li><a href="#how-to-measure-an-algorithm-performance" id="markdown-toc-how-to-measure-an-algorithm-performance">How to measure an algorithm performance</a>        <ul>
+          <li><a href="#measurement-should-be-in-terms-of-the-input" id="markdown-toc-measurement-should-be-in-terms-of-the-input">Measurement should be in terms of the input</a></li>
+          <li><a href="#constant-performance" id="markdown-toc-constant-performance">Constant Performance</a></li>
+          <li><a href="#linear-performance" id="markdown-toc-linear-performance">Linear Performance</a></li>
+          <li><a href="#quadratic-performance" id="markdown-toc-quadratic-performance">Quadratic Performance</a></li>
+        </ul>
+      </li>
+      <li><a href="#further-orders-of-common-function" id="markdown-toc-further-orders-of-common-function">Further: Orders of Common Function</a></li>
+      <li><a href="#exercises" id="markdown-toc-exercises">Exercises</a></li>
+    </ul>
+  </li>
+  <li><a href="#markdown" id="markdown-toc-markdown">Markdown</a></li>
+  <li><a href="#how-to-ask-for-help-like-a-pro" id="markdown-toc-how-to-ask-for-help-like-a-pro">How to ask for help like a pro!</a></li>
+  <li><a href="#how-to-bring-your-ta-diabetes" id="markdown-toc-how-to-bring-your-ta-diabetes">How to bring your TA diabetes</a></li>
+</ul>
+
+<h2 id="recursion">Recursion</h2>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} 5! &=& 5 \times 4!  \\ 4! &=& 4 \times 3! \\ 3! &=&  3 \times 2! \\ 2! &=& 2 \times 1! \\ 1! &=& 1 \times 0! \\ 0! &=& 1 \end{eqnarray*} %]]></script>
+
+<p>Substitute the way back:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} \dot{.\hspace{.095in}.}\hspace{.5in} 1! &=& 1 \times ( 1 ) \\ \dot{.\hspace{.095in}.}\hspace{.5in} 2! &=& 2 \times ( 1  \times 1 ) \\ \dot{.\hspace{.095in}.}\hspace{.5in} 3! &=& 3 \times ( 2 \times 1 \times 1 ) \\ \dot{.\hspace{.095in}.}\hspace{.5in} 4! &=& 4 \times ( 3 \times 2 \times 1 \times 1 ) \\ \dot{.\hspace{.095in}.}\hspace{.5in} 5!  &=& 5 \times (4 \times 3 \times 2 \times 1 \times 1 ) \\ &=& 120 \end{eqnarray*} %]]></script>
+
+<h3 id="how-to-make-your-computer-compute-any-factorial-using-two-lines">How to make your computer compute any factorial using two lines</h3>
+
+<p><img src="/gallery/recursion1.gif" style="width:100%" /></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="kt">int</span> <span class="nf">factorial</span><span class="p">(</span> <span class="kt">int</span> <span class="n">n</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="n">n</span> <span class="o">*</span> <span class="n">factorial</span><span class="p">(</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"5!="</span> <span class="o">&lt;&lt;</span> <span class="n">factorial</span><span class="p">(</span> <span class="mi">5</span> <span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> 
+   <span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> 
+      <span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> 
+         <span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> 
+            <span class="n">factorial</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> 
+               <span class="k">return</span> <span class="mi">1</span> 
+            <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span> <span class="o">=</span> <span class="mi">2</span> 
+         <span class="k">return</span> <span class="mi">3</span><span class="o">*</span><span class="mi">2</span> <span class="o">=</span> <span class="mi">6</span> 
+      <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="mi">6</span> <span class="o">=</span> <span class="mi">24</span> 
+   <span class="k">return</span> <span class="mi">5</span><span class="o">*</span><span class="mi">24</span> <span class="o">=</span> <span class="mi">120</span>
+</code></pre></div></div>
+
+<h3 id="how-recursion-work-in-stack-memory">How recursion work in stack memory</h3>
+
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/RecFact.html">Demo: How Recursive Factorial Work in Memory</a></p>
+
+<h3 id="recursion-is-not-function-overloading">Recursion is not Function Overloading</h3>
+
+<p>The following is not recursion; the function <code class="highlighter-rouge">area</code> <strong>doesn’t call itself</strong>, but it calls <strong>another function with the same name, that handles different parameters type/number</strong>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Rectangle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="n">Rectangle</span> <span class="n">rect</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">area</span><span class="p">(</span> <span class="n">rect</span><span class="p">.</span><span class="n">a</span> <span class="p">,</span> <span class="n">rect</span><span class="p">.</span><span class="n">b</span> <span class="p">);</span> <span class="c1">// This is not recursion.</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>However, the following calling <code class="highlighter-rouge">area</code> in the next code will results in an infinite loop of recurion, until the <strong>stack memory overflows</strong>, and finally the program crashes.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Rectangle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">double</span> <span class="nf">area</span><span class="p">(</span> <span class="n">Rectangle</span> <span class="n">rect</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">area</span><span class="p">(</span> <span class="n">rect</span> <span class="p">);</span> <span class="c1">// This is a recursion. Very pointless and buggy function!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><strong>Add to your glossary</strong>: <em><a href="https://en.wikipedia.org/wiki/Stack_overflow">Stack Memory Overflow</a></em></p>
+
+<h3 id="example-factorial-function"><strong>Example</strong>: Factorial Function</h3>
+
+<p>TODO:Figures</p>
+
+<h3 id="exercise-power-function"><strong>Exercise</strong>: Power Function</h3>
+
+<p>Implement a function <code class="highlighter-rouge">power</code> that uses recursion to compute the power of the input number. After finishing:</p>
+
+<ol>
+  <li>initialize a repository on your local machine, <code class="highlighter-rouge">git init</code></li>
+  <li>add the files to your repository, <strong>never add the executable file</strong> generated from the compiler, using: <code class="highlighter-rouge">git add file1.cpp file2.hpp</code>.</li>
+  <li>Commit changes: <code class="highlighter-rouge">git commit -a -m "add implementation and add files to the repository"</code></li>
+  <li>Create remote repository at <strong>github</strong>, copy the link of your repository from the green button.</li>
+  <li>link your local repository to the remote repository using: <code class="highlighter-rouge">git remote add origin [repo_link]</code>.</li>
+  <li>Push: <code class="highlighter-rouge">git push origin master</code>.</li>
+</ol>
+
+<p>Finally, you can send me the link of your repository on github to review!</p>
+
+<h3 id="very-important-in-tree-data-structures">Very important in Tree Data Structures</h3>
+
+<h2 id="big-oh-notation">Big-Oh Notation</h2>
+
+<h3 id="what-is-an-algorithm">What is an Algorithm</h3>
+
+<blockquote>
+  <p>According to Donald Knuth, the word <em>algorithm</em> is derived from the name “al-Khowârizmı̂,” a ninth-century Persian mathematician.</p>
+</blockquote>
+
+<p>In programming, <em>algorithm</em> is a function with clever logic. However, <em>algorithm</em> is a very general term. The <code class="highlighter-rouge">meanArray</code> function you implemented could be called an <em>algorithm to compute the mean of array</em>. Similary, <code class="highlighter-rouge">varianceArray</code>, <code class="highlighter-rouge">minArray</code>, <code class="highlighter-rouge">maxArray</code>, <code class="highlighter-rouge">factorial</code>, and <code class="highlighter-rouge">power</code> can all be called <strong>Algorithms</strong>.</p>
+
+<p>We are typically concerned about the function running time when the input size <code class="highlighter-rouge">n</code> are relatively large. The measure we are going to study for this semester is called <em>O-notation</em>. <em>O-notation</em> of an algorithm will measure the <strong>order of running time growth</strong> when the input size <code class="highlighter-rouge">n</code> increases.</p>
+
+<h3 id="how-to-measure-an-algorithm-performance">How to measure an algorithm performance</h3>
+
+<h4 id="measurement-should-be-in-terms-of-the-input">Measurement should be in terms of the input</h4>
+
+<p>For example, applying the function <code class="highlighter-rouge">meanArray</code> to compute the mean for array of <strong>10 elements</strong> is much <strong>faster</strong> than computing the mean for <strong>array of 10000</strong> elements. So our measurement should respect the input size, or <code class="highlighter-rouge">n</code>. Considering <code class="highlighter-rouge">n</code>, or the input size, we can measure how the function running time will grow with increase of input size <code class="highlighter-rouge">n</code>.</p>
+
+<h4 id="constant-performance">Constant Performance</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">sqaure</span><span class="p">(</span> <span class="kt">int</span> <span class="n">x</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// T1(n) = 1</span>
+    <span class="k">return</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// T2(n) = 1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<script type="math/tex; mode=display">T(n) = T1 + T2 = 2</script>
+
+<script type="math/tex; mode=display">O( T(n) ) = O(2) = O(1)</script>
+
+<p>When we call this function, we execute <strong>two lines</strong>, each is a simple experession execution. Time can be measured in terms of $T(n) = 2$. This function will always have a constant behaviour, regardless the input. In <em>big-O</em> notation this function complexity is represented by $O(1)$. We use $O(1)$ to describe the complexity of any function that has a <strong>constant execution time</strong>.</p>
+
+<p>Other example function with <strong>constant complexity</strong></p>
+
+<p>Again, could be done that way:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">CharacterStackLL</span> <span class="o">&amp;</span><span class="n">stack</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">stack</span><span class="p">.</span><span class="n">front</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="c1">// T(n) = 1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<script type="math/tex; mode=display">T(n) = 1</script>
+
+<script type="math/tex; mode=display">O( T(n) ) = 1</script>
+
+<p>This function, <code class="highlighter-rouge">isEmpty</code>, has always a constant execution time that doesn’t depend on the <strong>stack size</strong> <code class="highlighter-rouge">n</code>. In other words, its execution time is always constant whether the stack size <code class="highlighter-rouge">n=10</code>, <code class="highlighter-rouge">n=90</code>, or <code class="highlighter-rouge">n=1000</code>.</p>
+
+<p><em>Synonyms: Performance, Behaviour, Complexity</em></p>
+
+<h4 id="linear-performance">Linear Performance</h4>
+
+<p>Consider the example of <code class="highlighter-rouge">printLL</code> that prints <strong>all</strong> the elements of a <strong>LL</strong> of size <code class="highlighter-rouge">n</code>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">printLL</span><span class="p">(</span> <span class="n">Node</span><span class="o">*</span> <span class="n">front</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Node</span> <span class="o">*</span><span class="n">current</span> <span class="o">=</span> <span class="n">front</span><span class="p">;</span> <span class="c1">// T1(n) = 1</span>
+
+    <span class="k">while</span><span class="p">(</span> <span class="n">current</span> <span class="o">!=</span> <span class="nb">nullptr</span> <span class="p">)</span> <span class="c1">// T2(n) = n * ( T3 + T4 )</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span> <span class="c1">// T3(n) = 1</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">current</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span> <span class="c1">// T4(n) = 1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} T(n) &=& T1 + T2 \\ &=& 1 + n ( T3 + T4 ) \\ &=& 1 + 2n \end{eqnarray*} %]]></script>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} O(T(n)) &=& O( 1 + 2n ) \\ &=& O(n) \end{eqnarray*} %]]></script>
+
+<p>So this function is <strong>asymptotically</strong> linear in execution time. We mean by <strong>asymptotically</strong> linear that we are certain that this function will finally follow a line function for relatively large <code class="highlighter-rouge">n</code>.</p>
+
+<ul>
+  <li><strong>Question</strong>: How to approximately estimate the function running time for $n_2=1000000$, i.e linked-list of <strong>1-million</strong> element</li>
+  <li>
+    <p><strong>Givens</strong>:</p>
+
+    <ul>
+      <li>The function has complexity of $ O(T(n)) = O( 2n + 1 ) = O(n) $.</li>
+      <li>The function executed in <em>2 melliseconds</em> when $n_1=2000$.</li>
+    </ul>
+  </li>
+  <li><strong>Answer</strong>:</li>
+</ul>
+
+<p>Because of Linear Performance:</p>
+
+<p>$ \frac{T_{execution}(n_2)}{ T_{execution}(n_1)} \approx  \frac{n_2}{n_1}$ ;For relatively large <code class="highlighter-rouge">n1</code>, and <code class="highlighter-rouge">n2</code>.</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} T_{execution}(n_2=1000000)  &\approx&  \frac{1000000}{2000} T_{execution}(n_1=20) \\ &=& 500 \times 2 = 1 \text{second} \end{eqnarray*} %]]></script>
+
+<ul>
+  <li><strong>Intuition</strong> :</li>
+</ul>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} \lim_{\substack{n_1\to\infty\\ n_2\to\infty} } T_{execution}(n_2) &=& \lim_{\substack{n_1\to\infty\\ n_2\to\infty} } \frac{2n_2 + 1}{2n_1 + 1} T_{execution}(n_1) \\ &=& \lim_{\substack{n_1\to\infty\\ n_2\to\infty} } \frac{2n_2}{2n_1} \frac{1 + \frac{1}{2n_2}}{ 1 + \frac{1}{2n_1}} T_{execution}(n_1)\\ &=& \lim_{\substack{n_1\to\infty\\ n_2\to\infty} } \frac{n_2}{n_1} T_{execution}(n_1) \end{eqnarray*} %]]></script>
+
+<h4 id="quadratic-performance">Quadratic Performance</h4>
+
+<p>Consider the following <strong>naive</strong> inefficient function <code class="highlighter-rouge">varianceArray</code></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">varianceArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="c1">// T1(n) = 1</span>
+    <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arraySize</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span> <span class="c1">// T2(n) = n ( T3 + T4 )</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">diff</span> <span class="o">=</span> <span class="n">meanArray</span><span class="p">(</span><span class="o">&amp;</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">arraySize</span> <span class="p">)</span> <span class="o">-</span> <span class="n">base</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="c1">// T3(n) = n</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">diff</span> <span class="o">*</span> <span class="n">diff</span> <span class="p">;</span> <span class="c1">// T4(n) = 1</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">sum</span> <span class="o">/</span> <span class="n">arraySize</span><span class="p">;</span> <span class="c1">// T5(n) = 1</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{eqnarray*} T(n) &=& T1 + T2 + T5\\ &=& 1 + n ( T3 + T4 ) + 1\\ &=& 1 + n( n + 1 ) + 1 \\ &=& n^2 + n + 2 \\ O(T(n)) &=& O(n^2 + n + 2) \\ &=& O(n^2) \end{eqnarray*} %]]></script>
+
+<h3 id="further-orders-of-common-function">Further: Orders of Common Function</h3>
+
+<p><img src="/gallery/complexity.svg" /></p>
+
+<p><a href="https://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions">Orders of common functions</a></p>
+
+<h3 id="exercises">Exercises</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">// n = input array `basePointer` size</span>
+<span class="kt">int</span> <span class="nf">countCharacter</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">basePointer</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">query</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// T1(n) = 1</span>
+    <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">// T2(n) = n * T3(n)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">query</span> <span class="o">==</span> <span class="n">basePointer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span> <span class="n">T3</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="o">=</span> <span class="mi">1</span>
+            <span class="o">++</span><span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">x</span><span class="p">;</span> <span class="c1">//T4(n) = 1</span>
+<span class="p">}</span>
+<span class="c1">// T(n) = T1 + T2 + T4 = 1 + n * T3 + 1 = 2 + n</span>
+<span class="c1">// O(T(n)) = O(n)</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="nf">analyzeDNA</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countA</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countC</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countG</span><span class="p">,</span> <span class="kt">int</span> <span class="n">countT</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">countA</span> <span class="o">=</span> <span class="n">arrays</span><span class="o">::</span><span class="n">countCharacter</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">,</span> <span class="sc">'A'</span><span class="p">);</span> <span class="c1">// T1(n) = 2 + n =&gt; O(n)</span>
+    <span class="n">countC</span> <span class="o">=</span> <span class="n">arrays</span><span class="o">::</span><span class="n">countCharacter</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">,</span> <span class="sc">'C'</span><span class="p">);</span> <span class="c1">// T2 = same</span>
+    <span class="n">countG</span> <span class="o">=</span> <span class="n">arrays</span><span class="o">::</span><span class="n">countCharacter</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">,</span> <span class="sc">'G'</span><span class="p">);</span> <span class="c1">// T3 = same</span>
+    <span class="n">countT</span> <span class="o">=</span> <span class="n">arrays</span><span class="o">::</span><span class="n">countCharacter</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">,</span> <span class="sc">'T'</span><span class="p">);</span> <span class="c1">// T4 = same</span>
+    <span class="k">return</span> <span class="n">complementarySequence</span><span class="p">(</span> <span class="o">&amp;</span><span class="n">base</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">size</span><span class="p">);</span> <span class="c1">// T5 = 1</span>
+<span class="p">}</span>
+
+<span class="c1">// T(n) = 4 * (2 + n) + 1 = 9 + 4n</span>
+<span class="c1">// O(T(n)) = O(n)</span>
+</code></pre></div></div>
+
+<h2 id="markdown">Markdown</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>## How to ask for help like a pro!
+
+1. Write some buggy C++ code.
+2. After failed compilation, `git commit -a -m "some bugs to review"`.
+3. `git push origin master`.
+4. On the last commit, add a comment mentioning me (i.e using `@A-Alaa`).
+    * ![rev1](/gallery/review1.png)
+5. Alternatively, after commiting and pushing, ask in O.H about your concerns in the last commit.
+
+## How to bring your TA diabetes
+
+* The easiest way
+
+    1. Write some buggy C++ Code.
+        ```c++
+        int main()
+        {
+            int x = y; // who is `y`?!
+            return 0 // missing semicolon
+        }
+        ```
+    2. Send the source code file to your TA through e-mail or fb!
+* The other way
+
+    1. Write some buggy C++ code.
+    2. Compile your source code.
+    3. Take screenshot for the compilation error beside your code.
+    4. Send through e-mail or fb!
+</code></pre></div></div>
+
+<p>The previous <em>Markdown</em> syntax will generate the following output:</p>
+
+<h2 id="how-to-ask-for-help-like-a-pro">How to ask for help like a pro!</h2>
+
+<ol>
+  <li>Write some buggy C++ code.</li>
+  <li>After failed compilation, <code class="highlighter-rouge">git commit -a -m "some bugs to review"</code>.</li>
+  <li><code class="highlighter-rouge">git push origin master</code>.</li>
+  <li>On the last commit, add a comment mentioning me (i.e using <code class="highlighter-rouge">@A-Alaa</code>).
+    <ul>
+      <li><img src="/gallery/review1.png" alt="rev1" /></li>
+    </ul>
+  </li>
+  <li>Alternatively, after commiting and pushing, ask in O.H about your concerns in the last commit.</li>
+</ol>
+
+<h2 id="how-to-bring-your-ta-diabetes">How to bring your TA diabetes</h2>
+
+<ul>
+  <li>
+    <p>The easiest way</p>
+
+    <ol>
+      <li>Write some buggy C++ Code.
+        <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+ <span class="p">{</span>
+     <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span> <span class="c1">// who is `y`?!</span>
+     <span class="k">return</span> <span class="mi">0</span> <span class="c1">// missing semicolon</span>
+ <span class="p">}</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Send the source code file to your TA through e-mail or fb!</li>
+    </ol>
+  </li>
+  <li>
+    <p>The other way</p>
+
+    <ol>
+      <li>Write some buggy C++ code.</li>
+      <li>Compile your source code.</li>
+      <li>Take screenshot for the compilation error beside your code.</li>
+      <li>Send through e-mail or fb!</li>
+    </ol>
+  </li>
+</ul>
+
+<!-- 
+https://archive.org/details/BalaguruswamyObjectOrientedProgrammingWithCFourthEdition
+
+https://www.cprogramming.com/challenge.html
+
+https://upbeat-pie.surge.sh/
+
+https://www.coursera.org/learn/data-structures
+
+https://www.coursera.org/learn/algorithms-part1
+
+https://github.com/no-stack-dub-sack/algos-and-data-structures
+
+https://www.codewars.com/?language=cpp
+
+http://www.pythontutor.com/
+
+http://www.algomation.com/
+
+https://www.coursera.org/learn/algorithms-graphs-data-structures 
+
+https://github.com/ellekasai/resumecards
+
+https://github.com/mwhite/resume -->
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

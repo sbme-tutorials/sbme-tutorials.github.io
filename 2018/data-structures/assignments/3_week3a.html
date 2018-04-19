@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Assignment 3 - Part 1: Arrays</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/assignments/3_week3a.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/10_week10.html">Week 7 - Part1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/8_week8.html">Week 8: Segmentation (Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 9: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Assignment 3 - Part 1: Arrays</h1>
+  </header>
+
+  <div class="post-content">
+    <h2 id="prerequisites">Prerequisites</h2>
+
+<ul>
+  <li><strong>Required</strong>: Read the notes of the first week: [<a href="/2018/data-structures/notes/3_week3a.html" target="_blank">Part 1: Static Arrays and Dynamic Arrays</a>] [<a href="/2018/data-structures/notes/3_week3b.html" target="_blank">Part 2: Command Line Arguments and Compilation of Multiple Files</a>].</li>
+</ul>
+
+<h2 id="objectives">Objectives</h2>
+
+<ul>
+  <li>Revisiting namespaces, references, and pointers.</li>
+  <li>Work with multiple files.</li>
+  <li>Work with multiple applications.</li>
+  <li>Realize the dependencies between files.</li>
+  <li>
+    <p>Implement basic array operations:</p>
+
+    <ul>
+      <li>print (traverse)</li>
+      <li>mean</li>
+      <li>variance</li>
+      <li>max</li>
+      <li>min</li>
+      <li>counters</li>
+    </ul>
+  </li>
+  <li>
+    <p>Work with biological data in array structures.</p>
+
+    <ul>
+      <li>Analyze DNA</li>
+      <li>Return the complementary sequence of DNA</li>
+      <li>Count a specific base pair in DNA</li>
+      <li>Analyze ECG: mean, variance, max, and min.</li>
+    </ul>
+  </li>
+  <li>Compilation of multiple files.</li>
+</ul>
+
+<h2 id="deadline">Deadline</h2>
+
+<p><strong>Sunday 4/3/2018 11:59 PM</strong>.</p>
+
+<h2 id="assignment-part-1">Assignment: Part 1</h2>
+
+<p>Go to the <a href="https://classroom.github.com/a/41rIEp0C">assignment page</a> and git clone your own repository.</p>
+
+<h3 id="overview">Overview</h3>
+
+<p>You will learn how to work with multiple files. We will write our interesting functions in header files, and then use these functions in our interesting applications.</p>
+
+<h4 id="the-header-files-library">The header files (library)</h4>
+
+<p>We will work and implement our logic inside these files:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">mathematics.hpp</code> to contain some <strong>mathematical</strong> functions like <code class="highlighter-rouge">calculation</code>.</li>
+  <li><code class="highlighter-rouge">arrays.hpp</code> to contain our <strong>array</strong> functions.</li>
+  <li><code class="highlighter-rouge">ecg.hpp</code> to contain analysis functions on <strong>ECG</strong>.</li>
+  <li><code class="highlighter-rouge">dna.hpp</code> to contain analysis functions on <strong>DNA</strong>.</li>
+</ul>
+
+<p>Our source files of our applications that we are going to compile into useful and <strong>very important applications</strong>:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">calculator.cpp</code> to implement the <em>Calculator</em> application, and depends on <code class="highlighter-rouge">mathematics.hpp</code>.</li>
+  <li><code class="highlighter-rouge">heron.cpp</code> to implement a simple application that implements <em>Heron Formula</em>, and also depends on <code class="highlighter-rouge">mathematics.hpp</code>.</li>
+  <li><code class="highlighter-rouge">analyzeECG.cpp</code> to implement <strong>very useful</strong> application for <em>ECG Analysis</em>, depends on <code class="highlighter-rouge">ecg.hpp</code>.</li>
+  <li><code class="highlighter-rouge">analyzeDNA.cpp</code> to implement <strong>very useful</strong> application for <em>DNA Analysis</em>, depends on <code class="highlighter-rouge">dna.hpp</code>.</li>
+</ul>
+
+<p>You will find a useful header file <code class="highlighter-rouge">helpers.hpp</code>, <strong>I don’t recommend you to try understanding it before week 6</strong>. We will just use two functions from <code class="highlighter-rouge">helpers.hpp</code> to load our <strong>DNA</strong> and <strong>ECG</strong> files from hard disk.</p>
+
+<h4 id="dependency-graph">Dependency Graph</h4>
+
+<p><img src="task3.svg" alt="dependencies" /></p>
+
+<p>By the way, keep in mind, that <strong>application source files</strong> that are compiled into <strong>executable files</strong>, has to be:</p>
+
+<ul>
+  <li>including a <code class="highlighter-rouge">main</code> function. Each <code class="highlighter-rouge">main</code> function is a simply program entry point.</li>
+  <li>and <code class="highlighter-rouge">main</code> function should be existing in a <code class="highlighter-rouge">.cpp</code> file.</li>
+</ul>
+
+<p>You will also realize our header files begin and ends with</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#ifndef MATHEMATICS_HPP
+#define MATHEMATICS_HPP
+</span>
+<span class="c1">// includes of external headers here</span>
+
+<span class="c1">// Your functions here</span>
+
+<span class="cp">#endif // MATHEMATICS_HPP
+</span></code></pre></div></div>
+
+<p>No worries, they are called <a href="https://en.wikipedia.org/wiki/Include_guard">header guards</a>. Will be explained on next tutorial on <strong>Sunday</strong>. But just consider them as a skeleton (boilerplate) code.</p>
+
+<h3 id="requirement-1-mathematicshpp-file">Requirement 1: <strong>mathematics.hpp</strong> file</h3>
+
+<ul>
+  <li><strong>R1.1 (Done for you)</strong> Make a <code class="highlighter-rouge">namespace mathematics</code> that will contain our functions.</li>
+  <li><strong>R1.2</strong> Implement our <code class="highlighter-rouge">calculation</code> function using either <strong>if, else if, else</strong> or <strong>switch-case</strong>.</li>
+  <li><strong>R1.3</strong> Implement <a href="https://en.wikipedia.org/wiki/Heron%27s_formula">Heron Formula</a>, that is used to compute the <strong>triangle area</strong> given its three sides, hmmmm very interesting.</li>
+</ul>
+
+<p><img src="triangle.png" alt="tri" /></p>
+
+<script type="math/tex; mode=display">A = \sqrt{s(s-a)(s-b)(s-c)},</script>
+
+<p>where <em>s</em> is the <em>semiperimeter</em> of the triangle; that is,</p>
+
+<script type="math/tex; mode=display">s=\frac{a+b+c}{2}.</script>
+
+<p>Use this function declaration:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">heron</span><span class="p">(</span> <span class="kt">double</span> <span class="n">a</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">b</span> <span class="p">,</span> <span class="kt">double</span> <span class="n">c</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>You also need to <code class="highlighter-rouge">#include &lt;cmath&gt;</code> as an external header, to use <code class="highlighter-rouge">std::sqrt</code> function that computes the square root.</p>
+
+<ul>
+  <li><strong>R1.4</strong> It is your job now to implement the <code class="highlighter-rouge">main</code> function in <code class="highlighter-rouge">heron.cpp</code> file. It is required to make the <em>Heron Formula</em> application to <strong>receive the three parameters of the triangle through terminal</strong>. So you will retrieve the three parameters through the <code class="highlighter-rouge">argv</code> in <code class="highlighter-rouge">main</code> function. Remember that you will need to use <code class="highlighter-rouge">std::atof</code> function and <code class="highlighter-rouge">#include &lt;string&gt;</code>. To use <code class="highlighter-rouge">mathematics::heron</code>, add <code class="highlighter-rouge">#include "mathematics.hpp"</code>. Hint, you may cheat from <code class="highlighter-rouge">calculation.cpp</code> source file (but with receiving three doubles in this case).</li>
+</ul>
+
+<h3 id="requirement-2-arrayshpp-file">Requirement 2: <strong>arrays.hpp</strong> file</h3>
+
+<ul>
+  <li><strong>R2.1</strong> Make a <code class="highlighter-rouge">namespace arrays</code> that will contain our functions.</li>
+  <li><strong>R2.2</strong> Implement a function that prints all array elements on terminal, using the following declaration:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">printAll</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>R2.3</strong>+<strong>R2.4</strong> Implement a function that returns the <strong>maximum</strong> element and another one for <strong>minimum</strong> element, using the following declarations:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">maxArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">minArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>R2.5</strong>+<strong>R2.6</strong> Implement a function that returns the <strong>mean (average)</strong> of array elements and another one that returns the <strong>variance</strong>, using the following declaration:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">meanArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span>
+
+
+<span class="kt">double</span> <span class="nf">varianceArray</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+
+    <span class="c1">// Hint: use meanArray ;)</span>
+    <span class="c1">// Do you need a square function?</span>
+    <span class="c1">// Maybe you can implement one in mathematics.hpp</span>
+    <span class="c1">// then include "mathematics.hpp" to use mathematics::square here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>If you don’t know variance,</p>
+
+<script type="math/tex; mode=display">var = \frac{1}{N} \sum_{n=1}^{N} ( \text{mean} - x_i )^2</script>
+
+<h3 id="requirement-3-ecghpp-file">Requirement 3: <strong>ecg.hpp</strong> file</h3>
+
+<ul>
+  <li><strong>R3.1</strong> Make a <code class="highlighter-rouge">namespace ecg</code> that will contain our function.</li>
+  <li><strong>R3.2</strong> Make a function that computes the <strong>average</strong>, <strong>variance</strong>, <strong>max</strong>, and <strong>min</strong> of <strong>ECG</strong> signal. But these are not single variables so we can return. Alternatively, we will use <strong>4 reference</strong> variable in function declaration.</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">analyzeECG</span><span class="p">(</span> <span class="kt">double</span> <span class="o">*</span><span class="n">base</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">arraySize</span> <span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">mean</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">variance</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">max</span><span class="p">,</span> <span class="kt">double</span> <span class="o">&amp;</span><span class="n">min</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here (4 lines)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Use the four functions we already implemented in <code class="highlighter-rouge">arrays.hpp</code>. Accordingly, <strong>four lines</strong> are sufficient to do this job. And yes, don’t forget to <code class="highlighter-rouge">#include "arrays.hpp"</code> in the current header file.</p>
+
+<h3 id="requirement-4-bonus-dnahpp-file-and-revisiting-arrayshpp-file">Requirement 4 (Bonus): <strong>dna.hpp</strong> file and revisiting <strong>arrays.hpp</strong> file</h3>
+
+<h4 id="revisit-arrayshpp-file">Revisit <strong>arrays.hpp</strong> file</h4>
+
+<ul>
+  <li><strong>R4.1</strong> Make a function that counts a given character in array of characters, using the following declaration:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">countCharacter</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">basePointer</span> <span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">,</span> <span class="kt">char</span> <span class="n">query</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span> 
+</code></pre></div></div>
+
+<h4 id="now-dnahpp-file">Now <strong>dna.hpp</strong> file</h4>
+
+<ul>
+  <li><strong>R4.1</strong> Make a <code class="highlighter-rouge">namespace dna</code> that will contain our functions.</li>
+  <li><strong>R4.2</strong> Implement <code class="highlighter-rouge">complementaryBase</code> you did in the first week using either <strong>if, else if, else</strong> or <strong>switch-case</strong>, with the following declaration:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="nf">complementaryBase</span><span class="p">(</span> <span class="kt">char</span> <span class="n">base</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>R4.3</strong> Implement <code class="highlighter-rouge">complementarySequence</code> function that returns the complementary <strong>DNA</strong> sequence.</li>
+</ul>
+
+<p>Please beware that the double strands of our <strong>DNA</strong> are directional, and they have opposite directions.</p>
+
+<p>For example, the sequence <em>ACG</em> has a complementary sequence <em>CGT</em>, <strong>not</strong> <em>TGC</em>.</p>
+
+<p>So in your for loop, you may read the <em>original</em> sequence from begining, and write the complementary sequence starting from the <em>end</em> of the complementary sequence array.</p>
+
+<p>By the way, you have to allocate the complementary sequence on the heap (dynamic array) at the begining of function (using the given size).</p>
+
+<p>Use the following declaration:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span> <span class="nf">complementarySequence</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Your logic here</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>R4.4</strong> Implement <code class="highlighter-rouge">analyzeDNA</code> function that counts the 4 bases in a sequence, and returns the complementary sequence. Again, you have four counters and a complementary sequence. So you only return the complementary sequence, and the counters will saved back to reference integers. Remember to use <code class="highlighter-rouge">arrays::countChar</code> and to <code class="highlighter-rouge">#include "arrays.hpp"</code> in the current file. Use the following declaration:</li>
+</ul>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">char</span> <span class="o">*</span><span class="nf">analyzeDNA</span><span class="p">(</span> <span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countA</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countC</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countG</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">countT</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Your logic here (5 lines).</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="submission-and-bonus-policy">Submission and Bonus Policy</h2>
+
+<ul>
+  <li>As usual, commit and push your changes.</li>
+  <li><strong>Requirement 4</strong> is completely counted as bonus.</li>
+  <li>Also, you may obtain bonus with correct logic by consistent adoption of <a href="https://en.wikipedia.org/wiki/KISS_principle">KISS</a> and <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> principles. Also, make your code clean, well-aligned, and use descriptive variable names.</li>
+</ul>
+
+<h2 id="generating-executables-and-testing-output">Generating Executables and Testing Output</h2>
+
+<h3 id="compiling-and-testing-calculatorcpp">Compiling and Testing calculator.cpp</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ calculator.cpp <span class="nt">-o</span> Calculator
+<span class="nv">$ </span>./Calculator 24 / 7
+3.42857
+<span class="nv">$ </span>./Calculator 24 <span class="se">\*</span> 7
+</code></pre></div></div>
+
+<p><strong>Note: asterisk <code class="highlighter-rouge">*</code> is a special character for the terminal. You need to explicitly use <code class="highlighter-rouge">\*</code> to specify multiplication operation.</strong></p>
+
+<h3 id="compiling-and-testing-heroncpp">Compiling and Testing heron.cpp</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ heron.cpp <span class="nt">-o</span> Heron
+<span class="nv">$ </span>./Heron 3 4 5
+6
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-heroncpp-1">Compiling and Testing heron.cpp</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ heron.cpp <span class="nt">-o</span> Heron
+<span class="nv">$ </span>./Heron 3 4 5
+6
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-analyzeecgcpp">Compiling and Testing analyzeECG.cpp</h3>
+
+<p>We compile and test using an ECG dataset stored in <code class="highlighter-rouge">datasets/ecg_data.txt</code>.</p>
+
+<p>Our application in the <code class="highlighter-rouge">main</code> function loads data from the file then use <code class="highlighter-rouge">ecg::analyzeECG</code>
+function implemented in <code class="highlighter-rouge">ecg.hpp</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ analyzeECG.cpp <span class="nt">-o</span> AnalyzeECG
+<span class="nv">$ </span>./AnalyzeECG datasets/ecg_data.txt
+ECG average : 0.785639
+ECG variance: 0.00780314
+ECG range   : <span class="o">(</span>0,1.288<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="compiling-and-testing-analyzednacpp">Compiling and Testing analyzeDNA.cpp</h3>
+
+<p>We compile and test using a DNA dataset stored in <code class="highlighter-rouge">datasets/genetic_data.txt</code>.</p>
+
+<p>Our application in the <code class="highlighter-rouge">main</code> function loads data from the file then use <code class="highlighter-rouge">dna::analyzeDNA</code>
+function implemented in <code class="highlighter-rouge">dna.hpp</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>g++ analyzeDNA.cpp <span class="nt">-o</span> AnalyzeDNA
+<span class="nv">$ </span>./AnalyzeDNA datasets/genetic_data.txt
+Adenine <span class="o">(</span>A<span class="o">)</span> content:75
+Guanine <span class="o">(</span>G<span class="o">)</span> content:84
+Cytocine<span class="o">(</span>C<span class="o">)</span> content:83
+Thymine <span class="o">(</span>T<span class="o">)</span> content:76
+
+Complementary Sequence:
+CCAGTATTTGACAGGCTGGACTGAGCTACTTGCCGTTCCGGGATAAGTAGTTCAGACAGGCTGCCCACAACGTACAAAGACGGCCAGTTCTCCGCATATCGCGGCATTCGAGTCCGGCAAATAGCGAGTTAGCCTCTTCTTGCGCTGGACCTTTTCTAGCCGCATGACTAGTTGCCAAGGCTGAAGCCCAAGTTAGAGTGGCATGTAGTCCCTCAGTGAAGGGAATGGCTCGAGTCGAAGCAGCTTACAGCACAGCTCTCGACTCCTAATTGGGTCGAAGCCTATCAACTATCCACGTAGTGTCCAGTATTTGACAGT
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
