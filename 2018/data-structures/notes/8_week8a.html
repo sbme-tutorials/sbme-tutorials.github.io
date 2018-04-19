@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</title>
+  <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2018/data-structures/notes/8_week8a.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a class="site-title" href="/2018/data-structures/data-structures.html">SBE201</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/10_week10.html">Week 7 - Part1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/8_week8.html">Week 8: Segmentation (Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 9: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#objectives" id="markdown-toc-objectives">Objectives</a></li>
+  <li><a href="#trees" id="markdown-toc-trees">Trees</a>    <ul>
+      <li><a href="#tree-glossary" id="markdown-toc-tree-glossary">Tree Glossary</a></li>
+      <li><a href="#synonyms" id="markdown-toc-synonyms">Synonyms</a></li>
+      <li><a href="#violating-tree-structure" id="markdown-toc-violating-tree-structure">Violating Tree Structure</a></li>
+    </ul>
+  </li>
+  <li><a href="#binary-search-trees-bst" id="markdown-toc-binary-search-trees-bst">Binary Search Trees (BST)</a>    <ul>
+      <li><a href="#motivation" id="markdown-toc-motivation">Motivation</a></li>
+      <li><a href="#intuition" id="markdown-toc-intuition">Intuition</a></li>
+      <li><a href="#design-and-implementation-using-linked-structures" id="markdown-toc-design-and-implementation-using-linked-structures">Design and Implementation: Using Linked Structures</a></li>
+      <li><a href="#operations" id="markdown-toc-operations">Operations</a>        <ul>
+          <li><a href="#is-empty" id="markdown-toc-is-empty">Is Empty</a></li>
+          <li><a href="#is-leaf" id="markdown-toc-is-leaf">Is Leaf</a></li>
+          <li><a href="#size" id="markdown-toc-size">Size</a></li>
+          <li><a href="#insertion" id="markdown-toc-insertion">Insertion</a></li>
+          <li><a href="#search" id="markdown-toc-search">Search</a></li>
+          <li><a href="#bst-traversal" id="markdown-toc-bst-traversal">BST Traversal</a></li>
+          <li><a href="#traversal-in-order" id="markdown-toc-traversal-in-order">Traversal: In-order</a></li>
+          <li><a href="#traversal-pre-order" id="markdown-toc-traversal-pre-order">Traversal: Pre-order</a></li>
+          <li><a href="#traversal-post-order" id="markdown-toc-traversal-post-order">Traversal: Post-order</a></li>
+          <li><a href="#traversal-breadth-first" id="markdown-toc-traversal-breadth-first">Traversal: Breadth-first</a></li>
+          <li><a href="#clear-the-whole-tree" id="markdown-toc-clear-the-whole-tree">Clear the whole tree</a></li>
+          <li><a href="#removal-of-element" id="markdown-toc-removal-of-element">Removal of element</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#asbtract-data-types-built-upon-bst" id="markdown-toc-asbtract-data-types-built-upon-bst">Asbtract Data Types Built Upon BST</a>    <ul>
+      <li><a href="#set" id="markdown-toc-set">Set</a>        <ul>
+          <li><a href="#operations-1" id="markdown-toc-operations-1">Operations</a></li>
+        </ul>
+      </li>
+      <li><a href="#map" id="markdown-toc-map">Map</a>        <ul>
+          <li><a href="#implementing-a-dictionary-ie-map-using-bst" id="markdown-toc-implementing-a-dictionary-ie-map-using-bst">Implementing a Dictionary (i.e Map) Using BST</a>            <ul>
+              <li><a href="#syntactical-sugar" id="markdown-toc-syntactical-sugar">Syntactical Sugar</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#exercise-and-assignment-text-processing" id="markdown-toc-exercise-and-assignment-text-processing">Exercise and Assignment: Text Processing</a>        <ul>
+          <li><a href="#prelimenary-statistics" id="markdown-toc-prelimenary-statistics">Prelimenary Statistics</a></li>
+          <li><a href="#comparing-stdstrings" id="markdown-toc-comparing-stdstrings">Comparing <code class="highlighter-rouge">std::string</code>s</a></li>
+          <li><a href="#lab-work-extract-set-of-words-in-a-text-using-set-adt" id="markdown-toc-lab-work-extract-set-of-words-in-a-text-using-set-adt">Lab work: Extract Set of Words in a Text using Set (ADT)</a></li>
+          <li><a href="#group-assignment-1-a-implement-a-dictionary-that-maps-characters-to-integers" id="markdown-toc-group-assignment-1-a-implement-a-dictionary-that-maps-characters-to-integers">Group Assignment 1-A: Implement a Dictionary That Maps Characters to Integers</a></li>
+          <li><a href="#group-assignment-2-b-evaluate-the-count-of-each-word-in-a-text-using-map-adt" id="markdown-toc-group-assignment-2-b-evaluate-the-count-of-each-word-in-a-text-using-map-adt">Group Assignment 2-B: Evaluate the count of each word in a text using Map (ADT)</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="objectives">Objectives</h2>
+
+<ol>
+  <li>Learn about <strong>graph</strong> structures in a glimpse</li>
+  <li>Specializing a <strong>graph</strong> into <strong>trees</strong></li>
+  <li>Specializing <strong>trees</strong> into <strong>binary trees</strong></li>
+  <li>Specializing <strong>trees</strong> into <strong>binary search trees (BST)</strong></li>
+  <li>Implementing <strong>set</strong> (ADT) using <strong>BST</strong></li>
+</ol>
+
+<h2 id="trees">Trees</h2>
+
+<p>In previous weeks, we have learned about:</p>
+
+<ul>
+  <li>Arrays</li>
+  <li>Linked Lists</li>
+  <li>Queues</li>
+  <li>Stacks</li>
+</ul>
+
+<p>These structures are conceptually linear structures. However, there also exist very important kind of structures that are inherently non-linear (e.g <strong>trees</strong> and <strong>graphs</strong>). Trees are special case of graphs, where <strong>nodes</strong> and <strong>edges (links)</strong> do not form a cycle.</p>
+
+<h3 id="tree-glossary">Tree Glossary</h3>
+
+<ul>
+  <li><strong>Root:</strong> is the top node in the tree.</li>
+  <li><strong>Child:</strong> any node that is emerged from an upper node.</li>
+  <li><strong>Parent/Internal Node:</strong> node with at least one child.</li>
+  <li><strong>Siblings:</strong> nodes sharing the same parent.</li>
+  <li><strong>Leaf:</strong> node with no children.</li>
+  <li><strong>Edge:</strong> the link between two nodes (i.e a parent and its child).</li>
+  <li><strong>Path:</strong> the sequence of links and nodes to reach from one node to a descedant.</li>
+  <li><strong>Height of node:</strong> the number of links between a node and the furthest leaf.</li>
+  <li><strong>Depth of node:</strong> the number of links between a node and the root.</li>
+</ul>
+
+<p><img src="/gallery/trees/tree.svg" style="width:80%;" /></p>
+
+<h3 id="synonyms">Synonyms</h3>
+
+<ul>
+  <li>Node = Vertex = Point</li>
+  <li>Edge = Link = Arc</li>
+</ul>
+
+<h3 id="violating-tree-structure">Violating Tree Structure</h3>
+
+<blockquote>
+  <p>wikipedia</p>
+</blockquote>
+
+<p>The following structures <strong>are not trees</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Graphs that are not trees</th>
+      <th>Why?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><img src="/gallery/trees/Directed_graph,_cyclic.svg" style="width:80%;" /></td>
+      <td>cycle B→C→E→D→B. <br /> B has more than one parent (inbound edge).</td>
+    </tr>
+    <tr>
+      <td><img src="/gallery/trees/Directed_graph_with_branching_SVG.svg" style="width:50%;" /></td>
+      <td>undirected cycle 1-2-4-3. <br /> 4 has more than one parent (inbound edge).</td>
+    </tr>
+    <tr>
+      <td><img src="/gallery/trees/Directed_graph,_disjoint.svg" style="width:50%;" /></td>
+      <td>two non-connected parts, A→B and C→D→E. There is more than one root.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="binary-search-trees-bst">Binary Search Trees (BST)</h2>
+
+<p><strong>Binary trees</strong> is a special case of trees where each node can have at most 2 children. Also, these children are named: <strong>left child</strong> or <strong>right child</strong>. A very useful specialization of <strong>binary trees</strong> is <strong>binary search tree (BST)</strong> where nodes are conventionally ordered in a certain manner. By convention, the  <script type="math/tex">% <![CDATA[
+\text{left children} < \text{parent} < \text{right children} %]]></script>, and this rule propagates recursively across the tree.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/Binary_search_tree.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>A binary search tree (BST)</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/graphtreevenn.svg" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Specialization from graph-&gt;tree-&gt;BT-&gt;BST</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="motivation">Motivation</h3>
+
+<p>Efficient search &amp; insertion/deletion in <em>logarithmic</em> time $O(\log(n))$</p>
+
+<ul>
+  <li>Arrays:
+    <ul>
+      <li><strong>(+)</strong> efficient search on sorted arrays $O(\log(n))$,</li>
+      <li><strong>(-)</strong> ineffiecient insertion/deletion $O(n)$.</li>
+    </ul>
+  </li>
+  <li>Linked lists:
+    <ul>
+      <li><strong>(-)</strong> inefficient search $O(n)$,</li>
+      <li><strong>(+)</strong> efficient insertion/deletion $O(1)$.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="intuition">Intuition</h3>
+
+<ul>
+  <li>Tree combines the advantages of arrays and linked lists.</li>
+  <li>The nature of <strong>BST</strong> (i.e being ordered) makes it potential for extensive applications. For example, implementing <strong>set (ADT)</strong>.</li>
+</ul>
+
+<h3 id="design-and-implementation-using-linked-structures">Design and Implementation: Using Linked Structures</h3>
+
+<p>Tree structure allows us to use recursive routines to implement the basic operations. Think of each node in a tree as a separate standalone tree. Trees can be embedded in arrays or implemented as a linked nodes (i.e using pointers). In this tutorial, we will implement the <strong>BST</strong> using linked nodes. Any node in the tree (including the root) will be represented by the type <code class="highlighter-rouge">BSTNode</code> that has the following C++ `struct:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">BSTNode</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span><span class="p">;</span>
+    <span class="n">BSTNode</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+    <span class="n">BSTNode</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="operations">Operations</h3>
+
+<h4 id="is-empty">Is Empty</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">tree</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="is-leaf">Is Leaf</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isLeaf</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="o">==</span> <span class="nb">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="o">==</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="size">Size</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">size</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span> <span class="p">))</span>
+        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">size</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">)</span> <span class="o">+</span> <span class="n">size</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">);</span>
+    <span class="k">else</span> <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="insertion">Insertion</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/binary-search-tree-insertion-animation.gif" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Insertion in BST, realize recursion. <a href="https://commons.wikimedia.org/w/index.php?title=User:A.gholamzade&amp;action=edit&amp;redlink=1">Author</a></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">insert</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*&amp;</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span> <span class="p">))</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BSTNode</span><span class="p">{</span> <span class="n">data</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">,</span> <span class="nb">nullptr</span> <span class="p">};</span>
+
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">data</span> <span class="o">&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">)</span>
+            <span class="n">insert</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+
+        <span class="k">else</span> <span class="n">insert</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="search">Search</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/binary-search-tree-sorted-array-animation.gif" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Search in BST, realize recursion. <a href="https://commons.wikimedia.org/w/index.php?title=User:A.gholamzade&amp;action=edit&amp;redlink=1">Author</a></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">find</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span> <span class="p">))</span>
+        <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">data</span> <span class="o">==</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">)</span>
+            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">data</span> <span class="o">&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">)</span>
+            <span class="k">return</span> <span class="n">find</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+
+        <span class="k">else</span> <span class="k">return</span> <span class="n">find</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="bst-traversal">BST Traversal</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pre- In- Post-order Traversals</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><script src="https://www.khanacademy.org/computer-programming/depth-first-traversals-of-binary-trees/934024358/embed.js?editor=no&amp;buttons=yes&amp;author=yes&amp;embed=yes"></script></td>
+    </tr>
+    <tr>
+      <td><em>Made using: <a href="http://www.khanacademy.org/computer-programming">Khan Academy Computer Science</a></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="traversal-in-order">Traversal: In-order</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/InorderTrav.gif" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>In-order Traversal in BST, realize recursion. <a href="http://ceadserv1.nku.edu/longa/classes/mat385_resources/docs/traversal.htm">Source</a></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">inorder</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">tree</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">inorder</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"["</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="s">"]"</span><span class="p">;</span>
+        <span class="n">inorder</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="traversal-pre-order">Traversal: Pre-order</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/PreOrderTrav.gif" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Pre-order Traversal in BST, realize recursion. <a href="http://ceadserv1.nku.edu/longa/classes/mat385_resources/docs/traversal.htm">Source</a></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">preorder</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">tree</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"["</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="s">"]"</span><span class="p">;</span>
+        <span class="n">preorder</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">);</span>
+        <span class="n">preorder</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="traversal-post-order">Traversal: Post-order</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/PostorderTrav.gif" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Post-order Traversal in BST, realize recursion. <a href="http://ceadserv1.nku.edu/longa/classes/mat385_resources/docs/traversal.htm">Source</a></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">postorder</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">tree</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">postorder</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">);</span>
+        <span class="n">postorder</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">);</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"["</span> <span class="o">&lt;&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="s">"]"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="traversal-breadth-first">Traversal: Breadth-first</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th><img src="/gallery/trees/bfs.gif" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><em>Breadth-first Traversal in BST. Created by Stephanie Wong</em></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="clear-the-whole-tree">Clear the whole tree</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">clear</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*&amp;</span><span class="n">tree</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span> <span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">clear</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">);</span>
+        <span class="n">clear</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">);</span>
+        <span class="k">delete</span> <span class="n">tree</span><span class="p">;</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="removal-of-element">Removal of element</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Case</th>
+      <th>Action</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Case I:</strong> Node to be removed <strong>has no children</strong></td>
+      <td>Simplest case. Algorithm <strong>sets corresponding link of the parent to NULL and deletes the node</strong></td>
+      <td><code class="highlighter-rouge">remove( tree , -4 )</code><br /><img src="/gallery/trees/bst-remove-case-1.png" alt="bst-del1" /></td>
+    </tr>
+    <tr>
+      <td><strong>Case II:</strong> Node to be removed <strong>has one child</strong></td>
+      <td>It this case, node is cut from the tree and algorithm <strong>links single child (with it’s subtree) directly to the parent of the removed node</strong></td>
+      <td><code class="highlighter-rouge">remove( tree , 18 )</code><br /><img src="/gallery/trees/bst-remove-case-2-1.png" alt="bst-del2a" /><br /><img src="/gallery/trees/bst-remove-case-2-2.png" alt="bst-del2b" /><br /><img src="/gallery/trees/bst-remove-case-2-3.png" alt="bst-del2c" /></td>
+    </tr>
+    <tr>
+      <td><strong>Case III:</strong> Node to be removed <strong>has two children</strong></td>
+      <td>This is the most complex case. To solve it, <br /><strong>(1)</strong> <strong>find a minimum value in the right subtree;</strong> <br /><strong>(2)</strong> <strong>replace value of the node to be removed with found minimum</strong>. Now, right subtree contains a duplicate! <br /><strong>(3)</strong> <strong>apply remove to the right subtree to remove a duplicate.</strong></td>
+      <td><img src="/gallery/trees/bst-remove-case-3-3.png" alt="bst-del3a" /> <br /> <img src="/gallery/trees/bst-remove-case-3-4.png" alt="bst-del3b" /> <br /> <img src="/gallery/trees/bst-remove-case-3-5.png" alt="bst-del3c" /> <br /> <img src="/gallery/trees/bst-remove-case-3-6.png" alt="bst-del3d" /> <br /></td>
+    </tr>
+    <tr>
+      <td><em>Source: <a href="http://www.algolist.net/Data_structures/Binary_search_tree/Removal">http://www.algolist.net/</a></em></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">void</span> <span class="nf">remove</span><span class="p">(</span> <span class="n">BSTNode</span> <span class="o">*&amp;</span><span class="n">tree</span><span class="p">,</span> <span class="kt">int</span> <span class="n">data</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span> <span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span> <span class="p">))</span> <span class="k">return</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span> <span class="n">data</span> <span class="o">==</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">))</span>
+        <span class="p">{</span>
+            <span class="n">BSTNode</span> <span class="o">*</span><span class="n">minRight</span> <span class="o">=</span> <span class="n">minNode</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span> <span class="p">);</span>
+            <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="o">=</span> <span class="n">minRight</span><span class="o">-&gt;</span><span class="n">data</span><span class="p">;</span>
+            <span class="n">remove</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">minRight</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">BSTNode</span> <span class="o">*</span><span class="n">discard</span> <span class="o">=</span> <span class="n">tree</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span> <span class="n">isLeaf</span><span class="p">(</span> <span class="n">tree</span> <span class="p">))</span>
+                <span class="n">tree</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span>
+            <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="n">isEmpty</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span> <span class="p">))</span>
+                <span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">;</span>
+            <span class="k">else</span>
+                <span class="n">tree</span> <span class="o">=</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">;</span>
+
+            <span class="k">delete</span> <span class="n">discard</span><span class="p">;</span>
+        <span class="p">}</span>
+
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span> <span class="n">data</span> <span class="o">&lt;</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">data</span> <span class="p">)</span>
+        <span class="n">remove</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">left</span><span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+    <span class="k">else</span> <span class="n">remove</span><span class="p">(</span> <span class="n">tree</span><span class="o">-&gt;</span><span class="n">right</span><span class="p">,</span> <span class="n">data</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="asbtract-data-types-built-upon-bst">Asbtract Data Types Built Upon BST</h2>
+
+<h3 id="set">Set</h3>
+
+<p>We can harness the sorted property of <strong>BST</strong> to make efficient insertions and removals. Also, with a slight modification to the <code class="highlighter-rouge">insert</code> function, we can make this function only insert unique values, hence our new <strong>set (ADT)</strong> will always contain unique values.</p>
+
+<h4 id="operations-1">Operations</h4>
+
+<ul>
+  <li><code class="highlighter-rouge">isEmpty</code>: same as <strong>BST</strong></li>
+  <li><code class="highlighter-rouge">size</code>: same as <strong>BST</strong></li>
+  <li><code class="highlighter-rouge">contains</code>: same as <code class="highlighter-rouge">find</code> of <strong>BST</strong></li>
+  <li><code class="highlighter-rouge">remove</code>: same as <strong>BST</strong></li>
+  <li><code class="highlighter-rouge">insert</code>: slight modification of <code class="highlighter-rouge">bst::insert</code>, such that insertion is done when the element isn’t a duplicate of existing element, possible implementation:
+    <ol>
+      <li>use <code class="highlighter-rouge">contains</code> to check if element doesn’t already exist,</li>
+      <li>then, if the condition holds, use <code class="highlighter-rouge">bst::insert</code>, otherwise, do nothing.</li>
+    </ol>
+  </li>
+  <li><code class="highlighter-rouge">union</code>: given two sets $S_1$ and $S_2$ make a new data structure $S_3 = S_1  \cup S_2$, possible implementation:
+    <ol>
+      <li>make an empty set <code class="highlighter-rouge">S3</code>,</li>
+      <li>iterate over elements of <code class="highlighter-rouge">S1</code> inserting each element to <code class="highlighter-rouge">S3</code>, and similarly for <code class="highlighter-rouge">S2</code>.</li>
+    </ol>
+  </li>
+  <li><code class="highlighter-rouge">intersect</code>: given two sets $S_1$ and $S_2$ make a new data structure $S_3 = S_1  \cap S_2$, possible implementation:
+    <ol>
+      <li>make an empty set <code class="highlighter-rouge">S3</code>,</li>
+      <li>iterate over elements of <code class="highlighter-rouge">S1</code> inserting each element that also exists in <code class="highlighter-rouge">S2</code> into <code class="highlighter-rouge">S3</code>.</li>
+    </ol>
+  </li>
+  <li><code class="highlighter-rouge">equals</code>: given two sets $S_1$ and $S_2$, check the equality of the two sets, possible implementation:
+    <ol>
+      <li>first, check that $S_1$ and $S_2$ sizes are equal,</li>
+      <li>then, iterating <strong>in-order</strong> in parallel in both $S_1$ and $S_2$ to validate the equality of traversed elements.</li>
+    </ol>
+  </li>
+</ul>
+
+<h3 id="map">Map</h3>
+
+<p>Synonyms: Associative containers, dictionary, symbol table.</p>
+
+<p>A <strong>map</strong> is a collection of searchable key-value pairs, where each key has a value.</p>
+
+<p><strong>Example 1</strong>, we can have a <strong>map</strong> representing count of words in a page or textbook, so the <strong>key</strong> here is the <em>word</em>, while the <strong>value</strong> is the count of this word.</p>
+
+<p><strong>Example 2</strong>, for the function that counts characters in <strong>DNA</strong>:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">countCharacter</span><span class="p">(</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">dna</span><span class="p">,</span> <span class="kt">char</span> <span class="n">query</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dna</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span> <span class="n">query</span> <span class="o">==</span> <span class="n">dna</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+                <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">count</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">dna</span> <span class="o">=</span> <span class="n">getDNA</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">countA</span> <span class="o">=</span> <span class="n">countCharacter</span><span class="p">(</span> <span class="n">dna</span> <span class="p">,</span> <span class="sc">'A'</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">countC</span> <span class="o">=</span> <span class="n">countCharacter</span><span class="p">(</span> <span class="n">dna</span> <span class="p">,</span> <span class="sc">'C'</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">countG</span> <span class="o">=</span> <span class="n">countCharacter</span><span class="p">(</span> <span class="n">dna</span> <span class="p">,</span> <span class="sc">'G'</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">countT</span> <span class="o">=</span> <span class="n">countCharacter</span><span class="p">(</span> <span class="n">dna</span> <span class="p">,</span> <span class="sc">'T'</span><span class="p">);</span>
+
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"A:"</span> <span class="o">&lt;&lt;</span> <span class="n">countA</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+                  <span class="o">&lt;&lt;</span> <span class="s">"C:"</span> <span class="o">&lt;&lt;</span> <span class="n">countC</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+                  <span class="o">&lt;&lt;</span> <span class="s">"G:"</span> <span class="o">&lt;&lt;</span> <span class="n">countG</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+                  <span class="o">&lt;&lt;</span> <span class="s">"T:"</span> <span class="o">&lt;&lt;</span> <span class="n">countT</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>This function was called four times (i.e to count <strong>A</strong>, <strong>C</strong>, <strong>G</strong>, and <strong>T</strong>). However, by using <strong>map</strong> data structure we can run this function to count all characters in a single run!</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span> <span class="n">argc</span> <span class="o">==</span> <span class="mi">2</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">dna</span> <span class="o">=</span> <span class="n">getDNA</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">);</span>
+
+        <span class="n">char_map</span><span class="o">::</span><span class="n">CharMap</span> <span class="n">dnaCounter</span> <span class="o">=</span> <span class="n">char_map</span><span class="o">::</span><span class="n">create</span><span class="p">();</span>
+
+        <span class="k">for</span><span class="p">(</span> <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">dna</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="p">;</span> <span class="o">++</span><span class="n">i</span> <span class="p">)</span>
+            <span class="n">map</span><span class="o">::</span><span class="n">value</span><span class="p">(</span> <span class="n">dnaCounter</span> <span class="p">,</span> <span class="n">dna</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span><span class="o">++</span><span class="p">;</span>
+
+        <span class="n">char_map</span><span class="o">::</span><span class="n">printAll</span><span class="p">(</span> <span class="n">dnaCounter</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Another important usage of <strong>map (ADT)</strong> is to implement a <strong>graph (ADT)</strong> by:</p>
+
+<ol>
+  <li>representing each node in the graph as a <strong>key</strong>,</li>
+  <li>and the associated <strong>value</strong> to that key is a list of the connected nodes.</li>
+</ol>
+
+<h4 id="implementing-a-dictionary-ie-map-using-bst">Implementing a Dictionary (i.e Map) Using BST</h4>
+
+<p>Map implementation using <strong>BST</strong> would be as easy as implementing a <strong>set</strong> using the concrete routines of <strong>BST</strong>.</p>
+
+<ol>
+  <li><code class="highlighter-rouge">create</code>: returns empty dictionary.</li>
+  <li><code class="highlighter-rouge">isEmpty</code>: checks if dictionary is empty.</li>
+  <li><code class="highlighter-rouge">size</code>: returns the size of the dictionary.</li>
+  <li><code class="highlighter-rouge">insert</code>: inserts new key to the dictionary.</li>
+  <li><code class="highlighter-rouge">remove</code>: remove an element by its key.</li>
+  <li><code class="highlighter-rouge">at</code>: returns a reference to the value associated with a given dictionary. Crashes if the key is not found.</li>
+  <li><code class="highlighter-rouge">value</code>: returns a reference to the value associated with a given key. If key not found, then insert a new key with the given key then returns a reference to the newly created value.</li>
+  <li><code class="highlighter-rouge">contains</code>: checks if a key exists in the dictionary.</li>
+</ol>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">MapNode</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">key</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">value</span><span class="p">;</span>
+    <span class="n">MapNode</span> <span class="o">*</span><span class="n">left</span><span class="p">;</span>
+    <span class="n">MapNode</span> <span class="o">*</span><span class="n">right</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">using</span> <span class="n">WordMap</span> <span class="o">=</span> <span class="n">MapNode</span> <span class="o">*</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h5 id="syntactical-sugar">Syntactical Sugar</h5>
+
+<p>One usage of C++ aliases, is abstraction of types. In the line <code class="highlighter-rouge">using WordMap = MapNode *;</code>, we are making an alias for a pointer type naming it <code class="highlighter-rouge">WordMap</code>. Now, we wish, in the main function, to pay no attention to the implementation details of our map. So, we wish not to see any asterisks (pointer) in the main function.</p>
+
+<p>Since we decided to hide the implementation details in the main function, we hope not to initialize an empty <strong>map</strong> using the following syntax:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">map</span><span class="o">::</span><span class="n">WordMap</span> <span class="n">wmap</span> <span class="o">=</span> <span class="nb">nullptr</span><span class="p">;</span> <span class="c1">// Correct. But, something vague here!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>// In the above snippet, we should have a prior knowledge about the alias <code class="highlighter-rouge">WordMap</code> that represents a pointer, so we initialize it with <code class="highlighter-rouge">nullptr</code>.</p>
+
+<p><strong>A much better and clean solution</strong> is to write a function that returns an empty map. Hence, we hid our assumptions and conventions from the <strong>map</strong> user in the main function.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">WordMap</span> <span class="nf">create</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nb">nullptr</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, in the main function it becomes cleaner to have an empty <strong>map</strong> using the following syntax:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">map</span><span class="o">::</span><span class="n">WordMap</span> <span class="n">wmap</span> <span class="o">=</span> <span class="n">map</span><span class="o">::</span><span class="n">create</span><span class="p">();</span> <span class="c1">// Much cleaner!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">isEmpty</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">isLeaf</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">size</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">find</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">key</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">at</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">key</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">insert</span><span class="p">(</span> <span class="n">WordMap</span> <span class="o">&amp;</span><span class="n">wmap</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">key</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="n">WordMap</span> <span class="n">minNode</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">remove</span><span class="p">(</span> <span class="n">WordMap</span> <span class="o">&amp;</span><span class="n">wmap</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">key</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="o">&amp;</span><span class="n">value</span><span class="p">(</span> <span class="n">WordMap</span> <span class="o">&amp;</span><span class="n">wmap</span> <span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">key</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">clear</span><span class="p">(</span> <span class="n">WordMap</span> <span class="o">&amp;</span><span class="n">wmap</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">printAll</span><span class="p">(</span> <span class="n">WordMap</span> <span class="n">wmap</span> <span class="p">)</span>
+<span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="exercise-and-assignment-text-processing">Exercise and Assignment: Text Processing</h3>
+
+<p>Clone your group lab work and assignment from this <a href="https://classroom.github.com/g/JPz8R-yi">link</a>.</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wupToqz1e2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
+<p>Consider the following text for <a href="https://en.wikipedia.org/wiki/Carl_Sagan">Carl Sagan</a></p>
+
+<blockquote>
+  <p>Look again at that dot. That’s here. That’s home. That’s us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every “superstar,” every “supreme leader,” every saint and sinner in the history of our species lived there on a mote of dust suspended in a sunbeam. The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds. Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we’ve ever known.</p>
+</blockquote>
+
+<h4 id="prelimenary-statistics">Prelimenary Statistics</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Total count of words</th>
+      <th>count of words after removing duplicates (i.e word set)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>362</td>
+      <td>205</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="comparing-stdstrings">Comparing <code class="highlighter-rouge">std::string</code>s</h4>
+
+<p>Insertion and removal in <strong>BST</strong> depends in comparison in each step between the tree nodes. When we compare integers, we simply use the <code class="highlighter-rouge">&lt;</code>, <code class="highlighter-rouge">&lt;=</code>, <code class="highlighter-rouge">&gt;</code>, <code class="highlighter-rouge">&gt;=</code>, <code class="highlighter-rouge">==</code> operators. What if we need to compare strings lexicographically (i.e in order to be alphabetically ordered)?</p>
+
+<p>Fortunately, <a href="http://en.cppreference.com/w/cpp/string/basic_string"><code class="highlighter-rouge">std::string</code></a> comes with a lot of embedded functions. We are going to use the embedded <a href="http://en.cppreference.com/w/cpp/string/basic_string/compare"><code class="highlighter-rouge">compare</code></a> function.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;string&gt;
+</span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s1</span> <span class="o">=</span> <span class="s">"batman"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">s2</span> <span class="o">=</span> <span class="s">"superman"</span><span class="p">;</span>
+
+    <span class="kt">int</span> <span class="n">comparison</span> <span class="o">=</span> <span class="n">s1</span><span class="p">.</span><span class="n">compare</span><span class="p">(</span> <span class="n">s2</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>comparison value</th>
+      <th>explanation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>positive</td>
+      <td>it means that <code class="highlighter-rouge">s1</code> comes after <code class="highlighter-rouge">s2</code> alphabetically, which is not the case</td>
+    </tr>
+    <tr>
+      <td>negative</td>
+      <td>it means that <code class="highlighter-rouge">s1</code> precedes <code class="highlighter-rouge">s2</code> alphabetically, which is the case</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>it means that <code class="highlighter-rouge">s1</code> equals <code class="highlighter-rouge">s2</code>, which is not the case</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="lab-work-extract-set-of-words-in-a-text-using-set-adt">Lab work: Extract Set of Words in a Text using Set (ADT)</h4>
+
+<ol>
+  <li>Complete the source code in <code class="highlighter-rouge">set.hpp</code> to produce a <strong>set</strong> of <code class="highlighter-rouge">std::string</code>s.</li>
+  <li>Complete the source code in <code class="highlighter-rouge">unique_words.cpp</code> to print the set of words of the given file.</li>
+</ol>
+
+<h4 id="group-assignment-1-a-implement-a-dictionary-that-maps-characters-to-integers">Group Assignment 1-A: Implement a Dictionary That Maps Characters to Integers</h4>
+
+<p>You are required here to develop a dictionary that has <code class="highlighter-rouge">char</code> as a key and <code class="highlighter-rouge">int</code> as a value. We will use this dictionary to keep track of each character count.</p>
+
+<ol>
+  <li>Complete the implementation in <code class="highlighter-rouge">cmap.hpp</code>, to produce a a dictionary that maps <code class="highlighter-rouge">char</code> to <code class="highlighter-rouge">int</code>.</li>
+  <li>Complete the source code in <code class="highlighter-rouge">countDNA.cpp</code>, to count each base in the given dna file using the developed <strong>dictionary</strong>.</li>
+</ol>
+
+<h4 id="group-assignment-2-b-evaluate-the-count-of-each-word-in-a-text-using-map-adt">Group Assignment 2-B: Evaluate the count of each word in a text using Map (ADT)</h4>
+
+<ol>
+  <li>Complete the implementation in the <code class="highlighter-rouge">map.hpp</code> file to produce a <strong>dictionary</strong> that maps <code class="highlighter-rouge">std::string</code> to <code class="highlighter-rouge">int</code>.</li>
+  <li>Complete the source code in <code class="highlighter-rouge">count_words.cpp</code> to count each word in the given text file.</li>
+</ol>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Asem Alaa
+            
+            </li>
+            
+            <li><a href="mailto:asem.a.abdelaziz@gmail.com">asem.a.abdelaziz@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+          <li>
+            <a href="https://github.com/A-Alaa"><span class="icon icon--github"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"/></svg>
+</span><span class="username">A-Alaa</span></a>
+
+          </li>
+          
+
+          
+            <li>
+              <a href="https://linkedin.com/in/asem-alaa">
+                <i class="fa fa-linkedin"></i> LinkedIn
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>These pages shall contain all the materials corresponding to  courses, assigned to me, in the SBME department at Cairo University.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

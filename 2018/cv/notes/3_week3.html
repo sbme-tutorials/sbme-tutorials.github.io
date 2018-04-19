@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,11 +6,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Tutorials for SBME Students</title>
+  <title>Week 3: Images in Frequency Domain</title>
   <meta name="description" content="These pages shall contain all the materials corresponding to courses, assigned to me, in the SBME department at Cairo University.">
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="http://localhost:4000/404.html">
+  <link rel="canonical" href="http://localhost:4000/2018/cv/notes/3_week3.html">
   <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
   <link rel="stylesheet" href="/css/font-awesome.min.css">
   
@@ -26,6 +25,110 @@
   <div class="wrapper">
     <!-- 
      -->
+    
+
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
     
     
 <!--   
@@ -289,35 +392,231 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-=======
----
-layout: default
----
+        <article class="post">
 
-<style type="text/css" media="screen">
->>>>>>> 8ee955a10fff7fbbcbe09ac4cb9a08d505d46a40
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+  <header class="post-header">
+    <h1 class="post-title">Week 3: Images in Frequency Domain</h1>
+  </header>
 
-<div class="container">  
-  <h1>404</h1>
-  <img src="/gallery/john-travolta.gif">
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#discrete-fourier-transform-dft" id="markdown-toc-discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</a>    <ul>
+      <li><a href="#example" id="markdown-toc-example">Example</a></li>
+      <li><a href="#solution" id="markdown-toc-solution">Solution</a></li>
+    </ul>
+  </li>
+  <li><a href="#properties-of-dft" id="markdown-toc-properties-of-dft">Properties of DFT</a>    <ul>
+      <li><a href="#complex" id="markdown-toc-complex">Complex</a></li>
+      <li><a href="#high-and-low-frequency-components" id="markdown-toc-high-and-low-frequency-components">High and low frequency components</a></li>
+      <li><a href="#no-one-to-one-corresponding" id="markdown-toc-no-one-to-one-corresponding">No one to one corresponding</a></li>
+      <li><a href="#symmetric" id="markdown-toc-symmetric">Symmetric</a></li>
+      <li><a href="#periodic" id="markdown-toc-periodic">Periodic</a></li>
+    </ul>
+  </li>
+  <li><a href="#inverse-fourier-transform" id="markdown-toc-inverse-fourier-transform">Inverse Fourier Transform</a></li>
+  <li><a href="#fourier-filtering" id="markdown-toc-fourier-filtering">Fourier Filtering</a>    <ul>
+      <li><a href="#ideal-lpf-example" id="markdown-toc-ideal-lpf-example">Ideal LPF Example</a></li>
+      <li><a href="#ideal-hpf-example" id="markdown-toc-ideal-hpf-example">Ideal HPF Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#color-image-processing-block-diagram" id="markdown-toc-color-image-processing-block-diagram">Color Image Processing Block Diagram</a></li>
+  <li><a href="#demo" id="markdown-toc-demo">Demo</a></li>
+</ul>
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-<<<<<<< HEAD
-</div>
+<h2 id="discrete-fourier-transform-dft">Discrete Fourier Transform (DFT)</h2>
+<p>Fourier transform is a decomposition of a signal into some basis functions. Here basis functions are weighed sum of sin and cos functions 
+Given a discrete image I(x,y) the fourier transform of it is  :</p>
+
+<script type="math/tex; mode=display">I(u,v) = \sum_{x= 0}^{N_{clos} - 1 } \sum_{y = 0}^{N_{rows} - 1}  I(x,y) e^{-i2 \pi (\frac{xu}{N_{cols}}+\frac{yv}{N_{rows}})}</script>
+
+<p><img src="../images/Basis_functions.png" alt="" /></p>
+
+<p>Low frequency components are found at the central regions while high frequency components are in peripherals.</p>
+
+<p>The Original Image
+<img src="../images/Original_Image.png" alt="" /></p>
+
+<p>Fourier Transform of the image Without shifting</p>
+
+<p><img src="../images/FT_noShift.png" alt="" /></p>
+
+<p>Fourier Transform of the image after shifting. Shifting is done to move zero frequency component to the center of the image.</p>
+
+<p><img src="../images/Fourier_Spectrum_of_the_image.png" alt="" /></p>
+<h3 id="example">Example</h3>
+
+<p>For the image shown find Fourier transform at points I(0,0), I(0,1) and I(1,0)</p>
+
+<p><img src="../images/FT_ex.png" alt="" /></p>
+
+<h3 id="solution">Solution</h3>
+<ul>
+  <li>
+    <p><strong>F(0,0)</strong></p>
+
+    <ol>
+      <li>
+        <script type="math/tex; mode=display">I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{x*0}{4}+\frac{y*0}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{0}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(0,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y)  = 12</script>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>F(0 , 1)</strong></p>
+
+    <ol>
+      <li>
+        <script type="math/tex; mode=display">I(0,1) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{y}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(0,1) = 2 e^{-2 \pi j(0)} +  e^{-2 \pi j(0)} + 2 e^{-2 \pi j(\frac{1}{4})} +</script>
+      </li>
+    </ol>
+
+    <script type="math/tex; mode=display">e^{-2 \pi j(\frac{1}{4})} + 2 e^{-2 \pi j(\frac{2}{4})} + e^{-2 \pi j(\frac{2}{4})} + 2 e^{-2 \pi j(\frac{3}{4})}  +  e^{-2 \pi j(\frac{3}{4})} = 0</script>
+  </li>
+  <li>
+    <p><strong>F(1, 0)</strong></p>
+    <ol>
+      <li>
+        <script type="math/tex; mode=display">I(1,0) = \sum_{x= 0}^{3} \sum_{y = 0}^{3}  I(x,y) e^{-i2 \pi (\frac{x}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(1,0) = 6 e^{-2 \pi j(\frac{1}{4})}+ 4 e^{-2 \pi j(\frac{2}{4})}  + 2 e^{-2 \pi j(\frac{3}{4})}</script>
+      </li>
+      <li>
+        <script type="math/tex; mode=display">I(1,0) = -4 - 4j</script>
+      </li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="properties-of-dft">Properties of DFT</h2>
+
+<ul>
+  <li>
+    <h3 id="complex">Complex</h3>
+    <p>It is a complex representation of the image. So it includes a magnitude and a phase.  Magnitude component is the desired one in visualization. It represents the weight of each frequency component and gives an intuitive impression about frequency spectrum of the image. Due to large variations in magnitudes (Center of the image has a high value compared with other values) we display it in a log scale to compress dynamic range  see <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/pixlog.htm">link</a></p>
+  </li>
+</ul>
+
+<script type="math/tex; mode=display">log_{10} (1 + ||I(u, v )||)</script>
+
+<ol>
+  <li>Magnitude image without log transformation
+  <img style="width:150%" src="../images/FT_Nolog.png" /></li>
+  <li>Magnitude image with log transformation
+  <img style="width:175%" src="../images/Fourier_Spectrum_of_the_image.png" /></li>
+</ol>
+
+<p>Phase is very important for image recovery but has no significance in visualization</p>
+<ul>
+  <li>
+    <h3 id="high-and-low-frequency-components">High and low frequency components</h3>
+    <p>In Fourier domain central regions represent the low frequency components and peripheral regions represent the high frequency components and the center of the image represents the DC value with zero frequency which is the total intensity of the image.</p>
+  </li>
+  <li>
+    <h3 id="no-one-to-one-corresponding">No one to one corresponding</h3>
+    <p>where each point in frequency domain is calculated from the whole spatial image</p>
+
+    <p><script type="math/tex">I(u,v) = T(I)(x,y)</script> not <script type="math/tex">T(I(x,y))</script></p>
+  </li>
+  <li>
+    <h3 id="symmetric">Symmetric</h3>
+    <p>which means that we can recover the image if we have only the half of fourier domain. This is a very important property in fourier transform and used in MRI imaging see <a href="http://mriquestions.com/partial-fourier.html">partial fourier imaging</a>.</p>
+  </li>
+</ul>
+
+<p><img style="scale:80%" src="../images/HFI.png" /></p>
+
+<p><strong>Question</strong>: Where redundancy comes from ??</p>
+
+<p><strong>Answer</strong> : Each point in fourier domain is a complex with two information magnitude and phase or real part and imaginary part. So half of fourier image actually hold up the whole information of the spatial domain image.</p>
+
+<ul>
+  <li>
+    <h3 id="periodic">Periodic</h3>
+    <p>As we deal with a digital images (Sampled) and sampling implies periodicity so 2D FT is periodic.</p>
+  </li>
+</ul>
+
+<h2 id="inverse-fourier-transform">Inverse Fourier Transform</h2>
+
+<script type="math/tex; mode=display">I(x,y) = \frac{1}{N_{rows} N_{cols}} \sum_{u= 0}^{N_{clos} - 1 } \sum_{v = 0}^{N_{rows} - 1}  I(u,v) e^{i2 \pi (\frac{xu}{N_{cols}}+\frac{yv}{N_{rows}})}</script>
+
+<p>Inverse transformation from  spatial domain to spatial domain. Looks like fourier transform except for the sign of exponential and the weight of the function.</p>
+<h2 id="fourier-filtering">Fourier Filtering</h2>
+
+<p>Basic concept of fourier filtering is to mask desired frequencies and suppress undesired components. It is just multiplication process alternative to convolution in spatial domain which is computationally expensive. the block diagram of fourier filtering process 
+<img style="scale:80%" src="../images/Fourier_Filtering.png" /></p>
+
+<h3 id="ideal-lpf-example">Ideal LPF Example</h3>
+<p>This is the filter that masks the low frequency components 
+<img src="../images/Ideal_Low_Pass_Filter_in_frequency_domain.png" alt="" /></p>
+
+<p>Spectrum of the image after applying the ideal LPF 
+<img src="../images/Spectrum_After_applying_LPF.png" alt="" /></p>
+
+<p>the effect of suppression high frequency components is blurring the image
+<img src="../images/ValueChannelLPF.png" alt="" /></p>
+
+<h3 id="ideal-hpf-example">Ideal HPF Example</h3>
+<p>This is the filter that masks the high frequency components 
+<img src="../images/Ideal_High_Pass_Filter_in_frequency_domain.png" alt="" /></p>
+
+<p>Spectrum of the image after applying the HPF 
+<img src="../images/Spectrum_After_applying_HPF.png" alt="" /></p>
+
+<p>Suppression of low frequency components will produce an edge image</p>
+
+<p><img src="../images/ValueChannelHPF.png" alt="" /></p>
+
+<h2 id="color-image-processing-block-diagram">Color Image Processing Block Diagram</h2>
+
+<p>Dealing with colored images is not applicable in RGB color space. So we need to move to another color space for example HSV color space and applying our filtering on the channel associated with intensity (Here value channel). Now region channels again and finally return back to RGB color space. The block diagram is illustrated in the following figure.</p>
+
+<p><img src="../images/block_diagram.png" alt="" /></p>
+
+<p>This is the result of applying this block diagram on the previous filtered images. We can see that color information returned back to the image.</p>
+
+<p><img style="width:90%" src="../images/Filtered_Image.png" />
+<img style="width:80%" src="../images/Filtered_Image-1.png" /></p>
+
+<h2 id="demo">Demo</h2>
+<p>You can download the demo from <a href="https://github.com/sbme-tutorials/cv_week3_demo.git">cv_week3_demo</a>.</p>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
       </div>
     </main>
 
@@ -373,6 +672,3 @@ layout: default
   </body>
 
 </html>
-=======
-</div>
->>>>>>> 8ee955a10fff7fbbcbe09ac4cb9a08d505d46a40
