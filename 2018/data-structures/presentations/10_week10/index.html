@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 10: Merge and Quick Sorting, more on Dijkstra, and the Final Project</title>
+    <link rel="stylesheet" href="/css/laminal2.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+---
+## Divide and Conquer Strategy: The Merge Sorting
+
+1. Break the big problem into smaller ones.
+1. Solve the smaller problems.
+1. Combine the solutions to get the solution of the big problem.
+
+---
+| Merge Sort animated |
+|--------------------|
+| ![merge](/gallery/Merge-sort-example-300px.gif) |
+| [Creative Commons](https://en.wikipedia.org/wiki/File:Merge-sort-example-300px.gif) |
+
+---
+### Complexity Analysis
+
+| Merge Sort Analysis via diagram |
+|-----------------|
+| ![mergoh](/gallery/mergecomplexity.png) |
+| [CC-BY-NC-SA](https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/analysis-of-merge-sort) |
+
+---
+For advanced details, see [Analysis of merge sort \| Khan Academy](https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/analysis-of-merge-sort).
+
+
+---
+### Implementation
+
+--
+#### Divide and Conquer
+
+```c++
+void mergeSort( std::vector< double > &a , int low, int high)
+{
+	if (low < high)
+	{
+		int mid=(low+high)/2;
+		// Split the data into two half.
+		mergeSort(a, low, mid);
+		mergeSort(a, mid+1, high);
+ 
+		// Merge them to get sorted output.
+		merge(a, low, mid, high);
+	}
+}
+```
+
+---
+#### Combine the small solutions
+##### Make external copies
+
+```c++
+void merge( std::vector< double > &a , int low, int mid , int high )
+{
+    int n1 = mid - low + 1;
+    int n2 =  high - mid;
+ 
+    std::queue<double> left, right;
+    
+    for (int i = 0; i < n1; i++)
+        left.push( a[low + i] );
+    for (int i = 0; i < n2; i++)
+        right.push( a[mid + 1 + i]);
+}
+```
+
+---
+#### Combine the small solutions
+##### combine the solutions
+
+```c++ 
+int offset = low;
+while( !left.empty() && !right.empty())
+{
+    if( left.front() < right.front())
+    {
+        a[ offset ] = left.front();
+        left.pop();
+    }
+    else
+    {
+        a[ offset ] = right.front();
+        right.pop();
+    }
+    ++offset;
+}
+```
+
+---
+#### Combine the small solutions
+##### combine the solutions
+
+```c++
+while( !left.empty())
+{
+    a[ offset++ ] = left.front();
+    left.pop();
+}
+while( !right.empty())
+{
+    a[ offset++ ] = right.front();
+    right.pop();
+}
+```
+
+---
+### John Von Neumann
+
+| John Von Neumann (1903-1957) |
+|--------------------|
+| <img src="/gallery/JohnvonNeumann-LosAlamos.gif" width="40%"> |
+
+--
+* Game Theory
+
+--
+* Quantum Mechanics
+
+--
+* Ergodic Theory
+
+--
+* Computer Science
+
+--
+* [{Manhattan Project}](https://en.wikipedia.org/wiki/Manhattan_Project).
+
+
+---
+## Divide and Conquer Strategy: The Quick Sorting
+
+
+| Quick Sort animated |
+|--------------------|
+| ![quick](/gallery/quick_sort_partition_animation.gif) |
+| [source](https://www.tutorialspoint.com/data_structures_algorithms/quick_sort_algorithm.htm) |
+
+
+---
+Pivot selection:
+
+1. first element
+1. last element
+1. median
+1. random
+
+
+---
+### QuickSort: Implementation
+#### Divide and Conquer
+
+```c++
+void quickSort( std::vector< double > &a, int low, int high)
+{
+    if (low < high)
+    {
+        int pIdx = partition(a, low, high);
+        quickSort(a, low, pIdx - 1);  // Before pIdx
+        quickSort(a, pIdx + 1, high); // After pIdx
+    }
+}
+```
+
+---
+
+### QuickSort: Implementation
+#### Solve smaller problems
+```c++
+int partition( std::vector< double > &a, int low, int high )
+{
+    int pivot = a[low];  
+ 
+    int i = low , j = high;
+
+    while( i <= j )
+    {
+        while( a[ i ] < pivot ) ++i;
+        while( a[ j ] > pivot ) --j;
+        if( i <= j )
+            std::swap( a[i++] , a[j--]);
+    }
+    return low;
+}
+```
+
+
+---
+The source code:
+
+```bash
+git clone git@github.com:sbme-tutorials/sbe201-merge.git
+```
+
+
+---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kPRA0W1kECg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+---
+## The Shortest Path (TSP) Problem using Dijkstra's
+
+| Dijkstra animated |
+|--------------------|
+| ![dijk](/gallery/dijkstra.gif) |
+| [source](https://brilliant.org/wiki/dijkstras-short-path-finder/) |
+
+--
+Read [{Finding The Shortest Path, With A Little Help From Dijkstra}](https://medium.com/basecs/finding-the-shortest-path-with-a-little-help-from-dijkstra-613149fbdc8e)
+
+
+---
+### Dijkstra: Exercise
+
+![q](/gallery/diskq1.png)
+
+
+---
+### Edsger Wybe Dijkstra
+
+--
+| Edsger Wybe Dijkstra (1930-2002) |
+|--------------------|
+| <img src="/gallery/Edsger_Wybe_Dijkstra.jpg" width="40%"> |
+
+> Simplicity is prerequisites for reliability --- Dijkstra
+
+---
+## Next Week: Workshop
+
+### Prerequisites
+
+--
+1. Install Qt and QtCreator.
+1. Install CMake.
+1. Coursera Account.
+1. Install Jekyll.
+1. Install Latex and TexMaker.
+
+
+
+
+    </textarea>
+    
+    
+
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+  <script src="/javascript/remark-latest.min.js"></script>
+
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    var options = {
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
+
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+  </script>
+
+  <script src="/mathjax/MathJax.js"></script>
+
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+      jax: ["input/TeX", "output/HTML-CSS"],
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+      },
+      MathMenu: {
+       showRenderer: false,
+       showFontMenu: false,
+       showLocale: false
+      }
+    });
+  </script>
+  
+  </body>
+</html>
+
