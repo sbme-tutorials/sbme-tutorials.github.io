@@ -18,7 +18,8 @@ Features or **key-points** of the image are corners that are unique in the image
 **Lets see an example**
 
 Next figure shows two different scales of same image. In smaller image it is easy to detect that there is a corner, but what about same image in the large scale. It will be difficult to detect that corner so this feature point will not be recognized for all scales. 
-![](../images/sift_scale_invariant.jpg)
+<span style="display:block;text-align:center"><img style="width:85%"  src="../images/sift_scale_invariant.jpg"></span>
+
 
 ## Scale invariant feature descriptor (SIFT) 
 
@@ -37,6 +38,7 @@ Image pyramids or image scale space is a proposed method to handle image in diff
 The basic idea to build scale space is shown in the following figure 
 
 ![](../images/Image_pyramid.png)
+
 [source](https://en.wikipedia.org/wiki/Pyramid_(image_processing))
 
 In SIFT we usually prefer DOG scale space which is an approximate of LOG and simpler in calculation. 
