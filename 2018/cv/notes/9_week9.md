@@ -67,6 +67,7 @@ In SIFT Pyramid we have
 ### Key-point (corner) scale localization
 
 For each key-point (corner) we need to finds its best scale which have maximum value (cornerness measure). It is achieved by comparing same corners in the same octave with its neighbors in same, above and lower scales. Different It is not necessary for all corners to be localized at the same scale level.
+
 ![](../images/sift_local_extrema.jpg)
 
 ### Extract SIFT feature descriptor
@@ -77,18 +78,18 @@ For each key-point (corner) we need to finds its best scale which have maximum v
 
 After localization of a key-point in our scale space. We can now get its SIFT descriptor as follow
 
-1. Extract a $$16 \times 16$$ window centered by this point.
-2. Get gradient magnitude and multiply it by a $$16 \times 16$$ gaussian window of $$\sigma =1.5$$
-3. Get gradient angle direction. 
-4. Adjusting orientation (To be rotation invariant):
+* Extract a $$16 \times 16$$ window centered by this point.
+* Get gradient magnitude and multiply it by a $$16 \times 16$$ gaussian window of $$\sigma =1.5$$
+* Get gradient angle direction. 
+* Adjusting orientation (To be rotation invariant):
     * Get the gradient angle of the window and Quantize them to 36 values (0, 10, 20, ..., 360)
     * Locate dominant corner direction which is most probable angle (angle with max value in 36 bit angle histogram)
     * subtract dominant direction from gradient angle.
 
 ![](../images/siftOriented.png)
 
-4. Divide this $$16 \times 16$$ patch to sixteen $$4 \times 4$$ blocks
-5. For each block get magnitude weighted angle histogram 
+* Divide this $$16 \times 16$$ patch to sixteen $$4 \times 4$$ blocks
+* For each block get magnitude weighted angle histogram and normalize it (divide by total gradient magnitudes). 
  
  angles (quantized to 8 angles [0, 45, 90, ... , 360]) based on its relevant gradient magnitude i.e (histogram of angle 0 = sum(all magnitudes with angle 0))
 
@@ -96,10 +97,7 @@ After localization of a key-point in our scale space. We can now get its SIFT de
 
 
 
-6. SIFT feature descriptor will be a vector of 128 element (16 blocks $$\times$$ 8 values from each block)
-
-
-
+* SIFT feature descriptor will be a vector of 128 element (16 blocks $$\times$$ 8 values from each block)
 
 
 ## Feature matching
