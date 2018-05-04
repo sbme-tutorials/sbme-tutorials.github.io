@@ -13,22 +13,22 @@ by: "Eslam"
 
 ## Image Segmentation
 
-Image segmentation is the process of partitioning the image into isolated areas or segment. Each segment has similar features, for example have same intensity or same color etc, and is considered as an object in the image. There are many applications of image segmentation of medical images including automatic diagnostic applications and other application related to treatment. Treatment planning is an example of 3D image segmentation.
+Image segmentation is the process of partitioning the image into isolated areas or segments. Each segment has similar features, for example have same intensity or same color etc, and is considered as an object in the image. There are many applications of image segmentation for medical images including automatic diagnostic applications and other application related to treatment. Treatment planning is an example of 3D image segmentation.
 
 ### 3D Segmentation 
-3D object is reconstructed from series of medical images. Here an example of reconstruction of 3D human skull from a series of dicom images scanned by CT scanner. 
+3D object is reconstructed from series of medical images. this is an example for reconstruction of 3D human skull from a series of DICOM images scanned by CT scanner. 
 
 <span style="display:block;text-align:center"><img style="width:45%"  src="../images/Selection_061.png"></span>
 
-From that skull we can segment different interested regions or object. Here we are interested in segmentation of mandible, maxilla, upper and lower teeth. Each object now is separated and we can treat with it independently. Using these object dentists can plane process of dental implant or orthodontic treatment or any similar operation. 
+From that skull we can segment different interested regions or objects. Here we are interested in segmentation of mandible, maxilla, upper and lower teeth. Each object now is separated and we can treat with it independently. Using these objects, dentists can plan the process of dental implant or orthodontic treatment or any similar operation. 
 
 <span style="display:block;text-align:center"><img style="width:60%"  src="../images/results.png"></span>
 
-This was a project I worked on for a subject in my pre-master year under title "An optimized technique for 3D segmentation for orthodontic treatment plane". I used [VTK](https://www.vtk.org/) for reconstruction and segmentation processes and [Qt](https://www.qt.io/) for GUI design. Segmentation was based on thresholding and connectivity testing which is similar to region growing approach but in 3D.
+This was a project I worked on for a subject in my pre-master year under title "An optimized technique for 3D segmentation for orthodontic treatment plan". I used [VTK](https://www.vtk.org/) for reconstruction and segmentation processes and [Qt](https://www.qt.io/) for GUI design. Segmentation was based on thresholding and connectivity testing which is similar to region growing approach but in 3D.
 
 ## Histogram Based Segmentation (Image Binarization)
 
-Histogram based segmentation or image binarization segment the image into two classes, object and background based on a certain threshold. Image will be a binary image according to following equation
+Histogram based segmentation or image binarization segments the image into two classes, object and background based on a certain threshold. Image will be a binary image according to following equation
 
 $$
 I(x,y) = 
@@ -56,9 +56,9 @@ For general case histogram of object and background are merged together, we had 
 
 ### Basic Idea
 
-Otsu thresholding aims to automatically find optimal threshold for image binarization. It assumes two classes object and background. The idea is to select the threshold that will minimize within class variance or maximize between class variance. That's means that we need to calculate these values for all gray levels and select one that has minimum within class variance and maximum between class variance. 
+Otsu thresholding aims to automatically find optimal threshold for image binarization. It assumes two classes object and background. The idea is to select the threshold that will minimize within class variance or maximize between class variance. That's means that we need to calculate these values for all gray levels and select one with minimum within class variance and also it will be the maximum between class variance. 
 
-But what that mean ? It means that optimal threshold is that one who divide histogram into two parts given that distribution of values at same partition has minimum variance (Values are close to each other) or distributions of different partitions are isolated (far from each other).  
+But what that means ? It means that optimal threshold is that one who divide histogram into two parts given that distribution of values at same segment (class) has minimum variance (Values are close to each other) or distributions of different segments (classes) are isolated (far from each other).  
 
 
 ![](../images/Otsu's_Method_Visualization.gif)
@@ -167,7 +167,7 @@ Calculation of between class variance of all gray levels and extract threshold w
             othresh = t
     return othresh
 ```
-We didn't finished yet. we will use that threshold to binarize the image so lets define that function
+We didn't finished yet. we will use that threshold to binarize the image so lets define this function
 
 ```python
 def binarize( gray_image , threshold ):

@@ -13,16 +13,16 @@ by: "Eslam"
 
 ## Clustering Segmentation 
 
-Clustering is the process of grouping similar data points together and marking them as a same cluster or group. It is used in many fields including machine learning, data analysis and data mining. We can consider segmentation as a clustering problem. We need to cluster image into different object, each object pixels has common features for example same color or same intensity. 
+Clustering is the process of grouping similar data points together and marking them as a same cluster or group. It is used in many fields including machine learning, data analysis and data mining. We can consider segmentation as a clustering problem. We need to cluster image into different object, each object's pixels has common features for example same color or same intensity. 
 
 
-Talking about similarity criteria takes us to what so called feature. A feature is a value that measures or identify characteristic of subject, it must discriminate between different subjects. One of important rules in machine learning is that Good feature with simple classifier is more accurate that bad feature with robust classifier. 
+Talking about similarity criteria takes us to what so-called feature. A feature is a value that measures or identify characteristic of a subject, it must discriminate between different subjects. One of important rules in machine learning is that Good feature with simple classifier is more accurate than bad feature with robust classifier. 
 
-Feature space is an alternative space of ordinary data space. Its coordinates are feature values and each data point is represented by its value of different features. For example, color components R, G, and B are the coordinates of our feature space. Each pixel in the image will be represented as a 3D vector of its R, G, and B values. 
+Feature space is an alternative space of ordinary data space. Its coordinates are feature values and each data point is represented by its value of different features. For example, color components R, G, and B are the coordinates of our feature space. Each pixel in the image will be represented as a 3D vector of its R, G, and B values. Working in feature space in image segmentation collects pixels with same color (feature) together even so they are isolated in image space.
   
 ## K means Clustering
 
-K means clustering assumes random initial cluster centers in feature space. cluster data to these centers according to the distance between these data points and our centers. Now we can update the value of the center for each cluster, it is the mean of its points. Process is repeated and data are re-clustered for each iteration, new mean is calculated till convergence. Finally we have our centers and related data points. The process is shown in the following figure. 
+K means clustering Initially assumes random cluster centers in feature space. Data are clustered to these centers according to the distance between them and centers. Now we can update the value of the center for each cluster, it is the mean of its points. Process is repeated and data are re-clustered for each iteration, new mean is calculated till convergence. Finally we have our centers and its related data points. The process is shown in the following figure. 
 
 ![](../images/kmeans.gif)
 
@@ -152,7 +152,7 @@ We can see that convergence in 3D space is slower so classes picked none relevan
 
 ## Mean shift Clustering
 
-Mean shift clustering is non-parametric technique for clustering, it doesn't require specifying number of clusters. Also it is robust for outliers as clusters aren't in spherical shape it takes a none-linear shape according to clustering procedure. 
+Mean shift clustering is a non-parametric technique for clustering, it isn't require to specify the number of clusters. Also it is robust for outliers as clusters aren't in spherical shape it takes a none-linear shape according to clustering procedure. 
 
 ### Basic algorithm 
 Pseudo code of basic mean shift algorithm with uniform kernel 
