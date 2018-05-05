@@ -3,7 +3,7 @@ layout: page
 course: "sbe401"
 category: "assignment"
 year: "2018"
-title:  "Assignment 4 (Image Segmentation)"
+title:  "Assignment 4 : Otsu thresholding, Region growing, mean shift segmentation"
 by: "Eslam"
 pdf: true
 ---

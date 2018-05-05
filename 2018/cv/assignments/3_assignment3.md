@@ -3,7 +3,7 @@ layout: page
 course: "sbe401"
 category: "assignment"
 year: "2018"
-title:  "Assignment 3"
+title:  "Assignment 3: Canny, Hough transform, Harris and Fast"
 by: "Eslam"
 pdf: true
 ---

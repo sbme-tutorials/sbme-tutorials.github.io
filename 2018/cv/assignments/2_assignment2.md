@@ -3,7 +3,7 @@ layout: page
 course: "sbe401"
 category: "assignment"
 year: "2018"
-title:  "Assignment 2"
+title:  "Assignment 2: Spatial domain filters, Images in frequency domain"
 by: "Eslam"
 pdf: true
 ---

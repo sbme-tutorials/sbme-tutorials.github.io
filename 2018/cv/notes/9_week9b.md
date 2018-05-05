@@ -3,7 +3,7 @@ layout: page
 course: "sbe404"
 category: "notes"
 year: "2018"
-title:  "Week 9: Revision"
+title:  "Week 9: Exercises"
 by: "Eslam"
 ---
 * TOC
