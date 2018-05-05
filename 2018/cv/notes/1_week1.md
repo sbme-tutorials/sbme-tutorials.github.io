@@ -1,6 +1,6 @@
 ---
 layout: page
-course: "sbe404"
+course: "sbe404b"
 category: "notes"
 year: "2018"
 title:  "Week 1: Warming up with Python Basics"

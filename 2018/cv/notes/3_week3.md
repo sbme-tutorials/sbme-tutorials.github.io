@@ -1,6 +1,6 @@
 ---
 layout: page
-course: "sbe404"
+course: "sbe404b"
 category: "notes"
 year: "2018"
 title:  "Week 3: Images in Frequency Domain"

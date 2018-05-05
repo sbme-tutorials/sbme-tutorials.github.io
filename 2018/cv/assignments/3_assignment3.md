@@ -1,6 +1,6 @@
 ---
 layout: page
-course: "sbe401"
+course: "sbe404b"
 category: "assignment"
 year: "2018"
 title:  "Assignment 3: Canny, Hough transform, Harris and Fast"

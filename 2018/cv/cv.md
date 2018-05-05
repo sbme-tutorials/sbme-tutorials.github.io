@@ -4,10 +4,10 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 category: "coursepage"
-course: "sbe404"
+course: "sbe404b"
 year: "2018"
 ---
-# Computer Vision \(SBE404\) - Spring 2018
+# Computer Vision \(SBE404B\) - Spring 2018
 
 ## Teaching Staff
 

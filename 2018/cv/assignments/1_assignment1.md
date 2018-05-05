@@ -1,6 +1,6 @@
 ---
 layout: page
-course: "sbe401"
+course: "sbe404b"
 category: "assignment"
 year: "2018"
 title:  "Assignment 1: Images, Histograms, Gradients"
