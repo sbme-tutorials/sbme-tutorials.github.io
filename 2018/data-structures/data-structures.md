@@ -92,7 +92,8 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
     * \[[Slides]({{ site.baseurl }}{% link 2018/data-structures/presentations/10_week10/index.html %}){:target="_blank"}\]
     * Section Notes: \[[Merge and Quick Sorting, more on Dijkstra, and the Final Project]({{ site.baseurl }}{% link 2018/data-structures/notes/10_week10.md %}){:target="_blank"}\]
     * Individual Task: \[[Assignment 6: Wrapping All Data Structures and Algorithms in a Single Project]({{ site.baseurl }}{% link 2018/data-structures/assignments/10_week10.md %}){:target="_blank"}\]
-
+1. Week 11:
+    * Section Notes: \[[Hashes and the Final Project]({{ site.baseurl }}{% link 2018/data-structures/notes/11_week11.md %}){:target="_blank"}\]
 
 ## Frequently Asked Questions
 
