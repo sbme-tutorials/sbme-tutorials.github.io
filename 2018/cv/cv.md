@@ -118,4 +118,7 @@ Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa
 
 * Assignment 4 : [Otsu thresholding, Region growing, Mean shift segmentation]({% link 2018/cv/assignments/4_assignment4.md %})
 
+* Project : [Course Project]({% link 2018/cv/assignments/project.md %})
+
+
 ## Announcements
