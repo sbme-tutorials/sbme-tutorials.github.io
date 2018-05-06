@@ -22,18 +22,20 @@ Deadline will be .
 
 ## Project Description 
 
-Your are free to select one of these projects. Maximum 3 groups for each project and priority for those who selected first. You also can propose your own project. Anyway each group must confirm his project with the TA.
+You have to select one of these projects or propose your own. Maximum 3 groups for each project. Each group has to confirm his selection with the TA. 
 
-* Gesture detection
-* Face Detection
-* Optical character recognition 
-* Hand movement tracking
-* Person detection
+**Note: Priority will be based on earlier selection of groups**
+
+* Gesture detection.
+* Face Detection.
+* Optical character recognition. 
+* Person detection.
+* Image search based on image matching using SIFT feature descriptor.     
 
 ## Important Notes
 
-* You are allowed to use any build-in functions, packages. 
-* You have to make a presentation of your project
+* You are allowed to use any build-in functions, packages, etc. 
+* You have to deliver a presentation on your project
 * Presentation must include
     * Problem definition and Motivation.
     * Algorithms used (Clearly explain it even so you didn't implement yourself).

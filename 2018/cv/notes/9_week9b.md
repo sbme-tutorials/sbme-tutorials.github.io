@@ -44,7 +44,7 @@ Homogenous coordinates in 2D  $$\begin{bmatrix} x \\\ y  \\\ w \end{bmatrix}$$ a
 $$
 \begin{bmatrix}
 1 & 0 & t1 \\\
-0 & 0 & t2 \\\ 
+0 & 1 & t2 \\\ 
 0 & 0 & 1
 \end{bmatrix}
 $$

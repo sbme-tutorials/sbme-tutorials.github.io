@@ -13,23 +13,26 @@ by: "Eslam"
 
 ## Features and feature descriptors 
 
-Features or **key-points** of the image are corners that are unique in the image. Harris and FAST are two different corner detectors we have discussed later. Corner detectors are invariant for translation illumination and rotation. But it is not invariant for scaling. 
+Features or **key-points** of an image are corners which are unique in the image. Harris and FAST are two different corner detectors, we have discussed later. Corner detectors are invariant for translation, illumination and rotation. But it is variant for scaling. 
 
 **Lets see an example**
 
-Next figure shows two different scales of same image. In smaller image it is easy to detect that there is a corner, but what about same image in the large scale. It will be difficult to detect that corner so this feature point will not be recognized for all scales. 
+Next figure shows two different scales of same image. In smaller image,  it's easy to detect that there is a corner, but what about same image in the large scale. It will be difficult to detect that corner so this feature point will not be recognized for all scales. 
+
+So size of the window will effect the detection of corners. Large corners needs large windows and smaller corners needs smaller windows. 
+
 <span style="display:block;text-align:center"><img style="width:75%"  src="../images/sift_scale_invariant.jpg"></span>
 
 
 ## Scale invariant feature descriptor (SIFT) 
 
-Scale invariant feature descriptor (SIFT) is not a new way to find key-points or corners that is invariant to scale. But it is a descriptor of detected corners by other corner detectors in different image scales or image pyramids. 
-
-Another point that size of the window will effect the detection of corners. Large corners needs large windows and smaller corners needs smaller windows. 
+Scale invariant feature descriptor (SIFT) is not a new way to find key-points or corners that is invariant to scale. But it is a descriptor of detected corners of different image scales or image pyramids. 
 
 ### Image pyramids and scale-spaces
 
-Image pyramids or image scale space is a proposed method to handle image in different scales. We have two scale-spaces 
+Image pyramids or image scale space is the proposed method to handle images in different scales. We have different scale-spaces 
+
+* Gaussian scale space (Gaussian pyramid)
 
 * Laplacian of gaussian (LOG) scale space 
 
@@ -66,7 +69,7 @@ In SIFT Pyramid we have
 
 ### Key-point (corner) scale localization
 
-For each key-point (corner) we need to finds its best scale which have maximum value (cornerness measure). It is achieved by comparing same corners in the same octave with its neighbors in same, above and lower scales. Different It is not necessary for all corners to be localized at the same scale level.
+For each key-point (corner) we need to find its best scale which have maximum value (cornerness measure). It is achieved by comparing same corner with its neighbors of above and lower scales and select scale with maximum value. For same iamge, it is not necessary for its corners to be localized at same scale.
 
 ![](../images/sift_local_extrema.jpg)
 
@@ -76,7 +79,7 @@ For each key-point (corner) we need to finds its best scale which have maximum v
 
 [source](http://aishack.in/tutorials/sift-scale-invariant-feature-transform-features/)
 
-After localization of a key-point in our scale space. We can now get its SIFT descriptor as follow
+After localization of a key-point in our scale space. We can get its SIFT descriptor as follow
 
 * Extract a $$16 \times 16$$ window centered by this point.
 * Get gradient magnitude and multiply it by a $$16 \times 16$$ gaussian window of $$\sigma =1.5$$
@@ -101,7 +104,7 @@ After localization of a key-point in our scale space. We can now get its SIFT de
 
 
 ## Feature matching
-The basic idea of feature matching is to calculate the sum square difference between two different feature descriptors (SSD). So feature will be matched with another that has minimum SSD value. 
+The basic idea of feature matching is to calculate the sum square difference between two different feature descriptors (SSD). So feature will be matched with another with minimum SSD value. 
 
 $$
 SSD = \sum (v_1 - v_2)^2
@@ -113,10 +116,10 @@ where $$v_1$$ and $$v_2$$ are two feature descriptors.
 
 
 ### Brute-Force matcher
-In brute-force matcher we have to match descriptor of all features in an image to descriptors of all features in another image. It is extremely expensive as we know any brute-force algorithm will guarantee finding a solution, but doesn't guarantee optimal solution.
+In brute-force matcher we have to match descriptor of all features in an image to descriptors of all features in another image. It is extremely expensive as we know any brute-force algorithm will guarantee getting a solution, but doesn't guarantee getting optimal solution.
 
 ### RANSAC 
-Random sample consensus is an iterative method for estimation of parameters of a mathematical model. We will model the transformation of points in source image to destination one, and try to find the estimate of model parameters (affine transformations). The basic idea of RANSAC algorithm is shown in the following flow chart. 
+Random sample consensus is an iterative method for estimation of parameters of a mathematical model. We will model the transformation of points in source image to destination one, and try to find an estimate of model parameters. The basic idea of RANSAC algorithm is shown in the following flow chart. 
 
 ![](../images/ransac.png)
 
