@@ -16,13 +16,13 @@ pdf: true
 Deadline will be .
 
 ## Project Repository
-1. Go to project [link](). 
+1. Go to project [link](https://classroom.github.com/g/6RtjCDUG). 
 2. Join your team. 
 3. Clone repository. 
 
 ## Project Description 
 
-You have to select one of these projects or propose your own. Maximum 3 groups for each project. Each group has to confirm his selection with the TA. 
+You have to select one of these projects or propose your own. Maximum 3 groups for each project. Each group has to confirm his selection with TA by mail. 
 
 **Note: Priority will be based on earlier selection of groups**
 
