@@ -10,10 +10,9 @@ pdf: true
 * TOC
 {:toc}
 
-## Objectives
 
 ## Deadline
-Deadline will be .
+Deadline will be **May 13,2018**.
 
 ## Project Repository
 1. Go to project [link](https://classroom.github.com/g/6RtjCDUG). 
