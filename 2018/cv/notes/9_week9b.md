@@ -34,7 +34,8 @@ Find optimal threshold using Otsu.
 
 Plotting histogram 
 
-![](../images/histogram.jpeg) 
+<span style="display:block;text-align:center"><img style="width:80%"  src="../images/histogram.jpeg"></span>
+
 
 Between class variance $$\sigma_b^2$$
 
@@ -110,12 +111,12 @@ Plotting points in feature pace
   * Initial mean is (2, 3) 
   * Points in bandwidth are (1,2) (1,3) (1,3) (2,3) (3,3)  (3,3)
   * New mean $$(\frac{1 \times 3 + 2 \times 1 + 3 \times 2}{6}, \frac{2 \times 1 + 3 \times 5}{6}) = (1.8, 2.8)$$
-  * Second iteration points in bandwidth  are same point and new mean will be same (1.8, 2.8)
+  * Second iteration: points in bandwidth of new mean are the same point and new mean will be the same (1.8, 2.8)
 2. Second trial 
   * Initial mean (5, 4)
   * Points in bandwidth are  (4,5) (5,4) (5,4) (5,4) (5,4) (5,4) (5,4) (6, 3) (6, 5)
   * new mean $$(\frac{4 \times 1 + 5 \times 6 + 6 \times 2}{9}, \frac{3 \times 1 + 4 \times 6 + 5 \times 2}{9}) = (5.1, 4.1)$$
-  * Second iteration points in bandwidth  are same point and new mean will be same (5.1, 4.1)
+  * Second iteration:  points in bandwidth  are the same point and new mean will be the same (5.1, 4.1)
 
 ![](../images/mean-shift-sol.png)
 
@@ -176,12 +177,9 @@ $$A = A_1 + A_2 = 6$$
 
 ## Camera 
 
-Pipeline 
-* World Coordinates
-* Camera Coordinates
-* Image Coordinates (distorted to un-distorted coordinate)
-* Sensor coordinates (CCD camera sensors)
-* Memory Coordinates
+**Pipeline** 
+
+ World Coordinates $$\rightarrow$$ Camera Coordinates $$\rightarrow$$ Image Coordinates (distorted to un-distorted coordinate) $$\rightarrow$$ Sensor coordinates (CCD camera sensors) $$\rightarrow$$ Memory Coordinates
 
 
 ## Coordinates 
