@@ -128,7 +128,7 @@ $$
 A = \frac{1}{2} |\sum_{i = 0}^{N} x_i (y_{i+1} - y_{i-1})|
 $$ 
 
-Area of triangle is with points $$(x_1, y_1)$$, $$(x_2, y_2)$$ and (x_3, y_3)$$ 
+Area of triangle is with points $$(x_1, y_1)$$, $$(x_2, y_2)$$ and $$(x_3, y_3)$$ 
 
 $$
 A = \frac{1}{2} |det(\begin{bmatrix}
@@ -174,13 +174,21 @@ You can easily use calculator to get determinants. Total area will be
 
 $$A = A_1 + A_2 = 6$$
 
+## Camera 
+
+Pipeline 
+* World Coordinates
+* Camera Coordinates
+* Image Coordinates (distorted to un-distorted coordinate)
+* Sensor coordinates (CCD camera sensors)
+* Memory Coordinates
 
 
 ## Coordinates 
 
 Homogenous coordinates in 2D  $$\begin{bmatrix} x \\\ y  \\\ w \end{bmatrix}$$ and transformation matrices. w = 0 for point at infinity and w = 1 for object coordinates (Computer Graphics)
 
-* Translation  
+* Translation  in 2D 
 
 $$
 \begin{bmatrix}
@@ -190,7 +198,7 @@ $$
 \end{bmatrix}
 $$
 
-* Rotation
+* Rotation in 2D 
 
 $$
 \begin{bmatrix}
@@ -224,6 +232,44 @@ $$
 
 points [2, 3], [3, 7] apply rotation 90 degree and translation in x direction with 3.
 
+**Solution** 
+* [2, 3]
+
+$$
+\begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \begin{bmatrix}
+0 & -1 & 3 \\
+1 & 0 & 0 \\
+0 & 0 & 1 
+ \end{bmatrix} \times \begin{bmatrix} 
+ 2 \\
+ 3 \\
+ 1
+ \end{bmatrix} =   \begin{bmatrix} 
+ 0 \\
+ 2 \\
+ 1
+ \end{bmatrix}
+$$
+
+
+* [3, 7]
+
+$$
+\begin{bmatrix} x \\ y \\ 1 \end{bmatrix} = \begin{bmatrix}
+0 & -1 & 3 \\
+1 & 0 & 0 \\
+0 & 0 & 1 
+ \end{bmatrix} \times \begin{bmatrix} 
+ 3 \\
+ 7 \\
+ 1
+ \end{bmatrix} =   \begin{bmatrix} 
+ -4 \\
+ 3 \\
+ 1
+ \end{bmatrix}
+$$
+
 ## SIFT 
 
 Find 8 elements feature vector for following 4x4 block
@@ -236,6 +282,114 @@ $$
 62 & 70 & 79 & 119
 \end{bmatrix} 
 $$
+
+**Solution** 
+
+
+* **Getting gradient magnitude and direction**
+
+  Gx subtract in x direction.
+
+  $$
+  \begin{bmatrix}
+  96 & 2&  29&  62 \\\ 
+  72 & -4 & 26 &  70 \\\
+  69 & 0&  17&  60 \\\
+  62 & 8 & 9 & 40
+  \end{bmatrix} 
+  $$
+
+  Gy subtract in y direction
+
+
+  $$
+  \begin{bmatrix}
+  96 & 98&  127&  189 \\\ 
+  -24 & -30 & -33 &  -26 \\\
+  -3 & 1&  -8&  -17 \\\
+  -7 & 1 & -7 & -27
+  \end{bmatrix} 
+  $$
+
+  Gradient magnitude $$G_M =abs(G_x) + abs(G_y)$$
+
+  $$
+  \begin{bmatrix}
+  192 & 100&  156&  251 \\\ 
+  96 & 34 & 60 & 100 \\\
+  70 & 1&  88&  80 \\\
+  70 & 9 & 16 & 70
+  \end{bmatrix} 
+  $$
+
+  Gradient Direction $$G_\theta = tan^{-1}(\frac{G_y}{G_x})$$
+
+  $$
+  \begin{bmatrix}
+  45 & 88&  77&  71 \\\ 
+  341 & 262 & 308 & 339 \\\
+  360 & 90&  335&  344 \\\
+  353 & 7 & 322 & 325
+  \end{bmatrix} 
+  $$
+
+* **Adjusting orientation**
+
+  Quantization to Gradient direction 36 bins 
+
+  $$
+  \begin{bmatrix}
+  45 & 90&  80&  70 \\\ 
+  340 & 260 & 310 & 340 \\\
+  0 & 90&  340&  340 \\\
+  350 & 10 & 320 & 330
+  \end{bmatrix} 
+  $$
+
+  Dominant direction is 340 (Subtract it from gradient direction) So Gradient direction will be
+
+  $$
+  \begin{bmatrix}
+  60 & 110&  100&  90 \\\ 
+  0 & 280 & 330 & 0 \\\
+  20 & 110&  350&  0 \\\
+  10 & 30 & 340 & 350
+  \end{bmatrix} 
+  $$
+
+* **Magnitude weighted angle histogram**
+
+  Quantize gradient direction to 8 bins (0, 45, 90, ...) So it will be
+
+  $$
+  \begin{bmatrix}
+  45 & 90&  90&  90 \\\ 
+  0 & 270 & 325 & 0 \\\
+  0 & 90&  0&  0 \\\
+  0 & 45 & 0 & 0
+  \end{bmatrix} 
+  $$
+
+  And Gradient magnitude is 
+
+
+  $$
+  \begin{bmatrix}
+  192 & 100&  156&  251 \\\ 
+  96 & 34 & 60 & 100 \\\
+  70 & 1&  88&  80 \\\
+  70 & 9 & 16 & 70
+  \end{bmatrix} 
+  $$
+
+
+  So Magnitude weighted angle histogram  is 
+
+  |Angle| 0 |45 | 90 | 135 | 180 | 225 | 270 | 325|
+  |------|-----|-----|-----|-----|-----|-----|-----|-----|
+  |Sum of $$G_M$$|590| 201 |508 | 0 |0 |0 |34 | 60 |
+  |Relative (value/Total)|0.42| 0.15 |0.36 | 0 |0 |0 |0.02 | 0.05 |
+ 
 
 ## Quiz 3 
 
