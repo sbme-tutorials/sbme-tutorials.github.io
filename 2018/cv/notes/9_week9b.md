@@ -20,6 +20,73 @@ For Image segmentation we studied three methods
 
 * Clustering based segmentation (Mean shift segmentation) 
 
+## Otsu Binarization 
+
+Histogram of a 3 bit image is shown in the following table
+
+Gray level | 0 | 1 | 2 | 3 | 4 | 5 |6 | 7 |
+-----------|---|---|---|---|---|---|--|---|
+number of pixels| 2 | 3 | 2 | 1 | 2 |3 |2| 1|
+
+Find optimal threshold using Otsu.
+
+**Solution**
+
+Plotting histogram 
+
+![](../images/histogram.jpeg) 
+
+Between class variance $$\sigma_b^2$$
+
+$$
+\sigma_b^2 = c_1 (1-c_1) (\mu_1 - \mu_2)^2
+$$
+
+It is clear that optimal threshold is 3. 
+
+$$\sigma_b^2$$ at $$t = 3$$
+
+$$c_1 = \frac{2+3+2+1}{16} = \frac{1}{2}$$
+
+
+$$\mu_1 = \frac{0 \times 2+ 1 \times 3 + 2 \times 2+ 3 \times 1}{2+3+2+1} = \frac{10}{8}$$
+
+$$\mu_2 = \frac{4 \times 2+ 5 \times 3 + 6 \times 2+ 7 \times 1}{2+3+2+1} = \frac{42}{8}$$
+
+$$
+\sigma_b^2 = 0.5 \times 0.5 (4)^2 = 4
+$$
+
+**Let's try t = 4**
+
+$$\sigma_b^2$$ at $$t = 3$$
+
+$$c_1 = \frac{2+3+2+1+2}{16} = \frac{10}{16}$$
+
+
+$$\mu_1 = \frac{0 \times 2+ 1 \times 3 + 2 \times 2+ 3 \times 1 + 4 \times 2}{2+3+2+1+2} = \frac{18}{10}$$
+
+$$\mu_2 = \frac{5 \times 3 + 6 \times 2+ 7 \times 1}{3+2+1} = \frac{34}{6}$$
+
+$$
+\sigma_b^2 \sim 3.5
+$$
+
+
+Optimal threshold is $$t = 3$$ with maximum between class variance
+
+## Region growing
+
+Apply region growing on the following image. Initial point at (2,2). Threshold is 2. Use 4 connectivity.
+
+![](../images/region-growing.png)
+
+**Solution**
+
+The segmented region is shown in the following figure condition absolute difference < 2
+
+![](../images/region-growing-sol.png)
+
 ## Mean Shift 
 
 Basic steps are : 
@@ -32,7 +99,81 @@ Basic steps are :
 6. repeat till all points in the space are clustered. 
 
 ### Example 
-Points (1,2) (1,3) (1,3) (2,3) (3,3)  (3,3) (4,5) (5,4) (5,4) (5,4) (5,4) (5,4) (5,4) (6, 2) (6, 5) represent the feature space apply mean shift clustering with bandwidth of 2 and flat kernel.
+Points (1,2) (1,3) (1,3) (2,3) (3,3)  (3,3) (4,5) (5,4) (5,4) (5,4) (5,4) (5,4) (5,4) (6, 3) (6, 5) represent the feature space apply mean shift clustering with bandwidth of 2 and flat kernel.
+
+**Solution**
+
+Plotting points in feature pace
+
+
+1. First trial
+  * Initial mean is (2, 3) 
+  * Points in bandwidth are (1,2) (1,3) (1,3) (2,3) (3,3)  (3,3)
+  * New mean $$(\frac{1 \times 3 + 2 \times 1 + 3 \times 2}{6}, \frac{2 \times 1 + 3 \times 5}{6}) = (1.8, 2.8)$$
+  * Second iteration points in bandwidth  are same point and new mean will be same (1.8, 2.8)
+2. Second trial 
+  * Initial mean (5, 4)
+  * Points in bandwidth are  (4,5) (5,4) (5,4) (5,4) (5,4) (5,4) (5,4) (6, 3) (6, 5)
+  * new mean $$(\frac{4 \times 1 + 5 \times 6 + 6 \times 2}{9}, \frac{3 \times 1 + 4 \times 6 + 5 \times 2}{9}) = (5.1, 4.1)$$
+  * Second iteration points in bandwidth  are same point and new mean will be same (5.1, 4.1)
+
+![](../images/mean-shift-sol.png)
+
+## Image analysis (Length, Area)
+### Area 
+
+For shape with N points its area is 
+
+$$
+A = \frac{1}{2} |\sum_{i = 0}^{N} x_i (y_{i+1} - y_{i-1})|
+$$ 
+
+Area of triangle is with points $$(x_1, y_1)$$, $$(x_2, y_2)$$ and (x_3, y_3)$$ 
+
+$$
+A = \frac{1}{2} |det(\begin{bmatrix}
+x_1 & y_1 &  1 \\ 
+x_2 & y_2 &  1  \\ 
+x_3 & y_3 & 1 
+\end{bmatrix}
+)|
+$$
+
+Example: 
+
+Calculate the area of the following  shape
+
+![](../images/area.png)
+
+**Solution**
+
+We can use general equation or divide the figure into many rectangles as follow
+
+![](../images/area-sol.png)
+
+$$
+A_1 = \frac{1}{2} |det(\begin{bmatrix}
+ 1 &  1 &  1 \\ 
+ 3 & 1 &  1  \\ 
+1 & 3 & 1 
+\end{bmatrix}
+)| = 2
+$$
+
+
+$$
+A_2 = \frac{1}{2} |det(\begin{bmatrix}
+ 3 &  1 &  1 \\ 
+ 1 & 3 &  1  \\ 
+4 & 4 & 1 
+\end{bmatrix}
+)| = 4
+$$
+
+You can easily use calculator to get determinants. Total area will be
+
+$$A = A_1 + A_2 = 6$$
+
 
 
 ## Coordinates 
