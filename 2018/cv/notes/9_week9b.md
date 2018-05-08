@@ -9,7 +9,7 @@ by: "Eslam"
 * TOC
 {:toc}
 
-# Image Segmentation
+## Image Segmentation
 For Image segmentation we studied three methods 
 
 * Histogram based segmentation (Image thresholding and binarization) 
