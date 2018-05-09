@@ -84,14 +84,14 @@ Apply region growing on the following image. Initial point at (2,2). Threshold i
 
 **Solution**
 
-The segmented region is shown in the following figure condition absolute difference < 2. Here we assume each point is a new seed and compare relative to it.
+The segmented region is shown in the following figure condition $$\rightarrow$$ absolute difference < 2. Here we assume each point is a new seed and compare relative to it.
 
 ![](../images/region-growing-sol.png)
 
 
 **Another solution**
 
-The segmented region is shown in the following figure condition absolute difference <= 2. Here we compare relative to original seed 
+The segmented region is shown in the following figure condition $$\rightarrow$$ absolute difference <= 2. Here we compare relative to original seed 
 > Thanks to Eng.Hanna Nabil.
 
 
