@@ -3,7 +3,7 @@ layout: page
 course: "sbe404b"
 category: "notes"
 year: "2018"
-title:  "Week 9: Image features, feature descriptors, and feature matching"
+title:  "Week 10: Image features, feature descriptors, and feature matching"
 by: "Eslam"
 ---
 > These notes are inspired by slides made by TA Eng.Mohamed Hisham
