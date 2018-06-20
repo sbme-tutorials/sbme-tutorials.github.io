@@ -95,6 +95,11 @@ Exception: first two weeks you are very welcome to visit any day from **4pm** to
 1. Week 11:
     * Section Notes: \[[Hashes and the Final Project]({{ site.baseurl }}{% link 2018/data-structures/notes/11_week11.md %}){:target="_blank"}\]
 
+## Final Projects
+
+* [Proposed Projects for Students](https://github.com/sbme-tutorials/sbe201-ds-proposals)
+* [Qualified and Winner Teams]({{ site.baseurl }}{% link 2018/data-structures/project.md %}){:target="_blank"}
+
 ## Frequently Asked Questions
 
 ### I have a Unix-based system installed other than Ubuntu 16, should I install Ubuntu 16 instead?
