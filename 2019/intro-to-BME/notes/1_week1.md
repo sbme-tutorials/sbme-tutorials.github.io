@@ -22,7 +22,7 @@ email: `eslam.a.mahmoud@eng1.cu.edu.eg`
 ## Course Outlines
 * Collection of different disciplines in Biomedical Engineering
 * Building the big picture 
-* Expected topics : 
+* Disciplines: 
     * Embedded systems and Instrumentations
     * Biomechanics and Rehabilitation
     * Bio-signal Processing 
