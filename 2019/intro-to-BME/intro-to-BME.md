@@ -46,7 +46,6 @@ TBD
 ## Tutorials
 
 * Week 1. Warming up with Python Basics:
-    * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/1_week1/index.html%}){:target="_blank"}
     * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/1_week1.md%}){:target="_blank"}
 
 
