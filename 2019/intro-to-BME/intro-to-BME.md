@@ -15,28 +15,26 @@ Instructor: Dr. Tamer Yousef.
 
 Demonstrators:  Eng. Eslam Adel.  
 
-## Lecture Hours
-
-TBD
 
 ## Section Hours
 
-TBD
+
+Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 ## Office Hours
 
-TBD
 
-## Grading
-
-TBD
+| Day | Time |
+|-----|-----------|
+| Tuesday | from **12pm** to **4pm** |
+| Wednesday | from **2pm** to **6pm** |
 
 
 ## Course Outline
 
 | Week | Content |  Assignments
 |------|-----------------|-----|
-|   1  | Microcontroller and Embedded systems |
+|   1  | Getting started|  |
 
 
 
@@ -45,10 +43,8 @@ TBD
 
 ## Tutorials
 
-* Week 1. Warming up with Python Basics:
+* Week 1. Getting started.
     * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/1_week1/index.html%}){:target="_blank"}
-
-    * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/1_week1.md%}){:target="_blank"}
 
 
 ## Announcements

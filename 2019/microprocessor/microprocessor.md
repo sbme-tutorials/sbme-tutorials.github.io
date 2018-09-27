@@ -7,7 +7,7 @@ category: "coursepage"
 course: "sbe403a"
 year: "2019"
 ---
-# Microprocessor \(SBE403A\) - Autumn 2019
+# Medical Electronics Systems \(SBE403A\) - Autumn 2019
 
 ## Teaching Staff
 
@@ -15,28 +15,27 @@ Instructor: Dr. Tamer Yousef.
 
 Demonstrators:  Eng. Eslam Adel.  
 
-## Lecture Hours
-
-TBD
 
 ## Section Hours
 
-TBD
+| Section | Day | Time Slot |
+|---------|-----|-----------|
+|   1     | Thursday | 3rd  |
+|   2     | Thursday | 4th |
 
 ## Office Hours
 
-TBD
-
-## Grading
-
-TBD
+| Day | Time |
+|-----|-----------|
+| Tuesday | from **12pm** to **4pm** |
+| Wednesday | from **2pm** to **6pm** |
 
 
 ## Course Outline
 
-| Week | Content |  Assignments
+| Week | Content |  Tasks
 |------|-----------------|-----|
-|   1  | ESP |
+|   1  | ESP | Task 1|
 
 
 
@@ -45,10 +44,9 @@ TBD
 
 ## Tutorials
 
-* Week 1. Warming up with Python Basics:
-<>    * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/1_week1/index.html%}){:target="_blank"}
+* Week 1
+    * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/1_week1/index.html%}){:target="_blank"}
 
-* [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/1_week1.md%}){:target="_blank"}
 
 
 ## Announcements
