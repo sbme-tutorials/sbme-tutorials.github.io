@@ -7,17 +7,19 @@ category: "coursepage"
 course: "hemn115"
 year: "2019"
 ---
-# Introduction to Biomedical Engineering \(HEMN115\) - Autumn 2019
+# Introduction to Biomedical Engineering \(HEMN115\) - Full 2018
 
 ## Teaching Staff
 
-Instructor: Dr. Tamer Yousef. 
+Instructor: Dr. Tamer Basha. 
 
 Demonstrators:  Eng. Eslam Adel.  
 
+## Lecture Hours 
+
+Thursday 3rd Slot
 
 ## Section Hours
-
 
 Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
@@ -38,13 +40,23 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 
 
+## Lectures 
 
+* Week 1. 
+    * [Slides](https://drive.google.com/file/d/1_wbntX6paGuHWO4Paw_6vCL9F-qKYfcj/view){:target="_blank"}
 
 
 ## Tutorials
 
-* Week 1. Getting started.
+* Week 1.
     * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/1_week1/index.html%}){:target="_blank"}
+
+     * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/1_week1.md%}){:target="_blank"}
+
+
+## Assignments 
+
+* 
 
 
 ## Announcements

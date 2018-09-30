@@ -7,11 +7,11 @@ category: "coursepage"
 course: "sbe403a"
 year: "2019"
 ---
-# Medical Electronics Systems \(SBE403A\) - Autumn 2019
+# Medical Electronics Systems \(SBE403A\) - Full 2018
 
 ## Teaching Staff
 
-Instructor: Dr. Tamer Yousef. 
+Instructor: Dr. Tamer Basha. 
 
 Demonstrators:  Eng. Eslam Adel.  
 
