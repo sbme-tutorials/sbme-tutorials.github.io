@@ -18,8 +18,7 @@ pdf: true
 
 ## Prerequisites (Before you start)
 
-* **Required**: Read the notes of the first week (part 2): \[[Part 2: Using Git and Github]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
-* **Recommended**: Play with the [interactive git tutorial](https://try.github.io/levels/1/challenges/1).
+* Learn git. Extensive resources: [https://try.github.io/](https://try.github.io/). Or, preferably, learn it from your colleagues of BIO2020 class. 
 
 ## Deadline
 
