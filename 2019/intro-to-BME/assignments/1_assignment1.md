@@ -29,10 +29,17 @@ pdf: true
 
 Refer to this sheet to know your **gourp** number: 
 
-1. Go to the[assignment page]().
-2. You may need to authorize the classroom to access your repository.
+1. Go to the [Assignment Page](https://classroom.github.com/a/IoeIaNFP).
+2. Accept the assignment.
+![](../images/Selection_045.png)
 3. Wait till your repository created.
-4. Clone repository.
+![](../images/Selection_046.png)
+4. Open the link and Clone repository.
+```bash
+git clone URL
+```
+![](../images/Selection_047.png)
+
 
 ## Part 1: Programming
 
