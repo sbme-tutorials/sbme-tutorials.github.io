@@ -48,7 +48,7 @@ All operation of object positioning and transformation are just mathematical com
 For example transformation matrices are the key of moving, rotating, and scaling object in the 3D coordinates.
 
 Projection matrix is responsible for transforming 3D world to 2D display coordinates to be visualized on the screen. Phong equation is the model that control lightening of the scene. 
-
+![](../images/mesh.png)
 ![](../images/matrices.png)
 
 **Phong Equation**
