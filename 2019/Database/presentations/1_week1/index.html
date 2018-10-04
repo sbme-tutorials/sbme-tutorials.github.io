@@ -11,181 +11,60 @@
     <textarea id="source">
         
         class: center, middle
-        ## ESP8266 Wifi  Board 
+        ## Computer System (Database) SBE306 
         
-        By: Eslam Adel 
+        By: Ayman Anwar 
         
-        email: eslam.a.mahmoud@eng1.cu.edu.eg
-        
-        ---
-
-        class:left, top
-
-        ## Overview of HUZZAH ESP8266
-        
-        <img src="../../images/esp.jpg" width="100%">
+        email: Ayman.anwar.bio@gmail.com
         
         ---
 
-        ## Power Pins
-        
-        ![](../../images/pwr.jpg)
+        class: left, top
+
+        ## Data Modelling
+
+        Entity-Relationship(ER) Models
         
         ---
 
-        ## Serial Pins
+        ## ER model
         
-        ![](../../images/serial.jpg)
+        ![](../../images/ERmodel.png)
+        <!-- <img src="../../images/ERmodel.png" width="100%"> -->
+
+        ---
+
+        ## ER model (cont)
+        
+        ![](../../images/ERcomp.png)
        
         ---
 
-        ## GPIO Pins
-       
-        9 GPIO Digital pins
-        
-        ![](../../images/gpio.jpg)
-       
+        ## Standard Query Language(SQL)
+
+        * It is a standard language for accessing and manipulating databases.
+        * MySQL is a Relational Database Management System (RDMS)
+        * Like Microsoft SQL Server, Oracle, Postgres, etc.
         ---
 
-        ## Analog Pins
-        
-        Only one analog pin A has a maximum 1.0V. 
-       
-        ![](../../images/analog.jpg)
-        
+        ## Let’s try a simple example
+
+        Complete the following ER Model and use Workbench to create a simple database for this model.
+
+        <!-- ![](../../images/ex1.png) -->
+        <img src="../../images/ex1.png" width="300">
+
+        lets convert our model to Database Tables
         ---
+        ## List of used abbreviations
 
-        ## Other Pins
-            
-        * **LDO** for voltage regulation (enabled by default)
-
-        * **RST** reset pin
-             
-        * **EN** for enabling esp (enabled by default)
-
-        ---
-        
-        ## Connect USB-Serial cable
-       
-        ![](../../images/cable.jpg)
-        
-        ---
-        
-        ## Installing esp Board package 
-        
-        * add this URL http://arduino.esp8266.com/stable/package_esp8266com_index.json
-         at **File > Preferences** additional board URl
-
-        * From **Tools > Board > Boards Manager** install the ESP8266 package.
-
-        * For Windows install [adafruit drivers](https://learn.adafruit.com/adafruit-arduino-ide-setup/windows-driver-installation)
-        
-        * Select Adafruit Feather HUZZAH ESP8266 board and its serial port. 
-        
-        ---
-
-        ## Blink test Example
-        
-        ```c
-        int ledPin = 0; // LED connected to digital pin 13
-        
-        // The setup() method runs once, when the sketch starts
-        void setup()
-        {
-        pinMode(ledPin, OUTPUT); // initialize the digital pin as an output
-        }
-        // the loop() method runs over and over again,
-        void loop()
-        {
-        digitalWrite(ledPin, HIGH); // turn the LED on
-        delay(1000); // wait a second
-        digitalWrite(ledPin, LOW); // turn the LED off
-        delay(1000); // wait a second
-        }
-        ```
-        ---
-
-        ## Uploading code
-        
-        * Make the board in upload mode 
-            
-            * Hold on GPIO button 
-            
-            * Click reset button
-        ---
-
-        ## Documentation 
-        
-        Documentation for all available libraries, classes, functions in  [ESP8266 Arduino Core’s documentation](https://arduino-esp8266.readthedocs.io/en/latest/index.html)
-        
-        <img src="../../images/doc.png" width="80%">
-
-        ---
-
-        ## Sample Examples 
-
-        * ESP8266WiFi library examples show how to configure esp to work as
-            
-            * Host or Client
-            * Access point
-            * Server
-            * etc
-        
-        ---
-
-        ## Task 1 
-        
-        Requirements : 
-    
-        1. Acquire an analog signal from two different sensors. 
-        
-        2. Make a web server on ESP to upload sensor readings
-
-        3. Desktop and mobile app applications
-
-            * Retrieve readings from the server 
-
-            * Plot the real time signals
-        
-        ---
-
-        ## Acquiring signal
-
-        * ESP has only one analog pin.
-            
-            * Connect ESP with Arduino.
-        
-            * Analog Multiplexer.
-                
-                * 744051 8-Channel Analog Multiplexer / Demultiplexer
-        
-        ---
-
-        ## Submission Criteria
-
-        1. Groups list (max 3 per group) **Tomorrow** 
-        
-        2. Submission without penalty **Monday, Tuesday**
-
-        3. Submission with 80% **Wednesday, Thursday**
-
-        4. After that you missed submission.
-        
-        ---
-
-        ## Useful links
-        
-        * [Adafruit HUZZAH ESP8266](https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout/overview)
-        
-        * [Windows Driver Installation](https://learn.adafruit.com/adafruit-arduino-ide-setup/windows-driver-installation)
-        
-        * [How To Program An ESP8266 With the Arduino IDE (Video Tutorial)](https://www.youtube.com/watch?v=AFUAMVFzpWw)
-        
-        * [Use multiple analog sensors on an ESP8266 (Video Tutorial)](https://www.youtube.com/watch?v=S5zp_S3vo1Y)
-        
-        * [ 744051 8-Channel Analog Multiplexer / Demultiplexer RAM electronics](http://ram-e-shop.com/oscmax/catalog/product_info.php?products_id=122)
-        
-        * [ESP8266 Arduino Core’s documentation](https://arduino-esp8266.readthedocs.io/en/latest/index.html)
+        1. PK : Primary Key
+        2. NN : NOT null
+        3. BIN : Binary
+        4. Unsigned
+        5. UQ - Create/remove Unique Key
+        6. ZF - Zero-Filled
+        7. AI - Auto Increment
 
   </textarea>  
 

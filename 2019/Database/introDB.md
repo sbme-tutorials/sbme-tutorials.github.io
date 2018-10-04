@@ -29,7 +29,7 @@ Demonstrators:  Eng. Ayman Anwar.
 |-----|-----------|
 | Tuesday | from **12pm** to **4pm** |
 
-extra office hours requested via E-Mail to **Ayman.Anwar.bio@gmail.com** (Subject : EXOFH)
+extra office hours requested via E-Mail to **ayman.anwar.bio@gmail.com** (Subject : EXOFH)
 
 ## Course Outline
 
@@ -37,15 +37,35 @@ extra office hours requested via E-Mail to **Ayman.Anwar.bio@gmail.com** (Subjec
 |------|-----------------|-----|
 |   1  | ER model | ---- |
 
+## Required installations
+visit [AMPPS](https://www.ampps.com/downloads) and download the latest version according to your distributions.
 
+1. windows 
+* for installation please follow regular installation steps (next >> next >> finish)
+* please make sure you have internet connection during installation
+2. Linux
+* please make sure you have internet connection during installation.
+type the following command after routing to download directory.
+```
+cd /download/location
+chmod 0755 Ampps-<version>-<arch>.run
+sudo ./Ampps-<version>-<arch>.run
+```
+To run ampps
+```
+sudo /usr/local/ampps/Ampps
+```
+## On startup
+You should see something like this indicating the server has started properly.
+![](images/amppsStart.png)
 
-
-
+You are ready to go.
 
 ## Tutorials
 
-<!-- * Week 1
-    * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/1_week1/index.html%}){:target="_blank"} -->
+* Week 1
+    <!-- * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.html%}){:target="_blank"} -->
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week1.md%}){:target="_blank"}
 
 
 
