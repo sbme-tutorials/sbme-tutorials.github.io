@@ -2,20 +2,13 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-category: "coursepage"
+layout: page
+category: "notes"
 course: "hemn115"
 year: "2019"
+title: "Introduction to BME: Getting Started"
 ---
-# Introduction to BME
 
-Instructor : Dr. Tamer Yousef
-
-Demonstrator : Eng. Eslam Adel 
-
-email: `eslam.a.mahmoud@eng1.cu.edu.eg`
-
----
 * TOC
 {:toc}
 
@@ -129,7 +122,7 @@ analogRead(pin);
 delay(ms);
 ```
 * User defined functions 
-    * [type] [name](parameters)
+    * [type] [name]\(parameters\)
 
     ```c
     int add(int x, int y)
@@ -334,3 +327,5 @@ git show
 ### [Github](www.github.com) 
 ![](../images/github.png)
 Hosting service for Git version control system. 
+omputer Graphics
+Interesting applica
