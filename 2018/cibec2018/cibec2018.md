@@ -21,7 +21,7 @@ First of all, the current configuration of CIBEC 2018 on Easychair permits the f
 
 The following screen is the submissions list as viewed by chair
 
-![](images/submissions-list-char.png)
+![](images/submissions-list-chair.png)
 
 ### Ordinary PC
 
@@ -40,4 +40,6 @@ The following screen is the submissions list as viewed by chair
 ## Tutorial on the workflow of assigning reviews
 
 
+
+### 
 
