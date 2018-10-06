@@ -34,7 +34,7 @@ class: left, top
 
 | Flexible languages | Opinionated languages |
 |----------|-------------|
-| * .green[powerfull and efficient] | * .red[Usually inefficient in comparison] |
+| * .green[Powerful and efficient] | * .red[Usually inefficient in comparison] |
 | * .red[ Overhead to learn ] | * .green[ Easier to learn ] |
 | * C++, C | * Java, C#, Python |
 ---
@@ -42,7 +42,7 @@ class: left, top
 ## Variables on Stack Memory
 
 --
-Last week, all our variables were allocated on stack
+Last week, all our variables were allocated on the stack
 
 ```c++
 char x = 's';
@@ -74,13 +74,13 @@ class: left, top
 class: left, top
 
 ```c++
-// Declare integer x and initialize with 13.
+// Declare integer x and initialize it with 13.
 int x = 13;
 
-// Declare integer y and initialize with 1.
+// Declare integer y and initialize it with 1.
 int y = 1;
 
-// Declare integer z and initialize with 5.
+// Declare integer z and initialize it with 5.
 int z = 5;
 ```
 
@@ -95,7 +95,7 @@ class: left, top
 --
 But how to get (retrieve) the address of a variable in C++?
 
-* By using `&` (ambersand operator).
+* By using `&` (ampersand operator).
 
 --
 
@@ -151,7 +151,7 @@ class: left, top
 
 ---
 class: left, top
-## Why using Address
+## Why using Address?
 
 --
 ### Flexibility
@@ -269,7 +269,7 @@ class: left, top
 
 --
 
-* Variables created on heap memory (using `new` operator), should be deleted manually after you no longer used. 
+* Variables created on heap memory (using `new` operator), should be deleted manually when they are no longer used. 
 * Otherwise, you will allocate a lot of space that will become unusable.
 
 
@@ -288,7 +288,7 @@ delete pz;
 ```
 
 ---
-### Important Rule for memory management
+### Important rule for memory management
 
 --
 * When you finish coding, make sure to balance heap memory allocations/deallocations.
