@@ -169,7 +169,6 @@ import vtk
 Using this line of code I am telling the computer that "Hey, please I want to use vtk library that I have installed" 
 
 2. Creating a model 
-
 ```python 
 cylinder = vtk.vtkCylinderSource()
 cylinder.SetResolution(8)
@@ -180,7 +179,6 @@ I am here asking the computer to create a cylinder model with 8 faces. I can con
 ```python 
 cylinderActor = vtk.vtkActor()
 ```
-
 The actor is the object that will be rendered. 
 
 4. Make a renderer 
@@ -222,4 +220,7 @@ This task is an individual assignment. All students have to submit their own sol
 It is a markup language for blogging and documentation. 
 
 ## Useful links
+
+* [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [Git Cheastsheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
