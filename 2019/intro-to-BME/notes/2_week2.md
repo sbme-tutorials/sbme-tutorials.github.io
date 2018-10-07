@@ -223,3 +223,6 @@ It is a markup language for blogging and documentation.
 
 ## Useful links
 
+* [Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+* [Git Cheastsheet](https://education.github.com/git-cheat-sheet-education.pdf)
+
