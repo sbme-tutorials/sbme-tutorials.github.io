@@ -36,9 +36,9 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 | Week | Content |  Assignments
 |------|-----------------|-----|
-|   1  | Getting started|  |
-
-
+|   1  | Getting started and Visualization| Assignment 1 (VTK)  |
+|   2  | Hardware  | Assignment 2 (Arduino) |
+  
 
 ## Lectures 
 
