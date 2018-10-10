@@ -54,8 +54,10 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
     * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/1_week1/index.html%}){:target="_blank"}
 
     * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/1_week1.md%}){:target="_blank"}
+
 * Week 2.
     * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/2_week2.md%}){:target="_blank"}
+
 * Week 3.
     * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/3_week3.md%}){:target="_blank"}
 
