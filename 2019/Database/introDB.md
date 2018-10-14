@@ -81,10 +81,8 @@ then restart your device and try again.
 ## Tutorials
 
 * Week 1
-    <!-- * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.html%}){:target="_blank"} -->
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week1.md%}){:target="_blank"}
 * Week 2
-    <!-- * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.html%}){:target="_blank"} -->
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week2.md%}){:target="_blank"}
 
 
