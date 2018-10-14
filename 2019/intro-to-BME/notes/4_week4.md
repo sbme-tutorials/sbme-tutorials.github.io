@@ -29,38 +29,121 @@ Electric circuit is a closed path that current flow through it. It contains diff
 * Resistor / Potentiometer (Variable resistor)
 Ohm or kilOhm
 
+
+![](../images/w4/resistorSymbol.png)
+
+![](../images/w4/resistor.jpg)
+
+
+![](../images/w4/pot2.jpg)
+
 * Capacitors 
+
 Farad or micro Farad
+
+![](../images/w4/CapacitorSymbol.png)
+
+![](../images/w4/capacitor.jpg)
+
+
 * Inductor or Transformers
 Henry (H) 
+
+![](../images/w4/inductorSymbol.png)
+
+![](../images/w4/inductor.jpg)
+
 * Switches
-Break or connect circuit
+
+Break or connect circuit 
+
+![](../images/w4/switchSymbol.png)
+
+![](../images/w4/Types-of-switches.jpg)
+
 
 * semiconductor (Electronics)
+   
     * Diodes
-    Current move in one direction and preventedfunny in the other direction
+   
+        Current move in one direction and prevented in the other direction
+    
+        
+        ![](../images/w4/diod5.png)
+
+        ![](../images/w4/diod1.png)
+
+        
+        ![](../images/w4/diod4.png)
+    
+        ![](../images/w4/diod3.png)
+    
+         ![](../images/w4/diod2.png)
+    
+        ![](../images/w4/led.jpg)
+    
+        ![](../images/w4/photodiod.jpg)
 
     * Transistors
+    
     3 Terminals component. Used in signal amplification switches Digital circuits
+    
+    ![](../images/w4/transistor.png)
+
+
+    ![](../images/w4/transistor1.jpg)
+
     * Integrated circuits
-    contains huge number of transistors and logic circuits 
+    
+        contains huge number of transistors and logic circuits
+
+        ![](../images/w4/ic1.jpeg)
+        
+        ![](../images/w4/ic2.jpeg)
+
+
 * Wires and connectors 
+![](../images/w4/wire1.jpg)
+
+
 * Boards
     * Bread board
-    * Printed circuit board 
+    
+    ![](../images/w4/breadboards.jpg)
+    
+    * Printed circuit board
+    
+    ![](../images/w4/PBC.jpg)
+
+    ![](../images/w4/PBC1.jpg)
+ 
 
 
-### Measuremenfunny
+### Measurement Instruments
 
-* multi-meter funny
-* function genfunny
-* oscilloscopefunny
+* multi-meter 
+
+![](../images/w4/avo.jpg)
+
+* function generator
+
+![](../images/w4/functiongenerator.jpg)
+
+* oscilloscope
+
+![](../images/w4/oscilliscope.jpg)
+
 
 ## Signal 
+
+![](../images/w4/signal.png)
 
 Varying voltage over time 
 
 World is continuos or analog but We have limited memory to store signal value continuously. So we need to make it limited or digital. We need to sample the signal to get a good representation of the signal. 
+![](../images/w4/sampling.png)
+
+![](../images/w4/ADC.jpg)
 
 ## Arduino Programming 
 Arduino is programmed using C++ language. It is already equipped with essential built in function to handle simple interfacing with electronic devices
@@ -112,7 +195,7 @@ delay(ms);
 
   example
 
-  ```c
+```c
 /*
 Pushbutton sketch
 a switch connected to pin 2 lights the LED on pin 13
@@ -185,8 +268,89 @@ A library is code was written by someone and we will use it (Re inventing the wh
  
 To use library 
 ```c
-//Include header file of the libray 
+//Include header file of the library 
 #include <file.h>
 ```
 
-## Markdown documentation 
+## Markdown Documentation 
+
+### Headers 
+
+* Headers
+
+  \# Header1
+
+  \## Header2 
+
+  \### Header 3 
+
+  For organizing your thoughts to main point with sub-points and so on. 
+
+* Links 
+ 
+    You can make hyperlink
+
+    \!\[link](google.com)
+    
+    or just put the link if no hyperlink 
+
+    www.google.com 
+
+    **Example**
+
+    visit [this](https://en.wikipedia.org/wiki/Markdown) for more details.
+
+* Images 
+
+    \!\[\]\(imagename) 
+    
+    image must be in the same folder or directory and must be uploaded with the md file
+
+    **Example**
+
+    ![](../images/w4/MD.png)
+
+* List 
+
+    \* item 1
+
+    \* item 2
+
+    \* item 3 
+
+    Or 
+
+    1\. Item 1
+    
+    2\. Item 2
+
+* Code snippets 
+
+\```c++
+
+#include \<iostream\>
+
+int main()
+
+{
+  
+std::cout << "Hello, World!" << std::endl; 
+
+ }
+
+\```
+
+Lets see it 
+
+```c++
+#include <iostream> 
+
+int main()
+{
+    std::cout << "Hello, World!" << std::endl;
+}
+```
+
+## Useful links 
+
+[Markdown Tutorials](https://www.markdowntutorial.com/)
