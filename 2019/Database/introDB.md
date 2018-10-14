@@ -61,14 +61,16 @@ You should see something like this indicating the server has started properly.
 
 ## common issues for LINUUX installation
 
-1. after installation if ampps gave an blank/gray UI:
+1. after installation if ampps gave a blank/gray UI.
+
 RUN TIME solution
 ```
 sudo export QT_X11_NO_MITSHM=1
 sudo ./usr/local/ampps/Ampps.run 
 ```
 
-2. if the neither apache nor mysql are started do the following:
+2. if  neither apache nor mysql are started type the following:
+
 ```
 cd /usr/local/ampps/apache/lib
 sudo mkdir backup
