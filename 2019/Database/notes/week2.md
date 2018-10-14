@@ -142,6 +142,7 @@ used to specify rules for data in table
 | NOT NULL      | Ensures that a column cannot have a NULL value |
 | UNIQUE        | Ensures that all values in a column are different |
 | DEFAULT        | set a default value for column |
+| AUTO_INCREMENT        | auto increments records inserted into table |
 | PRIMARY KEY   |  A combination of a NOT NULL and UNIQUE. Uniquely identifies each row in a table |
 | FOREIGN KEY   | Uniquely identifies a row/record in another table |
 
