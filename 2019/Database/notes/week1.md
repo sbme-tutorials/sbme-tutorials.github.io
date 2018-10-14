@@ -9,6 +9,8 @@ year: "2019"
 ---
 * TOC
 {:toc}
+# Tutorial one
+This week we will talk about DMS and a quick intro for the Basic SQL statement.
 
 ## start ampps
 type the following in your browser [http://localhost/ampps/](http://localhost/ampps/)

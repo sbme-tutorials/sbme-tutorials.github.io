@@ -59,13 +59,33 @@ sudo /usr/local/ampps/Ampps
 You should see something like this indicating the server has started properly.
 ![](images/amppsStart.png)
 
-You are ready to go.
+## common issues for LINUUX installation
+
+1. after installation if ampps gave an blank/gray UI:
+RUN TIME solution
+```
+sudo export QT_X11_NO_MITSHM=1
+sudo ./usr/local/ampps/Ampps.run 
+```
+
+2. if the neither apache nor mysql are started do the following:
+```
+cd /usr/local/ampps/apache/lib
+sudo mkdir backup
+sudo mv ./libapr* ./backup/
+sudo apt-get -y install libaprutil1 libaprutil1-dev libapr1 libapr1-dev 
+```
+then restart your device and try again.
+
 
 ## Tutorials
 
 * Week 1
     <!-- * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.html%}){:target="_blank"} -->
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week1.md%}){:target="_blank"}
+* Week 2
+    <!-- * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.html%}){:target="_blank"} -->
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week2.md%}){:target="_blank"}
 
 
 
