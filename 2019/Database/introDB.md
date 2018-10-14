@@ -61,14 +61,7 @@ You should see something like this indicating the server has started properly.
 
 ## common issues for LINUUX installation
 
-1. after installation if ampps gave a blank/gray UI.
-
-RUN TIME solution
-```
-sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps 
-```
-
-2. if  neither apache nor mysql are started type the following:
+if you have a problem installing ampps on linux type the following:
 
 ```
 cd /usr/local/ampps/apache/lib
@@ -76,7 +69,12 @@ sudo mkdir backup
 sudo mv ./libapr* ./backup/
 sudo apt-get -y install libaprutil1 libaprutil1-dev libapr1 libapr1-dev 
 ```
-then restart your device and try again.
+then restart your device and run the following every time you want to start it.
+
+```
+cd ~
+sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps 
+```
 
 
 ## Tutorials
