@@ -105,7 +105,7 @@ CREATE TABLE child (
 );
 ```
 
-then lest insert few records
+then lets insert few records
 ```
 INSERT INTO parent (name,id) VALUES ('ayman',1);
 INSERT INTO parent (name,id) VALUES ('ahmed',2);
@@ -118,7 +118,7 @@ INSERT INTO child (name,id,parentId) VALUES ('ibra',2,2);
 INSERT INTO child (name,id,parentId) VALUES ('wael',3,3);
 INSERT INTO child (name,id,parentId) VALUES ('perry',4,4);
 INSERT INTO child (name,id,parentId) VALUES ('nema',5,5);
-'''
+```
 
 now we built a relational model lets join both tables and look at it. BUT first what are joins.
 
@@ -224,5 +224,5 @@ JOIN parent on parent_child.parentID = parent.id
 JOIN child on parent_child.child_ID = child.id;
 ```
 
-it is funny right and not that hard **TRY IT YOUR SELFit`s not nadegrous**.
+it is funny right and not that hard **TRY IT YOURSELF it`s safe you can do it at home**.
 moreover next class ISA.

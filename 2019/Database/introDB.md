@@ -65,8 +65,7 @@ You should see something like this indicating the server has started properly.
 
 RUN TIME solution
 ```
-sudo export QT_X11_NO_MITSHM=1
-sudo ./usr/local/ampps/Ampps.run 
+sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps 
 ```
 
 2. if  neither apache nor mysql are started type the following:
@@ -86,6 +85,8 @@ then restart your device and try again.
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week1.md%}){:target="_blank"}
 * Week 2
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week2.md%}){:target="_blank"}
+* Week 3
+    <!-- * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week3.md%}){:target="_blank"} -->
 
 
 
