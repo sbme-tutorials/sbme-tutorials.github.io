@@ -65,6 +65,9 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 *  [Assignment 1: VTK]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/1_assignment1.md%}){:target="_blank"}
 
+*  [Assignment 2: Arduino]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/2_assignment2.md%}){:target="_blank"}
+
+
 
 
 ## Announcements

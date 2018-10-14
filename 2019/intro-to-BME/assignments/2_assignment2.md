@@ -3,7 +3,7 @@ layout: page
 course: "hemn115"
 category: "assignment"
 year: "2019"
-title:  "Assignment 1: Volume rendering with VTK"
+title:  "Assignment 2: Arduino signal aquisition"
 by: "eslam"
 pdf: true
 ---
@@ -11,28 +11,28 @@ pdf: true
 
 ## Objectives
 
-* Installing VTK on python
-* Loading volume datasets
-* Visualize 3D volume 
-* Manipulation of model characteristics
+* Installing Arduino IDE
+* Interface with analog sensors 
+* Plotting real time signal
 * Documentation using Markdown language
 
 ## Prerequisites (Before you start)
 
-* Read [Section 2 Notes]({% link 2019/intro-to-BME/notes/2_week2.md %}){:target="_blank"}.
+* Read [Section 3 Notes]({% link 2019/intro-to-BME/notes/3_week3.md %}){:target="_blank"}.
 
 ## Deadline
 
-**Thursday 4/10/2019**
+**Thursday 16/10/2019**
 
 ## Joining to Assignment Repository
 
+Refer to [this](https://docs.google.com/spreadsheets/d/1hdmFvHQYQybJCUS_TFgDmyFzorwZQOkQE6eTCSQDuew/edit?usp=sharing) sheet to know your **group number**: 
 
-1. Go to the [Assignment Page](https://classroom.github.com/a/IoeIaNFP).
-2. Accept the assignment.
+1. Go to the [Assignment Page](https://classroom.github.com/g/xG7jA0cb).
+2. Joint Group or make another group.
 ![](../images/Selection_045.png)
 3. Wait till your repository created.
-![](../images/Selection_046.png)
+
 4. Open the link and Clone repository.
 ```bash
 git clone URL
@@ -40,15 +40,14 @@ git clone URL
 ![](../images/Selection_047.png)
 
 
-## Part 1: Programming
+## Part 1: Arduino 
 
-1. Install VTK on your computer.
-2. Load provided volume dataset and render it on an interactive window.
-3. Use different manipulations of visualization parameter for example change the color and opacity of different tissues. 
+1. Use Arduino to acquire two signals from two different sensors.
+2. Plot signals readings on serial plotter. 
 
 **Bonus**
 
-Trying the program with different dataset. 
+Save signals on SD card and plot it on matlab.
 
 ## Part 2: Written
 
@@ -61,6 +60,7 @@ You can ask me to review your code, give an advice and fixing bugs. It is so eas
 ![](../images/assig3-2.png)
 
 ## Important Notes 
+
 * You are allowed to discuss task problems with your mates. But code must be on your own.
 * You can get code lines from internet and include them in your own code and you must cite the source.
 * Sharing few code lines of your own with your classmates is allowed for identifying and fixing bugs, it is not allowed to see others solution before submitting.
