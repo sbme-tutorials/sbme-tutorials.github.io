@@ -5,7 +5,7 @@
 layout: page
 category: "notes"
 course: "hemn115"
-title:  "Week 2: Arduino Microcontroller"
+title:  "Week 3: Arduino Microcontroller"
 year: "2019"
 by: "Eslam"
 ---
