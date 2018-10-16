@@ -30,7 +30,7 @@ Refer to [this](https://docs.google.com/spreadsheets/d/1hdmFvHQYQybJCUS_TFgDmyFz
 
 1. Go to the [Assignment Page](https://classroom.github.com/g/xG7jA0cb).
 2. Joint Group or make another group.
-![](../images/Selection_045.png)
+![](../images/assignment2.png)
 3. Wait till your repository created.
 
 4. Open the link and Clone repository.

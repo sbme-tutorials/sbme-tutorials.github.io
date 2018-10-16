@@ -5,7 +5,7 @@
 layout: page
 category: "notes"
 course: "hemn115"
-title:  "Week 1: Medical Imaging and Visualization"
+title:  "Week 2: Medical Imaging and Visualization"
 year: "2019"
 by: "Eslam"
 ---

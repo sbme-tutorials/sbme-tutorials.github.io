@@ -15,7 +15,7 @@ by: "Eslam"
 
 ## Hardware 
 
-Electric charges which is positive or negative move to produce electricity. Its movement is associated with the generation of electric field and the process is reversed. 
+Electric charges which is positive or negative move to produce electricity. Its movement is associated with the generation of electric field and the process is reversed.  
 
 Two main components are associated with electricity current and voltage (I and V)
 
@@ -143,7 +143,7 @@ Varying voltage over time
 World is continuos or analog but We have limited memory to store signal value continuously. So we need to make it limited or digital. We need to sample the signal to get a good representation of the signal. 
 ![](../images/w4/sampling.png)
 
-![](../images/w4/ADC.jpg)
+![](../images/w4/ADC.png)
 
 ## Arduino Programming 
 Arduino is programmed using C++ language. It is already equipped with essential built in function to handle simple interfacing with electronic devices
