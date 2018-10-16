@@ -28,7 +28,7 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 | Day | Time |
 |-----|-----------|
 | Tuesday | from **12pm** to **4pm** |
-| Wednesday | from **2pm** to **6pm** |
+| Thursday | from **2pm** to **6pm** |
 
 ## Course Outline
 
