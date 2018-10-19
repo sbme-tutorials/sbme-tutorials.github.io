@@ -115,9 +115,9 @@ git add filename
 ```
 * ignore changes
 
-``bash
+```bash
 git stash
-``
+```
 
 ### Commit 
 
