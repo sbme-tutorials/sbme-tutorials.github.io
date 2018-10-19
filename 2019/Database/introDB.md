@@ -4,7 +4,7 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 category: "coursepage"
-course: "sbe403a"
+course: "sbe306a"
 year: "2019"
 ---
 # Computer systems(Database) \(SBE306\) - Autumn 2019

@@ -5,12 +5,13 @@
 layout: page
 category: "notes"
 course: "sbe403a"
-year: "2019"
 title: "Version Control System"
+year: "2019"
+by: "Eslam"
 ---
 * TOC
 {:toc}
----
+
 
 ## Overview & Problem definition 
 
@@ -22,13 +23,13 @@ title: "Version Control System"
         
         What is the working file ?? 
     
-    * Team work collaboration
-        * Work on same source
-        * Auto merging work
-    
-    * Record all changes
-    * View all history of the project
----
+* Team work collaboration
+    * Work on same source
+    * Auto merging work
+
+* Record all changes
+* View all history of the project
+
 
 ## Git Version Control System 
 
@@ -38,50 +39,49 @@ title: "Version Control System"
 * Branch development and easy merging 
 * Others: SVN , Mercurial
 
-![](../../images/w4/git.jpeg)
+![](../images/w4/git.jpeg)
 
----
+
 ## Getting Started 
 * Installation
- * For linux 
- ```bash
- sudo apt-get install git
- ```
- * For windows install from [here](https://git-scm.com/downloads)
+    * For linux 
+    ```bash
+    sudo apt-get install git
+    ```
+    * For windows install from [here](https://git-scm.com/downloads)
+    
+        ![](../images/w4/install-win.png) 
 
- ![](../../images/w4/install-win.png)
- ---
+## Open the bash 
+
+To open bash click git bash here
+
+ ![](../images/w4/opengit.png)
  
- ## Open the bash 
 
- ![](../../images/w4/opengit.png)
- 
- ---
+![](../images/w4/bash-here.png)
 
-![](../../images/w4/bash-here.png)
-
- ---
- ## Git and github
+## Git and github
  
  * create an account on [github](github.com) 
  * github : remote server 
  * git : local development
  * Allow code sharing and team contribution
  
- ![](../../images/w4/github.png)
+ ![](../images/w4/github.png)
 
----
+
 ## The work flow 
 
-![](../../images/w4/git-github.png)
+![](../images/w4/git-github.png)
 
 
----
+
 ## Basic Illustration
 
-![](../../images/w4/version-control-fig3.png)
+![](../images/w4/version-control-fig3.png)
 
----
+
 ## Git cycle
 * Configuration : one time after installation
 
@@ -106,7 +106,7 @@ git clone URL
 ```bash
 git status 
 ```
----
+
 ## Tracking and Commit
 
 * Tracking file content
@@ -130,7 +130,7 @@ git stash
 ```bash
 git commit -m "Your message"
 ```
----
+
 ## Project Monitoring 
 
 * Show history 
@@ -140,12 +140,12 @@ git commit -m "Your message"
 git log 
 ```
 
-![](../../images/w4/commits.png)
+![](../images/w4/commits.png)
 
 ```bash
 git show commitId
 ```
----
+
 
 ## Transition between states (commits)
 
@@ -161,9 +161,9 @@ Back to last commit
 git checkout master
 ```
 
-![](../../images/w4/checkout.png)
+![](../images/w4/checkout.png)
 
---- 
+ 
 
 ## Publishing and sharing
 
@@ -181,7 +181,7 @@ git push origin master
 
 * Auto-merge is enabled
 
----
+
 ## Branches
 * Separate line of development
 * Used for 
@@ -189,9 +189,9 @@ git push origin master
     * Bug isolation and fix
     * Trying new idea 
 * Finally branch is merged or deleted
-![](../../images/w4/branch2.png)
+![](../images/w4/branch2.png)
 
----
+
 ## Branched cont, 
 * Create branch
 ```bash 
@@ -207,19 +207,19 @@ git show-branch
 git checkout master
 git merge branch_name
 ```
-![](../../images/w4/Branch-1.png)
+![](../images/w4/Branch-1.png)
 
---- 
+ 
 ## Merge Conflict
 
 * Merging in case of same line is modified by through commits
 * Example 
 
- ![](../../images/w4/conflict.png)
+ ![](../images/w4/conflict.png)
 
----
+
 
 ## Resources
 * [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
-![](../../images/w4/cheatsheet.png)
+![](../images/w4/cheatsheet.png)
 * interactive [learning git](https://learngitbranching.js.org/)
