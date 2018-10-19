@@ -44,10 +44,13 @@ Demonstrators:  Eng. Eslam Adel.
 ## Tutorials
 
 * Week 1: ESP8266 Wifi board
+    
     * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/1_week1/index.html%}){:target="_blank"}
  
 
 * Week 4: Git Version Control System
+    
+    * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/4_week4/index.html%}){:target="_blank"}
     * [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/4_week4.md%}){:target="_blank"}
 
 
