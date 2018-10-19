@@ -36,7 +36,8 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 |------|-----------------|-----|
 |   1  | Getting started and Visualization| Assignment 1 (VTK)  |
 |   2  | Hardware  | Assignment 2 (Arduino) |
-|   3  | Hardware Continue |                |
+|   3  | Signal Processing |                |
+|   4  | Signal Processing Continue | Assignment 3 (Matlab) |
 
 ## Lectures
 
@@ -45,6 +46,9 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 * Week 2.
   * [Slides](https://drive.google.com/file/d/1qawBaJB1UD0EoNVO1J-yMorHTgXydczc/view){:target="_blank"}
+
+* Week 3 & 4.
+  * [Slides](https://drive.google.com/file/d/1_IxlcYG0IxfJwMpr7i2NWxuE1FLOuryP/view?usp=sharing){:target="_blank"}
 
 ## Tutorials
 
