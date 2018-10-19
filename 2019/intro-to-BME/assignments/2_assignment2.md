@@ -22,7 +22,7 @@ pdf: true
 
 ## Deadline
 
-**Thursday 16/10/2019**
+**Thursday 16/10/2018**
 
 ## Joining to Assignment Repository
 
