@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Week 4: Version control system </title>
+<link rel="stylesheet" href="/css/laminal.css">
+
+</head>
+<body>
+<textarea id="source">
+class: center, middle
+# Version Control System
+Eslam Adel 
+
+`eslam.a.mahmoud@eng.cu.edu.eg`
+
+---
+
+class: top, left
+## Outlines 
+
+* Overview & Problem definition
+* Git version control system 
+* Getting started with git 
+    * Installation (local)
+    * github.com 
+* Work flow
+    *  configuration
+    * Initialize or clone repository 
+    * Track files
+    * Commit 
+    * Update remote repository 
+* Branches
+    * Idea 
+    * Create Branch 
+    * merge branches
+    * conflicts
+---
+
+## Overview & Problem definition 
+
+* Project Backup strategy  
+    * Disk crash
+    * Professional Work Archiving
+        
+        final, final1, final2, ... etc.
+        
+        What is the working file ?? 
+    
+    * Team work collaboration
+        * Work on same source
+        * Auto merging work
+    
+    * Record all changes
+    * View all history of the project
+---
+
+## Git Version Control System 
+
+* The most popular version control system 
+* Supports parallel simultaneous development
+* Handle huge number of users
+* Branch development and easy merging 
+* Others: SVN , Mercurial
+
+![](../../images/w4/git.jpeg)
+
+---
+
+## Getting Started 
+* Installation
+    * For linux 
+    ```bash
+    sudo apt-get install git
+    ```
+    * For windows install from [here](https://git-scm.com/downloads)
+
+    ![](../../images/w4/install-win1.png)
+    
+---
+
+## Open the bash 
+
+![](../../images/w4/opengit.png)
+    
+---
+
+![](../../images/w4/bash-here.png)
+
+---
+
+## Git and github
+
+* create an account on [github](github.com) 
+* github : remote server 
+* git : local development
+* Allow code sharing and team contribution
+
+![](../../images/w4/github.png)
+
+---
+
+## The work flow 
+
+![](../../images/w4/git-github.png)
+
+
+---
+
+## Basic Illustration
+
+![](../../images/w4/version-control-fig3.png)
+
+---
+
+## Git cycle
+* Configuration : one time after installation
+
+```bash
+git config --global user.email "example@mail.com"
+git config --global user.mail "Name"
+```
+
+### Create or clone repository 
+
+* Repository is the source code of the project 
+* Create empty repository 
+```bash 
+git init
+```
+* Clone existing one
+```bash
+git clone URL
+```
+
+* Showing repository status 
+```bash
+git status 
+```
+
+---
+
+## Project Monitoring 
+* Show history 
+    ```bash 
+    git log 
+    ```
+![](../../images/w4/commits.png)
+
+    ```bash
+    git show commitId
+    ```
+---
+
+## Tracking and Commit
+
+Tracking file content
+```bash
+git add filename
+```
+ignore changes
+``bash
+git stash
+``
+**Commits** 
+* Recording change in the repository 
+* Snapshot of project at this state
+* Records 
+* How was the change 
+* Who did it and when
+* The purpose of that change
+
+```bash
+git commit -m "Your message"
+```
+---
+
+## Transition between states (commits)
+Switch to a certain commit 
+```bash
+git checkout commitId
+```
+Back to last commit 
+```bash
+git checkout master
+```
+![](../../images/w4/checkout.png)
+
+* Updating local repository from master branch
+```bash
+git pull origin master 
+```
+* Publishing your commits on master branch
+```bash 
+git push origin master
+```
+---
+
+## Branches
+* Separate line of development
+* Used for 
+    * Parallel development
+    * Bug isolation and fix
+    * Trying new idea 
+* Finally branch is merged or deleted
+![](../../images/w4/branch2.png)
+
+---
+
+## Branched cont, 
+* Create branch
+```bash 
+git checkout -b branch_name
+```
+* Show branches
+```bash 
+git show-branch
+```
+* Merge branch to master
+
+```bash
+git checkout master
+git merge branch_name
+```
+![](../../images/w4/Branch-1.png)
+
+--- 
+
+## Merge Conflict
+
+* Merging in case of same line is modified by through commits
+* Example 
+    ![](../../images/w4/conflict.png)
+
+---
+
+## Resources
+    * [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+    
+    ![](../../images/w4/cheatsheet.png)
+    
+    * interactive [learning git](https://learngitbranching.js.org/)
+
+</textarea>  
+
+<script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<script src="/javascript/remark-latest.min.js"></script>
+
+<script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+</script>
+<script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    var options = {
+    highlightStyle: 'monokai',
+    countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
+
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+    return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
+
+</script>
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+    MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+    },
+    MathMenu: {
+        showRenderer: false,
+        showFontMenu: false,
+        showLocale: false
+    }
+    });
+</script>
+
+</body>
+</html>
