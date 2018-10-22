@@ -28,25 +28,33 @@ Demonstrators:  Eng. Eslam Adel.
 | Day | Time |
 |-----|-----------|
 | Tuesday | from **12pm** to **4pm** |
-| Wednesday | from **2pm** to **6pm** |
 
 
 ## Course Outline
 
 | Week | Content |  Tasks
 |------|-----------------|-----|
-|   1  | ESP | Task 1|
-
-
+|   1  | ESP8266 Wifi board | IOT Task 1|
+|   2  | Arduino Interrupts, timers and other stuff| Elevator Task 2  | 
+|   4  | Git Version Control system | Task 3 CNC Plotter| 
 
 
 
 
 ## Tutorials
 
-* Week 1
+* Week 1: ESP8266 Wifi board
+    
     * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/1_week1/index.html%}){:target="_blank"}
+ 
 
+* Week 4: Git Version Control System
+    
+    * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/4_week4/index.html%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/4_week4.md%}){:target="_blank"}
 
+## Assignments 
+
+* [Assignment 3]({{ site.baseurl }}{% link 2019/microprocessor/assignments/3_assignment3.md%}){:target="_blank"}
 
 ## Announcements

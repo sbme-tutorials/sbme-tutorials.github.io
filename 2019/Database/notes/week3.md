@@ -2,9 +2,9 @@
 # You don't need to edit this file, it's empty on purpose.
 # Edit theme's home layout instead if you wanna make some changes
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-layout: home
-category: "coursepage"
-course: "sbe403a"
+layout: page
+category: "notes"
+course: "sbe306a"
 year: "2019"
 ---
 * TOC
@@ -224,5 +224,6 @@ JOIN parent on parent_child.parentID = parent.id
 JOIN child on parent_child.child_ID = child.id;
 ```
 
-it is funny right and not that hard **TRY IT YOURSELF it`s safe you can do it at home**.
+it is funny right and not that hard **it`s safe you can do it at home**.
+
 moreover next class ISA.

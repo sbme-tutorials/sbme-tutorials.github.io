@@ -36,37 +36,34 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 |------|-----------------|-----|
 |   1  | Getting started and Visualization| Assignment 1 (VTK)  |
 |   2  | Hardware  | Assignment 2 (Arduino) |
-|   3  | Signal Processing |                |
-|   4  | Signal Processing Continue | Assignment 3 (Matlab) |
+|   3  | Introduction to Digital Signal Processing |                |
+|   4  | Introduction to  Digital Signal Processing Continue | Assignment 3 (Matlab) |
 
 ## Lectures
 
-* Week 1.
+* Week 1. Getting started and Visualization:
   * [Slides](https://drive.google.com/file/d/1_wbntX6paGuHWO4Paw_6vCL9F-qKYfcj/view){:target="_blank"}
 
-* Week 2.
+* Week 2. Hardware:
   * [Slides](https://drive.google.com/file/d/1qawBaJB1UD0EoNVO1J-yMorHTgXydczc/view){:target="_blank"}
 
-* Week 3 & 4.
+* Week 3 & 4. Introduction to Digital Signal Processing	:
   * [Slides](https://drive.google.com/file/d/1_IxlcYG0IxfJwMpr7i2NWxuE1FLOuryP/view?usp=sharing){:target="_blank"}
 
 ## Tutorials
 
-* Week 1.
+* Week 1. Getting Started:
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/1_week1/index.html%}){:target="_blank"}
-
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/1_week1.md%}){:target="_blank"}
 
-* Week 2.
+* Week 2. Medical Visualization:
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/2_week2.md%}){:target="_blank"}
 
-* Week 3.
-
+* Week 3. Hardware and Microcontroller:
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/3_week3.md%}){:target="_blank"}
 
-* Week 4.
+* Week 4. Hardware and Microcontroller cont:
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/4_week4/index.html%}){:target="_blank"}
-  
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/4_week4.md%}){:target="_blank"}
 
 ## Assignments 

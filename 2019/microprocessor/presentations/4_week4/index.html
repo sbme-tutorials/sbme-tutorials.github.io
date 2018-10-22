@@ -54,6 +54,7 @@ class: top, left
     
     * Record all changes
     * View all history of the project
+
 ---
 
 ## Git Version Control System 
@@ -105,7 +106,6 @@ class: top, left
 
 ![](../../images/w4/git-github.png)
 
-
 ---
 
 ## Basic Illustration
@@ -138,6 +138,31 @@ git clone URL
 ```bash
 git status 
 ```
+---
+
+## Tracking and Commit
+
+* Tracking file content
+```bash
+git add filename
+```
+* ignore changes
+
+```bash
+git stash
+```
+
+### Commit 
+
+* Recording change in the repository 
+* Snapshot of project at this state
+* Records 
+    * How was the change 
+    * Who did it and when
+    * The purpose of that change
+```bash
+git commit -m "Your message"
+```
 
 ---
 
@@ -151,50 +176,44 @@ git status
     ```bash
     git show commitId
     ```
----
 
-## Tracking and Commit
-
-Tracking file content
-```bash
-git add filename
-```
-ignore changes
-``bash
-git stash
-``
-**Commits** 
-* Recording change in the repository 
-* Snapshot of project at this state
-* Records 
-* How was the change 
-* Who did it and when
-* The purpose of that change
-
-```bash
-git commit -m "Your message"
-```
 ---
 
 ## Transition between states (commits)
+
 Switch to a certain commit 
+
 ```bash
 git checkout commitId
 ```
+
 Back to last commit 
+
 ```bash
 git checkout master
 ```
-![](../../images/w4/checkout.png)
+
+![](../../images/w4/checkout1.png)
+
+---
+
+
+## Publishing and sharing
 
 * Updating local repository from master branch
+
 ```bash
 git pull origin master 
 ```
+
 * Publishing your commits on master branch
-```bash 
+
+```bash
 git push origin master
 ```
+
+* Auto-merge is enabled
+
 ---
 
 ## Branches
@@ -223,24 +242,26 @@ git show-branch
 git checkout master
 git merge branch_name
 ```
-![](../../images/w4/Branch-1.png)
+![](../../images/w4/Branch-2.png)
 
---- 
-
+---
+ 
 ## Merge Conflict
 
 * Merging in case of same line is modified by through commits
 * Example 
-    ![](../../images/w4/conflict.png)
+
+ ![](../../images/w4/conflict.png)
 
 ---
 
 ## Resources
-    * [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
     
-    ![](../../images/w4/cheatsheet.png)
+* [Git Cheat Sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+
+![](../../images/w4/cheatsheet1.png)
     
-    * interactive [learning git](https://learngitbranching.js.org/)
+* interactive [learning git](https://learngitbranching.js.org/)
 
 </textarea>  
 
