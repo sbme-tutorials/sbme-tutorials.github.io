@@ -7,7 +7,7 @@ category: "coursepage"
 course: "sbe403a"
 year: "2019"
 ---
-# Computer systems(Database) \(SBE306\) - Autumn 2019
+# Computer systems(Database) \(SBE306\) - Fall 2019
 
 ## Teaching Staff
 

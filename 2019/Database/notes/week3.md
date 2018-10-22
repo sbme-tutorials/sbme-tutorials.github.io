@@ -224,5 +224,6 @@ JOIN parent on parent_child.parentID = parent.id
 JOIN child on parent_child.child_ID = child.id;
 ```
 
-it is funny right and not that hard **TRY IT YOURSELF it`s safe you can do it at home**.
+it is funny right and not that hard **it`s safe you can do it at home**.
+
 moreover next class ISA.
