@@ -3,7 +3,7 @@ layout: page
 course: "hemn115"
 category: "assignment"
 year: "2019"
-title:  "Assignment 2: Arduino signal aquisition"
+title:  "Assignment 2: Arduino signal acquisition"
 by: "eslam"
 pdf: true
 ---
@@ -43,7 +43,8 @@ git clone URL
 ## Part 1: Arduino 
 
 1. Use Arduino to acquire two signals from two different sensors.
-2. Plot signals readings on serial plotter. 
+2. Plot signals readings on serial plotter.
+3. Make an alarm for a condition based on sensor readings.
 
 **Bonus**
 
