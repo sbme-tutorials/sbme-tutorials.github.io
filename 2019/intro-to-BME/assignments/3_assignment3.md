@@ -26,26 +26,21 @@ pdf: true
 
 ## Joining to Assignment Repository
 
-Refer to [this]() sheet to know your **group number**: 
+Refer to [this](https://docs.google.com/spreadsheets/d/1hdmFvHQYQybJCUS_TFgDmyFzorwZQOkQE6eTCSQDuew/edit?usp=sharing) sheet to know your **group number**: 
 
-1. Go to the [Assignment Page]().
+1. Go to the [Assignment Page](https://classroom.github.com/g/v_fUTPns).
 2. Joint Group or make another group.
 ![](../images/assignment2.png)
 3. Wait till your repository created.
 
-4. Open the link and Clone repository.
-```bash
-git clone URL
-```
+4. Open the link and Clone repository.`
 
 
 ## Part 1: Programming Matlab 
 
-1. Plot the signal versus time (1 second per view). Need to scroll the view.
+1. Plot the signal versus time (1 second per view). Need to scroll the view
 2. Apply any 3 different filters on your signal, and plot the results.
 3. Calculate and plot the Fourier transform of both the original and filtered signal.
-
-**Bonus**
 
 ## Part 2: Written
 
