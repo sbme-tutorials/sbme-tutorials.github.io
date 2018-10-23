@@ -33,7 +33,7 @@ Refer to [this](https://docs.google.com/spreadsheets/d/1hdmFvHQYQybJCUS_TFgDmyFz
 ![](../images/assignment2.png)
 3. Wait till your repository created.
 
-4. Open the link and Clone repository.`
+4. Open the link and Clone repository.
 
 
 ## Part 1: Programming Matlab 
