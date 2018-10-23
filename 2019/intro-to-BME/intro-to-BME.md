@@ -66,10 +66,18 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/4_week4/index.html%}){:target="_blank"}
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/4_week4.md%}){:target="_blank"}
 
+* Week 5. Introduction to Digital Signal Processing:
+  * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/5_week5/index.html%}){:target="_blank"}
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/5_week5.md%}){:target="_blank"}
+
+
 ## Assignments 
 
 * [Assignment 1: VTK]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/1_assignment1.md%}){:target="_blank"}
 
 * [Assignment 2: Arduino]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/2_assignment2.md%}){:target="_blank"}
+
+* [Assignment 3: Digital Signal Processing (Matlab)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/3_assignment3.md%}){:target="_blank"}
+
 
 ## Announcements
