@@ -38,6 +38,7 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 |   2  | Hardware  | Assignment 2 (Arduino) |
 |   3  | Introduction to Digital Signal Processing |                |
 |   4  | Introduction to  Digital Signal Processing Continue | Assignment 3 (Matlab) |
+|   5  | Medical Equipment and Instrumentations| |
 
 ## Lectures
 
@@ -49,6 +50,10 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 * Week 3 & 4. Introduction to Digital Signal Processing	:
   * [Slides](https://drive.google.com/file/d/1_IxlcYG0IxfJwMpr7i2NWxuE1FLOuryP/view?usp=sharing){:target="_blank"}
+
+* Week 5. Medical Equipment and Instrumentations :
+  * [Slides](https://drive.google.com/file/d/1YCy3uMgmWBBKtVWKoxGyIObrvIKhEY5a/view){:target="_blank"}
+
 
 ## Tutorials
 
