@@ -57,4 +57,6 @@ Demonstrators:  Eng. Eslam Adel.
 
 * [Assignment 3]({{ site.baseurl }}{% link 2019/microprocessor/assignments/3_assignment3.md%}){:target="_blank"}
 
+* [Assignment 4]({{ site.baseurl }}{% link 2019/microprocessor/assignments/4_assignment4.md%}){:target="_blank"}
+
 ## Announcements

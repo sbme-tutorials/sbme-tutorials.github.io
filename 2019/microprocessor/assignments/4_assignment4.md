@@ -20,9 +20,7 @@ Deadline for online submission is **Wednesday 31/10/2018**.
 2. Skip Classroom roster
 ![](../images/assign3/skip.png)
 3. Joint your team or create it.
-![](../images/assign3/create.png)
 4. Wait till your repository created.
-![](../images/assign3/wait.png)
 5. Open the link and follow instructions to setup your repository.
 ![](../images/setup.png)
 
