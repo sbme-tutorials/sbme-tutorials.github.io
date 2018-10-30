@@ -75,6 +75,11 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/5_week5/index.html%}){:target="_blank"}
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/5_week5.md%}){:target="_blank"}
 
+* Week 6. Medical Instrumentations:
+  * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/6_week6/index.html%}){:target="_blank"}
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/6_week6.md%}){:target="_blank"}
+
+
 
 ## Assignments 
 

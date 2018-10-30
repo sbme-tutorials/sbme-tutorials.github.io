@@ -41,7 +41,7 @@ Ultrasound uses sound wave that is sent through the body and received again afte
 ![](../images/w6/US1.jpg)
 ![](../images/w6/US2.jpeg)
 ![](../images/w6/USImage.jpeg)
-
+![](../images/w6/USHeart.gif)
 ### Nuclear Medicine 
 The use of radioactive substances in diagnosis and treatment of diseases. It is used to measure the functionality of the organs by imaging how body react with this radioactive substances (Radio-tracers). 
 ![](../images/w6/PET-MIPS-anim.gif)
