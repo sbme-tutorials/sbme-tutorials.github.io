@@ -3,7 +3,7 @@ layout: page
 course: "hemn115"
 category: "assignment"
 year: "2019"
-title:  "Assignment 2: Arduino signal acquisition"
+title:  "Assignment 3: Digital signal Processing"
 by: "eslam"
 pdf: true
 ---
@@ -11,44 +11,36 @@ pdf: true
 
 ## Objectives
 
-* Installing Arduino IDE
-* Interface with analog sensors 
-* Plotting real time signal
+* Interaction with bio-signals using Matlab
+* Fourier Transform of signal
+* Signal Filtering
 * Documentation using Markdown language
 
 ## Prerequisites (Before you start)
 
-* Read [Section 3 Notes]({% link 2019/intro-to-BME/notes/3_week3.md %}){:target="_blank"}.
+* Read [Section 5 Notes]({% link 2019/intro-to-BME/notes/5_week5.md %}){:target="_blank"}.
 
 ## Deadline
 
-**Thursday 16/10/2018**
+**Tuesday 30/10/2018**
 
 ## Joining to Assignment Repository
 
 Refer to [this](https://docs.google.com/spreadsheets/d/1hdmFvHQYQybJCUS_TFgDmyFzorwZQOkQE6eTCSQDuew/edit?usp=sharing) sheet to know your **group number**: 
 
-1. Go to the [Assignment Page](https://classroom.github.com/g/xG7jA0cb).
+1. Go to the [Assignment Page](https://classroom.github.com/g/v_fUTPns).
 2. Joint Group or make another group.
 ![](../images/assignment2.png)
 3. Wait till your repository created.
 
 4. Open the link and Clone repository.
-```bash
-git clone URL
-```
-![](../images/Selection_047.png)
 
 
-## Part 1: Arduino 
+## Part 1: Programming Matlab 
 
-1. Use Arduino to acquire two signals from two different sensors.
-2. Plot signals readings on serial plotter.
-3. Make an alarm for a condition based on sensor readings.
-
-**Bonus**
-
-Save signals on SD card and plot it on matlab.
+1. Plot the signal versus time (1 second per view). Need to scroll the view
+2. Apply any 3 different filters on your signal, and plot the results.
+3. Calculate and plot the Fourier transform of both the original and filtered signal.
 
 ## Part 2: Written
 

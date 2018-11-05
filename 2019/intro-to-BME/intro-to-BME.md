@@ -38,6 +38,7 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 |   2  | Hardware  | Assignment 2 (Arduino) |
 |   3  | Introduction to Digital Signal Processing |                |
 |   4  | Introduction to  Digital Signal Processing Continue | Assignment 3 (Matlab) |
+|   5  | Medical Equipment and Instrumentations| |
 
 ## Lectures
 
@@ -49,6 +50,10 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 
 * Week 3 & 4. Introduction to Digital Signal Processing	:
   * [Slides](https://drive.google.com/file/d/1_IxlcYG0IxfJwMpr7i2NWxuE1FLOuryP/view?usp=sharing){:target="_blank"}
+
+* Week 5. Medical Equipment and Instrumentations :
+  * [Slides](https://drive.google.com/file/d/1YCy3uMgmWBBKtVWKoxGyIObrvIKhEY5a/view){:target="_blank"}
+
 
 ## Tutorials
 
@@ -66,10 +71,23 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/4_week4/index.html%}){:target="_blank"}
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/4_week4.md%}){:target="_blank"}
 
+* Week 5. Introduction to Digital Signal Processing:
+  * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/5_week5/index.html%}){:target="_blank"}
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/5_week5.md%}){:target="_blank"}
+
+* Week 6. Medical Instrumentations:
+  * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/6_week6/index.html%}){:target="_blank"}
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/6_week6.md%}){:target="_blank"}
+
+
+
 ## Assignments 
 
 * [Assignment 1: VTK]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/1_assignment1.md%}){:target="_blank"}
 
 * [Assignment 2: Arduino]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/2_assignment2.md%}){:target="_blank"}
+
+* [Assignment 3: Digital Signal Processing (Matlab)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/3_assignment3.md%}){:target="_blank"}
+
 
 ## Announcements
