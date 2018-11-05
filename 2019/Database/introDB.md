@@ -84,7 +84,9 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 2
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week2.md%}){:target="_blank"}
 * Week 3
-    <!-- * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week3.md%}){:target="_blank"} -->
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week3.md%}){:target="_blank"}
+* Week 4
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week4.md%}){:target="_blank"}
 
 
 

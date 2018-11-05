@@ -184,7 +184,6 @@ CREATE TABLE parent_child
 (
     parentID INT NOT NULL,
     child_ID INT NOT NULL,
-    PRIMARY KEY (CHILD_id),
     FOREIGN KEY (parentID) REFERENCES parent (id),
     FOREIGN KEY (child_ID) REFERENCES child (id)
 );

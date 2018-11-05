@@ -10,7 +10,7 @@ year: "2019"
 * TOC
 {:toc}
 
-# Tutorial 3
+# Tutorial 4
 learning more about data types beside more features.
 
 ## Strings
@@ -129,7 +129,6 @@ CREATE TABLE transact (
 );
 
 CREATE TRIGGER insert_date AFTER INSERT ON transact
-CREATE TRIGGER insert_date BEFORE INSERT ON transact
 FOR EACH ROW  SET NEW.tr_date = NOW();
 
 ```
@@ -145,3 +144,66 @@ CREATE VIEW v AS SELECT column1, column2 .... FROM t;
 
 SELECT * FROM v
 ```
+
+## Exercises
+Regard the following Relational model
+
+![](../images/pract1.png)
+
+### Cross Product
+
+**Q1** Retrieve employees names who are working in the Research department
+
+```
+Select FNAME,LNAME
+from employee,department
+where DNO = DNUMBER and DNAME = 'Research'
+```
+
+**Q2** Retrieve project names where the last name of the department manager is Wong
+
+```
+Select PNAME
+from employee,department,project
+where DNUM = DNUMBER and MGRSSN = SSN
+and LNAME = ‘Wong’
+```
+
+**Q3** Retrieve managers names having projects in 'Stafford'
+
+```
+Select FNAME,LNAME
+from employee,department,project
+where DNUM = DNUMBER and MGRSSN = SSN and Plocation = ‘Stanfford’
+```
+
+### Nested queries
+
+**Q1** Retrieve project names where the department manager last name is Wong or project names where employee smith is working in.
+
+```
+Select PNAME
+from project
+where PNUMBER in
+(Select PNUMBER from employee
+join department on MGRSSN = SSN
+join project on DNUM = DNUMBER
+where LNAME = ‘Wong’ )
+or PNUMBER in (Select PNUMBER from employee
+join works_on on ESSN = SSN
+join project on PNO = PNUMBER
+where LNAME = ‘Smith’ )
+```
+
+**Try to solve the following**
+
+1. Retrieve the names of all employees in ‘Research’ department who work
+more than 10 hours per week on theProductX project.
+
+2. List the names of all employees who have a dependent with the same first
+name as themselves.
+
+3. For each project, list the project name and the total hours per week (by all
+employees) spent on that project.
+
+4. Retrieve the names of all employees who do not work on any project.
