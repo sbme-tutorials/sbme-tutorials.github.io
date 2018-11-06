@@ -45,6 +45,8 @@ Price  of PI 3 about $35, PI zero W $5
 6. Connect the display 
 7. Connect the power 
 
+[setting up your Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-setting-up)
+
 ## Controlling Pi remotely 
 Actually you don't have to connect the display, mouse and keyboard every time. You can enable ssh and access pi through any other computer.
 
@@ -55,4 +57,36 @@ Actually you don't have to connect the display, mouse and keyboard every time. Y
     ```
     You can set new password for your Pi. Default password is raspberry
 3. Use arrows to open Interfacing options and enable SSH (Remote command line access)
-4. 
+
+
+To access raspberry pi from your computer install ssh
+
+```bash
+sudo apt-get install ssh 
+ssh pi@192.168.1.200 # Or the IP of your PI
+```
+
+For windows users you can use PuTTY. Check this [link](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh/ssh-under-windows) for more help
+
+## Basic linux commands
+
+Command | Meaning
+|---|---|
+|ls| List files in current directory|
+|cd |Change directory|
+pwd |print working directory
+rm filename |remove filename
+mkdir directoryname |Make directory named directoryname
+rmdir directoryname| remove empty directory
+mv oldfile newfile | Move (rename) oldfile to newfile
+cp oldfile newfile | Copy oldfile to newfile
+man command | Display manual of command
+date | read system date/time
+sudo perform as|  root user
+./program | run program
+exit | Quit terminal session
+
+
+## Getting started with python
+
+Physical computing with python tutorial [link](https://projects.raspberrypi.org/en/projects/physical-computing)
