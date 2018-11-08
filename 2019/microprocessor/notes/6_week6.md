@@ -12,12 +12,12 @@ by: "Eslam"
 * TOC
 {:toc}
 
-# Introduction to Raspberry PI
+## Introduction to Raspberry PI
 
 Raspberry Pi is a mini computer. It is basically a cheap PC for learning purposes and practising programming.
 ![](../images/w6/pi-zero-pi-3.jpg)
 Raspberry is just like apple a name of fruit, Pi stands for python interpreter which is provided. 
-Price  of PI 3 about $35, PI zero W $5
+Price  of PI 3 about 35 dollars, PI zero W only 5 dollars
 
 ## Raspberry PI zero W specs
 
@@ -126,9 +126,9 @@ And now you can work from your computer
 Operating system of raspberry pi is based on linux. Here some basic commands  
 
 Command | Meaning
-|---|---|
-|ls| List files in current directory|
-|cd |Change directory|
+---|---
+ls| List files in current directory|
+cd |Change directory|
 pwd |print working directory
 rm filename |remove filename
 mkdir directoryname |Make directory named directoryname
@@ -188,9 +188,9 @@ z = x - y
 
 ### Comparison Operators
 
-|operator | meaning|
-|---|---|
-|==	|Equal| to|
+operator | meaning
+---|---
+==	|Equal to
 !=	|Not equal to
 <	|Less than
 >	|Greater than
@@ -213,15 +213,15 @@ not x
 
 ```python 
 
-x = 23 
-y = 22 
+x = 25 
+y = 20 
 
 if x < y:
-  print("x is greater than y")
+    print("y is greater than x")
 elif x == y
     print("x and y are equal")
 else:
-    print("y is greater than x")
+    print("x is greater than y")
 ```
 
 ### Loops
@@ -262,7 +262,7 @@ from gpiozero import LED
 
 
 ## Pi physical computing with python
-> Full tutorials are available [here](https://projects.raspberrypi.org/en/projects/physical-computing)
+> Full tutorial is available [here](https://projects.raspberrypi.org/en/projects/physical-computing)
 
 ### GPIO 
 Pi has 40 Pins 
@@ -309,6 +309,7 @@ or
 $vi blink.py 
 ```
 2. Add your code
+
 ```python
 from gpiozero import LED
 from time import sleep
@@ -321,7 +322,9 @@ while True:
     led.off()
     sleep(1)
 ```
+
 3. Run the example
+
 ```bash
 $python3 blink.py
 ```
