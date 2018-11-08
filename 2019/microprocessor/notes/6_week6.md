@@ -87,11 +87,11 @@ Actually you don't have to connect the display, mouse and keyboard every time. Y
    ```bash
     sudo raspi-config
     ```
-![](../images/w6/config1.png)
+![](../images/w6/config2.png)
 
 3. Use arrows to open Interfacing options and enable SSH (Remote command line access)
 
-![](../images/w6/config2.png)
+![](../images/w6/config1.png)
 
 Or basically you can enable it from preferences and Raspberry pi configuration 
 ![](../images/w6/using-the-gui.png)
