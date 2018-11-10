@@ -35,7 +35,10 @@ extra office hours requested via E-Mail to **ayman.anwar.bio@gmail.com** (Subjec
 
 | Week | Content |  Tasks
 |------|-----------------|-----|
-|   1  | ER model | ---- |
+|   1  | ER model and basic SQL statments | ---- |
+|   2  | Aggregate functions | ---- |
+|   3  | SQL constraint & Joins | ---- |
+|   4  | Strings , Transactions and Triggers | ---- |
 
 ## Required installations
 visit [AMPPS](https://www.ampps.com/downloads) and download the latest version according to your distributions.

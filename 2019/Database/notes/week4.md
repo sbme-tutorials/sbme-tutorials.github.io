@@ -200,10 +200,41 @@ where LNAME = ‘Smith’ )
 1. Retrieve the names of all employees in ‘Research’ department who work
 more than 10 hours per week on theProductX project.
 
+```
+select FName,MINIT,LNAME
+from employee join works_on on ESSN = SSN join project on PNO = PNUMBER join department on DNO =
+DNUMBER
+where DNAME = ‘Research’ and PName = 'ProductX' and hours>10;
+OR
+Select FNAME,MINIT,LNAME
+From employee,works_on,project,department
+Where ESSN = SSN and PNUMBER = PNO and DNO = Dnumber and DName = ‘Research’ and Hours > 10 and
+PNAME = 'ProductX';
+```
+
 2. List the names of all employees who have a dependent with the same first
 name as themselves.
+
+```
+select FNAME, MINIT, LNAME
+from employee join dependent on ESSN =ssn
+where FNAME = DEPENDENT_NAME;
+```
 
 3. For each project, list the project name and the total hours per week (by all
 employees) spent on that project.
 
+```
+select PNAME, sum(HOURS)
+from project join works_on on PNO = PNUMBER
+group by PNAME;
+```
+
 4. Retrieve the names of all employees who do not work on any project.
+
+```
+select Fname
+from employee
+where SSN not in (select SSN from employee, works_on
+where SSN = ESSN );
+```
