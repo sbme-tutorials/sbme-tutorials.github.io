@@ -55,15 +55,105 @@ This is how gnome data looks like
 
 ## Genome replication
 
-[DNA replication 3D Video](https://www.youtube.com/watch?v=TNKWgcFPHqw)
+Genome replication basically is to copy or make a clone of the gnome. Like copying that text but it is not for one time it is for million of times. Gnome replication is a complex process and till now it not fully understood by the biologists. 
 
-replication origin problem and applications: gene therapy 
+![](../images/w7/semiconservative_replication.png)
 
-frost-resistant tomatoes
+Dna Replication 
 
-pesticide-resistant corn [link](http://www.genewatch.org/sub-568238)
+<iframe width="700" height="415" src="https://www.youtube.com/embed/TNKWgcFPHqw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+Finding replication origin is a key for many applications gene therapy, genetic modified food like frost-resistant tomatoes and [ pesticide-resistant corn](http://www.genewatch.org/sub-568238)
+
+The idea of gene therapy simply is to infect patient who lack a specific gene with artificial gene that encode a therapeutic protein. Once become inside the cell it will be replicated and treat the patient.  
 First human gene therapy experiment [link](https://history.nih.gov/exhibits/genetics/sect4.htm)
+
+
+So where is engineering here. It is purely biological problem.  Only biologist can find experimentally the origin of replication. Simply he could cut cell DNA to pieces and find which piece will make the cell stop replication and hence it must be the origin of replication.
+
+**It is not well defined computational problem**
+
+## Hidden message in Replication origin
+
+[The Gold-Bug](https://en.wikipedia.org/wiki/The_Gold-Bug) short story tells us about a hidden message of pirate treasures. This message must be encoded to be understood. 
+
+ ![](../images/w7/Selection_051.png)
+
+ It was noticed that ;48 sequence is frequently repeated in that message, given that it is encoded from english and the most frequent word in english is THE we can replace ; with T, 4 with H, and 8 with E. 
+
+  ![](../images/w7/Selection_052.png)
+
+ We have a better chance now to encode the message
+
+ ![](../images/w7/Selection_053.png)
+
+So frequent word is the hidden message for decoding.
+
+### Counting words 
+
+So the first problem we need to solve is to count number of repetitions of a pattern in the text. 
+
+```python
+PatternCount(Text, Pattern)
+        count ← 0
+        for i ← 0 to |Text| − |Pattern|
+            if Text(i, |Pattern|) = Pattern
+                count ← count + 1
+        return count
+
+PatternCount("GCGCG", "GCG")
+> Output
+2
+```
+
+**Lets try to implement it**
+
+### Frequent words
+
+Given a text find frequent words with a specific length k.
+
+```python
+        FrequentWords(Text, k)
+            FrequentPatterns ← an empty set
+            for i ← 0 to |Text| − k
+                Pattern ← the k-mer Text(i, k)
+                Count(i) ← PatternCount(Text, Pattern)
+            maxCount ← maximum value in array Count
+        for i ← 0 to |Text| − k
+            if Count(i) = maxCount
+                add Text(i, k) to FrequentPatterns
+        remove duplicates from FrequentPatterns
+        return FrequentPatterns
+FrequentWords("ACGTTGCATGTCGCATGATGCATGAGAGCT", 4)
+> Output
+CATG GCAT
+```
+
+### Reverse complement 
+
+Given a text of DNA string get its reverse complement
+
+```python
+    def reverseComplement(Text):
+        complementDict = {}
+        complementDict["A"] = "T"
+        complementDict["C"] = "G"
+        complementDict["G"] = "C"
+        complementDict["T"] = "A"
+        reverseComplement = "" # an empty string
+        for i in reversed(Text):
+            reverseComplement = reverseComplement +  complementDict[i]
+        return reverseComplement
+
+reverseComplement("AAAACCCGGT")
+> Output
+ACCGGGTTTT        
+```
+
+
+## Useful links 
+
+[Finding Hidden Messages in DNA (Bioinformatics I)  ](https://www.coursera.org/learn/dna-analysis)
 
 Online course [link](http://www.hcbravo.org/cmsc423/calendar/)
 
