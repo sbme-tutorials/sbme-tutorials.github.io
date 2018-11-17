@@ -55,7 +55,7 @@ This is how gnome data looks like
 
 ## Genome replication
 
-Genome replication basically is to copy or make a clone of the gnome. Like copying that text but it is not for one time it is for million of times. Gnome replication is a complex process and till now it not fully understood by the biologists. 
+Genome replication basically is to copy or make a clone of the gnome. Like copying that text but it is not for one time it is for million of times. Gnome replication is a complex process and till now it is not fully understood by the biologists. 
 
 ![](../images/w7/semiconservative_replication.png)
 
@@ -131,6 +131,7 @@ CATG GCAT
 
 ### Reverse complement 
 
+![](../images/w7/semiconservative_replication.png)
 Given a text of DNA string get its reverse complement
 
 ```python
