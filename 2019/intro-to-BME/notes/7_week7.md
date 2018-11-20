@@ -13,7 +13,7 @@ by: "Eslam"
 * TOC
 {:toc}
 
-# Bioinformatics
+## Bioinformatics
 
 Cell is the basic structural, functional and biological unit of all known living organisms. 
 ![](../images/w7/cell.JPG)
@@ -107,6 +107,127 @@ PatternCount("GCGCG", "GCG")
 ```
 
 **Lets try to implement it**
+### Getting Started with Python
+
+Python is interpreted high level programming language for general purpose computing. 
+
+You already installed anaconda. We can use spyder IDE to run our code, but we will use jupyter notebook.
+
+![](../images/w7/jupyter.png)
+### Variables
+
+Python is untyped language 
+
+```python
+x = 5
+y = 'Hello SBME'
+```
+
+### Lists
+
+```python
+# Initialize the list
+myList = [2, 55, 565]
+
+# add an element at the end of the list
+myList.append(8)
+
+# Add element in specific index
+myList.insert(1, 7)
+
+print( myList ) # ??
+print( myList[0] ) # ??
+print( myList[3] ) # ??
+print( myList[4] ) # ??
+```
+
+
+### Arithmetic Operations
+
+```python
+
+x = 19
+y = 18 
+
+z = x / y
+z = x * y
+z = x + y
+z = x - y
+
+```
+
+### Comparison Operators
+
+operator | meaning
+---|---
+==	|Equal to
+!=	|Not equal to
+<	|Less than
+>	|Greater than
+<=	|Less than or equal to
+>=	|Greater than or equal to
+
+
+### Logical Operations
+
+```python
+x = True
+y = False 
+
+x or y 
+x and y 
+not x 
+```
+
+### If, elif, else
+
+```python 
+
+x = 25 
+y = 20 
+
+if x < y:
+    print("y is greater than x")
+elif x == y:
+    print("x and y are equal")
+else:
+    print("x is greater than y")
+```
+
+### Loops
+
+```python
+
+for i in range(10):
+  print( i )
+
+i = 0
+while i < 10 :
+  print( i )
+  i += 1
+```
+
+
+
+### Functions
+
+```python
+def mean( list ):
+  sum = 0
+  for element in list:
+    sum += element
+  return sum / len( list )
+
+m = mean([1,12,42,1,23,12])
+print( m )
+```
+
+
+### Importing Libraries
+
+```python 
+import numpy as np
+```
 
 ### Frequent words
 
@@ -119,10 +240,10 @@ Given a text find frequent words with a specific length k.
                 Pattern ← the k-mer Text(i, k)
                 Count(i) ← PatternCount(Text, Pattern)
             maxCount ← maximum value in array Count
-        for i ← 0 to |Text| − k
-            if Count(i) = maxCount
-                add Text(i, k) to FrequentPatterns
-        remove duplicates from FrequentPatterns
+            for i ← 0 to |Text| − k
+                if Count(i) = maxCount
+                    add Text(i, k) to FrequentPatterns
+            remove duplicates from FrequentPatterns
         return FrequentPatterns
 FrequentWords("ACGTTGCATGTCGCATGATGCATGAGAGCT", 4)
 > Output
@@ -131,7 +252,7 @@ CATG GCAT
 
 ### Reverse complement 
 
-![](../images/w7/semiconservative_replication.png)
+![](../images/w7/reverse_complement.png)
 Given a text of DNA string get its reverse complement
 
 ```python

@@ -218,7 +218,7 @@ y = 20
 
 if x < y:
     print("y is greater than x")
-elif x == y
+elif x == y:
     print("x and y are equal")
 else:
     print("x is greater than y")
@@ -246,7 +246,7 @@ def mean( list ):
   sum = 0
   for element in list:
     sum += element
-  return sum / len( sum )
+  return sum / len( list )
 
 m = mean([1,12,42,1,23,12])
 print( m )
