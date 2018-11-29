@@ -5,7 +5,7 @@
 layout: page
 category: "notes"
 course: "hemn115"
-title:  "Week 7: Introduction to Bioinformatics"
+title:  "Week 9 & 10: Introduction to Bioinformatics"
 year: "2019"
 by: "Eslam"
 ---

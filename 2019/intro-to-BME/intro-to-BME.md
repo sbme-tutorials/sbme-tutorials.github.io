@@ -39,6 +39,8 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 |   3  | Introduction to Digital Signal Processing |                |
 |   4  | Introduction to  Digital Signal Processing Continue | Assignment 3 (Matlab) |
 |   5  | Medical Equipment and Instrumentations| |
+|   6 & 7  | Healthcare systems | |
+|   9 & 10 | Introduction to Bioinformatics | Assignment 4 (Python)| 
 
 ## Lectures
 
@@ -79,6 +81,10 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/6_week6/index.html%}){:target="_blank"}
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/6_week6.md%}){:target="_blank"}
 
+* Week 9 & 10. Introduction to Bioinformatics:
+  * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/9_week9/index.html%}){:target="_blank"}
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/9_week9.md%}){:target="_blank"}
+
 
 
 ## Assignments 
@@ -88,6 +94,8 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 * [Assignment 2: Arduino]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/2_assignment2.md%}){:target="_blank"}
 
 * [Assignment 3: Digital Signal Processing (Matlab)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/3_assignment3.md%}){:target="_blank"}
+
+* [Assignment 4: Bioinformatics (Python)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/4_assignment4.md%}){:target="_blank"}
 
 
 ## Announcements

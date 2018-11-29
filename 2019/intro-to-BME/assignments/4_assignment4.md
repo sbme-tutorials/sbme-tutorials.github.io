@@ -11,18 +11,17 @@ pdf: true
 
 ## Objectives
 
-* Interfacing with gnomic data
-* Implementation of computer algorithms
-* Python programming with jupyter-notebook
-* Markdown documentation
+* Implementation of algorithms for analysis of genomic data.
+* Python programming with jupyter-notebook.
+* Documentation
 
 ## Prerequisites (Before you start)
 
-* Read [Section 7 Notes]({% link 2019/intro-to-BME/notes/7_week7.md %}){:target="_blank"}.
+* Read [Section 9 & 10 Notes]({% link 2019/intro-to-BME/notes/9_week9.md %}){:target="_blank"}.
 
 ## Deadline
 
-
+**Tuesday 7/12/2018** 
 
 ## Joining to Assignment Repository
 
