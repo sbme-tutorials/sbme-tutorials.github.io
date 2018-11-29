@@ -272,8 +272,60 @@ reverseComplement("AAAACCCGGT")
 ACCGGGTTTT        
 ```
 
+## Exercises
+### Choose the best answer
+
+1. in DNA, Adenine (A) is the complement of 
+
+    * Guanine (G)
+    * Cytosine (C)
+    * Thymine (T) 
+    * None of the above
+
+2. in DNA, Cytosine (C) is the complement of 
+
+    * Adenine (A)
+    * Guanine (G)
+    * Thymine (T)
+    * None of the above
+
+3. DNA replication produces ...... of original DNA
+
+    * different copies
+    * identical copies 
+    * complemented
+    * None of the above
+
+4. Gene-Therapy is to inject the patient with artificial gene that encodes 
+
+    * Harmful protein
+    * Therapeutic protein
+    * Effectiveness protein
+    * None of the above
+
+5. Finding frequent words is the key algorithm to locate ..... of the DNA
+
+    * Replication origin
+    * Complement
+    * Sequence
+    * None of the above
+
+6. Bioinformatics replaces the lab experiments with 
+
+    * Real experiments
+    * Computations analysis
+    * Advanced experiments
+    * None of the above
+7. The frequent 3-mer (3 letters word) in this DNA sequence (ATTGCATGC) is
+    
+    * ATT
+    * ATG
+    * TGC
+    * None of the above
 
 ## Useful links 
+
+
 
 [Finding Hidden Messages in DNA (Bioinformatics I)  ](https://www.coursera.org/learn/dna-analysis)
 
