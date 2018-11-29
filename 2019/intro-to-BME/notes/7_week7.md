@@ -271,14 +271,14 @@ reverseComplement("AAAACCCGGT")
 > Output
 ACCGGGTTTT        
 ```
+## Section Demo 
+
+You can download section demo from [here]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/demo.zip%}){:target="_blank"}
 
 ## Useful links 
 
 
-
 [Finding Hidden Messages in DNA (Bioinformatics I)  ](https://www.coursera.org/learn/dna-analysis)
-
-Online course [link](http://www.hcbravo.org/cmsc423/calendar/)
 
 
 
