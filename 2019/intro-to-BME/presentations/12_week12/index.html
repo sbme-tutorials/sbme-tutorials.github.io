@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Week 12: Introduction to image processing
+</title>
+<link rel="stylesheet" href="/css/laminal.css">
+
+</head>
+<body>
+<textarea id="source">
+
+class: center, middle
+# Introduction to Image Processing 
+
+Eslam Adel 
+
+email: `eslam.a.mahmoud@eng1.cu.edu.eg`
+---
+    
+### Fundamental Block Diagram of Image Processing 
+
+<img src="../../images/blk-diagram.png"  width ="80%" >
+
+---
+
+### Image Acquisition 
+
+**Digital Camera**
+
+* Matrix of CCD elements (photodiodes)
+
+<img src="../../images/ccd.png"  width ="80%" >
+
+---
+
+* Each pixel has 4 sensors (1 Red, 1 Blue, 2 Green)
+
+<img src="../../images/pixels.png"  width ="80%" >
+---
+
+* Image projection 
+
+<img src="../../images/projection.png"  width ="80%" >
+---
+
+
+### Digital Image
+
+<img src="../../images/matrix.png"  width ="80%" >
+
+---
+
+* Digital image is a matrix of pixels
+Color of each pixel is determined by its RGB values 
+
+<img src="../../images/color.jpg"  width ="80%" >
+
+---
+
+* For grayscale images only one channel determine the gray level
+
+<img src="../../images/black-dog.png"  width ="80%" >
+
+---
+
+### Resizing images
+
+**The Original Image**
+
+```python
+from scipy.misc import imresize
+import matplotlib.pyplot as plt
+
+im = plt.imread('black-dog.png')
+```
+
+**Resize the image**
+
+```python
+resizeFactors = [1, 0.2, 0.1, 0.05]
+for factor in resizeFactors:
+    plt.figure()
+    plt.imshow(imresize(im, (int(im.shape[0]*factor), int(im.shape[1]*factor))))
+    plt.title('Resized image with factor ' + str(factor))
+plt.show()
+```
+---
+The output 
+
+<img src="../../images/Figure_1.png"  width ="80%" >
+---
+
+<img src="../../images/Figure_2.png"  width ="80%" >
+
+---
+
+<img src="../../images/Figure_3.png"  width ="80%" >
+
+
+---
+<img src="../../images/Figure_4.png"  width ="80%" >
+---
+
+### Image Enhancement
+
+Enhancing image contrast 
+
+```python 
+import cv2 
+import numpy as np
+
+img = cv2.imread('PgaNb.png',0)
+equ = cv2.equalizeHist(img"  width ="80%" >
+res = np.hstack((img,equ)) #stacking images side-by-side
+cv2.imwrite('res.png',res)
+```
+
+---
+
+
+Output 
+
+<img src="../../images/res.png"  width ="100%" >
+
+---
+
+### Image Segmentation 
+
+Convert the image to segments or isolated objects 
+
+<img src="../../images/segmentation.png"  width ="80%" >
+
+---
+
+### Recognition and Interpretation
+
+* Face and eye detection 
+
+<img src="../../images/face-detection.jpeg"  width ="80%" >
+
+---
+
+* Person detection 
+
+<img src="../../images/person-detection.jpg"  width ="80%" >
+
+---
+
+* Object detection (car)
+
+<img src="../../images/car-detection.jpg"  width ="80%" >
+
+---
+
+* Object recognition 
+
+<img src="../../images/object-recognition.jpg"  width ="100%" >
+
+
+--- 
+
+---
+
+
+* Machine learning and classification 
+
+<img src="../../images/machine-learning.bmp"  width ="100%" >
+
+
+</textarea>  
+
+<script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<script src="/javascript/remark-latest.min.js"></script>
+
+<script type="text/javascript">
+var hljs = remark.highlighter.engine;
+</script>
+<script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var options = {
+highlightStyle: 'monokai',
+countIncrementalSlides: false
+};
+var slideshow = remark.create(options);
+
+// extract the embedded styling from ansi spans
+$('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+});
+
+</script>
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+MathJax.Hub.Config({
+extensions: ["tex2jax.js"],
+tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+jax: ["input/TeX", "output/HTML-CSS"],
+"HTML-CSS": {
+availableFonts: ["TeX"],
+imageFont: null
+},
+MathMenu: {
+showRenderer: false,
+showFontMenu: false,
+showLocale: false
+}
+});
+</script>
+
+</body>
+</html>
+
+
+

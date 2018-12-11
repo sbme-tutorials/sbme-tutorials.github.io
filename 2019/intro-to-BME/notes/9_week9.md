@@ -281,5 +281,75 @@ You can download section demo from [here]({{ site.baseurl }}{% link 2019/intro-t
 [Finding Hidden Messages in DNA (Bioinformatics I)  ](https://www.coursera.org/learn/dna-analysis)
 
 
+## Exercises 
+
+**Choose the correct answer**
+
+1. in DNA, Adenine (A) is the complement of
+* Guanine (G)
+* Cytosine (C)
+* Thymine (T)
+* None of the above
+2. in DNA, Cytosine (C) is the complement of
+* Adenine (A)
+* Guanine (G)
+* Thymine (T)
+* None of the above
+3. DNA replication produces ...... of original DNA
+* different copies
+* identical copies
+* complemented copies
+* None of the above
+4. Gene-Therapy is to inject the patient with an artificial gene that encodes
+* Harmful protein
+* Therapeutic protein
+* Effectiveness protein
+* None of the above
+5. Finding frequent words is the key algorithm to locate ..... of the DNA
+* Replication origin
+* Complement
+* Sequence
+* None of the above
+6. Bioinformatics replaces the lab experiments with
+* Real experiments
+* Computational analysis
+* Advanced experiments
+* None of the above
+7. The frequent 3-mer (3 letters word) in this DNA sequence (ATTGCATGC) is
+* ATT
+* ATG
+* TGC
+* None of the above
+8. The reverse complement of the DNA sequence (AAAACCCGGT) is
+* CCCCAAATTG
+* ACCGGGTTTT
+* TTTTGGGCCA
+* None of the above
+9. The output of the following code snippet
+
+```python
+total = ​ 0
+for​​ i ​ in​​ range(​ 5 ​ ):
+    total += i
+print(total)
+```
+* 10
+* 20
+* 30
+* None of the above
+10. The output of this case is
+```python
+total = ​ 0
+for​​ i ​ in​​ range(​ 5 ​ ):
+    total += i
+    print(total)
+```
+* Same as the previous question
+* Different
+* No output
+
+If it is different, What is the output?
+
+
 
 
