@@ -41,6 +41,8 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 |   5  | Medical Equipment and Instrumentations| |
 |   6 & 7  | Healthcare systems | |
 |   9 & 10 | Introduction to Bioinformatics | Assignment 4 (Python)| 
+|   11 | Revision |  | 
+|   12 | Introduction to Image Processing | Assignment 5 (Matalb or Python)| 
 
 ## Lectures
 
@@ -56,6 +58,8 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 * Week 5. Medical Equipment and Instrumentations :
   * [Slides](https://drive.google.com/file/d/1YCy3uMgmWBBKtVWKoxGyIObrvIKhEY5a/view){:target="_blank"}
 
+* Introduction to Image Processing:
+  * [Slides](https://drive.google.com/file/d/17avpOwBnUkHS4AYdPEFZ4_LR0pFWmKpY/view){:target="_blank"}
 
 ## Tutorials
 
