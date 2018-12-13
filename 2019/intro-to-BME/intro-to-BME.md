@@ -85,6 +85,13 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
   * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/9_week9/index.html%}){:target="_blank"}
   * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/9_week9.md%}){:target="_blank"}
 
+* Week 11. Revision:
+
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/11_week11.md%}){:target="_blank"}
+
+* Week 12. Image Processing:
+  * [Slides]({{ site.baseurl }}{% link 2019/intro-to-BME/presentations/12_week12/index.html%}){:target="_blank"}
+  * [Notes]({{ site.baseurl }}{% link 2019/intro-to-BME/notes/12_week12.md%}){:target="_blank"}
 
 
 ## Assignments 
@@ -96,6 +103,8 @@ Tuesday 5th slot from **4:00 PM** to **6:00 PM**
 * [Assignment 3: Digital Signal Processing (Matlab)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/3_assignment3.md%}){:target="_blank"}
 
 * [Assignment 4: Bioinformatics (Python)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/4_assignment4.md%}){:target="_blank"}
+
+* [Assignment 5: Image Processing (Matlab or Python)]({{ site.baseurl }}{% link 2019/intro-to-BME/assignments/5_assignment5.md%}){:target="_blank"}
 
 
 ## Announcements
