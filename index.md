@@ -6,7 +6,11 @@ layout: home
 ---
 # Tutorials and Course Announcements
 
-## Full 2018
+## Spring 2019
+
+* [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2019/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and Eng. Asem Alaa.
+
+## Fall 2018
 
 * [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2019/Database/introDB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
 * [Introduction to Biomedical Engineering \(HEMN115\)]({{ site.baseurl }}{% link 2019/intro-to-BME/intro-to-BME.md %}), by Dr. Tamer Basha, Eng. Eslam Adel.
