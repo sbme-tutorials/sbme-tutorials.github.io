@@ -34,6 +34,12 @@ by: "Asem"
 
 After your clone your assignment to your local machine, you can start working on your assignment by using Jupyter Notebook or Google Colaboratory.
 
+You should find 3 jupyter notebooks:
+
+1. `mathfuns.ipynb`, which walks you through writing simple functions in Python, and comparing your output with expected output.
+1. `errors.ipynb`, which you are required to solve the 2nd question you had in the Midterm using Python.
+1. `histograms.ipynb`, which requires you to plot histogram of given data and test their normality.
+
 ### A) Using Jupyter Notebook
 
 Interestingly, there is a big scientific packages that is shipped with Python, Spyder IDE, Jupyter Notebooks, scientifice libraries, and others in a single big package, Anaconda!
