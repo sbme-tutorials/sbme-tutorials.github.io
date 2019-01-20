@@ -34,3 +34,4 @@ rosalind.info/problems/ba4a/
 ![](/gallery/rna2aa.png)
 
 _Image modified from "RNA-codons-aminoacids," by Thomas Splettstoesser (CC BY-SA 4.0). The modified image is licensed under a CC BY-SA 4.0 license._
+
