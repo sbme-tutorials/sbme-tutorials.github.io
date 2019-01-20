@@ -42,7 +42,7 @@ You should find 3 jupyter notebooks:
 
 ### A) Using Jupyter Notebook
 
-Interestingly, there is a big scientific packages that is shipped with Python, Spyder IDE, Jupyter Notebooks, scientifice libraries, and others in a single big package, Anaconda!
+Interestingly, there is a big scientific package that is shipped with Python, Spyder IDE, Jupyter Notebooks, scientifice libraries, and others in a single big package, Anaconda!
 
 You can download Anaconda from its official website:
 
@@ -53,7 +53,7 @@ Make sure to download Anaconda compatible with **Python 3.7**.
 
 ### B) Using Google Colaboratory
 
-You can open and run the tasks notebooks using [Google Colaboratory](https://colab.research.google.com).
+Alternatively, you can open and run the tasks notebooks using [Google Colaboratory](https://colab.research.google.com).
 
 * Upload the notebooks of your tasks from your local machine.
 
