@@ -691,6 +691,215 @@ class: left, top
 1. [{Python Project: pillow, tesseract, and opencv}](https://www.coursera.org/learn/python-project)
 
 ---
+class:left, top
+# Task 1
+
+```python
+def summation(l):
+  # implement here
+```
+
+--
+```python
+def mean(l):
+  # implement here
+```
+
+--
+```python
+def variance(l):
+  # implement here
+```
+
+--
+```python
+import math
+# use math.sqrt() function to evaluate the square root.
+def standard_dev(l):
+  # implement here
+```
+
+---
+class:left, top
+## Cont'd 
+
+--
+```python
+def median(l):
+  # implement here
+```
+
+--
+```python
+def minimum(l):
+  # implement here
+```
+
+--
+```python
+def maximum(l):
+  # implement here
+```
+
+---
+class: left, top
+
+## Testing 
+
+```python
+import numpy as np
+
+print("Our summation method output:{}".format( summation( grades )))
+print("Numpy summation method output:{}".format( np.sum( grades )))
+print("----")
+
+print("Our mean method output:{}".format( mean( grades )))
+print("Numpy mean method output:{}".format( np.mean( grades )))
+print("----")
+
+print("Our variance method output:{}".format( variance( grades )))
+print("Numpy variance method output:{}".format( np.var( grades )))
+print("----")
+
+print("Our standard deviation method output:{}".format( standard_dev( grades )))
+print("Numpy standard deviation output:{}".format( np.std( grades )))
+print("----")
+
+print("Our median method output:{}".format( median( grades )))
+print("Numpy median method output:{}".format( np.median( grades )))
+print("----")
+
+print("Our maximum method output:{}".format( maximum( grades )))
+print("Numpy maximum method output:{}".format( np.max( grades )))
+print("----")
+
+print("Our minimum method output:{}".format( minimum( grades )))
+print("Numpy minimum method output:{}".format( np.min( grades )))
+print("----")
+```
+
+---
+class: left, top
+## Task 2
+
+<figure>
+  <img class="center" style="width:100%" src="problem2.png">
+  <figcaption class="center">Midterm Problem</figcaption>
+</figure>
+
+---
+class: left, top
+## Task 2: Cont'd
+
+--
+```python
+# Add line for importing the Numpy library
+
+
+# Construct an array called `increasing` to contain the second column.
+increasing = None
+
+# Construct an array called `decreasing` to contain the third column.
+decreasing = None
+
+# Construct an array called `load` to contain the first column. 
+# Hint: use `np.arange` function (https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.arange.html#numpy.arange)
+load = None
+```
+
+---
+class: left, top
+## Task 2: Cont'd
+
+--
+```python
+# Use np.hstack to concatenate two copies of `load` array into `x`
+x = None
+
+# Use np.hstack to concatenate `increasing` and `decreasing` into `y`
+y = None
+
+# Compute the summation of x values (in a single line)
+sX = None
+
+# Compute the summation of y values (in a single )
+sY = None
+
+# Compute the dot product of `x` and `y` (in a single line)
+sXY = None
+
+# Compute the dot produce of `x` and `x` (in a single line)
+sX2 = None
+
+# Get the count of points in a variable `n` (done)
+n = x.shape[0]
+
+# Compute `a1` parameter
+a1 = None
+
+# Compute `a0` parameter
+a0 = None
+```
+
+---
+class: left, top
+## Task 2: Cont'd
+
+--
+```python
+# Compute the `yFitted` (done)
+yFitted = a0 + a1 * x
+
+# Compute the expected (ideal) `yTrue` (done)
+yTrue = 0.2 * x
+
+# Full scale output `yFSO`
+yFSO = 20
+
+# Compute the accuracy error (in a single line).
+# Hint: use np.abs to get the absolute differences.
+# Hint: use np.max to get the maximum difference.
+error_accuracy = None
+
+# Compute the hysteresis error (in a single line).
+# Hint: use np.abs to get the absolute differences.
+# Hint: use np.max to get the maximum difference.
+error_hysteresis = None
+
+# Compute the linearity error (in a single line).
+# Hint: use np.abs to get the absolute differences.
+# Hint: use np.max to get the maximum difference.
+error_linearity = None
+```
+
+---
+class: left, top
+## Task 3
+
+```python
+# get the count of grades (done)
+n = grades.shape[0] # .shape[0] returns the value of the 1st dimension
+
+# estimate the number of bins
+k = None
+
+# use np.histogram to generate the bins edges and count at each bin
+edges, bins = None
+
+# plot the histogram using the previously estimated edges (done for you)
+plt.hist(grades, bins)  # arguments are passed to np.histogram
+plt.title("Histogram of grades")
+plt.show()
+```
+
+---
+class: left, top
+## Task3: Cont'd
+
+--
+### Test normality
+
+---
 class: left, top
 # Thank you
 
