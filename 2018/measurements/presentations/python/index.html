@@ -3,16 +3,16 @@
 
 <head>
 
-	<meta charset="utf-8">
-	<title>Measurements (SBE206A): Introduction to Python</title>
-	<link rel="stylesheet" href="/css/laminal3.css">
-	<!-- <link rel="stylesheet" href="/css/adirondack.css">
+  <meta charset="utf-8">
+  <title>Measurements (SBE206A): Introduction to Python</title>
+  <link rel="stylesheet" href="/css/laminal3.css">
+  <!-- <link rel="stylesheet" href="/css/adirondack.css">
 	<link rel="stylesheet" href="/css/apron.css">
 	<link rel="stylesheet" href="/css/descartes.css"> -->
 </head>
 
 <body>
-	<textarea id="source">
+  <textarea id="source">
 
 
 ---
@@ -161,6 +161,31 @@ class: left, top
 --
 * Such language is called **dynamically typed language**. Other examples: R, Ruby, JS.
 
+---
+class: left, top
+### Variables in Python
+
+#### Reserved keywords in Python
+
+--
+* .red[Don't use the following names as variable names], because they are reserved by the language.
+
+
+--
+<table cellspacing="0" cellpadding="0" border="1">
+  <tbody>
+    <tr><td valign="top">and<br></td><td valign="top">except<br></td><td valign="top">lambda<br></td><td valign="top">with<br></td></tr>
+    <tr><td valign="top">as<br></td><td valign="top">finally<br></td><td valign="top">nonlocal<br></td><td valign="top">while<br></td></tr>
+    <tr><td valign="top">assert<br></td><td valign="top">false<br></td><td valign="top">None<br></td><td valign="top">yield<br></td></tr>
+    <tr><td valign="top">break<br></td><td valign="top">for<br></td><td valign="top">not<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+    <tr><td valign="top">class<br></td><td valign="top">from<br></td><td valign="top">or<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+    <tr><td valign="top">continue<br></td><td valign="top">global<br></td><td valign="top">pass<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+    <tr><td valign="top">def<br></td><td valign="top">if<br></td><td valign="top">raise<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+    <tr><td valign="top">del<br></td><td valign="top">import<br></td><td valign="top">return<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+    <tr><td valign="top">elif<br></td><td valign="top">in<br></td><td valign="top">True<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+    <tr><td valign="top">else<br></td><td valign="top">is<br></td><td valign="top">try<br></td><td valign="top"><div data-empty="true"><br></div></td></tr>
+  </tbody>
+</table>
 
 ---
 class: left, top
@@ -576,7 +601,7 @@ def mean( ls ):
   sum = 0
   for element in ls:
     sum += element
-  return sum / len( sum )
+  return sum / len( ls )
 
 m = mean([1,12,42,1,23,12])
 print( m )
@@ -601,7 +626,7 @@ def grade(mark):
   else:
     label = 'D'
 
-  return grade
+  return label
 
 print( grade( 73 ))
 print( grade( 90 ))
@@ -940,48 +965,48 @@ class: left, top
 
 
 
-	<script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
 
-	<script src="/javascript/remark.min.js"></script>
+  <script src="/javascript/remark.min.js"></script>
 
-	<script type="text/javascript">
-		var hljs = remark.highlighter.engine;
-	</script>
-	<script src="/javascript/terminal.language.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    var hljs = remark.highlighter.engine;
+  </script>
+  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
 
-	<script type="text/javascript">
-		var options = {
-			ratio: '4:3',
-			highlightStyle: 'monokai',
-			countIncrementalSlides: false
-		};
-		var slideshow = remark.create(options);
+  <script type="text/javascript">
+    var options = {
+      ratio: '4:3',
+      highlightStyle: 'monokai',
+      countIncrementalSlides: false
+    };
+    var slideshow = remark.create(options);
 
-		// extract the embedded styling from ansi spans
-		$('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
-			return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
-		});
+    // extract the embedded styling from ansi spans
+    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+    });
 
-	</script>
+  </script>
 
-	<script src="/mathjax/MathJax.js"></script>
+  <script src="/mathjax/MathJax.js"></script>
 
-	<script type="text/javascript">
-		MathJax.Hub.Config({
-			extensions: ["tex2jax.js"],
-			tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-			jax: ["input/TeX", "output/HTML-CSS"],
-			"HTML-CSS": {
-				availableFonts: ["TeX"],
-				imageFont: null
-			},
-			MathMenu: {
-				showRenderer: false,
-				showFontMenu: false,
-				showLocale: false
-			}
-		});
-	</script>
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      extensions: ["tex2jax.js"],
+      tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+      jax: ["input/TeX", "output/HTML-CSS"],
+      "HTML-CSS": {
+        availableFonts: ["TeX"],
+        imageFont: null
+      },
+      MathMenu: {
+        showRenderer: false,
+        showFontMenu: false,
+        showLocale: false
+      }
+    });
+  </script>
 
 </body>
 
