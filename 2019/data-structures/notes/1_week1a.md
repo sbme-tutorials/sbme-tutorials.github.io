@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "notes"
-year: "2018"
+year: "2019"
 title:  "Week 1 - Part 1: Basics of C++"
 by: "Asem"
 ---
@@ -11,6 +11,40 @@ by: "Asem"
 {:toc}
 
 ## Introduction
+
+### Resources: Textbooks and MOOCs
+
+* References are not meant to teach C++.
+* Use references to revise particular conecpts.
+* Learn by practicing, and only practicing.
+
+#### Data Structures and Algorithms (Theory)
+
+##### Reference 1: Algorithms, *by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani*
+
+![](/gallery/algobook.png)
+
+Intuitive, informal language
+
+* [{Amazon}](https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402)
+* [{Goodreads}](https://www.goodreads.com/book/show/138563.Algorithms)
+
+##### Reference 2: Introduction to Algorithms, *by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein*
+
+![](/gallery/cormen.png)
+
+* [{Amazon}](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
+* [{Goodreads}](https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms)
+* [{PDF}](http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BCormen-AL2011%5DIntroduction_To_Algorithms-A3.pdf)
+
+#### C++
+
+##### Reference 1: C++ Primer, *by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo*
+
+![](/gallery/lippman.png)
+
+* [{Amazon}](https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113)
+* [{Goodreads}](https://www.goodreads.com/book/show/768080.C_Primer)
 
 ## Variables and Collections
 

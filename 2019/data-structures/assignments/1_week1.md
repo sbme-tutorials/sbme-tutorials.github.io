@@ -2,8 +2,8 @@
 layout: page
 course: "sbe201"
 category: "assignment"
-year: "2018"
-title:  "Assignment 1 - part 2: Revision on C++"
+year: "2019"
+title:  "Assignment 1: Revision on C++"
 by: "Asem"
 pdf: true
 ---
@@ -19,7 +19,7 @@ pdf: true
 
 ## Prerequisites (Before you start)
 
-* **Required**: Read the notes of the first week: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}){:target="_blank"}\] .
+* **Required**: Read the notes of the first week: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1a.md %}){:target="_blank"}\] .
 
 ## Grading
 
@@ -29,11 +29,11 @@ pdf: true
 
 ## Deadline
 
-**Tuesday 14/2/2018 11:59 PM**.
+**Monday 18/2/2019 11:59 PM**.
 
 ## Writing Your First C++ Basics
 
-* First, register yourself for the assignment from this [link](https://classroom.github.com/a/A6ntQkKJ).
+* First, register yourself for the assignment from this [link](https://classroom.github.com/a/RY9zFv1W).
 
 ![](a1.png)
 
@@ -45,7 +45,7 @@ then,
 
 ![](a3.png)
 
-* As you did in the first part, clone the remote repository to your local machine.
+* Clone the remote repository to your local machine.
 * Jump to the assignment folder and open the `main.cpp` file.
 * You will find the questions as in-line comments. Questions `P1` and `P3` are solved for you to be more familir.
 * If you feel uncomfortable with any question, do not panic, you can ask for explanation at office hours before deadline.
@@ -80,7 +80,7 @@ $ ./app
 * As you did in first part, after solving problems, save the file, then commit and push.
 
 ```terminal
-$ git commit -a -m "solved all problems, where is my github sticker?!!"
+$ git commit -a -m "solved all problems, where is my GitHub sticker?!"
 $ git push origin master
 ```
 

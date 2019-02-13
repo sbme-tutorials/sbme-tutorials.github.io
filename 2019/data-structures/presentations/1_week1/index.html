@@ -23,23 +23,98 @@ author: "Asem Alaa"
 
 ---
 class: left, middle
-# Know your TA
+# Information about your TA
 
 --
 * My name is Asem Alaa, graduate of 2016 class.
-
 --
 * e-mail: `asem.a.abdelaziz@gmail.com`
-
 --
-* Office hours and materials are avaiable on the course page.
-
-???
-* My research interests.
-* How can I help you in this semester and after.
-* Statistics about background
+* Office hours and materials are available on the course page.
+--
+* Main research interests: Bioinformatics Algorithms and Machine Learning
 
 ---
+class: left, middle
+# Information about our course
+
+--
+* Aims to understanding various data structures by implementation from scratch.
+--
+* Understanding algorithms by implementation from scratch.
+--
+* Modern C++ is used to build our data structures and algorithms.
+--
+* This course doesn't aim to teach OOP nor design patterns. (Though, I recommend learning these topics after this course).
+--
+* We still aim to write a very clean and simple C++ code.
+--
+* We will also learn and practice on version control systems like git.
+--
+* We will learn about different topics and tools in the development ecosystem.
+--
+* Implementation assignment each week. 
+
+---
+class: left, middle
+# Attendance
+
+* Attendance is a requirement to pass the courses.
+--
+* Not showing in more than 25% of lectures or tutorials is penalized by failing in the course.
+
+---
+class: left, middle
+# .red[Cheating] 
+--
+## be it in exams or assignments
+
+--
+* [{الغش في الامتحانات | دار الإفتاء المصرية}](http://dar-alifta.org/AR/ViewFatwa.aspx?ID=13501&LangID=1)
+--
+* [{الغش فى الامتحانات |  سقفية الشباب بالكنيسة القبطية الأرثوذكسية}](https://youthbishopric.com/%D8%A7%D9%84%D8%BA%D8%B4-%D9%81%D9%89-%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA/)
+
+
+---
+class: left, top
+# Good references 
+#### Data structure and Algorithms
+##### Introduction to Algorithms, by *Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.*
+
+--
+.center[
+<img src="/gallery/cormen.png" style="width:30%">]
+
+--
+* [{Amazon}](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
+* [{Goodreads}](https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms)
+* [{PDF}](http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BCormen-AL2011%5DIntroduction_To_Algorithms-A3.pdf)
+
+---
+class: left, top
+# Good references 
+#### Data structure and Algorithms
+#### Algorithms, *by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani*
+
+--
+.center[<img src="/gallery/algobook.png" style="width:30%">]
+
+--
+* [{Amazon}](https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402)
+* [{Goodreads}](https://www.goodreads.com/book/show/138563.Algorithms)
+
+---
+class: left, top
+# Good references (C++)
+#### C++ Primer, *by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo*
+
+--
+.center[<img src="/gallery/lippman.png" style="width:40%">]
+
+--
+* [{Amazon}](https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113)
+* [{Goodreads}](https://www.goodreads.com/book/show/768080.C_Primer)
+
 
 ---
 class: left, middle
@@ -82,33 +157,28 @@ class: left, top
 #### Primitive Data Types (PDT) in C++
 
 * `bool`: holds logical value (i.e `true` or `false`), occupies **1 byte** of memory.
-
 --
 * `char`: a character (e.g `'a'`,`'b'`,..), occupies **1 byte** of memory.
-
 --
 * `int`: an integer (e.g ...,-1,0,1,2,..), occupies **4 bytes** of memory.
-
 --
 * `float`: a real-number-like (e.g 0.5, 3.141, 9.81), occupies **4 bytes** of memory.
-
 --
 * `double`: like float, but higher precision, occupies **8 bytes** of memory.
+--
+* `pointer`: next week.
+--
+* `reference`: next week.
 
 
 --
 #### Double vs float
 
 * $ \pi $ equals: `3.14159265358979323846264338327950288419716939937510582097494459230781640628620899`
-
 --
 * $ \pi $ in `float `  variable: `3.1415927`.
-
 --
 * $ \pi $ in `double` variable: `3.1415926535897931`. 
-
-???
-* We will talk about pointers and reference next week.
 
 ---
 class: left, top
@@ -119,33 +189,26 @@ A variable basically has:
 
 --
 1. **Data Type**: `int`, `char`, `bool`, ..., etc.
-
 --
 2. **Name**: name of the variable to be used throughout your code.
-
 --
 3. **Value**: the content of the variable.
- 
 --
  
- 
-Don't mix between them!
+.red[Don't mix between them!]
 
 ---
 class: left, top
 # So, to construct a variable you need to:
 
 --
-
 1. Declare a variable (Compiler Requirement).
     
     * Indicate your variable **type**.
     * Indicate your variable **name** that your are going to refer later.
-
 --
-2. Initialize that variable (For god's sake).
+2. Initialize that variable (.red[to survive undefined behaviour]).
     * Give it an initial **value**.
-
 ---
 
 # Example: constructing variables
@@ -203,9 +266,8 @@ double e {2.71828};
 --
 One way to avoid bugs (undefined behaviour) is initializing your variables.
 
-???
-
-Any Questions 
+--
+Any Questions?
 
 ---
 class: left, top
@@ -242,32 +304,24 @@ double s256 = -0.5;
 
 
 ---
-# Collections: construction of Collections (What?!)
+# Collections: construction of collections
 
 --
 This is what we are going to study through this course:
-
 --
 * Different data structures (i.e collections of elements): Array, Linked List, Stack, Queue, Tree.
-
 --
 * How to **construct** collections.
-
 --
 * How to **insert** elements to our collection.
-
 --
 * How to **modify** element in our collection.
-
 --
 * How to **delete** an element.
-
 --
 * How to **traverse** our collection (i.e print all its elements).
-
 --
 * Applying **algorithms** on our collection.
-
 --
 * **Searching** for an element in our collection.
 
@@ -277,8 +331,6 @@ class: left, top
 
 --
 * A) Arithmetic Operations.
-
-
 --
 
 ```c++
@@ -462,11 +514,6 @@ switch (grade)
 }
 ```
 
-
-???
-You can replace this with if statements. Use whatever easier for you.
-
-
 ---
 class: left, top
 # Loops: `for`, `while`
@@ -488,9 +535,8 @@ while( i < 10 )
 
 --
 * `std::cout` is used to print out object values to the terminal.
-
 --
-* Wait! What is `std::` and what is `cout`. Read this week notes to have more intuition.
+* What is `std::` and what is `cout`. Read the week notes to have more intuition.
 
 ---
 class: left, top
@@ -498,19 +544,14 @@ class: left, top
 
 --
 A function is a unit that you write some logic in it. So we can use that logic many times through that function.
-
 --
 A function basically has:
-
 --
 * **Name** to be used when calling this function.
-
 --
 * **Return Type**: a function may return `int`, `double`, `char`, ... etc. Also, it may not return, so its return type is `void`.
-
 --
 * **Arguments**: the variables given to your function so it makes some operations on.
-
 
 ---
 class: left, top
@@ -518,13 +559,10 @@ class: left, top
 
 --
 Like variables, functions must be declared before you implement your logic in this function.
-
 --
 * **Declaration** is a function header that indicates the function **name**, **return type**, and **arguments**.
-
 --
 * **Definition** is the function logic.
-
 
 ---
 class: left, top
@@ -569,10 +607,8 @@ class: left, top
   * Local scope: any variable declared in a function is not accessible outside that function.
   * Block: any variable declared inside braces `{` `}`, like the blocks of the `for`, `while`, `if`, `else if`, `else`, and `switch`-`case`.
   * `Namespace` scope.
-
 --
 2. Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.
-
 --
 3. Once the scope is terminated, all variables in that scope are destructed.
 
@@ -649,7 +685,6 @@ Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-so
 class: left, top
 # Writing C++ codes
 
-
 To write a c++ source code it is recommended to use an enhanced text editors. One of the light-weight editors developed by Microsoft and released as an open-source project is [Visual Studio Code](https://code.visualstudio.com). For ubuntu 64-bit machines, download from this [link](https://code.visualstudio.com/docs/?dv=linux64_deb).
 
 ---
@@ -670,17 +705,14 @@ class: left, top
 --
 We mean by boilerplate any code or actions that you need to write before writing your ideas (logic). 
 
---
+
 #### Examples
 
 * creating the project folder (directory).
-
 --
 * creating new file that will contain your source code.
-
 --
 * basic `#include`s and basic declaration (like `main()` function).
-
 --
 
 ```c++
@@ -726,7 +758,7 @@ int main()
   double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
 
-  std::cout << rectangleArea << std::endl << triangleArea << std::endl;
+  std::cout << rectangleArea << "\n" << triangleArea << std::endl;
 }
 ```
 
@@ -775,7 +807,7 @@ g++ -o firstAppSBME firstAppSBME.cpp
 ```
 
 --
-**CONGRATULATIONS!** you have built your first application.
+**.green[CONGRATULATIONS!]** you have built your first application.
 
 ---
 class: left, top
@@ -849,31 +881,25 @@ class: left, middle
 --
 ~~Possible~~ Awful Scenarios:
 
---
-* *Asem* sends an *Ahmed* fax containing the skeleton, then *Ahmed* sends back the skeleton with the `square::area` function implemented, and so on.
 
+* Ahmed finishes the project alone.
 --
-* A-like scenario, but through facebook, e-mail, or dropbox!
-
+* They share intermediate codes through messenger, e-mail, or dropbox!
 --
 * They pass USB disk back and forth!
-
 --
 * They sit together to finish the project!
-
 
 ---
 class:left, middle 
 # Cont'd
 
-And wait a minute:
+## What if?!
 
 --
 * What if we have a team of 8 members.
-
 --
-* What if your application was as big as 20K lines of code across tens of files.
-
+* What if your application was as big as 20000 lines of code across tens of files.
 
 ---
 class: left, middle
@@ -881,10 +907,8 @@ class: left, middle
 
 --
 * Keep track of all the changes that happened (No lost work).
-
 --
 * Many Developers can work on the same file at the same time.
-
 --
 * The Version Control System will handle conflicts if possible, if not, it
  will ask the developers to check it.
@@ -905,13 +929,10 @@ class: left, middle
 
 --
 * [{Linus Torvaldos}](https://en.wikipedia.org/wiki/Linus_Torvalds) developed Linux Kernel in 1991.
-
 --
 * Torvalds and others developed Git for management of Linux Kernel source in 2005.
-
 --
 * Git is Free and Open Source.
-
 --
 * Great community support. You can always search in [{Quora}](https://www.quora.com/) and [{Stackoverflow}](https://stackoverflow.com/) for problems you face.
 
@@ -923,29 +944,22 @@ For your first experience with git, refer to this workflow.
 
 --
 1. \[First Time Only\] Create/Clone Repository to your disk, so you have a local copy.
-
 --
 2. Make changes to your source (edit/add new file).
-
 --
 3. Add new files to your **repository system**. (You already created the files physically, but you need to ask the git repository to take control of your new file).
-
 --
 4. Commit your changes.
-
 --
 5. Get latest updates.
-
 --
 6. Resolve any conflict (if any).
-
 --
 7. Push to the remote repository.
 
 ---
 class: left, top
 # 1. Create/Clone Repo
-
 
 --
 * Case 1: New Repository.
@@ -1036,7 +1050,6 @@ class: center, top
 class: left, top
 ## Git in the cloud
 
-
 Popular servers offering free remote repository hosting:
 
 --
@@ -1046,7 +1059,6 @@ Popular servers offering free remote repository hosting:
 
 --
 * Github is offering you unlimited public repository, to have private repository you need to pay.
-
 --
 * Bitbucket is offering you unlimited public and private repository, but your teammates are limited to 5 members (Otherwise, pay).
 
@@ -1056,7 +1068,6 @@ class: center, middle
 ### What would you gain from keeping your projects on the cloud?
 
 * Never lose your work
-
 
 --
 <img style="width:50%" src="/gallery/dog-eating-homework.jpg">
@@ -1068,16 +1079,77 @@ class: left, top
 
 --
 * If you messed with your project, you can review your repository timeline and recover to a good state. 
-
-
 --
 * It is always safe to keep your projects on the cloud in one place. 
-
-
 --
 * Build a portfolio: always an elegant reference to your projects when you apply for a job. Include github profile on your CV.
 
+---
+class: left, top
+## Very efficient way to demonstrate your skills
+#### Example
 
+#### [{UK VISA: Tier 1 Exceptional Talent}](https://technation.io/visa/?fbclid=IwAR1LwtzzMubZtGRHqV21nTaxeJZ6cIyUfUMJrLqxB-dYhZ9avDnzWcGVkH4)
+
+![visa and github](visa1.png)
+
+---
+class: center, middle
+# A Special Gift for Bio2020 Class
+
+.center[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> for this gift 😄 ❤️ from all Systems and Biomedical Engineering students class 2020 at Cairo University. <a href="https://t.co/syLYrCHbJI">pic.twitter.com/syLYrCHbJI</a></p>&mdash; Amr Mahmoud (@AmrAhmed58) <a href="https://twitter.com/AmrAhmed58/status/961567568535408640?ref_src=twsrc%5Etfw">February 8, 2018</a></blockquote>]
+
+---
+class: center, middle
+
+.center[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You can also either as students or educators get very advantageous solutions and services for free! <a href="https://t.co/DyUllYPoEQ">https://t.co/DyUllYPoEQ</a><a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> <a href="https://t.co/bvaniQCU0p">pic.twitter.com/bvaniQCU0p</a></p>&mdash; Asem (@Asem_A_A) <a href="https://twitter.com/Asem_A_A/status/961573397531693057?ref_src=twsrc%5Etfw">February 8, 2018</a></blockquote>]
+
+
+---
+class: center, middle
+# Git cheat sheets
+
+<img style="width:90%" src="/gallery/gh-cheatsheet.png">
+
+[{PDF}](https://education.github.com/git-cheat-sheet-education.pdf)
+
+---
+class: center, middle
+# GitHub Flow guide
+
+<img style="width:90%" src="/gallery/gh-flow.png">
+
+[{PDF}](https://enterprise.github.com/downloads/en/github-flow-cheatsheet.pdf)
+
+---
+class: center, middle
+# GitHub-Flavored Markdown guide
+
+<img style="width:80%" src="/gallery/gh-markdown.png">
+
+[{PDF}](https://enterprise.github.com/downloads/en/markdown-cheatsheet.pdf)
+
+---
+class: center, middle
+# GitHub for Robotics comic book 
+#### explains the basics of using GitHub
+
+<img style="width:50%" src="/gallery/gh-robot.png">
+
+[{CBR}](https://discourse-cdn-sjc2.com/standard16/uploads/github/original/2X/1/175452fc42e0a4e34b0dd52d4c923ab47fd1619f.cbr)
+
+---
+class: center, middle
+## Special Gifts for Best Students
+
+<img style="width:70%" src="/gallery/gh-tshirts.png">
+
+---
+class: center, middle
+# .green[Special Gift from GitHub to Bio2021 Class]
+
+--
+## .green[#ThanksGitHub]
 
 ---
 class: left, top
@@ -1096,12 +1168,158 @@ $ sudo apt-get install git
 class: left, top
 ### Homework
 
-1. Read notes <a href="/2018/data-structures/notes/1_week1a" target="_blank">{Part 1: C++ Basics}</a> <a href="/2018/data-structures/notes/1_week1b" target="_blank">{Part 2: Git and Github}</a>
+1. Read notes <a href="/2019/data-structures/notes/1_week1a" target="_blank">{Part 1: C++ Basics}</a> <a href="/2019/data-structures/notes/1_week1b" target="_blank">{Part 2: Git and Github}</a>
 2. Your first task is simple and a tutorial-style (just follow the instructions).
 
-* <a href="/2018/data-structures/assignments/1_week1a" target="_blank">{Assignment: Part 1 (Git)}</a> **deadline Tuesday 11:59 PM**
-* <a href="/2018/data-structures/assignments/1_week1b" target="_blank">{Assignment: Part 2 (C++)}</a> **deadline next Sunday 11:59 PM**
+* <a href="/2019/data-structures/assignments/1_week1" target="_blank">{Assignment}</a> **deadline next Monday 11:59 PM**
 
+
+---
+class: left, middle
+## Linux Spaces
+### System-wise space vs. User space
+
+<img style="width:80%" src="/gallery/linux-spaces.png">
+
+* When working on your projects, you are a **USER**.
+* When installing/upgrading system-wise application/library, you are an **ADMIN**. 
+
+
+---
+class: left, top
+## Jumping between folders (changing directories)
+
+```terminal
+$ cd (Relative Path|Absolute Path)
+```
+
+* In terminal commands, with `A|B`, I mean "Either A or B". 
+
+---
+class: left, top
+## Listing files in the current directory (folder)
+
+### List files/directories inside the current directory of the terminal
+```terminal
+$ ls 
+```
+
+### List files/directories on from other directory
+```terminal
+$ ls (Relative Path|Relative Path)
+```
+
+
+---
+class: left, top
+## Change folder name or moving folder name
+
+```terminal
+$ mv (file|directory) (new file|new directory)
+```
+
+---
+class: left, top
+## Copy file 
+
+
+```terminal 
+$ cp (file) (target path)
+```
+
+---
+class: left, top
+## Copy directory
+
+```terminal
+$ cp -r (directory) (target path)
+```
+
+---
+class: left, top
+## Create a new directory (folder)
+
+
+```terminal
+$ mkdir (new folder name)
+```
+
+
+---
+class: left, top
+## Removing a file
+
+```terminal
+$ rm (file)
+```
+
+---
+class: left, top
+## Remove a directory  
+
+```terminal
+$ rm -r (directory)
+```
+
+
+---
+class: left, top
+## WARNING: Did you say `rm`?
+
+### HOW ABOUT `sudo rm -rf /`
+
+DO NOT DO THIS!
+```terminal
+$ sudo rm -rf /
+```
+
+--
+<img style="width:80%" src="/gallery/bomb.jpg">
+
+
+
+---
+class: left, top
+## Updating & Upgrading your Linux
+
+Upgrades are very important. Many hardware drivers issues are being fixed through these updates. Also, security-wise,
+updates guarantees your system to be safe against hackable vulnerabilities. For example, *Spectre* and *Meltdown* vulnerabilities that exposed all
+ Operating Systems (including Widnows and Linux), for more [info](https://www.pcworld.com/article/3245606/security/intel-x86-cpu-kernel-bug-faq-how-it-affects-pc-mac.html).
+
+```terminal
+$ sudo apt-get update
+$ sudo apt-get upgrade
+```
+
+
+---
+class: left, top
+## Installing packages from the apt store
+
+```terminal
+$ sudo apt-get install (package name)
+```
+
+---
+class: left, top
+## Installing local `.deb` packages
+
+```terminal
+$ sudo dpkg -i (package path)
+```
+
+---
+class: left, top
+## Interesting Appliactions
+
+| Category | package name | 
+|----------|--------------|
+| Music & Video | vlc, rhythm box (shipped with Ubuntu) |
+| PDFs | Okular, Foxit, PdfShuffler |
+| Screenshots | Shutter | 
+| C++ IDEs | Qt Creator, Jet-brains CLion, VSCode |
+| Python IDEs | Pycharm, Anaconda (Spyder) |
+| Web IDEs | VSCode, Jet-brains WebStorm | 
 
 ---
 class: left, top
@@ -1111,47 +1329,51 @@ class: left, top
     
     
 
-  <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
 
-  <script src="/javascript/remark-latest.min.js"></script>
+    <script src="/javascript/remark.min.js"></script>
+  
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+  
+    <script type="text/javascript">
+      var options = {
+        ratio: '4:3',
+        highlightStyle: 'monokai',
+        countIncrementalSlides: false
+      };
+      var slideshow = remark.create(options);
+  
+      // extract the embedded styling from ansi spans
+      $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+        return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+      });
+  
+    </script>
+  
+    <script src="/mathjax/MathJax.js"></script>
+  
+    <script type="text/javascript">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+        jax: ["input/TeX", "output/HTML-CSS"],
+        "HTML-CSS": {
+          availableFonts: ["TeX"],
+          imageFont: null
+        },
+        MathMenu: {
+          showRenderer: false,
+          showFontMenu: false,
+          showLocale: false
+        }
+      });
+    </script>
 
-  <script type="text/javascript">
-    var hljs = remark.highlighter.engine;
-  </script>
-  <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-  <script type="text/javascript">
-    var options = {
-      highlightStyle: 'monokai',
-      countIncrementalSlides: false
-    };
-    var slideshow = remark.create(options);
-
-    // extract the embedded styling from ansi spans
-    $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
-      return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
-    });
-
-  </script>
-
-  <script src="/mathjax/MathJax.js"></script>
-
-  <script type="text/javascript">
-    MathJax.Hub.Config({
-      extensions: ["tex2jax.js"],
-      tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-      jax: ["input/TeX", "output/HTML-CSS"],
-      "HTML-CSS": {
-        availableFonts: ["TeX"],
-        imageFont: null
-      },
-      MathMenu: {
-       showRenderer: false,
-       showFontMenu: false,
-       showLocale: false
-      }
-    });
-  </script>
   
   </body>
 </html>

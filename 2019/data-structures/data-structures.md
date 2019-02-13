@@ -2,10 +2,10 @@
 layout: coursepage
 category: "coursepage"
 course: "sbe201"
-year: "2018"
+year: "2019"
 ---
 
-# Data Structures \(SBE201\) - Spring 2018
+# Data Structures \(SBE201\) - Spring 2019
 
 ## Teaching Staff
 
@@ -20,15 +20,17 @@ Demonstrator:  Eng. Asem Alaa
 
 | Section | Day | Time Slot |
 |---------|-----|-----------|
-|   1     | TBA | TBA |
-|   2     | TBA | TBA |
+|   1     | Wednesday | 3rd |
+|   2     | Wednesday | 4th |
 
 ## Office Hours
 
 | Day | Time |
 |-----|-----------|
-| Sunday | TBA |
-| Monday | TBA |
+| Tuesday | from **10am** to **4pm** |
+| Wednesday | from **4pm** to **8pm** |
+
+Feel free to request for additional office hours by sending me an email (asem.a.abdelaziz@eng1.cu.edu.eg)
 
 
 ## Course Outline
@@ -50,6 +52,9 @@ Demonstrator:  Eng. Asem Alaa
 
 ## Tutorials
 
-
+1. Week 1:
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/1_week1/index.html %}){:target="_blank"}
+    * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github, brief intro to Linux]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
+    * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/1_week1.md %}){:target="_blank"}
 
 ## Frequently Asked Questions

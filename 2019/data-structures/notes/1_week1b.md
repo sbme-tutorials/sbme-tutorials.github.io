@@ -47,8 +47,7 @@ int main()
 
 ~~Possible~~ Awful Scenarios:
 
-* *Asem* sends an *Ahmed* fax containing the skeleton, then *Ahmed* sends back the skeleton with the `square::area` function implemented, and so on.
-* A-like scenario, but through facebook, e-mail, or dropbox!
+* Ahmed communicates his code through messenger, e-mail, or dropbox!
 * They pass USB disk back and forth!
 * They sit together to finish the project!
 
