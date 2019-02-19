@@ -56,5 +56,10 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/1_week1/index.html %}){:target="_blank"}
     * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github, brief intro to Linux]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/1_week1.md %}){:target="_blank"}
+1. Week 2:
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/2_week2/index.html %}){:target="_blank"}
+    * Section Notes: \[[Part 1: Memory, pointers, and references]({{ site.baseurl }}{% link 2019/data-structures/notes/2_week2a.md %}){:target="_blank"}\].
+    * [Code Styling]({{ site.baseurl }}{% link 2019/data-structures/notes/2_code_formatting.md %}){:target="_blank"}
+    * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/2_week2a.md %}){:target="_blank"}
 
 ## Frequently Asked Questions
