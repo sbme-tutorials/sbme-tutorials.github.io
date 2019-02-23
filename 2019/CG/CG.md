@@ -49,11 +49,6 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 ## Tutorials
 
-* Week 1. Introduction to Computer Graphics:
-    * [Section Notes]({{ site.baseurl }}{% %}){:target="_blank"}
-
-* Week 2. Transformations:
-    * [Section Notes]({{ site.baseurl }}{% %}){:target="_blank"}
 
 
 
