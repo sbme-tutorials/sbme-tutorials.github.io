@@ -52,12 +52,16 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
 | Week | Content |  Assignments
 |------|-----------------|-----|
 |   1  | Image Processing 1 (Operators) | Assignment 1 |
+|   2  | Image in Frequency Domain |   |
 
 ## Tutorials
 
 * Week 1. Image Processing 1 (Operators):
     * [Slides]({{ site.baseurl }}{% link 2019/cv/presentations/1_week1/index.html %}){:target="_blank"}
     * [Section Notes]({% link 2019/cv/notes/1_week1.md %}){:target="_blank"}
+* Week 2. Image in Frequency Domain:
+    * [Slides]({{ site.baseurl }}{% link 2019/cv/presentations/2_week2/index.html %}){:target="_blank"}
+    * [Section Notes]({% link 2019/cv/notes/2_week2.md %}){:target="_blank"}
 
 ## Assignments
 * Assignment 1: [Images, Histograms, Gradients]({% link 2019/cv/assignments/1_assignment1.md %})
