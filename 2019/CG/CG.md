@@ -50,7 +50,11 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 ## Tutorials
 
+* Week 1: Introduction to Computer Graphics
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/1-week1.md%}){:target="_blank"}
 
+* Week 2: Transformations
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/2-week2.md%}){:target="_blank"}
 
 
 ## Assignments
