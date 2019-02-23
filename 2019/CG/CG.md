@@ -46,7 +46,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 | Week | Content |  Assignments
 |------|-----------------|-----|
 |   1  | Introduction to Computer Graphics| |
-|   2  | Transformations | |
+|   2  | Transformations | Assignment1 |
 
 ## Tutorials
 
@@ -59,5 +59,10 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 ## Assignments
 
+* [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
+
+## Sheets 
+
+* [Review Sheet]({{ site.baseurl }}{% link 2019/CG/notes/SBE-306B-Computer-Systems-III-Review-Sheet-I.pdf%}){:target="_blank"} 
 
 ## Announcements
