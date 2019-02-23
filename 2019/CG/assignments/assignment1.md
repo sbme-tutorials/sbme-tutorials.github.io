@@ -40,6 +40,7 @@ This is an individual assignment
 1. Complete the robotic arm model by adding missing fingers
 2. Control arm movements using keyboard keys. 
 
+![](../images/robot-arm-fingers.png)
 
 ## Part 2: Written
 
