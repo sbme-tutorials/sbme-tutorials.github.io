@@ -10,6 +10,7 @@ layout: home
 
 * [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2019/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and Eng. Asem Alaa.
 * [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2019/cv/cv.md %}), by Prof. Ahmed M. Badawy, Dr. Muhamed Rushdi, Eng. Asem Alaa, Eng. Ayman Anwar.
+* [Computer Graphics \(SBE306\)]({{ site.baseurl }}{% link 2019/CG/CG.md %}), by Prof. Ayman M. Eldeib, Eng. Eslam Adel, Eng. Ayman Anwar.
 
 ## Fall 2018
 
