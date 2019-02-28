@@ -10,17 +10,6 @@ by: "Asem"
 * TOC
 {:toc}
 
-
-## FAQ #1. Why `using namespace arbitrary_name;` is a bad practice
-
-Some of your classmates have asked, "Why `using namespace std;` is considered a bad practice?"
-
-You can find an answer in [FAQ #1: Why `using namespace arbitrary_name;` is a bad practice]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq1.md %}){:target="_blank"}.
-
-## FAQ #2. Why `int *p = &x` != `*p = &x`
-
-Also, some was confused about the language syntax regarding pointers. You may find this satisfying [FAQ #2: Why `int *p = &x` != `*p = &x`]({{ site.baseurl }}{% link 2018/data-structures/notes/3_faq2.md %}){:target="_blank"}
-
 ## Introduction to Arrays
 
 The main features that characterize arrays structure:
@@ -68,20 +57,19 @@ To access array elements, we use the first element address as a **reference**. F
 * The second element is `a[1]`.
 * The index of array represents the offset (distance) from the first element.
 
-#### Example: Fibionacci Sequence
+#### Example: Factorials Sequence
 
-![fib](/gallery/34_21-FibonacciBlocks.png)
+Let `factorial` an integer array holding a lookup table for factorial numbers
 
-Let `fibionacci` an integer array holding [fibionacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
-
+--
 ```c++
-int fibionacci[5];
+int factorial[5];
 
-fibionacci[0] = 1;
-fibionacci[1] = 1;
-fibionacci[2] = fibionacci[1] + fibionacci[0];
-fibionacci[3] = fibionacci[2] + fibionacci[1];
-fibionacci[4] = fibionacci[3] + fibionacci[2];
+factorial[0] = 1;
+factorial[1] = 1;
+factorial[2] = 2 * factorial[1];
+factorial[3] = 3 * factorial[2];
+factorial[4] = 4 * factorial[3];
 
 ```
 

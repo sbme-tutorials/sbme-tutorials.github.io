@@ -64,6 +64,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 1. Week 3:
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/3_week3/index.html %}){:target="_blank"}
     * Section Notes: \[[Part 1: Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2019/data-structures/notes/3_week3a.md %}){:target="_blank"}\] \[[Part 2: Command Line Arguments and Compilation of Multiple Files]({{ site.baseurl }}{% link 2019/data-structures/notes/3_week3b.md %}){:target="_blank"}\].
+    * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/3_week3.md %}){:target="_blank"}
 
 
 ## Frequently Asked Questions

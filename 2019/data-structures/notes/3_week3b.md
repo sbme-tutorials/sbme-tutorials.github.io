@@ -99,7 +99,33 @@ int main( int argc , char *argv[] )
 
 double calculation( double a , double b , char operation )
 {
-    // Copy-paste the implementation of Emmanuel here.
+  switch( operation )
+  {
+    case '+' :
+    {
+      return a + b;
+    } break;
+
+    case '-':
+    {
+      return a - b;
+    } break;
+
+    case '*':
+    {
+      return a * b;
+    } break;
+
+    case '/':
+    {
+      return a / b;
+    } break;
+
+    default:
+    {
+      return 0;
+    }
+  }
 }
 ```
 
