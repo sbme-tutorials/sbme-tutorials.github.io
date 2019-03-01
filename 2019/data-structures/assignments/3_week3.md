@@ -238,7 +238,6 @@ char *analyzeDNA( char *base, int size, int &countA, int &countC, int &countG, i
 ## Submission and Bonus Policy
 
 * As usual, commit and push your changes.
-* **Requirement 4** is completely counted as bonus.
 * Also, you may obtain bonus with correct logic by consistent adoption of [KISS](https://en.wikipedia.org/wiki/KISS_principle) and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principles. Also, make your code clean, well-aligned, and use descriptive variable names.
 
 ## Generating Executables and Testing Output
@@ -253,14 +252,6 @@ $ ./Calculator 24 \* 7
 ```
 
 **Note: asterisk `*` is a special character for the terminal. You need to explicitly use `\*` to specify multiplication operation.**
-
-### Compiling and Testing heron.cpp
-
-```bash
-$ g++ heron.cpp -o Heron
-$ ./Heron 3 4 5
-6
-```
 
 ### Compiling and Testing heron.cpp
 
