@@ -280,8 +280,8 @@ function implemented in `ecg.hpp`.
 ```bash
 $ g++ analyzeECG.cpp -o AnalyzeECG
 $ ./AnalyzeECG datasets/ecg_data.txt
-ECG average : 0.785639
-ECG variance: 0.00780314
+ECG average : 0.787352
+ECG variance: 0.00640471
 ECG range   : (0,1.288)
 ```
 
