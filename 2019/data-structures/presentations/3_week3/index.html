@@ -1,12 +1,3 @@
-<!-- ---
-layout: presentation
-course: "sbe201"
-category: "presentation"
-year: "2018"
-title: "Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
-by: "Asem"
-author: "Asem Alaa"
---- -->
 
 <!DOCTYPE html>
 <html>
@@ -405,7 +396,6 @@ double z = std::atof("13.9"); // z = 13.9
 
 ---
 class: left, top
-In our application, we can use the function implemented by *Emmanuel and Mostafa* [from here](/2018/data-structures/presentations/1_week1_recap/index.html#27).
 
 ```c++
 #include <iostream>
@@ -426,9 +416,41 @@ int main( int argc , char *argv[] )
     return 0;
 }
 
+```
+
+---
+class: left, top
+
+```c++
 double calculation( double a , double b , char operation )
 {
-    // Copy-paste the implementation of Emmanuel here.
+  switch( operation )
+  {
+    case '+' :
+    {
+      return a + b;
+    } break;
+
+    case '-':
+    {
+      return a - b;
+    } break;
+
+    case '*':
+    {
+      return a * b;
+    } break;
+
+    case '/':
+    {
+      return a / b;
+    } break;
+
+    default:
+    {
+      return 0;
+    }
+  }
 }
 ```
 
