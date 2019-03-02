@@ -53,30 +53,23 @@ In perspective projection nearer objects are larger and further are smaller.
 
 ![](../images/perspective.png)
 
-$$
-x' = x * Z_{near} / Z_{far}
-$$
-
-
-$$
-y' = y *   Z_{near} / Z_{far}
-$$
-
-
-$$
-z' =  Z_{near}
-$$
-
 Think of at as a scaling transformation. 
 
 $$
-\begin{bmtarix}
+\begin{bmatrix}
 \frac{f}{aspect} & 0 & 0 & 0 \\
 0 & f & 0 & 0 \\
 0 & 0 & \frac{Z_{far} + Z_{near}}{Z_{far} - Z_{near}} & \frac{2 * Z_{far} * Z_{near}}{Z_{far} - Z_{near}} \\
 0 & 0 & -1 & 0 \\
-\endb{bmatrix}
+\end{bmatrix}
 $$
+
+Where 
+
+$$
+f = cot(\frac{fov_y}{2})
+$$
+
 
 **Defining Projection Plane**
 
@@ -84,7 +77,7 @@ To identify the projection plane you have to define its width, hight, near and f
 
 To Do that in OpenGL you have two ways 
 
-1. Using glFrustum
+* Using glFrustum
 
 ```c
 void glFrustum(	GLdouble left,
@@ -97,7 +90,7 @@ void glFrustum(	GLdouble left,
 
 ![](../images/frustum.png)
 
-2. Using glPerspective
+* Using glPerspective
 
 
 ```c
@@ -154,6 +147,36 @@ The pipeline simply includes
 ![](../images/model-view.png)
 
 
-## Demo 
+## Projection Demo 
+
+* Projection and camera positioning 
+
+![](../images/projection-demo.png)
+
+
+* Pipeline
+
+Each Object is a set of points 
+
+![](../images/points-demo.png)
+
+This points are connected together to make a polygon or a mesh
+
+![](../images/meshes-demo.png)
+
+These meshes are colored and lightened.
+
+![](../images/obj-demo.png)
 
 ## Animation Using timer function 
+
+* Solar system demo.
+
+Rotation of planet around the sun and around itself at the same time using timer function.
+
+![](../images/timer.png)
+
+
+## Download Demo
+
+All demos will be available in [this](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials) repository
