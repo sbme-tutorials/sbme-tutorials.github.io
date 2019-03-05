@@ -18,6 +18,12 @@ body { font-family: 'Georgia';letter-spacing:0.025em;}
         padding: 0.3em 0.6em;
     }
 
+    table, th, td {
+      border: 1px solid black;
+    }
+    
+    tr:hover {background-color: #f5f5f5;} 
+
     tr th {
         border-bottom: 3px solid #A3A3A3;
     }
