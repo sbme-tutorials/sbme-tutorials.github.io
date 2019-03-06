@@ -48,6 +48,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 |   1  | Introduction to Computer Graphics| |
 |   2  | Transformations | Assignment1 |
 |   3  | Projection |  |
+|   4  | Camera Transformation | Assignment2 |
 
 ## Tutorials
 
@@ -60,10 +61,15 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 3: Projection
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/3-week3.md%}){:target="_blank"}
 
+* Week 4: Projection
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md%}){:target="_blank"}
+
 
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
+
+* [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md%}){:target="_blank"} : Full Body 
 
 ## Sheets 
 
