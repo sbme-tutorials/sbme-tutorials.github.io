@@ -60,7 +60,7 @@ namespace rectangle
 
     // If we have a pointer to Rectangle instead of a name for Rectangle
     // then we will access its members using the "->" arrow operator
-    double area2( Rectanle *pRect )
+    double area2( Rectangle *pRect )
     {
         return pRect->w * pRect->h;
     }
