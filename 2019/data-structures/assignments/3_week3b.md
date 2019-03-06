@@ -10,7 +10,7 @@ pdf: true
 
 ## Prerequisites
 
-* **Required**: Read the **struct** and **function overloading** in \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
+* **Required**: Read the **struct** and **function overloading** in \[[Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
 
 ## Objectives
 
