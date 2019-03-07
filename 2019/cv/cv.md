@@ -5,9 +5,9 @@
 layout: home
 category: "coursepage"
 course: "sbe404b"
-year: "2018"
+year: "2019"
 ---
-# Computer Vision \(SBE404B\) - Spring 2018
+# Computer Vision \(SBE404B\) - Spring 2019
 
 ## Teaching Staff
 
