@@ -271,9 +271,9 @@ function implemented in `ecg.hpp`.
 ```bash
 $ g++ analyzeECG.cpp -o AnalyzeECG
 $ ./AnalyzeECG datasets/ecg_data.txt
-ECG average : 0.787352
-ECG variance: 0.00640471
-ECG range   : (0,1.288)
+ECG average : 0.82964
+ECG variance: 0.00865574
+ECG range   : (0.592,1.408)
 ```
 
 ### Compiling and Testing analyzeDNA.cpp
