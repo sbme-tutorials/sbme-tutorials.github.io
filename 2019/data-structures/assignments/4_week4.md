@@ -14,6 +14,7 @@ pdf: true
 
 ## Objectives
 
+* Use git tagging to label important versions of your repository.
 * Functions Overloading: make functions with **same name**, **but different parameters types/count**.
 * Make your own types by using `struct` feature of C++.
 * Make another version of your functions implemented in **Part 1** but with using your own types (`struct`s).

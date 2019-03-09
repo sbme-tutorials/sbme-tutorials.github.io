@@ -27,7 +27,7 @@ Now you generated a private key.
 
 ## Copy your public key that was generated alongside the private key
 
-To copy your public key contents, print the file on the terminal using the following command:
+To copy your public key contents, print the file on the terminal using the following command `more ~/.ssh/id_rsa.pub`, then you should see a long generated text like so:
 
 ```
 $ more ~/.ssh/id_rsa.pub
@@ -39,7 +39,6 @@ W1hqvwXGTGaBZvdW1xy7wWxoIm2aAPJwluxS2Gnb9bhHimrlDZzStDqzvfTT asem@asem-pc
 ```
 
 Using your mouse, select all the text the is shown after the command `more ~/.ssh/id_rsa.pub`
-
 
 ## Add the public key to your GitHub account
 
