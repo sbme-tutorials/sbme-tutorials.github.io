@@ -214,8 +214,9 @@ In fact, **Stack** is more of *behaviour* of structure than being a structure it
 
 For both implementations, the following requirements should be satisfied in order to hava an ADT **Stack** (from [wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))):
 
-* **push**, which adds an element to the collection, and.
-* **pop**, which removes the most recently added element that was not yet removed.
+* **push**, which adds an element to the collection,
+* **pop**, which removes the most recently added element that was not yet removed,
+* **front**, which returns the most recent element in the stack.
 
 *The order in which elements come off a stack gives rise to its alternative name, **LIFO** (last in, first out). Additionally, a **peek** operation may give access to the top without modifying the stack.* -- [Stack (Abstract Data Type)](https://en.wikipedia.org/wiki/Stack_(abstract_data_type)).
 
@@ -290,7 +291,8 @@ IntegerStack100 push( IntegerStack100 stack , int newElement )
 }
 ```
 
-Note that we need to return the updated `IntegerStack100` **because we have modified a copy**, not the original object.
+* This version pass by value and return the new stack.
+* Note that we need to return the updated `IntegerStack100` **because we have modified a copy**, not the original object.
 
 Alternatively, we can pass the `IntegerStack100` **by reference**, so no need for returning the updated stack, we already modified the original stack using a reference.
 
@@ -302,16 +304,39 @@ void push( IntegerStack100 &stack , int newElement )
 }
 ```
 
-#### Pop
+#### Front
 
-**Pop** operation has to remove the top element, and return in back.
+Retrieve the **first element** in the stack (aka **the most recent element**), which is pointed to by **top**.
 
 ```c++
-int pop( IntegerStack100 &stack )
+int front( IntegerStack100 &stack )
 {
-    int lifo = stack.buffer[ stack.top ];
+    return stack.buffer[ stack.top ];
+}
+```
+
+#### Pop
+
+To pop the stack, we just need to decrement the **top** variable.
+
+
+```c++
+IntegerStack100 pop( IntegerStack100 stack )
+{
     --stack.top;
-    return lifo;
+    return stack;
+}
+```
+
+* **This version pass by value and return the new stack.**
+
+
+Alternatively, we can pass by reference and modify in-place, so no need to return the modified stack.
+
+```c++
+void pop( IntegerStack100 &stack )
+{
+    --stack.top;
 }
 ```
 
@@ -355,7 +380,7 @@ bool isEmptyStack( IntegerStack100 &stack )
 
 #### Final Code
 
-Here is a final code, but with using `char` as element type. 
+Here is the final code, but we implemented if for stack of `char` elements instead. Releazie that there is no difference in logic.
 
 ```c++
 struct CharStack1000
@@ -372,18 +397,20 @@ void push( CharStack1000 &stack , char newElement )
     stack.buffer[ stack.top ] = newElement;
 }
 
-char pop( CharStack1000 &stack )
+char front( CharStack1000 &stack )
 {
-    int lifo = stack.buffer[ stack.top ];
+    return stack.buffer[ stack.top ];
+}
+
+void pop( CharStack1000 &stack )
+{
     --stack.top;
-    return lifo;
 }
 
 int size( CharStack1000 &stack )
 {
     return ( stack.top + 1 ); // simple
 }
-
 
 bool isEmptyStack( CharStack1000 &stack )
 {
@@ -392,6 +419,7 @@ bool isEmptyStack( CharStack1000 &stack )
 ```
 
 Practice yourself, and make other **Stack** versions of `int`, `double`, and `bool`. Also, make other variants of your **Stack** that works with dynamic arrays. In this case, the `struct` should hold *pointer* to the first element of the array.
+
 
 ## Linked Lists
 
