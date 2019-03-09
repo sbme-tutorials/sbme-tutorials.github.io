@@ -32,7 +32,7 @@ pdf: true
 In this task, we will work on **the same repository** of previous task (part 1). It is required to make your own `struct`s to encapsulate multiple variables. After you finish the requirements of the previous task and validate the results, you will ask the *git repository* to give a special name to the current state of your task. This will allow you to easily get back to the old version of your code regardless the amount of modifications you have made after that point of time.
 
 
-**Don't proceed to assignment 2 before tagging your last commit on part1, so we can easily switch between the last version and part1 version.** 
+**Don't proceed to assignment 2 before tagging your last commit on `part1`, so we can easily switch between the last version and `part1` version.** 
 
 ### Tagging your work on Part 1
 
