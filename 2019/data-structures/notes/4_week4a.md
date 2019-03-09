@@ -291,7 +291,7 @@ IntegerStack100 push( IntegerStack100 stack , int newElement )
 }
 ```
 
-* This version pass by value and return the new stack.
+* This version passes by value then returns the new stack.
 * Note that we need to return the updated `IntegerStack100` **because we have modified a copy**, not the original object.
 
 Alternatively, we can pass the `IntegerStack100` **by reference**, so no need for returning the updated stack, we already modified the original stack using a reference.
@@ -328,7 +328,7 @@ IntegerStack100 pop( IntegerStack100 stack )
 }
 ```
 
-* **This version pass by value and return the new stack.**
+* **This version passes by value then returns the new stack.**
 
 
 Alternatively, we can pass by reference and modify in-place, so no need to return the modified stack.
