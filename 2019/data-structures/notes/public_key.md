@@ -44,14 +44,19 @@ Using your mouse, select all the text the is shown after the command `more ~/.ss
 
 Follow the steps illustrated in the following screenshots.
 
+### Go to setting
+
 ![ssh1](/gallery/add_ssh1.png)
 
+### Go to "SSH and GPG keys" tab
 
 ![ssh2](/gallery/add_ssh2.png)
 
+### Create new SSH key
 
 ![ssh3](/gallery/add_ssh3.png)
 
+### Add your new key information
 
 ![ssh4](/gallery/add_ssh4.png)
 
@@ -60,7 +65,7 @@ Follow the steps illustrated in the following screenshots.
 
 ### Cloning a new repository
 
-If you are going to clone a new repository, just make sure to use the link associated with **SSH**, not ~HTTPS~.
+If you are going to clone a new repository, just make sure to use the link associated with **SSH**, not ~~HTTPS~~.
 
 ![clone](/gallery/clone_ssh.png)
 
