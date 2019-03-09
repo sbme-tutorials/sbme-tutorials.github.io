@@ -69,6 +69,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}
     * Section Notes: \[[Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/4_week4.md %}){:target="_blank"}
+    * [Public key authentication]({{ site.baseurl }}{% link 2019/data-structures/notes/public_key.md %}){:target="_blank"}
 
 
 ## Frequently Asked Questions
