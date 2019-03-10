@@ -48,7 +48,7 @@ Now transfer this tagging to the GitHub, so anyone using your repository can use
 git push origin --tags
 ```
 
-No if you made any modifications and additional commits, you can get back to the old state by the following command:
+Now if you made any modifications and additional commits, you can get back to the old state by the following command:
 
 ```
 git checkout part1

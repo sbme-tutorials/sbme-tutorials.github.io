@@ -10,20 +10,6 @@ by: "Asem"
 * TOC
 {:toc}
 
-## Assignment of Week 3
-
-### Part 1
-
-* Issue 1: Command Line Arguments.
-* Issue 2: Functions and Calling Functions.
-* Issue 3: Header Files and Source Files.
-
-### Part 2
-
-* C++ Feature: `struct`s
-* C++ Feature: function overloading
-* C++ Feature: Type Alias
-
 ## C++ Milestones
 
 <img src="/gallery/c++milestones.jpg" style="width:100%">
