@@ -61,7 +61,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 3: Projection
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/3-week3.md%}){:target="_blank"}
 
-* Week 4: Projection
+* Week 4: Camera Transformation
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md%}){:target="_blank"}
 
 
