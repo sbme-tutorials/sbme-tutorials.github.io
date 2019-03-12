@@ -71,5 +71,8 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/4_week4.md %}){:target="_blank"}
     * [Public key authentication]({{ site.baseurl }}{% link 2019/data-structures/notes/public_key.md %}){:target="_blank"}
 
+## STL Tutorials
+
+In parallel to the core course, an introductory course to the standard template library (STL) to establish familiarity with its various data structures implementations. The notes series are listed in [ Introduction to the C++ Standard Template Library \(STL\)]({{ site.baseurl }}{% link 2019/stl-intro/stl-intro.md %}){:target="_blank"}.
 
 ## Frequently Asked Questions

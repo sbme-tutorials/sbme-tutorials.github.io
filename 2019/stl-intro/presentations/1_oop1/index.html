@@ -13,241 +13,851 @@
 
 ---
 class: left, middle
-# Information about your TAs
+# Introduction to OOP by Examples 
 
+1. **Example 1**: Euclidean distance between two points.
+1. **Example 2**: DNA Analysis.
+
+## For each example three versions
+
+1. Free functions and sparse variables.
 --
-* Asem Alaa and Ayman Anwar, graduates of 2016 class.
+1. Free functions and bundled variables (struct for grouping data).
 --
-* e-mail: `asem.a.abdelaziz@gmail.com`
---
-* e-mail: `ayman.anwar.bio@gmail.com`
---
-* Office hours and materials are available on the course page.
---
-* Asem`s main research interests: Bioinformatics Algorithms and Machine Learning
---
-* Ayman`s main research interests: Neuroinformatics and Machine Learning.
+1. Bundled data with bundled functions (struct for grouping data and logic)
 
 ---
-class: left, middle
-# Attendance
+## Example: Euclidean Distance (V1)
 
-* Attendance is a requirement to pass the courses.
---
-* Not showing in more than 25% of lectures or tutorials is penalized by failing in the course.
 
----
-class: left, middle
-# .red[Cheating] 
---
-## be it in exams or assignments
+Consider an application that computes the euclidean distance between two points as following:
 
---
-* [{الغش في الامتحانات | دار الإفتاء المصرية}](http://dar-alifta.org/AR/ViewFatwa.aspx?ID=13501&LangID=1)
---
-* [{الغش فى الامتحانات |  سقفية الشباب بالكنيسة القبطية الأرثوذكسية}](https://youthbishopric.com/%D8%A7%D9%84%D8%BA%D8%B4-%D9%81%D9%89-%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA/)
+$$\begin{equation}
+ \bar{ || p_1p_2 ||}  = \sqrt{ (x_1-x_2)^2 + (y_1-y_2)^2 }  
+\end{equation}
+$$
 
 ---
-class: left, top
-## Images as Arrays
-
-<img style="width:80%" src="../../images/pixels.png">
-
----
-class: left, top
-### RGB Images
+### Example: Euclidean Distance
+#### Biolerplate code
 
 --
-<img style="width:70%" src="../../images/lenna_rgb.jpg">
+### Typical program source
 
----
-class: left, top
-### Scaler Images
+```c++
+#include <iostream> 
 
---
-<img style="width:70%" src="../../images/lenda_gray.jpeg">
+int main()
+{
 
-
----
-class: left, top
-### Binary Images
-
---
-<img style="width:70%" src="../../images/lenda_binary.jpg">
-
----
-class: left, top
-#### Converting from RGB to Grayscale
-
---
-<img style="width:80%" src="../../images/sphinx_rgb.png">
-
-
----
-class: left, top
-#### Cont'd
-
-For each RGB pixel, we compute:
-
---
-
-$$ I = \big[0.299, 0.587, 0.114\big] . \big[R, G, B\big]^T$$
-
---
-```python
-def rgb2gray(rgb_image):
-    return np.dot(rgb_image[...,:3], [0.299, 0.587, 0.114])
+    return 0;
+}
 ```
 
 ---
-class:left, top
-#### Results
+### Example: Euclidean Distance (V1)
+#### Euclidean function
 
+1. **Input**: 4 doubles (x1, y1, x2, y2)
 --
-<img style="width:80%" src="../../images/sphinx_gray.png">
-
-
----
-class:left, top
-### Converting from Grayscale to Binary Image
-
-#### Thresholding
-
+1. **Output**: Euclidead distance (double)
 --
-```python
-def binarize( gray_image , threshold ):
-    threshold = np.max( gray_image ) * threshold
-    return 1 * ( gray_image > threshold )
+1. **Name**: `euclideanDistance`
+
+```c++
+#include <iostream> 
+#include <cmath> // We need this library to use the std::sqrt function
+
+double euclideanDistance( double x1, double y1, double x2, double y2)
+{
+    // Self practicing: try to implement this yourself
+
+}
+
+int main()
+{
+
+    return 0;
+}
 ```
 
 ---
-class: left, top
-#### Results
-
-
---
-<img style="width:80%" src="../../images/sphinx_bin.png">
-
-
----
-class: left, top
-### Hyperspectral Images
+### Example: Euclidean Distance (V1)
+#### Input from user
 
 --
-Pixels in Hyperspectral images consists of many channels.
+Now we need to take the input from the user:
 
---
-<img style="width:100%" src="../../images/stones_hsi.png">
+```c++
+#include <iostream>
+#include <cmath>
 
+double euclideanDistance( double x1, double y1, double x2, double y2 )
+{
+    // Self practicing: try to implement this yourself
+}
 
----
-class:left, top
-### Cont'd 
+int main()
+{
+    double px = 0;
+    double py = 0;
+    double qx = 0;
+    double qy = 0;
 
-<img style="width:100%" src="../../images/surve_hsi.png">
-
-
----
-class:left, top
-## Mean and Variance
-
-
---
-```python
-print( np.mean( image ))
-
-print( np.std( image ))
+    std::cout << "Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]\n";
+    std::cin >> px >> py >> qx >> qy;
+    std::cout << euclideanDistance( px , py, qx , qy) << "\n";
+}
 ```
 
 ---
-class: left, top
-## Profiles
+### Example: Euclidean Distance (V1)
+#### Compile and run:
+
 
 --
-<img style="width:80%" src="../../images/pegion_profile.png">
+```c++
+g++ euclidean.cpp -o distance
+./distance
+Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]
+```
 
+Now the application waits us to enter the values of the coordinates. Let's try the following:
 
----
-class: left, top
-## Edges
-### First-Order Derivatives
-
---
-$$ \begin{bmatrix}
-\frac{\partial f}{\partial x} \\
-\frac{\partial f}{\partial y}
-\end{bmatrix} $$
-
---
-where:
-
-$$\textstyle\frac{\partial f}{\partial x}$$ is the derivative with respect to x (gradient in the x direction)
-
-$$\textstyle\frac{\partial f}{\partial y}$$ is the derivative with respect to y (gradient in the y direction).
-
----
-class: left, top
-#### Results
-
---
-<img style="width:80%" src="../../images/cat_gradient.png">
-
-
----
-class: left, top
-## Computer Vision Opportunity
-
-### Internship at [{Affectiva}](https://www.affectiva.com)
-
---
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">📢⁉️ Calling all interns! Looking for a <a href="https://twitter.com/hashtag/Boston?src=hash&amp;ref_src=twsrc%5Etfw">#Boston</a> –based <a href="https://twitter.com/hashtag/engineering?src=hash&amp;ref_src=twsrc%5Etfw">#engineering</a> <a href="https://twitter.com/hashtag/internship?src=hash&amp;ref_src=twsrc%5Etfw">#internship</a>? We are offering exciting opportunities in 2019, see all our openings here!  <a href="https://t.co/iMdBXzMcfz">https://t.co/iMdBXzMcfz</a></p>&mdash; Rana el Kaliouby (@kaliouby) <a href="https://twitter.com/kaliouby/status/1088185353180274696?ref_src=twsrc%5Etfw">January 23, 2019</a></blockquote>
-
-
----
-class: left, top
-A very interesting talk by *Rana Elkaliouby* about Affectiva:
-
-<div style="max-width:854px"><div style="position:relative;height:0;padding-bottom:56.25%"><iframe src="https://embed.ted.com/talks/lang/ar/rana_el_kaliouby_this_app_knows_how_you_feel_from_the_look_on_your_face" width="854" height="480" style="position:absolute;left:0;top:0;width:100%;height:100%" frameborder="0" scrolling="no" allowfullscreen></iframe></div></div>
-
----
-class: left, top
-### 360imaging in Egypt
-
-<img style="width:80%" src="../../images/360imaging.png">
-
-
-[{Website}](http://www.360imaging.com/)
-
---
-* Planned Dental Surgeries.
-* They demand highly skilled C++ developers.
-* Computer Vision background is a plus
-* They offer opportunities through Wuzzuf.
-
-
----
-class: left, top
-## Resources
-
-* [{Awsome Computer Vision}](https://github.com/jbhuang0604/awesome-computer-vision), **+5K** starts.
-* [{Awesome Machine Learning}](https://github.com/josephmisiti/awesome-machine-learning), **30K** starts.
-
----
-class: left, top
-## Demo files
-
-```bash
-$ git clone https://github.com/sbme-tutorials/sbe401-week2-demo.git
+```
+1.5 1 4.5 5
+5
 ```
 
 ---
-class: left, top
-## Assignment
+### Example: Euclidean Distance (V2)
 
 --
-* Assignment [{page}](/2019/cv/assignments/1_assignment1.html)
+#### Let's bundle x and y
+
 --
-* Deadline: **Thursday 26/2/2019 10:00 AM.**
+```c++
+struct Point
+{
+  double x;
+  double y;
+}
+```
+
+--
+1. More concise
+--
+1. Mode descriptive
+
+---
+### Example: Euclidean Distance (V2)
+#### Apply our logic on two Points
+
+--
+##### Old version
+```c++
+double euclideanDistance( double x1, double y1, double x2, double y2 )
+{
+    double dx = x1 - x2;
+    double dy = y1 - y2;
+    return std::sqrt( dx * dx + dy * dy );
+}
+```
+
+--
+##### Second version
+```c++
+double euclideanDistance( Point p1, Point p2 )
+{
+    double dx = p1.x - p2.x;
+    double dy = p1.y - p2.y;
+    return std::sqrt( dx * dx + dy * dy );
+}
+```
+
+---
+### Example: Euclidean Distance (V2)
+#### Apply our logic on two Points
+
+--
+##### Old version
+```c++
+double euclideanDistance( double x1, double y1, double x2, double y2 )
+{
+    double dx = x1 - x2;
+    double dy = y1 - y2;
+    return std::sqrt( dx * dx + dy * dy );
+}
+```
+--
+##### Second version (DRY Solution)
+```c++
+double euclideanDistance( Point p1, Point p2 )
+{
+  return euclideanDistance( p1.x, p1.y, p2.x, p2.y );
+}
+```
+---
+### Example: Euclidean Distance (V2)
+#### Our main function 
+
+--
+##### In the past
+```c++
+int main()
+{
+    double px = 0, py = 0, qx = 0, qy = 0;
+    std::cout << "Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]\n";
+    std::cin >> px >> py >> qx >> qy;
+    std::cout << euclideanDistance( px , py, qx , qy) << "\n";
+}
+```
+--
+##### Now
+```c++
+int main()
+{
+    Point p1,p2;
+    std::cout << "Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]\n";
+    std::cin >> p1.x >> p1.y >> p2.x >> p2.y;
+    std::cout << euclideanDistance( p1 , p2) << "\n";
+}
+```
+
+---
+### Example: Euclidean Distance (V3)
+
+--
+#### Let's bundle x and y .green[(and logic)]
+
+--
+```c++
+struct Point
+{
+  double x;
+  double y;
+}
+```
+
+--
+```c++
+double euclideanDistance( Point p1, Point p2 )
+{
+    double dx = p1.x - p2.x;
+    double dy = p1.y - p2.y;
+    return std::sqrt( dx * dx + dy * dy );
+}
+```
+
+--
+We wish to be able to use this syntax:
+
+```c++
+p1.euclideanDistance( p2 );
+```
+
+---
+### Example: Euclidean Distance (V3)
+#### Bundle!
+
+--
+```c++
+struct Point
+{
+  double euclideanDistance( Point p1, Point p2 )
+  {
+    double dx = p1.x - p2.x;
+    double dy = p1.y - p2.y;
+    return std::sqrt( dx * dx + dy * dy );
+  }
+  double x;
+  double y;
+}
+```
+
+--
+##### Done? 
+--
+##### .red[Not yet?!]
+
+---
+### Example: Euclidean Distance (V3)
+#### Bundle!
+
+--
+```c++
+struct Point
+{
+  double euclideanDistance( Point p )
+  {
+    double dx = x - p.x;
+    double dy = y - p.y;
+    return std::sqrt( dx * dx + dy * dy );
+  }
+  double x;
+  double y;
+}
+```
+
+--
+#### Done? 
+--
+#### .green[Yes!]
+
+---
+### Example: Euclidean Distance (V3)
+#### Our main function 
+
+--
+#### In the past
+
+```c++
+int main()
+{
+    Point p1,p2;
+    std::cout << "Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]\n";
+    std::cin >> p1.x >> p1.y >> p2.x >> p2.y;
+    std::cout << euclideanDistance( p1 , p2) << "\n";
+}
+```
+--
+#### Now
+```c++
+int main()
+{
+    Point p1,p2;
+    std::cout << "Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]\n";
+    std::cin >> p1.x >> p1.y >> p2.x >> p2.y;
+    std::cout << p1.euclideanDistance( p2 ) << "\n";
+}
+```
+
+---
+### Example: DNA Analysis (V1)
+
+
+Consider an application that analyzes the DNA as have worked on in our assignment
+
+
+---
+### Example: DNA Analysis (V1)
+#### complementary base function
+
+--
+```c++
+char complementaryBase(char base) {
+  switch (base) {
+      case 'A':
+          return 'T';
+      case 'T':
+          return 'A';
+      case 'C':
+          return 'G';
+      default:
+          return 'C';
+  }
+}
+```
+
+---
+### Example: DNA Analysis (V1)
+#### complementary sequence
+
+--
+```c++
+char *complementarySequence(char *base, int size) {
+  char *complementarySequence = new char[size];
+  for (int i = 0; i < size; ++i) {
+      complementarySequence[size-i-1] = complementaryBase(base[i]);
+  }
+  return complementarySequence;
+}
+```
+
+---
+### Example: DNA Analysis (V1)
+#### count character
+
+--
+```c++
+int countCharacter(char *basePointer, int size, char query) {
+  int count = 0;
+  for (int i = 0; i < size; ++i) {
+      if (basePointer[i] == query) 
+      {
+        count += 1;
+      }
+  }
+  return count;
+}
+```
+ 
+---
+### Example: DNA Analysis (V1)
+#### Input from file
+
+--
+```c++
+int main( int argc, char **argv)
+{
+  int counterA = 0, counterC = 0, counterG = 0 , counterT = 0;
+  int size = 0;
+  char *dnaArray1 = helpers::getFastaDNA(argv[1], size);
+  
+  char *complementarySeq = dna::analyzeDNA( &dnaArray1[0] , size , counterA , counterC , counterG , counterT );
+  // We may need to make a new character array, but with a null terminated character to be able to print on screen.
+  char *complementarySeqTerminated = new char[ size + 1 ];
+  std::copy( &complementarySeq[0] , &complementarySeq[size] , &complementarySeqTerminated[0] );
+  complementarySeqTerminated[ size ] = '\0';
+  std::cout << "Adenine (A) content:" << counterA << std::endl
+              << "Guanine (G) content:" << counterG << std::endl
+              << "Cytocine(C) content:" << counterC << std::endl
+              << "Thymine (T) content:" << counterT << std::endl
+              << std::endl
+              << "Complementary Sequence:" << std::endl
+              << complementarySeqTerminated << std::endl;
+}
+```
+
+---
+### Example: DNA Analysis (V1)
+#### Compile and run:
+
+
+
+---
+##### Example: DNA Analysis (V2)
+
+--
+##### Let's bundle the array and its size
+
+--
+```c++
+struct DNA
+{
+  char *base;
+  int size;
+}
+```
+
+--
+1. More concise
+--
+1. Mode descriptive
+
+---
+### Example: DNA Analysis (V2)
+#### Our new functions
+
+--
+##### Old version
+```c++
+char *complementarySequence(char *base, int size) {
+  char *complementarySequence = new char[size];
+  for (int i = 0; i < size; ++i) {
+      complementarySequence[size-i-1] = complementaryBase(base[i]);
+  }
+  return complementarySequence;
+}
+```
+--
+##### Second version
+```c++
+char *complementarySequence( DNA &dna )
+{
+    //
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### Our new complementary base function
+
+
+###### Old version
+```c++
+char *complementarySequence(char *base, int size) {
+  char *complementarySequence = new char[size];
+  for (int i = 0; i < size; ++i) {
+      complementarySequence[size-i-1] = complementaryBase(base[i]);
+  }
+  return complementarySequence;
+}
+```
+
+###### Second version (bundle + DRY overloading)
+```c++
+char * complementarySequence( DNA &dna )
+{
+    complementarySequence( dna.base , dna.size );
+}
+```
+
+--
+###### Any typos?!
+
+---
+### Example: DNA Analysis (V2)
+#### Our new complementary base function
+
+
+###### Old version
+```c++
+char *complementarySequence(char *base, int size) {
+  char *complementarySequence = new char[size];
+  for (int i = 0; i < size; ++i) {
+      complementarySequence[size-i-1] = complementaryBase(base[i]);
+  }
+  return complementarySequence;
+}
+```
+
+##### Second version (bundle + DRY overloading)
+```c++
+char * complementarySequence( DNA &dna )
+{
+    return complementarySequence( dna.base , dna.size );
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### Our new count character function
+
+--
+##### In the past
+
+```c++
+int countCharacter(char *basePointer, int size, char query) {
+  int count = 0;
+  for (int i = 0; i < size; ++i) {
+      if (basePointer[i] == query) 
+        count += 1;
+  }
+  return count;
+}
+```
+
+--
+##### Now
+```c++
+int countCharacter( DNA &dna, char query) {
+  int count = 0;
+  for (int i = 0; i < dna.size; ++i) {
+      if (dna.base[i] == query) 
+        count += 1;
+  }
+  return count;
+}
+```
+
+--
+###### Any enhancements?
+
+---
+### Example: DNA Analysis (V2)
+#### Our new count character function
+
+
+##### In the past
+
+```c++
+int countCharacter(char *basePointer, int size, char query) {
+  int count = 0;
+  for (int i = 0; i < size; ++i) {
+      if (basePointer[i] == query) 
+      {
+        count += 1;
+      }
+  }
+  return count;
+}
+```
+
+
+##### Now
+```c++
+int countCharacter( DNA &dna, char query) {
+  return countCharacter( dna.base, dna.size, query );
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### The main function
+
+##### In the past
+--
+```c++
+int main( int argc, char **argv)
+{
+  int counterA = 0, counterC = 0, counterG = 0 , counterT = 0;
+  int size = 0;
+  char *dnaArray1 = helpers::getFastaDNA(argv[1], size);
+  
+  char *complementarySeq = dna::analyzeDNA( &dnaArray1[0] , size , counterA , counterC , counterG , counterT );
+  // We may need to make a new character array, but with a null terminated character to be able to print on screen.
+  char *complementarySeqTerminated = new char[ size + 1 ];
+  std::copy( &complementarySeq[0] , &complementarySeq[size] , &complementarySeqTerminated[0] );
+  complementarySeqTerminated[ size ] = '\0';
+  std::cout << "Adenine (A) content:" << counterA << std::endl
+              << "Guanine (G) content:" << counterG << std::endl
+              << "Cytocine(C) content:" << counterC << std::endl
+              << "Thymine (T) content:" << counterT << std::endl
+              << std::endl
+              << "Complementary Sequence:" << std::endl
+              << complementarySeqTerminated << std::endl;
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### The main function
+
+##### In the present
+
+```c++
+int main( int argc, char **argv)
+{
+  int counterA = 0, counterC = 0, counterG = 0 , counterT = 0;
+  int size = 0;
+  char *dnaArray1 = helpers::getFastaDNA(argv[1], size);
+  dna::DNA dnaSequence { dnaArray, size };
+
+  char *complementarySeq = dna::analyzeDNA( dnaSequence , counterA , counterC , counterG , counterT );
+  // We may need to make a new character array, but with a null terminated character to be able to print on screen.
+  char *complementarySeqTerminated = new char[ size + 1 ];
+  std::copy( &complementarySeq[0] , &complementarySeq[size] , &complementarySeqTerminated[0] );
+  complementarySeqTerminated[ size ] = '\0';
+  std::cout << "Adenine (A) content:" << counterA << std::endl
+              << "Guanine (G) content:" << counterG << std::endl
+              << "Cytocine(C) content:" << counterC << std::endl
+              << "Thymine (T) content:" << counterT << std::endl
+              << std::endl
+              << "Complementary Sequence:" << std::endl
+              << complementarySeqTerminated << std::endl;
+}
+```
+
+
+---
+### Example: DNA Analysis (V3)
+#### Let's bundle the array and its size (.green[and logic!])
+
+```c++
+struct DNA
+{
+  char *base;
+  int size;
+}
+```
+
+---
+### Example: DNA Analysis (V3)
+#### Let's bundle the array and its size (.green[and logic!])
+
+```c++
+int countCharacter( DNA &dna, char query) {
+  int count = 0;
+  for (int i = 0; i < dna.size; ++i) {
+      if (dna.base[i] == query) 
+      {
+        count += 1;
+      }
+  }
+  return count;
+}
+```
+
+---
+### Example: DNA Analysis (V3)
+#### Let's bundle the array and its size (.green[and logic!])
+
+
+```c++
+char *complementarySequence( DNA &dna ) {
+  char *complementarySequence = new char[dna.size];
+  for (int i = 0; i < dna.size; ++i) {
+      complementarySequence[dna.size-i-1] = complementaryBase(dna.base[i]);
+  }
+  return complementarySequence;
+}
+```
+
+---
+### Example: DNA Analysis (V3)
+###### Let's bundle the array and its size (.green[and logic!])
+
+```c++
+struct DNA
+{
+  int countCharacter( DNA &dna, char query) {
+    int count = 0;
+    for (int i = 0; i < dna.size; ++i) {
+        if (dna.base[i] == query) 
+        {
+          count += 1;
+        }
+    }
+    return count;
+  }
+
+  char *complementarySequence( DNA &dna ) {
+    char *complementarySequence = new char[dna.size];
+    for (int i = 0; i < dna.size; ++i) {
+        complementarySequence[dna.size-i-1] = complementaryBase(dna.base[i]);
+    }
+    return complementarySequence;
+  }
+
+  char *base;
+  int size;
+}
+```
+
+---
+### Example: DNA Analysis (V3)
+###### Let's bundle the array and its size (.green[and logic!])
+
+```c++
+struct DNA
+{
+  int countCharacter( char query) {
+    int count = 0;
+    for (int i = 0; i < size; ++i) {
+        if (base[i] == query) 
+        {
+          count += 1;
+        }
+    }
+    return count;
+  }
+
+  char *complementarySequence() {
+    char *complementarySequence = new char[size];
+    for (int i = 0; i < size; ++i) {
+        complementarySequence[size-i-1] = complementaryBase(base[i]);
+    }
+    return complementarySequence;
+  }
+  
+  char *base;
+  int size;
+}
+```
+
+---
+### Example: DNA Analysis (V3)
+###### Let's bundle the array and its size (.green[and logic!])
+###### Let's use `std::string`
+
+```c++
+struct DNA
+{
+  int countCharacter( char query ) {
+    int count = 0;
+    for (int i = 0; i < sequence.size(); ++i) {
+        if (sequence[i] == query) 
+        {
+          count += 1;
+        }
+    }
+    return count;
+  }
+
+  std::string complementarySequence() {
+    std::string complementary = sequence;
+    for (int i = 0; i < sequence.size(); ++i) {
+      complementary[suquence.size() - i - 1] = complementaryBase(sequence[i]);
+    }
+    return complementary;
+  }
+  
+  std::string dna;
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### The main function
+
+##### In the far past
+--
+```c++
+int main( int argc, char **argv)
+{
+  int counterA = 0, counterC = 0, counterG = 0 , counterT = 0;
+  int size = 0;
+  char *dnaArray1 = helpers::getFastaDNA(argv[1], size);
+  
+  char *complementarySeq = dna::analyzeDNA( &dnaArray1[0] , size , counterA , counterC , counterG , counterT );
+  // We may need to make a new character array, but with a null terminated character to be able to print on screen.
+  char *complementarySeqTerminated = new char[ size + 1 ];
+  std::copy( &complementarySeq[0] , &complementarySeq[size] , &complementarySeqTerminated[0] );
+  complementarySeqTerminated[ size ] = '\0';
+  std::cout << "Adenine (A) content:" << counterA << std::endl
+              << "Guanine (G) content:" << counterG << std::endl
+              << "Cytocine(C) content:" << counterC << std::endl
+              << "Thymine (T) content:" << counterT << std::endl
+              << std::endl
+              << "Complementary Sequence:" << std::endl
+              << complementarySeqTerminated << std::endl;
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### The main function
+
+##### In the near past
+
+```c++
+int main( int argc, char **argv)
+{
+  int counterA = 0, counterC = 0, counterG = 0 , counterT = 0;
+  int size = 0;
+  char *dnaArray1 = helpers::getFastaDNA(argv[1], size);
+  dna::DNA dnaSequence { dnaArray, size };
+
+  char *complementarySeq = dna::analyzeDNA( dnaSequence , counterA , counterC , counterG , counterT );
+  // We may need to make a new character array, but with a null terminated character to be able to print on screen.
+  char *complementarySeqTerminated = new char[ size + 1 ];
+  std::copy( &complementarySeq[0] , &complementarySeq[size] , &complementarySeqTerminated[0] );
+  complementarySeqTerminated[ size ] = '\0';
+  std::cout << "Adenine (A) content:" << counterA << std::endl
+              << "Guanine (G) content:" << counterG << std::endl
+              << "Cytocine(C) content:" << counterC << std::endl
+              << "Thymine (T) content:" << counterT << std::endl
+              << std::endl
+              << "Complementary Sequence:" << std::endl
+              << complementarySeqTerminated << std::endl;
+}
+```
+
+---
+### Example: DNA Analysis (V2)
+#### The main function
+
+##### In the present
+
+```c++
+int main( int argc, char **argv)
+{
+  int counterA = 0, counterC = 0, counterG = 0 , counterT = 0;
+  int size = 0;
+  char *dnaArray1 = helpers::getFastaDNA(argv[1], size);
+  dna::DNA dnaSequence { dnaArray, size };
+
+  std::cout << "Adenine (A) content:" << dna.countCharacter('A') << std::endl
+              << "Guanine (G) content:" << dna.countCharacter('G') << std::endl
+              << "Cytocine(C) content:" << dna.countCharacter('C') << std::endl
+              << "Thymine (T) content:" << dna.countCharacter('T') << std::endl
+              << std::endl
+              << "Complementary Sequence:" << std::endl
+              << dna.complementarySequence() << std::endl;
+}
+```
+
 
 
 
