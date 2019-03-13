@@ -3,7 +3,7 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2018"
-title:  "Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams"
+title:  "Week 5: More on Structs, Linked Lists, Const-correctness"
 by: "Asem"
 ---
 
@@ -19,7 +19,7 @@ by: "Asem"
 Compiling C++ of 2003
 
 ```terminal
-g++ source_code.cpp -o output_name
+g++ -std=c++03 source_code.cpp -o output_name
 ```
 
 Compiling C++ of 2011
@@ -32,7 +32,6 @@ g++ -std=c++11 source_code.cpp -o output_name
 
 #### `-Wall` flag
 
-* Your `g++` is compiler is your friend.
 * Let your compiler not just reports you errors.
 * Let him report you all the **warnings**.
 * Fixing **warning** avoids many run-time issues.
@@ -40,7 +39,7 @@ g++ -std=c++11 source_code.cpp -o output_name
 Compiling C++ of 2003
 
 ```terminal
-g++ -Wall source_code.cpp -o output_name
+g++ -Wall -std=c++03 source_code.cpp -o output_name
 ```
 
 Compiling C++ of 2011
@@ -106,7 +105,7 @@ int back( IntegerLL &list )
     // Logic
 }
 
-int getAt( IntegerLL &list , int k )
+int getNth( IntegerLL &list , int n )
 {
     // Logic
 }
@@ -121,7 +120,12 @@ void removeFront( IntegerLL &list )
     // Logic
 }
 
-void removeAt( IntegerLL &list , int index )
+void removeNth( IntegerLL &list , int n )
+{
+    // Logic
+}
+
+void removeNext( IntegerLL &list, IntegerNode *node )
 {
     // Logic
 }
@@ -230,28 +234,37 @@ void push( CharStackLL &stack , char data )
     CharLL list{ stack.front };
 
     // 2. DRY
-    lists::pushFront( list , data );
+    lists::insertFront( list , data );
 
     // 3. Update Stack front
     stack.front = list.front; // update the front of the stack
 }
 ```
 
+### Front access
+
+
+As simple as:
+
+```c++
+char front( CharStackLL &stack  )
+{
+    return stack.front->data;
+}
+```
+
 ### Pop operation
 
-When popping an element from the front,
+When popping (deleting) an element from the front,
 
 <iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0d1144833c1040095d586" width="900" height="556" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
 
 
 ```c++
-char pop( CharStackLL &stack )
+void pop( CharStackLL &stack )
 {
     if( stack.front )
     {
-        // Save the value of the front->data, before we delete it from the stack
-        char lifo = stack.front->data;
-        
         // Save the pointer of the front, so we delete it later
         CharNode *oldFront = stack.front;
 
@@ -260,9 +273,6 @@ char pop( CharStackLL &stack )
 
         // Now delete the old pointer
         delete oldFront;
-
-        // Return the lifo
-        return lifo;
     }
     else
     {
@@ -276,18 +286,16 @@ char pop( CharStackLL &stack )
 or DRY solution,
 
 ```c++
-char pop( CharStack &stack )
+void pop( CharStack &stack )
 {
     // 1. Make list interface
     CharLL list{ stack.front };
 
     // 2. DRY
-    char toPop = lists::front( list );
     lists::removeFront( list );
     
     // 3. Update Stack front
     stack.front = list.front;
-    return toPop;
 }
 ```
 
@@ -476,66 +484,6 @@ struct CharStackLL
 
 [Include guards](https://en.wikipedia.org/wiki/Include_guard)
 
-## Naming Conventions
-
-You should agree with your teammates on naming conventions. This makes your whole project consistent and easier to read.
-
-* No matter what name convention you settle with your team. **Consistency** what matters.
-* Descriptive names.
-
-### Variables naming
-
-```c++
-int adenine_counter = 0; // all lower_case
-```
-
-```c++
-int adenineCounter = 0; // camelCase
-```
-
-* It is optional for the team.
-* But afterwards, the team should be consistent.
-
-### Types naming
-
-`struct` (or equivalently `class`) naming.
-
-```c++
-struct IntegerArray // PascalCase
-{
-    // some data
-}
-```
-
-* *PascalCase* is usually recommended for `struct` and `class` names.
-* `struct` and `class` are the same. They both define new types.
-
-### Functions naming
-
-```c++
-int countChar( CharArray &array , char query ) // camelCase
-{
-    // Logic
-}
-```
-
-```c++
-int count_char( CharArray &array , char query ) // lower_case
-{
-    // Logic
-}
-```
-
-### Namespace naming
-
-* recommended to be all *lower\_case*
-
-### Popular Naming Conventions
-
-* [Google](https://google.github.io/styleguide/cppguide.html#Naming)
-* [Geosoft](http://geosoft.no/development/cppstyle.html)
-
-
 ## Const Correctness
 
 When passing a *pointer* or *reference* that **should not be modified**, It is very recommended to add `const` qualifier, so you guarantee the used function **won't modify its contents**.
@@ -552,12 +500,12 @@ struct IntegerLL
     IntegerNode *front;
 };
 
-void insertBack( IntegerLL &list )
+void insertBack( IntegerLL &list , int data)
 {
     // Logic
 }
 
-void insertFront( IntegerLL &list )
+void insertFront( IntegerLL &list, int data )
 {
     // Logic
 }
@@ -625,33 +573,3 @@ In depth:
 ```terminal
 sudo apt-get install cmake
 ```
-
-### Demo
-
-## Git for Teams
-
-<img src="/gallery/distributed.png" style="width:70%">
-
-## Teaser: C++ Awesome GUI
-
-### Summer and Next Year Expectations
-
-#### Agenda
-
-* Object Oriented Programming in C++.
-* STL and Qt in more depth.
-* GUI using Qt.
-
-<img src="/gallery/Autodesk-Maya-Tips-and-Tricks-7.jpg" style="width:70%">
-
-
-<img src="/gallery/google-earth-22.jpg" style="width:70%">
-
-
-#### Patience
-
-<img src="/gallery/knowledge-is-power.jpeg" style="width:90%">
-
-## Quiz Next Tuesday
-
-Prepare for a quiz on **Tuesday of 13/3**. Solving week 4 task qualifies you to solve the quiz.
