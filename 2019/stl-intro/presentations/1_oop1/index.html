@@ -366,11 +366,11 @@ char complementaryBase(char base) {
 --
 ```c++
 char *complementarySequence(char *base, int size) {
-  char *complementarySequence = new char[size];
+  char *compl = new char[size];
   for (int i = 0; i < size; ++i) {
-      complementarySequence[size-i-1] = complementaryBase(base[i]);
+    compl[size-i-1] = complementaryBase(base[i]);
   }
-  return complementarySequence;
+  return compl;
 }
 ```
 
@@ -477,11 +477,11 @@ char *complementarySequence( DNA &dna )
 ###### Old version
 ```c++
 char *complementarySequence(char *base, int size) {
-  char *complementarySequence = new char[size];
+  char *compl = new char[size];
   for (int i = 0; i < size; ++i) {
-      complementarySequence[size-i-1] = complementaryBase(base[i]);
+    compl[size-i-1] = complementaryBase(base[i]);
   }
-  return complementarySequence;
+  return compl;
 }
 ```
 
@@ -504,11 +504,11 @@ char * complementarySequence( DNA &dna )
 ###### Old version
 ```c++
 char *complementarySequence(char *base, int size) {
-  char *complementarySequence = new char[size];
+  char *compl = new char[size];
   for (int i = 0; i < size; ++i) {
-      complementarySequence[size-i-1] = complementaryBase(base[i]);
+    compl[size-i-1] = complementaryBase(base[i]);
   }
-  return complementarySequence;
+  return compl;
 }
 ```
 
@@ -676,11 +676,11 @@ int countCharacter( DNA &dna, char query) {
 
 ```c++
 char *complementarySequence( DNA &dna ) {
-  char *complementarySequence = new char[dna.size];
+  char *compl = new char[dna.size];
   for (int i = 0; i < dna.size; ++i) {
-      complementarySequence[dna.size-i-1] = complementaryBase(dna.base[i]);
+    compl[dna.size-i-1] = complementaryBase(dna.base[i]);
   }
-  return complementarySequence;
+  return compl;
 }
 ```
 
@@ -703,11 +703,11 @@ struct DNA
   }
 
   char *complementarySequence( DNA &dna ) {
-    char *complementarySequence = new char[dna.size];
+    char *compl = new char[dna.size];
     for (int i = 0; i < dna.size; ++i) {
-        complementarySequence[dna.size-i-1] = complementaryBase(dna.base[i]);
+      compl[dna.size-i-1] = complementaryBase(dna.base[i]);
     }
-    return complementarySequence;
+    return compl;
   }
 
   char *base;
@@ -734,11 +734,11 @@ struct DNA
   }
 
   char *complementarySequence() {
-    char *complementarySequence = new char[size];
+    char *compl = new char[size];
     for (int i = 0; i < size; ++i) {
-        complementarySequence[size-i-1] = complementaryBase(base[i]);
+      compl[size-i-1] = complementaryBase(base[i]);
     }
-    return complementarySequence;
+    return compl;
   }
   
   char *base;
@@ -773,7 +773,7 @@ struct DNA
     return complementary;
   }
   
-  std::string dna;
+  std::string sequence;
 }
 ```
 
