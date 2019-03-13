@@ -2,7 +2,7 @@
 layout: presentation
 course: "sbe201"
 category: "presentation"
-year: "2018"
+year: "2019"
 title: "Week3: Arrays, Command Line Arguments, and Libraries"
 by: "Asem"
 author: "Asem Alaa"
@@ -19,25 +19,6 @@ author: "Asem Alaa"
   </head>
   <body>
     <textarea id="source">
-
----
-## Assignment of Week 3
-
---
-### Part 1
-
-* Issue 1: Command Line Arguments.
-* Issue 2: Functions and Calling Functions.
-* Issue 3: Header Files and Source Files.
-
-
---
-### Part 2
-
-* C++ Feature: `struct`s
-* C++ Feature: function overloading
-* C++ Feature: Type Alias
-
 
 ---
 ### Type Aliasing
@@ -66,7 +47,7 @@ using Coordinates = Position;
 
 --
 ```terminal
-g++ source_code.cpp -o output_name
+g++ -std=c++03 source_code.cpp -o output_name
 ```
 
 ---
@@ -85,30 +66,17 @@ g++ -std=c++11 source_code.cpp -o output_name
 --
 #### `-Wall` flag
 
---
-* `g++` is your compiler as well as your friend.
 
 --
 * Let `g++` not just reports you errors.
-
 --
 * Let him report you all the **warnings**.
-
 --
 * Fixing **warning** avoids many run-time issues.
 
 
-
 --
-Compiling C++ of 2003
-
---
-```terminal
-g++ -Wall source_code.cpp -o output_name
-```
-
---
-Compiling C++ of 2011
+##### Compiling C++ of 2011 plus enable all warnings
 
 ```terminal
 g++ -Wall -std=c++11 source_code.cpp -o output_name
@@ -128,34 +96,28 @@ g++ -Wall -std=c++11 source_code.cpp -o output_name
 
 --
 * insertion at front.
-
 --
 * insertion at back.
-
 --
-* remove front.
-
+* remove from front.
 --
-* remove back.
-
+* remove from back.
+--
+* remove nth element.
 --
 * return front.
-
 --
 * return back.
-
+--
+* return nth element.
 --
 * remove a node **next to** a given node.
-
 --
-* remove nodes with given data.
-
+* remove nodes with given data (filteration).
 --
 * is empty?
-
 --
 * printAll.
-
 --
 * delete the whole list from the heap.
 
@@ -184,35 +146,40 @@ struct IntegerLL
 
 --
 ```c++
-void insertBack( IntegerLL &list )
+void insertBack( IntegerLL &list, int newElement )
 {
     // Logic
 }
 
-void insertFront( IntegerLL &list )
+void insertFront( IntegerLL &list, int newElement )
 {
     // Logic
 }
 ```
 
 ---
-##### Access Terminals
+##### Access
 
 --
 ```c++
-int front( IntegerLL &list )
+int getFront( IntegerLL &list )
 {
     // Logic
 }
 
-int back( IntegerLL &list )
+int getBack( IntegerLL &list )
+{
+    // Logic
+}
+
+int getNth( IntegerLL &list )
 {
     // Logic
 }
 ```
 
 ---
-##### Remove at Terminals
+##### Removal
 
 --
 ```c++
@@ -222,6 +189,16 @@ void removeBack( IntegerLL &list )
 }
 
 void removeFront( IntegerLL &list )
+{
+    // Logic
+}
+
+void removeNth( IntegerLL &list )
+{
+    // Logic
+}
+
+void removeNext( IntegerLL &list, IntegerNode* node )
 {
     // Logic
 }
@@ -305,7 +282,6 @@ Copy-paste the same logic of the Integers Linked List, but change each:
 ---
 ### Stacks using LL
 
-
 --
 ### Node type
 
@@ -320,12 +296,25 @@ struct CharNode
 --
 ### Stack-LL
 
-
 ```c++
 struct CharStackLL
 {
     CharNode *front = nullptr;
 };
+```
+
+--
+* And we need: push, pop, and front.
+
+
+---
+### Stack-LL: access front operation
+
+```c++
+char front( CharStackLL &stack )
+{
+    return stack.front->data;
+}
 ```
 
 ---
@@ -359,7 +348,7 @@ void push( CharStackLL &stack , char data )
 ```
 
 ---
-DRY solution: (optional):
+#### DRY solution: (optional):
 
 ```c++
 void push( CharStackLL &stack , char data )
@@ -385,13 +374,10 @@ When popping an element from the front,
 
 ---
 ```c++
-char pop( CharStackLL &stack )
+void pop( CharStackLL &stack )
 {
     if( stack.front )
-    {
-        // Save the value of the front->data, before we delete it from the stack
-        char lifo = stack.front->data;
-        
+    {    
         // Save the pointer of the front, so we delete it later
         CharNode *oldFront = stack.front;
 
@@ -400,9 +386,6 @@ char pop( CharStackLL &stack )
 
         // Now delete the old pointer
         delete oldFront;
-
-        // Return the lifo
-        return lifo;
     }
     else
     {
@@ -417,18 +400,16 @@ char pop( CharStackLL &stack )
 or DRY solution,
 
 ```c++
-char pop( CharStack &stack )
+void pop( CharStack &stack )
 {
     // 1. Make a Linked List Interface.
     CharLL list{ list.front };
 
     // 2. DRY
-    char toPop = lists::front( list );
     lists::removeFront( list );
 
     // 3. Update the Stack front now.
     stack.front = list.front;
-    return toPop;
 }
 ```
 
@@ -512,7 +493,7 @@ bool isEmpty( NumbersQueueLL queue )
 ---
 ### Enqueuing a New Element
 
-As you guessed, new elements will be added to the **back**.
+New elements can be added to the **back**.
 
 ```c++
 void enqueue( NumbersQueueLL &queue , double newSample )
@@ -539,24 +520,7 @@ void enqueue( NumbersQueueLL &queue , double newSample )
 Left for the assignment.
 
 ---
-### Bonus: Array-Based Queues
-
-* Trick: Circular Buffer.
-
-
----
-## Git for Teams
-
-<img src="/gallery/distributed.png" style="width:70%">
-
-
----
-## Quiz Next Tuesday
-
-Prepare for a quiz next Tuesday. Solving week 4 task qualifies you to solve the quiz.
-
----
-## Regular Functions and Methods
+## Free Functions vs. Methods
 
 ```c++
 CharStackLL cstack;
@@ -577,15 +541,13 @@ What if we can do
 cstack.push('A');
 ```
 
-
 --
-* First version => regular function.
+* First version => free function.
 * Second version => method.
 
 
 ---
 #### Procedural Paradigm
-
 
 --
 ```c++
@@ -622,118 +584,6 @@ struct CharStackLL
 * A method inside a `struct` has an access to a very special pointer called `this`.
 * `this` pointer gives a method access to all the `struct` members.
 
-
----
-## Preprocessing
-
-![Compilation](/gallery/compile.gif)
-
-
----
-[{Preprocessor directives}](http://www.cplusplus.com/doc/tutorial/preprocessor/)
-
-
---
-```c++
-#ifndef MATHEMATICS_HPP
-#define MATHEMATICS_HPP
-
-#include <iostream>
-    
-#endif // MATHEMATICS_HPP
-```
-
---
-* Includes.
-* [{Include guards}](https://en.wikipedia.org/wiki/Include_guard).
-* Macros.
-* Macro functions.
-
----
-## Naming Conventions
-
---
-* Teammates should agree on naming conventions. 
-
---
-* Makes Project .green[consistent] and .green[easier to read].
-
---
-* No matter what name convention you settle with your team. 
-
---
-* **Consistency** what matters.
-
---
-* Descriptive names.
-
-
-
----
-### Variables naming
-
-
---
-```c++
-int adenine_counter = 0; // all lower_case
-```
-
---
-```c++
-int adenineCounter = 0; // camelCase
-```
-
---
-* It is optional for the team.
-* But afterwards, the team should be consistent.
-
-
----
-### Types naming
-
-`struct` (or equivalently `class`) naming.
-
-```c++
-struct IntegerArray // PascalCase
-{
-    // some data
-}
-```
-
-* *PascalCase* is usually recommended for `struct` and `class` names.
-* `struct` and `class` are the same. They both define new types.
-
----
-### Functions naming
-
-```c++
-int countChar( CharArray &array , char query ) // camelCase
-{
-    // Logic
-}
-```
-
-```c++
-int count_char( CharArray &array , char query ) // lower_case
-{
-    // Logic
-}
-```
-
-
----
-### Namespace naming
-
-* recommended to be all *lower\_case*
-
-
----
-### Popular Naming Conventions
-
-* [{Google}](https://google.github.io/styleguide/cppguide.html#Naming)
-* [{Geosoft}](http://geosoft.no/development/cppstyle.html)
-
-
 ---
 ## Const Correctness
 
@@ -754,21 +604,19 @@ struct IntegerLL
 
 ---
 ```c++
-void insertBack( IntegerLL &list )
+void insertBack( IntegerLL &list, int data )
 {
     // Logic
 }
 ```
-
 
 ---
 ```c++
-void insertFront( IntegerLL &list )
+void insertFront( IntegerLL &list, int data )
 {
     // Logic
 }
 ```
-
 
 ---
 
@@ -880,57 +728,6 @@ void clear( IntegerLL &list )
     // Logic
 }
 ```
-
----
-## Advanced: Intro to Build Systems
-
-[An introduction to build systems by *Marwan Abdellah, Ph.D, Blue Brain Project, EPFL*](http://bme-ws.yolasite.com/resources/Software%20Build%20Systems.pdf)
-
-To access the workshop pages and materials: [{The Second Biomedical Engineering Workshop}](http://bme-workshop.weebly.com/material.html).
-
-In depth:
-
-<iframe src="https://player.vimeo.com/video/32212195" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/32212195">Introduction to CMake</a> from <a href="https://vimeo.com/kitware">Kitware</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
----
-### Installation
-
-```terminal
-sudo apt-get install cmake
-```
-
-### Demo
-
-
----
-## Teaser: C++ Awesome GUI
-
---
-### Summer and Next Year Expectations
-
---
-#### Agenda
-
-* Object Oriented Programming in C++.
-* STL and Qt in more depth.
-* GUI using Qt.
-
----
-<img src="/gallery/Autodesk-Maya-Tips-and-Tricks-7.jpg" style="width:100%">
-
----
-<img src="/gallery/google-earth-22.jpg" style="width:100%">
-
-
----
-#### Patience
-
-<img src="/gallery/knowledge-is-power.jpeg" style="width:100%">
-
-
-
-
 
     </textarea>
     

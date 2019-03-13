@@ -513,6 +513,27 @@ struct CharLinkedList
 }
 ```
 
+---
+#### *Insert* element to the front:
+
+--
+```c++
+void insertToFront( CharLinkedList &list , char newElement )
+{
+    node *newFront = new node{ newElement , list.head };
+    list.head = newFront;
+}
+```
+
+--
+##### Alternatively...
+```c++
+void insertToFront( CharLinkedList &list , char newElement )
+{
+    list.head = new node{ newElement , list.head };
+}
+```
+
 --
 ### Tail (back)
 
@@ -528,7 +549,7 @@ struct CharLinkedList
 ```
 
 ---
-#### *Insert* element on the back:
+#### *Insert* element to the back:
 
 --
 ```c++
