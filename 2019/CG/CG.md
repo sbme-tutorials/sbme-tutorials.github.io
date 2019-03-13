@@ -49,6 +49,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 |   2  | Transformations | Assignment1 |
 |   3  | Projection |  |
 |   4  | Camera Transformation | Assignment2 |
+|   5  | Ray Casting, Lighting and Animation |    |
 
 ## Tutorials
 
@@ -64,6 +65,8 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 4: Camera Transformation
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md%}){:target="_blank"}
 
+* Week 5: Ray Casting, Lighting and Animation
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/5-week5.md%}){:target="_blank"}
 
 ## Assignments
 

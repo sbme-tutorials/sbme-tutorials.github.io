@@ -148,3 +148,6 @@ When we run these poses with time it will seem that the object is moving.
 
 ![](../images/model-animated.gif)
 
+### Section Demo
+
+All demos will be available in [this](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials) repository
