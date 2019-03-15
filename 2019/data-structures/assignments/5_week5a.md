@@ -62,4 +62,4 @@ Each of these commands requires providing your username and password. It becomes
 * Start drafting a basic resume of yours, you may use [this file](/2019/data-structures/assignments/resumes/asem) as a template.
 * You can find extra guidelines in the README.md file of your repository.
 * After finishing, add your name in the table in the `README.md` file.
-
+* [A reference for GitHub emojis](https://gist.github.com/rxaviers/7360908)

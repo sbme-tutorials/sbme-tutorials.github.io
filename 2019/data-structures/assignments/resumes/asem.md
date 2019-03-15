@@ -10,16 +10,16 @@ pdf: true
 
 ![profilepic](asem.jpg)
 
-* Name: **Asem Alaa**
-* Year of Birth: **1993**
-* e-mail: `asem_alla@msn.com`
-* [GitHub](https://github.com/A-Alaa)
+* Name: **Asem Alaa** :feelsgood:
+* Year of Birth: **1993** :boom:
+* e-mail: `asem_alla@msn.com` :email:
+* [GitHub](https://github.com/A-Alaa) :octocat:
 
 ## Interests
 
 * Research and reading in Bioinformatics, ML.
 * Playing Cards :flower_playing_cards:, classical video games :video_game:, fishing :fishing_pole_and_fish:
-* Music mining and archiving :musical_score: :+1:
+* Music mining and archiving :musical_score:
 
 ## Work Experience
 
