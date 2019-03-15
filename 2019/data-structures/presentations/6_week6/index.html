@@ -1,0 +1,415 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 6: Recursion, Big-Oh Notation, Queue Applications</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+---
+## Recursion
+
+### How to make your computer compute any factorial using two lines
+
+<img src="/gallery/recursion1.gif" style="width:100%">
+
+
+---
+```c++
+#include <iostream>
+int factorial( int n )
+{
+    if( n <= 1 )
+        return 1;
+    else
+        return n * factorial( n - 1 );
+}
+
+int main()
+{
+    std::cout << "5!=" << factorial( 5 );
+    return 0;
+}
+```
+
+---
+```python
+factorial(5) 
+   factorial(4) 
+      factorial(3) 
+         factorial(2) 
+            factorial(1) 
+               return 1 
+            return 2*1 = 2 
+         return 3*2 = 6 
+      return 4*6 = 24 
+   return 5*24 = 120
+```
+
+---
+<img src="/gallery/fact5rec/8.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/7.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/6.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/6.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/5.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/4.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/3.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/2.svg" style="width:100%;">
+
+---
+<img src="/gallery/fact5rec/1.svg" style="width:100%;">
+
+
+
+---
+### How recursion work in stack memory
+
+[{Demo: How Recursive Factorial Work in Memory}](https://www.cs.usfca.edu/~galles/visualization/RecFact.html)
+
+---
+### Recursion is not Function Overloading
+
+--
+The following is not recursion
+
+```c++
+struct Rectangle
+{
+    double a = 0;
+    double b = 0;
+};
+
+double area( double a , double b )
+{
+    return a * b;
+}
+
+double area( Rectangle rect )
+{
+    return area( rect.a , rect.b ); // This is not recursion.
+}
+```
+
+---
+However, the following calling `area` is recursive, it calls itself
+
+```c++
+struct Rectangle
+{
+    double a = 0;
+    double b = 0;
+};
+
+double area( Rectangle rect )
+{
+    return area( rect ); // This is a recursion. Very pointless and buggy function!
+}
+```
+
+* infinite loop of recurion, 
+* until the **stack memory overflows**, 
+* and finally the program crashes.
+* pointless function.
+
+--
+* **Add to your glossary**: *[Stack Memory Overflow](https://en.wikipedia.org/wiki/Stack_overflow)*
+
+---
+### **Exercise**: Power Function
+
+--
+Implement a function `power` that uses recursion to compute the power of the input number. After finishing:
+
+--
+1. initialize a repository on your local machine, `git init`
+2. add the files to your repository, **never add the executable file** generated from the compiler, using: `git add file1.cpp file2.hpp`.
+3. Commit changes: `git commit -a -m "add implementation and add files to the repository"`
+4. Create remote repository at **github**, copy the link of your repository from the green button.
+5. link your local repository to the remote repository using: `git remote add origin [repo_link]`.
+6. Push: `git push origin master`.
+
+Finally, you can send me the link of your repository on github to review!
+
+---
+
+### Recursion iv Very important Technique in Programming
+
+--
+* Tree Data Structure.
+--
+* Divide and Conquer & Dynamic Programming Algorithms.
+--
+* Elegant Functions with less codes.
+--
+* Advanced: In Functional Programming, we avoid the *imperative* for-loops with using **recursion**.
+
+
+---
+## Big-Oh Notation
+
+--
+### What is an Algorithm
+
+--
+> According to Donald Knuth, the word *algorithm* is derived from the name “al-Khowârizmı̂,” a ninth-century Persian mathematician.
+
+--
+#### In programming, 
+
+--
+* *algorithm* is a function with clever logic. 
+--
+* However, it is a very general term. 
+--
+* The `meanArray` function is an *algorithm 
+--
+* Similary, `varianceArray`, `minArray`, `maxArray`, `factorial`, and `power`.
+
+
+--
+We are concerned about the function running time w.r.t input size `n`.
+
+---
+### How to measure an algorithm performance
+
+#### Constant Performance
+
+
+--
+```c++
+int sqaure( int x )
+{
+    int y = x * x; // T1(n) = 1
+    return y; // T2(n) = 1
+}
+```
+
+--
+$$ T(n) = T1 + T2 = 2 $$
+
+
+--
+$$ O( T(n) ) = O(2) = O(1) $$
+
+
+--
+**constant execution time**. 
+
+
+---
+#### Constant Performance
+
+```c++
+bool isEmpty( CharacterStackLL &stack )
+{
+    return stack.front == nullptr; // T(n) = 1
+}
+```
+
+--
+$$ T(n) = 1 $$
+
+--
+$$ O( T(n) ) = O(1) $$
+
+
+--
+*Synonyms: Performance, Behaviour, Complexity*
+
+
+---
+#### Linear Performance
+
+
+--
+```c++
+void printLL( Node* front )
+{
+    Node *current = front; // T1(n) = 1
+
+    while( current != nullptr ) // T2(n) = n * ( T3 + T4 )
+    {
+        std::cout << current->data; // T3(n) = 1
+        current = current->next; // T4(n) = 1
+    }
+}
+```
+--
+$$  T(n) = T1 + T2 = 1 + n ( T3 + T4 ) = 1 + 2n $$
+
+
+--
+$$ O(T(n)) = O( 1 + 2n ) = O(n) $$
+
+
+--
+* **asymptotically** linear in execution time. 
+* Will finally follow a line function for relatively large `n`.
+
+---
+
+<img src="/gallery/complexity.svg" style="width:80%;">
+
+---
+* **Question**: How to approximately estimate the function running time for $n_2=1000000$, i.e linked-list of **1-million** element
+* **Givens**:
+
+    * The function has complexity of $ O(n) $.
+    * The function executed in *2 melliseconds* when $n_1=2000$.
+
+ 
+---
+#### Quadratic Performance
+
+Consider the following **naive** inefficient function `varianceArray`
+
+--
+```c++
+double varianceArray( double *base, int arraySize )
+{
+    double sum = 0 ; // T1(n) = 1
+    for( int i = 0; i < arraySize ; ++i ) // T2(n) = n ( T3 + T4 )
+    {
+        double diff = meanArray(&base[0],arraySize ) - base[i]; // T3(n) = n
+        sum = sum + diff * diff ; // T4(n) = 1
+    }
+    return sum / arraySize; // T5(n) = 1
+}
+```
+
+--
+$$  T(n) = T1 + T2 + T5 = 1 + n ( T3 + T4 ) + 1 = 1 + n( n + 1 ) + 1$$ 
+$$ = n^2 + n + 2 $$
+
+$$ O(T(n)) = O(n^2 + n + 2) = O(n^2) $$
+
+---
+### Further: Orders of Common Function
+
+<img src="/gallery/complexity.svg" style="width:80%;">
+
+
+---
+[{Orders of common functions}](https://en.wikipedia.org/wiki/Big_O_notation#Orders_of_common_functions)
+
+
+---
+### Exercises
+
+```c++
+
+// n = input array `basePointer` size
+int countCharacter( char *basePointer , int size , char query )
+{
+    int x = 0; // T1(n) = 1
+    for ( int i = 0; i < size; ++i) // T2(n) = n * T3(n)
+    {
+        if ( query == basePointer[i] ) T3(n) = 1
+            ++x;
+    }
+    return x; // T4(n) = 1
+}
+// T(n) = T1 + T2 + T4 = 1 + n * T3 + 1 = 2 + n
+// O(T(n)) = O(n)
+```
+
+
+---
+```c++
+char *analyzeDNA( char *base, int size, int &countA, int &countC, int &countG, int countT)
+{
+    countA = arrays::countCharacter( &base[0], size, 'A'); // T1(n) = 2 + n => O(n)
+    countC = arrays::countCharacter( &base[0], size, 'C'); // T2 = same
+    countG = arrays::countCharacter( &base[0], size, 'G'); // T3 = same
+    countT = arrays::countCharacter( &base[0], size, 'T'); // T4 = same
+    return complementarySequence( &base[0], size); // T5 = 1
+}
+
+// T(n) = 4 * (2 + n) + 1 = 9 + 4n
+// O(T(n)) = O(n)
+```
+
+---
+## Some Queue (ADT) Applications
+
+
+
+
+
+
+
+    </textarea>
+    
+    
+
+     
+
+    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+    <script src="/javascript/remark.min.js"></script>
+  
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+  
+    <script type="text/javascript">
+      var options = {
+        ratio: '4:3',
+        highlightStyle: 'github',
+        countIncrementalSlides: false
+      };
+      var slideshow = remark.create(options);
+  
+      // extract the embedded styling from ansi spans
+      $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+        return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+      });
+  
+    </script>
+  
+    <script src="/mathjax/MathJax.js"></script>
+  
+    <script type="text/javascript">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+        jax: ["input/TeX", "output/HTML-CSS"],
+        "HTML-CSS": {
+          availableFonts: ["TeX"],
+          imageFont: null
+        },
+        MathMenu: {
+          showRenderer: false,
+          showFontMenu: false,
+          showLocale: false
+        }
+      });
+    </script>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  
+  
+  </body>
+</html>
+

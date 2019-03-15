@@ -451,7 +451,7 @@ struct CharStackLL
     
     void push( char newElement )
     {
-        CharNode *newNode = new CharNode{ data , this->front };
+        CharNode *newNode = new CharNode{ newElement , this->front };
         this->front = newNode;
     }
 };
