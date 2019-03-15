@@ -16,7 +16,8 @@ pdf: true
 ## Warnings
 
 1. <p class="text-danger" markdown="1">Never use the GitHub website to upload your work. This will almost ruin the work of your teammates. You should only rely on the git commands.</p>
-2. When you publish your changes, it may happen that one of your teammates has published some updates before you do, so you need to `git pull origin master` first. So **never use as a solution**: `git push -f origin master` (by adding `-f`) or `git push --force origin master` (by adding `--force` flag). <p class="text-danger">This is guaranteed to ruin and overwrite your teammates work.</p>
+2. When you publish your changes, it may happen that one of your teammates has published some updates before you do, so you need to `git pull origin master` first. So **never use as a solution**: `git push -f origin master` (by adding `-f`) or `git push --force origin master` (by adding `--force` flag). 
+<p class="text-danger" markdown="1">This is guaranteed to ruin and overwrite your teammates work.</p>
 
 #### `git push origin master --force` in practice:
 
