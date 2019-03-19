@@ -25,7 +25,7 @@ pdf: true
 
 ## Deadline
 
-**Sunday 14/3/2019 11:59 PM (PST)**.
+**Thursday 14/3/2019 11:59 PM (PST)**.
 
 ## Assignment: Part 2
 
