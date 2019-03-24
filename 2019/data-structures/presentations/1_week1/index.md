@@ -1,27 +1,19 @@
-<!-- ---
+---
 layout: presentation
+style: laminal
+highlighter: monokai
 course: "sbe201"
 category: "presentation"
-year: "2018"
+year: "2019"
 title: "Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
 by: "Asem"
 author: "Asem Alaa"
---- -->
-
-<!DOCTYPE html>
-<html>
-  <head>
-
-    <meta charset="utf-8">
-    <title>Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'</title>
-    <link rel="stylesheet" href="/css/laminal.css">
-
-  </head>
-  <body>
-    <textarea id="source">
-
-
 ---
+
+
+<textarea id="source" markdown="1">
+
+
 class: left, middle
 # Information about your TA
 
@@ -290,7 +282,7 @@ class: center, middle
 <img style="width:60%;" src="/gallery/ecg-sampled.png">
 
 --
-$ \text{Sampled Signal} = \[ 12.3, 12.7 , 14.5 , 18.0 , 16.2 , 10.1 , 8.6 , ... \] $
+<span>$$ \text{Sampled Signal} = \[ 12.3, 12.7 , 14.5 , 18.0 , 16.2 , 10.1 , 8.6 , ... \]  $$</span>
 
 --
 * It is pointless to construct a variable for each sample!
@@ -417,7 +409,6 @@ true && true; // True
 ```
 --
 * Note 1: expressions are more generic unit than variables.
-
 --
 * Note 2: (`expression % 2 == 1`) is a way to test if that expression is even or odd.
 
@@ -1325,56 +1316,4 @@ class: left, top
 class: left, top
 # Thank you
 
-    </textarea>
-    
-    
-
-    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
-
-    <script src="/javascript/remark.min.js"></script>
-  
-    <script type="text/javascript">
-      var hljs = remark.highlighter.engine;
-    </script>
-    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
-  
-    <script type="text/javascript">
-      var options = {
-        ratio: '4:3',
-        highlightStyle: 'monokai',
-        countIncrementalSlides: false
-      };
-      var slideshow = remark.create(options);
-  
-      // extract the embedded styling from ansi spans
-      $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
-        return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
-      });
-  
-    </script>
-  
-    <script src="/mathjax/MathJax.js"></script>
-  
-    <script type="text/javascript">
-      MathJax.Hub.Config({
-        extensions: ["tex2jax.js"],
-        tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-        jax: ["input/TeX", "output/HTML-CSS"],
-        "HTML-CSS": {
-          availableFonts: ["TeX"],
-          imageFont: null
-        },
-        MathMenu: {
-          showRenderer: false,
-          showFontMenu: false,
-          showLocale: false
-        }
-      });
-    </script>
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  
-  </body>
-</html>
-
+</textarea>

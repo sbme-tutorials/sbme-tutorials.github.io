@@ -1,24 +1,17 @@
-<!-- ---
+---
 layout: presentation
+style: laminal
+highlighter: monokai
 course: "sbe201"
 category: "presentation"
-year: "2018"
-title: "Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
+year: "2019"
+title: "Week2: Memory, pointers, and references"
 by: "Asem"
 author: "Asem Alaa"
---- -->
+---
 
-<!DOCTYPE html>
-<html>
-  <head>
-
-    <meta charset="utf-8">
-    <title>Week2: Memory, pointers, and references</title>
-    <link rel="stylesheet" href="/css/laminal.css">
-
-  </head>
-  <body>
-    <textarea id="source">
+    
+<textarea id="source">
 
 
 ---
@@ -159,14 +152,14 @@ $ sudo dpkg -i (package path)
 class: left, top
 ## Interesting Appliactions
 
-| Category | package name | 
-|----------|--------------|
+| Category      | package name                          |
+| ------------- | ------------------------------------- |
 | Music & Video | vlc, rhythm box (shipped with Ubuntu) |
-| PDFs | Okular, Foxit, PdfShuffler |
-| Screenshots | Shutter | 
-| C++ IDEs | Qt Creator, Jet-brains CLion, VSCode |
-| Python IDEs | Pycharm, Anaconda (Spyder) |
-| Web IDEs | VSCode, Jet-brains WebStorm | 
+| PDFs          | Okular, Foxit, PdfShuffler            |
+| Screenshots   | Shutter                               |
+| C++ IDEs      | Qt Creator, Jet-brains CLion, VSCode  |
+| Python IDEs   | Pycharm, Anaconda (Spyder)            |
+| Web IDEs      | VSCode, Jet-brains WebStorm           |
 
 
 ---
@@ -178,11 +171,11 @@ class: left, top
 
 --
 
-| Flexible languages | Opinionated languages |
-|----------|-------------|
+| Flexible languages               | Opinionated languages                     |
+| -------------------------------- | ----------------------------------------- |
 | * .green[Powerful and efficient] | * .red[Usually inefficient in comparison] |
-| * .red[ Overhead to learn ] | * .green[ Easier to learn ] |
-| * C++, C | * Java, C#, Python |
+| * .red[ Overhead to learn ]      | * .green[ Easier to learn ]               |
+| * C++, C                         | * Java, C#, Python                        |
 ---
 class: left, top
 ## Variables on Stack Memory
@@ -379,10 +372,10 @@ int main()
 class: left, top
 ## Stack Memory vs. Heap Memory
 
-| Stack Memory | Heap Memory |
-|--------------|-------------|
-| * .red[ Limited capacity ] | * .green[ Large capacity for scalable structures ] |
-| * .green[ Automatic memory management ] | * .red[ Manual memory management ] |
+| Stack Memory                            | Heap Memory                                        |
+| --------------------------------------- | -------------------------------------------------- |
+| * .red[ Limited capacity ]              | * .green[ Large capacity for scalable structures ] |
+| * .green[ Automatic memory management ] | * .red[ Manual memory management ]                 |
 
 ---
 class: left, top
@@ -561,57 +554,4 @@ class: left, top
 * Deadline: next Monday 25/2/2019
 
 
-    </textarea>
-    
-    
-
-  
-    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
-
-    <script src="/javascript/remark.min.js"></script>
-  
-    <script type="text/javascript">
-      var hljs = remark.highlighter.engine;
-    </script>
-    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
-  
-    <script type="text/javascript">
-      var options = {
-        ratio: '4:3',
-        highlightStyle: 'monokai',
-        countIncrementalSlides: false
-      };
-      var slideshow = remark.create(options);
-  
-      // extract the embedded styling from ansi spans
-      $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
-        return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
-      });
-  
-    </script>
-  
-    <script src="/mathjax/MathJax.js"></script>
-  
-    <script type="text/javascript">
-      MathJax.Hub.Config({
-        extensions: ["tex2jax.js"],
-        tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-        jax: ["input/TeX", "output/HTML-CSS"],
-        "HTML-CSS": {
-          availableFonts: ["TeX"],
-          imageFont: null
-        },
-        MathMenu: {
-          showRenderer: false,
-          showFontMenu: false,
-          showLocale: false
-        }
-      });
-    </script>
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  
-  </body>
-</html>
-
+</textarea>
