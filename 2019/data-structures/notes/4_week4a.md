@@ -581,7 +581,7 @@ We need to make a buffer (array) with a relatively large capacity for our queue.
 ```c++
 // Let's make a new type for our Queue with a name indicating its properties:
 // 1. Our element types are integers.
-// 2. The ADT is Stack
+// 2. The ADT is Queue
 // 3. Maximum size is 100
 struct DoubleQueue100
 {
