@@ -377,7 +377,7 @@ bool isEmpty( NumbersQueueLL queue )
 
 ### Enqueuing a New Element
 
-As you guessed, new elements will be added to the **back**.
+The new elements will be directly added using **back** pointer.
 
 ```c++
 void enqueue( NumbersQueueLL &queue , double newSample )
@@ -389,14 +389,14 @@ void enqueue( NumbersQueueLL &queue , double newSample )
     }
     else
     {
-        DoubleNode *oldBack = queue.back;
-        DoubleNode *newBack = new DoubleNode{ newSample , oldBack };
-        queue.back = newBack;
-
-        // Short solution: queue.back = new DoubleNode{ newSample , queue.back };
+        queue.back->next = new DoubleNode{ newSample , nullptr };
+        queue.back = queue.back->next;
     }
 }
 ```
+
+**The above snippet is updated at Thursday 22 March 2019.**
+
 
 ### Dequeueing an Element
 
@@ -451,7 +451,7 @@ struct CharStackLL
     
     void push( char newElement )
     {
-        CharNode *newNode = new CharNode{ data , this->front };
+        CharNode *newNode = new CharNode{ newElement , this->front };
         this->front = newNode;
     }
 };
