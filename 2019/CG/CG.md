@@ -74,7 +74,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 * [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md%}){:target="_blank"} : Full Body 
 
-* [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md%}){:target="_blank"} : Animation, Coloring and Texture mapping. 
+* [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md%}){:target="_blank"} : Animation, Coloring and Texture mapping 
 
 ## Sheets 
 
