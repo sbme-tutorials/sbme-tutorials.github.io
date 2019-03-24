@@ -540,11 +540,11 @@ void bubbleSort( std::vector< double > &array )
 ```
 
 --
-$ T(n) = T_1 = n \times T_2 = n \times n = n^2 $
+$$ T(n) = T_1 = n \times T_2 = n \times n = n^2 $$
 
 
 --
-$ O(T(n)) = O(n^2) $
+$$ O(T(n)) = O(n^2) $$
 
 
 ---
@@ -609,11 +609,11 @@ void selectionSort( std::vector< double > &array )
 ```
 
 --
-$ T(n) = T_1 = n \times (T_2 + T_3 + T_4) = n \times( O(n) + 2 ) $
+$$ T(n) = T_1 = n \times (T_2 + T_3 + T_4) = n \times( O(n) + 2 ) $$
 
 
 --
-$ O(T(n)) = O(n^2)$
+$$ O(T(n)) = O(n^2) $$
 
 
 
