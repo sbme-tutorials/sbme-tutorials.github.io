@@ -53,30 +53,30 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 ## Tutorials
 
 1. Week 1:
-    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/1_week1/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/1_week1/index.md %}){:target="_blank"}
     * Section Notes: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github, brief intro to Linux]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/1_week1.md %}){:target="_blank"}
 1. Week 2:
-    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/2_week2/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/2_week2/index.md %}){:target="_blank"}
     * Section Notes: \[[Part 1: Memory, pointers, and references]({{ site.baseurl }}{% link 2019/data-structures/notes/2_week2a.md %}){:target="_blank"}\].
     * [Code Styling]({{ site.baseurl }}{% link 2019/data-structures/notes/2_code_formatting.md %}){:target="_blank"}
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/2_week2a.md %}){:target="_blank"}
 1. Week 3:
-    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/3_week3/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/3_week3/index.md %}){:target="_blank"}
     * Section Notes: \[[Part 1: Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2019/data-structures/notes/3_week3a.md %}){:target="_blank"}\] \[[Part 2: Command Line Arguments and Compilation of Multiple Files]({{ site.baseurl }}{% link 2019/data-structures/notes/3_week3b.md %}){:target="_blank"}\].
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/3_week3.md %}){:target="_blank"}
 1. Week 4:
-    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/4_week4a/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/4_week4a/index.md %}){:target="_blank"}
     * Section Notes: \[[Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/4_week4a.md %}){:target="_blank"}\]
     * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/4_week4.md %}){:target="_blank"}
     * [Public key authentication]({{ site.baseurl }}{% link 2019/data-structures/notes/public_key.md %}){:target="_blank"}
 1. Week 5:
-    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/5_week5/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/5_week5/index.md %}){:target="_blank"}
     * Section Notes: \[[More on Linked Lists, Stacks, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/5_week5.md %}){:target="_blank"}\]
     * [Group Assignment (Part 1)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5a.md %}){:target="_blank"}
     * [Group Assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5b.md %}){:target="_blank"}
 1. Week 6:
-    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/6_week6/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/6_week6/index.md %}){:target="_blank"}
   
 
 ## STL Tutorials
