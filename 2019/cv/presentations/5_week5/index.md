@@ -4,7 +4,7 @@ style: laminal
 course: "sbe406"
 category: "presentation"
 year: "2019"
-title: "Week 5: Corner Detection"
+title: "Week 5: Corner Detection, Laplacian, and Revision Problems"
 by: "Asem"
 author: "Asem Alaa"
 ---
