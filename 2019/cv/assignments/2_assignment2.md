@@ -22,7 +22,7 @@ pdf: true
 ## Prerequisites (Before you start)
 
 * Read [Section 2 Notes]({% link 2018/cv/notes/2_week2.md %}){:target="_blank"}.
-* Read [Section 3 slide]({{ site.baseurl }}{% link 2019/cv/presentations/3_week3/index.html %}){:target="_blank"}
+* Read [Section 3 slide]({{ site.baseurl }}{% link 2019/cv/presentations/3_week3/index.md %}){:target="_blank"}
 * Read [Section 4 Notes]({% link 2018/cv/notes/4_week4.md %}){:target="_blank"}.
 
 
