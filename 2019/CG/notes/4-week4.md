@@ -6,7 +6,7 @@ layout: page
 category: "notes"
 course: "sbe306"
 year: "2019"
-title: "viewing"
+title: "Camera Transformation"
 ---
 
 * TOC

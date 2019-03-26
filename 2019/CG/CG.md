@@ -49,6 +49,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 |   2  | Transformations | Assignment1 |
 |   3  | Projection |  |
 |   4  | Camera Transformation | Assignment2 |
+|   5  | Ray Casting, Lighting and Animation |    |
 
 ## Tutorials
 
@@ -61,15 +62,19 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 3: Projection
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/3-week3.md%}){:target="_blank"}
 
-* Week 4: Projection
+* Week 4: Camera Transformation
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md%}){:target="_blank"}
 
+* Week 5: Ray Casting, Lighting and Animation
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/5-week5.md%}){:target="_blank"}
 
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
 
 * [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md%}){:target="_blank"} : Full Body 
+
+* [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md%}){:target="_blank"} : Animation, Coloring and Texture mapping 
 
 ## Sheets 
 
