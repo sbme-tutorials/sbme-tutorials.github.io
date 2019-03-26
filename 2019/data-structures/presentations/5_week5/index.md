@@ -395,7 +395,7 @@ or DRY solution,
 void pop( CharStack &stack )
 {
     // 1. Make a Linked List Interface.
-    CharLL list{ list.front };
+    CharLL list{ stack.front };
 
     // 2. DRY
     lists::removeFront( list );

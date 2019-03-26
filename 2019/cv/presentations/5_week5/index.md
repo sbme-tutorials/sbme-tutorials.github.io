@@ -444,12 +444,12 @@ For successive corners.
 1. Find the $L​_1$​ and $L​_2$​ distances between the first and last vertical intensity profiles. 
   
 --
-* first column: $a = \[6, 7, 4, 0\]^T $
-* last column: $b = \[7, 1, 2, 1 \]^T$
+.red[* first column: $a = \[6, 7, 4, 0\]^T $
+* last column: $b = \[7, 1, 2, 1 \]^T$]
 
 --
-$$L_1 = \frac{1}{4} \sum_0^3 |a_i - b_i| = 2.5$$
-$$L_2 = \frac{1}{4} \sqrt{ \sum_0^3 (a_i - b_i)^2 } = 1.5$$
+.red[$$L_1 = \frac{1}{4} \sum_0^3 |a_i - b_i| = 2.5$$
+$$L_2 = \frac{1}{4} \sqrt{ \sum_0^3 (a_i - b_i)^2 } = 1.5$$]
 
 ---
 ## Midterm Spring 2018 Revision
