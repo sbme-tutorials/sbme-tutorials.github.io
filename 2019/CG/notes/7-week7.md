@@ -79,9 +79,54 @@ As a result of being able to get a 3D volume of medical data. We can now print t
 There are many other application of volume rendering in medical and none medical fields. For example, none-destructive material testing using CT scanner, oil exploration and physical simulation.
 
 ## Volume Rendering Algorithms
+There are many three different techniques for volume rendering 
+* From voxels of volume itself (Direct volume rendering)
+
+* Extracting polygons from volume and render them (Indirect volume rendering)
+
+* Transform volume to another domain and Ex. Frequency domain and extract slices from it (Domain volume rendering)
+
+Each one of  these methods are implemented with different methods.
+ 
 
 ### Direct Volume rendering 
+* Based on ray casting algorithm 
+* Volume is mapped to 2D image plane according to intersections of rays. 
+* Different accumalation methods 
+    * Alpha blending
+    * Maximum intensity projection 
+    * Average intensity projection
+* Interpolation process is applied to pick up intensity value from nearest voxels.
+* It is computationally expensive (You have to repeat the process for every transformation action)
+
+![](../images/ray-casting.jpeg)
+
 ### Indirect Volume rendering (Iso-surface)
+
+The basic idea is extracting polygons or primitives (points) from Volume and render extracted polygon itself not the volume. 
+
+To extract polygons we have to specify what so called iso value (like a threshold we use to get meshes from volume) 
+
+The main algorithm is Marching cubes algorithm
+
+![](../images/350px-MarchingCubes.svg.png)
+
+Different meshes configuration for different cases.
+
+You have to do that only once unless you want to extract anther surface with different iso value
+
+Different iso values
+
+![](../images/iso-surface.jpeg)
+
 ### Domain Volume rendering
 
-## Volume coloring and transfer function
+![](../images/freq-vol-rendering.jpg)
+
+Fourier volume rendering is an example of domain based volume rendering using central slice theory.
+
+The main advantage of it is that it reduces the complexity of spatial domain volume rendering.
+
+## Next
+
+Volume coloring and transfer function.
