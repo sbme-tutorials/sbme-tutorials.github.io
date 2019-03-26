@@ -336,18 +336,121 @@ For successive corners.
 ---
 ## Midterm Spring 2018 Revision
 
+<style type="text/css">
+  .smaller { font-size: 15px; }
+</style>
+
 ### Q1
 
 <img style="width:60%" src="q1.png">
-
+.smaller[
 1. Find the number of gray levels. 
 2. Find the image carrier and its cardinality. 
 3. What is the number of all possible images that can be defined for this image carrier and numbegray levels?
 4. Find the image mean and median. 
-5. Find the absolute image histogram. 
-6. Find the absolute image histogram after the most significant bit is set to 0. In general, what effect would setting to zero the higher-order bit planes have on the histogram of an image?
-7. Find and plot the means of the horizontal intensity profiles. 
-8. Find the L​1​ and L​2​ distances between the first and last vertical intensity profiles. 
+5. Find the absolute image histogram.
+6. Find the absolute image histogram after the least significant bit is set to 0. In general, what effect would setting to zero the lower-order bit planes have on the histogram of an image?
+7. Find the absolute image histogram after the most significant bit is set to 0. In general, what effect would setting to zero the higher-order bit planes have on the histogram of an image?
+8. Find and plot the means of the horizontal intensity profiles. 
+9. Find the L​1​ and L​2​ distances between the first and last vertical intensity profiles. 
+]
+
+---
+## Midterm Spring 2018 Revision
+
+### Q1
+
+<img style="width:60%" src="q1.png">
+
+* Find the number of gray levels. 
+--
+  * .red[8 = $2^3$]
+--
+* Find the image carrier and its cardinality.
+--
+  * .red[Image carrier: {$ (x,y) : 1 \leq x \leq 5  \land  1 \leq y \leq 4 $} $\subset Z^2$ ]
+  * .red[Cardinality = $5 \times 4 = 20$]
+--
+* What is the number of all possible images that can be defined for this image carrier and number of gray levels?
+--
+  * .red[$8^{20}$]
+--
+* Find the image mean and median.
+--
+  * .red[mean=3.5, median=3]
+
+---
+## Midterm Spring 2018 Revision
+
+### Q1
+
+<img style="width:60%" src="q1.png">
+
+* .smaller[Find the absolute image histogram.]
+
+
+--
+<img style="width:80%" src="histogram.png">
+
+--
+* .smaller[Find the absolute image histogram after the least significant bit is set to 0. In general, what effect would setting to zero the lower-order bit planes have on the histogram of an image?]
+--
+<img style="width:80%" src="histogram2.png">
+
+--
+.red[.smaller[The effect is compressing histogram of the image by clustering each two successive levels to lower one.]]
+
+
+---
+## Midterm Spring 2018 Revision
+
+### Q1
+
+<img style="width:80%" src="histogram.png">
+
+* .smaller[Find the absolute image histogram after the most significant bit is set to 0. In general, what effect would setting to zero the higher-order bit planes have on the histogram of an image?]
+
+--
+<img style="width:80%" src="histogram3.png">
+
+--
+.red[.smaller[The effect is that the image contrast will decrease and image will be darker.]]
+
+---
+## Midterm Spring 2018 Revision
+
+### Q1
+
+<img style="width:60%" src="q1.png">
+
+* Find and plot the means of the horizontal intensity profiles. 
+
+--
+.red[| index | horizontal profile mean |
+|--|--|
+| 1 | 5 |
+| 2 | 2.6 |
+| 3 | 5.6 |
+| 4 | 0.8 |]
+
+
+---
+## Midterm Spring 2018 Revision
+
+### Q1
+
+<img style="width:60%" src="q1.png">
+
+1. Find the $L​_1$​ and $L​_2$​ distances between the first and last vertical intensity profiles. 
+  
+--
+* first column: $a = \[6, 7, 4, 0\]^T $
+* last column: $b = \[7, 1, 2, 1 \]^T$
+
+--
+$$L_1 = \frac{1}{4} \sum_0^3 |a_i - b_i| = 2.5$$
+$$L_2 = \frac{1}{4} \sqrt{ \sum_0^3 (a_i - b_i)^2 } = 1.5$$
+
 ---
 ## Midterm Spring 2018 Revision
 ### Q2 - a
