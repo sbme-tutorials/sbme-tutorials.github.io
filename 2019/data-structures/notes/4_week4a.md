@@ -575,7 +575,7 @@ struct DoubleQueue{
 
 #### Making our buffer to act as a circular buffer
 
-We need to make our buffer to be flexible such that we don't need to shift all elements when we *dequeue* the front element. Alternatively, we will trun our buffer to a circular buffer using simple logic.
+We need to make our buffer to be flexible such that we don't need to shift all elements when we *dequeue* the front element. Alternatively, we will turn our buffer to a circular buffer using simple logic.
 
 <img src="/gallery/circular-buffer-animation.gif" style="width:400">
 
