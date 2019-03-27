@@ -68,6 +68,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 5: Ray Casting, Lighting and Animation
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/5-week5.md%}){:target="_blank"}
 
+* Week 6: Texture mapping and object loading
+    * [Notes](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/tree/master/Tutorial-05)
+
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
