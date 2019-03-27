@@ -24,15 +24,15 @@ By: Asem Alaa
 class: top, left
 ## Feature Detection
 
-<img style="width:40%" src="edges-corners.gif">
+.center[<img style="width:40%" src="edges-corners.gif">]
 
 ---
 
-<img style="width:80%" src="edges-corners2.jpg">
+.center[<img style="width:80%" src="edges-corners2.jpg">]
 
 ---
 
-<img style="width:80%" src="edges-corners3.png">
+.center[<img style="width:80%" src="edges-corners3.png">]
 
 ---
 class: top, left
@@ -57,13 +57,13 @@ class: top, left
 ## Harris operator: corner detector
 
 
-<img style="width:90%" src="flat-edge-corner.png">
+.center[<img style="width:90%" src="flat-edge-corner.png">]
 --
 
 ---
 ## Compute the .red[principal] vectors of variation at location `p` 
 
-<img style="width:60%" src="edges_directions.svg">
+.center[<img style="width:60%" src="edges_directions.svg">]
 
 ---
 ## Harris operator
@@ -76,7 +76,7 @@ $$ L(p,\sigma ) = \[I * G_\sigma \](p) $$
  signal.convolve2d(img, gaussian_kernel(7,1.0) ,'same')
 ```
 
-<img style="width:50%;" src="image.png">
+.center[<img style="width:50%;" src="image.png">]
 
 ---
 ## Harris operator
@@ -93,7 +93,7 @@ Ix = signal.convolve2d( img , sobel_h ,'same')
 Iy = signal.convolve2d( img , sobel_v ,'same')
 ```
 
-<img style="width:40%;" src="lx.png"> <img style="width:40%;" src="ly.png">
+.center[<img style="width:40%;" src="lx.png"> <img style="width:40%;" src="ly.png">]
 
 ---
 ## Harris operator
@@ -180,11 +180,11 @@ Ixy_hat = signal.convolve2d( Ixy , box_filter(3) ,'same')
   * values (amount of variation)
   * vector (variation direction)
 
-<img style="width:50%" src="../../images/eig1.png">
+.center[<img style="width:50%" src="../../images/eig1.png">]
 
 ---
 
-<img style="width:80%" src="screenshot-2.png">
+.center[<img style="width:80%" src="screenshot-2.png">]
 
 
 ---
@@ -198,7 +198,7 @@ $$|H - \lambda I | = 0$$
 ## Harris operator
 ### Interpretation of $\lambda_1$ and $\lambda_2$
 
-<img style="width:70%" src="../../images/eig2.png">
+.center[<img style="width:70%" src="../../images/eig2.png">]
 
 ---
 ## Harris operator
@@ -281,12 +281,7 @@ corners = np.abs(R) >  np.quantile( np.abs(R),0.999)
 ### Results
 
 --
-<img style="width:40%;" src="image.png"> <img style="width:40%;" src="corners.png">
-
-
-
----
-## Harris operator overview
+.center[<img style="width:40%;" src="image.png"> <img style="width:40%;" src="corners.png">]
 
 
 ---
@@ -298,8 +293,6 @@ calss: top, left
 
 <img style="width:100%" src="../../images/fast.png">
 ---
-
-calss: top, left
 ## FAST Corner Detector
 * Basic Algorithm
 
@@ -329,8 +322,109 @@ For successive corners.
 1. Compute score V which is sum of absolute difference between point p and 16 circle points.
 2. Suppress if not local maximum. 
 ```
-**Lets See Implementation**
 ---
+## Otsu Thresholding (segmentation)
+
+.center[![](/2019/cv/images/Otsu's_Method_Visualization.gif)]
+
+
+---
+## Otsu Thresholding (segmentation)
+### Minimization of $\sigma_w^2(u)$
+
+$$ \sigma_w^2(u) =  n_1 \sigma_1^2(u)  + n_2 \sigma_2^2(u)  $$
+
+--
+* .red[Computation of $\sigma_w^2(u)$ at each $u$ is very costly]
+--
+* can we do better?
+
+---
+## Otsu Thresholding (segmentation)
+### Maxmimiztion of $\sigma_b^2(u)$
+
+--
+$$ 
+\sigma^2 = \sigma_b^2(u) + \sigma_w^2(u) \\\ 
+\sigma_w^2(u) = \sigma^2 - \sigma_b^2(u)
+$$
+
+--
+$\therefore$ minimization of $\sigma_w^2(u)$ = maximization of $\sigma_b^2(u)$
+
+
+---
+## Otsu Thresholding (segmentation)
+### Maxmimiztion of $\sigma_b^2(u)$
+
+--
+$$ 
+\sigma^2 = \sigma_b^2(u) + \sigma_w^2(u) \\\ 
+\sigma_w^2(u) = \sigma^2 - \sigma_b^2(u)
+$$
+
+--
+$\therefore$ minimization of $\sigma_w^2(u)$ = maximization of $\sigma_b^2(u)$
+
+
+---
+## Otsu Thresholding (segmentation)
+### Maxmimiztion of $\sigma_b^2(u)$
+
+
+$$ \sigma_w^2(u) =  n_1 n_2 ( \mu_1(u) - \mu_2(u) )^2  $$
+
+--
+.center[![](/2019/cv/images/Otsu's_Method_Visualization.gif)]
+
+
+---
+## Otsu Thresholding (segmentation)
+### Python implementation 
+
+
+```python
+def otsu_threshold(im):
+    # Histogram
+    pixel_counts = [np.sum(im == i) for i in range(256)]
+
+    s_max = (0,-np.inf)
+    
+    for threshold in range(256):
+        # update
+        n1 = sum(pixel_counts[:threshold])
+        n2 = sum(pixel_counts[threshold:])
+
+        mu_0 = sum([i * pixel_counts[i] for i in range(0,threshold)]) / n1 if n1 > 0 else 0       
+        mu_1 = sum([i * pixel_counts[i] for i in range(threshold, 256)]) / n2 if n2 > 0 else 0
+
+        # calculate 
+        s = n1 * n2 * (mu_0 - mu_1) ** 2
+
+        if s > s_max[1]:
+            s_max = (threshold, s)
+            
+    return s_max[0]
+```
+
+---
+## Otsu Thresholding (segmentation)
+### Performance
+
+
+--
+.center[<img style="width:50%;" src="/2019/cv/images/Otsu's_Method_Visualization.gif">]
+
+--
+* Maximization of $\sigma_b^2(u)$ is cheaper than minimization of $\sigma_w^2(u)$
+--
+* But still has quadratic runtime $O(n^2)$
+--
+* Can we make it linear $O(n)$?!
+--
+* Submit your answers to `asem.a.abdelaziz@gmail.com`
+--
+* First two correct answers grants bonus + :octocat: sticker!
 
 
 ---
@@ -448,38 +542,22 @@ For successive corners.
 * last column: $b = \[7, 1, 2, 1 \]^T$]
 
 --
-.red[$$L_1 = \frac{1}{4} \sum_0^3 |a_i - b_i| = 2.5$$
-$$L_2 = \frac{1}{4} \sqrt{ \sum_0^3 (a_i - b_i)^2 } = 1.5$$]
+.red[$$L_1 = \frac{1}{4} \sum_0^3 |a_i - b_i| = 2.5 \\\
+L_2 = \frac{1}{4} \sqrt{ \sum_0^3 (a_i - b_i)^2 } = 1.5$$]
 
 ---
-## Midterm Spring 2018 Revision
-### Q2 - a
+## Download demos
 
-Use the exponential representation of the sine function to show that the DFT of the discrete function 
-$$f(x,y) = sin( 2 \pi u_0 x + 2\pi v_0 y )$$
+```
+git clone https://github.com/sbme-tutorials/sbe404-harris-otsu-demo.git
+```
 
-is 
-
-
-$$F(u,v) = \frac{i}{2} \left[ \delta (u + N_c u_0, v+ N_r v_0) - \delta(u - N_c u_0, v - N_r v_0)\right]$$
-
-
----
-## Midterm Spring 2018 Revision
-### Q2 - b
-
-b) Consider a $3 \times 3$ spatial mask that averages the four closest neighbors of a point $(x, y)$ , but excludes the point itself from the average.
-
-1. Write an expression for the filter, $h(x, y )$ , in the spatial domain. 
-2. Show that the equivalent filter, $H(u, v )$ , in the frequency domain is given by
-$$ H(u,v) = \frac{1}{2}\[ cos(2 \pi u / N_c) + cos(2 \pi v / N_r) \]$$
-3. Show that $H (u, v )$ is a low-pass filter.
 
 ---
 ## Midterm Spring 2018 Revision
 ### Q3
 
-<img style="width:60%" src="q3.png">
+<img style="width:80%" src="q3.png">
 
 1.  What color would a person see in the first, middle, and last columns of this image? 
 2.  What are the cyan (C), magenta (M), and yellow (Y) components of the first, middle, and last columns of this image?
@@ -488,18 +566,169 @@ $$ H(u,v) = \frac{1}{2}\[ cos(2 \pi u / N_c) + cos(2 \pi v / N_r) \]$$
 
 ---
 ## Midterm Spring 2018 Revision
+### Q3
+
+<img style="width:80%" src="q3.png">
+
+What color would a person see in the first, middle, and last columns of this image? 
+
+
+1. First: \[.red[1],.green[0],.blue[0]\] (.red[red])
+--
+2. Middle: \[.red[0.5],.green[1],.blue[0.5]\] (.green[~green])
+--
+3. Last: \[.red[0],.green[0],.blue[1]\] (.blue[blue])
+
+---
+## Midterm Spring 2018 Revision
+### Q3
+
+What are the cyan (C), magenta (M), and yellow (Y) components of the first, middle, and last columns of this image?
+
+<img style="width:80%" src="q3.png">
+
+--
+.red[
+$$
+\begin{bmatrix}
+C  \\\
+M \\\
+Y
+\end{bmatrix} = \begin{bmatrix}
+1  \\\
+1 \\\
+1
+\end{bmatrix} - 
+\begin{bmatrix}
+R  \\\
+G \\\
+B
+\end{bmatrix}
+$$
+]
+
+
+--
+1. First: RGB(1,0,0) => CMY(0,1,1)
+--
+1. Middle: RGB(0.5,1,0.5) => CMY(0.5,0,0.5)
+--
+1. Last: RGB(0,0,1) => CMY(1,1,0)
+
+
+---
+## Midterm Spring 2018 Revision
+### Q3
+
+What are the hue (H), saturation (S), and intensity (I) components of the first, middle, and last columns of this image?
+
+<img style="width:80%" src="q3.png">
+
+
+--
+* *See Gonzalez pages 410-411, for conversion formulas*
+
+--
+1. First: RGB(1,0,0) => HSI($0,1,\frac{1}{3}$)
+--
+1. Middle: RGB(0.5,1,0.5) => HSI($\frac{2\pi}{3}, \frac{1}{4}, \frac{2}{3}$)
+--
+1. Last: RGB(0,0,1) => HSI($\frac{4\pi}{3}, 1, \frac{1}{3} $)
+
+
+---
+## Midterm Spring 2018 Revision
 ### Q4 - a
 
 The rectangle in the binary image below is of size $4 \times 5$ pixels.
 
-<img style="width:60%" src="q3.png">
+<img style="width:60%" src="q4.png">
 
 1. What would the magnitude of the gradient of this image look like based on using the approximation
 $$ || grad I(x,y) || = |S_x(x,y)| + |S_y(x,y)| $$
 Where $S_x$ and $S_y$ are obtained using the Sobel operators. Show all pixel values in the gradient image. 
-2. Sketch the histogram of the gradient directions $\phi(x, y) = tan^{-1} \frac{S_y (x,y)}{S_x(x,y)}$. Be precise in labeling the height of each component of the histogram. 
-3. What would the Laplacian of this image look like based on the following approximation?
-$$ \nabla^2 I(x, y ) = I(x + 1, y ) + I(x − 1, y) + I(x, y + 1) + I(x, y − 1) − 4I(x, y)$$
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - a
+#### $S_x$
+
+$$ S_x(x,y) = \[ I *  \begin{bmatrix}
+-1 & 0 & 1 \\\
+-2 & 0 & 2 \\\
+-1 & 0 & 1
+\end{bmatrix} \](x,y)$$
+
+--
+.center[<img style="width:55%" src="sx.png">]
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - a
+#### $S_y$
+
+$$ S_y(x,y) = \[ I *  \begin{bmatrix}
+-1 & -2 & -1 \\\
+0 & 0 & 0 \\\
+1 & 2 & 1
+\end{bmatrix} \](x,y)$$
+
+--
+.center[<img style="width:55%" src="sy.png">]
+
+
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - a
+#### $|| grad I(x,y) ||$
+
+$$|| grad I(x,y) || = |S_x(x,y)| + |S_y(x,y)|$$
+
+
+
+--
+.center[<img style="width:55%" src="gradient.png">]
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - a
+
+Sketch the histogram of the gradient directions $\phi(x, y) = tan^{-1} \frac{S_y (x,y)}{S_x(x,y)}$. Be precise in labeling the height of each component of the histogram. 
+
+--
+* For each pixel, compute $\phi(x, y)$ that corresponds to a quarter.
+--
+* histogram: 16 intervals (4 per quarter = 22.5 degree intervals).
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - a
+
+What would the Laplacian of this image look like based on the following approximation?
+
+* $ \nabla^2 I(x, y ) = I(x + 1, y ) + I(x − 1, y) + I(x, y + 1) + I(x, y − 1) − 4I(x, y)$
+--
+* **Get the kernel out of it.**
+--
+* **Convolution**
+
+--
+$$L(x,y) =
+\[\begin{bmatrix}
+0 & 1 & 0 \\\
+1 & -4 & 1 \\\
+0 & 1 & 0
+\end{bmatrix} * I\] (x,y)
+$$
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - a
+
+--
+.center[ <img style="width:55%" src="gradient.png"> ]
+
 
 ---
 ## Midterm Spring 2018 Revision
@@ -516,21 +745,93 @@ A biomedical engineering student is assigned the job of inspecting a certain cla
 
 ---
 ## Midterm Spring 2018 Revision
+### Q4 - b
+
+* Problem: bright, isolated dots that are of no interest.
+--
+* .red[Solution: median filter (salt and peper)]
+
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - b
+
+* Problem: lack of sharpness.
+--
+* .red[Solution: sharpening filter]
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - b
+
+* Problem: not enough contrast in some images.
+--
+* .red[Solution: histogram equalization]
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - b
+
+* Problem: shifts in average intensity, when this value should be K to perform correctly certain intensity measurement.
+--
+* .red[Solution: zero mean then add bias $K$]
+
+--
+```python
+img = img - img.mean() + K
+```
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - b
+
+* Problem: The student wants to correct these problems and then display in white all intensities in a band between $u_1$ and $u_2$ , while keeping normal tonality in the remaining intensities.
+--
+* .red[Solution: set all intensities between $u_1$ and $u_2$ to max intensity]
+
+--
+```python
+img[ img > u1 && img < u2 ] = img.max()
+```
+
+---
+## Midterm Spring 2018 Revision
+### Q4 - b
+
+* Propose a sequence of processing steps that the student can follow to achieve the desired goals.
+--
+* .red[draw a pipeline.]
+
+---
+## Midterm Spring 2018 Revision
 ### Q5 (True or False)
 
-1. In a grid cell model of image pixels, a pixel is a homogeneously shaded square cell. 
-2. The 2D DFT maps a scalar image into a weighted sum of complex exponentials on the unit circle in the complex plane.
-3. Low frequencies represent homogeneous ​multiplicative​ contributions to the input image while high frequencies represent local ​continuities​ in the image.
-4. Directional patterns in an input image create value distributions in the DFT of the image in an orthogonal direction.
-5. The 2D CIE Color Space represents the ​brightness and colors ​perceived by the average person. 
-6. A 2D Gauss filter can be decomposed into two subsequent 1D Gauss filters. 
-7. Computer screens have typically ​less​ available colors than color printers.​ ​
-8. Illumination artifacts between subsequent or time-synchronized images violate the intensity constancy assumption.
-9. For corner detection using the Hessian matrix, if the magnitude of both eigenvalues is ​large​, then we are at a low-contrast region while two ​small​ eigenvalues identify a corner.
-10. In the edge following step of the canny edge detector, the paths of pixel locations p with gray level values exceeding the ​higher threshold​, i.e. $g(p) > T\text{high}$ , ​are traced, and pixels on such a path are marked as being edge pixels.
+* In a grid cell model of image pixels, a pixel is a homogeneously shaded square cell. .red[(T)]
+--
+* The 2D DFT maps a scalar image into a weighted sum of complex exponentials on the unit circle in the complex plane. .red[(T)]
+--
+* Low frequencies represent homogeneous ​*multiplicative*​ contributions to the input image while high frequencies represent local *​continuities*​ in the image. .red[(F) additive, discontinuity]
+--
+* Directional patterns in an input image create value distributions in the DFT of the image in an orthogonal direction. .red[(T)]
+--
+* The 2D CIE Color Space represents the ​brightness and colors ​perceived by the average person. .red[(F), only colors]
 
 
-class: center, middle
+---
+## Midterm Spring 2018 Revision
+### Q5 (True or False)
+
+* A 2D Gauss filter can be decomposed into two subsequent 1D Gauss filters. .red[(T)]
+--
+* Computer screens have typically ​less​ available colors than color printers.​ .red[(F) more]​--
+* Illumination artifacts between subsequent or time-synchronized images violate the intensity constancy assumption. .red[(T)]
+--
+* For corner detection using the Hessian matrix, if the magnitude of both eigenvalues is ​large​, then we are at a low-contrast region while two ​small​ eigenvalues identify a corner. .red[(F), corner, flat]
+--
+*  In the edge following step of the canny edge detector, the paths of pixel locations p with gray level values exceeding the ​higher threshold​, i.e. $g(p) > T\text{high}$ , ​are traced, and pixels on such a path are marked as being edge pixels. .red[(F), lower threshold]
+
+
+---
 # Thanks    
     
 

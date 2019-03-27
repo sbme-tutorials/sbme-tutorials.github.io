@@ -68,6 +68,9 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
     * [Slides]({{ site.baseurl }}{% link 2019/cv/presentations/3_week3/index.md %}){:target="_blank"}
 * Week 4. Hough Transform (Line and Circle Detection):
     * [Section Notes]({% link 2019/cv/notes/4_week4.md %}){:target="_blank"}
+* Week 5. Harris operator, Otsu thresholding, and Revision:
+    * [Slides]({{ site.baseurl }}{% link 2019/cv/presentations/5_week5/index.md %}){:target="_blank"}
+
 
 ## Assignments
 * Assignment 1: [Images, Histograms, Gradients]({% link 2019/cv/assignments/1_assignment1.md %})
