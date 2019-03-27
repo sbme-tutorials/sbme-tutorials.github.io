@@ -54,7 +54,7 @@ you toolbox should implement the following:
 
 ## Part 2: Written
 
-Report all details about your implementations in markdown file (Report.md). Report must show sample results of your code. Compare between spatial and frequency domain filters, organize the report and be concise. State issues you faced in the assignment and how you treated with it. Mention any kind of contribution of other students.
+Report all details about your implementations in markdown file `README.md`. Report must show sample results of your code. Compare between spatial and frequency domain filters, organize the report and be concise. State issues you faced in the assignment and how you treated with it. Mention any kind of contribution of other students.
 
 
 ## Important Notes 
@@ -65,9 +65,30 @@ Report all details about your implementations in markdown file (Report.md). Repo
 * Report must include summary about your implementation, sample results and issues that you faced and how you fixed it.
 * You must mention any kind of contribution of other mates.
 
-### Submitting
+## Version tagging
+
+You will work on this repository until the end of semester. Each subsequent task you will develop incrementally on this repository. It is recommended that for each task you **tag** the corresponding commit, so we can return back to any tagged commit version after making lots of updates.
+
+### After finishing the requirements of the current assignment
 
 ```terminal
-git commit -a -m "solved all problems!"
+git commit -a -m "solved all requirements!"
+```
+
+### Tagging the last commit
+
+```terminal
+git tag v1-assignment2
+```
+
+### Transfer tagging to GitHub
+
+```terminal
+git push origin master --tags
+```
+
+### Transfer commits to GitHub
+
+```terminal
 git push origin master
 ```
