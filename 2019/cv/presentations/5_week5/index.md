@@ -428,6 +428,19 @@ def otsu_threshold(im):
 
 
 ---
+## Download demos
+
+```
+git clone https://github.com/sbme-tutorials/sbe404-harris-otsu-demo.git
+```
+
+
+---
+## Midterm Spring 2018 Revision
+
+[{Exam + Model Answers (PDF)}](SBE404B_Spring2018_MidtermExam_Answer.pdf)
+
+---
 ## Midterm Spring 2018 Revision
 
 <style type="text/css">
@@ -544,14 +557,6 @@ def otsu_threshold(im):
 --
 .red[$$L_1 = \frac{1}{4} \sum_0^3 |a_i - b_i| = 2.5 \\\
 L_2 = \frac{1}{4} \sqrt{ \sum_0^3 (a_i - b_i)^2 } = 1.5$$]
-
----
-## Download demos
-
-```
-git clone https://github.com/sbme-tutorials/sbe404-harris-otsu-demo.git
-```
-
 
 ---
 ## Midterm Spring 2018 Revision
