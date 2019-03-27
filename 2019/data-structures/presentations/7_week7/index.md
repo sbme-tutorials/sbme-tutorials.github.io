@@ -104,8 +104,22 @@ void pop( IntStackLL &s )
 --
 .center[<img style="width:85%" src="bean.jpg">]
 
+
 ---
 ## Trees
+
+--
+.center[![](trees1.jpg)]
+
+---
+## Trees
+
+
+.center[![](trees2.jpg)]
+
+---
+## Trees
+
 
 --
 ### Objectives
