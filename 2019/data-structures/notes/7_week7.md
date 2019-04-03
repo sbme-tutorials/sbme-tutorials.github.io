@@ -517,7 +517,7 @@ void printAll( WordMap wmap )
 
 ### Exercise and Assignment: Text Processing
 
-Clone your group lab work and assignment from this [link](https://classroom.github.com/g/JPz8R-yi).
+Clone your group lab work and assignment from this link: TBA.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wupToqz1e2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
