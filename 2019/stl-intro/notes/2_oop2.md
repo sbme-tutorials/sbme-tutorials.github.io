@@ -122,6 +122,9 @@ int main()
     std::cout << heron( d( p1, p2), 
                         d( p2, p3 ), 
                         d( p1, p3)); 
+
+    Point p4 = Point( 3.0 ); // Alternative way to call the constructor.
+    Point *p5 = new Point( 3 , 2 ); // Heap allocation.
 }
 ```
 
@@ -249,6 +252,12 @@ struct IntegerLL
         // Logic
     }
 
+    // default constructor.
+    IntegerLL()
+    {
+        front = nullptr;
+    }
+
     IntegerNode *front;
 };
 ```
@@ -280,6 +289,12 @@ struct IntegerLL
         // Logic
     }
 
+    // default constructor.
+    IntegerLL()
+    {
+        front = nullptr;
+    }
+
     IntegerNode *front;
 };
 ```
@@ -304,13 +319,27 @@ Consider what we did in `CharsLL`:
 ```c++
 struct CharNode
 {
+    // default constructor.
+    Node()
+    {
+        next = nullptr;
+    }
+
+    // when user provides a value for data member, or both.
+    Node( char value, Node *nextPtr = nullptr )
+    {
+        next = nextPtr;
+        data = value;
+    }
+
     char data;
     CharNode *next;
 };
 
 struct CharsLL
 {
-    CharNode *head;
+    // The compiler will generate a default constructor that initialize head.
+    CharNode *head = nullptr; 
 };
 
 void insertFront( CharsLL &list , char data )
@@ -341,13 +370,27 @@ How to kill the redundancy? We can let `T` to represent the variant type. So `T`
 ```c++
 struct Node
 {
+    // default constructor.
+    Node()
+    {
+        next = nullptr;
+    }
+
+    // when user provides a value for data member, or both.
+    Node( T value, Node *nextPtr = nullptr )
+    {
+        next = nextPtr;
+        data = value;
+    }
+
+
     T data;
     Node *next;
 };
 
 struct LL
 {
-    Node< T > *head;
+    Node< T > *head = nullptr;
 };
 ```
 
@@ -359,6 +402,19 @@ We will just add `template <typename T>` directly above the struct declaration.
 template< typename T>
 struct Node
 {
+    // default constructor.
+    Node()
+    {
+        next = nullptr;
+    }
+
+    // when user provides a value for data member, or both.
+    Node( T value, Node *nextPtr = nullptr )
+    {
+        next = nextPtr;
+        data = value;
+    }
+
     T data;
     Node *next;
 };
@@ -366,7 +422,7 @@ struct Node
 template< typename T>
 struct LL
 {
-    Node< T > *head;
+    Node< T > *head = nullptr;
 };
 ```
 
@@ -396,15 +452,25 @@ void removeBack( LL<char> &list )
 }
 ```
 
+We now killed the redundancy of the `struct`, but we still have to repeat the functions to work on:
 
-2. Templetize the functions: input of type `LL<T>`, i.e linked list of agnostic type (T).
+1. `LL<std::string>`
+1. `LL<Patient>`
+1. `LL<Point>`
+1. `LL<double>`
+1. `LL<int>`
+
+Fortunately, we can also templetize the functions!
+
+2. **Step 2**: templetize the functions to work on input of type `LL<T>`, where `T` is a place holder that can be `char`, `int`, `double`... etc.
+
 ```c++
-void insertFront( LL< T > &list , char data )
+void insertFront( LL< T > &list , T data )
 {
 
 }
 
-void insertBack( LL< T > &list, char data )
+void insertBack( LL< T > &list, T data )
 {
 
 }
@@ -420,13 +486,186 @@ void removeBack( LL< T > &list )
 }
 ```
 
-Again! the compiler doesn't know what `T` is! we already know that `LL` is a template `struct`, so we instantiate it using `LL< char >`
+Again! the compiler doesn't know what `T` is! we already know that `LL` is a template `struct`, so we call it as `LL< char >`, `LL<std::string>, ...etc. So we need to declare that the above functions are also template functions that operates in terms of agnostic type (T).
+
+```c++
+template< typename T>
+void insertFront( LL< T > &list , T data )
+{
+
+}
+
+template< typename T>
+void insertBack( LL< T > &list, T data )
+{
+
+}
+
+template< typename T>
+void removeFront( LL< T > &list )
+{
+
+}
+
+template< typename T>
+void removeBack( LL< T > &list )
+{
+
+}
+```
+
+Now the final template linked list file will look as following:
+
+
+```c++
+template< typename T>
+struct Node
+{
+    // default constructor.
+    Node()
+    {
+        next = nullptr;
+    }
+
+    // when user provides a value for data member, or both.
+    Node( T value, Node *nextPtr = nullptr )
+    {
+        next = nextPtr;
+        data = value;
+    }
+
+    T data;
+    Node *next;
+};
+
+template< typename T>
+struct LL
+{
+    Node< T > *head = nullptr;
+};
+
+template< typename T>
+void insertFront( LL< T > &list , T data )
+{
+
+}
+
+template< typename T>
+void insertBack( LL< T > &list, T data )
+{
+
+}
+
+template< typename T>
+void removeFront( LL< T > &list )
+{
+
+}
+
+template< typename T>
+void removeBack( LL< T > &list )
+{
+
+}
+
+template< typename T>
+void removeNth(LL< T > &list, int index)
+{
+
+}
+
+template< typename T>
+void removeNext(LL< T > &list, Node<T> *node)
+{
+
+}
+
+template< typename T>
+char front(const LL< T > &list)
+{
+
+}
+
+template< typename T>
+char back(const LL< T > &list)
+{
+
+}
+
+template< typename T>
+char getNth(const LL< T > &list, int index)
+{
+
+}
+
+template< typename T>
+bool isEmpty(const LL< T > &list)
+{
+
+}
+
+template< typename T>
+int size(const LL< T > &list)
+{
+
+}
+
+template< typename T>
+void printAll(const LL< T > &list)
+{
+
+}
+
+template< typename T>
+void clear(LL< T > &list)
+{
+
+}
+```
+
+Now in the main function, or whatever function that depends on our template types, we are going to use the linked lists as following:
+
+```c++
+#include "member1.hpp"
+
+int main()
+{
+    LL<int> lli;
+    insertFront( lli, 2 );
+    
+    LL<char> llc;
+    insertFront( llc, 'A');
+}
+```
+
+If you don't like using much `<>` in the main function, you can use aliases instead.
+
+```c++
+#include "member1.hpp"
+
+// perfect DRY solution!
+using CharsLL = LL< char >;
+using IntegersLL = LL< int >;
+using StringsLL = LL<std::string>;
+using PatientsLL = LL<Patient>;
+using PointsLL = LL<Point>;
+using DoublesLL = LL<double>;
+
+int main()
+{
+    IntegersLL lli;
+    insertFront( lli, 2 );
+    
+    CharsLL llc;
+    insertFront( llc, 'A');
+}
+```
 
 
 ## Access modifiers
 
-## Inheritance
 
 ## Self-reading
 
-### Destructors
+1. Destructors
+1. Enum types

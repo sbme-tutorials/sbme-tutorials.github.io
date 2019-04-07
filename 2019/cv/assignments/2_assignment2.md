@@ -47,10 +47,13 @@ Regarding the Assignment page you will find a .ui file for the CV toolbox you ar
 
 you toolbox should implement the following:
 
-* spatial domain filtering with all listed filters.
-* Frequency domain transform.
-* Frequency domain filters.
-* Hough Transform (Lines and Circles).
+* spatial domain filtering with all filters below:
+    * Edge detection filters: Prewitt, Sobel, Laplacian, Laplacian of Gaussian (LoG), Difference of Gaussian (DoG).
+    * Noise reduction filters: box, Gaussian, Median (non-linear).
+    * Sharpening filter.
+* frequency domain transform.
+* frequency domain filters.
+* Hough transform (lines and circles).
 
 ## Part 2: Written
 
