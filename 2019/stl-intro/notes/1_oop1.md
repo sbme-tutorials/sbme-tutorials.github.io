@@ -823,13 +823,3 @@ int main(int argc, char **argv)
     return 0;
 }
 ```
-
-#### Encapsulation
-
-##### Access modifiers
-
-#### Const-correctness
-
-#### Inheritance
-
-### Example: DNA Base Counter

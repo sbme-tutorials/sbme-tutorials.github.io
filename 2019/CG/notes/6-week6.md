@@ -13,19 +13,8 @@ title: "Textue Mapping"
 
 ## Texture Mapping
 
-Add more reality to objects by mapping a picture pixels values to the geometric object pixels to shape the object.
+## Object loading
 
-Defining a texture wih OPENGL 
+### Section Demo
 
-1. choose a proper image (preferred a power of two in size)
-2. 
-
-In human vision process is as follow
-
-1. Lights drop on objects
-2. Then it is reflected (scattered) in all directions 
-3. Reflected light rays are received by the eye and image is formed.
-
-The same is for pinhole camera model 
-
-![](../images/cameragen.gif)
+All demos will be available in [this](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials) repository
