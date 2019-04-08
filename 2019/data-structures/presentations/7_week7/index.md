@@ -1,7 +1,7 @@
 ---
 layout: presentation
 style: laminal
-highlighter: monokai
+highlighter: github
 course: "sbe201"
 category: "presentation"
 year: "2019"

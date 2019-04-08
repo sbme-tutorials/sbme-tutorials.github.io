@@ -372,7 +372,7 @@ $\therefore$ minimization of $\sigma_w^2(u)$ = maximization of $\sigma_b^2(u)$
 ### Maxmimiztion of $\sigma_b^2(u)$
 
 
-$$ \sigma_w^2(u) =  n_1 n_2 ( \mu_1(u) - \mu_2(u) )^2  $$
+$$ \sigma_b^2(u) =  n_1 n_2 ( \mu_1(u) - \mu_2(u) )^2  $$
 
 --
 .center[![](/2019/cv/images/Otsu's_Method_Visualization.gif)]
