@@ -38,7 +38,7 @@ Also, an important objective is to involve applications that are:
 ## Tutorials
 
 1. Week 1:
-    * [Slides]({{ site.baseurl }}{% link 2019/stl-intro/presentations/1_oop1/index.html %}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/stl-intro/presentations/1_oop1/index.md %}){:target="_blank"}
     * [Notes]({{ site.baseurl }}{% link 2019/stl-intro/notes/1_oop1.md %}){:target="_blank"}
 
 ## Topics covored by this series
