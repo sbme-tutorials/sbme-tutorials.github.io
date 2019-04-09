@@ -115,9 +115,9 @@ double d( Point p, Point q )
 
 int main()
 {
-    Point p1; // Default constructor called. Now p1.x and p1.y equals zero.
-    Point p2( 1.0 ); // Constructor 2 called. Now p1.x and p1.y equals 1.0.
-    Point p3( 0, 1 ); // Constructor 3 called. Now p1.x equals 0 and p1.y equals 1.
+    Point p1; // Default constructor called. Now p1.x and p1.y equal zero.
+    Point p2( 1.0 ); // Constructor 2 called. Now p2.x and p2.y equal 1.0.
+    Point p3( 0, 1 ); // Constructor 3 called. Now p3.x equals 0 and p3.y equals 1.
     
     std::cout << heron( d( p1, p2), 
                         d( p2, p3 ), 
