@@ -71,6 +71,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 6: Texture mapping and object loading
     * [Notes](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/tree/master/Tutorial-05)
 
+* Week 7: Medical Visualization & Volume Rendering 
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md%}){:target="_blank"}
+
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
