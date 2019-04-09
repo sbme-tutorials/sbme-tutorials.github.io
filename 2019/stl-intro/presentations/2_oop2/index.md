@@ -998,12 +998,301 @@ int main()
 ---
 ## Access modifiers
 
+### The problem
 
+--
+* .red[We are not yet completely safe with **const-correctness**.]
+--
+* Imagine the following **client code**:
+
+--
+```c++
+#include "member1.hpp"
+
+// perfect DRY solution!
+using CharsLL = LL< char >; // Done 16% of the assignment
+using IntegersLL = LL< int >; // Done 32% of the assignment
+
+int main()
+{
+    IntegersLL lli;
+    lli.insertFront( 2 );
+    lli.head = nullptr; // Ruined the linked list.
+
+    CharsLL llc;
+    llc.insertFront('A');
+    llc.head = 20; // Much worse!
+}
+```
+
+--
+* How to protect sensitive members like `head`?
+
+---
+## Access modifiers
+
+--
+### Solution
+
+--
+We need to use at least two access modifiers to avoid such problem:
+
+--
+1. `public`: to make the members accessible outside.
+--
+1. `private`: to make the members only accessible by **internal members**.
+
+---
+
+```c++
+template< typename T>
+struct LL
+{
+    // Public or private?
+    Node< T > *head = nullptr;
+
+    // Public or private?
+    void insertFront( T data )
+    { /* Logic */ }
+
+    // Public or private?
+    void insertBack( T data )
+    { /* Logic */}
+    // No need to declare T as template parameter for each method.
+};
+```
+
+---
+
+```c++
+template< typename T>
+struct LL
+{
+private:
+    Node< T > *head = nullptr;
+
+public:
+    void insertFront( T data )
+    { /* Logic */ }
+
+
+    void insertBack( T data )
+    { /* Logic */}
+    // No need to declare T as template parameter for each method.
+};
+```
+
+---
+#### Now we are safe!
+
+--
+```c++
+#include "member1.hpp"
+
+// perfect DRY solution!
+using CharsLL = LL< char >; // Done 16% of the assignment
+using IntegersLL = LL< int >; // Done 32% of the assignment
+
+int main()
+{
+    IntegersLL lli;
+    lli.insertFront( 2 );
+    lli.head = nullptr; // Compiler error!
+
+    CharsLL llc;
+    llc.insertFront('A');
+    llc.head = 20; // Compiler error!
+}
+```
+
+---
+### `struct` vs `class`
+
+--
+```c++
+template< typename T>
+class LL
+{
+private:
+    Node< T > *head = nullptr;
+
+public:
+    void insertFront( T data )
+    { /* Logic */ }
+
+
+    void insertBack( T data )
+    { /* Logic */}
+    // No need to declare T as template parameter for each method.
+};
+```
+
+---
+### `struct` vs `class`
+
+The only difference is:
+
+* `class` members are private by default.
+* `struct` members are public by default.
+
+---
+## Enum class
+
+### The problem
+
+--
+```c++
+struct Patient
+{
+    int id;
+    std::string firstName;
+    std::string lastName;
+    int age;
+    char sex; // 'm' or 'f'
+};
+```
+
+--
+Let's first make constructor for this class.
+
+---
+## Enum class
+
+### The problem
+
+
+```c++
+struct Patient
+{
+    int id;
+    std::string firstName;
+    std::string lastName;
+    int age;
+    char sex; // 'm' or 'f'
+
+    Patient( int vId, 
+             const std::string &fname, 
+             const std::string &lname, 
+             int vAge,
+             char vSex )
+    {
+        id = vId;
+        firstName = fname;
+        lastName = lastName;
+        age = vAge;
+        sex = vSex;
+    }
+};
+```
+
+---
+## Enum class
+
+### The problem
+
+
+```c++
+struct Patient
+{
+    int id;
+    std::string firstName;
+    std::string lastName;
+    int age;
+    char sex; // 'm' or 'f'
+
+    Patient( int vId, 
+             const std::string &fname, 
+             const std::string &lname, 
+             int vAge,
+             char vSex )
+    { /* Initialization */ }
+};
+```
+
+--
+* `sex` can have any of the 256 possible value.
+--
+* we made heuristic assumption that `'f'` represents female and `'m'` represents male.
+--
+* vulnerable to bugs.
+
+---
+## Enum class
+
+### The solution
+
+--
+* New tailored class for `sex`.
+
+```c++
+enum class Sex
+{
+    Male,
+    Female
+};
+```
+
+---
+## Enum class
+
+### The solution
+
+```c++
+struct Patient
+{
+    int id;
+    std::string firstName;
+    std::string lastName;
+    int age;
+    char sex; // 'm' or 'f'
+
+    Patient( int vId, 
+             const std::string &fname, 
+             const std::string &lname, 
+             int vAge,
+             char vSex )
+    { /* Initialization */ }
+};
+```
+
+---
+## Enum class
+
+### The solution
+
+```c++
+struct Patient
+{
+    int id;
+    std::string firstName;
+    std::string lastName;
+    int age;
+    Sex sex; // `Sex::Male` or `Sex::Female`
+
+    Patient( int vId, 
+             const std::string &fname, 
+             const std::string &lname, 
+             int vAge,
+             Sex vSex )
+    { /* Initialization */ }
+};
+```
+
+---
+## Enum class
+
+### The solution
+
+
+```c++
+Patient p( 2, "Mostafa", "Mohamed", 60, Sex::Male );
+```
+
+
+---
 ## Self-reading
 
-1. Destructors
-1. Enum types
-
-
+* Destructors
+* [Learn C++](https://www.learncpp.com/)
 
 </textarea>
