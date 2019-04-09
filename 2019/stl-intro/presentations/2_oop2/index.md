@@ -189,8 +189,10 @@ Point p2( 1.0 ); // Constructor 2 called. Now p2.x and p2.y equal 1.0.
 #### Custom constructor 3 (two arguments)
 
 ```c++
-Point p3( 0, 1 ); // Constructor 3 called. Now p3.x equals 0 and p3.y equal 1.
+Point p3( 0, 1 ); // Constructor 3 called. p3.x equals 0 and p3.y equals 1.
 ```
+
+--
 
 #### Other calling syntax
 
@@ -203,9 +205,9 @@ Point *p5 = new Point( 3 , 2 ); // Heap allocation.
 
 ## Default arguments
 
-A default argument is a value assigned to input parameter, when the user doesn't provide a value corresponds to the parameter, then the parameter will get the default value.
+--
 
-Consider the function `printLL` that prints all the elements of a linked list:
+### Example
 
 ```c++
 void printLL( const IntLL &l )
@@ -219,7 +221,20 @@ void printLL( const IntLL &l )
 }
 ```
 
-If we need to control the seperator between elements we can write the function as following:
+--
+
+```c++
+//prints
+element1->element2->element3->....
+```
+
+---
+
+## Default arguments (cont'd)
+
+--
+
+### Example (cont'd)
 
 ```c++
 void printLL( const IntLL &l , const std::string &sep )
@@ -233,10 +248,22 @@ void printLL( const IntLL &l , const std::string &sep )
 }
 ```
 
-So `sep` can be any `std::string` like: "->", "*", "-", " ", ":", "".
+`sep` might be any `std::string` e.g: `"->"`, `"*"`, `"-"`, `" "`, `":"`, `""`.
 
-We can have a more interesting version of `printLL` when we don't need to bother the user with the `sep` value. So when the user doesn't provide a `sep` of his/her choice, we use a **default** one.
+---
 
+#### Results
+
+--
+* .green[we added more control on the function]
+--
+* .red[more control sometimes complicates (bad usability)]
+
+---
+
+### Solution: default arguments
+
+--
 ```c++
 void printLL( const IntLL &l , const std::string &sep = "->" )
 {
@@ -249,9 +276,30 @@ void printLL( const IntLL &l , const std::string &sep = "->" )
 }
 ```
 
-We can also apply the default arguments to the constructors.
+--
 
+```c++
+// assume primes is `IntLL` and contains 2, 3, 5, 7
 
+printLL( primes , "->"); // prints: 2->3->5->7
+printLL( primes ); // prints: 2->3->5->7
+printLL( primes , " -> "); // prints: 2 -> 3 -> 5 -> 7
+printLL( primes , ":"); // prints: 2:3:5:7
+printLL( primes , "\n"); prints: ???
+```
+
+---
+
+### Constructor default arguments
+
+Remember
+
+--
+* constructors special member methods.
+--
+* but they are methods.
+
+--
 ```c++
 struct Point
 {
@@ -266,12 +314,20 @@ struct Point
 };
 ```
 
-Now the user can:
+--
+1. provide no arguments:
+--
+  * `x` and `y` will be initialized with zeros.
+--
+1. provide a single argument:
+--
+  * `x` will be initialized with `u` and `y` with zero.
+--
+1. provide two arguments: 
+--
+  * both `x` and `y` get initialized with `u` and `v`, respectively.
 
-1. provide no arguments: x and y will be initialized with the default `u` and `v` (i.e zeros).
-1. provide a single argument: x will be initialized with `u` and `y` with the default `v` (i.e zero).
-1. provide two arguments: both `x` and `y` get initialized with `u` and `v`, respectively.
-
+---
 ## Const-correctness
 
 We already know how to pass arguments by constant reference or address, and know why it is important to do so, don't we? :sun_with_face:
