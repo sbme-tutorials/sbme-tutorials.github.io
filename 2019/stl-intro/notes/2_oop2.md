@@ -146,7 +146,7 @@ void printLL( const IntLL &l )
 }
 ```
 
-If we need to control the seperator between elements we can write the function as following:
+If we need to control the separator between elements we can write the function as following:
 
 ```c++
 void printLL( const IntLL &l , const std::string &sep )

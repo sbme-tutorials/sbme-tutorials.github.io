@@ -13,6 +13,15 @@ author: "Asem Alaa"
 <textarea id="source">
 
 ---
+## Output of this tutorial
+
+1. Constructors
+1. Default arguments
+1. Const-correctness in OOP
+1. Template classes and template functions
+1. Access modifiers
+
+---
 ## Constructors
 
 ```c++
@@ -248,7 +257,7 @@ void printLL( const IntLL &l , const std::string &sep )
 }
 ```
 
-`sep` might be any `std::string` e.g: `"->"`, `"*"`, `"-"`, `" "`, `":"`, `""`.
+`sep` might be any `std::string` e.g: (`"->"`), (`"*"`), (`"-"`), (`" "`), (`":"`), (`""`).
 
 ---
 
@@ -285,7 +294,7 @@ printLL( primes , "->"); // prints: 2->3->5->7
 printLL( primes ); // prints: 2->3->5->7
 printLL( primes , " -> "); // prints: 2 -> 3 -> 5 -> 7
 printLL( primes , ":"); // prints: 2:3:5:7
-printLL( primes , "\n"); prints: ???
+printLL( primes , "\n"); // prints: ???
 ```
 
 ---
@@ -325,12 +334,13 @@ struct Point
 --
 1. provide two arguments: 
 --
-  * both `x` and `y` get initialized with `u` and `v`, respectively.
+  * both `x` and `y` get initialized with `u` and `v`.
 
 ---
+
 ## Const-correctness
 
-We already know how to pass arguments by constant reference or address, and know why it is important to do so, don't we? :sun_with_face:
+### Example
 
 Recall the following functions that works on the `IntegerLL` from *Week 5* notes:
 
@@ -356,8 +366,15 @@ void printAll( const IntegerLL &list )
 }
 ```
 
-What if we now have these functions as methods inside the `struct` of `IntegerLL`?
+---
 
+## Const-correctness (cont'd)
+
+### Example (cont'd)
+
+What if we them as methods?
+
+---
 ```c++
 struct IntegerLL
 {
@@ -391,10 +408,23 @@ struct IntegerLL
 };
 ```
 
-We omitted the `const IntegerLL&` because now these methods have direct access to `front`, which is the front of the linked list. **But how to guarantee constness?!** Or how to make sure that these methods are not going to miss up with our data? 
+---
+* **But how to guarantee constness?!** 
+* Or how to make sure that these methods are not going to miss up with our linked list?
 
+---
+
+## Const-correctness (cont'd)
+
+### Example (cont'd)
+
+--
+#### Solution
+
+--
 Very simple, just add `const` after the function declaration line!
 
+---
 ```c++
 struct IntegerLL
 {
@@ -428,26 +458,63 @@ struct IntegerLL
 };
 ```
 
+---
+
 ## Introduction to Templates
 
-We realized that we have extremely violated the **DRY** principle in the last assignment, when you are asked to provide a linked list implementation of the following types:
+--
+
+### Problem
+
+--
+
+* We extremely violated the **DRY** principle in the last assignment
+* You were asked to provide a linked list implementation of the following types:
 
 1. `char`.
 2. `std::string`.
 3. `Patient` (defined in `custom_types.hpp`)
 4. `Point` (defined in `custom_types.hpp`).
-5. `double`. 
-6. `int`. 
+5. `double`.
+6. `int`.
 
-So what we did is implementing it for `char`, then copying the implementation 5 times and replace each `char` with the new type!
+---
+So what we did is:
 
-**In C++, we could have made a single implementation for all types, where templates come to our aid!**
+* implementing linked list for `char`.
+--
+* Copy the implementation 5 times and replace each `char` with the new type!
+
+--
+
+#### Results
+
+1. Hard to fix bugs.
+1. Lengthy code!
+1. Redundant (+80% redundancy).
+
+---
+
+## Introduction to Templates
+
+--
+
+### Solution: template classes
+
+--
+
+* Single implementation for all types.
+
+---
 
 Consider what we did in `CharsLL`:
 
 ```c++
 struct CharNode
 {
+    char data;
+    CharNode *next;
+
     // default constructor.
     Node()
     {
@@ -460,46 +527,107 @@ struct CharNode
         next = nextPtr;
         data = value;
     }
-
-    char data;
-    CharNode *next;
 };
 
 struct CharsLL
 {
     // The compiler will generate a default constructor that initialize head.
-    CharNode *head = nullptr; 
+    CharNode *head = nullptr;
 };
+```
 
+---
+
+Consider what we did in `CharsLL`:
+
+
+```c++
 void insertFront( CharsLL &list , char data )
 {
-
+// Logic
 }
 
 void insertBack( CharsLL &list, char data )
 {
-
+// Logic
 }
 
 void removeFront( CharsLL &list )
 {
-
+// Logic
 }
 
 void removeBack( CharsLL &list )
 {
-
+// Logic
 }
 ```
 
-How to kill the redundancy? We can let `T` to represent the variant type. So `T` can be `char`, `int`, `std::string` and so on. 
+--
+* And the their counterparts in other types: `int`, `std::string`,... etc.
 
+---
+#### Question
 
-**First step**: templetize the `struct`s: data member of agnostic type (for example T).
+--
+* How to kill the redundancy?
+
+--
+#### Idea
+
+* let `T` represents the type of interest.
+* So `T` can be `char`, `int`, `std::string` and so on.
+
+---
+
+## Introduction to Templates
+
+### Solution: template classes
+
+#### First step: templetize the `struct`
+
+---
+
+##### Before
+
+```c++
+struct CharNode
+{
+    char data;
+    CharNode *next;
+
+    // default constructor.
+    Node()
+    {
+        next = nullptr;
+    }
+
+    // when user provides a value for data member, or both.
+    Node( char value, Node *nextPtr = nullptr )
+    {
+        next = nextPtr;
+        data = value;
+    }
+};
+
+struct CharsLL
+{
+    // The compiler will generate a default constructor that initialize head.
+    CharNode *head = nullptr;
+};
+```
+
+---
+
+##### Now
+
 ```c++
 struct Node
 {
-    // default constructor.
+    T data;
+    Node *next;
+
+        // default constructor.
     Node()
     {
         next = nullptr;
@@ -511,10 +639,6 @@ struct Node
         next = nextPtr;
         data = value;
     }
-
-
-    T data;
-    Node *next;
 };
 
 struct LL
@@ -523,21 +647,26 @@ struct LL
 };
 ```
 
-But the compiler doesn't know what `T` is. So now we will learn a new statement **to declare a template type** for the `struct` or the functions.
+--
+* .red[But the compiler doesn't know what `T` is].
+--
+* **How to declare a template type T**.
 
-We will just add `template <typename T>` directly above the struct declaration.
+---
+
+##### Now
+
+We will just add (`template < typename T >`)
 
 ```c++
-template< typename T>
+template< typename T> // HERE
 struct Node
 {
-    // default constructor.
-    Node()
+    Node() // default constructor.
     {
         next = nullptr;
     }
 
-    // when user provides a value for data member, or both.
     Node( T value, Node *nextPtr = nullptr )
     {
         next = nextPtr;
@@ -548,15 +677,34 @@ struct Node
     Node *next;
 };
 
-template< typename T>
+template< typename T> // HERE
 struct LL
 {
     Node< T > *head = nullptr;
 };
 ```
 
-Now we can call a `Node` to be of `char` by calling `Node< char >`. Similarly, to get a `LL` of `char`, we call it now `LL< char >`.
+---
 
+## Introduction to Templates
+
+### Solution: template classes
+
+--
+* `Node` and `LL` are template types (not complete types).
+--
+* To get them complete:
+--
+  * `Node<char>`, `Node<int>`, `Node<std::string>`.
+  * `LL<char>`, `LL<int>`, `LL<std::string>`.
+
+---
+
+## Introduction to Templates
+
+### Solution: template classes
+
+---
 So our functions that work on linked list of characters should now be:
 
 ```c++
@@ -581,18 +729,25 @@ void removeBack( LL<char> &list )
 }
 ```
 
-We now killed the redundancy of the `struct`, but we still have to repeat the functions to work on:
+--
+* We now .green[killed the redundancy of the `struct`]
+--
+* .red[but functions still redundant for other types]: `LL<std::string>`, `LL<Patient>`, `LL<Point>`, `LL<double>`, `LL<int>`.
+--
+* Fortunately, we can also templetize the functions!
 
-1. `LL<std::string>`
-1. `LL<Patient>`
-1. `LL<Point>`
-1. `LL<double>`
-1. `LL<int>`
+---
 
-Fortunately, we can also templetize the functions!
+## Introduction to Templates
 
-2. **Step 2**: templetize the functions to work on input of type `LL<T>`, where `T` is a place holder that can be `char`, `int`, `double`... etc.
+### Solution: template classes
 
+#### Second step: templetize the functions
+
+--
+templetize the functions: let `T` be type of interest.
+
+--
 ```c++
 void insertFront( LL< T > &list , T data )
 {
@@ -615,7 +770,28 @@ void removeBack( LL< T > &list )
 }
 ```
 
-Again! the compiler doesn't know what `T` is! we already know that `LL` is a template `struct`, so we call it as `LL< char >`, `LL<std::string>, ...etc. So we need to declare that the above functions are also template functions that operates in terms of agnostic type (T).
+---
+
+* Again! the compiler doesn't know what `T` is!
+--
+* Compiler already know that `LL` is a template `struct`,
+--
+* But what particular `T` to use.
+--
+* We either:
+--
+  1. .red[Redundant solution]: call it as `LL< char >`, `LL<std::string>`, ...etc.
+--
+  1. .red[DRY solution]: declare that `T` is template type, i.e functions are now type agnostic.
+
+---
+
+## Introduction to Templates
+
+### Solution: template classes
+
+#### Second step: templetize the functions
+
 
 ```c++
 template< typename T>
@@ -643,25 +819,20 @@ void removeBack( LL< T > &list )
 }
 ```
 
-Now the final template linked list file will look as following:
+---
+
+#### Final template solution
 
 
 ```c++
 template< typename T>
 struct Node
 {
-    // default constructor.
-    Node()
-    {
-        next = nullptr;
-    }
+    Node() // default constructor.
+    { /* Logic */ }
 
-    // when user provides a value for data member, or both.
     Node( T value, Node *nextPtr = nullptr )
-    {
-        next = nextPtr;
-        data = value;
-    }
+    { /* Logic */ }
 
     T data;
     Node *next;
@@ -675,122 +846,156 @@ struct LL
 
 template< typename T>
 void insertFront( LL< T > &list , T data )
-{
-
-}
+{ /* Logic */ }
 
 template< typename T>
 void insertBack( LL< T > &list, T data )
-{
-
-}
-
-template< typename T>
-void removeFront( LL< T > &list )
-{
-
-}
-
-template< typename T>
-void removeBack( LL< T > &list )
-{
-
-}
-
-template< typename T>
-void removeNth(LL< T > &list, int index)
-{
-
-}
-
-template< typename T>
-void removeNext(LL< T > &list, Node<T> *node)
-{
-
-}
-
-template< typename T>
-char front(const LL< T > &list)
-{
-
-}
-
-template< typename T>
-char back(const LL< T > &list)
-{
-
-}
-
-template< typename T>
-char getNth(const LL< T > &list, int index)
-{
-
-}
-
-template< typename T>
-bool isEmpty(const LL< T > &list)
-{
-
-}
-
-template< typename T>
-int size(const LL< T > &list)
-{
-
-}
-
-template< typename T>
-void printAll(const LL< T > &list)
-{
-
-}
-
-template< typename T>
-void clear(LL< T > &list)
-{
-
-}
+{ /* Logic */ }
+...
 ```
 
-Now in the main function, or whatever function that depends on our template types, we are going to use the linked lists as following:
+---
+
+## Introduction to Templates
+
+### Solution: template classes
+
+#### Client part (add to your glossary)
 
 ```c++
-#include "member1.hpp"
+LL<int> lli;
+insertFront( lli, 2 );
 
-int main()
-{
-    LL<int> lli;
-    insertFront( lli, 2 );
-    
-    LL<char> llc;
-    insertFront( llc, 'A');
-}
+LL<char> llc;
+insertFront( llc, 'A');
 ```
+
+---
+
+#### Client part (add to your glossary)
 
 If you don't like using much `<>` in the main function, you can use aliases instead.
 
+--
 ```c++
 #include "member1.hpp"
 
 // perfect DRY solution!
-using CharsLL = LL< char >;
-using IntegersLL = LL< int >;
-using StringsLL = LL<std::string>;
-using PatientsLL = LL<Patient>;
-using PointsLL = LL<Point>;
-using DoublesLL = LL<double>;
+using CharsLL = LL< char >; // Done 16% of the assignment
+using IntegersLL = LL< int >; // Done 32% of the assignment
+using StringsLL = LL<std::string>; // Done 50% of the assignment
+using PatientsLL = LL<Patient>; // Done 66% of the assignment
+using PointsLL = LL<Point>; // Done 83% of the assignment
+using DoublesLL = LL<double>; // Done 100% of the assignment
 
 int main()
 {
     IntegersLL lli;
     insertFront( lli, 2 );
-    
+
     CharsLL llc;
     insertFront( llc, 'A');
 }
 ```
 
+---
 
+#### Template + OOP
+
+Instead of:
+
+--
+```c++
+template< typename T>
+struct Node
+{
+    Node() // default constructor.
+    { /* Logic */ }
+
+    Node( T value, Node *nextPtr = nullptr )
+    { /* Logic */ }
+
+    T data;
+    Node *next;
+};
+
+template< typename T>
+struct LL
+{
+    Node< T > *head = nullptr;
+};
+
+template< typename T>
+void insertFront( LL< T > &list , T data )
+{ /* Logic */ }
+
+template< typename T>
+void insertBack( LL< T > &list, T data )
+{ /* Logic */ }
+...
+```
+
+---
+#### Template + OOP
+
+Now (realize the .green[benign side-effect]):
+
+--
+```c++
+template< typename T>
+struct Node
+{
+    Node() // default constructor.
+    { /* Logic */ }
+
+    Node( T value, Node *nextPtr = nullptr )
+    { /* Logic */ }
+
+    T data;
+    Node *next;
+};
+
+template< typename T>
+struct LL
+{
+    Node< T > *head = nullptr;
+
+    void insertFront( T data )
+    { /* Logic */ }
+
+    void insertBack( T data )
+    { /* Logic */}
+    // No need to declare T as template parameter for each method.
+};
+```
+
+---
+
+#### Template + OOP: Client part
+
+--
+```c++
+#include "member1.hpp"
+
+// perfect DRY solution!
+using CharsLL = LL< char >; // Done 16% of the assignment
+using IntegersLL = LL< int >; // Done 32% of the assignment
+using StringsLL = LL<std::string>; // Done 50% of the assignment
+using PatientsLL = LL<Patient>; // Done 66% of the assignment
+using PointsLL = LL<Point>; // Done 83% of the assignment
+using DoublesLL = LL<double>; // Done 100% of the assignment
+
+int main()
+{
+    IntegersLL lli;
+    lli.insertFront( 2 );
+
+    CharsLL llc;
+    llc.insertFront('A');
+}
+```
+
+---
 ## Access modifiers
 
 
