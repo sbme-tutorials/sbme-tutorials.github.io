@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html>
-  <head>
+---
+layout: presentation
+style: laminal
+highlighter: github
+course: "stl2019"
+category: "presentation"
+year: "2019"
+title: "Introduction to OOP 1"
+by: "Asem"
+author: "Asem Alaa"
+---
 
-    <meta charset="utf-8">
-    <title>Week 1: Introduction to Python and Images</title>
-    <link rel="stylesheet" href="/css/laminal.css">
-
-  </head>
-  <body>
-    <textarea id="source">
-
+<textarea id="source">
 
 ---
 class: left, middle
@@ -862,55 +863,4 @@ int main( int argc, char **argv)
 
 
 
-    </textarea>
-    
-    
-
-    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
-
-    <script src="/javascript/remark.min.js"></script>
-  
-    <script type="text/javascript">
-      var hljs = remark.highlighter.engine;
-    </script>
-    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
-  
-    <script type="text/javascript">
-      var options = {
-        ratio: '4:3',
-        highlightStyle: 'monokai',
-        countIncrementalSlides: false
-      };
-      var slideshow = remark.create(options);
-  
-      // extract the embedded styling from ansi spans
-      $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
-        return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
-      });
-  
-    </script>
-  
-    <script src="/mathjax/MathJax.js"></script>
-  
-    <script type="text/javascript">
-      MathJax.Hub.Config({
-        extensions: ["tex2jax.js"],
-        tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
-        jax: ["input/TeX", "output/HTML-CSS"],
-        "HTML-CSS": {
-          availableFonts: ["TeX"],
-          imageFont: null
-        },
-        MathMenu: {
-          showRenderer: false,
-          showFontMenu: false,
-          showLocale: false
-        }
-      });
-    </script>
-
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-  
-  </body>
-</html>
+</textarea>
