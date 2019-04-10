@@ -82,7 +82,6 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/7_week7/index.md %}){:target="_blank"}
     * Section Notes: \[[Binary Search Trees, Sets (ADT) and Maps (ADT)]({{ site.baseurl }}{% link 2019/data-structures/notes/7_week7.md %}){:target="_blank"}\]
     * [Individual assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/7_week7.md %}){:target="_blank"}
-    * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/4_week4.md %}){:target="_blank"}
   
 
 ## STL Tutorials
