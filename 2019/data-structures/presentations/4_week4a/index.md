@@ -32,10 +32,10 @@ class: left, top
 ```c++
 namespace rectangle
 {
-    double area( double w , double h )
-    {
-        return w * h;
-    }
+double area( double w , double h )
+{
+    return w * h;
+}
 }
 ```
 
@@ -58,21 +58,21 @@ struct Rectangle
 
 ---
 ```c++
-    struct Rectangle
-    {
-        double w; // First member
-        double h; // Second member
-    }; // Don't forget a semicolon here!
+struct Rectangle
+{
+    double w; // First member
+    double h; // Second member
+}; // Don't forget a semicolon here!
 
-    double area( Rectangle rectangle )
-    {
-        return rectangle.w * rectangle.h;
-    }
+double area( Rectangle rectangle )
+{
+    return rectangle.w * rectangle.h;
+}
 
-    double area2( Rectanle *pRect )
-    {
-        return pRect->w * pRect->h;
-    }
+double area2( Rectanle *pRect )
+{
+    return pRect->w * pRect->h;
+}
 ```
 
 ---
@@ -80,7 +80,7 @@ struct Rectangle
 int main()
 {
     rectangle::Rectangle rect{ 3 , 5 }; // declaration+initialization of Rectangle type!
-    
+
     std::cout << rectangle::area( rect ) << std::endl;
     std::cout << rectangle::area2( &rect ) << std::endl;
     return 0;
@@ -116,9 +116,9 @@ int main()
 {
     int *buffer = new int[10];
     IntegerArray array{ &buffer[0] , 10 }; // Initializes base and size members.
-    
+
     std::cout << sumArray( array ) << std::endl;
-    
+
     // We still need to delete the array on the heap
     delete [] array.base;
 

@@ -1,0 +1,19 @@
+@import "laminal.css"; 
+
+body {
+  font-family: 'Garamond';
+  letter-spacing: 0.025em;
+}
+
+h1, h2, h3 {
+  font-family: 'Garamond';
+  font-weight: normal;
+}
+
+.small {
+  font-size: 0.6em;
+}
+
+.smaller {
+  font-size: 0.3em;
+}

@@ -75,11 +75,14 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * Section Notes: \[[More on Linked Lists, Stacks, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/5_week5.md %}){:target="_blank"}\]
     * [Group Assignment (Part 1)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5a.md %}){:target="_blank"}
     * [Group Assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5b.md %}){:target="_blank"}
+    * [Make-up individual assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5b.md %}){:target="_blank"}
 1. Week 6:
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/6_week6/index.md %}){:target="_blank"}
 1. Week 7:
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/7_week7/index.md %}){:target="_blank"}
     * Section Notes: \[[Binary Search Trees, Sets (ADT) and Maps (ADT)]({{ site.baseurl }}{% link 2019/data-structures/notes/7_week7.md %}){:target="_blank"}\]
+    * [Individual assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/7_week7.md %}){:target="_blank"}
+    * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/4_week4.md %}){:target="_blank"}
   
 
 ## STL Tutorials
