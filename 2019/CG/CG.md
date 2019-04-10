@@ -88,6 +88,8 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 * [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md%}){:target="_blank"} : Animation, Coloring and Texture mapping 
 
+* [Assignment-4]({{ site.baseurl }}{% link 2019/CG/assignments/assignment4.md%}){:target="_blank"} : Volume Rendering (VTK) 
+
 ## Sheets 
 
 * [Review Sheet]({{ site.baseurl }}{% link 2019/CG/notes/SBE-306B-Computer-Systems-III-Review-Sheet-I.pdf%}){:target="_blank"} 
