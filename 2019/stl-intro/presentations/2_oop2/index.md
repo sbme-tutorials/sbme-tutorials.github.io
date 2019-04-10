@@ -20,6 +20,7 @@ author: "Asem Alaa"
 1. Const-correctness in OOP
 1. Template classes and template functions
 1. Access modifiers
+1. Enum types
 
 ---
 ## Constructors
@@ -597,13 +598,13 @@ struct CharNode
     CharNode *next;
 
     // default constructor.
-    Node()
+    CharNode()
     {
         next = nullptr;
     }
 
     // when user provides a value for data member, or both.
-    Node( char value, Node *nextPtr = nullptr )
+    CharNode( char value, Node *nextPtr = nullptr )
     {
         next = nextPtr;
         data = value;

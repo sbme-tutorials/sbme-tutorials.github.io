@@ -22,9 +22,9 @@ Also, an important objective is to involve applications that are:
 
 | Day | Topics | Ecosystem & Miscellaneous |
 |------|----------------------|-----------|
-| 12/3/2019 | Introduction to OOP: classes, encapsulation, methods, and inheritance  |  |
-|   | `std::string`, `std::vector`, `std::list`, `std::stack`, `std::queue`, `std::array` |   |
-|  |  operator overloading, lambda expression, iterators, range-based iteration, auto, `std::find`, `std::find_if`
+| 12/3/2019 | Introduction to OOP: classes, encapsulation, methods  |  |
+| 9/4/2019  | Introduction to OOP 2: constructors, default arguments, const-correctness in OOP, template classes and template functions, access modifiers, enum types. |   |
+|  |  `std::string`, `std::vector`, `std::list`, `std::stack`, `std::queue`, `std::array`, operator overloading, lambda expression, iterators, range-based iteration, `std::find`, `std::find_if` | |
 |   | `std::map`, `std::unordered_map`, `std::move`, `std::swap`, `std::sort`, `std::make_heap` |   |
 | | `std::for_each`, `std::accumulate`, `std::distance` | |
 

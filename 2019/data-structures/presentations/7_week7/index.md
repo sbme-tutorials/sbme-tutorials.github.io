@@ -525,33 +525,119 @@ void removeNode( BSTNode *&tree )
 ---
 ## Abstract Data Types Built Upon BST
 
-
 ---
 ### Set
 
-* We can harness the sorted property of **BST** to make efficient insertions and removals. 
-* Also, with a slight modification to the `insert` function, we can make this function only insert unique values, 
-* hence our new **set (ADT)** will always contain unique values.
+* **BST**: efficient insertions and removals.
+--
+* **modification**: in `insert` function, only insert unique values,
+--
+* Then, **set on BST (ADT)** will always contain unique values.
 
 ---
 #### Operations
 
-* `isEmpty`: same as **BST**
-* `size`: same as **BST**
-* `contains`: same as `find` of **BST**
-* `remove`: same as **BST**
+--
+* `set::isEmpty` = `bst::isEmpty`
+--
+* `set::size` = `bst::size`
+--
+* `set::contains` = `bst::find`
+--
+* `set::remove` = `bst::remove`
 
 ---
-#### Set: Insert
+#### Set: Add
 
-* Slight modification of `bst::insert`, 
-* insertion is done when the element isn't a duplicate of existing element
+--
+* Slight modification of `bst::insert`,
+* insertion is done only when it is not a duplicate of existing element
 
-##### possible implementation:
+--
+##### BST Insertion
 
-1. use `contains` to check if element doesn't already exist,
-1. then, if the condition holds, use `bst::insert`, otherwise, do nothing.
+```c++
+void insert( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+    else
+    {
+        if ( data < tree->data )
+            insert( tree->left, data );
 
+        else insert( tree->right, data );
+    }
+}
+```
+
+---
+
+##### Set: Insertion (solution 1)
+
+1. use `contains` to check if the element doesn't already exist,
+1. if the condition holds, use `bst::insert`, otherwise, do nothing.
+
+```c++
+void add( BSTNode *&tree, int data )
+{
+    if( !contains( tree, data ))
+    {
+        insert( tree, data );
+    }
+}
+```
+
+--
+Growth function (average case) $$T(n) \approx 2 \log_2(n)$$
+
+---
+
+##### Set: Insertion (solution 1)
+
+1. Check for uniqueness in the insertion routine.
+
+--
+```c++
+void add( BSTNode *&tree, int data ) // Copy routine of `insert`
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+    else
+    {
+        if ( data < tree->data )
+            add( tree->left, data );
+
+        else add( tree->right, data );
+    }
+}
+```
+
+---
+
+##### Set: Insertion (solution 1)
+
+1. Check for uniqueness in the insertion routine.
+
+
+```c++
+void add( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+    else
+    {
+        if ( data < tree->data )
+            add( tree->left, data );
+
+        else if( data > tree->data )
+            add( tree->right, data );
+    }
+}
+```
+
+--
+Growth function (average case) $$T(n) \approx \log_2(n)$$
 
 ---
 #### Set: Union
