@@ -37,6 +37,7 @@ This is a Group assignment 4 members maximum.
 ## Part 1: Programming
 
 * Build your own volume rendering app with VTK & Qt
+* Use datasets provided in data directory (Head and Ankle)
 
 * Features 
     * Support loading DICOM series dynamically using load button
