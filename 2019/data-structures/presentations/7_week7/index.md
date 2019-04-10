@@ -1,6 +1,6 @@
 ---
 layout: presentation
-style: laminal
+style: laminal4
 highlighter: github
 course: "sbe201"
 category: "presentation"
@@ -10,7 +10,11 @@ by: "Asem"
 author: "Asem Alaa"
 ---
 
-
+<!-- ir-black -->
+<!-- solarized-light -->
+<!-- tomorrow-night-blue -->
+<!-- tomorrow-night-bright -->
+<!-- tomorrow-night-eighties -->
 <textarea id="source">
 
 
@@ -487,8 +491,6 @@ void clear( BSTNode *&tree )
 ##### **Case II:** Node to be removed **has one child**
 ![bst-del3d](/gallery/trees/bst-remove-case-3-6.png)
 
-
-
 ---
 ```c++
 void remove( BSTNode *&tree, int data )
@@ -523,35 +525,133 @@ void removeNode( BSTNode *&tree )
 ```
 
 ---
-## Abstract Data Types Built Upon BST
+class: center, middle
 
+## .red[**Tutorial 7 ENDS HERE**]
+
+---
+class: left, top
+
+## Abstract Data Types Built Upon BST
 
 ---
 ### Set
 
-* We can harness the sorted property of **BST** to make efficient insertions and removals. 
-* Also, with a slight modification to the `insert` function, we can make this function only insert unique values, 
-* hence our new **set (ADT)** will always contain unique values.
+* **BST**: efficient insertions and removals.
+--
+* **modification**: in `insert` function, only insert unique values,
+--
+* Then, **set on BST (ADT)** will always contain unique values.
 
 ---
 #### Operations
 
-* `isEmpty`: same as **BST**
-* `size`: same as **BST**
-* `contains`: same as `find` of **BST**
-* `remove`: same as **BST**
+--
+* `set::isEmpty` = `bst::isEmpty`
+--
+* `set::size` = `bst::size`
+--
+* `set::contains` = `bst::find`
+--
+* `set::remove` = `bst::remove`
 
 ---
-#### Set: Insert
+#### Set: Add
 
-* Slight modification of `bst::insert`, 
-* insertion is done when the element isn't a duplicate of existing element
+--
+* Slight modification of `bst::insert`,
+* insertion is done only when it is not a duplicate of existing element
 
-##### possible implementation:
+--
+##### BST Insertion
 
-1. use `contains` to check if element doesn't already exist,
-1. then, if the condition holds, use `bst::insert`, otherwise, do nothing.
+```c++
+void insert( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+    else
+    {
+        if ( data < tree->data )
+            insert( tree->left, data );
 
+        else insert( tree->right, data );
+    }
+}
+```
+
+---
+
+##### Set: Insertion (solution 1)
+
+1. use `contains` to check if the element doesn't already exist,
+1. if the condition holds, use `bst::insert`, otherwise, do nothing.
+
+--
+```c++
+void add( BSTNode *&tree, int data )
+{
+    if( !contains( tree, data ))
+    {
+        insert( tree, data );
+    }
+}
+```
+
+--
+Growth function (average case) $$T(n) \approx 2 \log_2(n)$$
+
+--
+.green[Can we do better?]
+
+---
+
+##### Set: Insertion (solution 2)
+
+1. Check for uniqueness in the insertion routine.
+
+--
+```c++
+void add( BSTNode *&tree, int data ) // Copy routine of `insert`
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+    else
+    {
+        if ( data < tree->data )
+            add( tree->left, data );
+
+        else add( tree->right, data );
+    }
+}
+```
+
+
+---
+
+##### Set: Insertion (solution 2)
+
+1. Check for uniqueness in the insertion routine.
+
+
+```c++
+void add( BSTNode *&tree, int data )
+{
+    if ( isEmpty( tree ))
+        tree = new BSTNode{ data , nullptr , nullptr };
+    else
+    {
+        if ( data < tree->data )
+            add( tree->left, data );
+
+        else if( data > tree->data )
+            add( tree->right, data );
+    }
+}
+```
+
+--
+Growth function (average case) $$T(n) \approx \log_2(n)$$
 
 ---
 #### Set: Union
@@ -560,9 +660,10 @@ void removeNode( BSTNode *&tree )
 
 ##### possible implementation:
 
+--
 1. make an empty set `S3`,
+--
 1. iterate over elements of `S1` inserting each element to `S3`, and similarly for `S2`.
-
 
 ---
 #### Set: Intersect
@@ -571,8 +672,10 @@ void removeNode( BSTNode *&tree )
 
 
 ##### possible implementation:
-  
+
+--
 1. make an empty set `S3`,
+--
 1. iterate over elements of `S1` inserting each element that also exists in `S2` into `S3`.
 
 
@@ -587,6 +690,219 @@ void removeNode( BSTNode *&tree )
 1. then, iterating **in-order** in parallel in both $S_1$ and $S_2$ to validate the equality of traversed elements.
 
 ---
+#### Set Declarations (Procedural)
+
+--
+```c++
+struct IntSet
+{
+    BSTNode *root = nullptr;
+};
+
+bool isEmpty( const IntSet &s ){ /* DRY */}
+
+bool contains( const IntSet &s ){ /* DRY */ }
+
+int size( const IntSet &s ){ /* DRY */}
+
+void remove( const IntSet &s , int data ){ /* DRY */ }
+
+void add( const IntSet &s, int data ){/* Logic */ }
+
+void clear( IntSet &s ){/* DRY */}
+
+bool equals( const IntSet &s1, const IntSet &s2 ){/* Logic */}
+
+IntSet intersection( const IntSet &s1, const IntSet &s2 ){ /* Logic */}
+
+IntSet union( const IntSet &s1, const IntSet &s2 ){ /* Logic */}
+
+std::vector< int > enumerate( const IntSet &s1 ){ /* Logic */ }
+```
+
+---
+#### Set Declarations (OOP)
+
+--
+```c++
+struct IntSet
+{
+    BSTNode *root = nullptr;
+
+    bool isEmpty( const IntSet &s ){ /* DRY */}
+
+    bool contains( const IntSet &s ){ /* DRY */ }
+
+    int size( const IntSet &s ){ /* DRY */}
+
+    void remove( const IntSet &s , int data ){ /* DRY */ }
+
+    void add( const IntSet &s, int data ){/* Logic */ }
+
+    void clear( IntSet &s ){/* DRY */}
+
+    bool equals( const IntSet &s1, const IntSet &s2 ){/* Logic */}
+
+    IntSet intersection( const IntSet &s1, const IntSet &s2 ){ /* Logic */}
+
+    IntSet union( const IntSet &s1, const IntSet &s2 ){ /* Logic */}
+
+    std::vector< int > enumerate( const IntSet &s1 ){ /* Logic */ }
+};
+```
+
+---
+#### Set Declarations (OOP)
+
+```c++
+struct IntSet
+{
+    BSTNode *root = nullptr;
+
+    bool isEmpty() const { /* DRY */}
+
+    bool contains() const { /* DRY */ }
+
+    int size() const { /* DRY */}
+
+    void remove( int data ) const { /* DRY */ }
+
+    void add( int data ) const {/* Logic */ }
+
+    void clear(){/* DRY */}
+
+    bool equals( const IntSet &s2 ) const {/* Logic */}
+
+    IntSet intersection( const IntSet &s2 ) const { /* Logic */}
+
+    IntSet union( const IntSet &s2 ) const { /* Logic */}
+
+    std::vector< int > enumerate(){ /* Logic */ }
+};
+```
+
+---
+#### Set Declarations (OOP + Encapsulation)
+
+--
+```c++
+struct IntSet
+{
+private:
+    BSTNode *root = nullptr;
+public:
+    bool isEmpty() const { /* DRY */}
+
+    bool contains() const { /* DRY */ }
+
+    int size() const { /* DRY */}
+
+    void remove( int data ) const { /* DRY */ }
+
+    void add( int data ) const {/* Logic */ }
+
+    void clear(){/* DRY */}
+
+    bool equals( const IntSet &s2 ) const {/* Logic */}
+
+    IntSet intersection( const IntSet &s2 ) const { /* Logic */}
+
+    IntSet union( const IntSet &s2 ) const { /* Logic */}
+
+    std::vector< int > enumerate(){ /* Logic */ }
+};
+```
+
+---
+#### Set Declarations (OOP + Encapsulation + Template)
+
+
+--
+```c++
+template< typename T>
+struct BSTNode
+{
+    BSTNode( T val )
+    {
+        data = val;
+        left = nullptr;
+        right = nullptr;
+    }
+
+    T data
+    BSTNode *left;
+    BSTNode *right;
+};
+```
+
+---
+#### Set Declarations (OOP + Encapsulation + Template)
+
+
+```c++
+
+struct IntSet
+{
+private:
+    BSTNode< int > *root = nullptr;
+public:
+    bool isEmpty() const { /* DRY */}
+
+    bool contains() const { /* DRY */ }
+
+    int size() const { /* DRY */}
+
+    void remove( int data ) const { /* DRY */ }
+
+    void add( int data ) const {/* Logic */ }
+
+    void clear(){/* DRY */}
+
+    bool equals( const IntSet &s2 ) const {/* Logic */}
+
+    IntSet intersection( const IntSet &s2 ) const { /* Logic */}
+
+    IntSet union( const IntSet &s2 ) const { /* Logic */}
+
+    std::vector< int > enumerate(){ /* Logic */ }
+};
+```
+
+---
+#### Set Declarations (OOP + Encapsulation + Template)
+
+
+```c++
+template< typename T >
+struct Set
+{
+private:
+    BSTNode< T > *root = nullptr;
+public:
+    bool isEmpty() const { /* DRY */}
+
+    bool contains() const { /* DRY */ }
+
+    int size() const { /* DRY */}
+
+    void remove( T data ) const { /* DRY */ }
+
+    void add( T data ) const {/* Logic */ }
+
+    void clear(){/* DRY */}
+
+    bool equals( const Set &s2 ) const {/* Logic */}
+
+    IntSet intersection( const Set &s2 ) const { /* Logic */}
+
+    IntSet union( const Set &s2 ) const { /* Logic */}
+
+    std::vector< T > enumerate(){ /* Logic */ }
+};
+```
+
+---
+
 ### Map
 
 Synonyms: Associative containers, dictionary, symbol table.
@@ -594,16 +910,18 @@ Synonyms: Associative containers, dictionary, symbol table.
 A **map** is a collection of searchable key-value pairs, where each key has a value.
 
 ---
-#### Map: Example 1, 
+
+#### Map: Example 1
 
 we can have a **map** representing count of words in a page or textbook, so:
 
-1. the **key** here is the *word*, 
+--
+1. the **key** here is the *word*,
 1. while the **value** is the count of this word.
 
-
 ---
-#### Map: Example 2,
+
+#### Map: Example 2
 
 for the function that counts characters in **DNA**:
 
@@ -634,15 +952,18 @@ int main( int argc, char **argv )
 ```
 
 ---
+
 #### Map: Example 2
+
 ##### Elegant solution
 
-* `countCharacter` was called four times (i.e to count **A**, **C**, **G**, and **T**). 
+* `countCharacter` was called four times (i.e to count **A**, **C**, **G**, and **T**).
 * However, by using **map** data structure we can run this function to count all characters in a single run!
 
-
 ---
+
 ```c++
+#include <map>
 int main( int argc, char **argv )
 {
     if( argc == 2 )
@@ -660,22 +981,11 @@ int main( int argc, char **argv )
 ```
 
 ---
-#### Map: Example3
 
-* Another important usage of **map (ADT)** is to implement a **graph (ADT)** by:
-
-
-1. representing each node in the graph as a **key**,
-1. and the associated **value** to that key is a list of the connected nodes.
-
-
----
 #### Implementing a Dictionary (i.e Map) Using BST
 
 Map implementation using **BST** would be as easy as implementing a **set** using the concrete routines of **BST**.
 
-
-1. `create`: returns empty dictionary.
 1. `isEmpty`: checks if dictionary is empty.
 1. `size`: returns the size of the dictionary.
 1. `insert`: inserts new key to the dictionary.
@@ -684,9 +994,43 @@ Map implementation using **BST** would be as easy as implementing a **set** usin
 1. `value`: returns a reference to the value associated with a given key. If key not found, then insert a new key with the given key then returns a reference to the newly created value.
 1. `contains`: checks if a key exists in the dictionary.
 
+---
+
+#### Dictionary Node Structure
+
+* Consider a dictionary that maps words to counts.
+
+--
+```c++
+struct BSTNode
+{
+    std::string data;
+    BSTNode *left;
+    BSTNode *right;
+};
+```
 
 ---
+
 #### Dictionary Node Structure
+
+* Consider a dictionary that maps words to counts.
+
+
+```c++
+struct MapNode
+{
+    std::string data;
+    MapNode *left;
+    MapNode *right;
+};
+```
+
+---
+
+#### Dictionary Node Structure
+
+* Consider a dictionary that maps words to counts.
 
 ```c++
 struct MapNode
@@ -696,76 +1040,51 @@ struct MapNode
     MapNode *left;
     MapNode *right;
 };
-
-using WordMap = MapNode *;
 ```
 
 ---
-##### Syntactical Sugar
+
+#### Dictionary Node Structure
+
+* Consider a dictionary that maps words to counts.
 
 ```c++
-using WordMap = MapNode *;
-``` 
+struct MapNode
+{
+    MapNode( const std::string &k, int v )
+    {
+        key = k;
+        value = v;
+        left = nullptr;
+        right = nullptr;
+    }
 
-* make an alias for a pointer type naming it `WordMap`. 
-* outside the library, **pay no attention to the implementation details of our map**. 
-* We wish not to see any asterisks (pointer) in the main function.
-* If we see asterisk in the main function, then we know how this **map** implemented.
+    std::string key;
+    int value;
+    MapNode *left;
+    MapNode *right;
+};
+```
 
 
 ---
-##### More abstraction
-
-* Since we decided to hide the implementation details in the main function,
-* we hope not to initialize an empty **map** using the following syntax:
-
 ```c++
-int main()
-{
-    map::WordMap wmap = nullptr; // Correct. But, something vague here!
-}
-```
-
-* .red[Details are still exposed]
-* .red[We know what you did there!]
-
----
-##### More abstraction
-
-**A much better and clean solution**
-
-```c++
-WordMap create()
-{
-    return nullptr;
-}
-```
-
-```c++
-int main()
-{
-    map::WordMap wmap = map::create(); // Much cleaner!
-}
-```
-
----
-```c++
-bool isEmpty( WordMap wmap )
+bool isEmpty( const MapNode *wmap )
 {
 
 }
 
-bool isLeaf( WordMap wmap )
+bool isLeaf( const MapNode *wmap )
 {
 
 }
 
-int size( WordMap wmap )
+int size( const MapNode *wmap )
 {
 
 }
 
-bool find( WordMap wmap, std::string key )
+bool find( const MapNode *wmap, const std::string &key )
 {
 
 }
@@ -773,44 +1092,421 @@ bool find( WordMap wmap, std::string key )
 
 ---
 ```c++
-void insert( WordMap &wmap, std::string key )
+void insert( MapNode * &wmap, const std::string &key, int data )
 {
 
 }
 
-void remove( WordMap &wmap, std::string key )
+void remove( WordMap * &wmap, const std::string &key )
 {
 
 }
 
-void clear( WordMap &wmap )
+void clear( MapNode * &wmap )
 {
 
 }
 
-void printAll( WordMap wmap )
+void printAll( const MapNode *wmap )
 {
 
 }
 ```
 
-
 ---
-#### Map: at & value
+#### Map: value
 
 
 ```c++
-int &at( WordMap wmap, std::string key )
-{
-
-}
-
-int &value( WordMap &wmap , std::string key )
+int &value( MapNode *&wmap, const std::string &key )
 {
 
 }
 ```
 
+---
+
+#### Map Declarations (procedural)
+
+```c++
+bool isEmpty( const MapNode *wmap ){ /* Logic */ }
+
+bool isLeaf( const MapNode *wmap ){ /* Logic */ }
+
+int size( const MapNode *wmap ){ /* Logic */ }
+
+bool find( const MapNode *wmap, const std::string &key ){ /* Logic */}
+
+void insert( MapNode * &wmap, const std::string &key, int data ){ /* Logic */}
+
+void remove( WordMap * &wmap, const std::string &key ){ /* Logic */}
+
+void clear( MapNode * &wmap ){ /* Logic */}
+
+void printAll( const MapNode *wmap ){ /* Logic */}
+
+int &value( MapNode *&wmap, const std::string &key ){ /* Logic */}
+```
+
+---
+
+#### Map Declarations (OOP)
+
+--
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    bool isEmpty( const MapNode *wmap ){ /* Logic */ }
+
+    bool isLeaf( const MapNode *wmap ){ /* Logic */ }
+
+    int size( const MapNode *wmap ){ /* Logic */ }
+
+    bool find( const MapNode *wmap, const std::string &key ){ /* Logic */}
+
+    void insert( MapNode * &wmap, const std::string &key, int data ){ /* Logic */}
+
+    void remove( WordMap * &wmap, const std::string &key ){ /* Logic */}
+
+    void clear( MapNode * &wmap ){ /* Logic */}
+
+    void printAll( const MapNode *wmap ){ /* Logic */}
+
+    int &value( MapNode *&wmap, const std::string &key ){ /* Logic */}
+}
+```
+
+---
+
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    bool isEmpty() const { /* Logic */ }
+
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { /* Logic */ }
+
+    bool find( const std::string &key ) const { /* Logic */}
+
+    void insert( const std::string &key, int data ){ /* Logic */}
+
+    void remove(const std::string &key ) { /* Logic */}
+
+    void clear(){ /* Logic */}
+
+    void printAll() const { /* Logic */}
+
+    int &value( const std::string &key ){ /* Logic */}
+}
+```
+
+--
+* .red[What is the problem?]
+--
+* Hint: recursive functions!
+
+
+---
+
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    ...
+
+    int size() const { /* Logic */ }
+
+    int size( const Map *root )
+    {
+        if( root )
+        {
+            return 1 + size( root->left ) + size( root->right );
+        } else return 0;
+    }
+    ...
+}
+```
+
+---
+
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    ...
+
+    int size() const {  return size( root ); }
+
+    int size( const Map *root ) // Method or free function?!
+    {
+        if( root )
+        {
+            return 1 + size( root->left ) + size( root->right );
+        } else return 0;
+    }
+    ...
+}
+```
+
+--
+* `static` methods.
+
+---
+
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    ...
+
+    int size() const {  return size( root ); }
+
+    static int size( const Map *root ) // Method or free function?!
+    {
+        if( root )
+        {
+            return 1 + size( root->left ) + size( root->right );
+        } else return 0;
+    }
+    ...
+}
+```
+
+--
+
+```c++
+// Client part
+Map m;
+std::cout << m.size();
+```
+
+---
+
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    bool isEmpty() const { /* Logic */ }
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { /* Logic */ }
+    bool find( const std::string &key ) const { /* Logic */}
+    void insert( const std::string &key, int data ){ /* Logic */}
+    void remove(const std::string &key ) { /* Logic */}
+    void clear(){ /* Logic */}
+    void printAll() const { /* Logic */}
+    int &value( const std::string &key ){ /* Logic */}
+}
+```
+
+---
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+    MapNode *root = nullptr;
+
+    bool isEmpty() const { /* Logic */ }
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { return size( root ); }
+    bool find( const std::string &key ) const { return find( root , key ); }
+    void insert( const std::string &key, int data ){ insert( root , key, data );}
+    void remove(const std::string &key ) { remove( root , key);}
+    void clear(){ clear( root ); }
+    void printAll() const { printAll( root ); }
+    int &value( const std::string &key ){  return value( root , key ); }
+}
+```
+
+---
+#### Map Declarations (OOP)
+
+```c++
+struct Map
+{
+
+    MapNode *root = nullptr;
+
+    bool isEmpty() const { /* Logic */ }
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { return size( root ); }
+    bool find( const std::string &key ) const { return find( root , key ); }
+    void insert( const std::string &key, int data ){ insert( root , key, data );}
+    void remove(const std::string &key ) { remove( root , key);}
+    void clear(){ clear( root ); }
+    void printAll() const { printAll( root ); }
+    int &value( const std::string &key ){  return value( root , key ); }
+
+    static int size( const MapNode *root ) { /* Logic */ }
+    static bool find( const MapNode *root, const std::string &key ) { /* Logic */}
+    static void insert(  MapNode *&root , const std::string &key, int data ){ /* Logic */}
+    static void remove(  MapNode *&root , const std::string &key ) { /* Logic */}
+    static void clear(  MapNode *&root ){ /* Logic */}
+    static void printAll( const MapNode *root ) { /* Logic */}
+    static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
+}
+```
+
+---
+#### Map Declarations (OOP + Encapsulation)
+
+```c++
+struct Map
+{
+private:
+    MapNode *root = nullptr;
+public:
+    bool isEmpty() const { /* Logic */ }
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { return size( root ); }
+    bool find( const std::string &key ) const { return find( root , key ); }
+    void insert( const std::string &key, int data ){ insert( root , key, data );}
+    void remove(const std::string &key ) { remove( root , key);}
+    void clear(){ clear( root ); }
+    void printAll() const { printAll( root ); }
+    int &value( const std::string &key ){  return value( root , key ); }
+private:
+    static int size( const MapNode *root ) { /* Logic */ }
+    static bool find( const MapNode *root, const std::string &key ) { /* Logic */}
+    static void insert(  MapNode *&root , const std::string &key, int data ){ /* Logic */}
+    static void remove(  MapNode *&root , const std::string &key ) { /* Logic */}
+    static void clear(  MapNode *&root ){ /* Logic */}
+    static void printAll( const MapNode *root ) { /* Logic */}
+    static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
+}
+```
+
+---
+#### Map Declarations (OOP + Encapsulation + Template)
+
+
+--
+```c++
+
+struct MapNode
+{
+    MapNode( const std::string &k, int v )
+    {
+        key = k;
+        value = v;
+        left = nullptr;
+        right = nullptr;
+    }
+
+    std::string key;
+    int value;
+    MapNode *left;
+    MapNode *right;
+};
+```
+
+---
+#### Map Declarations (OOP + Encapsulation + Template)
+
+
+```c++
+template< typename K, typename V >
+struct MapNode
+{
+    MapNode( const K &k, V v )
+    {
+        key = k;
+        value = v;
+        left = nullptr;
+        right = nullptr;
+    }
+
+    K key;
+    V value;
+    MapNode *left;
+    MapNode *right;
+};
+```
+
+---
+#### Map Declarations (OOP + Encapsulation + Template)
+
+```c++
+
+struct Map
+{
+private:
+    MapNode *root = nullptr;
+public:
+    bool isEmpty() const { /* Logic */ }
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { return size( root ); }
+    bool find( const std::string &key ) const { return find( root , key ); }
+    void insert( const std::string &key, int data ){ insert( root , key, data );}
+    void remove(const std::string &key ) { remove( root , key);}
+    void clear(){ clear( root ); }
+    void printAll() const { printAll( root ); }
+    int &value( const std::string &key ){  return value( root , key ); }
+private:
+    static int size( const MapNode *root ) { /* Logic */ }
+    static bool find( const MapNode *root, const std::string &key ) { /* Logic */}
+    static void insert(  MapNode *&root , const std::string &key, int data ){ /* Logic */}
+    static void remove(  MapNode *&root , const std::string &key ) { /* Logic */}
+    static void clear(  MapNode *&root ){ /* Logic */}
+    static void printAll( const MapNode *root ) { /* Logic */}
+    static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
+}
+```
+
+---
+#### Map Declarations (OOP + Encapsulation + Template)
+
+```c++
+template< typename K, typename V>
+struct Map
+{
+private:
+    MapNode< K, V > *root = nullptr;
+public:
+    bool isEmpty() const { /* Logic */ }
+    bool isLeaf() const { /* Logic */ }
+
+    int size() const { return size( root ); }
+    bool find( const K &key ) const { return find( root , key ); }
+    void insert( const K &key, int data ){ insert( root , key, data );}
+    void remove(const K &key ) { remove( root , key);}
+    void clear(){ clear( root ); }
+    void printAll() const { printAll( root ); }
+    int &value( const K &key ){  return value( root , key ); }
+private:
+    static int size( const MapNode *root ) { /* Logic */ }
+    static bool find( const MapNode *root, const K &key ) { /* Logic */}
+    static void insert(  MapNode *&root , const K &key, V data ){ /* Logic */}
+    static void remove(  MapNode *&root , const K &key ) { /* Logic */}
+    static void clear(  MapNode *&root ){ /* Logic */}
+    static void printAll( const MapNode *root ) { /* Logic */}
+    static V &value(  MapNode *&root , const K &key ){ /* Logic */}
+}
+```
 
 ---
 ### Exercise and Assignment: Text Processing
@@ -823,7 +1519,7 @@ Clone your group lab work and assignment from this link: TBA.
 ---
 Consider the following text for [Carl Sagan](https://en.wikipedia.org/wiki/Carl_Sagan)
 
-> Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there on a mote of dust suspended in a sunbeam. The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds. Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.
+.smaller[Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there on a mote of dust suspended in a sunbeam. The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds. Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.]
 
 
 ---
@@ -854,6 +1550,45 @@ int main()
 | positive | it means that `s1` comes after `s2` alphabetically, which is not the case |
 | negative | it means that `s1` precedes `s2` alphabetically, which is the case |
 | 0 | it means that `s1` equals `s2`, which is not the case |
+
+---
+#### Comparing operators `std::string`s
+
+```c++
+#include <string>
+#include <iostream>
+int main()
+{
+    std::string s1 = "batman";
+    std::string s2 = "superman";
+
+    if( s1 < s2 )
+        std::cout << s1 << " precedes " << s2;
+    else 
+        std::cout << s2 << " precedes " << s1;
+}
+```
+
+---
+### Individual assignment make-up
+
+--
+* Assignment on the linked lists, stacks, queues.
+--
+* To survive late penalty and team work penalty.
+--
+* Practice OOP.
+--
+* Practice Templates.
+--
+* Practice Const-correctness.
+--
+* Practice Encapsulation (access modifiers)
+--
+* Practice Enum classes and constructors.
+--
+* [Make-up individual assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5b.md %}){:target="_blank"}
+
 
 
 </textarea>
