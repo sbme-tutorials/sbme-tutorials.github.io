@@ -19,7 +19,7 @@ pdf: true
 
 * [week7]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md%}){:target="_blank"}
 
-* [week8]{{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md%}){:target="_blank"}
+* [week8]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md%}){:target="_blank"}
 
 ## Deadline
 
@@ -38,6 +38,8 @@ This is a Group assignment 4 members maximum.
 
 * Build your own volume rendering app with VTK & Qt
 * Use datasets provided in data directory (Head and Ankle)
+
+**Note** You must use [vtkDICOMImageReader](https://vtk.org/doc/nightly/html/classvtkDICOMImageReader.html#details) object.
 
 * Features 
     * Support loading DICOM series dynamically using load button
