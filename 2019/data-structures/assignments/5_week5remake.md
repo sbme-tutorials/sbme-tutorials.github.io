@@ -3,7 +3,7 @@ layout: page
 course: "sbe201"
 category: "assignment"
 year: "2019"
-title:  "Assignment 5 (individual remake and practicing): Stacks and Queues"
+title:  "Assignment 5 (individual makeup and practicing): Stacks and Queues"
 by: "Asem"
 pdf: true
 ---
