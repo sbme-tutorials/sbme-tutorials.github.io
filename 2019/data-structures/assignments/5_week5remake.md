@@ -12,8 +12,8 @@ pdf: true
 
 * Read the \[[Part1: Struct, Stacks, Linked Lists, and Queues]({{ site.baseurl }}{% link 2019/data-structures/notes/4_week4a.md %}){:target="_blank"}\] 
 * Read \[[Week 5: More on Structs, Linked Lists, Const-correctness]({{ site.baseurl }}{% link 2019/data-structures/notes/5_week5.md %}){:target="_blank"}\]
-* **Read \[[Introduction to OOP: classes, encapsulation, methods]({{ site.baseurl }}{% link 2019/stl-intro/presentations/1_oop1/index.md %}){:target="_blank"}\]**
-* **Read \[[Introduction to OOP 2: constructors, default arguments, const-correctness in OOP, template classes and template functions, access modifiers, enum types.]({{ site.baseurl }}{% link 2019/stl-intro/presentations/2_oop2/index.md %}){:target="_blank"}\]**
+* Read \[[Introduction to OOP: classes, encapsulation, methods]({{ site.baseurl }}{% link 2019/stl-intro/presentations/1_oop1/index.md %}){:target="_blank"}\]
+* Read \[[Introduction to OOP 2: constructors, default arguments, const-correctness in OOP, template classes and template functions, access modifiers, enum types.]({{ site.baseurl }}{% link 2019/stl-intro/presentations/2_oop2/index.md %}){:target="_blank"}\]
 * Good understanding of the relation between the DNA, RNA, and proteins. If you don't have sufficient background:
   *  [Overview of translation \| Khan Academy](https://www.khanacademy.org/science/biology/gene-expression-central-dogma/translation-polypeptides/a/translation-overview)
   *  [Starting off in Bioinformatics — Turning DNA sequences into Protein sequences \| Towards Data Science](https://towardsdatascience.com/starting-off-in-bioinformatics-turning-dna-sequences-into-protein-sequences-c771dc20b89f)
@@ -37,7 +37,7 @@ While concrete data types that we can use to implement the above **ADTs** are:
 1. For each type listed in (2), provide **queue** implementation using **linked lists**.
 1. Adopt OOP.
 1. Respect const-correctness.
-1. Respect encapsulation (appropriate access modifiers)
+1. Respect encapsulation (using appropriate access modifiers)
 1. Use Enum class when appropriate.
 1. Make useful constructors.
 
@@ -47,17 +47,9 @@ Join your individual assignment from this [link](https://classroom.github.com/a/
 
 ## Deadline
 
-**Sunday of 14 April 2019, 11:59 PM (PST time)**
+**Thursday of 18 April 2019, 11:59 PM (PST time)**
 
 ## Assignment 5 Requirements
-
-### Use Enum class for `Patient` sex identifier
-
-Make the necessary changes to use `enum class` for representing the patient's sex.
-
-### Implement constructors for `Point` and `Patient`
-
-Add useful constructors in the classes in `custom_types.hpp`.
 
 ### Concrete Implementation of Linked List
 
@@ -77,9 +69,18 @@ Supported Operations:
 12. printAll `printAll`.
 13. delete the whole list from the heap `clear`.
 
+You need to make your implemented data structure generic for any type by using **templates**. Also, adopt **OOP** for that data structure.
+
+Implementation hints:
+
+1. you can start by implementing the data structure as usual for a particular type (e.g `int`).
+1. move the free functions inside the `struct`/`class` and omit the input parameter of the data structure from those functions.
+1. templetize by substituting all `int` with a generic `T`, then declare `T` as template parameter.
+
+
 ### Stack (ADT)
 
-Supported Operations:
+Based on the **linked list** above, implement a **stack** that supports the following operations:
 
 1. `push`.
 2. `pop`.
@@ -88,9 +89,15 @@ Supported Operations:
 5. return front `front` (LIFO).
 6. delete the whole stack `clear`.
 
+Implementation hints:
+
+1. you can start by implementing the data structure as usual for a particular type (e.g `int`).
+1. move the free functions inside the `struct`/`class` and omit the input parameter of the data structure from those functions.
+1. templetize by substituting all `int` with a generic `T`, then declare `T` as template parameter.
+
 ### Queue (ADT)
 
-Supported Operations:
+Based on the **linked list** above, implement a **quee** that supports the following operations:
 
 1. `enqueue`.
 2. `dequeue`.
@@ -98,6 +105,20 @@ Supported Operations:
 4. `isEmpty`.
 5. return `front` (FIFO).
 6. delete the whole queue `clear`.
+
+Implementation hints:
+
+1. you can start by implementing the data structure as usual for a particular type (e.g `int`).
+1. move the free functions inside the `struct`/`class` and omit the input parameter of the data structure from those functions.
+1. templetize by substituting all `int` with a generic `T`, then declare `T` as template parameter.
+
+### Use Enum class for `Patient` sex identifier
+
+Make the necessary changes to use `enum class` for representing the patient's sex.
+
+### Implement constructors
+
+Make useful constructor for every `struct`/`class` in your code, including the `Point` and `Patient` in `custom_types.hpp`.
 
 ### Applications
 

@@ -1587,7 +1587,7 @@ int main()
 --
 * Practice Enum classes and constructors.
 --
-* [Make-up individual assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5b.md %}){:target="_blank"}
+* [Make-up individual assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5remake.md %}){:target="_blank"}
 
 
 
