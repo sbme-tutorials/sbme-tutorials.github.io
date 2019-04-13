@@ -45,7 +45,7 @@ g++ test_tree.cpp -o testBST
 ### R2: implement a Set (ADT) then extract set of unique words in a text using that Set
 
 1. Complete the source code in `set.hpp` then make a **set** of `std::string`s.
-1. Complete the source code in `unique_words.cpp` to print the set of words of the given file.
+1. Compile `unique_words.cpp` to test your implemented set by printing the set of words of the given file.
 
 ```
 g++ -std=c++17 unique_words.cpp -o uniqueWords
