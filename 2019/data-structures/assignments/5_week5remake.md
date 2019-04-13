@@ -164,8 +164,6 @@ std::stack< char > stack1; // now we have a stack of chars named `stack1`.
 std::stack< int > stack2; // now we have a stack of integers named `stack2`.
 ```
 
-We learn soon how to make template `struct`/`class` to make our data structures generic for any type.
-
 Here is our `complementarySequence2` function:
 
 ```c++
