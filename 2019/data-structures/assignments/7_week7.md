@@ -48,7 +48,7 @@ g++ test_tree.cpp -o testBST
 1. Complete the source code in `unique_words.cpp` to print the set of words of the given file.
 
 ```
-g++ unique_words.cpp -o uniqueWords
+g++ -std=c++17 unique_words.cpp -o uniqueWords
 ./uniqueWords data/carl_sagan.txt
 ```
 
@@ -61,7 +61,7 @@ You are required here to develop a dictionary that has `char` as a key and `int`
 1. Complete the source code in `countDNA.cpp`, to count each base in the given dna file using the developed **dictionary**.
 
 ```
-g++ countDNA.cpp -o countDNA
+g++ -std=c++17 countDNA.cpp -o countDNA
 ./countDNA data/genetic_data.txt
 ```
 
@@ -118,6 +118,6 @@ int main()
 After you finish:
 
 ```
-g++ count_words.cpp -o countWords
+g++ -std=c++17 count_words.cpp -o countWords
 ./countWords data/carl_sagan.txt
 ```
