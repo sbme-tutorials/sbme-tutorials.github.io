@@ -668,4 +668,4 @@ int main()
 ## Self-reading
 
 1. Destructors
-1. Enum types
+1. Enum class types
