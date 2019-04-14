@@ -50,6 +50,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 |   3  | Projection |  |
 |   4  | Camera Transformation | Assignment2 |
 |   5  | Ray Casting, Lighting and Animation |    |
+|   6  | Texture mapping and object loading |  Assignment3 |
+|   7  | Medical visualization and volume rendering |  |
+|   8  | Visualization toolkit (VTK)    |  Assignment4 |
 
 ## Tutorials
 
@@ -71,6 +74,12 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 6: Texture mapping and object loading
     * [Notes](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/tree/master/Tutorial-05)
 
+* Week 7: Medical Visualization & Volume Rendering 
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md%}){:target="_blank"}
+
+* Week 8: Visualization Toolkit (VTK)
+    * [Slides]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md%}){:target="_blank"}
+
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
@@ -78,6 +87,8 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md%}){:target="_blank"} : Full Body 
 
 * [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md%}){:target="_blank"} : Animation, Coloring and Texture mapping 
+
+* [Assignment-4]({{ site.baseurl }}{% link 2019/CG/assignments/assignment4.md%}){:target="_blank"} : Volume Rendering (VTK) 
 
 ## Sheets 
 

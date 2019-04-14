@@ -105,7 +105,7 @@ g++ -Wall -std=c++11 source_code.cpp -o output_name
 --
 * remove a node **next to** a given node.
 --
-* remove nodes with given data (filteration).
+* remove nodes with given data (filtration).
 --
 * is empty?
 --
@@ -350,7 +350,7 @@ void push( CharStackLL &stack , char data )
 
     // 2. DRY
     lists::pushFront( list , data );
-    
+
     // 3. Update Stack front
     stack.front = list.front;
 }
@@ -369,7 +369,7 @@ When popping an element from the front,
 void pop( CharStackLL &stack )
 {
     if( stack.front )
-    {    
+    {
         // Save the pointer of the front, so we delete it later
         CharNode *oldFront = stack.front;
 

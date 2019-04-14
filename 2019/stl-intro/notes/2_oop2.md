@@ -115,9 +115,9 @@ double d( Point p, Point q )
 
 int main()
 {
-    Point p1; // Default constructor called. Now p1.x and p1.y equals zero.
-    Point p2( 1.0 ); // Constructor 2 called. Now p1.x and p1.y equals 1.0.
-    Point p3( 0, 1 ); // Constructor 3 called. Now p1.x equals 0 and p1.y equals 1.
+    Point p1; // Default constructor called. Now p1.x and p1.y equal zero.
+    Point p2( 1.0 ); // Constructor 2 called. Now p2.x and p2.y equal 1.0.
+    Point p3( 0, 1 ); // Constructor 3 called. Now p3.x equals 0 and p3.y equals 1.
     
     std::cout << heron( d( p1, p2), 
                         d( p2, p3 ), 
@@ -146,7 +146,7 @@ void printLL( const IntLL &l )
 }
 ```
 
-If we need to control the seperator between elements we can write the function as following:
+If we need to control the separator between elements we can write the function as following:
 
 ```c++
 void printLL( const IntLL &l , const std::string &sep )
@@ -320,13 +320,13 @@ Consider what we did in `CharsLL`:
 struct CharNode
 {
     // default constructor.
-    Node()
+    CharNode()
     {
         next = nullptr;
     }
 
     // when user provides a value for data member, or both.
-    Node( char value, Node *nextPtr = nullptr )
+    CharNode( char value, Node *nextPtr = nullptr )
     {
         next = nextPtr;
         data = value;
@@ -632,7 +632,7 @@ int main()
 {
     LL<int> lli;
     insertFront( lli, 2 );
-    
+
     LL<char> llc;
     insertFront( llc, 'A');
 }
@@ -661,6 +661,92 @@ int main()
 }
 ```
 
+### Templates + OOP
+
+If we are OOP on a template `struct`, then we don't need to declare the `T` as a template parameter for each method. The above functions when converted to methods inside the template `LL` can have the following declaration:
+
+
+```c++
+template< typename T>
+struct Node
+{
+    // default constructor.
+    Node()
+    {
+        next = nullptr;
+    }
+
+    // when user provides a value for data member, or both.
+    Node( T value, Node *nextPtr = nullptr )
+    {
+        next = nextPtr;
+        data = value;
+    }
+
+    T data;
+    Node *next;
+};
+
+template< typename T>
+struct LL
+{
+    Node< T > *head = nullptr;
+
+    void insertFront( T data )
+    { /* Logic */ }
+
+    void insertBack( T data )
+    { /* Logic */ }
+
+    void removeFront()
+    { /* Logic */ }
+
+    void removeBack( )
+    { /* Logic */ }
+
+    void removeNth(int index)
+    { /* Logic */ }
+
+    void removeNext(Node<T> *node)
+    { /* Logic */ }
+
+    char front() const
+    { /* Logic */ }
+
+    char back() const
+    { /* Logic */ }
+
+    char getNth( int index) const
+    { /* Logic */ }
+
+    bool isEmpty() const
+    { /* Logic */ }
+
+    int size() const
+    { /* Logic */ }
+
+    void printAll() const
+    { /* Logic */ }
+
+    void clear()
+    { /* Logic */ }
+};
+```
+
+and the **client part** becomes:
+
+```c++
+#include "member1.hpp"
+
+int main()
+{
+    LL<int> lli;
+    lli.insertFront( 2 );
+
+    LL<char> llc;
+    llc.insertFront('A');
+}
+```
 
 ## Access modifiers
 

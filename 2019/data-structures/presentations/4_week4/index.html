@@ -1,16 +1,14 @@
----
-layout: presentation
-style: laminal
-highlighter: monokai
-course: "sbe201"
-category: "presentation"
-year: "2019"
-title: "Week 4: Struct, Stacks, Linked Lists, and Queues"
-by: "Asem"
-author: "Asem Alaa"
----
+<!DOCTYPE html>
+<html>
+  <head>
 
-<textarea id="source">
+    <meta charset="utf-8">
+    <title>Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
 
 ---
 class: left, top
@@ -32,10 +30,10 @@ class: left, top
 ```c++
 namespace rectangle
 {
-double area( double w , double h )
-{
-    return w * h;
-}
+    double area( double w , double h )
+    {
+        return w * h;
+    }
 }
 ```
 
@@ -58,21 +56,21 @@ struct Rectangle
 
 ---
 ```c++
-struct Rectangle
-{
-    double w; // First member
-    double h; // Second member
-}; // Don't forget a semicolon here!
+    struct Rectangle
+    {
+        double w; // First member
+        double h; // Second member
+    }; // Don't forget a semicolon here!
 
-double area( Rectangle rectangle )
-{
-    return rectangle.w * rectangle.h;
-}
+    double area( Rectangle rectangle )
+    {
+        return rectangle.w * rectangle.h;
+    }
 
-double area2( Rectanle *pRect )
-{
-    return pRect->w * pRect->h;
-}
+    double area2( Rectanle *pRect )
+    {
+        return pRect->w * pRect->h;
+    }
 ```
 
 ---
@@ -80,7 +78,7 @@ double area2( Rectanle *pRect )
 int main()
 {
     rectangle::Rectangle rect{ 3 , 5 }; // declaration+initialization of Rectangle type!
-
+    
     std::cout << rectangle::area( rect ) << std::endl;
     std::cout << rectangle::area2( &rect ) << std::endl;
     return 0;
@@ -116,9 +114,9 @@ int main()
 {
     int *buffer = new int[10];
     IntegerArray array{ &buffer[0] , 10 }; // Initializes base and size members.
-
+    
     std::cout << sumArray( array ) << std::endl;
-
+    
     // We still need to delete the array on the heap
     delete [] array.base;
 
@@ -304,13 +302,8 @@ IntegerStack100 push( IntegerStack100 stack , int newElement )
 }
 ```
 
---
-* .red[This version passes by value then returns the new stack.]
 
 ---
-#### Stack: Push
-##### Alternatively.. 
-
 ```c++
 void push( IntegerStack100 &stack , int newElement )
 {
@@ -319,60 +312,28 @@ void push( IntegerStack100 &stack , int newElement )
 }
 ```
 
---
-* .red[This version passes by reference then modifies in-place, so no need to return the modified stack.]
-
----
-#### Stack: Front
-
---
-1. return the **first element**, which is pointed to by **top**.
-
----
-```c++
-int front( IntegerStack100 &stack )
-{
-    return stack.buffer[ stack.top ];
-}
-```
 ---
 #### Stack: Pop
 
-1. decrement **top**.
+--
+1. get *top* element.
+
+--
+2. **decrement** *top*.
+
 
 --
 ```c++
-IntegerStack100 pop( IntegerStack100 stack )
+int pop( IntegerStack100 &stack )
 {
+    int lifo = stack.buffer[ stack.top ];
     --stack.top;
-    return stack;
+    return lifo;
 }
 ```
 
---
-* .red[This version passes by value then returns the new stack.]
-
-
 ---
-#### Stack: Pop
-##### Alternatively.. 
-
-1. decrement **top**.
-
---
-```c++
-void pop( IntegerStack100 &stack )
-{
-    --stack.top;
-}
-```
-
---
-* .red[This version passes by reference then modifies in-place, so no need to return the modified stack.]
-
----
-#### Stack: Size
-##### Retrieving the size of stack
+#### Retrieving the size of stack
 
 --
 ```c++
@@ -383,8 +344,8 @@ int size( IntegerStack100 &stack )
 ```
 
 ---
-#### Stack: Empty?
-##### Asking our stack if it is empty
+#### Asking our stack if it is empty
+
 
 --
 ```c++
@@ -402,11 +363,7 @@ bool isEmptyStack( IntegerStack100 &stack )
 ```
 
 ---
-#### Stack: Empty?
-##### Asking our stack if it is empty
-
---
-###### Alternatively..
+#### Good practices
 
 ```c++
 bool isEmptyStack( IntegerStack100 &stack )
@@ -416,13 +373,6 @@ bool isEmptyStack( IntegerStack100 &stack )
 ```
 
 ---
-class: center, middle
-
-## .red[**Tutorial 4 ENDS HERE**]
-
-
----
-class: left, top
 ## Linked Lists
 
 #### Arrays vs. LL
@@ -460,8 +410,10 @@ Each element in **LL** can see the *next* element.
 
 --
 * Each element => *node*. 
+
 --
 * To connect between nodes => **pointers**. 
+
 --
 * *node* has a **pointer** pointing to the *next node*.
 
@@ -515,27 +467,6 @@ struct CharLinkedList
 }
 ```
 
----
-#### *Insert* element to the front:
-
---
-```c++
-void insertToFront( CharLinkedList &list , char newElement )
-{
-    node *newFront = new node{ newElement , list.head };
-    list.head = newFront;
-}
-```
-
---
-##### Alternatively...
-```c++
-void insertToFront( CharLinkedList &list , char newElement )
-{
-    list.head = new node{ newElement , list.head };
-}
-```
-
 --
 ### Tail (back)
 
@@ -551,7 +482,7 @@ struct CharLinkedList
 ```
 
 ---
-#### *Insert* element to the back:
+#### *Insert* element on the back:
 
 --
 ```c++
@@ -606,7 +537,7 @@ void insertToList( CharLinkedList &list , char newElement )
 ```c++
 // Let's make a new type for our Queue with a name indicating its properties:
 // 1. Our element types are integers.
-// 2. The ADT is Queue
+// 2. The ADT is Stack
 // 3. Maximum size is 100
 struct DoubleQueue100
 {
@@ -642,4 +573,57 @@ struct DoubleQueue{
 class: left, top
 # Thank you
 
-</textarea>
+    </textarea>
+    
+    
+
+    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+    <script src="/javascript/remark.min.js"></script>
+  
+    <script type="text/javascript">
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+  
+    <script type="text/javascript">
+      var options = {
+        ratio: '4:3',
+        highlightStyle: 'github',
+        countIncrementalSlides: false
+      };
+      var slideshow = remark.create(options);
+  
+      // extract the embedded styling from ansi spans
+      $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+        return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+      });
+  
+    </script>
+  
+    <script src="/mathjax/MathJax.js"></script>
+  
+    <script type="text/javascript">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+        jax: ["input/TeX", "output/HTML-CSS"],
+        "HTML-CSS": {
+          availableFonts: ["TeX"],
+          imageFont: null
+        },
+        MathMenu: {
+          showRenderer: false,
+          showFontMenu: false,
+          showLocale: false
+        }
+      });
+    </script>
+
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  
+  
+  </body>
+</html>
+
