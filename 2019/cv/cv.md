@@ -70,6 +70,8 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
     * [Section Notes]({% link 2019/cv/notes/4_week4.md %}){:target="_blank"}
 * Week 5. Harris operator, Otsu thresholding, and Revision:
     * [Slides]({{ site.baseurl }}{% link 2019/cv/presentations/5_week5/index.md %}){:target="_blank"}
+* Week 6. Region Growing and Clustering Segmentation:
+    * [Section Notes]({% link 2019/cv/notes/6_week6.md %}){:target="_blank"}
 
 
 ## Assignments
