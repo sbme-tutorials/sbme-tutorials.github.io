@@ -82,10 +82,16 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/7_week7/index.md %}){:target="_blank"}
     * Section Notes: \[[Binary Search Trees, Sets (ADT) and Maps (ADT)]({{ site.baseurl }}{% link 2019/data-structures/notes/7_week7.md %}){:target="_blank"}\]
     * [Individual assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/7_week7.md %}){:target="_blank"}
-  
+1. Week 8:
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/8_week8/index.md %}){:target="_blank"}.
+    * Section Notes: \[[Heaps, Priority Queues (ADT), and Shortest Path Problem]({{ site.baseurl }}{% link 2019/data-structures/notes/8_week8.md %}){:target="_blank"}\] \[[Introduction to CMake]({{ site.baseurl }}{% link 2019/data-structures/notes/cmake.md %}){:target="_blank"}\]
 
 ## STL Tutorials
 
 In parallel to the core course, an introductory course to the standard template library (STL) to establish familiarity with its various data structures implementations. The notes series are listed in [ Introduction to the C++ Standard Template Library \(STL\)]({{ site.baseurl }}{% link 2019/stl-intro/stl-intro.md %}){:target="_blank"}.
 
-## Frequently Asked Questions
+## Report Errata
+
+Help improving the content by reporting and fixing the typos and syntax errors.
+
+<a class="github-button" href="https://github.com/sbme-tutorials/sbme-tutorials.github.io/issues" data-size="large" data-show-count="true" aria-label="Issue sbme-tutorials/sbme-tutorials.github.io on GitHub">Issue</a> <a class="github-button" href="https://github.com/sbme-tutorials/sbme-tutorials.github.io/fork" data-size="large" data-show-count="true" aria-label="Fork sbme-tutorials/sbme-tutorials.github.io on GitHub">Fork</a> 
