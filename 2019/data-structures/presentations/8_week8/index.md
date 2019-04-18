@@ -126,6 +126,17 @@ Insertion procedures:
 ![treearray](/gallery/Binary_tree_in_array.svg)
 
 ---
+
+
+
+
+### NOTE
+We will implement min_heap(the data contianed in each node less than the data in that node's children).
+
+
+
+
+----
 #### Implementation: Buffer
 
 ```c++
