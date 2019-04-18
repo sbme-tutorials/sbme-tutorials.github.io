@@ -517,13 +517,13 @@ struct CharNode
     CharNode *next;
 
     // default constructor.
-    Node()
+    CharNode()
     {
         next = nullptr;
     }
 
     // when user provides a value for data member, or both.
-    Node( char value, Node *nextPtr = nullptr )
+    CharNode( char value, Node *nextPtr = nullptr )
     {
         next = nextPtr;
         data = value;
