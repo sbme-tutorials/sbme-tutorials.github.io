@@ -100,7 +100,7 @@ Insertion procedures:
 
 |Layout |
 |--------|
-| ![heapdel2](/gallery/heapindel/Heap_delete_step0.svg) |
+| ![heapdel2](/gallery/heapindel/Heap_remove_step1.svg) |
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 
@@ -109,7 +109,7 @@ Insertion procedures:
 
 |Layout |
 |--------|
-|  ![heapdel3](/gallery/heapindel/Heap_delete_step0.svg) |
+|  ![heapdel3](/gallery/heapindel/Heap_remove_step2.svg) |
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 ---
