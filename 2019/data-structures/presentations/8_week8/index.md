@@ -100,7 +100,11 @@ Insertion procedures:
 
 |Layout |
 |--------|
+<<<<<<< HEAD
 | ![heapdel2](/gallery/heapindel/Heap_remove_step1.svg) |
+=======
+| ![heapdel2](/gallery/heapindel/Heap_delete_step1.svg) |
+>>>>>>> upstream/master
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 
@@ -109,16 +113,15 @@ Insertion procedures:
 
 |Layout |
 |--------|
+<<<<<<< HEAD
 |  ![heapdel3](/gallery/heapindel/Heap_remove_step2.svg) |
+=======
+|  ![heapdel3](/gallery/heapindel/Heap_delete_step2.svg) |
+>>>>>>> upstream/master
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 ---
 ### Implementation of Max-Heap Using Arrays
-
-| Conceptual Representation |
-|---------------------|
-| ![heaptree](/gallery/heaptree.png) |
-| ![heapconcrete](/gallery/heapconcrete.png) |
 
 ---
 #### Implementation: Buffer
@@ -129,7 +132,6 @@ Insertion procedures:
 ### NOTE
 
 We will implement **min-heap**, which has every node's value less then its children.
-
 
 ---
 #### Implementation: Buffer

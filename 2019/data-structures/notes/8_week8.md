@@ -68,15 +68,18 @@ In a similar way to insertion, when we pop the maximum of max-heap (its root), w
 | Steps | Layout |
 |-------|--------|
 | | ![heapdel1](/gallery/heapindel/Heap_delete_step0.svg) |
+<<<<<<< HEAD
 | We remove the 11 and replace it with the 4. | ![heapdel2](/gallery/heapindel/Heap_remove_step1.svg) |
 | Now the heap property is violated since 8 is greater than 4. In this case, swapping the two elements, 4 and 8, is enough to restore the heap property and we need not swap elements further | ![heapdel3](/gallery/heapindel/Heap_remove_step2.svg) |
+=======
+| We remove the 11 and replace it with the 4. | ![heapdel2](/gallery/heapindel/Heap_delete_step1.svg) |
+| Now the heap property is violated since 8 is greater than 4. In this case, swapping the two elements, 4 and 8, is enough to restore the heap property and we need not swap elements further | ![heapdel3](/gallery/heapindel/Heap_delete_step2.svg) |
+>>>>>>> upstream/master
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
-### Implementation using arrays
+### Min-heap implementation using arrays
 
 #### Implementation: Buffer
-
-![treearray](/gallery/Binary_tree_in_array.svg)
 
 ```c++
 struct Heap
