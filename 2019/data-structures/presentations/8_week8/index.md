@@ -100,7 +100,7 @@ Insertion procedures:
 
 |Layout |
 |--------|
-| ![heapdel2](/gallery/heapindel/Heap_delete_step0.svg) |
+| ![heapdel2](/gallery/heapindel/Heap_delete_step1.svg) |
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 
@@ -109,16 +109,11 @@ Insertion procedures:
 
 |Layout |
 |--------|
-|  ![heapdel3](/gallery/heapindel/Heap_delete_step0.svg) |
+|  ![heapdel3](/gallery/heapindel/Heap_delete_step2.svg) |
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 ---
 ### Implementation of Min-Heap Using Arrays
-
-| Conceptual Representation |
-|---------------------|
-| ![heaptree](/gallery/heaptree.png) |
-| ![heapconcrete](/gallery/heapconcrete.png) |
 
 ---
 #### Implementation: Buffer
@@ -129,7 +124,6 @@ Insertion procedures:
 ### NOTE
 
 We will implement **min-heap**, which has every node's value less then its children.
-
 
 ---
 #### Implementation: Buffer
