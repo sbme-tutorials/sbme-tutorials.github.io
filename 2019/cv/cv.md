@@ -54,7 +54,10 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
 |   1  | Image Processing 1 (Operators) | Assignment 1 |
 |   2  | Image in Frequency Domain |   |
 |   3  | Histogram processing |   |
-|   4  | Hough Transform (Line and Circle Detection) |   |
+|   4  | Hough Transform (Line and Circle Detection) | Assignment 2 |
+|   5  | Harris operator, Otsu thresholding |   |
+|   6  | Region Growing and Clustering Segmentation |   |
+|   7  | Feature Extraction, Description and matching | Assignment 3  |
 
 ## Tutorials
 
@@ -72,6 +75,8 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
     * [Slides]({{ site.baseurl }}{% link 2019/cv/presentations/5_week5/index.md %}){:target="_blank"}
 * Week 6. Region Growing and Clustering Segmentation:
     * [Section Notes]({% link 2019/cv/notes/6_week6.md %}){:target="_blank"}
+* Week 7. Feature Extraction, Description and matching:
+    * [Section Notes]({% link 2019/cv/notes/7_week7.md %}){:target="_blank"}
 
 
 ## Assignments
