@@ -142,7 +142,7 @@ project( batman )
 The first five lines describe important attributes in the project:
 
 1. [`cmake_minimum_required`](https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html) to specify a minumum *cmake* version to run this script. This is used to maintain compatibility.
-1. setting some first-class-citezen variables to declare our usage of the modern C++11 standard. The [`set`](https://cmake.org/cmake/help/v3.11/command/set.html) takes two parameters seperated by a space. The first parameter is the variable name, while the second parameter is the value of that variable. Further and advanced details about CMake native variables at [CMake useful variables](https://cmake.org/Wiki/CMake_Useful_Variables). You can also make custom variables to be used and referred in different parts of *CMake* script. For this small task, we won't need to make custom variables in the CMake script.
+1. setting some first-class-citezen variables to declare our usage of the modern C++11 standard. The [`set`](https://cmake.org/cmake/help/v3.11/command/set.html) takes two parameters seperated by a space. The first parameter is the variable name, while the second parameter is the value of that variable. Further and advanced details about CMake native variables at [CMake useful variables](https://gitlab.kitware.com/cmake/community/wikis/doc/cmake/Useful-Variables). You can also make custom variables to be used and referred in different parts of *CMake* script. For this small task, we won't need to make custom variables in the CMake script.
 1. [`project`](https://cmake.org/cmake/help/latest/command/project.html) here we give a name to our project.
 
 Afterwards, let's define the structure of our project by the following lines:
