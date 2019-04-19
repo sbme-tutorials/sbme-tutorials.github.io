@@ -113,7 +113,7 @@ Insertion procedures:
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
 ---
-### Implementation of Min-Heap Using Arrays
+### Implementation of Max-Heap Using Arrays
 
 | Conceptual Representation |
 |---------------------|
