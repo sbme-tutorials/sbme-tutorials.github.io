@@ -523,7 +523,7 @@ struct CharNode
     }
 
     // when user provides a value for data member, or both.
-    CharNode( char value, Node *nextPtr = nullptr )
+    CharNode( char value, CharNode *nextPtr = nullptr )
     {
         next = nextPtr;
         data = value;
@@ -604,7 +604,7 @@ struct CharNode
     }
 
     // when user provides a value for data member, or both.
-    CharNode( char value, Node *nextPtr = nullptr )
+    CharNode( char value, CharNode *nextPtr = nullptr )
     {
         next = nextPtr;
         data = value;
