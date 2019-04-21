@@ -608,7 +608,7 @@ Growth function (average case) $$T(n) \approx 2 \log_2(n)$$
 
 ##### Set: Insertion (solution 2)
 
-1. Check for uniqueness in the insertion routine.
+1. Preserve uniqueness in the insertion routine.
 
 --
 ```c++
@@ -631,7 +631,7 @@ void add( BSTNode *&tree, int data ) // Copy routine of `insert`
 
 ##### Set: Insertion (solution 2)
 
-1. Check for uniqueness in the insertion routine.
+1. Preserve uniqueness in the insertion routine.
 
 
 ```c++

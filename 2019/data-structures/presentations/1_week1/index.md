@@ -853,7 +853,7 @@ int main()
   double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
 
-  std::cout << "Rectangle area: " << squareArea << std::endl 
+  std::cout << "Rectangle area: " << rectangleArea << std::endl 
             << "Triangle area: " << triangleArea << std::endl;
 }
 ```
