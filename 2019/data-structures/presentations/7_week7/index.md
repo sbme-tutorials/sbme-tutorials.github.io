@@ -646,6 +646,9 @@ void add( BSTNode *&tree, int data )
 
         else if( data > tree->data )
             add( tree->right, data );
+
+        // If `data` happens to equal `tree->data`, then we are not in business.
+        // So uniqueness is guaranteed here.
     }
 }
 ```
