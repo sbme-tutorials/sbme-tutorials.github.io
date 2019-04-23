@@ -85,7 +85,10 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 1. Week 8:
     * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/8_week8/index.md %}){:target="_blank"}.
     * Section Notes: \[[Heaps, Priority Queues (ADT), and Shortest Path Problem]({{ site.baseurl }}{% link 2019/data-structures/notes/8_week8.md %}){:target="_blank"}\] \[[Introduction to CMake]({{ site.baseurl }}{% link 2019/data-structures/notes/cmake.md %}){:target="_blank"}\]
-
+1. Week 9:
+    * Section Notes: \[[Hash tables]({{ site.baseurl }}{% link 2019/data-structures/notes/9_week9.md %}){:target="_blank"}\]
+    * [Slides]({{ site.baseurl }}{% link 2019/data-structures/presentations/9_week9/index.md %}){:target="_blank"}.
+    
 ## STL Tutorials
 
 In parallel to the core course, an introductory course to the standard template library (STL) to establish familiarity with its various data structures implementations. The notes series are listed in [ Introduction to the C++ Standard Template Library \(STL\)]({{ site.baseurl }}{% link 2019/stl-intro/stl-intro.md %}){:target="_blank"}.

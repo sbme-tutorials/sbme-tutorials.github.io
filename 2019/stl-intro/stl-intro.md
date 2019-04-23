@@ -42,6 +42,8 @@ Also, an important objective is to involve applications that are:
     * [Notes]({{ site.baseurl }}{% link 2019/stl-intro/notes/1_oop1.md %}){:target="_blank"}
 1. Tutorial 2:
     * [Slides]({{ site.baseurl }}{% link 2019/stl-intro/presentations/2_oop2/index.md %}){:target="_blank"}.
+1. Tutorial 3:
+    * [Slides]({{ site.baseurl }}{% link 2019/stl-intro/presentations/3_stl_misc/index.md %}){:target="_blank"}.
 
 ## Topics covered by this series
 
