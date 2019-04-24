@@ -17,8 +17,8 @@ title: Tutorials for SBME Students
 author: Asem Alaa
 email: asem.a.abdelaziz@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  These pages shall contain all the materials corresponding to 
-  courses, assigned to me, in the SBME department at Cairo University.
+  These pages contain online teaching materials prepared by teaching assistants
+  in the biomedical engineering department at Cairo University.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 

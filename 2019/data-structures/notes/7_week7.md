@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "notes"
-year: "2018"
+year: "2019"
 title:  "Week 7: Binary Search Trees, Sets (ADT) and Maps (ADT)"
 by: "Asem"
 ---

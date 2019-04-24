@@ -608,7 +608,7 @@ Growth function (average case) $$T(n) \approx 2 \log_2(n)$$
 
 ##### Set: Insertion (solution 2)
 
-1. Check for uniqueness in the insertion routine.
+1. Preserve uniqueness in the insertion routine.
 
 --
 ```c++
@@ -631,7 +631,7 @@ void add( BSTNode *&tree, int data ) // Copy routine of `insert`
 
 ##### Set: Insertion (solution 2)
 
-1. Check for uniqueness in the insertion routine.
+1. Preserve uniqueness in the insertion routine.
 
 
 ```c++
@@ -646,6 +646,9 @@ void add( BSTNode *&tree, int data )
 
         else if( data > tree->data )
             add( tree->right, data );
+
+        // If `data` happens to equal `tree->data`, then we are not in business.
+        // So uniqueness is guaranteed here.
     }
 }
 ```
@@ -1587,7 +1590,7 @@ int main()
 --
 * Practice Enum classes and constructors.
 --
-* [Make-up individual assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5b.md %}){:target="_blank"}
+* [Make-up individual assignment (Linked Lists, Stacks, and Queues)]({{ site.baseurl }}{% link 2019/data-structures/assignments/5_week5remake.md %}){:target="_blank"}
 
 
 

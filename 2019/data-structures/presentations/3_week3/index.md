@@ -244,14 +244,14 @@ char *dna_chromosome11 = new char[ 150000 ];
 loadDNA( dna_chromosome11 , 150000 , "/home/user/chromosomes/some-dna.txt");
 
 // Do some interesting analysis on your genome.
-someInterestingFunction( &dna_chromosome[0] , 150000 );
+someInterestingFunction( &dna_chromosome11[0] , 150000 );
 
 // Another operations on array1
 anotherInterestingFunction( &array1[0] , 900 );
 
 // After we no longer need array1,
 delete [] array1; // Note the square brackets!
-delete [] dna_chromosome;
+delete [] dna_chromosome11;
 ```
 
 ---
