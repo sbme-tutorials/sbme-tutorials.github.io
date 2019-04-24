@@ -186,7 +186,7 @@ $ git config --global user.email johndoe@example.com
 
 #### Generate the skeleton of your project
 
-* Open the terminal (`Ctrl`+`Alt`+`L`). The terminal will launch on your home directory by default (`/home/yourname`).
+* Open the terminal (`Ctrl`+`Alt`+`T`). The terminal will launch on your home directory by default (`/home/yourname`).
 * Create a directory with name `hello-git` using the following command:
 
 {% highlight bash %}

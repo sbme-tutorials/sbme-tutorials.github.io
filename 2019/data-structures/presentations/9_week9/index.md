@@ -137,8 +137,8 @@ bool isEmpty(HashChainingTable &table)
 ```c++
 bool isEmpty(HashChainingTable &table)
 {
-    return std::all_of(  table.cbegin(),  table.cend(),
-        []( auto &bucket ){ return bucket.empty()});
+    return std::all_of(  table.bucket.cbegin(),  table.bucket.cend(),
+        []( auto &b ){ return b.empty()});
 }
 ```
 
@@ -180,7 +180,7 @@ int size(HashChainingTable &table)
 ```c++
 int size(HashChainingTable &table)
 {
-    return std::accumulate( table.cbegin() , table.cend(), 0 ,
+    return std::accumulate( table.bucket.cbegin() , table.bucket.cend(), 0 ,
     []( int acc , auto &b ))
     {
         return acc + b.size();
