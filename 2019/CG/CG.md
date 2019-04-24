@@ -80,6 +80,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 8: Visualization Toolkit (VTK)
     * [Slides]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md%}){:target="_blank"}
 
+* Week 9: Revision
+    * [Notes](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/blob/master/Revision.ipynb){:target="_blank"}
+
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2019/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
