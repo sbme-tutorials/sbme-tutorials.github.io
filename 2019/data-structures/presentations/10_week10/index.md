@@ -17,14 +17,52 @@ author: "Asem Alaa"
 ---
 ## Sorting overview
 
+1. .green[Bubble sorting]: $O(n^2)$
+2. .green[Selection sorting]: $O(n^2)$
+3. .green[Heap sort]: $O(nlog(n))$
+--
+1. Insertion sort
+--
+1. Merge sort
+--
+1. Quick sort
 
+
+
+---
+## Insertion sorting
+.footnote[Objects Abstraction Data Structures and Design Using C++, Elliot B. Koffman and Paul A.T. Wolfgang]
+
+* Inspired by Cards players.
+
+--
+<img src="cards.png" width="90%">
+
+--
+.center[<img src="insertion.png" width="50%">]
+
+
+---
+### Insertion sorting: in-class demo
+
+
+--
+```c++
+void insertionSort(std::vector<int> &data)
+{
+
+}
+```
+
+--
+#### Pull-request to add the implementation
 
 ---
 ## Divide and Conquer Strategy: The Merge Sorting
 
 1. Break the big problem into smaller ones.
-1. Solve the smaller problems.
-1. Combine the solutions to get the solution of the big problem.
+2. Solve the smaller problems.
+3. Combine the solutions to get the solution of the big problem.
 
 ---
 | Merge Sort animated |
@@ -205,8 +243,58 @@ int partition( std::vector< double > &a, int low, int high )
 The source code:
 
 ```bash
-git clone git@github.com:sbme-tutorials/sbe201-merge.git
+git clone git@github.com:sbme-tutorials/sbe201-merge-quick.git
 ```
+
+
+---
+class: center
+## Stable sorting vs. non-stable sorting
+
+<figure >
+<img src="stable.png" width="70%">
+<figcaption>Image showing the effect of stable sorting</figcaption>
+</figure>
+
+<figure >
+<img src="nonstable.png" width="70%">
+<figcaption>Image showing the effect of unstable sorting</figcaption>
+</figure>
+
+[{Stability in Sorting Algorithms — A Treatment of Equality}](https://medium.freecodecamp.org/stability-in-sorting-algorithms-a-treatment-of-equality-fa3140a5a539)
+
+
+---
+## Stable sorting vs. non-stable sorting
+
+--
+### Stable Sorting Algorithms:-
+
+- Insertion Sort
+- Merge Sort
+- Bubble Sort
+
+--
+### Unstable Sorting Algorithms:-
+
+- Heap Sort
+- Selection sort
+- Quick Sort
+
+
+---
+## Sorting applications
+
+--
+1. Make data searchable (e.g binary search, suffix arrays).
+--
+1. Lossless compression algorithms (e.g suffix arrays).
+--
+1. Lossy compression algorithms (e.g sort eigen values in PCA)
+--
+1. Machine learning (e.g nearest neighbors)
+--
+1. Networks analysis (e.g minimum spanning trees)
 
 
 ---
@@ -219,11 +307,6 @@ git clone git@github.com:sbme-tutorials/sbe201-merge.git
 
 ---
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kPRA0W1kECg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
-
----
-## Stable sorting vs. non-stable sorting
-
 
 
 ---
