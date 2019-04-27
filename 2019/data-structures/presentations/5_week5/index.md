@@ -20,7 +20,7 @@ struct Position
 {
     double x;
     double y;
-}
+};
 
 using Coordinates = Position;
 ```

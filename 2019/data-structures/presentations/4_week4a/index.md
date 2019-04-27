@@ -136,7 +136,7 @@ struct ECGArray // We could name it also DoubleArray
 {
     double *samples;
     int size;
-}
+};
 
 struct Statistics
 {
@@ -144,7 +144,7 @@ struct Statistics
     double variance = 0 ;
     double min = 0;
     double max = 0;
-}
+};
 
 // Very self-explaining function header!
 Statistics analyzeECG( ECGArray ecg )
@@ -192,7 +192,7 @@ struct Rectangle
 {
     double w;
     double h;
-}
+};
 
 double area( double d )
 {
@@ -263,7 +263,7 @@ struct IntegerStack100
 {
     int buffer[ 100 ];
     int capacity = 100;
-}
+};
 ```
 
 ---
@@ -512,7 +512,7 @@ We need to make a `struct` that will **encapsulate** our **LL**.
 struct CharLinkedList
 {
     node *head;
-}
+};
 ```
 
 ---
@@ -547,7 +547,7 @@ struct CharLinkedList
 {
     node *head;
     node *tail;
-}
+};
 ```
 
 ---

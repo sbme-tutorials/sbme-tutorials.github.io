@@ -1178,7 +1178,7 @@ struct Map
     void printAll( const MapNode *wmap ){ /* Logic */}
 
     int &value( MapNode *&wmap, const std::string &key ){ /* Logic */}
-}
+};
 ```
 
 ---
@@ -1207,7 +1207,7 @@ struct Map
     void printAll() const { /* Logic */}
 
     int &value( const std::string &key ){ /* Logic */}
-}
+};
 ```
 
 --
@@ -1237,7 +1237,7 @@ struct Map
         } else return 0;
     }
     ...
-}
+};
 ```
 
 ---
@@ -1261,7 +1261,7 @@ struct Map
         } else return 0;
     }
     ...
-}
+};
 ```
 
 --
@@ -1288,7 +1288,7 @@ struct Map
         } else return 0;
     }
     ...
-}
+};
 ```
 
 --
@@ -1318,7 +1318,7 @@ struct Map
     void clear(){ /* Logic */}
     void printAll() const { /* Logic */}
     int &value( const std::string &key ){ /* Logic */}
-}
+};
 ```
 
 ---
@@ -1339,7 +1339,7 @@ struct Map
     void clear(){ clear( root ); }
     void printAll() const { printAll( root ); }
     int &value( const std::string &key ){  return value( root , key ); }
-}
+};
 ```
 
 ---
@@ -1369,7 +1369,7 @@ struct Map
     static void clear(  MapNode *&root ){ /* Logic */}
     static void printAll( const MapNode *root ) { /* Logic */}
     static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
-}
+};
 ```
 
 ---
@@ -1399,7 +1399,7 @@ private:
     static void clear(  MapNode *&root ){ /* Logic */}
     static void printAll( const MapNode *root ) { /* Logic */}
     static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
-}
+};
 ```
 
 ---
@@ -1477,7 +1477,7 @@ private:
     static void clear(  MapNode *&root ){ /* Logic */}
     static void printAll( const MapNode *root ) { /* Logic */}
     static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
-}
+};
 ```
 
 ---
@@ -1508,7 +1508,7 @@ private:
     static void clear(  MapNode *&root ){ /* Logic */}
     static void printAll( const MapNode *root ) { /* Logic */}
     static V &value(  MapNode *&root , const K &key ){ /* Logic */}
-}
+};
 ```
 
 ---
