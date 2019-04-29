@@ -229,7 +229,7 @@ else
   // Other operations here.
 }
 
-char mark = 73;
+int mark = 73;
 char grade = 'D';
 
 if( mark > 85 )
