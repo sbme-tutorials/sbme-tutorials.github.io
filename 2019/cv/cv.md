@@ -58,6 +58,7 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
 |   5  | Harris operator, Otsu thresholding |   |
 |   6  | Region Growing and Clustering Segmentation |   |
 |   7  | Feature Extraction, Description and matching | Assignment 3  |
+|   7  | Principle Component Analysis(PCA) and face recognition |   |
 
 ## Tutorials
 
@@ -77,6 +78,8 @@ Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar
     * [Section Notes]({% link 2019/cv/notes/6_week6.md %}){:target="_blank"}
 * Week 7. Feature Extraction, Description and matching:
     * [Section Notes]({% link 2019/cv/notes/7_week7.md %}){:target="_blank"}
+* Week 8. Principle Component Analysis(PCA) and face recognition:
+    * [Section Notes]({% link 2019/cv/notes/8_week8.md %}){:target="_blank"}
 
 
 ## Assignments
