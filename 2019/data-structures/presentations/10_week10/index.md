@@ -220,8 +220,10 @@ void quickSort( std::vector< double > &a, int low, int high)
     if (low < high)
     {
         int pIdx = partition(a, low, high);
-        quickSort(a, low, pIdx - 1);  // Before pIdx
-        quickSort(a, pIdx + 1, high); // After pIdx
+        if (low < pIdx)
+            quickSort(a, low, pIdx - 1); // Before pivot
+        if (high > pIdx)
+            quickSort(a, pIdx + 1, high); // After pivot
     }
 }
 ```
@@ -233,18 +235,21 @@ void quickSort( std::vector< double > &a, int low, int high)
 ```c++
 int partition( std::vector< double > &a, int low, int high )
 {
-    int pivot = a[low];  
- 
-    int i = low , j = high;
+    double pivot = a[low];
 
-    while( i <= j )
+    int i = low + 1, j = high;
+
+    while (i <= j)
     {
-        while( a[ i ] < pivot ) ++i;
-        while( a[ j ] > pivot ) --j;
-        if( i <= j )
-            std::swap( a[i++] , a[j--]);
+        while (i <= j && a[i] < pivot)
+            ++i;
+        while (i <= j && a[j] > pivot)
+            --j;
+        if (i <= j)
+            std::swap(a[i++], a[j--]);
     }
-    return low;
+    std::swap( a[--i] , a[low] );
+    return i;
 }
 ```
 
