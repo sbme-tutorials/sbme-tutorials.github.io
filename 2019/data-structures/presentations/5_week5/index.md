@@ -446,7 +446,6 @@ struct DoubleNode
 {
     double data;
     DoubleNode *next;
-    DoubleNode *prev;
 };
 
 struct DoublesQueueLL
