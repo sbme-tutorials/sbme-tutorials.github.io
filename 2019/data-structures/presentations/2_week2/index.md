@@ -174,7 +174,7 @@ class: left, top
 | Flexible languages               | Opinionated languages                     |
 | -------------------------------- | ----------------------------------------- |
 | * .green[Powerful and efficient] | * .red[Usually inefficient in comparison] |
-| * .red[ Overhead to learn ]      | * .green[ Easier to learn ]               |
+| * .red[ Overhead to learn ]      | * .green[Easier to learn]                 |
 | * C++, C                         | * Java, C#, Python                        |
 ---
 class: left, top
@@ -374,7 +374,7 @@ class: left, top
 
 | Stack Memory                            | Heap Memory                                        |
 | --------------------------------------- | -------------------------------------------------- |
-| * .red[ Limited capacity ]              | * .green[ Large capacity for scalable structures ] |
+| * .red[ Limited capacity ]              | * .green[Large capacity for scalable structures]   |
 | * .green[ Automatic memory management ] | * .red[ Manual memory management ]                 |
 
 ---
@@ -525,7 +525,7 @@ int main()
 
 ---
 class: left, top
-## KISS: keep it simple and stupid
+## KISS: keep it simple, stupid
 
 More about [{KISS}](https://en.wikipedia.org/wiki/KISS_principle) principle.
 

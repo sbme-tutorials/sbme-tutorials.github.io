@@ -81,7 +81,8 @@ g++ -Wall -std=c++11 source_code.cpp -o output_name
 
 
 --
-<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=593432766bee1c0400365b82" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
+<img src="/gallery/LinkedList/Week5_LL_Hi.gif" style="width:100%">
+© algomation.com
 
 ---
 ### LL operations:
@@ -312,8 +313,8 @@ char front( CharStackLL &stack )
 ---
 ### Stack-LL: Push-to-front operation
 
-<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0caa54833c1040095d574" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
-
+<img src="/gallery/LinkedList/Week5_Stack_Push.gif" style="width:100%">
+© algomation.com
 ---
 ### Stack-LL: Push-to-front operation
 
@@ -361,8 +362,8 @@ void push( CharStackLL &stack , char data )
 
 When popping an element from the front,
 
-<iframe allowfullscreen src="http://www.algomation.com/embeddedplayer?embedded=true&algorithm=58a0d1144833c1040095d586" width="600" height="371" seamless="seamless" frameborder="0" style="border:1px solid lightgray" scrolling="no"></iframe>
-
+<img src="/gallery/LinkedList/Week5_Stack_Pop.gif" style="width:100%">
+© algomation.com
 
 ---
 ```c++
