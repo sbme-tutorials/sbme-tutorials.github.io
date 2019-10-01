@@ -28,6 +28,7 @@ Demonstrators:  Eng. Ayman Anwar.
 | Day | Time |
 |-----|-----------|
 | Tuesday | from **12pm** to **4pm** |
+| Thursday | from **12pm** to **6pm** |
 
 extra office hours requested via E-Mail to **ayman.anwar.bio@gmail.com** (Subject : EXOFH)
 
@@ -35,10 +36,8 @@ extra office hours requested via E-Mail to **ayman.anwar.bio@gmail.com** (Subjec
 
 | Week | Content |  Tasks
 |------|-----------------|-----|
-|   1  | ER model and basic SQL statments | ---- |
-|   2  | Aggregate functions | ---- |
-|   3  | SQL constraint & Joins | ---- |
-|   4  | Strings , Transactions and Triggers | ---- |
+|   1  | Introduction to full stack development and database managment systems | ---- |
+|   2  | ER model and basic SQL statements | ---- |
 
 ## Required installations
 visit [AMPPS](https://www.ampps.com/downloads) and download the latest version according to your distributions.
@@ -83,13 +82,8 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 ## Tutorials
 
 * Week 1
+    * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week1.md%}){:target="_blank"}
-* Week 2
-    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week2.md%}){:target="_blank"}
-* Week 3
-    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week3.md%}){:target="_blank"}
-* Week 4
-    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week4.md%}){:target="_blank"}
 
 
 
