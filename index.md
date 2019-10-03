@@ -8,6 +8,7 @@ layout: home
 
 ## Fall 2019 
 
+* [Biostatistics]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by Prof. Ayman M. Eldeib, Eng. Asem Alaa. 
 * [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2019/Database/introDB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
 
 
