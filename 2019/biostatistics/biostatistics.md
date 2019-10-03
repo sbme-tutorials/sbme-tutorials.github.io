@@ -5,7 +5,7 @@ course: "sbe304"
 year: "2019"
 ---
 
-# Data Structures \(SBE304\) - Spring 2019
+# Biostatistics \(SBE304\) - Fall 2019
 
 ## Teaching Staff
 
