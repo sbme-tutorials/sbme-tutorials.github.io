@@ -38,7 +38,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 |------|-----|-------|----|
 | 1 |  Introduction to R and Probabilities | [Lecture 1](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-probability_6.pdf){:target="_blank"} | [Tutorial 1]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week01.pdf %}){:target="_blank"} |
 | 2 | Discrete RVs and Probability Distributions, R (distributions, data manipulation and basic visualization)  |   [Lecture 2](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-discrete_random_variables_2.pdf) | [Tutorial 2]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week02.pdf %}){:target="_blank"} |
-| 3 | Continuous RVs and their Probability Distributions, R (continous distributions, high quality visualizations)  |   [Lecture 3](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-continuous_random_variables_8.pdf) | [Tutorial 2]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week03.pdf %}){:target="_blank"} |
+| 3 | Continuous RVs and their Probability Distributions, R (continous distributions, high quality visualizations)  |   [Lecture 3](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-continuous_random_variables_8.pdf) | [Tutorial 3]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week03.pdf %}){:target="_blank"} |
 
 
 <!-- | 3 |  |  | |
