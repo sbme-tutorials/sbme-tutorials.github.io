@@ -48,7 +48,7 @@ CREATE TABLE students(
     Fname VARCHAR(250),
     Lname VARCHAR(250),
     st_id INT NOT NULL,
-    class_id INT NOT NULL
+    class_id INT NOT NULL,
     email VARCHAR(250)
 );
 ```

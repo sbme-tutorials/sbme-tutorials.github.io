@@ -81,10 +81,17 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 
 ## Tutorials
 
+### HEMN230
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
-    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/week1.md%}){:target="_blank"}
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek1.md%}){:target="_blank"}
+* Week 2
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek2.md%}){:target="_blank"}
 
-
+### SBE306
+* Week 1
+    * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
+* Week 2
+    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek2.md%}){:target="_blank"}
 
 ## Announcements
