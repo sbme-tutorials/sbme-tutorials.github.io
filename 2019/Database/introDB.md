@@ -11,7 +11,7 @@ year: "2019"
 
 ## Teaching Staff
 
-Instructor: Dr. Ahmed Kandil. 
+Instructor: Dr. Ahmed Kandil.
 
 Demonstrators:  Eng. Ayman Anwar.  
 
@@ -40,6 +40,7 @@ extra office hours requested via E-Mail to **ayman.anwar.bio@gmail.com** (Subjec
 |   2  | ER model and basic SQL statements | ---- |
 
 ## Required installations
+
 visit [AMPPS](https://www.ampps.com/downloads) and download the latest version according to your distributions.
 
 1. windows 
@@ -82,13 +83,17 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 ## Tutorials
 
 ### HEMN230
+
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek1.md%}){:target="_blank"}
 * Week 2
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek2.md%}){:target="_blank"}
-
+* Week 3
+    * [Labnotes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek3LabNotes.md%}){:target="_blank"}
+    
 ### SBE306
+
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
 * Week 2
