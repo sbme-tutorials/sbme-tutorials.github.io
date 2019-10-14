@@ -57,6 +57,13 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     1. A selected R problems (indicated in the tutorial notes)
 * In-class demos will be uploaded to this repository: [sbme-tutorials/biostatistics-sbe304](https://github.com/sbme-tutorials/biostatistics-sbe304)
 
+## Course Project
+
+The main aim of this project is to apply our understanding from this course to solve real world problems. Since statistical techniques are typically data-driven, the project must first consists of data then and idea, for example to make _inference about the population_ from a sample, _learning from data_ to make future predictions, or just statistical modeling of data to _give interpretations on how data are generated_. Another aim of this project is to encourage the students to improve their profiles **quantitatively** by adding new programming skills (e.g R) and possibly new research interests to your profile and **qualitatively** by considering a personal website with a blog about the project in the grading process.
+
+The details of the class project can be viewed in PDF in this [project statement]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/project.pdf %}){:target="_blank"}.
+
+
 ## Report Errata
 
 Help improving the content by reporting and fixing the typos and syntax errors.
