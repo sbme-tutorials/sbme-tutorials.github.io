@@ -18,7 +18,7 @@ This week we will practice basic SQL statment tought in tutorial 1 & 2.
 
 You are requires to write any neccessary query needed to perform the operation without using PhPmyadmin.
 
-1. Create the following table:
+* Create the following table:
 
 ![](../images/lab1_table1.png)
 
@@ -34,7 +34,7 @@ CREATE TABLE cars(
 )
 ```
 
-2. provide SQL query to enter the following data
+* provide SQL query to enter the following data
 
 ![](../images/lab1_table2.png)
 
@@ -47,7 +47,7 @@ INSERT INTO cars (model,model_year,capacity,body_number) VALUES ("Dodge","2017",
 INSERT INTO cars (model,model_year,capacity,body_number,car_value) VALUES ("Kia","2020","4","11115","1000000");
 ```
 
-3. provide SQL query to view the following data
+* provide SQL query to view the following data
 
 ![](../images/lab1_table3.png)
 
@@ -73,7 +73,7 @@ SQL query:
 select model,model_year,car_value FROM cars where body_number = 11001;
 ```
 
-4. update the table to the following
+* update the table to the following
 
 ![](../images/lab1_table6.png)
 
