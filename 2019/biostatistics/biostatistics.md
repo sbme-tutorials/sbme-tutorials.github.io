@@ -39,7 +39,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 | 1 |  Introduction to R and Probabilities | [Lecture 1](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-probability_6.pdf){:target="_blank"} | [Tutorial 1]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week01.pdf %}){:target="_blank"} |
 | 2 | Discrete RVs and Probability Distributions, R (distributions, data manipulation and basic visualization)  |   [Lecture 2](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-discrete_random_variables_2.pdf) | [Tutorial 2]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week02.pdf %}){:target="_blank"} |
 | 3 | Continuous RVs and their Probability Distributions, R (continous distributions, high quality visualizations)  |   [Lecture 3](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-continuous_random_variables_8.pdf) | [Tutorial 3]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week03.pdf %}){:target="_blank"} |
-
+| 3 | Revision  |   | [Tutorial 3]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week03.pdf %}){:target="_blank"}  [Quiz]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/Quiz_15Oct.pdf %}){:target="_blank"}  |
 
 <!-- | 3 |  |  | |
 | 4 |  | | |
@@ -59,7 +59,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 
 ## Course Project
 
-The main aim of this project is to apply our understanding from this course to solve real world problems. Since statistical techniques are typically data-driven, the project must first consists of data then and idea, for example to make _inference about the population_ from a sample, _learning from data_ to make future predictions, or just statistical modeling of data to _give interpretations on how data are generated_. Another aim of this project is to encourage the students to improve their profiles **quantitatively** by adding new programming skills (e.g R) and possibly new research interests to your profile and **qualitatively** by considering a personal website with a blog about the project in the grading process.
+The main aim of this project is to apply our understanding from this course to solve real world problems. Since statistical techniques are typically data-driven, the project must first consists of data then an idea, for example to make _inference about the population_ from a sample, _learning from data_ to make future predictions, or just statistical modeling of data to _give interpretations on how data are generated_. Another aim of this project is to encourage the students to improve their profiles **quantitatively** by adding new programming skills (e.g R) and possibly new research interests to their profiles and **qualitatively** by considering a personal website with a blog about the project in the grading process.
 
 The details of the class project can be viewed in PDF in this [project statement]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/project.pdf %}){:target="_blank"}.
 
