@@ -86,9 +86,9 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
-    * [Lab notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek1.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek1.md%}){:target="_blank"}
 * Week 2
-    * [Lab notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek2.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek2.md%}){:target="_blank"}
 * Week 3
     * [Lab notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek3LabNotes.md%}){:target="_blank"}
     
