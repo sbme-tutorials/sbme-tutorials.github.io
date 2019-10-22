@@ -40,6 +40,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 | 2 | Discrete RVs and Probability Distributions, R (distributions, data manipulation and basic visualization)  |   [Lecture 2](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-discrete_random_variables_2.pdf) | [Tutorial 2]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week02.pdf %}){:target="_blank"} |
 | 3 | Continuous RVs and their Probability Distributions, R (continous distributions, high quality visualizations)  |   [Lecture 3](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-continuous_random_variables_8.pdf) | [Tutorial 3]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week03.pdf %}){:target="_blank"} |
 | 4 | Revision  |   | [Quiz]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/Quiz_15Oct.pdf %}){:target="_blank"}  |
+| 5 | Sampling Distributions and Point Estimates | [Lecture 4](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-_random_sampling_1.pdf)  | [Tutorial 4]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week04.pdf %}){:target="_blank"}  |
 
 <!-- | 3 |  |  | |
 | 4 |  | | |
