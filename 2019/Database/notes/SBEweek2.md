@@ -9,7 +9,7 @@ year: "2019"
 ---
 * TOC
 {:toc}
-# Tutorial one
+# Tutorial two
 This week we will talk about DMS and a quick intro for the Basic SQL statement.
 
 ## start ampps
@@ -53,8 +53,8 @@ CREATE TABLE students(
 );
 ```
 
-so what are available data-types for SQL ? For MoreInfo you can visit [W3schools datatypes](www.w3schools.com/sql/sql_datatypes.asp)
-and for constraint visit [W3schools constraint](www.w3schools.com/sql/sql_constraints.asp) and for sure it will be explained later on during the course.
+so what are available data-types for SQL ? For MoreInfo you can visit W3schools [datatypes](https://www.w3schools.com/sql/sql_datatypes.asp)
+and for constraint visit W3schools [constraint](https://www.w3schools.com/sql/sql_constraints.asp) and for sure it will be explained later on during the course.
 
 ### INSERT statement
 ```
