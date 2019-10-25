@@ -15,7 +15,7 @@ This week we will dive a little bit deeply for the previously explained SQL stat
 
 ## Select statement
 
-we usually retrieve the data using select statement where we can retrieve one , or or all columns from a certain table
+we usually retrieve the data using select statement where we can retrieve one , or all columns from a certain table
 
 ### LIMIT
 
@@ -69,7 +69,7 @@ Basic operator
 | AND     |  combine conditions with logical and in WHERE clause |
 | OR     |  combine conditions with logical OR in WHERE clause |
 | NOT     |  Negate operator |
-| EXISTS     | used to search te presence of a row in table or a table it self      |
+| EXISTS     | used to search te presence of a row in table or a table itself      |
 | ALL     | used to check wether all records satisfy the condition or not     |
 | ANY     | used to check wether any records satisfy the condition or not     |
 | Between     | used to search te for values in a certain range along with AND      |
@@ -176,7 +176,7 @@ during the insertion we can`t neglect entering a not NULL column it will gives a
 
 ```
 ALTER TABLE table_name 
-    ADD UNIQUE (column_name);
+    ADD column_name datatype UNIQUE;
 ```
 
 **DEFAULT** value for a column
