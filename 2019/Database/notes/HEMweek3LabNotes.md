@@ -10,13 +10,13 @@ year: "2019"
 * TOC
 {:toc}
 
-# LAb 1
+# Lab 1
 
 This week we will practice basic SQL statment tought in tutorial 1 & 2.
 
 ## Practice 1
 
-You are requires to write any neccessary query needed to perform the operation without using PhPmyadmin.
+You are requires to write any neccessary query needed to perform the operation without using PhpMyAdmin.
 
 * Create the following table:
 
