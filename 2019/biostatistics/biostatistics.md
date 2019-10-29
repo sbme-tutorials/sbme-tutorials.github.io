@@ -41,6 +41,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 | 3 | Continuous RVs and their Probability Distributions, R (continous distributions, high quality visualizations)  |   [Lecture 3](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-continuous_random_variables_8.pdf) | [Tutorial 3]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week03.pdf %}){:target="_blank"} |
 | 4 | Revision  |   | [Quiz]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/Quiz_15Oct.pdf %}){:target="_blank"}  |
 | 5 | Sampling Distributions and Point Estimates | [Lecture 4](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-_random_sampling_1.pdf)  | [Tutorial 4]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week04.pdf %}){:target="_blank"}  |
+| 6 | Estimation of Statistical Intervals | [Lecture 5](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-statistical_intervals_5.pdf)  | [Tutorial 5]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/week05.pdf %}){:target="_blank"}  |
 
 <!-- | 3 |  |  | |
 | 4 |  | | |
