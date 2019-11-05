@@ -90,15 +90,13 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 2
     * [Notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek2.md%}){:target="_blank"}
 * Week 3
-<<<<<<< HEAD
-    * [Lab notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek3LabNotes.md%}){:target="_blank"}
-    
-=======
-    * [Labnotes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek3LabNotes.md%}){:target="_blank"}
+    * [Lab-notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek3LabNotes.md%}){:target="_blank"}
 * Week 4
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek4.md%}){:target="_blank"}
     * [Introduction to python]({{ site.baseurl }}{% link 2019/Database/notes/pythonIntroduction.md%}){:target="_blank"}
     * [python Mysql]({{ site.baseurl }}{% link 2019/Database/notes/pythonMysql.md%}){:target="_blank"}
+* Week 5
+    * [Lab-notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek5LabNotes.md%}){:target="_blank"}
 
 
 ### SBE306
@@ -114,5 +112,4 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * [python Mysql]({{ site.baseurl }}{% link 2019/Database/notes/pythonMysql.md%}){:target="_blank"}
 
 
->>>>>>> upstream/master
 ## Announcements
