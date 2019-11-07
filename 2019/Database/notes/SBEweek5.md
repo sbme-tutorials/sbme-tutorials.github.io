@@ -413,27 +413,11 @@ if __name__ == '__main__':
 ```
 
 Then we modify viewdoctor.html to the following:
-* ```{{ message }}``` the curly braces is used to print variables sent from flask
+* the curly braces is used to print variables sent from flask
 
-```html
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Page Title</title>
-   </head>
+![](../images/viewdoc1.png)
 
-   <body>
-      <h1>This is view doctor tap</h1>
-
-      <h2>{{ message }}</h2>
-      <a href="http://127.0.0.1:5000">Back</a>
-
-   </body>
-</html> 
-
-```
-
-We can also send some data from the data base not only a static message.
+We can also send some data from the database not only a static message.
 **Modify** server.py  for the following to retrieve doctors and send it to viewdoctor taps
 
 ```python
@@ -477,14 +461,9 @@ def viewdoctor():
       mycursor.execute("SELECT * FROM Doctors")
       row_headers=[x[0] for x in mycursor.description] #this will extract row headers
       myresult = mycursor.fetchall()
-      rec = []
-      for x in myresult:
-         rec.append(list(x)
-         )
-      print(rec)
       data={
          'message':"data retrieved",
-         'rec':rec,
+         'rec':myresult,
          'header':row_headers
       }
       return render_template('viewdoctor.html',data=data)
@@ -496,34 +475,5 @@ if __name__ == '__main__':
 
 Lastly We modify viewdoctor.html file as the following
 
-```html
-<!DOCTYPE html>
-<html>
-   <head>
-      <title>Page Title</title>
-   </head>
+![](../images/viewdoc2.png)
 
-   <body>
-      <h1>This is view doctor tap</h1>
-
-      <table>
-      <tr>
-         {% for rh in data.header %}
-         <th>{{ rh }}</th>
-         {% endfor %}
-      </tr>
-      {% for r in data.rec %}
-      <tr>
-         {% for l in r%}
-         <td>{{l}}</td>
-         {% endfor %}
-      </tr>
-      {% endfor %}
-      </table>  
-      
-      <a href="http://127.0.0.1:5000">Back</a>
-
-   </body>
-</html> 
-
-```
