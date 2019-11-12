@@ -98,7 +98,8 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 5
     * [Lab-notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek5LabNotes.md%}){:target="_blank"}
 * Week 6
-    * [Notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
+    * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
+    * [Flask-Application]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek5.md%}){:target="_blank"}
 
 
 ### SBE306
@@ -114,6 +115,8 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * [python Mysql]({{ site.baseurl }}{% link 2019/Database/notes/pythonMysql.md%}){:target="_blank"}
 * Week 5
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek5.md%}){:target="_blank"}
+* Week 6
+    * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
 
 
 ## Announcements
