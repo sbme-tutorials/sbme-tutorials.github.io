@@ -39,14 +39,14 @@ Where DNAME = 'Research'
 ```
 SELECT PNAME
 from employee,department,project
-where DNUM = DNUMBER and MGRSSN = SSN and LNAME = ‘Wong’
+where DNUM = DNUMBER and MGRSSN = SSN and LNAME = "Wong"
 ```
 * JOIN Query:
 ```
 SELECT PNAME from 
 employee JOIN department ON MGRSSN = SSN
 JOIN project ON DNUM = DNUMBER 
-WHERE LNAME = ‘Wong’
+WHERE LNAME = "Wong"
 
 ```
 **Q3** Retrieve managers names having projects in 'Stafford'
@@ -55,14 +55,14 @@ WHERE LNAME = ‘Wong’
 ```
 SELECT FNAME,LNAME
 from employee,department,project
-where DNUM = DNUMBER and MGRSSN = SSN and Plocation = ‘Stanfford’
+where DNUM = DNUMBER and MGRSSN = SSN and Plocation = "Stanfford"
 ```
 * JOIN Query
 ```
 SELECT FNAME,LNAME from 
 employee JOIN department ON MGRSSN = SSN 
 JOIN project ON DNUM = DNUMBER 
-WHERE Plocation = ‘Stanfford’
+WHERE Plocation = "Stanfford"
 ```
 ### Nested queries
 
@@ -76,23 +76,23 @@ where PNUMBER in
 (SELECT PNUMBER from employee
 JOIN department on MGRSSN = SSN
 JOIN project on DNUM = DNUMBER
-where LNAME = ‘Wong’ )
+where LNAME = "Wong" )
 or PNUMBER in (SELECT PNUMBER from employee
 JOIN works_on on ESSN = SSN
 JOIN project on PNO = PNUMBER
-where LNAME = ‘Smith’ )
+where LNAME = "Smith" )
 ```
 * Union Clause
 ```
 SELECT Pname from
 project JOIN JOIN department on DNUM = DNUMBER
 JOIN employee ON MGRSSN = SSN
-WHERE Lname= 'Wong'
+WHERE Lname= "Wong"
 UNION
 SELECT Pname from
 project JOIN works_on on Pnumber = Pno
 JOIN employee on SSN = ESSN
-WHERE Lname= 'Smith'
+WHERE Lname= "Smith"
 ```
 **Try to solve the following**
 
