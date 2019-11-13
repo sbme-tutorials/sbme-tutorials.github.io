@@ -41,14 +41,15 @@ SELECT PNAME
 from employee,department,project
 where DNUM = DNUMBER and MGRSSN = SSN and LNAME = "Wong"
 ```
+
 * JOIN Query:
 ```
 SELECT PNAME from 
 employee JOIN department ON MGRSSN = SSN
 JOIN project ON DNUM = DNUMBER 
 WHERE LNAME = "Wong"
-
 ```
+
 **Q3** Retrieve managers names having projects in 'Stafford'
 
 * cross product:
@@ -57,6 +58,7 @@ SELECT FNAME,LNAME
 from employee,department,project
 where DNUM = DNUMBER and MGRSSN = SSN and Plocation = "Stanfford"
 ```
+
 * JOIN Query
 ```
 SELECT FNAME,LNAME from 
@@ -82,6 +84,7 @@ JOIN works_on on ESSN = SSN
 JOIN project on PNO = PNUMBER
 where LNAME = "Smith" )
 ```
+
 * Union Clause
 ```
 SELECT Pname from
@@ -94,10 +97,11 @@ project JOIN works_on on Pnumber = Pno
 JOIN employee on SSN = ESSN
 WHERE Lname= "Smith"
 ```
+
 **Try to solve the following**
 
 1. Retrieve the names of all employees in ‘Research’ department who work
-more than 10 hours per week on theProductX project.
+more than 10 hours per week on the ProductX project.
 
 
 2. List the names of all employees who have a dependent with the same first

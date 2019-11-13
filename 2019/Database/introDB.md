@@ -36,8 +36,12 @@ extra office hours requested via E-Mail to **ayman.anwar.bio@gmail.com** (Subjec
 
 | Week | Content |  Tasks
 |------|-----------------|-----|
-|   1  | Introduction to full stack development and database managment systems | ---- |
+|   1  | Introduction to full stack development and database management systems | ---- |
 |   2  | ER model and basic SQL statements | ---- |
+|   3  | SQL Relations and JOINs | ---- |
+|   4  | Introduction to python and mysql-connector | ---- |
+|   5  | Python Flask Web-MicroFramework | ---- |
+|   6  | Flask Templates and style sheets | ---- |
 
 ## Required installations
 
@@ -117,6 +121,6 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * [notes]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek5.md%}){:target="_blank"}
 * Week 6
     * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
-
+    * [Flask-Templates]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek6.md%}){:target="_blank"}
 
 ## Announcements
