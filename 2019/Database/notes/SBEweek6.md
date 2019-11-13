@@ -585,7 +585,6 @@ So we don't need to repeat the home page code in the add.html or view.html inste
     </table>
 
 { % endblock % }
-
 ```
 
 ## Input validation
@@ -593,6 +592,7 @@ So we don't need to repeat the home page code in the add.html or view.html inste
 Lets validate input from add doctor tap and print success message or error
 
 1. modify server.py to validate query
+
 ```python
 import mysql.connector
 from flask import Flask, redirect, url_for, request,render_template
@@ -645,8 +645,8 @@ def viewdoctor():
 
 if __name__ == '__main__':
    app.run()
-
 ```
+
 2. First add empty message and empty error to add.html fro [bootstrap](2)
 
 ```html
