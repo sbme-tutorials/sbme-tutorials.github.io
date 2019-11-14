@@ -607,7 +607,7 @@ mycursor = mydb.cursor()
 app = Flask(__name__)
 
 @app.route('/')
-def hello_name():
+def home():
    return render_template('index.html')
 
 @app.route('/adddoctor',methods = ['POST', 'GET'])
@@ -624,7 +624,7 @@ def adddoctor():
          mydb.commit()   
          return render_template('add.html',message="Welcome Doctor "+name)
       except:
-         return render_template('add.html',error="CouSomething Went wrong ")
+         return render_template('add.html',error="Something Went wrong ")
    else:
       return render_template('add.html')
 
@@ -686,3 +686,6 @@ if __name__ == '__main__':
 ```
 
 **HINT**: When using flask tags { {  , { %, % }, or } } Remove the spaces.
+
+## Demo
+All demos will be available in [this](https://github.com/sbme-tutorials/SBE306_2019Demos) repository
