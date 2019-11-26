@@ -104,6 +104,8 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 6
     * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
     * [Flask-Application]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek5.md%}){:target="_blank"}
+* Week 6
+    * [Flask-Templates-Bootstrap]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek6.md%}){:target="_blank"}
 
 
 ### SBE306

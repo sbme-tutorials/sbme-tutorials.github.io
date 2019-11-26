@@ -685,6 +685,57 @@ if __name__ == '__main__':
 { % endblock % }
 ```
 
+**Check DEMO 1**
+
+## URL_for Redirect
+
+Statically Typed URLs in your html files may cause server down.
+eg.
+
+```html
+    <form action="http://localhost:5000/adddoctor" method="POST">
+```
+
+**url_for** is dynamic typing function for urls in html files. It takes inpyt the function that you want its URL to  be redirected for.
+
+```html
+    <form action="{{ url_for('adddoctor') }}" method="POST">
+```
+
+So now your server could be accessed by external devices.
+
+## Flask Deployment as external server 
+
+Deployment as external server allow any device in the same network to call it url.
+
+1. Run the server on ip:0.0.0.0
+
+```python
+if __name__ == '__main__':
+   app.run(host="0.0.0.0")
+```
+
+2. Run the server
+
+3. make Hotspot from your PC and connect your phone on it
+
+4. Retrieve your ip address
+
+```
+sudo ifconfig
+```
+
+you should see the following: take the highlighted IP address 
+
+
+![](../images/week7ifconfig.png)
+
+5. open your mobile browser and type the retrieved IP address
+
+![](../images/week7mobbrows.png)
+
+**Check DEMO 2**
+
 **HINT**: When using flask tags { {  , { %, % }, or } } Remove the spaces.
 
 ## Demo
