@@ -15,8 +15,6 @@ year: "2019"
 This week we will learn 
 * using static files
 
-
-
 ## Static Files
 
 static files such as **.css/.js/.png/.jpeg/...etc** could be used inside Flask Template once placed in static files folder.

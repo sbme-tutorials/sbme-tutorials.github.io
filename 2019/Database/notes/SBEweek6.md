@@ -738,5 +738,25 @@ you should see the following: take the highlighted IP address
 
 **HINT**: When using flask tags { {  , { %, % }, or } } Remove the spaces.
 
-## Demo
+## Static Files
+
+static files such as **.css/.js/.png/.jpeg/...etc** could be used inside Flask Template once placed in static files folder.
+
+Example of a project_directory with static files:
+
+* templates
+    * file1.html
+    * file2.htm
+* static
+    * file1.css
+    * im1.png
+    * im2.png
+* server.py 
+
+```html
+<img src="/static/im1.png">
+```
+**Check DEMO 2**
+
+## Demos
 All demos will be available in [this](https://github.com/sbme-tutorials/SBE306_2019Demos) repository
