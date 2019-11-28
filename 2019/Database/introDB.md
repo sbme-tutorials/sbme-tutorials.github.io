@@ -104,8 +104,9 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 6
     * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
     * [Flask-Application]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek5.md%}){:target="_blank"}
-* Week 6
+* Week 7
     * [Flask-Templates-Bootstrap]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek6.md%}){:target="_blank"}
+    * [Flask-dynamics]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek7.md%}){:target="_blank"}
 
 
 ### SBE306
@@ -124,5 +125,10 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 6
     * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md%}){:target="_blank"}
     * [Flask-Templates]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek6.md%}){:target="_blank"}
+* Week 7
+    * [Flask-dynamics]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek7.md%}){:target="_blank"}
 
-## Announcements
+## SBE306 Project 
+
+* [Project]({{ site.baseurl }}{% link 2019/Database/project/project.md%}){:target="_blank"} : Department Oriented HIS 
+
