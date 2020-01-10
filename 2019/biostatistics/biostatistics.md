@@ -43,6 +43,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 | 5 | Sampling Distributions and Point Estimates | [Lecture 4](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-_random_sampling_1.pdf)  | [Tutorial 4]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/tutorial04.pdf %}){:target="_blank"}  |
 | 6 | Estimation of Statistical Intervals | [Lecture 5](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/sbe_304_-_bio-statistics-statistical_intervals_5.pdf)  | [Tutorial 5]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/tutorial05.pdf %}){:target="_blank"}  |
 | 7 | Revision and Project Prototype Submission | [Revision]({{ site.baseurl }}{% link 2019/biostatistics/misc/Bio-Statistics-Review-Examples-Part-I.pdf %}){:target="_blank"} [Quiz]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/Quiz_11Nov.pdf %}){:target="_blank"}    | Project milestone submission |
+| 8 | Hypothesis testing & SPSS | [Lecture 6](https://scholar.cu.edu.eg/sites/default/files/eldeib/files/bio-statistics-__tests_of_hypotheses_7.pdf){:target="_blank"} | [Tutorial 6]({{ site.baseurl }}{% link 2019/biostatistics/tutorials/tutorial06.pdf %}){:target="_blank"} |
 
 <!-- | 3 |  |  | |
 | 4 |  | | |
@@ -57,7 +58,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 
 * Each week you have to submit homework which consists of:
     1. A selected problem set (indicated in the tutorial notes)
-    1. A selected R problems (indicated in the tutorial notes)
+    2. A selected R problems (indicated in the tutorial notes)
 * In-class demos will be uploaded to this repository: [sbme-tutorials/biostatistics-sbe304](https://github.com/sbme-tutorials/biostatistics-sbe304)
 
 ## Course Project
