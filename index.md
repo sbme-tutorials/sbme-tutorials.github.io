@@ -8,7 +8,7 @@ layout: home
 
 ## Fall 2019 
 
-* [Biostatistics \(SBE304\)]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by Prof. Ayman M. Eldeib, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>. 
+* [Biostatistics \(SBE304\)]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by <a href="https://scholar.cu.edu.eg/?q=eldeib">Prof. Ayman M. Eldeib</a>, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>. 
 * [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2019/Database/introDB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
 
 
@@ -16,7 +16,7 @@ layout: home
 
 * [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2019/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>.
 * [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2019/cv/cv.md %}), by Prof. Ahmed M. Badawy, Dr. Muhamed Rushdi, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>, Eng. Ayman Anwar.
-* [Computer Graphics \(SBE306\)]({{ site.baseurl }}{% link 2019/CG/CG.md %}), by Prof. Ayman M. Eldeib, Eng. Eslam Adel, Eng. Ayman Anwar.
+* [Computer Graphics \(SBE306\)]({{ site.baseurl }}{% link 2019/CG/CG.md %}), by <a href="https://scholar.cu.edu.eg/?q=eldeib">Prof. Ayman M. Eldeib</a>, Eng. Eslam Adel, Eng. Ayman Anwar.
 
 ## Fall 2018
 
