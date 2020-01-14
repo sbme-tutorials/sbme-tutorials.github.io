@@ -10,7 +10,7 @@ year: "2019"
 ## Teaching Staff
 
 Instructor: Prof. Ahmed H. Kandil  
-Demonstrator:  Eng. Asem Alaa  
+Demonstrator:  Eng. Asem Alaa <a href="https://a-alaa.github.io"><i class="fab fa-home"></i></a>  
 
 ## Lecture Hours
 
