@@ -8,14 +8,14 @@ layout: home
 
 ## Fall 2019 
 
-* [Biostatistics \(SBE304\)]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by Prof. Ayman M. Eldeib, Eng. Asem Alaa. 
+* [Biostatistics \(SBE304\)]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by Prof. Ayman M. Eldeib, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>. 
 * [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2019/Database/introDB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
 
 
 ## Spring 2019
 
-* [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2019/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and Eng. Asem Alaa.
-* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2019/cv/cv.md %}), by Prof. Ahmed M. Badawy, Dr. Muhamed Rushdi, Eng. Asem Alaa, Eng. Ayman Anwar.
+* [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2019/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>.
+* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2019/cv/cv.md %}), by Prof. Ahmed M. Badawy, Dr. Muhamed Rushdi, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>, Eng. Ayman Anwar.
 * [Computer Graphics \(SBE306\)]({{ site.baseurl }}{% link 2019/CG/CG.md %}), by Prof. Ayman M. Eldeib, Eng. Eslam Adel, Eng. Ayman Anwar.
 
 ## Fall 2018
@@ -26,9 +26,9 @@ layout: home
 
 ## Spring 2018
 
-* [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2018/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and Eng. Asem Alaa.
-* [Digital Signal Processing \(SBE309\)]({{ site.baseurl }}{% link 2018/dsp/dsp.md %}), by Dr. Tamer Yousef, Eng. Asem Alaa, and Eng. Eman Ibraheem.
-* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2018/cv/cv.md %}), by Dr. Muhamed Rushdi, Eng. Eslam Adel, and Eng. Asem Alaa.
+* [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2018/data-structures/data-structures.md %}), by Prof. Ahmed H. Kandil and <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>.
+* [Digital Signal Processing \(SBE309\)]({{ site.baseurl }}{% link 2018/dsp/dsp.md %}), by Dr. Tamer Yousef, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>, and Eng. Eman Ibraheem.
+* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2018/cv/cv.md %}), by Dr. Muhamed Rushdi, Eng. Eslam Adel, and <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>.
 
  
 
