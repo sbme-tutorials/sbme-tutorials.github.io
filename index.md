@@ -6,6 +6,10 @@ layout: home
 ---
 # Tutorials and Course Announcements
 
+## Spring 2020 
+
+* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2019/cv/cv.md %}), by Prof. Ahmed M. Badawy, Eng. Eman Marzban, and [Eng. Asem Alaa](https://a-alaa.github.io).
+
 ## Fall 2019 
 
 * [Biostatistics \(SBE304\)]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by <a href="https://scholar.cu.edu.eg/?q=eldeib">Prof. Ayman M. Eldeib</a>, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>. 
