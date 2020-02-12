@@ -12,7 +12,7 @@ year: "2019"
 ## Teaching Staff
 
 Instructors: Prof. Ahmed M. Badawy and Assistant. Prof. Muhammed Rushdi  
-Demonstrators:  Eng. Asem Alaa and Eng. Ayman Anwar  
+Demonstrators:   <a href="https://a-alaa.github.io">Eng. Asem Alaa</a> and Eng. Ayman Anwar  
 
 ## Lecture Hours
 

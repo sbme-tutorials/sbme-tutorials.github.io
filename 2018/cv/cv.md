@@ -12,7 +12,7 @@ year: "2018"
 ## Teaching Staff
 
 Instructor: Assistant. Prof. Muhammed Rushdi  
-Demonstrators:  Eng. Eslam Adel & Eng. Asem Alaa  
+Demonstrators:  Eng. Eslam Adel &  <a href="https://a-alaa.github.io">Eng. Asem Alaa</a> 
 
 ## Lecture Hours
 

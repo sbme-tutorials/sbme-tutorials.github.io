@@ -685,7 +685,25 @@ if __name__ == '__main__':
 { % endblock % }
 ```
 
-**HINT**: When using flask tags { {  , { %, % }, or } } Remove the spaces.
+**Check DEMO 1**
 
-## Demo
+## URL_for Redirect
+
+Statically Typed URLs in your html files may cause server down.
+eg.
+
+```html
+    <form action="http://localhost:5000/adddoctor" method="POST">
+```
+
+**url_for** is dynamic typing function for urls in html files. It takes inpyt the function that you want its URL to  be redirected for.
+
+```html
+    <form action="{ { url_for('adddoctor') } }" method="POST">
+```
+
+So now your server could be accessed by external devices.
+
+
+## Demos
 All demos will be available in [this](https://github.com/sbme-tutorials/SBE306_2019Demos) repository
