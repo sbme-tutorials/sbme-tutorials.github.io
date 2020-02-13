@@ -11,9 +11,15 @@ year: "2020"
 
 ## Teaching Staff
 
+<<<<<<< HEAD
 Instructors: Prof. Ahmed M. Badawy  
 TAs: Eng. Eman Marzban <a href="https://a-alaa.github.io">Eng. Asem Alaa</a> 
 <!-- 
+=======
+Instructors: Prof. Ahmed M. Badawy
+Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
+
+>>>>>>> 63a4f1392cb1b169677e40c04b001c0bc852f3c0
 ## Lecture Hours
 
 **Monday**, **3rd slot** (+ 2nd slot each two weeks).
@@ -22,6 +28,7 @@ TAs: Eng. Eman Marzban <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>
 
 | Section | Day | Time Slot |
 |---------|-----|-----------|
+<<<<<<< HEAD
 |   1     | Wednesday | 1st |
 |   2     | Wednesday | 2nd |
 
@@ -92,3 +99,25 @@ TAs: Eng. Eman Marzban <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>
 
 
 ## Announcements -->
+=======
+|   1     | Tuesday | 1st |
+|   2     | Tuesday | 2nd |
+
+## Office Hours
+
+TBA
+
+## Course Outline
+
+TBA
+
+## Tutorials
+
+TBA
+
+## Assignments
+
+TBA
+
+## Announcements
+>>>>>>> 63a4f1392cb1b169677e40c04b001c0bc852f3c0

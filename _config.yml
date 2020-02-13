@@ -54,6 +54,7 @@ exclude:
   - Gemfile.lock
   - .gitmodules/
   - .git-rewrite/
+  - .github/
   - node_modules
   - vendor/bundle/
   - vendor/cache/
