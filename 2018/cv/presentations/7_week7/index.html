@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <title>Week 7: Image Segmentation</title>
+    <link rel="stylesheet" href="/css/laminal.css">
+
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+class: center, middle
+ ##   Image Segmentation
+ By: Eslam Adel 
+        
+ email: eslam.a.mahmoud@eng1.cu.edu.eg
+---
+
+class: top, left
+## Image Segmentation
+
+* Image to segments (objects)
+
+* Classification problem.
+
+* Medical applications (3D Segmentation)
+
+---
+class: top, left
+### Example
+Orthodontic treatment plan
+
+3D reconstruction.
+<img style="width:65%" src="../../images/Selection_061.png">
+---
+class: top, left
+### Example cont'd
+Orthodontic treatment plan
+<img style="width:90%" src="../../images/results.png  ">
+An Optimized Technique of 3D Segmentation for Orthodontic Treatment Plan. Eslam Adel 2017 
+---
+
+class: top, left
+## Histogram Based Segmentation
+
+* Image Binarization
+
+* Only two classes (object , background)
+
+* Basic Idea 
+$$
+I(x,y) = 
+\begin{cases}
+0, I(x,y) < T \\\ 
+1, I(x,y) > T 
+\end{cases}
+$$
+
+* How to select threshold ?
+
+---
+
+class: left, top
+## Optimal Threshold
+* Object, background histogram 
+<img style="width:85%" src="../../images/Selection_065.png"> 
+
+* Example 
+
+<img style="width:85%" src="../../images/Selection_064.png"> 
+---
+
+class: top, left
+## Otsu Thresholding 
+* Trying to find Optimal threshold
+
+* Optimal threshold in range 0 to 255
+
+* Recall (We have two classes)
+
+* Criteria 
+1. Select t that minimize within class variance.
+
+2. Select t that maximize between class variance.
+
+---
+
+## Otsu Thresholding cont'd
+* Calculating within class variance 
+$$
+\sigma_w^2  = c_1 \sigma_1^2 + (1-c_1) \sigma_2^2 
+$$
+* Calculating Between class variance 
+$$
+\sigma_b^2  = c_1 (1-c_1) (\mu_1 - \mu_2)^2  
+$$
+Where $$c_1$$ is cumulative sum at t 
+* Recall 
+$$
+E[x] = \sum x p(x)
+$$
+and 
+$$
+\sigma^2 = E[x^2] - \mu^2
+$$
+
+---
+
+class: top, left
+## Basic Algorithm 
+* Basic algorithm is 
+* Maximize between class variance 
+```python 
+Get Histogram of the image
+Get relative histogram (PDF)
+Get cumulative Histogram (CDF)
+initialize OptThreshold = 1 and maxVariance = 0
+For each t in range 1 to 255 
+  m1 =  mean value class 1 
+  m2 =  mean value class 2  
+  c1 = CDF[t]
+  varBet = c1 * (1-c1) * (m1 - m2)**2   
+  if value > maxVariance 
+      maxVariance = value
+      OptThreshold = t  
+```
+
+**Lets try to implement it** 
+
+* What about minimizing within class variance 
+---
+
+class: top, left
+## Seed Pixels (Region Growing)
+* Initial Seed 
+* Check connected pixels 
+* Add them to region (Intensity , colored based)
+* repeat.
+
+<img style="width:85%" src="../../images/Selection_066.png"> 
+---
+
+
+class: center, middle
+# Thanks        
+
+</textarea>
+    
+    
+
+<script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<script src="/javascript/remark-latest.min.js"></script>
+
+<script type="text/javascript">
+  var hljs = remark.highlighter.engine;
+</script>
+<script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var options = {
+    highlightStyle: 'monokai',
+    countIncrementalSlides: false
+  };
+  var slideshow = remark.create(options);
+
+  // extract the embedded styling from ansi spans
+  $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+    return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+  });
+
+</script>
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+     showRenderer: false,
+     showFontMenu: false,
+     showLocale: false
+    }
+  });
+</script>
+
+</body>
+</html>

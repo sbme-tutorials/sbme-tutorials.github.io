@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Introduction to OOP</title>
+  <meta name="description" content="These pages contain online teaching materials prepared by teaching assistants in the biomedical engineering department at Cairo University.">
+
+  <link rel="icon" type="image/png" href="/icon.png" />
+  
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="/2019/stl-intro/notes/1_oop1.html">
+  <link rel="alternate" type="application/rss+xml" title="Tutorials for SBME Students" href="/feed.xml">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <!-- 
+     -->
+    
+    
+<!--   
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/1-week1.html">Introduction to Computer Graphics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/10_week10.html">Week 10: Merge and Quick Sorting, more on Dijkstra, and the Final Project</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/10_week10.html">Assignment 6: Wrapping All Data Structures and Algorithms in a Single Project</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/11_week11.html">Week 10: Hashes and Final Project Criteria</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/11_week11.html">Week 11: Revision</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/12_week12.html">Week 12: Introduction to Image Processing</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/assignments/1_assignment1.html">Assignment 1: Volume rendering with VTK</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/assignments/1_assignment1.html">Assignment 1: Images, Histograms, Gradients</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/stl-intro/notes/1_oop1.html">Introduction to OOP</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/1_week1.html">Introduction to BME: Getting Started</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/microprocessor/notes/1_week1.html">ESP</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/1_week1.html">Week 1: Warming up with Python Basics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/1_week1.html">Assignment 1: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/1_week1.html">Assignment 1: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/1_week1.html">Week 1: Signals in Python</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/notes/1_week1.html">Week 1: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/notes/1_week1.html">Week 1: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/measurements/assignments/1_week1a.html">Assignment 1 - part 1: Your first experience with Git and our Github classroom</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/1_week1a.html">Week 1 - Part 1: Basics of C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/measurements/assignments/1_week1b.html">Assignment 1 - part 2: Solving the assignment in LaTeX</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1b.html">Assignment 1 - part 2: Revision on C++</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/1_week1b.html">Week 1 - Part 2: Basics of Git and Github</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/1_week1re.html">Task 1: Resubmission</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/2-week2.html">Transformations</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/assignments/2_assignment2.html">Assignment 2: Arduino signal acquisition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/2_assignment2.html">Assignment 2: Spatial domain filters, Images in frequency domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/assignments/2_assignment2.html">Assignment 2: Spatial domain filters, Images in frequency domain, and Hough Transforms</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/assignments/2_assignment2.html">Assignment 2: Spatial domain filters, Images in frequency domain, and Hough Transforms</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/2_code_formatting.html">Code Styling (formatting): Enhancing Your Code Readability</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/stl-intro/notes/2_oop2.html">Introduction to OOP 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/notes/2_week2.html">Week 2: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/2_week2.html">Week 2: Signals and Basis Functions: Composition and Decomposition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/notes/2_week2.html">Week 2: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/2_week2.html">Week 2: Image Processing 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/2_week2.html">Week 2: Medical Imaging and Visualization</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/2_week2a.html">Assignment 2: C++ Basic Operations on Memory</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/2_week2a.html">Week 2 - Part1: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/3-week3.html">Projection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/3_assignment3.html">Assignment 3: Canny, Hough transform, Harris and Fast</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/assignments/3_assignment3.html">Assignment 3: Corner Detection, Image Segmentation and clustering , Snake</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/assignments/3_assignment3.html">Assignment 3: Corner Detection, Image Segmentation and clustering , Snake</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/microprocessor/assignments/3_assignment3.html">Assignment 3: CNC Plotter</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/assignments/3_assignment3.html">Assignment 3: Digital signal Processing</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq1.html">FAQ #1: Why exposing namespaces is a bad practice</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq2.html">FAQ #2: Why `int *p = &amp;x` != `*p = &amp;x`</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_faq3.html">FAQ #3: Why not using `std::cin` inside functions of particular logic</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/3_week3.html">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/3_week3.html">Week 3: Arduino Microcontroller</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/3_week3.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/3_week3.html">Assignment 3: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/3_week3.html">Assignment 3: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3a.html">Assignment 3 - Part 1: Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3a.html">Week 3 - Part1: Static Arrays and Dynamic Arrays</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/3_week3b.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/3_week3b.html">Week 3 - Part2: Command Line Arguments and Compilation of Multiple Files</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/4-week4.html">Camera Transformation</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2019/microprocessor/assignments/4_assignment4.html">Assignment 4: Prosthetic Hand</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/assignments/4_assignment4.html">Assignment 4: Bioinformatics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/4_assignment4.html">Assignment 4 : Otsu thresholding, Region growing, mean shift segmentation</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/4_week4.html">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/microprocessor/notes/4_week4.html">Version Control System</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/4_week4.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/4_week4.html">Week 4: Hardware</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/dsp/notes/4_week4.html">Week 3: Euler&#39;s Identity, Sinusoids, and Fourier</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/notes/4_week4.html">Week 4: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/notes/4_week4.html">Week 4: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/4_week4.html">Assignment 3 - Part 2: Struct and Functions Overloading</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/4_week4a.html">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4a.html">Group Assignment 4 - Part 1: Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/4_week4b.html">Week 4 - Part2: More on Structs, Linked Lists, Naming Conventions, Const-correctness, Build Systems, and Git for Teams</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/4_week4b.html">Assignment 4: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/5-week5.html">Ray Casting &amp; Animation</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/assignments/5_assignment5.html">Assignment 5: Image Processing</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/5_week5.html">Week 5: Introduction to DSP</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/5_week5.html">Week 5: More on Structs, Linked Lists, Const-correctness</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/5_week5.html">Week 5: More on Structs, Linked Lists, Const-correctness</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/5_week5.html">Week 5: Hough Transform (Line and Circle Detection)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/5_week5a.html">Assignment 4 (Groups): Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/5_week5a.html">Week 5 - Part1: Recursion, Big-Oh Notation, Markdown</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/5_week5a.html">Assignment 4 (Groups): Git for Teams and Markdown Resumes</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/5_week5b.html">Assignment 5: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/5_week5b.html">Assignment 5: Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/5_week5remake.html">Assignment 5 (individual makeup and practicing): Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/5_week5remake.html">Assignment 5 (individual makeup and practicing): Stacks and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/6-week6.html">Textue Mapping</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/6_week6.html">Week 6: Corner Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/notes/6_week6.html">Week 6: Region Growing and Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/microprocessor/notes/6_week6.html">Overview of Raspberry Pi zero </a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/6_week6.html">Week 6: Medical Instrumentation</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/notes/6_week6.html">Week 6: Region Growing and Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/6_week6a.html">Week 6 - Part1: Sorting, Bubble Sort, Selection Sort, Learning Resources</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/notes/7-week7.html">Medical Visualization &amp; Volume Rendering</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/7_exercises.html">Exercises 1: C++ Basics and Linear Data Structures</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/7_week7.html">Assignment 6: BST, Set, and Map</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/notes/7_week7.html">Week 7: Feature Extraction, Description and, matching</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/7_week7.html">Assignment 6: BST, Set, and Map</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/7_week7.html">Week 7: Segmentation (Thresholding and Region growing)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/7_week7.html">Week 7: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/notes/7_week7.html">Week 7: Feature Extraction, Description and, matching</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/7_week7.html">Week 7: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/7_week7a.html">Week 7 - Part1: Revision, Common Mistakes, and Best Practices, Type normalization using C++ templates</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/notes/8_week8.html">Week 8: Principle component analysis(PCA) and face recognition with PCA</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/notes/8_week8.html">Week 8: Principle component analysis(PCA) and face recognition with PCA</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/8_week8.html">Week 8: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/8_week8.html">Week 8: Segmentation (Clustering Segmentation)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/8_week8.html">Week 8: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/8_week8a.html">Week 8 - Part1: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/9_week9.html">Week 9 &amp; 10: Introduction to Bioinformatics</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/9_week9.html">Week 9: Hash tables</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/notes/9_week9.html">Week 9: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/9_week9.html">Week 10: Image features, feature descriptors, and feature matching</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/9_week9.html">Week 9: Hash tables</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/notes/9_week9b.html">Week 10: Exercises</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/assignments/resumes/asem.html">Resume</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/assignments/assignment1.html">Assignment 1: Robotic Arm</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/assignments/assignment2.html">Assignment 2: Full Body</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/assignments/assignment3.html">Assignment 3: Body Animation</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/assignments/assignment4.html">Assignment 4: Volume Rendering (VTK)</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/cmake.html">Introduction to CMake</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/cmake.html">Introduction to CMake</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/4_week4/">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/presentations/2_week2/">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/presentations/1_week1/">Week 1: Introduction to Python and Images</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/5_week5/">Week 5: More on Structs, Linked Lists, Const-correctness</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/7_week7/">Week 7: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/9_week9/">Week 9: hash tables</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/2_week2/">Week2: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/6_week6/">Week 6: Recursion, Big-Oh Notation, Queue Applications</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/10_week10/">Week 10: Sorting (2)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/1_week1/">Week1: Introduction to &#39;Introduction to Data Structures and Algorithms (SBE201)&#39;</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/presentations/3_week3/">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/4_week4a/">Week 4: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/8_week8/">Week 8: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/presentations/5_week5/">Week 5: Corner Detection, Laplacian, and Revision Problems</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/cv/presentations/8_week8/">Week 8: Object detection, verification, and recognition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/5_week5/">Week 5: More on Structs, Linked Lists, Const-correctness</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/Database/presentations/1_week1/">Week1: Introduction to &#39;Computer Systems (Database) (SBE306)&#39;</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/7_week7/">Week 7: Binary Search Trees, Sets (ADT) and Maps (ADT)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/9_week9/">Week 9: hash tables</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/2_week2/">Week2: Memory, pointers, and references</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/stl-intro/presentations/1_oop1/">Introduction to OOP 1</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/stl-intro/presentations/3_stl_misc/">Introduction to the STL</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/stl-intro/presentations/2_oop2/">Introduction to OOP 2</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/6_week6/">Week 6: Recursion, Big-Oh Notation, Queue Applications</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/10_week10/">Week 10: Sorting (2)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/CG/presentations/8_week8/">Week 8: Visualization Toolkit (VTK)</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/3_week3/">Week 3: Arrays, Command Line Arguments, and Libraries</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/4_week4a/">Week 4: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/8_week8/">Week 8: Heaps, Priority Queues (ADT), and Shortest Path Problem</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/4_week4/">Week 4 - Part1: Struct, Stacks, Linked Lists, and Queues</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/presentations/8_week8/">Week 8: Object detection, verification, and recognition</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/presentations/3_week3/">Week 4: Image Filtering and Edge Detection</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/presentations/1_week1/">Week 1: Introduction to Python and Images</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/presentations/2_week2/">Week 3: Images in Frequency Domain</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/cv/presentations/5_week5/">Week 5: Corner Detection, Laplacian, and Revision Problems</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/presentations/3_week3/">Week 3: Arrays, Command Line Arguments, and Libraries</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2018/measurements/notes/overleaf-github.html">Integrating Overleaf to Your Github Repository</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/Database/project/project.html">SBE306: Project</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/cv/assignments/project.html">Course Project</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/data-structures/project.html">Final Project Results</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/notes/public_key.html">Steps for using Public Key Authentication for accessing your GitHub repositories</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2019/data-structures/notes/public_key.html">Steps for using Public Key Authentication for accessing your GitHub repositories</a>
+            
+          
+            
+            
+            <a class="page-link" href="/2018/measurements/assignments/python-lab.html">Python lab</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2019/intro-to-BME/notes/section.html">Title</a>
+            
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/2020/data-structures/presentations/week_01.html">Week1: Introduction to &#39;Introduction to Data Structures and Algorithms (SBE201)&#39;</a>
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+     -->
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Introduction to OOP</h1>
+  </header>
+
+  <div class="post-content">
+    <ul id="markdown-toc">
+  <li><a href="#version-1-c-without-structs" id="markdown-toc-version-1-c-without-structs">Version 1: C++ without <code class="highlighter-rouge">struct</code>s</a>    <ul>
+      <li><a href="#example-euclidean-distance" id="markdown-toc-example-euclidean-distance">Example: Euclidean Distance</a></li>
+      <li><a href="#example-2d-shapes-distances" id="markdown-toc-example-2d-shapes-distances">Example: 2D Shapes Distances</a></li>
+      <li><a href="#example-dna-base-counter" id="markdown-toc-example-dna-base-counter">Example: DNA Base Counter</a></li>
+    </ul>
+  </li>
+  <li><a href="#version-2-c-with-structs-data-grouping" id="markdown-toc-version-2-c-with-structs-data-grouping">Version 2: C++ with <code class="highlighter-rouge">struct</code>s (data grouping)</a>    <ul>
+      <li><a href="#a-2d-point" id="markdown-toc-a-2d-point">A 2D Point</a></li>
+      <li><a href="#shapes" id="markdown-toc-shapes">Shapes</a></li>
+      <li><a href="#example-euclidean-distance-1" id="markdown-toc-example-euclidean-distance-1">Example: Euclidean Distance</a>        <ul>
+          <li><a href="#dry-solution" id="markdown-toc-dry-solution">DRY Solution</a></li>
+        </ul>
+      </li>
+      <li><a href="#example-2d-shapes-distances-1" id="markdown-toc-example-2d-shapes-distances-1">Example: 2D Shapes Distances</a></li>
+      <li><a href="#example-dna-base-counter-1" id="markdown-toc-example-dna-base-counter-1">Example: DNA Base Counter</a></li>
+    </ul>
+  </li>
+  <li><a href="#version-3-c-with-structs-data--logic-grouping" id="markdown-toc-version-3-c-with-structs-data--logic-grouping">Version 3: C++ with <code class="highlighter-rouge">struct</code>s (data + logic grouping)</a>    <ul>
+      <li><a href="#point" id="markdown-toc-point">Point</a></li>
+    </ul>
+  </li>
+  <li><a href="#shapes-1" id="markdown-toc-shapes-1">Shapes</a>    <ul>
+      <li><a href="#circle" id="markdown-toc-circle">Circle</a></li>
+      <li><a href="#rectangle" id="markdown-toc-rectangle">Rectangle</a></li>
+      <li><a href="#square" id="markdown-toc-square">Square</a></li>
+      <li><a href="#triangle" id="markdown-toc-triangle">Triangle</a></li>
+      <li><a href="#new-area-application" id="markdown-toc-new-area-application">New area application</a></li>
+    </ul>
+  </li>
+</ul>
+
+<p>In this tutorial we will explore three different example applications, using three different versions:</p>
+
+<ol>
+  <li><strong>version 1</strong>: free functions (no <code class="highlighter-rouge">struct</code> used).</li>
+  <li><strong>version 2</strong>: <code class="highlighter-rouge">struct</code> are used to group the related variables.</li>
+  <li><strong>version 3</strong>: <code class="highlighter-rouge">struct</code> are used to group the related variables and functions.</li>
+</ol>
+
+<p>Before starting, please join to <a href="https://classroom.github.com/a/H_3e67zM">this assignment</a> to get a starter template that we will implement our examples in:</p>
+
+<h2 id="version-1-c-without-structs">Version 1: C++ without <code class="highlighter-rouge">struct</code>s</h2>
+
+<p>After cloning, change directory <code class="highlighter-rouge">cd</code> to the repository, then go to <code class="highlighter-rouge">cpp-no-struct</code> folder:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd your_repository_name
+cd cpp-no-struct
+</code></pre></div></div>
+
+<h3 id="example-euclidean-distance">Example: Euclidean Distance</h3>
+
+<p>Consider an application that computes the euclidean distance between two points as following:</p>
+
+<script type="math/tex; mode=display">\begin{equation}
+ \bar{ || p_1p_2 ||}  = \sqrt{ (x_1-x_2)^2 + (y_1-y_2)^2 }  
+\end{equation}</script>
+
+<p>In a single command, let the VS Code create a new file in the current working directory and name it <code class="highlighter-rouge">euclidean.cpp</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code euclidean.cpp
+</code></pre></div></div>
+
+<p>Now let’s start writing the boilerplate code for a typical C++ application, if you are not so familiar, copy the following code to your editor:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt; 
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>
+  <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#boilerplatelines" aria-expanded="false" aria-controls="boilerplatelines">
+    What are the above three lines?
+  </button>
+</p>
+<div class="collapse" id="boilerplatelines">
+  <div class="card card-body border-info">
+
+    <p>The three lines you see, if you don’t know their purpose:</p>
+
+    <ol>
+      <li><code class="highlighter-rouge">#include &lt;iostream&gt;</code>, we need this library file that has the following objects:
+        <ol>
+          <li><code class="highlighter-rouge">std::cin</code> to get the two points coordinates from the user through the terminal</li>
+          <li><code class="highlighter-rouge">std::cout</code> to print the results in the terminal</li>
+        </ol>
+      </li>
+      <li><code class="highlighter-rouge">int main()</code>, as all the programs in the universe starts their work from the main function.</li>
+      <li><code class="highlighter-rouge">return 0</code>, this tells the user who run the program that the program ended successfully without a crash.</li>
+    </ol>
+  </div>
+</div>
+
+<p>Now let’s make a function that takes 4 values that correspond to (x1, y1, x2, y2) and returns the euclidean distance.</p>
+
+<p>
+  <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#declarefunction" aria-expanded="false" aria-controls="declarefunction">
+    How to declare a function?
+  </button>
+</p>
+<div class="collapse" id="declarefunction">
+  <div class="card card-body border-info">
+
+    <p>To declare a function, you need to use the following <br />syntax <code class="highlighter-rouge">return_type function_name( input1_type input1, input2_type input2, ...)</code> which corresponds to the following components:</p>
+
+    <ol>
+      <li><code class="highlighter-rouge">return_type</code>: the type of the results that the function returns, if it doesn’t return anything, then use <code class="highlighter-rouge">void</code> (no type).</li>
+      <li><code class="highlighter-rouge">function_name</code>: the function name, so we can use that name when we need to call that function.</li>
+      <li>The declaration of the input parameters that this function operates on.</li>
+    </ol>
+
+    <p>For either a variable name, function name, namespace name, you should consider few rules to have a valid name:</p>
+
+    <ol>
+      <li><strong>Alphanumeric</strong>: the name doesn’t start with a number.</li>
+      <li>The name <strong>doesn’t contain spaces</strong>.</li>
+      <li>The name is not reserved or used before.</li>
+    </ol>
+
+    <div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// x is valid name</span>
+
+<span class="kt">int</span> <span class="n">sum</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// invalid name (spaces)</span>
+
+<span class="kt">int</span> <span class="n">sum3</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// valid</span>
+
+<span class="kt">int</span> <span class="n">sum</span> <span class="n">array</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// invalid name (spaces)</span>
+
+<span class="kt">int</span> <span class="n">sumArray</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// valid</span>
+</code></pre></div>    </div>
+  </div>
+</div>
+
+<p>For a function that computes an euclidean distance, we need to declare a function as such:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt; 
+#include &lt;cmath&gt; // We need this library to use the std::sqrt function
+</span>
+<span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Self practicing: try to implement this yourself</span>
+
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now we need to take the input from the user:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+</span>
+<span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">px</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">py</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">qx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">qy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">px</span> <span class="o">&gt;&gt;</span> <span class="n">py</span> <span class="o">&gt;&gt;</span> <span class="n">qx</span> <span class="o">&gt;&gt;</span> <span class="n">qy</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">euclideanDistance</span><span class="p">(</span> <span class="n">px</span> <span class="p">,</span> <span class="n">py</span><span class="p">,</span> <span class="n">qx</span> <span class="p">,</span> <span class="n">qy</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now let’s compile and run:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">g</span><span class="o">++</span> <span class="n">euclidean</span><span class="p">.</span><span class="n">cpp</span> <span class="o">-</span><span class="n">o</span> <span class="n">distance</span>
+<span class="p">.</span><span class="o">/</span><span class="n">distance</span>
+<span class="n">Enter</span> <span class="n">the</span> <span class="n">two</span> <span class="n">points</span> <span class="n">coordinates</span> <span class="n">as</span> <span class="n">following</span><span class="o">:</span> <span class="n">x1</span> <span class="n">y1</span> <span class="n">x2</span> <span class="n">y2</span> <span class="p">[</span><span class="n">ENTER</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Now the application waits us to enter the values of the coordinates. Let’s try the following:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.5 1 4.5 5
+5
+</code></pre></div></div>
+
+<h3 id="example-2d-shapes-distances">Example: 2D Shapes Distances</h3>
+
+<p>Consider an application that computes the area of a given circle, rectangle, triangle, or square on the 2D space.</p>
+
+<p>Let’s make a new file for the new application and we name it <code class="highlighter-rouge">area.cpp</code>, using the following command:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">code area.cpp
+</span></code></pre></div></div>
+
+<p>Let’s add the following boilerplate lines:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>It will be very wise to have our logic functions in separate header file, so we can that header file for any application we need. So, let’s create another file and call it <code class="highlighter-rouge">shapes.hpp</code>, using the following command:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">code shapes.hpp
+</span></code></pre></div></div>
+
+<p>Moreover, we wish to have our functions in a fancy and representative <code class="highlighter-rouge">namespace</code>; what about <code class="highlighter-rouge">geometry</code> as a namespace?</p>
+
+<p>So our new header file new looks like this:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#ifndef SHAPES_HPP
+#define SHAPES_HPP
+</span>
+<span class="cp">#include &lt;cmath&gt;
+</span>
+<span class="k">namespace</span> <span class="n">geometry</span>
+<span class="p">{</span>
+
+<span class="c1">// Our functions go here!</span>
+
+<span class="p">}</span>
+
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<p>Inside the <code class="highlighter-rouge">namespace geometry</code>, let’s implement functions that computes the area for several shapes:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">squareArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">side</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement here please</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">rectangleArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">width</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement here please</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">triangleArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">base</span><span class="p">,</span> <span class="kt">double</span> <span class="n">height</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement here please</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">circleArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">radius</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement here please</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Let’s return to our <code class="highlighter-rouge">main</code> function in the <code class="highlighter-rouge">area.cpp</code>. We can make an interesting main function that receives the input from the terminal through the command line and accordingly prints the appropriate output. We wish to have the application that responds to the terminal as following:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$</span><span class="w"> </span>./area circle 4
+<span class="gp">&gt;</span><span class="w"> </span>area: 50.2655
+<span class="gp">$</span><span class="w"> </span>./area rectangle 3 4
+<span class="gp">&gt;</span><span class="w"> </span>area: 12
+<span class="gp">$</span><span class="w"> </span>./area triangle 3 4 5
+<span class="gp">&gt;</span><span class="w"> </span>area: 6
+<span class="gp">$</span><span class="w"> </span>./area donuts 4 5
+<span class="gp">&gt;</span><span class="w"> </span>Undefined shape! donuts
+</code></pre></div></div>
+
+<p>First, in order to make our main function work with command line arguments, we need to modify it to be as following:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Secondly, we would expect that the shape name will be received in <code class="highlighter-rouge">argv[1]</code>. For the sake of simplicity, let’s also use <code class="highlighter-rouge">std::string</code> in order to make string comparisons. We will later in this series explain the <code class="highlighter-rouge">std::string</code> with elaboration. This way we can store the shape name into the <code class="highlighter-rouge">std::string</code> and make 4 <code class="highlighter-rouge">if</code> conditions. Finally, don’t forget to include <code class="highlighter-rouge">shapes.hpp</code>.</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;string&gt; // for std::string
+#include "shapes.hpp"
+</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span> <span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// this will copy the contents pointed by `argv[1]`</span>
+    <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    
+    <span class="k">if</span><span class="p">(</span> <span class="n">shape</span> <span class="o">==</span> <span class="s">"circle"</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">radius</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">::</span><span class="n">circleArea</span><span class="p">(</span> <span class="n">radius</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">shape</span> <span class="o">==</span> <span class="s">"square"</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">length</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">::</span><span class="n">squareArea</span><span class="p">(</span> <span class="n">length</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">shape</span> <span class="o">==</span> <span class="s">"rectangle"</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">width</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">);</span>
+        <span class="kt">double</span> <span class="n">height</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">::</span><span class="n">rectangleArea</span><span class="p">(</span> <span class="n">width</span> <span class="p">,</span> <span class="n">height</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span><span class="p">(</span> <span class="n">shape</span> <span class="o">==</span> <span class="s">"triangle"</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="p">);</span>
+        <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">);</span>
+        <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span> <span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">geometry</span><span class="o">::</span><span class="n">triangleArea</span><span class="p">(</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Undefined shape! "</span> <span class="o">&lt;&lt;</span> <span class="n">shape</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">exit</span><span class="p">(</span> <span class="n">EXIT_FAILURE</span> <span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"area: "</span> <span class="o">&lt;&lt;</span> <span class="n">area</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Let’s imagine a more advanced application in the 2D space on our shapes. We need an application to test whether a point <code class="highlighter-rouge">q</code> is contained in a given shape or not. For example the following figure illustrates our purpose.</p>
+
+<p><img src="/gallery/shapes.png" alt="shapes" /></p>
+
+<p>We need a function that takes a shape defined in the 2D space and a given test point, then returns <code class="highlighter-rouge">true</code> if the test points lies inside the shape and <code class="highlighter-rouge">false</code> otherwise.</p>
+
+<p>Let’s implement our functions inside the <code class="highlighter-rouge">namespace geometry</code></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">circleContains</span><span class="p">(</span><span class="kt">double</span> <span class="n">centerX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centerY</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testY</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">centerX</span> <span class="o">-</span> <span class="n">testX</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">centerY</span> <span class="o">-</span> <span class="n">testY</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">&lt;=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">squareContains</span><span class="p">(</span><span class="kt">double</span> <span class="n">upleftX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">upleftY</span><span class="p">,</span> <span class="kt">double</span> <span class="n">length</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testY</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">testX</span> <span class="o">&gt;=</span> <span class="n">upleftX</span> <span class="o">&amp;&amp;</span>
+           <span class="n">testX</span> <span class="o">&lt;=</span> <span class="n">upleftX</span> <span class="o">+</span> <span class="n">length</span> <span class="o">&amp;&amp;</span>
+           <span class="n">testY</span> <span class="o">&gt;=</span> <span class="n">upleftY</span> <span class="o">&amp;&amp;</span>
+           <span class="n">testY</span> <span class="o">&lt;=</span> <span class="n">upleftY</span> <span class="o">+</span> <span class="n">length</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">rectangleContains</span><span class="p">(</span><span class="kt">double</span> <span class="n">upleftX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">upleftY</span><span class="p">,</span> <span class="kt">double</span> <span class="n">downRightX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">downRightY</span><span class="p">,</span>
+                       <span class="kt">double</span> <span class="n">testX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testY</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">testX</span> <span class="o">&gt;=</span> <span class="n">upleftX</span> <span class="o">&amp;&amp;</span>
+           <span class="n">testX</span> <span class="o">&lt;=</span> <span class="n">downRightX</span> <span class="o">&amp;&amp;</span>
+           <span class="n">testY</span> <span class="o">&gt;=</span> <span class="n">upleftY</span> <span class="o">&amp;&amp;</span>
+           <span class="n">testY</span> <span class="o">&lt;=</span> <span class="n">downRightY</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Feel free to make an interesting application source file (with <code class="highlighter-rouge">main</code> function) to use the above functions.</p>
+
+<h3 id="example-dna-base-counter">Example: DNA Base Counter</h3>
+
+<p>We have already worked in this example in our assignment. So let’s directly implement the DNA base counter in a separate file called <code class="highlighter-rouge">dna.hpp</code>.</p>
+
+<p>From the terminal create and open the file.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>code dna.hpp
+</code></pre></div></div>
+
+<p>The file then should look like:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#ifndef DNA_HPP
+#define DNA_HPP
+</span>
+<span class="k">namespace</span> <span class="n">dna</span>
+<span class="p">{</span>
+
+<span class="kt">char</span> <span class="n">complementaryBase</span><span class="p">(</span><span class="kt">char</span> <span class="n">base</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Copy from assignment 3</span>
+<span class="p">}</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="n">complementarySequence</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Copy from assignment 3</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">countChar</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">size</span><span class="p">,</span> <span class="kt">char</span> <span class="n">test</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Copy from assignment 3</span>
+<span class="p">}</span>
+
+<span class="p">}</span> <span class="c1">// namespace dna</span>
+
+<span class="cp">#endif
+</span></code></pre></div></div>
+
+<h2 id="version-2-c-with-structs-data-grouping">Version 2: C++ with <code class="highlighter-rouge">struct</code>s (data grouping)</h2>
+
+<p>For this part, we will realize the benefits of using <code class="highlighter-rouge">struct</code> for grouping related data. Now change directory to <code class="highlighter-rouge">cpp-data-struct</code> that is in the upper directory:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../cpp-data-struct
+</code></pre></div></div>
+
+<p>Initially, let’s copy the header file <code class="highlighter-rouge">shapes.hpp</code> from the previous directory so develop on it incrementally:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cp ../cpp-no-struct/shapes.hpp .
+</span></code></pre></div></div>
+
+<p>Let’s do the same with <code class="highlighter-rouge">dna.hpp</code>:</p>
+
+<div class="language-terminal highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">cp ../cpp-no-struct/dna.hpp .
+</span></code></pre></div></div>
+
+<p><code class="highlighter-rouge">struct</code>s offer us a great advantage that we will use in this part: grouping related variables into a new user-defined type.</p>
+
+<p>Let’s discuss the possible variables that we can group from the previous tasks.</p>
+
+<h3 id="a-2d-point">A 2D Point</h3>
+
+<p>We have extensively worked with coordinates in the first two examples, and every coordinate was represented by two values: <strong>x</strong> and <strong>y</strong>. So, it would be a great deal to use <code class="highlighter-rouge">struct</code> for grouping <code class="highlighter-rouge">x</code> and <code class="highlighter-rouge">y</code> into a custom user-defined type. Let’s add this type declaration into <code class="highlighter-rouge">namespace geometry</code> for consistency:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Point</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="shapes">Shapes</h3>
+
+<p>In the second example, considering the application that tests whether a point lies in a given shape, each shape was represented by at least one point (x and y) and a dimension:</p>
+
+<ol>
+  <li>The circle was represented by the center point and the radius.</li>
+  <li>The rectangle was represented by two points (an alternative representation is a point plus the width and the height).</li>
+  <li>The square was represented by the left upper corner and the side length.</li>
+</ol>
+
+<p>By using <code class="highlighter-rouge">struct</code>, we could have grouped the related data of each shape in the following way:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Circle</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">center</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">Square</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">upLeftCorner</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">Rectangle</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">upLeftCorner</span><span class="p">;</span>
+    <span class="n">Point</span> <span class="n">downRightCorner</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Realize that we have used the <code class="highlighter-rouge">Point</code>, which is already declared, as a member in our shapes.</p>
+
+<h3 id="example-euclidean-distance-1">Example: Euclidean Distance</h3>
+
+<p>By using <code class="highlighter-rouge">struct</code>, we can use a more concise and descriptive version of <code class="highlighter-rouge">euclideanDistance</code> function:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<h4 id="dry-solution">DRY Solution</h4>
+
+<p>We can adopt <strong>DRY</strong> solution for such an overload:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="kt">double</span> <span class="n">x1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y1</span><span class="p">,</span> <span class="kt">double</span> <span class="n">x2</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y2</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x2</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y2</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">euclideanDistance</span><span class="p">(</span> <span class="n">p1</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p1</span><span class="p">.</span><span class="n">y</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="example-2d-shapes-distances-1">Example: 2D Shapes Distances</h3>
+
+<p>We can add overloaded function for the second example as following inside <code class="highlighter-rouge">namespace geometry</code>:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">bool</span> <span class="nf">circleContains</span><span class="p">(</span><span class="n">Circle</span> <span class="n">c</span><span class="p">,</span> <span class="n">Point</span> <span class="n">test</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement yourself.</span>
+    <span class="c1">// DRY solution?!</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">squareContains</span><span class="p">(</span><span class="n">Square</span> <span class="n">s</span><span class="p">,</span> <span class="n">Point</span> <span class="n">test</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement yourself.</span>
+    <span class="c1">// DRY solution?!</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">rectangleContains</span><span class="p">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">,</span> <span class="n">Point</span> <span class="n">test</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Implement yourself.</span>
+    <span class="c1">// DRY solution?!</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="example-dna-base-counter-1">Example: DNA Base Counter</h3>
+
+<p>Same inside <code class="highlighter-rouge">namespace dna</code>:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">DNA</span>
+<span class="p">{</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">base</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">char</span> <span class="o">*</span><span class="nf">complementarySequence</span><span class="p">(</span> <span class="n">DNA</span> <span class="o">&amp;</span><span class="n">dna</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// DRY solution</span>
+    <span class="k">return</span> <span class="n">complementarySequence</span><span class="p">(</span> <span class="n">dna</span><span class="p">.</span><span class="n">base</span><span class="p">,</span> <span class="n">dna</span><span class="p">.</span><span class="n">size</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">countChar</span><span class="p">(</span> <span class="n">DNA</span> <span class="o">&amp;</span><span class="n">dna</span><span class="p">,</span> <span class="kt">char</span> <span class="n">test</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// DRY solution</span>
+    <span class="k">return</span> <span class="n">countChar</span><span class="p">(</span> <span class="n">dna</span><span class="p">.</span><span class="n">base</span><span class="p">,</span> <span class="n">dna</span><span class="p">.</span><span class="n">size</span><span class="p">,</span> <span class="n">test</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="version-3-c-with-structs-data--logic-grouping">Version 3: C++ with <code class="highlighter-rouge">struct</code>s (data + logic grouping)</h2>
+
+<p>In the last part, we are going to achieve a big advantage and create our first living objects that bundles the related data as well as the related functions that operates on these data.</p>
+
+<p>First, let’s move to our final directory:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ../cpp-struct
+</code></pre></div></div>
+
+<p>In the previous part, we have realized some <code class="highlighter-rouge">struct</code>s that bundles data into a user-defined type and related free functions that operate on these types.</p>
+
+<h3 id="point">Point</h3>
+
+<p>For the point, we had the following <code class="highlighter-rouge">struct</code></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Point</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">x</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">y</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>and the following free function that operates on two given <code class="highlighter-rouge">Point</code>s:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">euclideanDistance</span><span class="p">(</span> <span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">Point</span> <span class="n">p2</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">p1</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Now, we can join the above free function into the <code class="highlighter-rouge">struct Point</code>, but this time, we don’t need to provide two points, we will instead provide a single one:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>struct Point
+{
+    double euclideanDistance(Point p)
+    {
+        double dx = x - p.x;
+        double dy = y - p.y;
+        return std::sqrt(dx * dx + dy * dy);
+    }
+
+    double x;
+    double y;
+};
+</code></pre></div></div>
+
+<p>To be more accurate, we should now refer to <code class="highlighter-rouge">euclideanDistance</code> as a method, not a free function. <em>A method is a function that is contained in <code class="highlighter-rouge">struct</code>/<code class="highlighter-rouge">class</code> and operates on the object data</em>. So, inside <code class="highlighter-rouge">euclideanDistance</code> we can access the current point data by using their names directly.</p>
+
+<p>In the <code class="highlighter-rouge">main</code> function we can now use the <code class="highlighter-rouge">Point</code> object as following:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">geometry</span><span class="o">::</span><span class="n">Point</span> <span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">p1</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">p1</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;&gt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;&gt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p1</span><span class="p">.</span><span class="n">euclideanDistance</span><span class="p">(</span> <span class="n">p2</span> <span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>By the way, it would be also correct if we flipped it that way <code class="highlighter-rouge">p2.euclideanDistance( p1 )</code>.</p>
+
+<h2 id="shapes-1">Shapes</h2>
+
+<p>Similarly, for each shape, we can group the related data of the shape alongside the functions that exclusively operate on that shape.</p>
+
+<h3 id="circle">Circle</h3>
+
+<p>In the previous part, we had the <code class="highlighter-rouge">Circle</code> type with the following declaration:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Circle</span>
+<span class="p">{</span>
+    <span class="n">Point</span> <span class="n">center</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Also, we had two functions that operate on the circle:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">double</span> <span class="nf">circleArea</span><span class="p">(</span> <span class="kt">double</span> <span class="n">radius</span> <span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">M_PI</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">bool</span> <span class="nf">circleContains</span><span class="p">(</span><span class="kt">double</span> <span class="n">centerX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">centerY</span><span class="p">,</span> <span class="kt">double</span> <span class="n">radius</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testX</span><span class="p">,</span> <span class="kt">double</span> <span class="n">testY</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">centerX</span> <span class="o">-</span> <span class="n">testX</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">centerY</span> <span class="o">-</span> <span class="n">testY</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">&lt;=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>We could have grouped all together inside the <code class="highlighter-rouge">struct Circle</code> as following:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Circle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">circleArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">M_PI</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="n">circleContains</span><span class="p">(</span> <span class="n">Point</span> <span class="n">test</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">center</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">test</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">center</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">test</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">&lt;=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Point</span> <span class="n">center</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>Having <code class="highlighter-rouge">circleArea</code> and <code class="highlighter-rouge">circleContains</code> inside a <code class="highlighter-rouge">struct Circle</code> may pose a redundancy in names. So we can make it more fancy to modify the names as following:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Circle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">area</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">M_PI</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="n">contains</span><span class="p">(</span> <span class="n">Point</span> <span class="n">test</span> <span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">dx</span> <span class="o">=</span> <span class="n">center</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">test</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+        <span class="kt">double</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">center</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">test</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span> <span class="o">*</span> <span class="n">dy</span> <span class="o">&lt;=</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Point</span> <span class="n">center</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">radius</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>We apply the same actions on <code class="highlighter-rouge">Rectangle</code>, <code class="highlighter-rouge">Square</code>, and <code class="highlighter-rouge">Triangle</code>.</p>
+
+<h3 id="rectangle">Rectangle</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Rectangle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">area</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">width</span> <span class="o">*</span> <span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="n">contains</span><span class="p">(</span><span class="n">Point</span> <span class="n">test</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">test</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span>
+               <span class="n">test</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">width</span> <span class="o">&amp;&amp;</span>
+               <span class="n">test</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">y</span> <span class="o">&amp;&amp;</span>
+               <span class="n">test</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">height</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Point</span> <span class="n">corner</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">width</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">height</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="square">Square</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Square</span>
+<span class="p">{</span>
+
+    <span class="kt">double</span> <span class="n">area</span><span class="p">(</span><span class="kt">double</span> <span class="n">side</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">length</span> <span class="o">*</span> <span class="n">length</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kt">bool</span> <span class="n">contains</span><span class="p">(</span><span class="n">Point</span> <span class="n">test</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="n">test</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">x</span> <span class="o">&amp;&amp;</span>
+               <span class="n">test</span><span class="p">.</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">length</span> <span class="o">&amp;&amp;</span>
+               <span class="n">test</span><span class="p">.</span><span class="n">y</span> <span class="o">&gt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">y</span> <span class="o">&amp;&amp;</span>
+               <span class="n">test</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;=</span> <span class="n">corner</span><span class="p">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">length</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="n">Point</span> <span class="n">corner</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">length</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="triangle">Triangle</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">struct</span> <span class="n">Triangle</span>
+<span class="p">{</span>
+    <span class="kt">double</span> <span class="n">triangleArea</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">s</span> <span class="o">=</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">sqrt</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">s</span> <span class="o">-</span> <span class="n">c</span><span class="p">));</span>
+    <span class="p">}</span>
+
+    <span class="kt">double</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">b</span><span class="p">;</span>
+    <span class="kt">double</span> <span class="n">c</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h3 id="new-area-application">New area application</h3>
+
+<p>After we used struct that bundles the related data with the related methods, we now can use our main function as following:</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">shape</span> <span class="o">=</span> <span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span> <span class="c1">// this will copy the contents pointed by `argv[1]`</span>
+    <span class="kt">double</span> <span class="n">area</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">shape</span> <span class="o">==</span> <span class="s">"circle"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">geometry</span><span class="o">::</span><span class="n">Circle</span> <span class="n">circle</span><span class="p">;</span>
+        <span class="n">circle</span><span class="p">.</span><span class="n">center</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+        <span class="n">circle</span><span class="p">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">circle</span><span class="p">.</span><span class="n">area</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">shape</span> <span class="o">==</span> <span class="s">"square"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">geometry</span><span class="o">::</span><span class="n">Square</span> <span class="n">square</span><span class="p">;</span>
+        <span class="n">square</span><span class="p">.</span><span class="n">corner</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+        <span class="n">square</span><span class="p">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">square</span><span class="p">.</span><span class="n">area</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">shape</span> <span class="o">==</span> <span class="s">"rectangle"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">geometry</span><span class="o">::</span><span class="n">Rectangle</span> <span class="n">rectangle</span><span class="p">;</span>
+        <span class="n">rectangle</span><span class="p">.</span><span class="n">corner</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+        <span class="n">rectangle</span><span class="p">.</span><span class="n">width</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="n">rectangle</span><span class="p">.</span><span class="n">height</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">rectangle</span><span class="p">.</span><span class="n">area</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">shape</span> <span class="o">==</span> <span class="s">"triangle"</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+        <span class="kt">double</span> <span class="n">b</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">3</span><span class="p">]);</span>
+        <span class="kt">double</span> <span class="n">c</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">atof</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">4</span><span class="p">]);</span>
+        <span class="n">geometry</span><span class="o">::</span><span class="n">Triangle</span> <span class="n">triangle</span><span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">};</span>
+        <span class="n">area</span> <span class="o">=</span> <span class="n">triangle</span><span class="p">.</span><span class="n">area</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Undefined shape! "</span> <span class="o">&lt;&lt;</span> <span class="n">shape</span> <span class="o">&lt;&lt;</span> <span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+        <span class="n">exit</span><span class="p">(</span><span class="n">EXIT_FAILURE</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"area: "</span> <span class="o">&lt;&lt;</span> <span class="n">area</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+  </div>
+
+</article>
+
+<!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+    jax: ["input/TeX", "output/HTML-CSS"],
+    "HTML-CSS": {
+      availableFonts: ["TeX"],
+      imageFont: null
+    },
+    MathMenu: {
+      showRenderer: false,
+      showFontMenu: false,
+      showLocale: false
+    }
+  });
+</script>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+
+    <!-- <h2 class="footer-heading">Tutorials for SBME Students</h2> -->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-3">
+        <h4>About</h4>
+        <p>These pages contain online teaching materials prepared by teaching assistants in the biomedical engineering department at Cairo University.</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+      </div>
+      
+      <div class="footer-col footer-col-1">
+        <h4>Correspondence</h4>
+        <ul class="contact-list">
+          <li>Asem Alaa 
+            <a href="https://a-alaa.github.io"><i class="fas fa-home"></i></a>
+          </li>
+          <li>Eslam Adel 
+            <a href="mailto:eslam.a.mahmoud@eng1.cu.edu.eg"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/EslamAdel"><i class="fab fa-github"></i></a>
+          </li>
+          <li>Ayman Anwar 
+            <a href="mailto:ayman.m.anwar@eng1.cu.edu.eg"><i class="fas fa-envelope"></i></a>
+            <a href="https://github.com/A-M-Anwar"><i class="fab fa-github"></i></a>
+          </li>
+        </ul>
+      </div>
+
+     
+
+
+    </div>
+
+  </div>
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+</footer>
+
+  </body>
+
+</html>

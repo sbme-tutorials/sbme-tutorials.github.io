@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>Week 4: Hardware</title>
+<link rel="stylesheet" href="/css/laminal.css">
+
+</head>
+<body>
+<textarea id="source">
+
+
+    class: center, middle
+    # Hardware 
+    
+    Eslam Adel 
+    
+    email: `eslam.a.mahmoud@eng1.cu.edu.eg`
+    ---
+    
+    class: top, left
+    ## Circuits and Electronics 
+    
+    Electric circuit is a closed path that current flow through it. It contains different electrical components
+    
+    
+    * Resistor / Potentiometer (Variable resistor)
+    Ohm or kilOhm
+    
+    ![](../../images/w4/resistorSymbol.png)
+    
+    ![](../../images/w4/resistor.jpg)
+    
+    ---
+    
+    ## Capacitors 
+    
+    Unit is Farad or micro Farad
+    
+    ![](../../images/w4/CapacitorSymbol.png)
+    
+    ---
+    
+    ![](../../images/w4/capacitor.jpg)
+    
+    ---
+    
+    ## Inductor or Transformers
+    Henry (H) 
+    
+    ![](../../images/w4/inductorSymbol.png)
+    
+    ![](../../images/w4/inductor.jpg)
+    
+    ---
+    
+    ## Switches
+    
+    Break or connect circuit 
+    
+    ![](../../images/w4/Types-of-switches.jpg)
+    
+    ---
+    
+    ## semiconductor (Electronics)
+    
+    * Diodes
+    
+    Current move in one direction and prevented in the other direction
+    
+    
+    ![](../../images/w4/diod1.png)
+    ![](../../images/w4/diod4.png)
+    ![](../../images/w4/diod3.png)
+    ![](../../images/w4/diod2.png)
+    
+    ---
+    
+    ![](../../images/w4/diod5.png)
+    
+    
+    ---
+    
+    ## Light emitting diode (Led )
+    
+    ![](../../images/w4/led.jpg)
+    
+    ---
+    
+    ## Photo-diode
+    
+    ![](../../images/w4/photodiod.jpg)
+    
+    ---
+    
+    ## Transistors
+    
+    3 Terminals component. Used in signal amplification switches for Digital circuits and logic gates 
+    
+    ![](../../images/w4/transistor.png)
+    
+    ---
+    
+    
+    ![](../../images/w4/transistor1.jpg)
+
+    * Inverter logic circuit 
+
+    ![](../../images/w4/inverter.png)
+
+    
+    
+    ---
+    
+    ## Integrated circuits
+    
+    contains huge number of transistors and logic circuits
+    
+    ![](../../images/w4/ic1.jpeg)
+    
+    ![](../../images/w4/ic2.jpeg)
+    
+    ---
+    
+    
+    ## Wires and connectors 
+    
+    ![](../../images/w4/wire1.jpg)
+    
+    ---
+    
+    ## Boards
+    
+    * Bread board
+    
+    ![](../../images/w4/breadboards.jpg)
+    
+    ---
+    
+    ## Printed circuit board (PCB)
+    
+    ![](../../images/w4/PBC.jpg) 
+    ![](../../images/w4/PBC1.jpg)
+    
+    ---
+    
+    ## Measurement Instruments
+    
+    * multi-meter 
+    
+    ![](../../images/w4/avo1.jpg)
+    
+    ---
+    
+    ## function generator
+    To generate signal waveforms 
+    
+    ![](../../images/w4/functiongenerator.jpg)
+    
+    ---
+    
+    ## oscilloscope
+    
+    To measure and plot signals
+    
+    ![](../../images/w4/oscilliscope.jpg)
+    
+    ---
+    
+    ## Signal 
+    
+    Varying voltage over time 
+    
+    ![](../../images/w4/signal.png)
+    
+    
+    ---
+    
+    ## Sampling or Digitalization
+    
+    * World is continuos or analog
+    * limited memory to store signal continuously
+    * Sample analog signal get  representation of it.  
+    
+    ![](../../images/w4/sampling1.png)
+    
+    ---
+    ## Applications 
+    
+    ![](../../images/w4/ADC1.png)
+    
+    ---
+    
+    ## Arduino Programming 
+    
+    * Arduino is programmed using C++ language. 
+    
+    * Equipped with essential built in functions
+    
+    * Handle simple interfacing with electronic devices
+    
+    ---
+    
+    ## Variables 
+    
+    * Variables in C/C++ have different data types 
+    
+    ```c
+    int myVariable; //Define a variable myVariable with type int 
+    ```
+    
+    * array is a group of values
+    
+    ```c 
+    int a[10]; //Array of 10 integers
+    ```
+    ---
+    
+    ## Constants 
+    
+    * Predefined variables
+    
+    * Example 
+    
+    ```c++
+    #define HIGH 1
+    #define LOW  0
+    ```
+    ---
+    
+    ### Functions 
+    
+    * subroutine that encapsulate some calculations
+    * Builtin functions 
+    
+    ```c
+    //Setting mode of the pin INPUT or OUTPUT
+    pinMode(pin, mode);
+    //Write a value on the pin 
+    digitalWrite(pin);
+    //Read value of an analog pin 
+    analogRead(pin);
+    delay(ms);
+    ```
+    * User defined functions 
+    * [type] [name]\(parameters\)
+    ```c
+    int add(int x, int y)
+    {
+    int z = x + y;
+    return z;
+    } 
+    ```
+    ---
+    
+    ### Control structures 
+    * Branching due to a condition
+    * if 
+    * if, else 
+    * switch , case
+    
+    example
+    
+    ```c
+    const int ledPin = 13; // choose the pin for the LED
+    const int inputPin = 2; // choose the input pin (for a pushbutton)
+    void setup() {
+    pinMode(ledPin, OUTPUT); // declare LED pin as output
+    pinMode(inputPin, INPUT); // declare pushbutton pin as input
+    }
+    void loop(){
+    int val = digitalRead(inputPin); // read input value
+    if (val == HIGH) // check if the input is HIGH
+    {
+    // do this if val is HIGH
+    digitalWrite(ledPin, HIGH); // turn LED on if switch is pressed
+    }
+    else
+    {
+    // else do this if val is not HIGH
+    digitalWrite(ledPin, LOW); // turn LED off
+    }
+    }
+    ```
+    ---
+    
+    ### Looping
+    * for loop : for defined number of Instrumentations
+    * while loop : based on condition
+    
+    example
+    
+    ```c
+    void setup() {
+    Serial.begin(9600);}
+    void loop(){
+    Serial.println("for(int i=0; i < 4; i++)");
+    for(int i=0; i < 4; i++)
+    {
+    Serial.println(i);
+    }
+    }
+    ```
+    ---
+    
+    
+    ### Classes 
+    User defined type contains members, methods, functions
+    
+    Example 
+    
+    ```c++
+    class MyClass
+    {
+    public:
+    MuClass(int pin);
+    void method1();
+    void method2();
+    private:
+    int member1;
+    };
+    ```
+    
+    Accessing members and methods using . operator
+    Example 
+    ```c++
+    // Print is a method in class Serial 
+    Serial.print();
+    ```
+    ---
+    
+    ## Library 
+    
+    A library is code was written by someone and we will use it (Re inventing the wheel )
+    
+    To use library 
+    ```c
+    //Include header file of the library 
+    #include <file.h>
+    ```
+    ---
+    
+    ## Markdown Documentation 
+    
+    ### Headers 
+    
+    * Headers
+    
+    \# Header1
+    
+    \## Header2 
+    
+    \### Header 3 
+    
+    For organizing your thoughts to main point with sub-points and so on. 
+    
+    ---
+    
+    ## Links 
+    
+    You can make hyperlink
+    
+    \!\[link](google.com)
+    
+    or just put the link if no hyperlink 
+    
+    www.google.com 
+    
+    **Example**
+    
+    visit [this](https://en.wikipedia.org/wiki/Markdown) for more details.
+    
+    ---
+    
+    ## Images 
+    
+    \!\[\]\(imagename) 
+    
+    image must be in the same folder or directory and must be uploaded with the md file
+    
+    **Example**
+    
+    ![](../../images/w4/MD1.png)
+    
+    ---
+    
+    ## List 
+    
+    \* item 1
+    
+    \* item 2
+    
+    \* item 3 
+    
+    Or 
+    
+    1\. Item 1
+    
+    2\. Item 2
+    
+    ---
+    
+    ## Code snippets 
+    
+    \```c++
+    
+    \#include \<iostream\>
+    
+    int main()
+    
+    {
+    
+    std::cout << "Hello, World!" << std::endl; 
+    
+    }
+    
+    \```
+    
+    Lets see it 
+    
+    ```c++
+    #include <iostream> 
+    
+    int main()
+    {
+    std::cout << "Hello, World!" << std::endl;
+    }
+    ```
+    
+    ---
+    
+    ## Useful links 
+    
+    [Markdown Tutorials](https://www.markdowntutorial.com/)
+    
+    
+    
+
+</textarea>  
+
+<script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+<script src="/javascript/remark-latest.min.js"></script>
+
+<script type="text/javascript">
+var hljs = remark.highlighter.engine;
+</script>
+<script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+var options = {
+highlightStyle: 'monokai',
+countIncrementalSlides: false
+};
+var slideshow = remark.create(options);
+
+// extract the embedded styling from ansi spans
+$('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+});
+
+</script>
+
+<script src="/mathjax/MathJax.js"></script>
+
+<script type="text/javascript">
+MathJax.Hub.Config({
+extensions: ["tex2jax.js"],
+tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+jax: ["input/TeX", "output/HTML-CSS"],
+"HTML-CSS": {
+availableFonts: ["TeX"],
+imageFont: null
+},
+MathMenu: {
+showRenderer: false,
+showFontMenu: false,
+showLocale: false
+}
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Week 5: More on Structs, Linked Lists, Const-correctness</title>
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    
+
+    <link rel="stylesheet" href="/css/laminal.css">
+
+
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [['$','$'], ['\\(','\\)']],
+            processEscapes: true
+          }
+        });
+        </script>
+</head>
+
+<body>
+
+    <textarea id="source">
+
+---
+### Type Aliasing
+
+```c++
+struct Position
+{
+    double x;
+    double y;
+};
+
+using Coordinates = Position;
+```
+
+---
+## C++ Milestones
+
+--
+<img src="/gallery/c++milestones.jpg" style="width:100%" />
+
+---
+<img src="/gallery/c++milestones2.png" style="width:100%" />
+
+---
+### Compiling C++ of 2003
+
+--
+```terminal
+g++ -std=c++03 source_code.cpp -o output_name
+```
+
+---
+### Compiling C++ of 2011
+
+add flag `-std=c++11`
+
+--
+```terminal
+g++ -std=c++11 source_code.cpp -o output_name
+```
+
+---
+### Other Important g++ Compiler Flag
+
+--
+#### `-Wall` flag
+
+
+--
+* Let `g++` not just reports you errors.
+--
+* Let him report you all the **warnings**.
+--
+* Fixing **warning** avoids many run-time issues.
+
+
+--
+##### Compiling C++ of 2011 plus enable all warnings
+
+```terminal
+g++ -Wall -std=c++11 source_code.cpp -o output_name
+```
+
+---
+## Assignment of Week 4
+
+### General Linked List (LL): 11 operations
+
+
+--
+<img src="/gallery/LinkedList/Week5_LL_Hi.gif" style="width:100%" />
+© algomation.com
+
+---
+### LL operations:
+
+--
+* insertion at front.
+--
+* insertion at back.
+--
+* remove from front.
+--
+* remove from back.
+--
+* remove nth element.
+--
+* return front.
+--
+* return back.
+--
+* return nth element.
+--
+* remove a node **next to** a given node.
+--
+* remove nodes with given data (filtration).
+--
+* is empty?
+--
+* printAll.
+--
+* delete the whole list from the heap.
+
+---
+#### A: LL of Integers
+
+--
+##### Define Your New Types
+
+--
+```c++
+struct IntegerNode
+{
+    int data;
+    IntegerNode *next = nullptr;
+};
+
+struct IntegerLL
+{
+    IntegerNode *front;
+};
+```
+
+---
+##### Insertions
+
+--
+```c++
+void insertBack( IntegerLL &amp;list, int newElement )
+{
+    // Logic
+}
+
+void insertFront( IntegerLL &amp;list, int newElement )
+{
+    // Logic
+}
+```
+
+---
+##### Access
+
+--
+```c++
+int getFront( IntegerLL &amp;list )
+{
+    // Logic
+}
+
+int getBack( IntegerLL &amp;list )
+{
+    // Logic
+}
+
+int getNth( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+---
+##### Removal
+
+--
+```c++
+void removeBack( IntegerLL &amp;list )
+{
+    // Logic
+}
+
+void removeFront( IntegerLL &amp;list )
+{
+    // Logic
+}
+
+void removeNth( IntegerLL &amp;list )
+{
+    // Logic
+}
+
+void removeNext( IntegerLL &amp;list, IntegerNode* node )
+{
+    // Logic
+}
+```
+
+---
+##### Remove an Arbitrary Point
+
+--
+```c++
+void removeNode( IntegerLL &amp;list , IntegerNode *node )
+{
+    // Logic
+}
+
+void removeData( IntegerLL &amp;list , int data )
+{
+    // Logic
+}
+```
+
+---
+##### Are you empty?
+
+--
+```c++
+bool isEmpty( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+---
+##### Display, clear
+
+```c++
+void printAll( IntegerLL &amp;list )
+{
+    // Logic
+}
+
+void clear( IntegerLL &amp;list )
+{
+    // Logic
+    // Memory Management
+}
+```
+
+---
+#### B: LL of Characters
+
+```c++
+struct CharNode
+{
+    char data;
+    CharNode *next = nullptr;
+};
+
+struct CharLL
+{
+    CharNode *front = nullptr;
+};
+```
+
+---
+#### Copy your logic
+
+Copy-paste the same logic of the Integers Linked List, but change each:
+
+--
+* `int` to `char`,
+* `IntegerLL` to `CharLL`, and
+* `IntegerNode` to `CharNode`.
+
+
+---
+<img src="/gallery/dna_array.svg" style="width:80%" />
+
+<img src="/gallery/dna_ll.svg" style="width:80%" />
+
+---
+### Stacks using LL
+
+--
+### Node type
+
+```c++
+struct CharNode
+{
+    char data;
+    CharNode* next = nullptr;
+};
+```
+
+--
+### Stack-LL
+
+```c++
+struct CharStackLL
+{
+    CharNode *front = nullptr;
+};
+```
+
+--
+* And we need: push, pop, and front.
+
+
+---
+### Stack-LL: access front operation
+
+```c++
+char front( CharStackLL &amp;stack )
+{
+    return stack.front-&gt;data;
+}
+```
+
+---
+### Stack-LL: Push-to-front operation
+
+<img src="/gallery/LinkedList/Week5_Stack_Push.gif" style="width:100%" />
+© algomation.com
+---
+### Stack-LL: Push-to-front operation
+
+```c++
+void push( CharStackLL &amp;stack , char data )
+{
+    CharNode *newNode = new CharNode;
+
+    newNode-&gt;data = data;
+    newNode-&gt;next = stack.front;
+
+    stack.front = newNode;
+}
+```
+
+or, equivalently
+
+```c++
+void push( CharStackLL &amp;stack , char data )
+{
+    CharNode *newNode = new CharNode{ data , stack.front };
+    stack.front = newNode;
+}
+```
+
+---
+#### DRY solution: (optional):
+
+```c++
+void push( CharStackLL &amp;stack , char data )
+{
+    // 1. Make a LL interface
+    CharLL list{ stack.front };
+
+    // 2. DRY
+    lists::pushFront( list , data );
+
+    // 3. Update Stack front
+    stack.front = list.front;
+}
+```
+
+---
+### Pop operation
+
+When popping an element from the front,
+
+<img src="/gallery/LinkedList/Week5_Stack_Pop.gif" style="width:100%" />
+© algomation.com
+
+---
+```c++
+void pop( CharStackLL &amp;stack )
+{
+    if( stack.front )
+    {
+        // Save the pointer of the front, so we delete it later
+        CharNode *oldFront = stack.front;
+
+        // Update the front of the stack
+        stack.front = stack.front-&gt;next;
+
+        // Now delete the old pointer
+        delete oldFront;
+    }
+    else
+    {
+        // If the stack is empty, make the program to terminate (crash)!
+        // The user of this function should have checked if the stack is not empty.
+        exit( 1 );
+    }
+}
+```
+
+---
+or DRY solution,
+
+```c++
+void pop( CharStack &amp;stack )
+{
+    // 1. Make a Linked List Interface.
+    CharLL list{ stack.front };
+
+    // 2. DRY
+    lists::removeFront( list );
+
+    // 3. Update the Stack front now.
+    stack.front = list.front;
+}
+```
+
+---
+### Asking a Stack if it is Empty
+
+```c++
+bool isEmpty( CharacterStackLL &amp;stack )
+{
+    if( stack.front == nullptr )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
+
+--
+Again, could be done that way:
+
+```c++
+bool isEmpty( CharacterStackLL &amp;stack )
+{
+    return stack.front == nullptr;
+}
+```
+
+---
+### Home Demo
+
+Open [{StackLL}](https://www.cs.usfca.edu/~galles/visualization/StackLL.html) and play with the stack to realize its behaviour. This demo shows a **Stack** implemented with **linked list**.
+
+---
+## LL-Based Queues
+
+```c++
+struct DoubleNode
+{
+    double data;
+    DoubleNode *next;
+};
+
+struct DoublesQueueLL
+{
+    DoubleNode *front = nullptr;
+    DoubleNode *back = nullptr;
+};
+```
+
+---
+### Asking if the LL is Empty
+
+```c++
+bool isEmpty( NumbersQueueLL queue )
+{
+    if( queue.back == nullptr )
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+```
+
+---
+Or equivalently,
+
+```c++
+bool isEmpty( NumbersQueueLL queue )
+{
+    return queue.back == nullptr;
+}
+```
+
+
+---
+### Enqueuing a New Element
+
+New elements can be added to the **back**.
+
+
+```c++
+void enqueue( NumbersQueueLL &amp;queue , double newSample )
+{
+    if( isEmpty( queue ))
+    {
+        queue.back = new DoubleNode{ newSample , nullptr };
+        queue.front = queue.back;
+    }
+    else
+    {
+        queue.back-&gt;next = new DoubleNode{ newSample , nullptr };
+        queue.back = queue.back-&gt;next;
+    }
+}
+```
+
+.red[*The above snippet is updated at Thursday 22 March 2019.*]
+
+---
+### Dequeueing an Element
+
+Left for the assignment.
+
+---
+## Free Functions vs. Methods
+
+```c++
+CharStackLL cstack;
+```
+
+--
+#### Which is more elegant?
+
+--
+```c++
+push( cstack , 'A' );
+```
+
+--
+What if we can do
+
+```c++
+cstack.push('A');
+```
+
+--
+* First version =&gt; free function.
+* Second version =&gt; method.
+
+
+---
+#### Procedural Paradigm
+
+--
+```c++
+struct CharStackLL
+{
+    CharNode *front = nullptr;
+};
+
+void push( CharStackLL &amp;stack , char data )
+{
+    CharNode *newNode = new CharNode{ data , stack.front };
+    stack.front = newNode;
+}
+```
+
+---
+#### Object Oriented Paradigm (OOP)
+
+--
+```c++
+struct CharStackLL
+{
+    CharNode *front = nullptr;
+    
+    void push( char newElement )
+    {
+        CharNode *newNode = new CharNode{ data , this-&gt;front };
+        this-&gt;front = newNode;
+    }
+};
+```
+
+--
+* A method inside a `struct` has an access to a very special pointer called `this`.
+* `this` pointer gives a method access to all the `struct` members.
+
+---
+## Const Correctness
+
+When passing a *pointer* or *reference* that **should not be modified**. It is very recommended to add `const` qualifier, so you guarantee the function **won't modify its contents**.
+
+```c++
+struct IntegerNode
+{
+    int data;
+    IntegerNode *next = nullptr;
+};
+
+struct IntegerLL
+{
+    IntegerNode *front;
+};
+```
+
+---
+```c++
+void insertBack( IntegerLL &amp;list, int data )
+{
+    // Logic
+}
+```
+
+---
+```c++
+void insertFront( IntegerLL &amp;list, int data )
+{
+    // Logic
+}
+```
+
+---
+
+```c++
+int front( IntegerLL &amp;list )
+{
+    list.front = nullptr; // !!!
+    // Logic
+}
+```
+
+--
+```c++
+int front( const IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+---
+```c++
+int back( IntegerLL &amp;list )
+{
+    // What if your frind missed up with the list!
+    
+    nuke( list );
+    // Logic
+}
+```
+
+--
+```c++
+int back( const IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+void removeBack( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+```c++
+void removeFront( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+void removeNode( IntegerLL &amp;list , IntegerNode *node )
+{
+    // Logic
+}
+```
+
+```c++
+void removeData( IntegerLL &amp;list , int data )
+{
+    // Logic
+}
+```
+
+
+---
+```c++
+bool isEmpty( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+--
+
+```c++
+bool isEmpty( const IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+---
+```c++
+void printAll( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+--
+```c++
+void printAll( const IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+---
+```c++
+void clear( IntegerLL &amp;list )
+{
+    // Logic
+}
+```
+
+</textarea>
+
+
+    <footer class="site-footer">
+
+
+    <script src="/javascript/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="/javascript/remark.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var hljs = remark.highlighter.engine;
+    </script>
+    <script src="/javascript/terminal.language.js" type="text/javascript"></script>
+
+
+    <script type="text/javascript">
+        var options = {
+            highlightStyle: "monokai",
+            highlightSpans: true,
+            countIncrementalSlides: false
+        };
+        var slideshow = remark.create(options);
+
+        // extract the embedded styling from ansi spans
+        $('code.terminal span.hljs-ansi').replaceWith(function (i, x) {
+            return x.replace(/&lt;(\/?(\w+).*?)&gt;/g, '<$1>')
+        });
+    </script>
+
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+</footer>
+
+    
+</body>
+
+</html>
