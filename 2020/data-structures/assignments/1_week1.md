@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "assignment"
-year: "2019"
+year: "2020"
 title:  "Assignment 1: Revision on C++"
 by: "Asem"
 pdf: true
@@ -19,7 +19,7 @@ pdf: true
 
 ## Prerequisites (Before you start)
 
-* **Required**: Read the notes of the first week: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2019/data-structures/notes/1_week1a.md %}){:target="_blank"}\] .
+* **Required**: Read the notes of the first week: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/1_week1a.md %}){:target="_blank"}\] .
 
 ## Grading
 

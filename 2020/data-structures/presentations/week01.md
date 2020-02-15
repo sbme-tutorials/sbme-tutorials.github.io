@@ -23,7 +23,8 @@ class: left, middle
 --
 * e-mail: `asem.a.abdelaziz@gmail.com`
 --
-* Office hours and materials are available on the course page.
+* Office hours and materials are available on the course page:
+[{sbme-tutorials.github.io/2020/data-structures/data-structures.html}](https://sbme-tutorials.github.io/2020/data-structures/data-structures.html).
 --
 * Main research interests: Bioinformatics Algorithms and Machine Learning
 
@@ -178,17 +179,19 @@ class: left, top
 * `char`: a character (e.g `'a'`,`'b'`,..), occupies **1 byte** of memory.
 --
 * `int`: an integer (e.g ...,-1,0,1,2,..), occupies **4 bytes** of memory.
+
+
+---
+class: left, top
+### Variables in C++ (cont'd)
+
+* `std::string`: a text (e.g `"Mostafa"`, `"ACCTTG"`, etc.), occupies variable size im memory.
 --
 * `float`: a real-number-like (e.g 0.5, 3.141, 9.81), occupies **4 bytes** of memory.
 --
 * `double`: like float, but higher precision, occupies **8 bytes** of memory.
 --
-* `pointer`: next week.
---
-* `reference`: next week.
 
-
---
 #### Double vs float
 
 * $ \pi $ equals: `3.14159265358979323846264338327950288419716939937510582097494459230781640628620899`
@@ -196,6 +199,22 @@ class: left, top
 * $ \pi $ in `float `  variable: `3.1415927`.
 --
 * $ \pi $ in `double` variable: `3.1415926535897931`. 
+
+
+---
+class: left, top
+### Variables in C++
+
+
+--
+* `std::vector`: collections.
+--
+* `enum class`: finite sets.
+--
+* `pointer`: next week.
+--
+* `reference`: next week.
+
 
 ---
 class: left, top
