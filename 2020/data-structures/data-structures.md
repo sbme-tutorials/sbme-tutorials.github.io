@@ -37,7 +37,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 ## Communication
 
 * Important announcements will be sent to `sbme2022@googlegroups.com`.
-* We will also use [Campuswire](https://campuswire.com) to try something new and different to facilitate announcements and technical dicussions.
+* We will also use [Campuswire](https://campuswire.com) to try something new and different to facilitate announcements and technical discussions.
 
 ## Course Outline
 
@@ -59,8 +59,8 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 
 1. Week 1:
     * [Slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.md %}){:target="_blank"}
-    * Section Handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/1_week1a.md %}){:target="_blank"}\] \[[Part 2: Using Git and Github, brief intro to Linux]({{ site.baseurl }}{% link 2020/data-structures/notes/1_week1b.md %}){:target="_blank"}\].
-    * [Assignment]({{ site.baseurl }}{% link 2019/data-structures/assignments/1_week1.md %}){:target="_blank"}
+
+
 
 ## Report Errata
 
