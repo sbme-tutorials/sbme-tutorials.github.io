@@ -62,4 +62,6 @@ exclude:
   - vendor/ruby/
 
 sass:
-  sass_dir: css
+  load_paths:
+    - css
+    - nbconvert

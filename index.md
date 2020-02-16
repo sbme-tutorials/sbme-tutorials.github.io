@@ -8,7 +8,7 @@ layout: home
 
 ## Spring 2020 
 
-* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2019/cv/cv.md %}), by Prof. Ahmed M. Badawy, Eng. Eman Marzban, and [Eng. Asem Alaa](https://a-alaa.github.io).
+* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2020/cv/cv.md %}), by Prof. Ahmed M. Badawy, Eng. Eman Marzban, and [Eng. Asem Alaa](https://a-alaa.github.io).
 
 ## Fall 2019 
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{% include nb/head.html %}
+
+<body>
+  <main class="page-content" aria-label="Content">
+    <div class="wrapper">
+
+      <article class="post">
+
+        <header class="post-header">
+          <h1 class="post-title">{{ page.title | escape }}</h1>
+        </header>
+
+        <div class="post-content">
+          {{ content }}
+        </div>
+
+      </article>
+
+      <!-- 
+Thanks to Roman Cheplyaka for his instructions to minifying the mathjax package:
+https://ro-che.info/articles/2017-04-02-deploying-mathjax 
+-->
+
+      <script src="/mathjax/MathJax.js"></script>
+
+      <script type="text/javascript">
+        MathJax.Hub.Config({
+          extensions: ["tex2jax.js"],
+          tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']], skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'] },
+          jax: ["input/TeX", "output/HTML-CSS"],
+          "HTML-CSS": {
+            availableFonts: ["TeX"],
+            imageFont: null
+          },
+          MathMenu: {
+            showRenderer: false,
+            showFontMenu: false,
+            showLocale: false
+          }
+        });
+      </script>
+    </div>
+  </main>
+
+  {% include footer.html %}
+
+</body>
+
+</html>

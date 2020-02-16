@@ -15,6 +15,8 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
+    faraday (1.0.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.11.1)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
@@ -39,10 +41,19 @@ GEM
       safe_yaml (~> 1.0)
     jekyll-feed (0.12.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-github-metadata (2.13.0)
+      jekyll (>= 3.4, < 5.0)
+      octokit (~> 4.0, != 4.4.0)
+    jekyll-octicons (9.4.0)
+      jekyll (>= 3.6, < 5.0)
+      octicons (= 9.4.0)
+    jekyll-relative-links (0.6.1)
+      jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.6.1)
       jekyll (>= 3.3, < 5.0)
+    jekyll-twitter-plugin (2.1.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.11.1)
@@ -62,8 +73,14 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.11.3)
+    multipart-post (2.1.1)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
+    octicons (9.4.0)
+      nokogiri (>= 1.6.3.1)
+    octokit (4.16.0)
+      faraday (>= 0.9)
+      sawyer (~> 0.8.0, >= 0.5.3)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
     public_suffix (3.1.1)
@@ -78,6 +95,9 @@ GEM
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+    sawyer (0.8.2)
+      addressable (>= 2.3.5)
+      faraday (> 0.8, < 2.0)
     thread_safe (0.3.6)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -88,10 +108,15 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 3.7.0)
-  jekyll-feed (~> 0.6)
+  jekyll-feed (~> 0.12)
+  jekyll-github-metadata
+  jekyll-octicons
+  jekyll-relative-links
+  jekyll-seo-tag
+  jekyll-twitter-plugin
   jemoji
   minima (~> 2.0)
   tzinfo-data
 
 BUNDLED WITH
-   1.16.2
+   2.1.4
