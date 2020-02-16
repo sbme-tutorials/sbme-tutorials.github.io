@@ -21,9 +21,7 @@ gem "minima", "~> 2.0"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem 'jemoji'
-  gem "jekyll-twitter-plugin"
   gem 'jekyll-relative-links'
-  gem 'jekyll-octicons'
   gem 'jekyll-seo-tag'
   # gem 'jekyll-pdf'
 #  gem 'github-pages'
