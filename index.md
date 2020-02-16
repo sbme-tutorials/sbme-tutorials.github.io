@@ -10,6 +10,10 @@ layout: home
 
 * [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2020/cv/cv.md %}), by Prof. Ahmed M. Badawy, Eng. Eman Marzban, and [Eng. Asem Alaa](https://a-alaa.github.io).
 
+* [Computer Graphics \(HEMN224\)]({{ site.baseurl }}{% link 2020/CG_HEMN/CG.md %}), by Prof. Ayman M.Eldeib, Eng. Ayman Anwar, and Eng. Eslam Adel.
+
+* [Artificial Intelligence \(SBE452\)]({{ site.baseurl }}{% link 2020/AI/AI.md %}), by Assoc. Prof. Inas Yassine and Eng. Ayman Anwar.
+
 ## Fall 2019 
 
 * [Biostatistics \(SBE304\)]({{ site.baseurl }}{% link 2019/biostatistics/biostatistics.md %}), by <a href="https://scholar.cu.edu.eg/?q=eldeib">Prof. Ayman M. Eldeib</a>, <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>. 
