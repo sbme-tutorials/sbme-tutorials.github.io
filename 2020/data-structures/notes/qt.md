@@ -113,7 +113,7 @@ Finally proceed with **Install**, and **Finish**.
 
 ### Run your QtCreator
 
-For the first time, open the Ubuntu dash <img src="../media/dash.png" style="height:1em;width:1em;"> (at the left bottom corner), then look for _Qt_.
+For the first time, open the Ubuntu dash <img src="../media/dash.svg" style="height:1em;width:1em;"> (at the left bottom corner), then look for _Qt_.
 Alternatively, run directly from the terminal using:
 
 ```bash
