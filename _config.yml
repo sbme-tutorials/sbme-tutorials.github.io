@@ -60,7 +60,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-
+  - .ipynb_checkpoints
+  
 sass:
   load_paths:
     - css

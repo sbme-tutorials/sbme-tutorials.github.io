@@ -406,8 +406,7 @@ layout: notebook
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tweetcards">Tweetcards<a class="anchor-link" href="#Tweetcards">&#182;</a></h3><p>Typing <code>&gt; twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20</code> will render this:
-{% include twitter.html content='<code>https://twitter.com/jakevdp/status/1204765621767901185?s=20</code>' %}</p>
+<h3 id="Tweetcards">Tweetcards<a class="anchor-link" href="#Tweetcards">&#182;</a></h3><p>Typing <code>&gt; twitter: https://twitter.com/jakevdp/status/1204765621767901185?s=20</code> will render this:</p>
 
 </div>
 </div>
