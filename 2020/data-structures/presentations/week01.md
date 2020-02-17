@@ -305,25 +305,29 @@ One way to avoid bugs (undefined behaviour) is initializing your variables.
 --
 Any Questions?
 
+
+---
+class: center, middle
+# Overview on data structures
+
 ---
 class: left, top
 # Collections of Variables (Data Structures)
 
-### Data Structures in Biomedical
+A data structure is a .blue[particular way of organizing data] so they can be used efficiently by some task.
 
-<img style="width:60%;" src="/gallery/ecg-paper.png">
+### Example 1: Data Structures in Biomedical Informatics
+
+.center[<img style="width:30%;" src="/gallery/ecg-paper.png">]
 
 --
-* Next year: Digital Signal Processing (DSP).
 * Application: analysis of ECG of the heart.
-* Diagnosis of Arrhythmia.
-
 
 ---
 class: center, middle
-### Data Structures in Biomedical (cont'd)
+### Example 1: Data Structures in Biomedical Informatics (cont'd)
 
-<img style="width:60%;" src="/gallery/ecg-sampled.png">
+.center[<img style="width:30%;" src="/gallery/ecg-sampled.png">]
 
 --
 <span>$$ \text{Sampled Signal} = \[ 12.3, 12.7 , 14.5 , 18.0 , 16.2 , 10.1 , 8.6 , ... \]  $$</span>
@@ -338,12 +342,40 @@ double s2 = 12.7;
 double s256 = -0.5;
 ```
 
+--
+Instead we need to store all values and use a single name for them.
+
 
 ---
-# Collections: construction of collections
+class: left, top
+### Example 2: Data Structures in Biomedical Informatics
+
+Input:
+
+| txt     | =  "AACAAGAATAACAACA" |
+|---|---|
+| pattern | =  "AACA" |
 
 --
-This is what we are going to study through this course:
+- Output: ".blue[A]ACAAGAAT.blue[A]AC.blue[A]ACA"
+- Pattern found at index .blue[0,9,12]
+
+--
+Assume that we have:
+* `txt` of size <span>$n = 10,000,000$</span>
+* `pattern` of size <span>$m = 12$</span>
+--
+* No. of comparisons/steps $\approx m \times n = 120,000,000$
+--
+* Can we do it in only $\approx$ .blue[12 step!!]
+--
+* .blue[Yes!] but using special data structure like suffix trees.
+
+---
+# Data structures and basic algorithms on them
+
+--
+Mainly these what we are going to study through this course:
 --
 * Different data structures (i.e collections of elements): Array, Linked List, Stack, Queue, Tree.
 --
@@ -360,6 +392,10 @@ This is what we are going to study through this course:
 * Applying **algorithms** on our collection.
 --
 * **Searching** for an element in our collection.
+
+---
+class: center, middle
+# Back to C++
 
 ---
 class: left, top
@@ -496,25 +532,30 @@ class: left, top
 # Cont'd
 
 ```c++
-int mark = 73;
-char grade = 'D';
 
-if( mark > 85 )
+char base = 'A';
+char complementary = 'T';
+
+std::cin >> base;
+
+if( base == 'A' )
 {
-  grade = 'A';
+  complementary = 'T';
 }
-else if( mark > 75 )
+else if( base == 'C' )
 {
-  grade = 'B';
+  complementary = 'G';
 }
-else if( mark > 65 )
+else if( base == 'G' )
 {
-  grade = 'C';
+  complementary = 'C';
 }
 else
 {
-  grade = 'D';
+  complementary = 'A';
 }
+
+std::cout << complementary << std::endl;
 ```
 
 ---
@@ -522,32 +563,43 @@ class: left, top
 # Cont'd
 
 ```c++
-char grade = 'C'
-int minimumGrade = 0;
 
-switch (grade)
+char base = 'A';
+char complementary = 'T';
+
+std::cin >> base;
+
+
+switch (base)
 {
   case 'A':
   {
-    minimumGrade = 85;
-  } break;
-  
-  case 'B':
-  {
-    minimumGrade = 75;
+    complementary = 'T';
   } break;
   
   case 'C':
   {
-    minimumGrade = 65;
+    complementary = 'G';
+  } break;
+  
+  case 'G':
+  {
+    complementary = 'C';
   } break;
   
   default:
   {
-    minimumGrade = 0;
+    complementary = 'A';
   } break;
 }
+
+std::cout << complementary << std::endl;
 ```
+
+--
+* `std::cout` is used to print out object values to the terminal.
+--
+* What is `std::` and what is `cout`. Read the week notes to have more intuition.
 
 ---
 class: left, top
@@ -569,9 +621,7 @@ while( i < 10 )
 ```
 
 --
-* `std::cout` is used to print out object values to the terminal.
---
-* What is `std::` and what is `cout`. Read the week notes to have more intuition.
+.red[Any bug?]
 
 ---
 class: left, top
@@ -812,10 +862,10 @@ g++ --version
 --
 this should print output like this:
 ```terminal
-g++ (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609
-Copyright (C) 2015 Free Software Foundation, Inc.
+g++ (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
+Copyright (C) 2017 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 ```
 --
 Otherwise, if not installed you should see:
@@ -1130,14 +1180,15 @@ class: left, top
 
 ---
 class: center, middle
-# A Special Gift for Bio2020 Class
+## A Special Gift for Bio2020 Class
 
-.center[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> for this gift 😄 ❤️ from all Systems and Biomedical Engineering students class 2020 at Cairo University. <a href="https://t.co/syLYrCHbJI">pic.twitter.com/syLYrCHbJI</a></p>&mdash; Amr Mahmoud (@AmrAhmed58) <a href="https://twitter.com/AmrAhmed58/status/961567568535408640?ref_src=twsrc%5Etfw">February 8, 2018</a></blockquote>]
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> for this gift 😄 ❤️ from all Systems and Biomedical Engineering students class 2020 at Cairo University. <a href="https://t.co/syLYrCHbJI">pic.twitter.com/syLYrCHbJI</a></p>&mdash; Amr Mahmoud (@AmrAhmed58) <a href="https://twitter.com/AmrAhmed58/status/961567568535408640?ref_src=twsrc%5Etfw">February 8, 2018</a></blockquote>
 
 ---
 class: center, middle
+## A Special Gift for Bio2021 Class
 
-.center[<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">You can also either as students or educators get very advantageous solutions and services for free! <a href="https://t.co/DyUllYPoEQ">https://t.co/DyUllYPoEQ</a><a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> <a href="https://t.co/bvaniQCU0p">pic.twitter.com/bvaniQCU0p</a></p>&mdash; Asem (@Asem_A_A) <a href="https://twitter.com/Asem_A_A/status/961573397531693057?ref_src=twsrc%5Etfw">February 8, 2018</a></blockquote>]
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Sometimes the smallest things take up the most room in your heart. <a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> for supporting us with your dear gift. We improved our studying process through GitHub network.<br>-From all systems and biomedical engineering students/class 2021/ at cairo university.❤❤ <a href="https://t.co/4n4uyI9wBs">pic.twitter.com/4n4uyI9wBs</a></p>&mdash; MouEhab (@_muhammedehab_) <a href="https://twitter.com/_muhammedehab_/status/1096125593006018560?ref_src=twsrc%5Etfw">February 14, 2019</a></blockquote>
 
 
 ---
@@ -1181,7 +1232,7 @@ class: center, middle
 
 ---
 class: center, middle
-# .green[Special Gift from GitHub to Bio2021 Class]
+# .green[Special Gift from GitHub to SBME 2022 Class]
 
 --
 ## .green[#ThanksGitHub]

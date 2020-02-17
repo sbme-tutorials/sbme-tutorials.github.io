@@ -12,41 +12,7 @@ by: "Asem"
 
 ## Introduction
 
-### Resources: Textbooks and MOOCs
-
-* References are not meant to teach C++.
-* Use references to revise particular conecpts.
-* Learn by practicing, and only practicing.
-
-#### Data Structures and Algorithms (Theory)
-
-##### Reference 1: Algorithms, *by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani*
-
-![](/gallery/algobook.png)
-
-Intuitive, informal language
-
-* [{Amazon}](https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402)
-* [{Goodreads}](https://www.goodreads.com/book/show/138563.Algorithms)
-
-##### Reference 2: Introduction to Algorithms, *by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein*
-
-![](/gallery/cormen.png)
-
-* [{Amazon}](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
-* [{Goodreads}](https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms)
-* [{PDF}](http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BCormen-AL2011%5DIntroduction_To_Algorithms-A3.pdf)
-
-#### C++
-
-##### Reference 1: C++ Primer, *by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo*
-
-![](/gallery/lippman.png)
-
-* [{Amazon}](https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113)
-* [{Goodreads}](https://www.goodreads.com/book/show/768080.C_Primer)
-
-## Variables and Collections
+## Variables and Data Structures
 
 ### Variables
 
@@ -229,51 +195,64 @@ else
   // Other operations here.
 }
 
-int mark = 73;
-char grade = 'D';
+char base = 'A';
+char complementary = 'T';
 
-if( mark > 85 )
+std::cin >> base;
+
+if( base == 'A' )
 {
-  grade = 'A';
+  complementary = 'T';
 }
-else if( mark > 75 )
+else if( base == 'C' )
 {
-  grade = 'B';
+  complementary = 'G';
 }
-else if( mark > 65 )
+else if( base == 'G' )
 {
-  grade = 'C';
+  complementary = 'C';
 }
 else
 {
-  grade = 'D';
+  complementary = 'A';
 }
 
-int minimumGrade = 0;
+std::cout << complementary << std::endl;
+{% endhighlight %}
 
-switch (grade)
+
+{% highlight c++ %}
+
+char base = 'A';
+char complementary = 'T';
+
+std::cin >> base;
+
+
+switch (base)
 {
   case 'A':
   {
-    minimumGrade = 85;
-  } break;
-  
-  case 'B':
-  {
-    minimumGrade = 75;
+    complementary = 'T';
   } break;
   
   case 'C':
   {
-    minimumGrade = 65;
+    complementary = 'G';
+  } break;
+  
+  case 'G':
+  {
+    complementary = 'C';
   } break;
   
   default:
   {
-    minimumGrade = 85;
+    complementary = 'A';
   } break;
 }
 
+std::cout << complementary << std::endl;
 {% endhighlight %}
 
 ### Loops: `for`, `while`
@@ -291,6 +270,7 @@ int i = 0;
 while( i < 10 )
 {
   std::cout << i << " ";
+  ++i;
 }
 // prints:0 1 2 3 4 5 6 7 8 9
 {% endhighlight %}
@@ -438,7 +418,7 @@ Now you have a little sense about `std::cout` and `std` Namespace.
 C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.
 
 A typical process of executable file generation is shown in this image:
-![Compilation](/gallery/compile.gif)
+![Compilation](../media/compile.gif)
 
 Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&srid=h6xMq).
 
@@ -506,10 +486,12 @@ g++ --version
 this should print output like this:
 
 ```shell
-g++ (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609
-Copyright (C) 2015 Free Software Foundation, Inc.
+this should print output like this:
+```terminal
+g++ (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
+Copyright (C) 2017 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 ```
 
 Otherwise, if not installed you should see:
