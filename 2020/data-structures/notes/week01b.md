@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "notes"
-year: "2018"
+year: "2020"
 title:  "Week 1 - Part 2: Basics of Git and Github"
 by: "Asem"
 pdf: true
@@ -15,7 +15,7 @@ pdf: true
 
 ## Problem Definition
 
-Recall the example of area problem from [Part 1: C++ Basics]({{ site.baseurl }}{% link 2018/data-structures/notes/1_week1a.md %}#example-of-namespace-scope){:target="_blank"}. 
+Recall the example of area problem from [Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}#example-of-namespace-scope){:target="_blank"}. 
 
 Imagine the case when *Asem* and *Ahmed* need to collaborate on this project. Such that:
 

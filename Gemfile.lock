@@ -44,16 +44,12 @@ GEM
     jekyll-github-metadata (2.13.0)
       jekyll (>= 3.4, < 5.0)
       octokit (~> 4.0, != 4.4.0)
-    jekyll-octicons (9.4.0)
-      jekyll (>= 3.6, < 5.0)
-      octicons (= 9.4.0)
     jekyll-relative-links (0.6.1)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.6.1)
       jekyll (>= 3.3, < 5.0)
-    jekyll-twitter-plugin (2.1.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
     jemoji (0.11.1)
@@ -76,8 +72,6 @@ GEM
     multipart-post (2.1.1)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
-    octicons (9.4.0)
-      nokogiri (>= 1.6.3.1)
     octokit (4.16.0)
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
@@ -110,10 +104,8 @@ DEPENDENCIES
   jekyll (~> 3.7.0)
   jekyll-feed (~> 0.12)
   jekyll-github-metadata
-  jekyll-octicons
   jekyll-relative-links
   jekyll-seo-tag
-  jekyll-twitter-plugin
   jemoji
   minima (~> 2.0)
   tzinfo-data
