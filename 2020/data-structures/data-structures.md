@@ -140,7 +140,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     <div class="media-body">
       <h5 class="mt-0 mb-1">Qt Creator for SBE201</h5>
       <ul>
-      <li>Tutorial: <a href="{{ site.baseurl }}{% link 2020/data-structures/notes/qt-start.md %}">Installing and running Qt Creator IDE</a>
+      <li>Tutorial: <a href="{{ site.baseurl }}{% link 2020/data-structures/notes/qt.md %}">Installing and running Qt Creator IDE</a>
       </li>
       </ul>
     </div>
