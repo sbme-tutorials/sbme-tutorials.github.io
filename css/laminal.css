@@ -47,6 +47,7 @@ h1, h2, h3 {
 
 .remark-code, .remark-inline-code {
   font-family: 'Ubuntu Mono';
+  font-size: 1.1em;
 }
 
 .remark-fading {

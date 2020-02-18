@@ -1,7 +1,7 @@
 ---
 layout: presentation
 style: laminal
-highlighter: monokai
+highlighter: ir-black
 course: "sbe201"
 category: "presentation"
 year: "2019"
@@ -10,13 +10,16 @@ by: "Asem"
 author: "Asem Alaa"
 ---
 
+<!-- https://highlightjs.org/static/demo/ -->
+
+
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 <textarea id="source" markdown="1">
 
 
 class: left, middle
-# Information about TA
+## Information about TA
 
 --
 * Asem Alaa
@@ -32,7 +35,7 @@ class: left, middle
 
 ---
 class: left, middle
-# Information about our course
+## Information about our course
 
 --
 * Aims to understanding various data structures by implementation from scratch.
@@ -45,7 +48,7 @@ class: left, middle
 
 ---
 class: left, middle
-# Information about our course (cont'd)
+## Information about our course (cont'd)
 
 --
 * This course doesn't aim to teach OOP nor design patterns. (Though, I recommend learning these topics after this course).
@@ -60,7 +63,7 @@ class: left, middle
 
 ---
 class: left, middle
-# Attendance
+### Attendance
 
 * Attendance is a requirement to pass the courses.
 --
@@ -68,56 +71,99 @@ class: left, middle
 
 ---
 class: left, middle
-# .red[Cheating] 
+### .red[Cheating and Academic Dishonesty] 
 --
 ## Be it in exams or assignments
 
-* Violating other rights
+* Violating other rights and affects honest students as well.
 --
-* Ashamed by community
+* Usually correlated with other corrupted personal values.
 --
-* Cheating is just a byproduct, powered by corrupted personality 
---
-* Forbidden by the Abrahamic laws [{الغش في الامتحانات | دار الإفتاء المصرية}](http://dar-alifta.org/AR/ViewFatwa.aspx?ID=13501&LangID=1) [{الغش فى الامتحانات |  سقفية الشباب بالكنيسة القبطية الأرثوذكسية}](https://youthbishopric.com/%D8%A7%D9%84%D8%BA%D8%B4-%D9%81%D9%89-%D8%A7%D9%84%D8%A7%D9%85%D8%AA%D8%AD%D8%A7%D9%86%D8%A7%D8%AA/)
---
-* Seriously penalized
+* Forbidden by the religions' laws.
 
 ---
 class: left, top
-# Good references 
-#### Data structure and Algorithms
-##### Introduction to Algorithms, by *Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.*
-
+## Recommended Resources 
+### Data structure and Algorithms
+<ul class="list-unstyled" markdown="1">
 --
-.center[
-<img src="/gallery/cormen.png" style="width:30%">]
+  <li class="media">
+    <a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"><img src="../media/cormen.jpg" style="height:128px;width:128px;" class="mr-3" alt="cormen"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Introduction to Algorithms</h5>
+      <em>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.</em>
+    </div>
+  </li>
+--
+  <li class="media my-4">
+    <a href="https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402"><img src="../media/gupta.jpg" style="height:128px;width:128px;"  class="mr-3" alt="cpp book"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Algorithms</h5>
+      <em>by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani.</em>
+    </div>
+  </li>
+--
+  <li class="media my-4">
+    <a href="https://www.coursera.org/learn/data-structures"><img src="../media/coursera.png" style="height:128px;width:128px;"  class="mr-3" alt="cpp book"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Online course: Data Structures</h5>
+      <em>by Offered By University of California San Diego and National Research University Higher School of Economics.</em>
+    </div>
+  </li>
+</ul>
 
-.center[[{Amazon}](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844) [{Goodreads}](https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms) [{PDF}](http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BCormen-AL2011%5DIntroduction_To_Algorithms-A3.pdf)]
 
 ---
 class: left, top
-# Good references 
-#### Data structure and Algorithms
-#### Algorithms, *by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani*
+## Recommended Resources 
+### C++ Programming
 
+<ul class="list-unstyled" markdown="1">
 --
-.center[<img src="/gallery/algobook.png" style="width:30%">]
-
-.center[[{Amazon}](https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402) [{Goodreads}](https://www.goodreads.com/book/show/138563.Algorithms)]
+  <li class="media">
+    <a href="https://www.pluralsight.com/courses/cplusplus-fundamentals-c17"><img src="../media/pluralsight.png" style="height:128px;width:128px;" class="mr-3" alt="C++"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Online course: C++ Fundamentals Including C++ 17</h5>
+      5h 48m long course, <em>by Kate Gregory.</em>
+    </div>
+  </li>
+--
+  <li class="media my-4">
+    <a href="https://en.cppreference.com/w/"><img src="../media/ISO_C++_Logo.svg" style="height:128px;width:128px;"  class="mr-3" alt="cpp book"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Documentation: C++ Standard Documentation</h5>
+      <em>by C++ committee.</em>
+    </div>
+  </li>
+</ul>
 
 ---
 class: left, top
-# Good references (C++)
-#### C++ Primer, *by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo*
+## Recommended Resources 
+### C++ Programming (cont'd)
 
-.center[<img src="/gallery/lippman.png" style="width:40%">]
-
-.center[[{Amazon}](https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113) [{Goodreads}](https://www.goodreads.com/book/show/768080.C_Primer)]
-
+<ul class="list-unstyled" markdown="1">
+--
+  <li class="media my-4">
+    <a href="http://stroustrup.com/programming.html"><img src="../media/cppbook1.jpeg" style="height:128px;width:128px;"  class="mr-3" alt="cpp book"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Textbook: Principles and Practice Using C++</h5>
+      including more than 100 pages of exercises, <em>by Bjarne Stroustrup.</em>
+    </div>
+  </li>
+--
+  <li class="media">
+    <a href="https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113"><img src="../media/cppbook2.jpg" style="height:128px;width:128px;"  class="mr-3" alt="cpp book"></a>
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Textbook: C++ Primer</h5>
+      <em>by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo.</em>
+    </div>
+  </li>
+</ul>
 
 ---
 class: left, middle
-# The very C++ basics
+## The very C++ basics
 
 * Creating variables.
 * Arithmetic Operations.
@@ -129,10 +175,10 @@ class: left, middle
 
 ---
 class: left, top
-# Introduction
+## Introduction
 
 --
-## A Simple Calculator Program and Memory Model
+### A Simple Calculator Program and Memory Model
 
 * Programs are all about playing with variables and groups of variables (structures)
 
@@ -141,7 +187,7 @@ class: left, top
 
 ---
 class: left, middle
-# C++
+### C++
 
 <img style="width:80%" src="/gallery/bjarne.jpg">
 
@@ -151,7 +197,7 @@ class: left, middle
 
 ---
 class: left, middle
-# What we can build using C++
+### What we can build using C++
 
 * Self-driving cars
 * Games
@@ -165,14 +211,14 @@ class: left, middle
 
 ---
 class: left, middle
-# What we can build using C++
+### What we can build using C++
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Our NN is initially in Python for rapid iteration, then converted to C++/C/raw metal driver code for speed (important!). Also, tons of C++/C engineers needed for vehicle control &amp; entire rest of car. Educational background is irrelevant, but all must pass hardcore coding test.</p>&mdash; Elon Musk (@elonmusk) <a href="https://twitter.com/elonmusk/status/1224182478501482497?ref_src=twsrc%5Etfw">February 3, 2020</a></blockquote> 
 
 
 ---
 class: left, top
-### Variables in C++
+## Variables in C++
 
 #### Primitive Data Types (PDT) in C++
 
@@ -185,7 +231,7 @@ class: left, top
 
 ---
 class: left, top
-### Variables in C++ (cont'd)
+## Variables in C++ (cont'd)
 
 * `std::string`: a text (e.g `"Mostafa"`, `"ACCTTG"`, etc.), occupies variable size im memory.
 --
@@ -194,7 +240,7 @@ class: left, top
 * `double`: like float, but higher precision, occupies **8 bytes** of memory.
 --
 
-#### Double vs float
+### Double vs float
 
 * $ \pi $ equals: `3.14159265358979323846264338327950288419716939937510582097494459230781640628620899`
 --
@@ -205,7 +251,7 @@ class: left, top
 
 ---
 class: left, top
-### Variables in C++
+## Variables in C++
 
 
 --
@@ -220,7 +266,7 @@ class: left, top
 
 ---
 class: left, top
-# Construction of Variables
+### Construction of Variables
 
 --
 A variable basically has:
@@ -237,7 +283,7 @@ A variable basically has:
 
 ---
 class: left, top
-# So, to construct a variable you need to:
+#### So, to construct a variable you need to:
 
 --
 1. Declare a variable (Compiler Requirement).
@@ -249,7 +295,7 @@ class: left, top
     * Give it an initial **value**.
 ---
 
-# Example: constructing variables
+#### Example: constructing variables
 --
 
 First of all:
@@ -265,7 +311,7 @@ First of all:
 
 ---
 class: left, top
-# Cont'd
+#### Cont'd
 
 
 --
@@ -287,17 +333,20 @@ float pi = 3.1415;
 
 ---
 class: left, top
-# Cont'd
+#### Cont'd
 
 --
 ```c++
-// If no interesting value to initialize your variable with, initialize with 0.
+// If no interesting value to initialize 
+// your variable with, initialize with 0.
 int k = 0;
 
-// You can initialize a variable with the value of another variable.
+// You can initialize a variable with the value of 
+// another variable.
 int j = k;
 
-// Another way to initialize a variable is using braces, it is up to you.
+// Another way to initialize a variable is 
+// using braces, it is up to you.
 double e {2.71828};
 ```
 
@@ -310,15 +359,15 @@ Any Questions?
 
 ---
 class: center, middle
-# Overview on data structures
+## Overview on data structures
 
 ---
 class: left, top
-# Collections of Variables (Data Structures)
+### Collections of Variables (Data Structures)
 
 A data structure is a .blue[particular way of organizing data] so they can be used efficiently by some task.
 
-### Example 1: Data Structures in Biomedical Informatics
+#### Example 1: Data Structures in Biomedical Informatics
 
 .center[<img style="width:30%;" src="/gallery/ecg-paper.png">]
 
@@ -327,7 +376,7 @@ A data structure is a .blue[particular way of organizing data] so they can be us
 
 ---
 class: center, middle
-### Example 1: Data Structures in Biomedical Informatics (cont'd)
+#### Example 1: Data Structures in Biomedical Informatics (cont'd)
 
 .center[<img style="width:30%;" src="/gallery/ecg-sampled.png">]
 
@@ -336,6 +385,9 @@ class: center, middle
 
 --
 * It is pointless to construct a variable for each sample!
+
+--
+.left[
 ```c++
 double s1 = 12.3;
 double s2 = 12.7;
@@ -343,14 +395,14 @@ double s2 = 12.7;
 .
 double s256 = -0.5;
 ```
-
+]
 --
 Instead we need to store all values and use a single name for them.
 
 
 ---
 class: left, top
-### Example 2: Data Structures in Biomedical Informatics
+#### Example 2: Data Structures in Biomedical Informatics
 
 Input:
 
@@ -374,7 +426,7 @@ Assume that we have:
 * .blue[Yes!] but using special data structure like suffix trees.
 
 ---
-# Data structures and basic algorithms on them
+### Data structures and basic algorithms on them
 
 --
 Mainly these what we are going to study through this course:
@@ -397,11 +449,11 @@ Mainly these what we are going to study through this course:
 
 ---
 class: center, middle
-# Back to C++
+## Back to C++
 
 ---
 class: left, top
-# Basic Operations on Primitive Data Types (PDT)
+### Basic Operations on Primitive Data Types (PDT)
 
 --
 * A) Arithmetic Operations.
@@ -420,7 +472,7 @@ x % y; // 2
 
 ---
 class: left, top
-# Cont'd
+### Cont'd
 
 --
 ```c++
@@ -444,7 +496,7 @@ u / v;  // 4.166667
 
 ---
 class: left, top
-# Cont'd 
+### Cont'd 
 
 --
 * B) Logical Operations
@@ -471,7 +523,7 @@ x>y; // False
 
 ---
 class: left, top
-# Cont'd
+### Cont'd
 
 --
 ```c++
@@ -497,7 +549,7 @@ true && true; // True
 
 ---
 class: left, top
-# Cont'd 
+### Cont'd 
 
 
 ```c++
@@ -511,7 +563,7 @@ false || false; // False
 
 ---
 class: left, top
-# Basic Control Statements
+### Basic Control Statements
 
 --
 * Conditions: `if`, `else if`, `else`, `switch`-`case`
@@ -531,81 +583,54 @@ else
 
 ---
 class: left, top
-# Cont'd
+### Cont'd
 
 ```c++
-
-char base = 'A';
-char complementary = 'T';
-
+char base = 'A'; char complementary = 'T';
 std::cin >> base;
-
 if( base == 'A' )
 {
   complementary = 'T';
 }
 else if( base == 'C' )
-{
-  complementary = 'G';
-}
+{ complementary = 'G'; }
 else if( base == 'G' )
-{
   complementary = 'C';
-}
 else
-{
   complementary = 'A';
-}
 
 std::cout << complementary << std::endl;
 ```
 
 ---
 class: left, top
-# Cont'd
+### Cont'd
 
 ```c++
-
-char base = 'A';
-char complementary = 'T';
-
+char base = 'A'; char complementary = 'T';
 std::cin >> base;
-
-
 switch (base)
 {
   case 'A':
-  {
-    complementary = 'T';
-  } break;
-  
-  case 'C':
-  {
-    complementary = 'G';
-  } break;
-  
-  case 'G':
-  {
-    complementary = 'C';
-  } break;
-  
+    complementary = 'T'; break;
+  case 'C': 
+    complementary = 'G'; break;
+  case 'G': 
+    complementary = 'C'; break;
   default:
-  {
-    complementary = 'A';
-  } break;
+    complementary = 'A'; break;
 }
-
 std::cout << complementary << std::endl;
 ```
 
 --
 * `std::cout` is used to print out object values to the terminal.
 --
-* What is `std::` and what is `cout`. Read the week notes to have more intuition.
+* What is `std::` and what is `cout`?
 
 ---
 class: left, top
-# Loops: `for`, `while`
+### Loops: `for`, `while`
 
 ```c++
 for( int i = 0; i < 10; ++i )
@@ -627,7 +652,7 @@ while( i < 10 )
 
 ---
 class: left, top
-# Functions
+### Functions
 
 --
 A function is a unit that you write some logic in it. So we can use that logic many times through that function.
@@ -642,7 +667,7 @@ A function basically has:
 
 ---
 class: left, top
-# Declaration and Definition of Functions
+### Declaration and Definition of Functions
 
 --
 Like variables, functions must be declared before you implement your logic in this function.
@@ -653,7 +678,7 @@ Like variables, functions must be declared before you implement your logic in th
 
 ---
 class: left, top
-# Example
+#### Example
 
 ```c++
 double average( double a , double b ) // function header (Declaration)
@@ -664,45 +689,43 @@ double average( double a , double b ) // function header (Declaration)
 double max( double a , double b ) // declaration
 { // definition
   if( a > b )
-  {
     return a;
-  }
-  else
-  {
-    return b;
-  }
+  else return b;
 }
 
 int main()
 {
-  // Declare `x` as double and initialize it with the average of 13.5 and 21.0
-  // Note the type consistency between x and the function return type.
+  // Define 'x' as double. Realize the type consistency.
   double x = average( 13.5 , 21.0 );
-
   bool y = average( 11.5 , 15.0 ); // Compiler Error, type mismatch!
-
   std::cout << max( 15.0 , 9.0 ) << std::endl; // prints: 15.0
 }
 ```
 
 ---
 class: left, top
-# Scopes and Lifetime
+### Scopes and Lifetime
 
 --
-1. Variables are bound to scopes where they are declared. Scopes types:
-  * Local scope: any variable declared in a function is not accessible outside that function.
-  * Block: any variable declared inside braces `{` `}`, like the blocks of the `for`, `while`, `if`, `else if`, `else`, and `switch`-`case`.
-  * `Namespace` scope.
---
-2. Otherwise, if variable is declared outside the mentioned scopes, then it is a global variable. Global variables are accessible anywhere in the source file.
---
-3. Once the scope is terminated, all variables in that scope are destructed.
+* Variables are bound to scopes where they are declared. Scopes types:
 
+--
+1. Local scope: any variable declared in a function is not accessible outside that function.
+--
+2. Block: any variable declared inside braces `{}`, like the blocks of the `for`, `while`, `if`, `else if`, `else`, and `switch`-`case`.
+--
+3. `Namespace` scope.
+
+--
+* Once the scope is terminated, all variables in that scope are destructed.
+--
+* Otherwise, if variable is declared outside all of the mentioned scopes, then it is a global variable. 
+--
+* Global variables are accessible anywhere in the source file.
 
 ---
 class: left, top
-# Example of a local scope and a block scope
+#### Example of a local scope and a block scope
 
 ```c++
 double rectangleArea( double width , double height )
@@ -724,12 +747,15 @@ int main()
 
 ---
 class: left, top
-# Example of namespace scope
+#### Example of namespace scope
 
 --
 Consider a situation when you need to implement a function that computes the area of rectangle and the area of right triangle. Using the same function name `area`!
 
---
+---
+class: left, top
+#### Example of namespace scope
+
 ```c++
 namespace rectangle
 {
@@ -738,7 +764,6 @@ namespace rectangle
     return width * height;
   }
 }
-
 namespace triangle
 {
   double area( double base , double height )
@@ -746,7 +771,6 @@ namespace triangle
     return ( base * height ) / 2;
   }
 }
-
 int main()
 {
   double rectangleArea = rectangle::area( 12.9 , 2.5 );
@@ -755,31 +779,68 @@ int main()
 }
 ```
 
-Now you have a little sense about `std::cout` and `std` Namespace.
+---
+class: left, top
+#### Example of namespace scope
+
+
+```c++
+int main()
+{
+*  double rectangleArea = rectangle::area( 12.9 , 2.5 );
+*  double triangleArea = triangle::area( 4.0 , 3.0 );
+  std::cout << rectangleArea << std::endl << triangleArea << std::endl;
+}
+```
+
+--
+- Now you have a little sense about `std::cout` and `std` Namespace.
 
 ---
 class: left, top
-# C++ Programs
+### C++ Programs
 
 C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.
 
 A typical process of executable file generation is shown in this image:
-![Compilation](/gallery/compile.gif)
 
-Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&srid=h6xMq).
-
----
-class: left, top
-# Writing C++ codes
-
-To write a c++ source code it is recommended to use an enhanced text editors. One of the light-weight editors developed by Microsoft and released as an open-source project is [Visual Studio Code](https://code.visualstudio.com). For ubuntu 64-bit machines, download from this [link](https://code.visualstudio.com/docs/?dv=linux64_deb).
+.center[![Compilation](/gallery/compile.gif)]
 
 ---
 class: left, top
-# Installing VS Code
+### Writing C++ codes
 
-After downloading, open a terminal at the directory where you downloaded the package file.
+* To write a C++ source code we will rely on Integrated Development Environment (IDE).
 
+
+
+--
+<ul class="list-unstyled">
+  <li class="media">
+    <img src="../media/Qt_logo_2016.svg" style="height:200px;width:200px;" class="mr-3" alt="qt">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Qt Creator for SBE201</h5>
+      <a href="{{ site.baseurl }}{% link 2020/data-structures/notes/qt.md %}">{Installing and running Qt Creator IDE}</a>
+    </div>
+  </li>
+</ul>
+
+You will find in the link above instructions on:
+1. Downloading the Qt project packages.
+2. Installation.
+3. Starting and writing your first program.
+
+---
+class: left, top
+### Lightweight Alternative: Microsoft VSCode
+
+* A light IDE.
+* You can use to write Markdown files and simple C++ codes.
+* Download from: [{Visual Studio Code}](https://code.visualstudio.com)
+--
+* After downloading the `.deb` package file, open a terminal at the directory where you downloaded the package file, then:
+
+--
 ```terminal
 sudo dpkg -i ./<package file>
 code
@@ -787,43 +848,12 @@ code
 
 ---
 class: left, top
-# Boilerplate codes
+#### Writing your first C++ application
 
---
-We mean by boilerplate any code or actions that you need to write before writing your ideas (logic). 
-
-
-#### Examples
-
-* creating the project folder (directory).
---
-* creating new file that will contain your source code.
---
-* basic `#include`s and basic declaration (like `main()` function).
---
+.small[Let's write our first source file. Copy the following code to your VS Code editor. Save the file as `firstApp4SBME.cpp`.]
 
 ```c++
 #include <iostream>
-
-int main()
-{
-}
-```
-
-Synonyms: Skeleton, Scaffold.
-
-???
-In exams and assignments, you are provided the skeleton.
-
----
-class: left, top
-### Writing your first application
-
-Let's write our first source file. Copy the following code to your VS Code editor. Save the file as `firstApp4SBME.cpp`.
-
-```c++
-#include <iostream>
-
 namespace rectangle
 {
   double area( double width , double height )
@@ -831,7 +861,6 @@ namespace rectangle
     return width * height;
   }
 }
-
 namespace triangle
 {
   double area( double base , double height )
@@ -839,54 +868,17 @@ namespace triangle
     return ( base * height ) / 2;
   }
 }
-
 int main()
 {
   double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
-
   std::cout << rectangleArea << "\n" << triangleArea << std::endl;
 }
 ```
 
 ---
 class: left, top
-# Compiling your code
-
---
-Make sure you have the compiler installed in your machine.
-
---
-```terminal
-g++ --version
-```
-
---
-this should print output like this:
-```terminal
-g++ (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
-Copyright (C) 2017 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
-```
---
-Otherwise, if not installed you should see:
-
---
-```terminal
-g++: command not found
-```
----
-class: left, top
-# Installing `GCC` compiler on your machine:
-
---
-```terminal
-sudo apt-get install build-essential
-```
-
---
-After saving your file, open a terminal in the directory you saved the source at. And write the following command:
+#### Compiling your code
 
 --
 ```terminal
@@ -898,7 +890,7 @@ g++ -o firstAppSBME firstAppSBME.cpp
 
 ---
 class: left, top
-# Execute the application
+#### Execute the application
 
 --
 ```terminal
@@ -915,7 +907,7 @@ you should see:
 
 ---
 class: left, top
-# Git
+## Git
 
 ![git-logo](/gallery/Git-logo.svg)
 
@@ -923,32 +915,28 @@ class: left, top
 ### Problem Definition
 
 
-Imagine the case when *Asem* and *Ahmed* need to collaborate on this project. Such that:
+Imagine the case when *Emad* and *Ahmed* need to collaborate on this project. Such that:
 
 ---
 class: left, top
-# Cont'd
+### Problem Definition (cont'd)
 
-1. *Asem* generates the biolerplate/skeleton (i.e the files and the main function) of the project.
+1. *Emad* generates the biolerplate/skeleton (i.e the files and the main function) of the project.
 
 ```c++
 #include <iostream>
-
 namespace rectangle
 {
     // No implementation yet!
 }
-
 namespace triangle
 {
     // No implmenetation yet!
 }
-
 int main()
 {
   double rectangleArea = rectangle::area( 12.9 , 2.5 );
   double triangleArea = triangle::area( 4.0 , 3.0 );
-
   std::cout << "Rectangle area: " << rectangleArea << std::endl 
             << "Triangle area: " << triangleArea << std::endl;
 }
@@ -956,20 +944,22 @@ int main()
 
 ---
 class: left, middle
-# Cont'd
+### Problem Definition (cont'd)
 
 --
 2. *Ahmed* has to implement the rectangle area function $$A = w h $$
 
 --
-3. *Asem* has to implement the triangle area function $$ A = \frac{bh}{2}$$
+3. *Emad* has to implement the triangle area function $$ A = \frac{bh}{2}$$
 
+---
+class: left, middle
+### Problem Definition (cont'd)
+#### ~~Possible~~ Awful Solutions:
 
+* Ahmed finishes the whole project alone.
 --
-~~Possible~~ Awful Scenarios:
-
-
-* Ahmed finishes the project alone.
+* Emad finishes the whole project alone.
 --
 * They share intermediate codes through messenger, e-mail, or dropbox!
 --
@@ -979,9 +969,9 @@ class: left, middle
 
 ---
 class:left, middle 
-# Cont'd
+### Problem Definition (cont'd)
 
-## What if?!
+#### What if?!
 
 --
 * What if we have a team of 8 members.
@@ -990,7 +980,7 @@ class:left, middle
 
 ---
 class: left, middle
-# Version Control Systems
+## Version Control Systems
 
 --
 * Keep track of all the changes that happened (No lost work).
@@ -1001,7 +991,7 @@ class: left, middle
  will ask the developers to check it.
 
 --
-#### Popular Version Control Systems
+### Popular Version Control Systems
 
 --
 * Git (we will use this)
@@ -1010,9 +1000,9 @@ class: left, middle
 
 ---
 class: left, middle
-# Git
+### Git
 
-<img style="width:35%" src="/gallery/Linus_Torvalds.jpeg.jpg">
+.center[<img style="width:35%" src="/gallery/Linus_Torvalds.jpeg.jpg">]
 
 --
 * [{Linus Torvaldos}](https://en.wikipedia.org/wiki/Linus_Torvalds) developed Linux Kernel in 1991.
@@ -1025,7 +1015,7 @@ class: left, middle
 
 ---
 class: left, top
-# Typical Git Cycle
+#### Typical Git Cycle
 
 For your first experience with git, refer to this workflow.
 
@@ -1046,7 +1036,7 @@ For your first experience with git, refer to this workflow.
 
 ---
 class: left, top
-# 1. Create/Clone Repo
+##### Create/Clone Repo
 
 --
 * Case 1: New Repository.
@@ -1065,7 +1055,7 @@ $ git clone [URL]
 
 ---
 class: left, top
-# Track Files
+##### Track files
 
 --
 It is recommended to add file by file, so apply this command to all your application **souce** files, **exclude** any executable files or files generated by the compiler.
@@ -1075,29 +1065,29 @@ $ git add [file name]
 ```
 
 --
-Or, alternatively, do it once for all files (not recommended, but it is up to you anyway). Just make sure you don't add any executable or compiler generated file. In assignments, you may jeopridize your score if you added any executable files in the repository.
+Or, alternatively, do it once for all files (not recommended, but it is up to you anyway). 
 ```terminal
 $ git add *
 ```
 
 --
-`add` here means you are asking the repository to take watch yoru files that already exists on disk.
+`add` here means you are asking the repository to watch your files that already exists on disk.
 
 ---
 class: left, top
-# Commit Changes
+##### Commit changes
 
 --
 * After making changes, you need to your repository to **confirm** these changes and documenting that change.
-* Please write a message that you can understand (e.g briefly, indicate your changes in the repository e.g "implementing square::area function").
+* Write a message that you can understand (e.g briefly, indicate your changes in the repository e.g "implementing square::area function").
 
 --
 ```terminal
-$ git commit -a -m “Message”
+$ git commit -a -m “I implemented square::area function”
 ```
 ---
 class: left, top
-# Get latest updates
+##### Get latest source code updates
 
 Before you publish your changes to the remote repository, update your repository in case some member of your team has made changes before you.
 
@@ -1111,7 +1101,7 @@ By default, *remote name* is `origin` and *branch name* is `master`, unless you 
 
 ---
 class: left, top
-# Push Changes
+##### Push source code changes
 
 Publish your changes to your teammates on the remote repository:
 
@@ -1123,19 +1113,20 @@ $ git push [remote name] [branch name]
 --
 Similarly, by default, *remote name* is `origin` and *branch name* is `master`, unless you made a new branch your are working on with your teammates.
 
+
 --
-### But what is **Remote Repository**, What do you mean
+###### But what is **Remote Repository**, What do you mean
 
 ---
 class: center, top
-# Local repository and remote repository 
+#### Local repository and remote repository 
 
 <img style="width:50%" src="/gallery/distributed.png">
 > This photo is from [{official git website}](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control).
 
 ---
 class: left, top
-## Git in the cloud
+### Git on the cloud
 
 Popular servers offering free remote repository hosting:
 
@@ -1145,9 +1136,9 @@ Popular servers offering free remote repository hosting:
 <img style="width:40%" src="/gallery/Bitbucket.svg">
 
 --
-* Github is offering you unlimited public repository, to have private repository you need to pay.
+* Github is offering you unlimited public and private repositories, your teammates per repository are limited to 5 members (Otherwise, pay). .green[Unless you are a student. Everything is free!]
 --
-* Bitbucket is offering you unlimited public and private repository, but your teammates are limited to 5 members (Otherwise, pay).
+* Bitbucket is offering you unlimited public and private repository, but your teammates for all repositories are limited to 5 members (Otherwise, pay).
 
 
 ---
@@ -1162,7 +1153,7 @@ class: center, middle
 
 ---
 class: left, top
-## Why Git on the cloud
+### Why Git on the cloud
 
 --
 * If you messed with your project, you can review your repository timeline and recover to a good state. 
@@ -1195,7 +1186,7 @@ class: center, middle
 
 ---
 class: center, middle
-# Git cheat sheets
+### Git cheat sheets
 
 <img style="width:90%" src="/gallery/gh-cheatsheet.png">
 
@@ -1203,7 +1194,7 @@ class: center, middle
 
 ---
 class: center, middle
-# GitHub Flow guide
+### GitHub Flow guide
 
 <img style="width:90%" src="/gallery/gh-flow.png">
 
@@ -1211,7 +1202,7 @@ class: center, middle
 
 ---
 class: center, middle
-# GitHub-Flavored Markdown guide
+### GitHub-Flavored Markdown guide
 
 <img style="width:80%" src="/gallery/gh-markdown.png">
 
@@ -1219,7 +1210,7 @@ class: center, middle
 
 ---
 class: center, middle
-# GitHub for Robotics comic book 
+### GitHub for Robotics comic book 
 #### explains the basics of using GitHub
 
 <img style="width:50%" src="/gallery/gh-robot.png">
@@ -1228,20 +1219,16 @@ class: center, middle
 
 ---
 class: center, middle
-## Special Gifts for Best Students
+### Special Gifts for Best Students
 
 <img style="width:70%" src="/gallery/gh-tshirts.png">
 
 ---
 class: center, middle
-# .green[Special Gift from GitHub to SBME 2022 Class]
+## .green[Special Gift from GitHub to SBME 2022 Class]
 
 --
-## .green[#ThanksGitHub]
-
----
-class: left, top
-## Demo
+### .green[#ThanksGitHub]
 
 ---
 class: left, top
@@ -1256,11 +1243,9 @@ $ sudo apt-get install git
 class: left, top
 ### Homework
 
-1. Read notes <a href="/2019/data-structures/notes/1_week1a" target="_blank">{Part 1: C++ Basics}</a> <a href="/2019/data-structures/notes/1_week1b" target="_blank">{Part 2: Git and Github}</a>
-2. Your first task is simple and a tutorial-style (just follow the instructions).
-
-* <a href="/2019/data-structures/assignments/1_week1" target="_blank">{Assignment}</a> **deadline next Monday 11:59 PM**
-
+* Markdown resumes
+* Basic C++
+* To be announced soon
 
 ---
 class: left, middle

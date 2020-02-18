@@ -61,7 +61,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.md %}){:target="_blank"}
     * Section handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part 2: Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
 
-## Resources
+## Resources & Useful Links
 
 ### A) Data Structures and Algorithms
 
