@@ -16,15 +16,17 @@ author: "Asem Alaa"
 
 
 class: left, middle
-# Information about your TA
+# Information about TA
 
 --
-* My name is Asem Alaa, graduate of 2016 class.
+* Asem Alaa
 --
 * e-mail: `asem.a.abdelaziz@gmail.com`
 --
-* Office hours and materials are available on the course page:
-[{sbme-tutorials.github.io/2020/data-structures/data-structures.html}](https://sbme-tutorials.github.io/2020/data-structures/data-structures.html).
+* Office hours and course materials are available on the course page:
+
+.center[.blue[[{sbme-tutorials.github.io/2020/data-structures}](https://sbme-tutorials.github.io/2020/data-structures)]]
+
 --
 * Main research interests: Bioinformatics Algorithms and Machine Learning
 

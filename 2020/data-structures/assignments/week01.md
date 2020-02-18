@@ -16,14 +16,14 @@ pdf: true
 * C++: Creating variables.
 * C++: Using arithmetic operations on variables.
 * C++: Using control statements: If, else if, else, while, for, switch-case.
-* C++: Play with simple functions
-* C++: Play with namespace
+* C++: Play with simple functions.
+* C++: Play with namespace.
 
 ## Prerequisites (Before you start)
 
 * Read the notes of the first week [Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"} and [Part 2: Basics of Git and Github]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}.
 * Install an editor for Markdown files like [VSCode](https://code.visualstudio.com/download).
-* Install Qt for the C++ part. See [Installing and running Qt Creator IDE]({{ site.baseurl }}{% link 2020/data-structures/notes/qt-start.md %}){:target="_blank"}
+* Install Qt for the C++ part. See [Installing and running Qt Creator IDE]({{ site.baseurl }}{% link 2020/data-structures/notes/qt.md %}){:target="_blank"}
 
 ## Deadline
 

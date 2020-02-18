@@ -59,8 +59,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 
 1. Week 1:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.md %}){:target="_blank"}
-    * Section handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part 2: Basics of Git and Github]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
-    * [Assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01.md %}){:target="_blank"}
+    * Section handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part 2: Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
 
 ## Resources
 

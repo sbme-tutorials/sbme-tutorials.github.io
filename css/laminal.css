@@ -123,6 +123,10 @@ tr:last-child td {
   color: blue;
 }
 
+.blue a:link, .blue a:visited {
+  color: blue;
+}
+
 /* Some special classes */
 
 .title {
