@@ -23,10 +23,11 @@ by: "Asem"
 * `int`: an integer (e.g ...,-1,0,1,2,..), it occupies **4 bytes** of memory (for 64-bit machines).
 * `float`: a real-number-like (e.g 0.5, 3.141, 9.81), it occupies **4 bytes** of memory.
 * `double`: it is like float, but higher precision, occupies **8 bytes** of memory.
+* `std::string`: a text (e.g `"Mostafa"`, `"ACCTTG"`, etc.), occupies variable size im memory.
+* `std::vector`: collection (dynamic array) of values of the same type.
+* `enum class`: finite sets. `enum class` is used to define new types that can hold predefined values. For example, you can define a new type `Direction` and allow four values to be held: `North`, `South`, `East`, `West`.
 * pointers: it holds an address of a variable in memory, occupies **8 bytes** of memory (for 64-bit machines).
 * references: an alias to a variable (same entity, but different name/label).
-
-Short story: pointers and references are made to make life easier and flexible when controlling variables as we will see later in this course.
 
 ### Construction of Variables
 
@@ -36,14 +37,12 @@ A variable basically has:
 2. **Name**: name of the variable to be used throughout your code.
 3. **Value**: the content of the variable.
 
-Don't mix between them!
-
 To construct a variable you need to:
 
 1. Declare a variable (Compiler Requirement).
     * Indicate your variable **type**.
     * Indicate your variable **name** that your are going to refer later.
-2. Initialize that variable (For god's sake).
+2. Initialize that variable.
     * Give it an initial value.
 
 #### Example

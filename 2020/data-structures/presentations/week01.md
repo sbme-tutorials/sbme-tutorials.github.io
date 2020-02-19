@@ -652,6 +652,26 @@ while( i < 10 )
 
 ---
 class: left, top
+### Loops: `for`, `while`
+
+```c++
+for( int i = 0; i < 10; ++i )
+{
+  std::cout << i << " ";
+}
+// prints:0 1 2 3 4 5 6 7 8 9
+
+int i = 0;
+while( i < 10 )
+{
+  std::cout << i << " ";
+  ++i;
+}
+// prints:0 1 2 3 4 5 6 7 8 9
+```
+
+---
+class: left, top
 ### Functions
 
 --
