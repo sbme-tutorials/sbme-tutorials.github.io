@@ -17,9 +17,9 @@ pdf: true
 
 Recall the example of area problem from [Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}#example-of-namespace-scope){:target="_blank"}. 
 
-Imagine the case when *Asem* and *Ahmed* need to collaborate on this project. Such that:
+Imagine the case when *Emad* and *Ahmed* need to collaborate on this project. Such that:
 
-* *Asem* generates the biolerplate/skeleton (i.e the files and the main function) of the project.
+* *Emad* generates the biolerplate/skeleton (i.e the files and the main function) of the project.
 {% highlight c++ %}
 #include <iostream>
 
@@ -43,7 +43,7 @@ int main()
 }
 {% endhighlight %}
 * *Ahmed* has to implement the rectangle area function $$A = w h $$.
-* *Asem* has to implement the triangle area function $$ A = \frac{bh}{2}$$.
+* *Emad* has to implement the triangle area function $$ A = \frac{bh}{2}$$.
 
 ~~Possible~~ Awful Scenarios:
 
@@ -51,7 +51,7 @@ int main()
 * They pass USB disk back and forth!
 * They sit together to finish the project!
 
-And wait a minute:
+Even more challenging situations:
 
 * What if we have a team of 8 members.
 * What if your application was as big as 20K lines of code across tens of files.
@@ -60,8 +60,7 @@ And wait a minute:
 
 * Keep track of all the changes that happened (No lost work).
 * Many Developers can work on the same file at the same time.
-* The Version Control System will handle conflicts if possible, if not, it
- will ask the developers to check it.
+* The Version Control System will handle conflicts if possible, if not, it will ask the developers to check it.
 
 ### Popular Version Control Systems
 
@@ -159,14 +158,14 @@ Popular servers offering free remote repository hosting:
 
 ![github](../../../gallery/github.jpg){:width="40%"} **+** ![bitbucket](../../../gallery/Bitbucket.svg){:width="40%"}
 
-* Github is offering you unlimited repository, but in public.
-* To get the advantage of private repositories, but with charge of 7$/month (~ 125 EGP). **Unless you are student**. **Beware of the power of having institutional e-mail!** I advice you to request an institutional e-mail from the faculty (maybe from the students affairs). Much more offers are free for student at Github (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/)).
+* Github is offering you unlimited private and public repository.
+* Much more services are made free for student at Github (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/)).
 
 ## Hands-on
 
 ### Trying git online with interactive console
 
-Follow this nice interactive tutorial from Github for using Git: [Try Git](https://try.github.io).
+Follow this page from Github for additional resources to learn Git: [Try Git](https://try.github.io).
 
 ### Trying git on your machine
 
@@ -177,7 +176,7 @@ Issue the following command in your terminal.
 $ sudo apt-get install git
 {% endhighlight %}
 
-Once installed, let the Git know your name and your email. So from now on, any commit or changes you make to your source code will be signed by your name and email. This is very useful when working with teams!
+Once installed, let the Git know your name and your email. So from now on, any commit or changes you make to your source code will be signed by your name and email.
 
 {% highlight bash %}
 $ git config --global user.name "John Doe"
@@ -224,5 +223,3 @@ $ git add einstein-happiness-theory.txt
 {% highlight bash %}
 $ git commit -a -m "Adding a file containing a saying by Albert Einstein"
 {% endhighlight %}
-
-* Optional: if you wish to have a remote repository to save your new project on the cloud, make sure you have registered with Github or Bitbucket. For example, for bitbucket, follow [these intructions](https://confluence.atlassian.com/bitbucket/create-a-git-repository-759857290.html) to create a repository on bitbucket. After making your repository, you should find some instructions titled **Get started with command line** then select **I have an existing repository** and follow the instructions.

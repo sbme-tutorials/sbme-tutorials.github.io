@@ -39,7 +39,7 @@ A variable basically has:
 
 To construct a variable you need to:
 
-1. Declare a variable (Compiler Requirement).
+1. Declare a variable (compiler requirement).
     * Indicate your variable **type**.
     * Indicate your variable **name** that your are going to refer later.
 2. Initialize that variable.
@@ -65,10 +65,10 @@ char x;
 
 // Please, always initialize your variables.
 
-// Declaration of character with initializng to 's'.
+// Declaration of character with initializing to 's'.
 char x = 's';
 
-// Declaration of float whith initializing to 3.1415.
+// Declaration of float with initializing to 3.1415.
 float pi = 3.1415;
 
 
@@ -144,37 +144,37 @@ int x = 3;
 int y = 4;
 
 // equal
-x==y; // False
+x==y; // false
 
 // not equal
-x!=y; // True
+x!=y; // true
 
 // less than
-x<y; // True
+x<y; // true
 
 // greater than
-x>y; // False
+x>y; // false
 
 // less than or equal
-x<=y; // True
+x<=y; // true
 
 // greater than or equal
-x>=y; // False
+x>=y; // false
 
 // logical and
-x == 3 && y > x; // True
-x != 3 && y > x; // False
-true && true; // True
-5 < 10 && 13 >= 11; // True
-5 % 2 == 1 || 3 / 2 > 1; // False
-5 % 2 == 1 || 3 / 2.0 > 1; // True
+x == 3 && y > x; // true
+x != 3 && y > x; // false
+true && true; // true
+5 < 10 && 13 >= 11; // true
+5 % 2 == 1 || 3 / 2 > 1; // false
+5 % 2 == 1 || 3 / 2.0 > 1; // true
 
 // logical or
-true || true; // True
-true || false; // True
-false || true; // True
-false || false; // False
-5 % 2 == 1 || 3 / 2 > 1; // True
+true || true; // true
+true || false; // true
+false || true; // true
+false || false; // false
+5 % 2 == 1 || 3 / 2 > 1; // true
 {% endhighlight %}
 
 ## Basic Control Statements
@@ -256,7 +256,7 @@ std::cout << complementary << std::endl;
 
 ### Loops: `for`, `while`
 
-Note: `std::cout` is an object used to print primitive data type (PDT) variables into the terminal/console. Wait!! What is `std::`? Well, you can write your own functions and make them callable inside a `namespace`. Consider `namespace` feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called **Standard Template Library (STL)**. If you need to use a function from the the C++ **STL** just indicate the `std` as a `namespace` when you call a function from **STL**. **Don't panic if you feel uncomfotable! everything is going to be clear incrementally.**
+Note: `std::cout` is an object used to print primitive data type (PDT) variables into the terminal/console. But what is `std::` part? Well, you can write your own functions and make them callable inside a `namespace`. Consider `namespace` feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called **Standard Template Library (STL)**. If you need to use a function from the the C++ **STL** just indicate the `std` as a `namespace` when you call a function from **STL**.
 
 {% highlight c++ %}
 for( int i = 0; i < 10; ++i )
@@ -418,8 +418,6 @@ C++ is a compiled language which means you need to install a compiler in order t
 
 A typical process of executable file generation is shown in this image:
 ![Compilation](../media/compile.gif)
-
-Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&srid=h6xMq).
 
 ### Writing C++ codes
 
