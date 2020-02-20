@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "notes"
-year: "2019"
+year: "2020"
 title:  "Steps for using Public Key Authentication for accessing your GitHub repositories"
 by: "Asem"
 ---
@@ -73,7 +73,7 @@ Make sure the link starts with `git@` instead of `https://`.
 
 ### If your repository already cloned using HTTPS
 
-If you have already cloned a repository using `HTTPS` link, retrive the **SSH** link as shown above, then issue the following command in a terminal **placed in your repository**:
+If you have already cloned a repository using `HTTPS` link, retrieve the **SSH** link as shown above, then issue the following command in a terminal **placed in your repository**:
 
 ```
 git remote set-url origin [ssh link]

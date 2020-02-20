@@ -144,6 +144,17 @@ Feel free to request for additional office hours by sending me an email (asem.a.
       </ul>
     </div>
   </li>
+  <li class="media">
+    <img src="media/Git.png" style="height:64px;width:64px;" class="mr-3" alt="qt">
+    <div class="media-body">
+      <h5 class="mt-0 mb-1">Git</h5>
+      <ul>
+      <li><a href="https://try.github.io/">List of resources to learn git</a></li>
+      <li><a href="{{ site.baseurl }}{% link 2020/data-structures/notes/public_key.md %}">Steps for using Public Key Authentication for accessing your GitHub repositories</a>
+      </li>
+      </ul>
+    </div>
+  </li>
 </ul>
 
 ## Report Errata
