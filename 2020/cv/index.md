@@ -30,7 +30,7 @@ Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
 
 1. Section 1:
     * [Section slides](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/Tutorial1.pdf)
-    * Demo files: [[SBE404 Tut 1.ipynb]](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%201.ipynb) [[SBE404 Tut 2.ipynb]](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%202.ipynb)
+    * Demo files: [\[SBE404 Tut 1.ipynb\]](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%201.ipynb) [\[SBE404 Tut 2.ipynb\]](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%202.ipynb)
 
 ## Assignments
 
