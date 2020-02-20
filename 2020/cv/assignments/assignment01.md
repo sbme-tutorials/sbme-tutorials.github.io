@@ -22,10 +22,11 @@ pdf: true
 
 ## Joining to Assignment Repository
 
-Refer to this sheet to know your **Group number**: (TBA)
+Refer to this sheet to know your **Group number**: (https://docs.google.com/spreadsheets/d/1H0mGNnDtruLanYVxQH6439rXLTpPglXzglBmYt1J_ow/edit?usp=sharing)
 
 1. Register your team in the assignment through [https://classroom.github.com/g/yHMkJP3m](https://classroom.github.com/g/yHMkJP3m).
-2. You either join to an existing team, or create a new team.
+2. Use the following pattern to name your team **SBE404-2020-TeamXX**, where **XX** is the team number in two digits (00, 01, ..., 18).
+3. You either join to an existing team, or create a new team.
 
 ## Deliverables
 
