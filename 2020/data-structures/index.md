@@ -7,6 +7,9 @@ year: "2020"
 
 # Data Structures \(SBE201\) - Spring 2020
 
+* TOC
+{:toc}
+
 ## Teaching Staff
 
 Instructor: Prof. Ahmed H. Kandil  
@@ -156,3 +159,10 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 Help improving the content by reporting and fixing the typos and syntax errors.
 
 <a class="github-button" href="https://github.com/sbme-tutorials/sbme-tutorials.github.io/issues" data-size="large" data-show-count="true" aria-label="Issue sbme-tutorials/sbme-tutorials.github.io on GitHub">Issue</a> <a class="github-button" href="https://github.com/sbme-tutorials/sbme-tutorials.github.io/fork" data-size="large" data-show-count="true" aria-label="Fork sbme-tutorials/sbme-tutorials.github.io on GitHub">Fork</a> 
+
+
+## Miscellaneous
+
+A very generous gift from GitHub to the class of SBME 2022!
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/GitHubEducation?ref_src=twsrc%5Etfw">@GitHubEducation</a> gives us the opportunity to have access to a lot of useful materials which is helping greatly with our courses  <a href="https://twitter.com/hashtag/ThanksGitHub?src=hash&amp;ref_src=twsrc%5Etfw">#ThanksGitHub</a> for sending us the swag package ♥️ <br>-From all systems and biomedical engineering students class 2022 at cairo university. <a href="https://t.co/WSG1DK9Qng">pic.twitter.com/WSG1DK9Qng</a></p>&mdash; Amira Omar (@Its_Amira_Omar) <a href="https://twitter.com/Its_Amira_Omar/status/1229783277113892864?ref_src=twsrc%5Etfw">February 18, 2020</a></blockquote>
