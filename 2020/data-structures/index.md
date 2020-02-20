@@ -7,9 +7,6 @@ year: "2020"
 
 # Data Structures \(SBE201\) - Spring 2020
 
-* TOC
-{:toc}
-
 ## Teaching Staff
 
 Instructor: Prof. Ahmed H. Kandil  
