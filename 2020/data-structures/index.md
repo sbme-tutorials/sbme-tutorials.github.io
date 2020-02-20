@@ -69,25 +69,23 @@ Feel free to request for additional office hours by sending me an email (asem.a.
   <li class="media">
     <a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"><img src="media/cormen.jpg" style="height:64px;width:64px;" class="mr-3" alt="cormen"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Introduction to Algorithms</h5>
+      <h5 class="mt-0 mb-1">Introduction to Algorithms <a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844"><i class="fab fa-amazon"></i></a></h5>
       <em>by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.</em>
-      <a href="https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844">[Amazon]</a>
     </div>
   </li>
   <li class="media my-4">
     <a href="https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402"><img src="media/gupta.jpg" style="height:64px;width:64px;"  class="mr-3" alt="cpp book"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Algorithms</h5>
+      <h5 class="mt-0 mb-1">Algorithms <a href="https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402"><i class="fab fa-amazon"></i></a></h5>
       <em>by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani.</em>
-      <a href="https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402">[Amazon]</a>
+
     </div>
   </li>
   <li class="media my-4">
     <a href="https://www.coursera.org/learn/data-structures"><img src="media/coursera.png" style="height:64px;width:64px;"  class="mr-3" alt="cpp book"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Online course: Data Structures</h5>
+      <h5 class="mt-0 mb-1">Online course: Data Structures <a href="https://www.coursera.org/learn/data-structures"><i class="ai ai-coursera"></i></a></h5>
       <em>by Offered By University of California San Diego and National Research University Higher School of Economics.</em>
-      <a href="https://www.coursera.org/learn/data-structures">[Coursera]</a>
     </div>
   </li>
 </ul>
@@ -99,33 +97,29 @@ Feel free to request for additional office hours by sending me an email (asem.a.
   <li class="media">
     <a href="https://www.pluralsight.com/courses/cplusplus-fundamentals-c17"><img src="media/pluralsight.png" style="height:64px;width:64px;" class="mr-3" alt="C++"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Online course: C++ Fundamentals Including C++ 17</h5>
+      <h5 class="mt-0 mb-1">Online course: C++ Fundamentals Including C++ 17 <a href="https://www.pluralsight.com/courses/cplusplus-fundamentals-c17"><i class="fas fa-link"></i></a></h5>
       5h 48m long course, <em>by Kate Gregory.</em>
-      <a href="https://www.pluralsight.com/courses/cplusplus-fundamentals-c17">[Pluralsight]</a>
     </div>
   </li>
   <li class="media my-4">
     <a href="https://en.cppreference.com/w/"><img src="media/ISO_C++_Logo.svg" style="height:64px;width:64px;"  class="mr-3" alt="cpp book"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Documentation: C++ Standard Documentation</h5>
+      <h5 class="mt-0 mb-1">Documentation: C++ Standard Documentation <a href="https://en.cppreference.com/w/"><i class="fas fa-link"></i></a></h5>
       <em>by C++ committee.</em>
-      <a href="https://en.cppreference.com/w/">[cppreference.com]</a>
     </div>
   </li>
   <li class="media my-4">
     <a href="http://stroustrup.com/programming.html"><img src="media/cppbook1.jpeg" style="height:64px;width:64px;"  class="mr-3" alt="cpp book"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Textbook: Principles and Practice Using C++</h5>
+      <h5 class="mt-0 mb-1">Textbook: Principles and Practice Using C++ <a href="http://stroustrup.com/programming.html"><i class="fas fa-link"></i></a></h5>
       including more than 100 pages of exercises, <em>by Bjarne Stroustrup.</em>
-      <a href="http://stroustrup.com/programming.html">[stroustrup.com]</a>
     </div>
   </li>
   <li class="media">
     <a href="https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113"><img src="media/cppbook2.jpg" style="height:64px;width:64px;"  class="mr-3" alt="cpp book"></a>
     <div class="media-body">
-      <h5 class="mt-0 mb-1">Textbook: C++ Primer</h5>
+      <h5 class="mt-0 mb-1">Textbook: C++ Primer <a href="https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113"><i class="fab fa-amazon"></i></a></h5>
       <em>by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo.</em>
-      <a href="https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113">[Amazon]</a>
     </div>
   </li>
 </ul>
