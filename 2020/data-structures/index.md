@@ -158,7 +158,7 @@ Help improving the content by reporting and fixing the typos and syntax errors.
 <a class="github-button" href="https://github.com/sbme-tutorials/sbme-tutorials.github.io/issues" data-size="large" data-show-count="true" aria-label="Issue sbme-tutorials/sbme-tutorials.github.io on GitHub">Issue</a> <a class="github-button" href="https://github.com/sbme-tutorials/sbme-tutorials.github.io/fork" data-size="large" data-show-count="true" aria-label="Fork sbme-tutorials/sbme-tutorials.github.io on GitHub">Fork</a> 
 
 
-## Miscellaneous
+## Acknowledgements
 
 We are happy to receive a generous gift from GitHub to the class of SBME 2022!
 
