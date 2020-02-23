@@ -6,7 +6,7 @@ layout: page
 category: "notes"
 course: "sbe452"
 year: "2020"
-title: "Linear Regression"
+title: "Intro to machine learning"
 ---
 
 * TOC

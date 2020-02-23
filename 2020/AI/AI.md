@@ -35,9 +35,10 @@ Demonstrator:  Eng. Ayman Anwar
 
 ## Course Outline
 
-| Week | Content |  Lectures | Tutorials | Assignments
+| Week | Content |  Lectures | Tutorials | Assignments 
 |------|-----------------|-----| -------| -----------|
-|   1  | Introduction to Machine Learning| [L1]({{ site.baseurl }}{% link 2020/AI/presentations/L1.pdf %}){:target="_blank"} | | |
+|   1  | Introduction to Machine Learning| [L1]({{ site.baseurl }}{% link 2020/AI/presentations/L1.pdf %}){:target="_blank"} | [T1](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/House%20Price%20Demo/HousePrice.ipynb) | |
+|   2  | Linear Regression|  | | |
 
 
 ## Announcements
