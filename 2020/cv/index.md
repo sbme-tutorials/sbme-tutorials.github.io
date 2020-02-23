@@ -7,6 +7,7 @@ category: "coursepage"
 course: "sbe404b"
 year: "2020"
 ---
+
 # Computer Vision \(SBE404B\) - Spring 2020
 
 ## Teaching Staff
@@ -25,20 +26,16 @@ Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
 |   1     | Tuesday | 1st |
 |   2     | Tuesday | 2nd |
 
-## Office Hours
+## Sections
 
-TBA
+1. Section 1:
+    * [Section slides](/2020/cv/presentations/week01.pdf)
+    * Demo files: \[[SBE404 Tut 1.ipynb](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%201.ipynb)\]
+2. Section 2:
+    * [Section slides](/2020/cv/presentations/week02.pdf)
+    * Demo files: \[[SBE404 Tut 2.ipynb](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%202.ipynb)\]
 
-## Course Outline
-
-TBA
-
-## Tutorials
-
-TBA
 
 ## Assignments
 
-TBA
-
-## Announcements
+* Assignment 1: [Images, Filters, Histograms, Gradients, Frequency]({% link 2020/cv/assignments/assignment01.md %})

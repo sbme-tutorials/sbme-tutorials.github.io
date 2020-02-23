@@ -12,41 +12,7 @@ by: "Asem"
 
 ## Introduction
 
-### Resources: Textbooks and MOOCs
-
-* References are not meant to teach C++.
-* Use references to revise particular conecpts.
-* Learn by practicing, and only practicing.
-
-#### Data Structures and Algorithms (Theory)
-
-##### Reference 1: Algorithms, *by Sanjoy Dasgupta, Christos H. Papadimitriou, Umesh Vazirani*
-
-![](/gallery/algobook.png)
-
-Intuitive, informal language
-
-* [{Amazon}](https://www.amazon.com/Algorithms-Sanjoy-Dasgupta/dp/0073523402)
-* [{Goodreads}](https://www.goodreads.com/book/show/138563.Algorithms)
-
-##### Reference 2: Introduction to Algorithms, *by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein*
-
-![](/gallery/cormen.png)
-
-* [{Amazon}](https://www.amazon.com/Introduction-Algorithms-3rd-MIT-Press/dp/0262033844)
-* [{Goodreads}](https://www.goodreads.com/book/show/108986.Introduction_to_Algorithms)
-* [{PDF}](http://ressources.unisciel.fr/algoprog/s00aaroot/aa00module1/res/%5BCormen-AL2011%5DIntroduction_To_Algorithms-A3.pdf)
-
-#### C++
-
-##### Reference 1: C++ Primer, *by Stanley B. Lippman, Josée Lajoie, Barbara E. Moo*
-
-![](/gallery/lippman.png)
-
-* [{Amazon}](https://www.amazon.com/Primer-5th-Edition-Stanley-Lippman/dp/0321714113)
-* [{Goodreads}](https://www.goodreads.com/book/show/768080.C_Primer)
-
-## Variables and Collections
+## Variables and Data Structures
 
 ### Variables
 
@@ -57,10 +23,11 @@ Intuitive, informal language
 * `int`: an integer (e.g ...,-1,0,1,2,..), it occupies **4 bytes** of memory (for 64-bit machines).
 * `float`: a real-number-like (e.g 0.5, 3.141, 9.81), it occupies **4 bytes** of memory.
 * `double`: it is like float, but higher precision, occupies **8 bytes** of memory.
+* `std::string`: a text (e.g `"Mostafa"`, `"ACCTTG"`, etc.), occupies variable size im memory.
+* `std::vector`: collection (dynamic array) of values of the same type.
+* `enum class`: finite sets. `enum class` is used to define new types that can hold predefined values. For example, you can define a new type `Direction` and allow four values to be held: `North`, `South`, `East`, `West`.
 * pointers: it holds an address of a variable in memory, occupies **8 bytes** of memory (for 64-bit machines).
 * references: an alias to a variable (same entity, but different name/label).
-
-Short story: pointers and references are made to make life easier and flexible when controlling variables as we will see later in this course.
 
 ### Construction of Variables
 
@@ -70,14 +37,12 @@ A variable basically has:
 2. **Name**: name of the variable to be used throughout your code.
 3. **Value**: the content of the variable.
 
-Don't mix between them!
-
 To construct a variable you need to:
 
-1. Declare a variable (Compiler Requirement).
+1. Declare a variable (compiler requirement).
     * Indicate your variable **type**.
     * Indicate your variable **name** that your are going to refer later.
-2. Initialize that variable (For god's sake).
+2. Initialize that variable.
     * Give it an initial value.
 
 #### Example
@@ -100,10 +65,10 @@ char x;
 
 // Please, always initialize your variables.
 
-// Declaration of character with initializng to 's'.
+// Declaration of character with initializing to 's'.
 char x = 's';
 
-// Declaration of float whith initializing to 3.1415.
+// Declaration of float with initializing to 3.1415.
 float pi = 3.1415;
 
 
@@ -179,37 +144,37 @@ int x = 3;
 int y = 4;
 
 // equal
-x==y; // False
+x==y; // false
 
 // not equal
-x!=y; // True
+x!=y; // true
 
 // less than
-x<y; // True
+x<y; // true
 
 // greater than
-x>y; // False
+x>y; // false
 
 // less than or equal
-x<=y; // True
+x<=y; // true
 
 // greater than or equal
-x>=y; // False
+x>=y; // false
 
 // logical and
-x == 3 && y > x; // True
-x != 3 && y > x; // False
-true && true; // True
-5 < 10 && 13 >= 11; // True
-5 % 2 == 1 || 3 / 2 > 1; // False
-5 % 2 == 1 || 3 / 2.0 > 1; // True
+x == 3 && y > x; // true
+x != 3 && y > x; // false
+true && true; // true
+5 < 10 && 13 >= 11; // true
+5 % 2 == 1 || 3 / 2 > 1; // false
+5 % 2 == 1 || 3 / 2.0 > 1; // true
 
 // logical or
-true || true; // True
-true || false; // True
-false || true; // True
-false || false; // False
-5 % 2 == 1 || 3 / 2 > 1; // True
+true || true; // true
+true || false; // true
+false || true; // true
+false || false; // false
+5 % 2 == 1 || 3 / 2 > 1; // true
 {% endhighlight %}
 
 ## Basic Control Statements
@@ -229,56 +194,69 @@ else
   // Other operations here.
 }
 
-int mark = 73;
-char grade = 'D';
+char base = 'A';
+char complementary = 'T';
 
-if( mark > 85 )
+std::cin >> base;
+
+if( base == 'A' )
 {
-  grade = 'A';
+  complementary = 'T';
 }
-else if( mark > 75 )
+else if( base == 'C' )
 {
-  grade = 'B';
+  complementary = 'G';
 }
-else if( mark > 65 )
+else if( base == 'G' )
 {
-  grade = 'C';
+  complementary = 'C';
 }
 else
 {
-  grade = 'D';
+  complementary = 'A';
 }
 
-int minimumGrade = 0;
+std::cout << complementary << std::endl;
+{% endhighlight %}
 
-switch (grade)
+
+{% highlight c++ %}
+
+char base = 'A';
+char complementary = 'T';
+
+std::cin >> base;
+
+
+switch (base)
 {
   case 'A':
   {
-    minimumGrade = 85;
-  } break;
-  
-  case 'B':
-  {
-    minimumGrade = 75;
+    complementary = 'T';
   } break;
   
   case 'C':
   {
-    minimumGrade = 65;
+    complementary = 'G';
+  } break;
+  
+  case 'G':
+  {
+    complementary = 'C';
   } break;
   
   default:
   {
-    minimumGrade = 85;
+    complementary = 'A';
   } break;
 }
 
+std::cout << complementary << std::endl;
 {% endhighlight %}
 
 ### Loops: `for`, `while`
 
-Note: `std::cout` is an object used to print primitive data type (PDT) variables into the terminal/console. Wait!! What is `std::`? Well, you can write your own functions and make them callable inside a `namespace`. Consider `namespace` feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called **Standard Template Library (STL)**. If you need to use a function from the the C++ **STL** just indicate the `std` as a `namespace` when you call a function from **STL**. **Don't panic if you feel uncomfotable! everything is going to be clear incrementally.**
+Note: `std::cout` is an object used to print primitive data type (PDT) variables into the terminal/console. But what is `std::` part? Well, you can write your own functions and make them callable inside a `namespace`. Consider `namespace` feature as a way to organize functions into categories. C++ is shipped with a big library of functions, called **Standard Template Library (STL)**. If you need to use a function from the the C++ **STL** just indicate the `std` as a `namespace` when you call a function from **STL**.
 
 {% highlight c++ %}
 for( int i = 0; i < 10; ++i )
@@ -291,6 +269,7 @@ int i = 0;
 while( i < 10 )
 {
   std::cout << i << " ";
+  ++i;
 }
 // prints:0 1 2 3 4 5 6 7 8 9
 {% endhighlight %}
@@ -438,9 +417,7 @@ Now you have a little sense about `std::cout` and `std` Namespace.
 C++ is a compiled language which means you need to install a compiler in order to generate executable files for your application.
 
 A typical process of executable file generation is shown in this image:
-![Compilation](/gallery/compile.gif)
-
-Courtesy to this [post @Quora](https://www.quora.com/How-do-I-convert-C%2B%2B-source-code-into-software/answer/Sri-Hari-Haran-Seenivasan?share=8dc30d5b&srid=h6xMq).
+![Compilation](../media/compile.gif)
 
 ### Writing C++ codes
 
@@ -506,10 +483,12 @@ g++ --version
 this should print output like this:
 
 ```shell
-g++ (Ubuntu 5.4.0-6ubuntu1~16.04.5) 5.4.0 20160609
-Copyright (C) 2015 Free Software Foundation, Inc.
+this should print output like this:
+```terminal
+g++ (Ubuntu 7.4.0-1ubuntu1~18.04.1) 7.4.0
+Copyright (C) 2017 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE
 ```
 
 Otherwise, if not installed you should see:
