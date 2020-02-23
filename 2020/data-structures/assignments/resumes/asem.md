@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "assignment"
-year: "2019"
+year: "2020"
 title:  "Resume"
 by: "Asem"
 pdf: true
@@ -17,9 +17,8 @@ pdf: true
 
 ## Interests
 
-* Research and reading in Bioinformatics, ML.
-* Playing Cards :flower_playing_cards:, classical video games :video_game:, fishing :fishing_pole_and_fish:
-* Music mining and archiving :musical_score:
+* Research and reading in Bioinformatics and Machine Learning.
+* Playing Cards :flower_playing_cards:, classical video games :video_game:, fishing :fishing_pole_and_fish:, collecting music boxes :musical_score:, Arabic calligraphy.
 
 ## Work Experience
 

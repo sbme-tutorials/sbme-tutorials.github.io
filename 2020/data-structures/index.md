@@ -60,6 +60,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
 1. Week 1:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.md %}){:target="_blank"}
     * Section handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part 2: Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
+    * Assignments: \[[Part A: C++ Revision]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01a.md %}){:target="_blank"}\] \[[Part B: Markdown Resume]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01b.md %}){:target="_blank"}\]
 
 ## Resources & Useful Links
 
@@ -85,7 +86,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     <a href="https://www.coursera.org/learn/data-structures"><img src="media/coursera.png" style="height:64px;width:64px;"  class="mr-3" alt="cpp book"></a>
     <div class="media-body">
       <h5 class="mt-0 mb-1">Online course: Data Structures <a href="https://www.coursera.org/learn/data-structures"><i class="ai ai-coursera"></i></a></h5>
-      <em>by Offered By University of California San Diego and National Research University Higher School of Economics.</em>
+      <em>by University of California San Diego and National Research University Higher School of Economics.</em>
     </div>
   </li>
 </ul>
