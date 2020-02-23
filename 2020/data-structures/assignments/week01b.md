@@ -89,14 +89,9 @@ Each of these commands requires you to provide your username and password :angry
 
 <div class="alert alert-danger" markdown="1" role="alert">
 
-### <i class="fas fa-info-circle"></i> Notes: Bad practices that risks your repository and team work
+### <i class="fas fa-info-circle"></i> Warning: Bad practices that risks your repository and team work
 
 1. Never use the GitHub website interface to upload your work manually. This will almost ruin the work of your teammates. You should only rely on the git commands.
 2. When you publish your changes, it may happen that one of your teammates has published some updates before you do, so you need to `git pull origin master` first. So **never use as a solution**: `git push -f origin master` (by adding `-f`) or `git push --force origin master` (by adding `--force` flag). This is guaranteed to ruin and overwrite your teammates work.
-
-
-A visualization to what happens when you use `git push -f origin master`:
-
-\[[`nixCraft - $ git push --force origin master`](https://www.facebook.com/nixcraft/videos/1258756887471020/)\] \[[tumblr_o0t4eiOvyQ1v060foo1_500.gif](https://66.media.tumblr.com/864179eb909776f6208ce1ab8a82c36d/tumblr_o0t4eiOvyQ1v060foo1_500.gif?fbclid=IwAR0X9RShZNjoJ7JC_fCCpHUQOsraMkFnuaZT4ZOwKApYuSP28wU6U2mc1Gk)\]
 
 </div>

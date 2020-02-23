@@ -145,7 +145,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
       <h5 class="mt-0 mb-1">Git</h5>
       <ul>
       <li><a href="https://try.github.io/">List of resources to learn git</a></li>
-      <li><a href="{{ site.baseurl }}{% link 2020/data-structures/notes/public_key.md %}">Steps for using Public Key Authentication for accessing your GitHub repositories</a>
+      <li><a href="{{ site.baseurl }}{% link 2020/data-structures/notes/public_key.md %}">Steps for Using Public Key Authentication for accessing your GitHub repositories</a>
       </li>
       </ul>
     </div>
