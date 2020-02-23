@@ -25,7 +25,7 @@ It is interesting to learn that many famous applications and organizations large
 In Ubuntu, open your terminal (`Ctrl`+`Alt`+`T`) and copy paste the following command (to paste in the terminal: `Ctrl`+**`Shift`**+`V`), then hit `Enter`:
 
 ```bash
-sudo apt install build-essential openssl libssl-dev libssl1.0 libgl1-mesa-dev wget
+sudo apt install build-essential cmake libgl1-mesa-dev wget
 ```
 
 <div class="alert alert-primary" markdown="1" role="alert">
