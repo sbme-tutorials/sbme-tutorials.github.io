@@ -42,29 +42,24 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 ## Course Outline
 
-| Week | Content |  Tutorials | 
-|------|-----------------|
-
+| Week | Content |
+|------|---------| 
 |   1  | Introduction to Computer Graphics| 
-
 |   2  | Transformations|  
-
 |   3  | Transformation and keyboard controls  | 
 
 ## Tutorials
 
 * Week 1: Introduction to Computer Graphics
-
     * [Notes]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md%}){:target="_blank"}
 
 * Week 2: Transformations
 
 
 * Week 3: Transformation and keyboard controls
-
-    * [Assignment1](({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"})
+    * [ Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}
+    * [Assignment1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"}
 
 ## Assignments
     
-* [Assignment1](({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"})
-
+* [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
