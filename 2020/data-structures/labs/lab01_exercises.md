@@ -42,7 +42,7 @@ g++ calculation.cpp -o calculator.out
 Test your program:
 
 ```bash
-./calculator
+./calculator.out
 16 * 3
 ```
 
@@ -96,8 +96,10 @@ Now, instead of using four `double`s, you can use two `Point`s.
 
 Update your `length` function to the following signature:
 
+```c++
 double length( Point p1, Point p2 )
 {
     // Apply Pythagoras law to compute the distance between p1 and p2 
 
 }
+```
