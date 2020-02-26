@@ -4,8 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 category: "coursepage"
-course: "sbe306"
-year: "2019"
+course: "HEMN224"
+year: "2020"
 ---
 # Computer  Graphics \(HEMN224\) - Spring 2020
 
@@ -42,9 +42,29 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 ## Course Outline
 
-| Week | Content |  Tutorials | Assignments
-|------|-----------------|-----|
-|   1  | Introduction to Computer Graphics| [T1]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md%}){:target="_blank"} |
+| Week | Content |  Tutorials | 
+|------|-----------------|
+
+|   1  | Introduction to Computer Graphics| 
+
+|   2  | Transformations|  
+
+|   3  | Transformation and keyboard controls  | 
+
+## Tutorials
+
+* Week 1: Introduction to Computer Graphics
+
+    * [Notes]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md%}){:target="_blank"}
+
+* Week 2: Transformations
 
 
-## Announcements
+* Week 3: Transformation and keyboard controls
+
+    * [Assignment1](({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"})
+
+## Assignments
+    
+* [Assignment1](({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"})
+
