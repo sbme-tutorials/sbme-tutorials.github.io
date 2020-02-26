@@ -2,9 +2,9 @@
 layout: page
 course: "sbe404b"
 category: "notes"
-year: "2019"
+year: "2020"
 title:  "Week 4: Hough Transform (Line and Circle Detection)"
-by: "Ayman"
+by: "Asem Alaa"
 ---
 
 * TOC

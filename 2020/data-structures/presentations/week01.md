@@ -1180,7 +1180,7 @@ class: left, top
 --
 * It is always safe to keep your projects on the cloud in one place. 
 --
-* Build a portfolio: always an elegant reference to your projects when you apply for a job. Include github profile on your CV.
+* Build a portfolio: always an elegant reference to your projects when you apply for a job. Include GitHub profile on your CV.
 
 ---
 class: left, top
