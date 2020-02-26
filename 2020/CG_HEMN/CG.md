@@ -55,11 +55,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 * Week 2: Transformations
 
-
 * Week 3: Transformation and keyboard controls
-    * [ Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}
-    * [Assignment1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"}
+    * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"}
 
 ## Assignments
     
-* [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
+* [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"} : Robotic Arm 
