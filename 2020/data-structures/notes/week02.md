@@ -2,8 +2,8 @@
 layout: page
 course: "sbe201"
 category: "notes"
-year: "2019"
-title:  "Week 2 - Part1: Memory, pointers, and references"
+year: "2020"
+title:  "Week 2: Memory, pointers, and references"
 by: "Asem"
 ---
 
@@ -26,18 +26,15 @@ Languages like C and C++ we consider them offering flexible memory management. O
 
 | Flexible languages | Opinionated languages |
 |----------|-------------|
-| More powerfull and efficient programs | Usually inefficient in comparison |
+| More powerful and efficient programs | Usually inefficient in comparison |
 | Overhead to learn | Easier to learn |
 | More complexity | Simplicity (no need to worry about memory management) |
 | Memory leakage if abused | No memory leakage |
 
-This image may convey the comparison between flexible languages and opinionated languages.
-
-![](/gallery/cpp-swissknife.jpg)
 
 ## Variables on Stack Memory
 
-Last week, all our variables were allocated on stack
+The following variables are allocated on the stack memory
 
 ```c++
 char x = 's';
@@ -85,7 +82,7 @@ We store the address of a variable in a special type called **pointer**.
 
 - **Pointer** is a primitive data type.
 - **Pointer** type occupies **8 bytes** (64-bit machines).
-- **Pointer** is declared using the syntax `target_type *`.
+- **Pointer** is declared using the syntax `int *` for pointer to integer, `double *` for pointer to double.
 
 ```c++
 int x = 13;
@@ -106,7 +103,7 @@ int *pz = &z;
 
 ### Flexibility
 
-Adresses gives a lot of flexibility to control variables. For example, you can modify a variable value if you have its address.
+Addresses gives a lot of flexibility to control variables. For example, you can modify a variable value if you have its address.
 
 ```c++
 int x = 9;
@@ -196,7 +193,12 @@ int *px = new int{0};
 int *py = new int(4);
 
 int *pz = new int(8);
+```
 
+--
+* After making some prcessing on `px`, `py`, and `pz`
+
+```c++
 delete px;
 delete py;
 delete pz;
@@ -205,7 +207,7 @@ delete pz;
 ### Important Rule for memory management
 
 * When you finish coding, make sure to balance heap allocations & deallocations.
-* #`new` = #`delete`.
+* \# `new` = \# `delete`.
 
 ## Reference types
 
