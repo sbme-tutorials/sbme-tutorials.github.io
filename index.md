@@ -12,6 +12,7 @@ layout: home
 * [Data Structures and Algorithms \(SBE201\)]({{ site.baseurl }}{% link 2020/data-structures/index.md %}), by Prof. Ahmed H. Kandil and <a href="https://a-alaa.github.io">Eng. Asem Alaa</a>.
 * [Computer Graphics \(HEMN224\)]({{ site.baseurl }}{% link 2020/CG_HEMN/CG.md %}), by Prof. Ayman M.Eldeib, Eng. Ayman Anwar, and Eng. Eslam Adel.
 * [Artificial Intelligence \(SBE452\)]({{ site.baseurl }}{% link 2020/AI/AI.md %}), by Assoc. Prof. Inas Yassine and Eng. Ayman Anwar.
+* [Computer Graphics \(SBE306\)]({{ site.baseurl }}{% link 2020/CG/CG.md %}), by <a href="https://scholar.cu.edu.eg/?q=eldeib">Prof. Ayman M. Eldeib</a>, Eng. Eslam Adel, Eng. Ayman Anwar.
 
 ## Fall 2019 
 

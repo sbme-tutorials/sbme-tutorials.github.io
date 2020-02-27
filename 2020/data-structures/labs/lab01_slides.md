@@ -193,7 +193,7 @@ int main()
 
     std::cin >> w >> h;
 
-    std::cout << area( rectangle ) << std::endl;
+    std::cout << area( w, h ) << std::endl;
     return 0;
 }
 ```
