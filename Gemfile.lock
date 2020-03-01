@@ -248,8 +248,7 @@ DEPENDENCIES
   jekyll-relative-links
   jekyll-seo-tag
   jemoji
-  minima (~> 2.0)
-  tzinfo-data
+  minima (~> 2.5.1)
 
 BUNDLED WITH
    2.1.4
