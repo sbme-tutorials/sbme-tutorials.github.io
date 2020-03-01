@@ -64,7 +64,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_slides.md %}){:target="_blank"}\] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_exercises.md %}){:target="_blank"}\]
 2. Week 2:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week02.md %}){:target="_blank"}
-    * Section handouts: \[[Memory, pointers, and references]({{ site.baseurl }}{% link 2020/data-structures/notes/week02.md %}){:target="_blank"}\]
+    * Section handouts: \[[Memory, pointers, and references](/2020/data-structures/notes/week02.html){:target="_blank"}\]
 
 ## Resources & Useful Links
 
