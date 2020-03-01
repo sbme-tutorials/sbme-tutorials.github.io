@@ -3,7 +3,7 @@ layout: page
 course: "sbe201"
 category: "notes"
 year: "2020"
-title:  "Week 1 - Part 2: Basics of Git and Github"
+title:  "Week 1 - Part 2: Basics of Git and GitHub"
 by: "Asem"
 pdf: true
 ---
@@ -159,7 +159,7 @@ Popular servers offering free remote repository hosting:
 ![github](../../../gallery/github.jpg){:width="40%"} **+** ![bitbucket](../../../gallery/Bitbucket.svg){:width="40%"}
 
 * Github is offering you unlimited private and public repository.
-* Much more services are made free for student at Github (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/)).
+* Much more services are made free for student at GitHub (see [educational page](https://education.github.com/), [student pack](https://education.github.com/pack), [how to apply](https://help.github.com/articles/applying-for-a-student-developer-pack/)).
 
 ## Hands-on
 

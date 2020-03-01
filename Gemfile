@@ -23,9 +23,9 @@ group :jekyll_plugins do
   gem 'jemoji'
   gem 'jekyll-relative-links'
   gem 'jekyll-seo-tag'
+  gem 'github-pages'
   # gem 'jekyll-pdf'
-#  gem 'github-pages'
-# gem 'jekyll-scholar'  
+  # gem 'jekyll-scholar'  
 
 end
 

@@ -76,7 +76,7 @@ Their physical presence in memory looks like this:
 
 But how to get the address of a variable?
 
-- By using `&` (ambersand operator).
+- By using `&` (ampersand operator).
 
 We store the address of a variable in a special type called **pointer**.
 
