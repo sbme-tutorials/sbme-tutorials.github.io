@@ -24,9 +24,6 @@ group :jekyll_plugins do
   gem 'jekyll-relative-links'
   gem 'jekyll-seo-tag'
   gem 'github-pages'
-  # gem 'jekyll-pdf'
-  # gem 'jekyll-scholar'  
-
 end
 
 gem "jekyll-github-metadata"
