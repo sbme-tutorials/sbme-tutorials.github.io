@@ -11,12 +11,8 @@ author: "Asem Alaa"
 ---
 
 
-<textarea id="source">
+<textarea id="source" markdown="1">
 
-* TOC
-{:toc}
-
----
 class: left, top
 ## Histogram Processing: Equalization
 
@@ -26,7 +22,7 @@ class: left, top
 ### Step 1: Compute the discrete PDF (histogram)
 
 --
-<img style="width:40%" src="../images/histexample.png"> <img style="width:40%" src="../images/pdfexample.png">
+.center[<img style="width:40%" src="../images/histexample.png"> <img style="width:40%" src="../images/pdfexample.png">]
 
 ---
 class: left, top
@@ -35,6 +31,7 @@ class: left, top
 
 ### Step 2: Compute the discrete CDF (cumulative histogram)
 
+.center[
 | `i` | accumulative | accumulative x 7 | rounded |
 |--|--|--|--|
 | `s0` | 0.19 | 1.33 | 1 |
@@ -46,13 +43,15 @@ class: left, top
 | `s6` | 0.98 | 6.86 | 7 |
 | `s7` | 1.00 | 7.00 | 7 |
 
+]
+
 ---
 class: left, top
 ## Histogram Processing: Equalization (cont'd)
 
 ### Step 2: Compute the discrete CDF (cumulative histogram)
 
-<img style="width:40%" src="../../images/pdfexample.png"> ===> <img style="width:40%" src="../../images/cdfexample.png">
+.center[<img style="width:40%" src="../images/pdfexample.png"> ===> <img style="width:40%" src="../images/cdfexample.png">]
 
 
 ---
@@ -62,7 +61,7 @@ class: left, top
 ### Step 3: Use the previous table to map the pixels values
 
 --
-<img style="width:40%" src="../../images/equalizedexample.png"> 
+.center[<img style="width:40%" src="../images/equalizedexample.png"> ]
 
 
 ---
@@ -76,10 +75,10 @@ class: left, top
 --
 * Target distribution
 
-<img style="width:40%" src="../../images/targetpdf.png"> 
+.center[<img style="width:40%" src="../images/targetpdf.png"> ]
 
 ---
-class: left, top
+class: center, top
 ## Histogram Processing: Matching (cont'd)
 
 ### Step 1: Obtain the scaled histogram equalized values (previous example)
@@ -88,11 +87,12 @@ class: left, top
 * `s4` = 7   `s5` = 7   `s6` = 7   `s7` = 7
 
 ---
-class: left, top
+class: center, top
 ## Histogram Processing: Matching (cont'd)
 
 ### Step 2: compute the discrete CDF of the target distribution
 
+.center[
 | `i` |  accumulative x 7 | rounded |
 |--|--|--|
 | `z0` | 0.00 | 0 |
@@ -103,23 +103,23 @@ class: left, top
 | `z5` | 4.55 | 5 |
 | `z6` | 5.95 | 6 |
 | `z7` | 7.00 | 7 |
-
+]
 
 ---
-class: left, top
+class: center, top
 ## Histogram Processing: Matching
 
 ### Step 2: compute the discrete CDF of the target distribution
 
-<img style="width:40%" src="../../images/targetpdf.png"> ===> <img style="width:40%" src="../../images/targetcdf.png">
+<img style="width:40%" src="../images/targetpdf.png"> ===> <img style="width:40%" src="../images/targetcdf.png">
 
 ---
-class: left, top
+class: center, top
 ## Histogram Processing: Matching
 
 ### Step 3: use the previous table to map the pixels values
 
 --
-<img style="width:40%" src="../../images/matchedexample.png"> 
+<img style="width:40%" src="../images/matchedexample.png"> 
 
 </textarea>
