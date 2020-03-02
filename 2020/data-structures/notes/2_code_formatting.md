@@ -2,7 +2,7 @@
 layout: page
 course: "sbe201"
 category: "notes"
-year: "2018"
+year: "2020"
 title:  "Code Styling (formatting): Enhancing Your Code Readability"
 by: "Asem"
 ---
