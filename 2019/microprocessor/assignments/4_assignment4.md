@@ -28,7 +28,7 @@ Deadline for online submission is **Wednesday 31/10/2018**.
 
 1. All group members must join their teams in their assignment repository.
 2. More credit for students who are more active with more contributions.
-3. **Don't use github as a Dropbox or a Drive  (by uploading files). Work on the project and when you finished add, commit, and push that's it. Read this [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/4_week4.md%}){:target="_blank"} for more help with github.**
+3. **Don't use github as a Dropbox or a Drive  (by uploading files). Work on the project and when you finished add, commit, and push that's it. Read this [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/4_week4.md %}){:target="_blank"} for more help with github.**
 
 ## How to ask for help?
 

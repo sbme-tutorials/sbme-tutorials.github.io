@@ -11,7 +11,7 @@ author: "Asem Alaa"
 ---
 
     
-<textarea id="source">
+<textarea id="source" markdown="1">
 
 ---
 class: center, top

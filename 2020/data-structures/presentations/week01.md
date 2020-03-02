@@ -28,7 +28,9 @@ class: left, middle
 --
 * Office hours and course materials are available on the course page:
 
-.center[.blue[[{sbme-tutorials.github.io/2020/data-structures}](https://sbme-tutorials.github.io/2020/data-structures)]]
+.center[
+  <a href="https://sbme-tutorials.github.io/2020/data-structures"> .blue[{sbme-tutorials.github.io/2020/data-structures}]</a>
+  ]
 
 --
 * Main research interests: Bioinformatics Algorithms and Machine Learning

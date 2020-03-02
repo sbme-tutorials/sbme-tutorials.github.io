@@ -1,12 +1,10 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 category: "coursepage"
 course: "sbe306"
 year: "2020"
 ---
+
 # Computer  Graphics \(SBE306\) - Spring 2020
 
 ## Teaching Staff
@@ -51,41 +49,41 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 ## Tutorials
 
 * Week 1: Introduction to Computer Graphics
-    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/1-week1.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/1-week1.md %}){:target="_blank"}
 
 * Week 2: Transformations
-    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md %}){:target="_blank"}
 
 <!-- * Week 3: Projection
-    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/3-week3.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/3-week3.md %}){:target="_blank"}
 
 * Week 4: Camera Transformation
-    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md %}){:target="_blank"}
 
 * Week 5: Ray Casting, Lighting and Animation
-    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/5-week5.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/5-week5.md %}){:target="_blank"}
 
 * Week 6: Texture mapping and object loading
     * [Notes](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/tree/master/Tutorial-05)
 
 * Week 7: Medical Visualization & Volume Rendering 
-    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md %}){:target="_blank"}
 
 * Week 8: Visualization Toolkit (VTK)
-    * [Slides]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md%}){:target="_blank"}
+    * [Slides]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md %}){:target="_blank"}
 
 * Week 9: Revision
     * [Notes](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/blob/master/Revision.ipynb){:target="_blank"} -->
 
 ## Assignments
 
-* [Assignment-1]({{ site.baseurl }}{% link 2020/CG/assignments/assignment1.md%}){:target="_blank"} : Robotic Arm 
+* [Assignment-1]({{ site.baseurl }}{% link 2020/CG/assignments/assignment1.md %}){:target="_blank"} : Robotic Arm 
 
-<!-- * [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md%}){:target="_blank"} : Full Body 
+<!-- * [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md %}){:target="_blank"} : Full Body 
 
-* [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md%}){:target="_blank"} : Animation, Coloring and Texture mapping 
+* [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md %}){:target="_blank"} : Animation, Coloring and Texture mapping 
 
-* [Assignment-4]({{ site.baseurl }}{% link 2019/CG/assignments/assignment4.md%}){:target="_blank"} : Volume Rendering (VTK)  -->
+* [Assignment-4]({{ site.baseurl }}{% link 2019/CG/assignments/assignment4.md %}){:target="_blank"} : Volume Rendering (VTK)  -->
 
 ## Sheets 
 

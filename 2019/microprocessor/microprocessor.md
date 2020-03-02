@@ -51,17 +51,17 @@ Demonstrators:  Eng. Eslam Adel.
 * Week 4: Git Version Control System
     
     * [Slides]({{ site.baseurl }}{% link 2019/microprocessor/presentations/4_week4/index.html%}){:target="_blank"}
-    * [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/4_week4.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/4_week4.md %}){:target="_blank"}
 
 
 * Week 6: Overview of Raspberry Pi W
   
-    * [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/6_week6.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2019/microprocessor/notes/6_week6.md %}){:target="_blank"}
 
 ## Assignments 
 
-* [Assignment 3]({{ site.baseurl }}{% link 2019/microprocessor/assignments/3_assignment3.md%}){:target="_blank"}
+* [Assignment 3]({{ site.baseurl }}{% link 2019/microprocessor/assignments/3_assignment3.md %}){:target="_blank"}
 
-* [Assignment 4]({{ site.baseurl }}{% link 2019/microprocessor/assignments/4_assignment4.md%}){:target="_blank"}
+* [Assignment 4]({{ site.baseurl }}{% link 2019/microprocessor/assignments/4_assignment4.md %}){:target="_blank"}
 
 ## Announcements

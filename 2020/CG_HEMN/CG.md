@@ -1,12 +1,10 @@
 ---
-# You don't need to edit this file, it's empty on purpose.
-# Edit theme's home layout instead if you wanna make some changes
-# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: home
 category: "coursepage"
 course: "HEMN224"
 year: "2020"
 ---
+
 # Computer  Graphics \(HEMN224\) - Spring 2020
 
 ## Teaching Staff
@@ -51,7 +49,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 ## Tutorials
 
 * Week 1: Introduction to Computer Graphics
-    * [Notes]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md%}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md %}){:target="_blank"}
 
 * Week 2: Transformations
 

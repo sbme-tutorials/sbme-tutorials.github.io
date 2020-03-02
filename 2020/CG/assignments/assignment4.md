@@ -17,9 +17,9 @@ pdf: true
 
 ## Prerequisites (Before you start)
 
-* [week7]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md%}){:target="_blank"}
+* [week7]({{ site.baseurl }}{% link 2019/CG/notes/7-week7.md %}){:target="_blank"}
 
-* [week8]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md%}){:target="_blank"}
+* [week8]({{ site.baseurl }}{% link 2019/CG/presentations/8_week8/index.md %}){:target="_blank"}
 
 ## Deadline
 
