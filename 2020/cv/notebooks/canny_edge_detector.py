@@ -1,7 +1,7 @@
-from scipy import ndimage
-from scipy.ndimage.filters import convolve
+from scipy.signal import convolve2d
 
 from scipy import misc
+from cvutils import gaussian_kernel2d
 import numpy as np
 
 class CannyEdgeDetector:
@@ -22,18 +22,14 @@ class CannyEdgeDetector:
         return 
     
     def gaussian_kernel(self, size, sigma=1):
-        size = int(size) // 2
-        x, y = np.mgrid[-size:size+1, -size:size+1]
-        normal = 1 / (2.0 * np.pi * sigma**2)
-        g =  np.exp(-((x**2 + y**2) / (2.0*sigma**2))) * normal
-        return g
+        return gaussian_kernel2d(size,sigma)
     
     def sobel_filters(self, img):
         Kx = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]], np.float32)
         Ky = np.array([[1, 2, 1], [0, 0, 0], [-1, -2, -1]], np.float32)
 
-        Ix = ndimage.filters.convolve(img, Kx)
-        Iy = ndimage.filters.convolve(img, Ky)
+        Ix = convolve2d(img, Kx)
+        Iy = convolve2d(img, Ky)
 
         G = np.hypot(Ix, Iy)
         G = G / G.max() * 255
@@ -127,7 +123,7 @@ class CannyEdgeDetector:
     def detect(self):
         imgs_final = []
         for i, img in enumerate(self.imgs):    
-            self.img_smoothed = convolve(img, self.gaussian_kernel(self.kernel_size, self.sigma))
+            self.img_smoothed = convolve2d(img, self.gaussian_kernel(self.kernel_size, self.sigma))
             self.gradientMat, self.thetaMat = self.sobel_filters(self.img_smoothed)
             self.nonMaxImg = self.non_max_suppression(self.gradientMat, self.thetaMat)
             self.thresholdImg = self.threshold(self.nonMaxImg)
