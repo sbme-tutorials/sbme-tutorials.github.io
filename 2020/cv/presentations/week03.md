@@ -49,7 +49,7 @@ class: left, top
 
 ### Step 2: Compute the discrete CDF (cumulative histogram)
 
-.center[<img style="width:40%" src="../../images/pdfexample.png"> ===> <img style="width:40%" src="../../images/cdfexample.png">]
+.center[<img style="width:40%" src="../images/pdfexample.png"> ===> <img style="width:40%" src="../images/cdfexample.png">]
 
 
 ---
@@ -59,7 +59,7 @@ class: left, top
 ### Step 3: Use the previous table to map the pixels values
 
 --
-.center[<img style="width:40%" src="../../images/equalizedexample.png"> ]
+.center[<img style="width:40%" src="../images/equalizedexample.png"> ]
 
 
 ---
@@ -73,7 +73,7 @@ class: left, top
 --
 * Target distribution
 
-.center[<img style="width:40%" src="../../images/targetpdf.png"> ]
+.center[<img style="width:40%" src="../images/targetpdf.png"> ]
 
 ---
 class: left, top
@@ -108,7 +108,7 @@ class: left, top
 
 ### Step 2: compute the discrete CDF of the target distribution
 
-.center[<img style="width:40%" src="../../images/targetpdf.png"> ===> <img style="width:40%" src="../../images/targetcdf.png">]
+.center[<img style="width:40%" src="../images/targetpdf.png"> ===> <img style="width:40%" src="../images/targetcdf.png">]
 
 ---
 class: left, top
@@ -117,6 +117,6 @@ class: left, top
 ### Step 3: use the previous table to map the pixels values
 
 --
-.center[<img style="width:40%" src="../../images/matchedexample.png"> ]
+.center[<img style="width:40%" src="../images/matchedexample.png"> ]
 
 </textarea>
