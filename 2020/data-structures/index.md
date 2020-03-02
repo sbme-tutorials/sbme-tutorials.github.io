@@ -18,12 +18,12 @@ Demonstrator:  Eng. Asem Alaa
 
 ## Section Hours
 
-| Section | Day | Time Slot |
-|---------|-----|-----------|
-|   1     | Wednesday | 1st |
-|   2     | Wednesday | 3rd |
-
-Additional labs may announced when necessary.
+| Section | Day | Time Slot | Place |
+|---------|-----|-----------|----|
+|   1     | Wednesday | 1st | Computer Lab 1 |
+|   2     | Wednesday | 3rd | Computer Lab 1 |
+|   3     | Wednesday | 4th | Computer Lab 1 |
+|   All     | Thursday | 4th | Hall 3103 |
 
 ## Office Hours
 
@@ -32,7 +32,7 @@ Additional labs may announced when necessary.
 | Tuesday | from **12pm** to **4pm** |
 | Wednesday | from **2pm** to **6pm** |
 
-Feel free to request for additional office hours by sending me an email (asem.a.abdelaziz@eng1.cu.edu.eg)
+Feel free to request for additional office hours by sending me an email (`asem.a.abdelaziz@eng1.cu.edu.eg`)
 
 ## Communication
 
@@ -63,7 +63,7 @@ Feel free to request for additional office hours by sending me an email (asem.a.
     * Assignments: \[[Part A: C++ Revision]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01a.md %}){:target="_blank"}\] \[[Part B: Markdown Resume]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01b.md %}){:target="_blank"}\]
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_slides.md %}){:target="_blank"}\] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_exercises.md %}){:target="_blank"}\]
 2. Week 2:
-    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week02.md %}){:target="_blank"}
+    * [Section slides](/2020/data-structures/presentations/week02.html){:target="_blank"}
     * Section handouts: \[[Memory, pointers, and references](/2020/data-structures/notes/week02.html){:target="_blank"}\]
 
 ## Resources & Useful Links
