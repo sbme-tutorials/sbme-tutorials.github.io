@@ -14,7 +14,7 @@ by: "Asem"
 
 ## Memory Layout
 
-![stack](/gallery/stackheap.png)
+<img src="/gallery/stackheap.png">
 
 What makes C and C++ very powerful is their flexibility in memory management. However, flexibility has a price. In contrast, some programming languages hide the memory details from the developer.
 
@@ -70,7 +70,7 @@ int z = 5;
 
 Their physical presence in memory looks like this:
 
-![](/gallery/stackaddress.png)
+<img src="/gallery/stackaddress.png">
 
 ## Address of a variable in C++
 
@@ -181,7 +181,7 @@ int *pz = new int(8);
 
 Physically, they would look like this: 
 
-![](/gallery/heapaddress.png)
+<img src="/gallery/heapaddress.png">
 
 ## Memory Management
 
@@ -207,7 +207,7 @@ delete pz;
 ### Important Rule for memory management
 
 * When you finish coding, make sure to balance heap allocations & deallocations.
-* \# `new` = \# `delete`.
+* `#` `new` = `#` `delete`.
 
 ## Reference types
 

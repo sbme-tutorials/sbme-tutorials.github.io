@@ -14,11 +14,11 @@ author: "Asem Alaa"
 <textarea id="source">
 
 ---
-class: left, top
+class: center, top
 ## Memory Layout
 
 --
-.center[![stack](/gallery/stackheap.png)]
+<img src="/gallery/stackheap.png">
 
 
 ---
@@ -68,7 +68,9 @@ int z = 5;
 
 Their physical presence in memory looks like this:
 
-.center[<img src="/gallery/stackaddress.png" style="width:30%;">]
+.center[
+    <img src="/gallery/stackaddress.png" style="width:30%;">
+    ]
 
 ---
 class: left, top
@@ -264,8 +266,8 @@ class: center, top
 
 | Stack Memory | Heap Memory |
 |---|---|
-| .red[Limited capacity ] | .green[ Large capacity for scalable structures ]  |
-| .green[Automatic memory management ] | .red[Manual memory management ]                 |
+| <p class="text-danger">Limited capacity</p> | <p class="text-success">Large capacity for scalable structures</p>  |
+| <p class="text-success">Automatic memory management</p> | <p class="text-danger">Manual memory management</p> |
 
 ---
 class: left, top
