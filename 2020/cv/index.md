@@ -34,7 +34,8 @@ Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
 2. Section 2:
     * [Section slides](/2020/cv/presentations/week02.pdf)
     * Demo files: \[[SBE404 Tut 2.ipynb](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%202.ipynb)\]
-
+3. Section 3:
+    * [Section slides]({{ site.baseurl }}{% link 2020/cv/presentations/week03.md %})
 
 ## Assignments
 
