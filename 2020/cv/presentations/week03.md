@@ -119,4 +119,24 @@ class: left, top
 --
 .center[<img style="width:40%" src="../images/matchedexample.png"> ]
 
+
+---
+class: center, middle
+
+## Histogram Processing: Demo
+
+<img src="../images/jnb.png">
+
+[{`histograms.ipnyb`}](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/histograms.ipynb)
+
+
+---
+class: left, top
+## Filtration in Frequency Domain: Demo
+
+<img src="../images/jnb.png">
+
+[{`frequency_filter.ipnyb`}](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/frequency_filter.ipynb)
+
+
 </textarea>
