@@ -8,6 +8,32 @@ by: "Asem"
 pdf: true
 ---
 
+
+## Organizing Lab Exercises
+
+* Let's join all our lab exercises into one repository. Register in the link [https://classroom.github.com/a/PsMRcCci](https://classroom.github.com/a/PsMRcCci) and get a generated repository that you will use to keep all your lab exercises at one place.
+* Clone the generated repository.
+* In the repository, make new directories (folders) for `lab01` (of last week) and `lab02` (today's).
+
+```bash
+mkdir lab01 lab02
+```
+
+* Add your files of last week lab (`calculation.cpp` & `pythagoras.cpp`) to `lab01`
+
+```bash
+mv /path/to/calculation.cpp /path/to/pythagoras.cpp lab01
+```
+
+* Add `lab01` and `lab02` to the repository database, commit changes, and push
+
+```bash
+git add lab01 lab02
+git commit -a -m "add first and second labs"
+git push origin master
+```
+
+
 ## Application 1: Range Summation
 
 As mathematical historians have told the story, the German mathematician Carl
