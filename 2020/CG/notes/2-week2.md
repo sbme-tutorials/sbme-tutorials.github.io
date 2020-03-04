@@ -140,7 +140,7 @@ x' = xcos(\theta) - y sin(\theta)
 $$
 
 $$
-x' = xsin(\theta) + y cos(\theta) 
+y' = xsin(\theta) + y cos(\theta) 
 $$
 
 For 3D rotation we need to specify rotation access 

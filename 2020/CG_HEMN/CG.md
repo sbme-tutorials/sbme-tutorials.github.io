@@ -52,6 +52,7 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
     * [Notes]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md %}){:target="_blank"}
 
 * Week 2: Transformations
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md %}){:target="_blank"}
 
 * Week 3: Transformation and keyboard controls
     * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"}
@@ -59,3 +60,12 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 ## Assignments
     
 * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"} : Robotic Arm 
+
+## Sheets 
+
+* [Review Sheet]({{ site.baseurl }}{% link 2020/CG/notes/SBE-306B-Computer-Systems-III-Review-Sheet-I.pdf%}){:target="_blank"} 
+
+
+## Grades 
+
+* [Grades Sheet](https://drive.google.com/open?id=1IAU1SLBzATLk48t3i6tgwj76hM27dI0B){:target="_blank"}

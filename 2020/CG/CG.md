@@ -54,9 +54,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 2: Transformations
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md %}){:target="_blank"}
 
-<!-- * Week 3: Projection
-    * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/3-week3.md %}){:target="_blank"}
-
+* Week 3: Projection
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/3-week3.md %}){:target="_blank"}
+<!--
 * Week 4: Camera Transformation
     * [Notes]({{ site.baseurl }}{% link 2019/CG/notes/4-week4.md %}){:target="_blank"}
 
@@ -87,5 +87,10 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 ## Sheets 
 
-<!-- * [Review Sheet]({{ site.baseurl }}{% link 2019/CG/notes/SBE-306B-Computer-Systems-III-Review-Sheet-I.pdf%}){:target="_blank"}  -->
+* [Review Sheet]({{ site.baseurl }}{% link 2020/CG/notes/SBE-306B-Computer-Systems-III-Review-Sheet-I.pdf%}){:target="_blank"} 
+
+## Grades 
+
+* [Grades Sheet](https://drive.google.com/open?id=1LJPncajfIK4TeUUgIPseyF-PmXufK8Bo2vE9sj4ilZo){:target="_blank"}
+  
 
