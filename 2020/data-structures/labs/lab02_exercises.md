@@ -8,6 +8,9 @@ by: "Asem"
 pdf: true
 ---
 
+* TOC
+{:toc}
+
 
 ## Organizing Lab Exercises
 
@@ -52,7 +55,7 @@ int range_sum( int start, int end )
 
 }
 
-int main()
+int main(int argc, char **argv)
 {
 
 }
@@ -72,6 +75,16 @@ Test your program:
 5050
 ```
 
+### Improvement 1: Using Command Line Arguments
+
+* Receive the **start** and **end** of the range from the user using the command line arguments instead of `std::cin`.
+
+### Improvement 2: Header Files
+
+* Add a header file in the same folder and name it `mylib.hpp`.
+* Move your `range_sum` function to `mylib.hpp` header file.
+* In the `range_sum.cpp` file, add `#include "mylib.hpp"` at the beginning.
+* Now compile and test again.
 
 ## Application 2: Find the roots
 
@@ -90,9 +103,20 @@ void root( double a, double b, double c, double &x1, double &x2)
 
 }
 
-int main()
+int main(int argc, char **argv)
 {
     
     
 }
 ```
+
+
+### Improvement 1: Using Command Line Arguments
+
+* Receive the equation parameters **a**, **b**, and **c** from the user using the command line arguments instead of the `std::cin`.
+
+### Improvement 2: Header Files
+
+* Move your `root` function to `mylib.hpp` header file that you made previously.
+* In the `root.cpp` file, add `#include "mylib.hpp"` at the beginning.
+* Now compile and test again.

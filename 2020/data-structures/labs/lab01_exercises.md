@@ -8,6 +8,9 @@ by: "Asem"
 pdf: true
 ---
 
+* TOC
+{:toc}
+
 ## Application 1: Simple Calculator
 
 Starting from the following code (name the file as `calculation.cpp`):
