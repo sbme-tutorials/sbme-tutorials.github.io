@@ -1,7 +1,7 @@
 ---
 layout: presentation
 style: laminal
-highlighter: ir-black
+highlighter: github
 course: "sbe201"
 category: "presentation"
 year: "2020"
