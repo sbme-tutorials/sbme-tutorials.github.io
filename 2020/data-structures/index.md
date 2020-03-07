@@ -23,7 +23,7 @@ Demonstrator:  Eng. Asem Alaa
 |   1     | Wednesday | 1st | Computer Lab 1 |
 |   2     | Wednesday | 3rd | Computer Lab 1 |
 |   3     | Wednesday | 4th | Computer Lab 1 |
-|   All   | Thursday | 4th | Hall 3103 |
+|   All   | Monday | 1st | Hall 3102 |
 
 ## Office Hours
 
