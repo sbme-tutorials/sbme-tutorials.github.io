@@ -57,15 +57,18 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 
 ## Sections
 
-1. Week 1:
+1. Section 1:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.md %}){:target="_blank"}
     * Section handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part 2: Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
     * Assignments: \[[Part A: C++ Revision]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01a.md %}){:target="_blank"}\] \[[Part B: Markdown Resume]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01b.md %}){:target="_blank"}\]
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_slides.md %}){:target="_blank"}\] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_exercises.md %}){:target="_blank"}\]
-2. Week 2:
+2. Section 2:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week02.md %}){:target="_blank"}
     * Section handouts: \[[Memory, pointers, and references]({{ site.baseurl }}{% link 2020/data-structures/notes/week02.md %}){:target="_blank"}\]
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab02_slides.md %}){:target="_blank"}\] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab02_exercises.md %}){:target="_blank"}\]
+3. Section 3:
+    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.md %}){:target="_blank"}
+    * Section handouts: \[[Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2020/data-structures/notes/week03.md %}){:target="_blank"}\]
 
 ## Resources & Useful Links
 

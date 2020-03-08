@@ -5,7 +5,7 @@ highlighter: github
 course: "sbe201"
 category: "presentation"
 year: "2020"
-title: "Week 3: Arrays"
+title: "Week 3: Static Arrays and Dynamic Arrays"
 by: "Asem"
 author: "Asem Alaa"
 ---
@@ -322,5 +322,10 @@ for( int i = 0 ; i < 7 ; ++i )
     dna2[i] = dna1[i];
 }
 ```
+
+
+---
+class: left, top
+# Thank you
 
 </textarea>
