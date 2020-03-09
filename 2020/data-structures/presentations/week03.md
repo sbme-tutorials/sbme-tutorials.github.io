@@ -324,6 +324,228 @@ for( int i = 0 ; i < 7 ; ++i )
 ```
 
 
+
+---
+### Arrays ∩ `struct`
+#### Revisiting `struct`
+
+--
+```c++
+double area( double w , double h )
+{
+    return w * h;
+}
+```
+
+--
+```c++
+struct Rectangle
+{
+    double w;
+    double h;
+};
+```
+
+--
+* `Rectangle` is now a user-defined type, 
+--
+* consists of two `double`s.
+
+---
+### Arrays ∩ `struct`
+#### Revisiting `struct` (cont'd)
+
+```c++
+struct Rectangle
+{
+    double w; // First member
+    double h; // Second member
+}; // Don't forget a semicolon here!
+
+double area( Rectangle rectangle )
+{
+    return rectangle.w * rectangle.h;
+}
+// By the way..
+double area2( Rectangle *prect )
+{
+    return prect->w * prect->h;
+}
+```
+
+---
+### Arrays ∩ `struct`
+#### Revisiting `struct` (cont'd)
+
+```c++
+int main()
+{
+    Rectangle rect;
+    rect.w = 3;
+    rect.h = 5;
+    
+    std::cout << area( rect ) << std::endl;
+    std::cout << area2( &rect ) << std::endl;
+    return 0;
+}
+```
+
+---
+class: left, top
+### Arrays ∩ `struct`
+
+Consider a function that returns the summation of array.
+
+--
+```c++
+int sum( int *arr, int size )
+{
+    int sum = 0;
+    for( int i = 0; i < size ; ++i )
+    {
+        sum += arr[ i ];
+    }
+    return sum;
+}
+```
+--
+Can we do better?
+
+
+---
+class: left, top
+### Arrays ∩ `struct`
+
+We may also package an array with its size, using `struct`
+
+--
+```c++
+struct IntegerArray
+{
+    int *data;
+    int size;
+};
+
+int sum( IntegerArray array )
+{
+    int sum = 0;
+    for( int i = 0; i < array.size ; ++i )
+    {
+        sum += array.data[ i ];
+    }
+    return sum;
+}
+```
+
+---
+class: left, top
+### Arrays ∩ `struct`
+
+```c++
+int main()
+{
+    IntegerArray array;
+    array.data = new int[10]; 
+    array.size = 10;
+    std::cout << sum( array ) << std::endl;
+    
+    // We still need to delete the array on the heap
+    delete [] array.data;
+}
+```
+
+---
+### `struct` for returning multiple values
+#### Example 1: Find the roots
+
+$$ax^2 + bx + c = 0$$
+
+Recall the exercise of lab 2..  
+
+```c++
+void root( double a, double b, double c, double &x1, double &x2)
+{
+    double delta = std::sqrt( b*b - 4*a*c);
+    x1 = (-b - delta)/(2*a);
+    x2 = (-b + delta)/(2*a);
+}
+int main(int argc, char **argv)
+{
+    double a,b,c,x1,x2; std::cin >> a >> b >> c;
+    root(a, b, c, x1, x2);
+    std::cout << x1 << "\n" << x2 << "\n";
+}
+```
+
+
+---
+### `struct` for returning multiple values
+#### Example 1: Find the roots
+```c++
+struct Roots
+{  
+    double x1; double x2; 
+};
+Roots root( double a, double b, double c)
+{
+    Roots r;
+    double delta = std::sqrt( b*b - 4*a*c);
+    r.x1 = (-b - delta)/(2*a);
+    r.x2 = (-b + delta)/(2*a);
+    return r;
+}
+int main()
+{
+    double a,b,c; std::cin >> a >> b >> c;
+    Roots r = root(a, b, c);
+    std::cout << r.x1 << "\n" << r.x2 << "\n";
+}// Try online: http://cpp.sh/9tkdv
+```
+
+---
+class: left, top
+### `struct` for returning multiple values
+
+#### Example 2: ECG statistics
+
+--
+```c++
+struct ECGArray // We could name it also DoubleArray
+{
+    double *data;
+    int size;
+}
+
+struct Statistics
+{
+    double mean;
+    double variance;
+    double min;
+    double max;
+}
+```
+
+---
+class: left, top
+### `struct` for returning multiple values
+
+#### Example 2: ECG statistics (cont'd)
+
+
+```c++
+// Very self-explaining function header!
+Statistics analyzeECG( ECGArray ecg )
+{
+    Statistics analysis; 
+
+    analysis.mean = // Some logic here
+    analysis.variance = // Some logic there
+    analysis.max = //
+    analysis.min = //
+    return analysis;
+}
+```
+
 ---
 class: left, top
 # Thank you
