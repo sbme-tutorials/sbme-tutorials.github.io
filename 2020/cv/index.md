@@ -35,9 +35,11 @@ Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
     * [Section slides](/2020/cv/presentations/week02.pdf)
     * Demo files: \[[SBE404 Tut 2.ipynb](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%202.ipynb)\]
 3. Section 3:
-    * [Section slides]({{ site.baseurl }}{% link 2020/cv/presentations/week03.md %})
+    * [Section slides]({{ site.baseurl }}{% link 2020/cv/presentations/week03.md %}) [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/cv/presentations/week03.pdf %}){:target="_blank"}
     * Demo files: \[[histograms.ipynb](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/histograms.ipynb)\] \[[frequency_filter.ipynb](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/frequency_filter.ipynb)\] \[[cvutils.py](https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/cv/notebooks/cvutils.py)\] \[[images](https://github.com/sbme-tutorials/sbme-tutorials.github.io/tree/master/2020/cv/notebooks/images)\]
-
+3. Section 4:
+    * [Section slides]({{ site.baseurl }}{% link 2020/cv/presentations/week04.md %}) [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/cv/presentations/week04.pdf %}){:target="_blank"}
+    * Demo files: \[[hough_transform.ipynb](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/hough_transform.ipynb)\]
 
 ## Assignments
 
