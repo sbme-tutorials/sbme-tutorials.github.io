@@ -65,6 +65,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 2. Section 2:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week02.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week02.pdf %}){:target="_blank"}
     * Section handouts: \[[Memory, pointers, and references]({{ site.baseurl }}{% link 2020/data-structures/notes/week02.md %}){:target="_blank"}\]
+    * [Assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week02.md %}){:target="_blank"}
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab02_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab02_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab02_exercises.md %}){:target="_blank"}\]
 3. Section 3:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.pdf %}){:target="_blank"}
