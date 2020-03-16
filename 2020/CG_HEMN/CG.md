@@ -57,6 +57,10 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 3: Transformation and keyboard controls
     * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"}
 
+* Week 4: Projection and Pipeline
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/3-week3.md %}){:target="_blank"}
+
+
 ## Assignments
     
 * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"} : Robotic Arm 
