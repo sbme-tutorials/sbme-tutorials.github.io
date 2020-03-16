@@ -50,3 +50,6 @@ Demonstrator:  Eng. Ayman Anwar
     * [Lecture 2]({{ site.baseurl }}{% link 2020/AI/presentations/L2.pdf %}){:target="_blank"} 
     * [Tutorial 2](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Linear%20Reg/LR.ipynb)
 
+* Week 3: Bayesian Decision Theory
+    * [Lecture 3]({{ site.baseurl }}{% link 2020/AI/presentations/L3.pdf %}){:target="_blank"} 
+
