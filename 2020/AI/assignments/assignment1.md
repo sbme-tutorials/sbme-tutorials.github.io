@@ -32,9 +32,8 @@ Deadline for online submission will be  on  **wednesday 25/3/2020 11:59 PM**
 1. build a naive bayes classifier for **iris flowers** dataset
 2. its recommended to use the same function used in the [tutorial](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Bayesian/BR.ipynb)
 3. provide some statistics for the dataset in a markdown report. **like tutorial 1**
-![](../images/robot-arm-fingers.png)
 
-### Submittin
+### Submitting
 
 ```terminal
 $ git commit -a -m "done"
