@@ -52,5 +52,9 @@ Demonstrator:  Eng. Ayman Anwar
 
 * Week 3: Bayesian Decision Theory
     * [Lecture 3]({{ site.baseurl }}{% link 2020/AI/presentations/L3.pdf %}){:target="_blank"} 
+    * [Sample Report]({{ site.baseurl }}{% link 2020/AI/presentations/R.pdf %}){:target="_blank"} 
     * [Tutorial 3](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Bayesian/BR.ipynb)
 
+## Assignments
+    
+* [Assignment-1]({{ site.baseurl }}{% link 2020/AI/assignments/assignment1.md %}){:target="_blank"} : Bayesian Rule 
