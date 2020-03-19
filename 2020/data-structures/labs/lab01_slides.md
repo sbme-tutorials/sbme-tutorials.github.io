@@ -2,17 +2,26 @@
 layout: presentation
 style: laminal
 highlighter: ir-black
-course: "sbe201"
+code: "SBE201"
+course: "SBE201 Data Structures and Algorithms"
 category: "presentation"
+semester: "Spring"
 year: "2020"
 title: "Lab 1: Linux and C++ Revision"
-by: "Asem"
+by: "Asem Alaa"
 author: "Asem Alaa"
 ---
 
     
-<textarea id="source">
+<textarea id="source" markdown="1">
 
+# Lab 1
+
+## Linux and C++ Revision
+
+##### Presentation by *{{ page.author }}*
+
+{% include presentation-margins.html %}
 
 ---
 class: left, middle

@@ -2,16 +2,26 @@
 layout: presentation
 style: laminal
 highlighter: ir-black
-course: "sbe201"
+code: "SBE201"
+course: "SBE201 Data Structures and Algorithms"
 category: "presentation"
+semester: "Spring"
 year: "2020"
-title: "Week2: Memory, pointers, and references"
-by: "Asem"
+title: "Section 2: Memory, pointers, and references"
+by: "Asem Alaa"
 author: "Asem Alaa"
 ---
 
     
 <textarea id="source" markdown="1">
+
+# Section 2
+
+## Memory, pointers, and references
+
+##### Presentation by *{{ page.author }}*
+
+{% include presentation-margins.html %}
 
 ---
 class: center, top
@@ -446,7 +456,8 @@ int main()
 We used pointer and references in previous examples just for explanations!
 
 ---
-class: left, top
 # Thank you
+
+{% include presentation-margins.html %}
 
 </textarea>

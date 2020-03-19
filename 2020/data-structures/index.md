@@ -43,17 +43,18 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 
 | Week | Data Structures & C++ | Tooling |
 |------|----------------------|-----------|
-| 1 | **Introduction**: Brief intro to DS; C++ Basics  | Briefly: QtCreator, Linux, compilation, git, GitHub |
-| 2 | C++ Memory Model, C++ Pointers and References | Your Code Readability |
-| 3 | Static and Dynamic Arrays; Categorize your logic with `namespace` scopes;  | Processing command line arguments (`argc` & `argv`); Compilation of multiple files; Basic Unix commands; bitbucket |
-| 4 | Stacks (ADT); Queues (ADT); Linked Lists; Array-Based Stack; LL-Based Stack; Array-Based Queue; LL-Based Queue; Functions Overloading;  Naming conventions; Const correctness |   |
-| 5 | Recursion; C++ template structs; C++ classes and objects  |   |
-| 6 | Bubble sort; Selection sort; big O notation |   |
+| 1 | Brief intro to the course; C++ Basics; Categorize your logic with C++ `namespace`  |  QtCreator, Linux, compilation, git, GitHub; Basic Unix commands; Markdown |
+| 2 | C++ Memory Model, C++ Pointers and References | Processing command line arguments (`argc` & `argv`); Compilation of multiple files |
+| 3 | Static and Dynamic Arrays; Recursion; C++ Functions Overloading; |  |
+| 4 | Complexity analysis (big O notation); Bubble sort; Selection sort; Naming conventions; Const correctness |   |
+
+<!-- | 5 | Recursion; C++ template structs; C++ classes and objects  |   |
+| 6 |  |   |
 | 7 | Bubble sort; Selection sort; Binary Trees  | Open source vs. proprietary software  |
 | 8 | Divide and conquer: merge sort, quick sort  | Briefly: Development on Windows |
 | 9 | Binary search on sorted array; Binary search tree (BST)  |  Conan.io; External dependencies |
 | 10 | Algorithms complexity: big O notation  | Documenting your code |
-| 11 | Project  | Documenting your project on the website using Markdown and pull requests |
+| 11 | Project  | Documenting your project on the website using Markdown and pull requests | -->
 
 ## Sections
 
@@ -71,6 +72,10 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.pdf %}){:target="_blank"}
     * Section handouts: \[[Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2020/data-structures/notes/week03.md %}){:target="_blank"}\]
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_exercises.md %}){:target="_blank"}\]
+3. Section 4:
+    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.pdf %}){:target="_blank"}
+    * Section handouts: \[[Time Complexity (Big O notation) & Sorting Algorithms (1)]({{ site.baseurl }}{% link 2020/data-structures/notes/week04.md %}){:target="_blank"}\] 
+
 
 ## Resources & Useful Links
 

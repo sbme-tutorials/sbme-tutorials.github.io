@@ -1,17 +1,27 @@
 ---
 layout: presentation
 style: laminal
-highlighter: github
-course: "sbe201"
+highlighter: ir-black
+code: "SBE201"
+course: "SBE201 Data Structures and Algorithms"
 category: "presentation"
+semester: "Spring"
 year: "2020"
-title: "Week 3: Static Arrays and Dynamic Arrays"
-by: "Asem"
+title: "Section 3: Static Arrays and Dynamic Arrays"
+by: "Asem Alaa"
 author: "Asem Alaa"
 ---
 
 
-<textarea id="source">
+<textarea id="source" markdown="1">
+
+# Section 3
+
+## Introduction to Arrays
+
+##### Presentation by *Asem Alaa*
+
+{% include presentation-margins.html %}
 
 ---
 class: left, top
@@ -549,5 +559,7 @@ Statistics analyzeECG( ECGArray ecg )
 ---
 class: left, top
 # Thank you
+
+{% include presentation-margins.html %}
 
 </textarea>

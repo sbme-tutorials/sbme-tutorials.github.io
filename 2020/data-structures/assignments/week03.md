@@ -10,7 +10,8 @@ pdf: true
 
 ## Prerequisites
 
-* **Required**: Read the notes of the third week: \[[Part 1: Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2019/data-structures/notes/3_week3a.md %}){:target="_blank"}\] \[[Part 2: Command Line Arguments and Compilation of Multiple Files]({{ site.baseurl }}{% link 2019/data-structures/notes/3_week3b.md %}){:target="_blank"}\].
+* Read the notes of the third week: \[[Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2020/data-structures/notes/week03.md %}){:target="_blank"}\] 
+* Finish the exercises of the third lab \[[Lab 2: Arrays, Function Overloading, & Recursion]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.md %}){:target="_blank"}\].
 
 ## Objectives
 
@@ -38,11 +39,11 @@ pdf: true
 
 ## Deadline
 
-**Thursday 7/3/2019 11:59pm PST**.
+**Wednesday 25/3/2020 11:59pm PST**.
 
 ## Assignment: Part 1
 
-Go to the [assignment page](https://classroom.github.com/a/cTs5DbJ9) and git clone your own repository.
+Go to the [assignment page](https://classroom.github.com/g/x6p6W3qj) and git clone your own repository.
 
 ### Overview
 
@@ -213,9 +214,9 @@ Please beware that the double strands of our **DNA** are directional, and they h
 
 For example, the sequence *ACG* has a complementary sequence *CGT*, **not** *TGC*.
 
-So in your for loop, you may read the *original* sequence from beginning, and write the complementary sequence starting from the *end* of the complementary sequence array.
+So in your for loop, you may read the *original* sequence from begining, and write the complementary sequence starting from the *end* of the complementary sequence array.
 
-By the way, you have to allocate the complementary sequence on the heap (dynamic array) at the beginning of function (using the given size).
+By the way, you have to allocate the complementary sequence on the heap (dynamic array) at the begining of function (using the given size).
 
 Use the following declaration:
 
@@ -248,10 +249,8 @@ char *analyzeDNA( char *base, int size, int &countA, int &countC, int &countG, i
 $ g++ calculator.cpp -o Calculator
 $ ./Calculator 24 / 7
 3.42857
-$ ./Calculator 24 \* 7
+$ ./Calculator 24 x 7
 ```
-
-**Note: asterisk `*` is a special character for the terminal. You need to explicitly use `\*` to specify multiplication operation.**
 
 ### Compiling and Testing heron.cpp
 

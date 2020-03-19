@@ -2,11 +2,13 @@
 layout: presentation
 style: laminal
 highlighter: ir-black
-course: "sbe201"
+code: "SBE201"
+course: "SBE201 Data Structures and Algorithms"
 category: "presentation"
+semester: "Spring"
 year: "2020"
-title: "Week1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
-by: "Asem"
+title: "Section 1: Introduction to 'Introduction to Data Structures and Algorithms (SBE201)'"
+by: "Asem Alaa"
 author: "Asem Alaa"
 ---
 
@@ -17,9 +19,11 @@ author: "Asem Alaa"
 
 <textarea id="source" markdown="1">
 
-
 class: left, middle
 ## Information about TA
+
+{% include presentation-margins.html %}
+
 
 --
 * Asem Alaa
@@ -1417,7 +1421,8 @@ class: left, top
 | Web IDEs | VSCode, Jet-brains WebStorm | 
 
 ---
-class: left, top
 # Thank you
+
+{% include presentation-margins.html %}
 
 </textarea>
