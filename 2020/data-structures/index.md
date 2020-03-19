@@ -72,6 +72,9 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week03.pdf %}){:target="_blank"}
     * Section handouts: \[[Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2020/data-structures/notes/week03.md %}){:target="_blank"}\]
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_exercises.md %}){:target="_blank"}\]
+
+
+
 <!-- 3. Section 4:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.pdf %}){:target="_blank"}
     * Section handouts: \[[Time Complexity (Big O notation) & Sorting Algorithms (1)]({{ site.baseurl }}{% link 2020/data-structures/notes/week04.md %}){:target="_blank"}\]  -->
