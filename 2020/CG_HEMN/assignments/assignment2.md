@@ -22,7 +22,7 @@ Deadline for online submission will be  on  **Friday 27/3/2020 11:59 PM**
 
 This is an individual assignment 
 
-1. Go to the [Assignment Page](https://classroom.github.com/a/pGMEFfp_).
+1. Go to the [Assignment Page](https://classroom.github.com/a/NeLxDOZu).
 2. Accept the assignment.
 3. Wait till your repository created.
 4. Open the link and Clone repository.
