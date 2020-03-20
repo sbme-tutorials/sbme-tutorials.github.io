@@ -2,15 +2,25 @@
 layout: presentation
 style: laminal
 highlighter: ir-black
-course: "sbe404"
+code: "SBE201"
+course: "SBE404 Computer Vision"
 category: "presentation"
+semester: "Spring"
 year: "2020"
-title: "Section 4: Hough Transform"
+title: "Section 4: Hough Transform and Harris Operator"
 by: "Asem Alaa"
 author: "Asem Alaa"
 ---
 
-<textarea id="source">
+<textarea id="source" markdown="1">
+
+# Section 4
+
+## Hough Transform and Harris Operator
+
+##### Presentation by *{{ page.author }}*
+
+{% include presentation-margins.html %}
 
 ---
 class: left, top

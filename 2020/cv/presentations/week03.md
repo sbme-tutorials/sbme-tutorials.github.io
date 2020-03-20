@@ -2,16 +2,26 @@
 layout: presentation
 style: laminal
 highlighter: ir-black
-course: "sbe404"
+code: "SBE201"
+course: "SBE404 Computer Vision"
 category: "presentation"
+semester: "Spring"
 year: "2020"
 title: "Section 3: Histogram Equalization, Filtration in Frequency Domain, and Hough Transform"
 by: "Asem Alaa"
 author: "Asem Alaa"
 ---
 
+    
+<textarea id="source" markdown="1">
 
-<textarea id="source">
+# Section 3
+
+## Histogram Equalization, Filtration in Frequency Domain, and Hough Transform
+
+##### Presentation by *{{ page.author }}*
+
+{% include presentation-margins.html %}
 
 ---
 class: left, top
