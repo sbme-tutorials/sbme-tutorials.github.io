@@ -39,11 +39,12 @@ pdf: true
 
 ## Deadline
 
-**Wednesday 25/3/2020 11:59pm PST**.
+**Thursday 26/3/2020 11:59pm PST**.
 
-## Assignment: Part 1
+## Registration Link
 
-Go to the [assignment page](https://classroom.github.com/g/x6p6W3qj) and git clone your own repository.
+* Go to the [assignment page](https://classroom.github.com/g/x6p6W3qj) and git clone your own repository.
+* If you need to work individually to practice the whole assignment your self, you can register also from this link [individual assignment page](https://classroom.github.com/a/Mx6aNocH). This will not be graded, but can be reviewed if you would like so.
 
 ### Overview
 
@@ -65,7 +66,7 @@ Our source files of our applications that we are going to compile into useful an
 * `analyzeECG.cpp` to implement **very useful** application for *ECG Analysis*, depends on `ecg.hpp`.
 * `analyzeDNA.cpp` to implement **very useful** application for *DNA Analysis*, depends on `dna.hpp`.
 
-You will find a useful header file `helpers.hpp`, **I don't recommend you to try understanding it before week 6**. We will just use two functions from `helpers.hpp` to load our **DNA** and **ECG** files from hard disk.
+You will find a useful header file `helpers.hpp`, **no need to understand its content**. We will just use two functions from `helpers.hpp` to load our **DNA** and **ECG** files from the disk.
 
 #### Dependency Graph
 
@@ -89,13 +90,12 @@ You will also realize our header files begin and ends with
 #endif // MATHEMATICS_HPP
 ```
 
-No worries, they are called [header guards](https://en.wikipedia.org/wiki/Include_guard). Will be explained on next tutorial on **Sunday**. But just consider them as a skeleton (boilerplate) code.
+No worries, they are called [header guards](https://en.wikipedia.org/wiki/Include_guard).
 
 ### Requirement 1: **mathematics.hpp** file
 
-* **R1.1 (Done for you)** Make a `namespace mathematics` that will contain our functions.
-* **R1.2** Implement our `calculation` function using either **if, else if, else** or **switch-case**.
-* **R1.3** Implement [Heron Formula](https://en.wikipedia.org/wiki/Heron%27s_formula), that is used to compute the **triangle area** given its three sides, hmmmm very interesting.
+* **R1.1** Implement our `calculation` function using either **if, else if, else** or **switch-case**.
+* **R1.2** Implement [Heron Formula](https://en.wikipedia.org/wiki/Heron%27s_formula), that is used to compute the **triangle area** given its three sides, hmmmm very interesting.
 
 ![tri](triangle.png)
 
@@ -116,12 +116,11 @@ double heron( double a , double b , double c )
 
 You also need to `#include <cmath>` as an external header, to use `std::sqrt` function that computes the square root.
 
-* **R1.4** It is your job now to implement the `main` function in `heron.cpp` file. It is required to make the *Heron Formula* application to **receive the three parameters of the triangle through terminal**. So you will retrieve the three parameters through the `argv` in `main` function. Remember that you will need to use `std::atof` function and `#include <string>`. To use `mathematics::heron`, add `#include "mathematics.hpp"`. Hint, you may cheat from `calculation.cpp` source file (but with receiving three doubles in this case).
+* **R1.3** It is your job now to implement the `main` function in `heron.cpp` file. It is required to make the *Heron Formula* application to **receive the three parameters of the triangle through terminal**. So you will retrieve the three parameters through the `argv` in `main` function. Remember that you will need to use `std::atof` function and `#include <string>`. To use `heron`, add `#include "mathematics.hpp"`. Hint, you may cheat from `calculation.cpp` source file (but with receiving three doubles in this case).
 
-### Requirement 2: **arrays.hpp** file
+### Requirement 2: `arrays.hpp` file
 
-* **R2.1** Make a `namespace arrays` that will contain our functions.
-* **R2.2** Implement a function that prints all array elements on terminal, using the following declaration:
+* **R2.1** Implement a function that prints all array elements on terminal, using the following declaration:
 
 ```c++
 void printAll( double *base , int arraySize )
@@ -130,7 +129,7 @@ void printAll( double *base , int arraySize )
 }
 ```
 
-* **R2.3**+**R2.4** Implement a function that returns the **maximum** element and another one for **minimum** element, using the following declarations:
+* **R2.2**+**R2.3** Implement a function that returns the **maximum** element and another one for **minimum** element, using the following declarations:
 
 ```c++
 double maxArray( double *base, int arraySize )
@@ -169,34 +168,40 @@ If you don't know variance,
 $$ var = \frac{1}{N} \sum_{n=1}^{N} ( \text{mean} - x_i )^2 $$
 
 
-### Requirement 3: **ecg.hpp** file
+### Requirement 3: `ecg.hpp` file
 
-* **R3.1** Make a `namespace ecg` that will contain our function.
-* **R3.2** Make a function that computes the **average**, **variance**, **max**, and **min** of **ECG** signal. But these are not single variables so we can return. Alternatively, we will use **4 reference** variable in function declaration.
+* **R3.1** Make a function that computes the **average**, **variance**, **max**, and **min** of **ECG** signal. But these are not single variables so we can return. Alternatively, we will use a `struct` type `Statistics` to return them in a single object.
 
 ```c++
-void analyzeECG( double *base , int arraySize , double &mean, double &variance, double &max, double &min )
+struct Statistics
+{
+    double average;
+    double variance;
+    double max;
+    double min;
+};
+Statistics analyzeECG( double *base , int arraySize)
 {
     // Logic here (4 lines)
 }
 ```
 
-Use the four functions we already implemented in `arrays.hpp`. Accordingly, **four lines** are sufficient to do this job. And yes, don't forget to `#include "arrays.hpp"` in the current header file.
+Use the four functions we already implemented in `arrays.hpp`.  Don't forget to `#include "arrays.hpp"` in the current header file `ecg.hpp`.
 
-### Requirement 4: **dna.hpp** file and revisiting **arrays.hpp** file
+### Requirement 4: `dna.hpp` file and revisiting `arrays.hpp` file
 
-#### Revisit **arrays.hpp** file
+#### Revisit `arrays.hpp` file
 
 * **R4.1** Make a function that counts a given character in array of characters, using the following declaration:
 
 ```c++
-int countCharacter( char *basePointer , int size , char query )
+int countCharacter( char *array , int size , char query )
 {
     // Logic here
 } 
 ```
 
-#### Now **dna.hpp** file
+#### Now `dna.hpp` file
 
 * **R4.1** Make a `namespace dna` that will contain our functions.
 * **R4.2** Implement `complementaryBase` you did in the first week using either **if, else if, else** or **switch-case**, with the following declaration:
@@ -236,23 +241,19 @@ char *analyzeDNA( char *base, int size, int &countA, int &countC, int &countG, i
 }
 ```
 
-## Submission and Bonus Policy
-
-* As usual, commit and push your changes.
-* Also, you may obtain bonus with correct logic by consistent adoption of [KISS](https://en.wikipedia.org/wiki/KISS_principle) and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself) principles. Also, make your code clean, well-aligned, and use descriptive variable names.
-
 ## Generating Executables and Testing Output
 
-### Compiling and Testing calculator.cpp
+### Compiling and Testing `calculator.cpp`
 
 ```bash
 $ g++ calculator.cpp -o Calculator
 $ ./Calculator 24 / 7
 3.42857
 $ ./Calculator 24 x 7
+168
 ```
 
-### Compiling and Testing heron.cpp
+### Compiling and Testing `heron.cpp`
 
 ```bash
 $ g++ heron.cpp -o Heron
@@ -260,7 +261,7 @@ $ ./Heron 3 4 5
 6
 ```
 
-### Compiling and Testing analyzeECG.cpp
+### Compiling and Testing `analyzeECG.cpp`
 
 We compile and test using an ECG dataset stored in `datasets/ecg_data.txt`.
 
@@ -275,9 +276,12 @@ ECG variance: 0.00865574
 ECG range   : (0.592,1.408)
 ```
 
-### Compiling and Testing analyzeDNA.cpp
+### Compiling and Testing `analyzeDNA.cpp`
 
-We compile and test using a DNA dataset stored in `datasets/hepatitis_c_virus_genome.txt`.
+We compile and test the program twice using:
+
+1. a DNA dataset stored in `datasets/covid19.fasta`.
+2. a DNA dataset stored in `datasets/hepatitis_c_virus_genome.txt`
 
 Our application in the `main` function loads data from the file then use `dna::analyzeDNA`
 function implemented in `dna.hpp`.
@@ -294,4 +298,13 @@ Complementary Sequence:
 ??
 ```
 
-The actual values of A, C, G, T contents are hidden as well as the complementary sequence. Obtaining the correct values will grant you a **bonus grade** for this task.
+```bash
+$ ./AnalyzeDNA datasets/covid19.fasta
+Adenine (A) content:??
+Guanine (G) content:??
+Cytocine(C) content:??
+Thymine (T) content:??
+
+Complementary Sequence:
+??
+```

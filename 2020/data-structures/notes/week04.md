@@ -10,8 +10,6 @@ by: "Asem"
 * TOC
 {:toc}
 
-# Algorithms Analysis & Sorting Algorithms (1)
-
 ## Big O Notation for Algorithm Analysis
 
 ### What is an Algorithm
@@ -33,7 +31,7 @@ We are .red[concerned] about the function running time **w.r.t input size `n`**.
 
 * $T(n)$ is the running time function.
 * $n$ is size of the data structure.
-* printing array of size 10 takes less time than array of size 1000 ($T(10) < T(100)$)
+* printing array of size 10 takes less time than array of size 1000 ($T(10) < T(1000)$)
 
 #### Example
 
@@ -42,32 +40,30 @@ void printArray( double *array, int size ) // n = size
 {
     for( int i = 0; i < size; ++i ) 
     {
-        std::cout << array[i]; // T1(n) = n
-        std::cout << " "; // T2(n) = n
+        std::cout << array[i]; // T1(n) = axn
+        std::cout << " "; // T2(n) = bxn
     }
-    std::cout << "\n"; // T3(n) = 1
+    std::cout << "\n"; // T3(n) = c
 }
 ```
 
-$T_a(n) = T1 + T2 + T3 = n + n + 1= 1 + 2n $ (:thinking: linear)
+$T(n) = T_1 + T_2 + T_3 = an + bn + c= c + (a+b)n $ (:thinking: linear)
 
 
-Alternatively, factor out $n$ 
+Alternatively, factor out $n$
 
 ```c++
 void printArray( double *array, int size ) // n = size
 {
     for( int i = 0; i < size; ++i ) // T1(n) = n * ( T2 + T3 )
     {
-        std::cout << array[i]; // T2(n) = 1
-        std::cout << " "; // T3(n) = 1
+        std::cout << array[i]; // T2(n) = a
+        std::cout << " "; // T3(n) = b
     }
-    std::cout << "\n"; // T4(n) = 1
+    std::cout << "\n"; // T4(n) = c
 }
 ```
-
-$T_a(n) = 1 + n ( T3 + T4 ) = 1 + 2n $ (:thinking: linear)
-
+$  T(n) = c + n ( T_3 + T_4 ) = c + (a+b)n $ (:thinking: linear)
 
 with slight modification in code (no change in logic)..
 
@@ -76,13 +72,13 @@ void printArray( double *array, int size ) // n = size
 {
     for( int i = 0; i < size; ++i ) // T1(n) = n * ( T2 )
     {
-        std::cout << array[i] << " "; // T2(n) = 1
+        std::cout << array[i] << " "; // T2(n) = d
     }
-    std::cout << "\n"; // T4(n) = 1
+    std::cout << "\n"; // T4(n) = e
 }
 ```
 
-$T_b(n) = T1 + T4 = 1 + n ( T4 ) = 1 + n$!
+$T(n) = T1 + T4 = e + n ( T4 ) = e + dn$
 
 * Conclusion: $T(n)$ is not reliable estimate!
 * But $T(n)$ is still linear!
@@ -116,9 +112,9 @@ Even if used the same compiler and platform, it may change from time to time (e.
 
 For any of the following polynomials:
 
-* $T_a(n) = 2n + 1$
-* $T_b(n) = n + 1$
-* $T_c(n) = 4n + 5$
+* $T_a(n) = (a+b)n + c$
+* $T_b(n) = 2n + 1$
+* $T_c(n) = dn + e$
 * $T_d(n) = 6n + 3$
 
 * The $n$ term will dominate the function $T(n)$ at large $n$ values.
@@ -195,18 +191,20 @@ $O(12)$ = $O(9 + log(3))$ = <span class="text-primary">$O(1)$</span>
 |---|---|---|
 | $2n + 3n^3 + 100$ |   |   |
 | $11n + 2^n + 0.2n^3$ |   |  |
-| $log_2(n) + 5n$ |   |  |
-| $nlog_2(n) + n^{1.5}$ |   |  |
+| $\log_2(n) + 5n$ |   |  |
+| $a(1+cos(2\pi n)) + b\log_2(n) + cn$ |   |  |
+| $n\log_2(n) + n^{1.5}$ |   |  |
 
 
 #### Exercise (Solution): Estimate the $O(f(n))$
+
 
 | $f(n)$ | dominant term  | $O(f(n))$ |
 |---|---|---|
 | $2n + 3n^3 + 100$ | $3n^3$  | $O(n^3)$  |
 | $11n + 2^n + n^3$ | $2^n$  | $O(2^n)$ |
-| $log_2(n) + 5n$ | $5n$  | $O(n)$  |
-| $nlog_2(n) + n^{1.5} $ |  +:octocat: | +:octocat: |
+|  $a(1+cos(2\pi n)) + b\log_2(n) + cn$ | $cn$  | $O(n)$  |
+| $n\log_2(n) + n^{1.5} $ |  +:octocat: | +:octocat: |
 
 To find which is dominant for large $n$:
 
@@ -235,7 +233,7 @@ double varianceArray( double *array, int size ) { // n = size
 ###### **Givens**
     
 * The function has complexity of $ O(n^2) $.
-* The function executed in *2 melliseconds* when $n=2000$.
+* The function executed in *2 microseconds* when $n=2000$.
 
 ###### **Solution**
 
@@ -305,13 +303,13 @@ void bubbleSort( double *array, int size )
 ```c++
 #include <algorithm>
 // A function to implement bubble sort
-void bubbleSort( std::vector< double > &array )
+void bubbleSort(  double *array, int size )
 {
-    for ( int i = 0; i < array.size()-1; i++ ) // T1 = n * T2
+    for ( int i = 0; i < size-1; i++ ) // T1 = n * T2
     {
-        for ( int j = 0; j < array.size()-1; j++ ) // T2 = n * T3
+        for ( int j = 0; j < size-1; j++ ) // T2 = n * T3
         {
-            if ( array[j] > arr[j+1] ) // T3 = 1
+            if ( array[j] > arr[j+1] ) // T3 = a
                 std::swap( array[j] , array[j+1] );
         }
     }
@@ -319,7 +317,7 @@ void bubbleSort( std::vector< double > &array )
 ```
 
 
-$$ T(n) = T_1 = n \times T_2 = n \times n = n^2 $$
+$$ T(n) = T_1 = n \times T_2 = n \times n = an^2 $$
 
 
 
@@ -367,18 +365,19 @@ void selectionSort( double *array, int size )
 void selectionSort( double *array, int size ){
     for (int i = 0; i < size -1; i++) // T1 = n * ( T2 + T3 + T4 )
     {
-        int min_idx = i; // T2 = 1
-        for (int j = i+1; j < size ; j++) // T3 = O(n)
+        int min_idx = i; // T2 = a
+        for (int j = i+1; j < size ; j++) // T3 = ???
         {
-            if ( array[j] < array[min_idx] )
+            if ( array[j] < array[min_idx] ) // b
                 min_idx = j;
         }
         // Swap the found minimum element with the element i
-        std::swap( array[min_idx] ,  array[i] ); // T4 = 1
+        std::swap( array[min_idx] ,  array[i] ); // T4 = c
     }
 }
 ```
 
-$$ T(n) = T_1 = n \times (T_2 + T_3 + T_4) = n \times( O(n) + 2 ) $$
+
+$$ T(n) = T_1 = n \times (T_2 + T_3 + T_4) = n \times( a + b\left( \frac{n+1}{2} - 1\right) + c ) $$
 
 $$ O(T(n)) = O(n^2) $$
