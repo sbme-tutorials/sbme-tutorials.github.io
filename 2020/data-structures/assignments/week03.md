@@ -92,7 +92,7 @@ You will also realize our header files begin and ends with
 
 No worries, they are called [header guards](https://en.wikipedia.org/wiki/Include_guard).
 
-### Requirement 1: **mathematics.hpp** file
+### Requirement 1: `mathematics.hpp` file
 
 * **R1.1** Implement our `calculation` function using either **if, else if, else** or **switch-case**.
 * **R1.2** Implement [Heron Formula](https://en.wikipedia.org/wiki/Heron%27s_formula), that is used to compute the **triangle area** given its three sides, hmmmm very interesting.
