@@ -44,3 +44,4 @@ Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
 ## Assignments
 
 * Assignment 1: [Images, Filters, Histograms, Gradients, Frequency]({% link 2020/cv/assignments/assignment01.md %})
+* Assignment 2: [Hough Transform for Lines and Circles Detection and Harris Operator for Corners Detection]({% link 2020/cv/assignments/assignment02.md %})
