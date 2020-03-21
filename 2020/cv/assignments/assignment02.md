@@ -39,7 +39,7 @@ For example, for team **SBE404-2020-Team01**, in the folder of the previous task
 git push git@github.com:sbme-tutorials/cv404-2020-assignment-02-sbe404-2020-team01.git master -u
 ```
 
-Now you will find your work of the previous task uploaded to the new repository.
+Now you will find your work of the previous task uploaded to the new repository. Now clone the new repository in an independent folder.
 
 
 ### A) Computer Vision Functions
