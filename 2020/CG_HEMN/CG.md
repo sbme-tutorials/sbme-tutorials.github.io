@@ -44,26 +44,35 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 |------|---------| 
 |   1  | Introduction to Computer Graphics| 
 |   2  | Transformations|  
-|   3  | Transformation and keyboard controls  | 
+|   3  | Projection and Pipeline  | 
+|   4  | Camera Movement  | 
 
 ## Tutorials
 
 * Week 1: Introduction to Computer Graphics
     * [Notes]({{ site.baseurl }}{% link 2020/CG_HEMN/notes/1-week1.md %}){:target="_blank"}
 
-* Week 2: Transformations
+* Week 2: Transformations and keyboard controls
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md %}){:target="_blank"}
-
-* Week 3: Transformation and keyboard controls
     * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"}
 
-* Week 4: Projection and Pipeline
+* Week 3: Projection and Pipeline
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/3-week3.md %}){:target="_blank"}
+    * [Assignment-2]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment2.md %}){:target="_blank"}
+
+* Week 4: Camera Movement
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/4-week4.md %}){:target="_blank"}
+    * [video](https://drive.google.com/file/d/17og_V3WMZq-owVbawGoQg3rp12iPPIp4/view?usp=sharing)
+    * [Assignment-3]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment3.md %}){:target="_blank"}
 
 
 ## Assignments
     
 * [Assignment-1]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment1.md %}){:target="_blank"} : Robotic Arm 
+
+* [Assignment-2]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment2.md %}){:target="_blank"} : Full robotic body simulation 
+
+* [Assignment-3]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment3.md %}){:target="_blank"} : Camera Movement 
 
 ## Sheets 
 

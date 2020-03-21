@@ -45,6 +45,8 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 |------|-----------------|-----|
 |   1  | Introduction to Computer Graphics| |
 |   2  | Transformations | Assignment1 |
+|   3  | Projection and Pipeline | Assignment2 |
+|   4  | Camera Movement | Assignment3 |
 
 ## Tutorials
 
@@ -54,19 +56,21 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 2: Transformations
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md %}){:target="_blank"}
 
-* Week 3: Projection
+* Week 3: Projection and Pipeline
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/3-week3.md %}){:target="_blank"}
+
+* Week 4: Camera Movement
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/4-week4.md %}){:target="_blank"}
 
 
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2020/CG/assignments/assignment1.md %}){:target="_blank"} : Robotic Arm 
 
-<!-- * [Assignment-2]({{ site.baseurl }}{% link 2019/CG/assignments/assignment2.md %}){:target="_blank"} : Full Body 
+* [Assignment-2]({{ site.baseurl }}{% link 2020/CG/assignments/assignment2.md %}){:target="_blank"} : Full robotic body simulation 
 
-* [Assignment-3]({{ site.baseurl }}{% link 2019/CG/assignments/assignment3.md %}){:target="_blank"} : Animation, Coloring and Texture mapping 
+* [Assignment-3]({{ site.baseurl }}{% link 2020/CG/assignments/assignment3.md %}){:target="_blank"} : Camera Movement 
 
-* [Assignment-4]({{ site.baseurl }}{% link 2019/CG/assignments/assignment4.md %}){:target="_blank"} : Volume Rendering (VTK)  -->
 
 ## Sheets 
 

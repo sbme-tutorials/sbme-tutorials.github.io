@@ -23,7 +23,7 @@ Deadline for online submission will be  on  **Friday 3/4/2020 11:59 PM**
 
 This is an individual assignment 
 
-1. Go to the [Assignment Page](https://classroom.github.com/a/o6oCm3gT).
+1. Go to the [Assignment Page](https://classroom.github.com/a/vUm1Y7sM).
 2. Accept the assignment.
 3. Wait till your repository created.
 4. Open the link and Clone repository.
