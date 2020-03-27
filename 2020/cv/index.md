@@ -12,8 +12,8 @@ year: "2020"
 
 ## Teaching Staff
 
-Instructors: Prof. Ahmed M. Badawy
-Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
+* Instructor: Prof. Ahmed M. Badawy
+* Teaching Assistants: Eng. Eman Marzban and Eng. Asem Alaa
 
 ## Lecture Hours
 
