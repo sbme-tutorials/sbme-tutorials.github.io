@@ -44,4 +44,4 @@ year: "2020"
 ## Assignments
 
 * Assignment 1: [Images, Filters, Histograms, Gradients, Frequency]({% link 2020/cv/assignments/assignment01.md %})
-* Assignment 2: [Hough Transform for Lines and Circles Detection and Harris Operator for Corners Detection]({% link 2020/cv/assignments/assignment02.md %})
+* Assignment 2: [Hough Transform, Harris operator, and Active Contour model]({% link 2020/cv/assignments/assignment02.md %})
