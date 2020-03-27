@@ -79,13 +79,13 @@ Integrate your functions in part (A) to new tabs in the Qt MainWindow design:
 
 | Tab 4 |
 ---|---|
-| <img src="tab4.png" style="width:500px"> 
+| <img src="tab4.png" style="width:900px"> 
 
 | Tab 5 |
 |---|
-| <img src="tab5.png" style="width:500px;"> |
+| <img src="tab5.png" style="width:900px;"> |
 
 
 | Tab 6 |
 |---|
-| <img src="tab6.png" style="width:500px;"> |
+| <img src="tab6.png" style="width:900px;"> |
