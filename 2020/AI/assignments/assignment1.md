@@ -15,7 +15,7 @@ pdf: true
 
 ## Deadline
 
-Deadline for online submission will be  on  **wednesday 25/3/2020 11:59 PM**
+Deadline for online submission will be  on  **Saturday 28/3/2020 11:00 PM**
 
 ## Joining to Assignment Repository
 
