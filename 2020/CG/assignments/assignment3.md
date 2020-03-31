@@ -50,4 +50,4 @@ $ git push origin master
 
 ## Helper
 
-1. Mouse function : [here] (https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/blob/master/Tutorial-02/arm.c)
+1. Mouse function : [here](https://github.com/sbme-tutorials/SBE306-Computer-Graphics-Tutorials/blob/master/Tutorial-02/arm.c)
