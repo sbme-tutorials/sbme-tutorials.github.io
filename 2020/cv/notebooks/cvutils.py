@@ -57,3 +57,17 @@ def ycbcr2rgb(im):
     np.putmask(rgb, rgb > 255, 255)
     np.putmask(rgb, rgb < 0, 0)
     return np.uint8(rgb)
+
+def padded_slice(img, sl):
+    output_shape = np.asarray(np.shape(img))
+    output_shape[0] = sl[1] - sl[0]
+    output_shape[1] = sl[3] - sl[2]
+    src = [max(sl[0], 0),
+           min(sl[1], img.shape[0]),
+           max(sl[2], 0),
+           min(sl[3], img.shape[1])]
+    dst = [src[0] - sl[0], src[1] - sl[0],
+           src[2] - sl[2], src[3] - sl[2]]
+    output = np.zeros(output_shape, dtype=img.dtype)
+    output[dst[0]:dst[1],dst[2]:dst[3]] = img[src[0]:src[1],src[2]:src[3]]
+    return output
