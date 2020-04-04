@@ -65,6 +65,8 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
     * [video](https://drive.google.com/file/d/17og_V3WMZq-owVbawGoQg3rp12iPPIp4/view?usp=sharing)
     * [Assignment-3]({{ site.baseurl }}{% link 2020/CG_HEMN/assignments/assignment3.md %}){:target="_blank"}
 
+* Week 5: Ray Casting, Lightening and Animation
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/5-week5.md %}){:target="_blank"}  
 
 ## Assignments
     

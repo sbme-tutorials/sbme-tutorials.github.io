@@ -5,27 +5,27 @@
 layout: page
 category: "notes"
 course: "sbe306"
-year: "2019"
-title: "Ray Casting & Animation"
+year: "2020"
+title: "Ray Casting, Lightening  & Animation"
 ---
 * TOC
 {:toc}
 
 ## Ray Casting
 
-### Vision Process 
+### Vision Process
 
 In human vision process is as follow
 
 1. Lights drop on objects
-2. Then it is reflected (scattered) in all directions 
+2. Then it is reflected (scattered) in all directions
 3. Reflected light rays are received by the eye and image is formed.
 
-The same is for pinhole camera model 
+The same is for the pinhole camera model
 
 ![](../images/cameragen.gif)
 
-**Idealy**
+**Ideally**
 
 * There is an infinite number of rays 
 * Multiple reflections happen for the same ray on different objects 
@@ -36,7 +36,7 @@ Keep in mind that the objective is to get a 2D image of the scene.
 ### Ray Casting
 
 **Basic Idea**
-The process is reversed where rays are sent from camera position instead of receive it at camera position. 
+The process is reversed where rays are sent from the camera position instead of receive it at the camera position. 
 
 Pseudo code for ray casting  
 ```python 
@@ -57,7 +57,7 @@ for each pixel:
 * It is the same idea with more complex calculations
 * Rays must be checked with all objects in the scene by tracking its reflections recursively. 
 
-* It is computationally extensive and time consuming process but has realistic results
+* It is computationally extensive and time-consuming process but has realistic results
 
 * It is used for creating visual effects and not applicable in interactive applications (Games)
 
@@ -74,9 +74,9 @@ Sample of generated images with ray tracing [(source)](https://en.wikipedia.org/
 ### Classical lighting models
 
 * Ambient lighting : 
-It is an approximation of uniform light without light source. It illuminate all objects equally. 
+It is an approximation of uniform light without a light source. It illuminate all objects equally. 
 * Diffuse lighting
-The light is reflected in all direction due to roughness of the surface. 
+The light is reflected in all direction due to the roughness of the surface. 
 ![](../images/diffuse.png)
 * Specular lighting:
 Reflection of the light in one direction (Smooth surface).
@@ -89,9 +89,9 @@ Reflection of the light in one direction (Smooth surface).
 You need to define color properties and enable it. 
 
 ```c
-// Here we have a red light source
-float light_ambient[] = {1.0, 0.0, 0.0, 1.0};
-float light_diffuse[] = {1.0, 0.0, 0.0, 1.0};
+// Here we have a white light source
+float light_ambient[] = {1.0, 1.0, 1.0, 1.0};
+float light_diffuse[] = {1.0, 1.0, 1.0, 1.0};
 float light_specular[] = {1.0, 1.0, 1.0, 1.0};
 // This is the light position
 float light_position[] = {0.0, 0.0, 4.0, 1.0};
@@ -113,11 +113,19 @@ This is an example of a solid sphere
 
 **Only ambient is set**
 
-![](../images/sphere-ambient.png)
+![](../images/Selection_108.png)
 
-**Ambient, diffuse and specular**
 
-![](../images/sphere-lit.png)
+**Ambient, diffuse**
+
+![](../images/Selection_105.png)
+
+
+
+**Ambient, diffuse, and specular**
+
+![](../images/Selection_106.png)
+
 
 ## Animation Key concept 
 
