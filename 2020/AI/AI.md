@@ -61,6 +61,8 @@ Demonstrator:  Eng. Ayman Anwar
 
 * Week 5: Decision Trees CTD
     * [Lecture 5]({{ site.baseurl }}{% link 2020/AI/presentations/L5.pdf %}){:target="_blank"} 
+    * [Tutorial 5 notes](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Decision%20Trees/DT.ipynb)
+    * [Tutorial 5 video](https://drive.google.com/open?id=1kcArZ8UR-2xEewHjBUd0vA3NTs93jquO)
 
 * Week 6: Support Vector Machines
     * [Lecture 6]({{ site.baseurl }}{% link 2020/AI/presentations/L6.pdf %}){:target="_blank"} 
