@@ -5,7 +5,7 @@
 layout: home
 category: "coursepage"
 course: "sbe452"
-year: "2019"
+year: "2020"
 ---
 # Artificial Intelligence AI \(SBE452\) - Spring 2020
 
@@ -52,10 +52,25 @@ Demonstrator:  Eng. Ayman Anwar
 
 * Week 3: Bayesian Decision Theory
     * [Lecture 3]({{ site.baseurl }}{% link 2020/AI/presentations/L3.pdf %}){:target="_blank"} 
-    * [Sample Report]({{ site.baseurl }}{% link 2020/AI/presentations/R.pdf %}){:target="_blank"} 
     * [Tutorial 3 notes](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Bayesian/BR.ipynb)
     * [Tutorial 3 video](https://drive.google.com/open?id=1QOTtyrWjALJF7ulYAWtcCOwndItKIDe7)
+
+* Week 4: Concept Learning and introduction to Decision Trees
+    * [Lecture 4]({{ site.baseurl }}{% link 2020/AI/presentations/L4.pdf %}){:target="_blank"} 
+    * [Sample-Report]({{ site.baseurl }}{% link 2020/AI/presentations/R.pdf %}){:target="_blank"} 
+
+* Week 5: Decision Trees CTD
+    * [Lecture 5]({{ site.baseurl }}{% link 2020/AI/presentations/L5.pdf %}){:target="_blank"} 
+
+* Week 6: Support Vector Machines
+    * [Lecture 6]({{ site.baseurl }}{% link 2020/AI/presentations/L6.pdf %}){:target="_blank"} 
 
 ## Assignments
     
 * [Assignment-1]({{ site.baseurl }}{% link 2020/AI/assignments/assignment1.md %}){:target="_blank"} : Bayesian Rule 
+* [Assignment-2]({{ site.baseurl }}{% link 2020/AI/presentations/A2.pdf %}){:target="_blank"} : Decision Trees
+
+## Final Project : 
+
+* [Phase-1]({{ site.baseurl }}{% link 2020/AI/presentations/Ph1.pdf %}){:target="_blank"} 
+
