@@ -63,9 +63,11 @@ Demonstrator:  Eng. Ayman Anwar
 
 * Week 5: Ensemble Learning and Random Forests:
     * [Lecture 5]({{ site.baseurl }}{% link 2020/AI/presentations/L5.pdf %}){:target="_blank"} 
+    * [Tutorial 5 notes](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Random%20Forests/RF.ipynb)
 
 * Week 6: Support Vector Machines
     * [Lecture 6]({{ site.baseurl }}{% link 2020/AI/presentations/L6.pdf %}){:target="_blank"} 
+    * [Tutorial 6 notes](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Support%20Vector%20Machines/SVM.ipynb)
 
 ## Assignments
     
