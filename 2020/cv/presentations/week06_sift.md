@@ -672,4 +672,11 @@ class: small, middle, center
 
 <img style="height:590px;"src="../notebooks/media/sift_result_07.png">
 
+---
+class: middle, center
+
+<img src="../images/jnb.png">
+
+[{`sift.ipnyb`}](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/sift.ipynb)
+
 </textarea>
