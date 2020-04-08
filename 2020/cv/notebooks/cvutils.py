@@ -4,7 +4,9 @@ from os import listdir
 from os.path import isfile , join
 import numpy as np
 from scipy import signal
-
+from skimage.transform import resize
+import cv2
+from math import sin, cos
 
 def rgb2gray(rgb_image):
     return np.dot(rgb_image[...,:3], [0.299, 0.587, 0.114])
@@ -71,3 +73,37 @@ def padded_slice(img, sl):
     output = np.zeros(output_shape, dtype=img.dtype)
     output[dst[0]:dst[1],dst[2]:dst[3]] = img[src[0]:src[1],src[2]:src[3]]
     return output
+
+def sift_resize(img, ratio = None):
+    ratio = ratio if ratio is not None else np.sqrt((1024*1024) / np.prod(img.shape[:2]))
+    newshape = list(map( lambda d : int(round(d*ratio)), img.shape[:2])) 
+    img = resize( img, newshape , anti_aliasing = True )
+    return img,ratio
+
+def sift_gradient(img):
+    dx = np.array([[-1,0,1],
+                  [-2,0,2],
+                  [-1,0,1]])
+    dy = dx.T
+    gx = signal.convolve2d( img , dx , boundary='symm', mode='same' )
+    gy = signal.convolve2d( img , dy , boundary='symm', mode='same' )
+    magnitude = np.sqrt( gx * gx + gy * gy )
+    direction = np.rad2deg( np.arctan2( gy , gx )) % 360
+    return gx,gy,magnitude,direction
+
+"""
+https://stackoverflow.com/a/28109943/5565296
+"""
+def sift_rotated_subimage(image, center, theta, width, height):
+    theta *= 3.14159 / 180 # convert to rad
+    
+    
+    v_x = (cos(theta), sin(theta))
+    v_y = (-sin(theta), cos(theta))
+    s_x = center[0] - v_x[0] * ((width-1) / 2) - v_y[0] * ((height-1) / 2)
+    s_y = center[1] - v_x[1] * ((width-1) / 2) - v_y[1] * ((height-1) / 2)
+
+    mapping = np.array([[v_x[0],v_y[0], s_x],
+                        [v_x[1],v_y[1], s_y]])
+
+    return cv2.warpAffine(image,mapping,(width, height),flags=cv2.WARP_INVERSE_MAP,borderMode=cv2.BORDER_REPLICATE)

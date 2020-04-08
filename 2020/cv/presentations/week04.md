@@ -403,7 +403,7 @@ $$|H - \lambda I | = 0$$
 ### Step 5: evaluate corners using $R$ as a measure
 
 --
-$$R = (\lambda_1 \times \lambda_2) - k (\lambda_1 + \lambda_2)$$
+$$R = (\lambda_1 \times \lambda_2) - k (\lambda_1 + \lambda_2)^2$$
 
 
 ---
@@ -423,7 +423,7 @@ $$trace(M) = \lambda_1 + \lambda_2 $$
 ##### Instead of calculating $\lambda_1, \lambda_2$
 
 --
-* $R = det(\hat{M}) - k * trace(\hat{M})$
+* $R = det(\hat{M}) - k * trace(\hat{M})^2$
 --
 * Trace is sum of diagonal elements 
 
@@ -448,7 +448,7 @@ K = 0.05
 
 detM = np.multiply(Ixx_hat,Iyy_hat) - np.multiply(Ixy_hat,Ixy_hat) 
 trM = Ixx_hat + Iyy_hat
-R = detM - K * trM 
+R = detM - K * (trM**2) 
 ```
 
 ---
