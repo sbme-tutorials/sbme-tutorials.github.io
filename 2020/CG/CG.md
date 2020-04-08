@@ -62,6 +62,9 @@ Demonstrators:  Eng. Ayman Anwar and Eng. Eslam Adel
 * Week 4: Camera Movement
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/4-week4.md %}){:target="_blank"}
 
+* Week 5: Ray Casting, Lightening and Animation
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/5-week5.md %}){:target="_blank"}
+
 
 ## Assignments
 
