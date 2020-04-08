@@ -677,6 +677,6 @@ class: middle, center
 
 <img src="../images/jnb.png">
 
-[{`sift.ipnyb`}](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/sift.ipynb)
+[{`scale_invariance.ipnyb`}](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/scale_invariance.ipynb)
 
 </textarea>
