@@ -39,6 +39,10 @@ Demonstrator:  Eng. Ayman Anwar
 |------|---------| 
 |   1  | Introduction to Machine Learning| 
 |   2  | Linear Regression|  
+|   3  | Bayesian Decision Theory|  
+|   4  | Concept Learning and Decision Trees|  
+|   5  | Ensemble Learning and Random Forests|  
+|   6  | Support Vector Machines|  
 
 
 ## Notes
