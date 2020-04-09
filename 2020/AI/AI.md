@@ -74,6 +74,7 @@ Demonstrator:  Eng. Ayman Anwar
     
 * [Assignment-1]({{ site.baseurl }}{% link 2020/AI/assignments/assignment1.md %}){:target="_blank"} : Bayesian Rule 
 * [Assignment-2]({{ site.baseurl }}{% link 2020/AI/presentations/A2.pdf %}){:target="_blank"} : Decision Trees
+* [Assignment-3]({{ site.baseurl }}{% link 2020/AI/assignments/assignment3.md %}){:target="_blank"} : SVM and Ensemble methods 
 
 ## Final Project : 
 * [Sample-Report]({{ site.baseurl }}{% link 2020/AI/presentations/R.pdf %}){:target="_blank"} 
