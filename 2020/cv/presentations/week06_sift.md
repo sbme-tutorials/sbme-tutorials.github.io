@@ -376,10 +376,8 @@ def corners( dog , r = 10.0 ):
         
     tr = dog_xx + dog_yy
     det = dog_xx * dog_yy - dog_xy ** 2
-    response = np.zeros_like( dog )
-    nonzero = det > np.finfo(np.float32).eps
-    response[nonzero] = ( tr[nonzero] ** 2 ) / det[nonzero]
-    coords = list(map( tuple , np.argwhere( response > threshold ).tolist() ))
+    response = ( tr ** 2 ) / det
+    coords = list(map( tuple , np.argwhere( response < threshold ).tolist() ))
     return coords
 
 def contrast( dog , img_max, threshold = 0.03 ):
@@ -506,7 +504,7 @@ def dog_keypoints_orientations( img_gaussians , keypoints , num_bins = 36 ):
 
 ##### Corners + Orientation (Last Octave)
 
-.center[<img style="height:450px;"src="../notebooks/media/corners_orientation_oct4.png">]
+.center[<img style="height:450px;"src="../notebooks/media/corners_orientation_oct4.jpg">]
 
 ---
 ### SIFT
@@ -514,7 +512,7 @@ def dog_keypoints_orientations( img_gaussians , keypoints , num_bins = 36 ):
 
 ##### Corners + Orientation (all Octaves)
 
-.center[<img style="height:450px;"src="../notebooks/media/corners_orientation_oct_all.png">]
+.center[<img style="height:450px;"src="../notebooks/media/corners_orientation_oct_all.jpg">]
 
 ---
 ### SIFT
@@ -634,43 +632,62 @@ def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
 class: small, middle
 ### SIFT - Results
 
-.center[<img style="height:590px;"src="../notebooks/media/sift_result_01.png">]
+.center[<img style="height:590px;"src="../notebooks/media/sift_result_01.jpg">]
 
 ---
 class: small, middle
 ### SIFT - Results
 
-.center[<img style="height:590px;"src="../notebooks/media/sift_result_02.png">]
+.center[<img style="height:590px;"src="../notebooks/media/sift_result_02.jpg">]
 
 ---
 class: small, middle, center
 ### SIFT - Results
 
-<img style="height:590px;"src="../notebooks/media/sift_result_03.png">
+<img style="height:590px;"src="../notebooks/media/sift_result_03.jpg">
 
 ---
 class: small, middle, center
 ### SIFT - Results
 
-<img style="height:590px;"src="../notebooks/media/sift_result_04.png">
+<img style="height:590px;"src="../notebooks/media/sift_result_04.jpg">
 
 ---
 class: small, middle, center
 ### SIFT - Results
 
-<img style="height:590px;"src="../notebooks/media/sift_result_05.png">
+<img style="height:590px;"src="../notebooks/media/sift_result_05.jpg">
 
 ---
 class: small, middle, center
 ### SIFT - Results
 
-<img style="height:590px;"src="../notebooks/media/sift_result_06.png">
+<img style="height:590px;"src="../notebooks/media/sift_result_06.jpg">
 
 ---
 class: small, middle, center
 ### SIFT - Results
 
-<img style="height:590px;"src="../notebooks/media/sift_result_07.png">
+<img style="height:590px;"src="../notebooks/media/sift_result_07.jpg">
+
+---
+class: small, middle, center
+### SIFT - Results
+
+<img style="height:590px;"src="../notebooks/media/sift_result_08.jpg">
+
+---
+class: small, middle, center
+### SIFT - Results
+
+<img style="height:590px;"src="../notebooks/media/sift_result_09.jpg">
+
+
+---
+class: small, middle, center
+### SIFT - Results
+
+<img style="height:590px;"src="../notebooks/media/sift_result_10.jpg">
 
 ---
 class: middle, center
@@ -685,7 +702,7 @@ class: center, middle
 ## Image Matching Challenge 2020 
 ### Sponsored by CVPR 2020
 
-.center[<img style="height:255px;"src="../notebooks/media/trevi-canvas.jpg"><img style="height:255px;"src="../notebooks/media/trevi.png">]
+.center[<img style="height:255px;"src="../notebooks/media/trevi-canvas.jpg"><img style="height:255px;"src="../notebooks/media/trevi.jpg">]
 
 * Some local descriptors developed as early as 2004
 * Several of them outperform the state-of-the-art machine learning approaches in object recognition
