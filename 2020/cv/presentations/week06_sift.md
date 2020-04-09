@@ -560,7 +560,7 @@ class: small
 
 ```python
 def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
-    descriptors = [] ; points = []; scale_data = {} 
+    descriptors = [] ; points = []; data = {} 
     for (i,j,oct_idx,scale_idx, theta) in keypoints:
         # A) Caching
         if 'index' not in data or data['index'] != (oct_idx,scale_idx):
@@ -586,7 +586,7 @@ class: small
 
 ```python
 def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
-    descriptors = [] ; points = []; scale_data = {} 
+    descriptors = [] ; points = []; data = {} 
     for (i,j,oct_idx,scale_idx, theta) in keypoints:
         # A) Caching ...
         # B) HoG "4x4" x 16
@@ -610,7 +610,7 @@ class: small
 
 ```python
 def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
-    descriptors = [] ; points = []; scale_data = {} 
+    descriptors = [] ; points = []; data = {} 
     for (i,j,oct_idx,scale_idx, theta) in keypoints:
          # Caching...
         # B) HoG "4x4" x 16...
