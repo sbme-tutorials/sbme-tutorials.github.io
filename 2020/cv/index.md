@@ -40,6 +40,13 @@ year: "2020"
 3. Section 4:
     * [Section slides]({{ site.baseurl }}{% link 2020/cv/presentations/week04.md %}) [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/cv/presentations/week04.pdf %}){:target="_blank"}
     * Demo files: \[[hough_transform.ipynb](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/hough_transform.ipynb)\]
+3. Section 5:
+    * [Section slides](/2020/cv/presentations/week05.pdf)
+    * Demo files: \[[SBE404 Tut 3.ipynb](https://github.com/emanmarzban/Computer-Vision-2020/blob/master/SBE404%20Tut%203.ipynb)\]
+3. Section 6:
+    * Section slides: \[[Part A]({{ site.baseurl }}{% link 2020/cv/presentations/week06_templates.md %}) [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/cv/presentations/week06_templates.pdf %}){:target="_blank"}\] \[[Part B]({{ site.baseurl }}{% link 2020/cv/presentations/week06_sift.md %}) [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/cv/presentations/week06_sift.pdf %}){:target="_blank"}\]
+    * Demo files: \[[template_matching.ipynb](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/template_matching.ipynb)\] \[[scale_invariance.ipynb](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/scale_invariance.ipynb)\]
+
 
 ## Assignments
 

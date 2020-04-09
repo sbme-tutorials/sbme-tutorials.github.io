@@ -679,4 +679,28 @@ class: middle, center
 
 [{`scale_invariance.ipnyb`}](https://github.com/sbme-tutorials/sbme-tutorials.github.io/blob/master/2020/cv/notebooks/scale_invariance.ipynb)
 
+
+---
+class: center, middle
+## Image Matching Challenge 2020 
+### Sponsored by CVPR 2020
+
+.center[<img style="height:255px;"src="../notebooks/media/trevi-canvas.jpg"><img style="height:255px;"src="../notebooks/media/trevi.png">]
+
+* Some local descriptors developed as early as 2004
+* Several of them outperform the state-of-the-art machine learning approaches in object recognition
+
+[{vision.uvic.ca/image-matching-challenge}](https://vision.uvic.ca/image-matching-challenge/)
+
+
+
+[{github.com/vcg-uvic/image-matching-benchmark}](https://github.com/vcg-uvic/image-matching-benchmark)
+
+
+---
+# Thank you
+
+{% include presentation-margins.html %}
+
+
 </textarea>
