@@ -52,3 +52,4 @@ year: "2020"
 
 * Assignment 1: [Images, Filters, Histograms, Gradients, Frequency]({% link 2020/cv/assignments/assignment01.md %})
 * Assignment 2: [Hough Transform, Harris operator, and Active Contour model]({% link 2020/cv/assignments/assignment02.md %})
+* Assignment 3: [Image Matching, Template Matching, SIFT]({% link 2020/cv/assignments/assignment03.md %})
