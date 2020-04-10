@@ -69,10 +69,10 @@ Demonstrator:  Eng. Ayman Anwar
     * [Lecture 5]({{ site.baseurl }}{% link 2020/AI/presentations/L5.pdf %}){:target="_blank"} 
     * [Tutorial 5 notes](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Random%20Forests/RF.ipynb)
     * [Tutorial 5 video](https://drive.google.com/open?id=12TzjS15cv41e6eyijZKh3gP7EihX7osZ)
-
 * Week 6: Support Vector Machines
     * [Lecture 6]({{ site.baseurl }}{% link 2020/AI/presentations/L6.pdf %}){:target="_blank"} 
     * [Tutorial 6 notes](https://github.com/sbme-tutorials/SBE452-AI-Demos/blob/master/Support%20Vector%20Machines/SVM.ipynb)
+    * [Tutorial 6 video](https://drive.google.com/open?id=1CQ9lzths-TCUlw-N1Jr4gRcslIFNtXt4)
 
 ## Assignments
     
