@@ -495,7 +495,7 @@ def dog_keypoints_orientations( img_gaussians , keypoints , num_bins = 36 ):
                 for bin_idx in np.argwhere( hist >= 0.8 * hist.max() ).tolist():
                     angle = (bin_idx[0]+0.5) * (360./num_bins) % 360
                     kps.append( (i,j,octave_idx,scale_idx,angle))
-    return octaves_kps
+    return kps
 ```
 
 ---
@@ -560,21 +560,20 @@ class: small
 
 ```python
 def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
-    descriptors = [] ; points = []; scale_data = {} 
-    for octave_idx in range(N_OCTAVES):
-        for (i,j,o_idx,scale_idx, theta) in keypoints[octave_idx]:
-            # A) Caching
-            if 'index' not in data or data['index'] != (o_idx,scale_idx):
-                data['index'] = (o_idx,scale_idx)
-                gaussian_img = img_gaussians[octave_idx][ scale_idx ] 
-                sigma = 1.5 * SIGMA * ( 2 ** octave_idx ) * ( K ** (scale_idx))
-                data['kernel'] = gaussian_kernel2d(std = sigma, kernlen = 16)                
-                _, _, data['magnitude'], data['direction'] =sift_gradient(gaussian_img)
-            win_mag = rotated_subimage(data['magnitude'],(j,i),theta,16,16)* data['kernel']
-            win_dir = rotated_subimage(data['direction'],(j,i),theta,16,16)
-            win_dir = (((win_dir - theta) % 360) * num_bins / 360.).astype(int)
-            # B) HoG "4x4" x 16 ...
-            # C) Combine+Normalize ...
+    descriptors = [] ; points = []; data = {} 
+    for (i,j,oct_idx,scale_idx, theta) in keypoints:
+        # A) Caching
+        if 'index' not in data or data['index'] != (oct_idx,scale_idx):
+            data['index'] = (oct_idx,scale_idx)
+            gaussian_img = img_gaussians[oct_idx][ scale_idx ] 
+            sigma = 1.5 * SIGMA * ( 2 ** oct_idx ) * ( K ** (scale_idx))
+            data['kernel'] = gaussian_kernel2d(std = sigma, kernlen = 16)                
+            _, _, data['magnitude'], data['direction'] =sift_gradient(gaussian_img)
+        win_mag = rotated_subimage(data['magnitude'],(j,i),theta,16,16)* data['kernel']
+        win_dir = rotated_subimage(data['direction'],(j,i),theta,16,16)
+        win_dir = (((win_dir - theta) % 360) * num_bins / 360.).astype(int)
+        # B) HoG "4x4" x 16 ...
+        # C) Combine+Normalize ...
     return points , descriptors
 ```
 
@@ -587,44 +586,40 @@ class: small
 
 ```python
 def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
-    descriptors = [] ; points = []; scale_data = {} 
-    for octave_idx in range(N_OCTAVES):
-        for (i,j,o_idx,scale_idx, theta) in keypoints[octave_idx]:
-            # A) Caching ...
-            # B) HoG "4x4" x 16
-            features = []
-            for sub_i in range(4):
-                for sub_j in range(4):
-                    sub_weights = win_mag[sub_i*4:(sub_i+1)*4, sub_j*4:(sub_j+1)*4]
-                    sub_dir_idx = win_dir[sub_i*4:(sub_i+1)*4, sub_j*4:(sub_j+1)*4]
-                    hist = np.zeros(num_bins, dtype=np.float32)
-                    for bin_idx in range(num_bins):
-                        hist[bin_idx] = np.sum( sub_weights[ sub_dir_idx == bin_idx ] )
-                    features.extend( hist.tolist())
-            # C) Combine+Normalize ...
+    descriptors = [] ; points = []; data = {} 
+    for (i,j,oct_idx,scale_idx, theta) in keypoints:
+        # A) Caching ...
+        # B) HoG "4x4" x 16
+        features = []
+        for sub_i in range(4):
+            for sub_j in range(4):
+                sub_weights = win_mag[sub_i*4:(sub_i+1)*4, sub_j*4:(sub_j+1)*4]
+                sub_dir_idx = win_dir[sub_i*4:(sub_i+1)*4, sub_j*4:(sub_j+1)*4]
+                hist = np.zeros(num_bins, dtype=np.float32)
+                for bin_idx in range(num_bins):
+                    hist[bin_idx] = np.sum( sub_weights[ sub_dir_idx == bin_idx ] )
+                features.extend( hist.tolist())
+        # C) Combine+Normalize ...
     return points , descriptors
 ```
 
 ---
-class: small
+class: small 
 ### SIFT
 #### 4. SIFT Descriptor
 
 ```python
 def extract_sift_descriptors128( img_gaussians, keypoints, num_bins = 8 ):
-    descriptors = []
-    points = []
-    for octave_idx in range(N_OCTAVES):
-        scale_data = {}         
-        for (i,j,o_idx,scale_idx, theta) in keypoints[octave_idx]:
-            # Caching...
-            # B) HoG "4x4" x 16...
-            # C) Combine+Normalize
-            features /= (np.linalg.norm(np.array(features)))
-            features = np.clip(features , np.finfo(np.float16).eps , 0.2)
-            features /= (np.linalg.norm(features))
-            descriptors.append(features)
-            points.append( (i ,j , octave_idx, scale_idx, theta))
+    descriptors = [] ; points = []; data = {} 
+    for (i,j,oct_idx,scale_idx, theta) in keypoints:
+         # Caching...
+        # B) HoG "4x4" x 16...
+        # C) Combine+Normalize
+        features /= (np.linalg.norm(np.array(features)))
+        features = np.clip(features , np.finfo(np.float16).eps , 0.2)
+        features /= (np.linalg.norm(features))
+        descriptors.append(features)
+        points.append( (i ,j , oct_idx, scale_idx, theta))
     return points , descriptors
 ```
 
