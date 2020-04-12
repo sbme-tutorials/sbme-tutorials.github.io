@@ -47,6 +47,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 | 2 | C++ Memory Model, C++ Pointers and References | Processing command line arguments (`argc` & `argv`); Compilation of multiple files |
 | 3 | Static and Dynamic Arrays; Recursion; C++ Functions Overloading; |  |
 | 4 | Complexity analysis (big O notation); Bubble sort; Selection sort; Naming conventions; Const correctness |   |
+| 5 | Linked Lists |   |
 
 <!-- | 5 | Recursion; C++ template structs; C++ classes and objects  |   |
 | 6 |  |   |
@@ -76,7 +77,9 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 3. Section 4:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.pdf %}){:target="_blank"}
     * Section handouts: \[[Time Complexity (Big O notation) & Sorting Algorithms (1)]({{ site.baseurl }}{% link 2020/data-structures/notes/week04.md %}){:target="_blank"}\] 
-
+5. Section 5:
+    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.pdf %}){:target="_blank"}
+    * [Report Assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
 
 ## Resources & Useful Links
 

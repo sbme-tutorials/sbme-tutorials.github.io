@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/asem/GP/sbme-tutorials.github.io/2020/data-structures/snippets/vector-vs-list/stl_vector_vs_list.cpp
+vector
+-
+list
+-
+iostream
+-
+
