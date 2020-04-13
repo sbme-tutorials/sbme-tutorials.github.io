@@ -1,4 +1,0 @@
-/home/asem/GP/sbme-tutorials.github.io/2020/data-structures/snippets/build-vector-vs-list-Desktop_Qt_5_11_2_GCC_64bit-Default/CMakeFiles/rebuild_cache.dir
-/home/asem/GP/sbme-tutorials.github.io/2020/data-structures/snippets/build-vector-vs-list-Desktop_Qt_5_11_2_GCC_64bit-Default/CMakeFiles/edit_cache.dir
-/home/asem/GP/sbme-tutorials.github.io/2020/data-structures/snippets/build-vector-vs-list-Desktop_Qt_5_11_2_GCC_64bit-Default/CMakeFiles/stl_vector_vs_list.dir
-/home/asem/GP/sbme-tutorials.github.io/2020/data-structures/snippets/build-vector-vs-list-Desktop_Qt_5_11_2_GCC_64bit-Default/CMakeFiles/list.dir

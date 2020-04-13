@@ -1,1 +1,0 @@
-/usr/bin/g++    -rdynamic CMakeFiles/vector-vs-list.dir/stl_vector_vs_list.cpp.o  -o vector-vs-list 

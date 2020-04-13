@@ -79,7 +79,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * Section handouts: \[[Time Complexity (Big O notation) & Sorting Algorithms (1)]({{ site.baseurl }}{% link 2020/data-structures/notes/week04.md %}){:target="_blank"}\] 
 5. Section 5:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.pdf %}){:target="_blank"}
-    * [Report Assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
+    * [Report assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
 
 ## Resources & Useful Links
 
