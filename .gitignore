@@ -6,3 +6,4 @@ _site/*
 /vendor
 .vscode/*
 .ipynb_checkpoints
+**/CMakeLists.txt.user

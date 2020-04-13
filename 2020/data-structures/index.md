@@ -78,7 +78,8 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.pdf %}){:target="_blank"}
     * Section handouts: \[[Time Complexity (Big O notation) & Sorting Algorithms (1)]({{ site.baseurl }}{% link 2020/data-structures/notes/week04.md %}){:target="_blank"}\] 
 5. Section 5:
-    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.pdf %}){:target="_blank"}
+    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.pdf %}){:target="_blank"} 
+    * [Code samples <i class="fas fa-code"></i>](https://github.com/sbme-tutorials/sbme-tutorials.github.io/tree/master/2020/data-structures/snippets/vector-vs-list){:target="_blank"}
     * [Report assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
 
 ## Resources & Useful Links
