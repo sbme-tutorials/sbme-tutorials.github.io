@@ -1,0 +1,8 @@
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/CMakeLists.txt
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/DLL1.hpp
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/DLL2.hpp
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/DLL3.hpp
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/main_dll1.cpp
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/main_dll2.cpp
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/main_dll3.cpp
+https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/lab05/linkedlists/main_std.cpp
