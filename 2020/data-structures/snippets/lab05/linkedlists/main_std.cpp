@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include <vector>
 #include <list>
 
@@ -74,7 +73,7 @@ void mergeByCountry( std::list<CovidItem> &items )
                 it1->confirmed += it2->confirmed;
                 it1->deaths += it2->deaths;
                 it1->recovered += it2->recovered;
-                it2 = items.erase( it2 );
+                it2 = items.erase( it2 );  // O(1)
             }
             else it2 = std::next( it2 );
         }
