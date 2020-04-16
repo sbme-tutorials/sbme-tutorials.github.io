@@ -81,6 +81,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week05.pdf %}){:target="_blank"} 
     * [Code samples](https://github.com/sbme-tutorials/sbme-tutorials.github.io/tree/master/2020/data-structures/snippets/vector-vs-list){:target="_blank"}
     * [Report assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
+    * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_exercises.md %}){:target="_blank"}\]
 
 ## Resources & Useful Links
 
