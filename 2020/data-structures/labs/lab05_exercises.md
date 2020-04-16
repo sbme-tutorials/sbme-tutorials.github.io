@@ -68,11 +68,36 @@ From the QtCreator, open the current directory as a project by selecting `CMakeL
 
 ## Application 1: remove duplicates from doubly linked list (procedural)
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Flab05%2Flinkedlists%2Fmain_dll1.cpp&style=default&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+### Requirement 1: implementation of doubly linked list of integers
+
+Complete the implementation of the following functions in the `DLL1.hpp` file:
+
+1. `bool isEmpty( DLL &list )`
+2. `void pushFront( DLL &list, int data )`
+3. `void pushBack( DLL &list, int data )`
+4. `void popNode( DLL &list, Node *node )`
+5. `void popFront( DLL &list )`
+6. `void popBack( DLL &list )`
+7. `int getAt( DLL &list, int index )`
+8. `void clear( DLL &list )`
+9. `void print( DLL &l )`
+10. `int size( DLL &list )`
+
+### Requirement 2: implementation of duplicates removal algorithm
+
+<!-- https://emgithub.com/ -->
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Flab05%2Flinkedlists%2Fmain_dll1.cpp&style=ir-black&showFileMeta=on"></script>
 
 ## Application 2: remove duplicates from doubly linked list (object)
 
 
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Flab05%2Flinkedlists%2Fmain_dll2.cpp&style=ir-black&showFileMeta=on"></script>
+
 ## Application 3: remove duplicates from doubly linked list (object+template)
 
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Flab05%2Flinkedlists%2Fmain_dll3.cpp&style=ir-black&showFileMeta=on"></script>
+
 ## Application 4: print COVID19 statistics (group by country)
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Flab05%2Flinkedlists%2Fmain_std.cpp&style=ir-black&showFileMeta=on"></script>

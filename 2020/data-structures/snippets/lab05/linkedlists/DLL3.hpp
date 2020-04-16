@@ -14,25 +14,25 @@ struct DLL
 {
     Node *front;
 
-    bool isEmpty( DLL &list )
+    bool isEmpty()
     {
-        return list.front == nullptr;
+        return front == nullptr;
     }
 
-    void pushFront( DLL &list, int data )
+    void pushFront( int data )
     {
-        auto newNode = new Node{ data , list.front , nullptr };
-        if( list.front ) list.front->prev = newNode;
-        list.front = newNode;
+        auto newNode = new Node{ data , front , nullptr };
+        if( front ) front->prev = newNode;
+        front = newNode;
     }
 
-    void pushBack( DLL &list, int data )
+    void pushBack( int data )
     {
-        if( list.front == nullptr )
-            pushFront( list, data );
+        if( front == nullptr )
+            pushFront( data );
         else
         {
-            Node *temp = list.front;
+            Node *temp = front;
             while( temp->next != nullptr )
                 temp = temp->next;
             auto newNode = new Node{ data , nullptr , temp };
@@ -40,28 +40,28 @@ struct DLL
         }
     }
 
-    void popNode( DLL &list, Node *node )
+    void popNode( Node *node )
     {
-        if( list.front == node ) list.front = list.front->next;
+        if( front == node ) front = front->next;
         if( node->prev ) node->prev->next = node->next;
         if( node->next ) node->next->prev = node->prev;
         delete node;
     }
 
-    void popFront( DLL &list )
+    void popFront( )
     {
-        popNode( list , list.front );
+        popNode( front );
     }
 
-    void popBack( DLL &list )
+    void popBack()
     {
-        if( isEmpty( list ))
+        if( isEmpty( ))
             return;
-        else if( list.front->next == nullptr )
-            popFront( list );
+        else if( front->next == nullptr )
+            popFront();
         else
         {
-            Node *temp = list.front;
+            Node *temp = front;
             while( temp->next != nullptr )
                 temp = temp->next;
             temp->prev->next = nullptr;
@@ -69,23 +69,23 @@ struct DLL
         }
     }
 
-    int getAt( DLL &list, int index ){}
+    int getAt( int index ){}
 
-    void clear( DLL &list ){}
+    void clear( ){}
 
-    void print( DLL &l )
+    void print()
     {
-        for( auto p = l.front; p != nullptr ; p = p->next )
+        for( auto p = front; p != nullptr ; p = p->next )
         {
             std::cout << p->data << "->";
         }
         std::cout << "null\n";
     }
 
-    int size( DLL &list )
+    int size()
     {
         int counter = 0;
-        auto temp = list.front;
+        auto temp = front;
         while( temp != nullptr )
         {
             ++counter;

@@ -1,22 +1,10 @@
 #include <iostream>
 #include <random>
-#include "DLL1.hpp"
+#include "DLL2.hpp"
 
 void removeDuplicates( DLL &l )
 {
-    for( auto p1 = l.front; p1 != nullptr; p1 = p1->next )
-    {
-        for( auto p2 = p1->next ; p2 != nullptr;  )
-        {
-            if( p1->data == p2->data )
-            {
-                auto temp = p2;
-                p2 = p2->next;
-                popNode( l , temp );
-            }
-            else p2 = p2->next;
-        }
-    }
+
 }
 
 int main()
