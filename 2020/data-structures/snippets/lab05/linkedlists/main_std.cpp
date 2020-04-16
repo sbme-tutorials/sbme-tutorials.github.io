@@ -106,18 +106,18 @@ void fancyPrint( std::list<CovidItem> &list )
 
     covidfacts.format().font_style({FontStyle::bold}).font_align(FontAlign::center);
     covidfacts.row(0).format().font_color(Color::white).font_style({FontStyle::underline});
-    covidfacts[0][1].format().font_background_color(Color::yellow);
+    covidfacts[0][1].format().font_background_color(Color::cyan);
     covidfacts[0][2].format().font_background_color(Color::red);
     covidfacts[0][3].format().font_background_color(Color::green);
-    covidfacts[0][4].format().font_background_color(Color::yellow);
+    covidfacts[0][4].format().font_background_color(Color::blue);
 
     const auto nrows = list.size() + 1;
     for( size_t i = 1; i < nrows; ++i )
     {
-        covidfacts[i][1].format().font_color(Color::yellow);
+        covidfacts[i][1].format().font_color(Color::cyan);
         covidfacts[i][2].format().font_color(Color::red);
         covidfacts[i][3].format().font_color(Color::green);
-        covidfacts[i][4].format().font_color(Color::yellow);
+        covidfacts[i][4].format().font_color(Color::blue);
     }
 
     std::cout << covidfacts << std::endl;
