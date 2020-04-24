@@ -230,7 +230,7 @@ cat ../covid19.fasta | ./dna1
 
 ### <i class="fas fa-info-circle"></i> Notes: Linux `|` to redirect the output 
 
-The command `cat ../covid19.fasta | ./dna1` executes two programs. First one is `cat` which prints the file contents to the terminal, while the second one executes our compiled program. The linux has a utilities that redirects the programs output/input. Using the pipe `|` means to use the output of the first program as input to the second program.
+The command `cat ../covid19.fasta | ./dna1` executes two programs. First one is `cat` which prints the file contents to the terminal, while the second one executes our compiled program. The linux has utilities that redirect the programs outputs/inputs. Using the pipe `|` means to use the output of the first program as input to the second program.
 </div>
 
 
