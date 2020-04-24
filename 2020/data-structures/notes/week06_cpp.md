@@ -149,7 +149,7 @@ int count1( const std::string &sequence , char q )
 }
 ```
 
-* This approach works on any container that we can access its elements using the `operator[]` (aka Random Access Containers), such as `std::vector`, `std::string`, `std::array`, and raw arrays.
+* This approach works on any container that we can access its elements using the `operator[]` (e.g `sequence[0]`, `sequence[1]`, and `sequence[i]`, etc.). These types of containers are called Random Access Containers, because we can access any element directly using the `operator[]`. Example containers are `std::vector`, `std::string`, `std::array`, and [raw arrays]({{ site.baseurl }}{% link 2020/data-structures/notes/week03.md %}){:target="_blank"}.
 * We passed the `sequence` by reference to avoid making copies (time and space $O(n)$).
 * We passed also `sequence` as a **constant reference to avoid unintentional modification on the elements**. In that case, if your function mistakenly modifies the array, the compiler will raise an error.
 
@@ -200,7 +200,7 @@ int count3( const std::string &sequence , char q )
 * `count3` is more elegant that `count2`, preferred when possible.
 
 
-#### D) Range-based for loop
+#### D) Range-based count
 
 
 If your purpose is to count a particular value in a container. You can just simply use the function `std::count` (by `#include <algorithm>`).
