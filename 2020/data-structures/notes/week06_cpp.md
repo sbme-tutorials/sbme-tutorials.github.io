@@ -58,7 +58,7 @@ public:
 };
 ```
 
-* By default, the members declared in `class` are accessible only within that class (for example, you cannot access these members directly in the `main` function), so if you need to access them from outside you just add `public:` line just before the members. In contrast, `struct` members by default can directly be accessed outside the class. You will learn more interesting examples where `public` and `private` scope qualifiers play an essential role in the design.
+* By default, the members declared in `class` are accessible only within that class (for example, you cannot access these members directly in the `main` function), so if you need to access them from outside you just add `public:` line just before the members. In contrast, `struct` members by default can directly be accessed outside the class. You will learn more interesting examples where `public` and `private` access modifiers play an essential role in the design.
 </div>
 
 ## Example: Euclidean Distance
@@ -242,7 +242,7 @@ The command `cat ../covid19.fasta | ./dna1` executes two programs. First one is 
 * In line #9, we declared and defined a constructor that constructs `DNA` object given an input string. Constructors are special functions in the class that enable us to make necessary initializations.
 * In line #14, we declared the `count` method as constant method by adding `const` at the end of the line. This avoids modifying the contents of `sequence` by mistake.
 * In line #20, we declared the `fromStream` method as static method. Which means it is not dependent on the data members. The reason we moved the `fromStream` from a free function into the class as static method is to add more organization. Now the `DNA` acts as a namespace for the `fromStream` function, hence we can only call this function from outside as `DNA::fromStream`. 
-* In line #31-#32, we declared the `std::string sequence` under the `private` scope. This means that `sequence` cannot be seen or accessed directly outside the `DNA`; only the `DNA` methods can access it.
+* In line #31-#32, we declared the `std::string sequence` under the `private` access. This means that `sequence` cannot be seen or accessed directly outside the `DNA`; only the `DNA` methods can access it.
   
 **Testing:**
 
@@ -267,4 +267,4 @@ What you have learned from previous examples:
    * They are like regular free functions.
    * No `this` pointer is accessible inside a static method.
    * The class name acts as a `namespace` for static methods. For example, calling a static method `fromStream` inside `DNA` class can be done via `DNA::fromStream`.
-7. `private` and `public` scope qualifiers. This is very important feature to employ. It helps to avoid abusing the objects from outside the class functions.
+7. `private` and `public` access modifier. This is very important feature to employ. It helps to avoid abusing the objects from outside the class functions.
