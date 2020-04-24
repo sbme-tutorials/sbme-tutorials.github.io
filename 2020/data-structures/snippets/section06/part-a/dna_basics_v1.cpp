@@ -45,15 +45,15 @@ int count3( const std::string &sequence , char q )
 // Or..
 int count4( const std::string &sequence , char q )
 {
-    return std::count( sequence.cbegin(), sequence.cend(), q );
+    return std::count( sequence.begin(), sequence.end(), q );
 }
 
 int main()
 {
     auto dna = getDNAFromStream();
-    std::cout << "#A:" << count3(dna, 'A') << "\n"
-              << "#C:" << count3(dna, 'C') << "\n"
-              << "#G:" << count3(dna, 'G') << "\n"
-              << "#T:" << count3(dna, 'T') << "\n";
+    std::cout << "#A:" << count4(dna, 'A') << "\n"
+              << "#C:" << count4(dna, 'C') << "\n"
+              << "#G:" << count4(dna, 'G') << "\n"
+              << "#T:" << count4(dna, 'T') << "\n";
     return 0;
 }
