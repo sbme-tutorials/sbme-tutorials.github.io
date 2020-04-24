@@ -203,7 +203,7 @@ int count3( const std::string &sequence , char q )
 #### D) Range-based count
 
 
-If your purpose is to count a particular value in a container. You can just simply use the function `std::count` (by `#include <algorithm>`).
+If your purpose is to count a particular value in a container. You can just simply use the function `std::count` (available via `#include <algorithm>`).
 
 ```c++
 int count4( const std::string &sequence , char q )
