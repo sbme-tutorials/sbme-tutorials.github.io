@@ -256,7 +256,7 @@ What you have learned from previous examples:
 
 1. Use of `struct` and `class`.
 2. Use of templates.
-3. Looping routines: 
+3. More loop routines: 
    1. Using STL iterators, 
    2. Range-based for loops.
 4. `std::count` for value counting.
