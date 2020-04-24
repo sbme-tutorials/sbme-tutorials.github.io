@@ -256,13 +256,15 @@ What you have learned from previous examples:
 
 1. Use of `struct` and `class`.
 2. Use of templates.
-3. STL iterators.
-4. Range-based for loops.
-5. `std::count`.
-6. Const-correctness, as applied to:
+3. Looping routines: 
+   1. Using STL iterators, 
+   2. Range-based for loops.
+4. `std::count` for value counting.
+5. Const-correctness, as applied to:
    * references (e.g `const std::string &`)
    * methods (e.g `int count( char q ) const`)
-7. Static methods. Which are functions we decided to put inside the class because they are related. Static methods are not bound to objects, which means:
+6. Static methods. Which are functions we decid to put inside the class because they are related to the class. Static methods are not bound to objects, which means:
+   * They are like regular free functions.
    * No `this` pointer is accessible inside a static method.
    * The class name acts as a `namespace` for static methods. For example, calling a static method `fromStream` inside `DNA` class can be done via `DNA::fromStream`.
-8. `private` and `public` scope qualifiers. This is very important feature to employ as it helps to avoid abusing the objects from outside the class functions.
+7. `private` and `public` scope qualifiers. This is very important feature to employ. It helps to avoid abusing the objects from outside the class functions.
