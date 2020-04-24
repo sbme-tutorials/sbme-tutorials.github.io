@@ -237,7 +237,7 @@ The command `cat ../covid19.fasta | ./dna1` executes two programs. First one is 
 ### DNA Analysis: OOP solution
 
 
-<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fpart-a%2Fdna_basics_v1.cpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fpart-a%2Fdna_basics_v2.cpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 **Testing:**
 
