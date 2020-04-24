@@ -24,6 +24,8 @@ public:
             if (line.empty() || line.front() == '>')
                 continue;
             else seq += line;
+        // Construct and return an object of type 'DNA'
+        // using the constructor at line #9
         return DNA(seq);
     }
 private:

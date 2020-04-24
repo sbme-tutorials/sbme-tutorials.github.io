@@ -61,7 +61,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 
 1. Section 1:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.md %}){:target="_blank"}  [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week01.pdf %}){:target="_blank"}
-    * Section handouts: \[[Part 1: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part 2: Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
+    * Section handouts: \[[Part A: C++ Basics]({{ site.baseurl }}{% link 2020/data-structures/notes/week01a.md %}){:target="_blank"}\]\[[Part B: Basics of Git and GitHub]({{ site.baseurl }}{% link 2020/data-structures/notes/week01b.md %}){:target="_blank"}\]
     * Assignments: \[[Part A: C++ Revision]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01a.md %}){:target="_blank"}\] \[[Part B: Markdown Resume]({{ site.baseurl }}{% link 2020/data-structures/assignments/week01b.md %}){:target="_blank"}\]
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab01_exercises.md %}){:target="_blank"}\] 
 2. Section 2:
@@ -82,6 +82,8 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * [Code samples](https://github.com/sbme-tutorials/sbme-tutorials.github.io/tree/master/2020/data-structures/snippets/vector-vs-list){:target="_blank"}
     * [Report assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_exercises.md %}){:target="_blank"}\]
+6. Section 6:
+   * Section handouts: \[[Part 1: C++ Classes and Templates]({{ site.baseurl }}{% link 2020/data-structures/notes/week06_cpp.md %}){:target="_blank"}\]
 
 ## Resources & Useful Links
 
