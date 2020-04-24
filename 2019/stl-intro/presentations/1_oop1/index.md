@@ -337,7 +337,7 @@ int main()
 ### Example: DNA Analysis (V1)
 
 
-Consider an application that analyzes the DNA as have worked on in our assignment
+Consider an application that counts the different bases in the DNA.
 
 
 ---
