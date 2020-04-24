@@ -239,17 +239,16 @@ The command `cat ../covid19.fasta | ./dna1` executes two programs. First one is 
 
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fpart-a%2Fdna_basics_v2.cpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
-**Testing:**
-
-```
-cat ../covid19.fasta | ./dna2
-```
-
 * In line #9, we declared and defined a constructor that constructs `DNA` object given an input string. Constructors are special functions in the class that enable us to make necessary initializations.
 * In line #14, we declared the `count` method as constant method by adding `const` at the end of the line. This avoids modifying the contents of `sequence` by mistake.
 * In line #20, we declared the `fromStream` method as static method. Which means it is not dependent on the data members. The reason we moved the `fromStream` from a free function into the class as static method is to add more organization. Now the `DNA` acts as a namespace for the `fromStream` function, hence we can only call this function from outside as `DNA::fromStream`. 
 * In line #31-#32, we declared the `std::string sequence` under the `private` scope. This means that `sequence` cannot be seen or accessed directly outside the `DNA`; only the `DNA` methods can access it.
   
+**Testing:**
+
+```
+cat ../covid19.fasta | ./dna2
+```
 
 ## Summary
 
@@ -266,3 +265,4 @@ What you have learned from previous examples:
 7. Static methods. Which are functions we decided to put inside the class because they are related. Static methods are not bound to objects, which means:
    * No `this` pointer is accessible inside a static method.
    * The class name acts as a `namespace` for static methods. For example, calling a static method `fromStream` inside `DNA` class can be done via `DNA::fromStream`.
+8. `private` and `public` scope qualifiers. This is very important feature to employ as it helps to avoid abusing the objects from outside the class functions.
