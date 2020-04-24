@@ -21,7 +21,7 @@ cd section06/part-a
 wget -i https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/section06/part-a/download.txt
 ```
 
-You can also build all the examples in an isolated folder as following:
+After that, you can also build all the examples in an isolated folder as following:
 
 ```
 mkdir build
@@ -58,7 +58,7 @@ public:
 };
 ```
 
-* By default, the members declared in `class` are accessible only within that class (for example, you cannot access these members directly in the `main` function), so if you need to access them from outside you just add `public:` line just before the members. In contrast, `struct` members by default can directly be accessed outside the class. You will learn more interesting examples where `public` and `private` scope qualifiers play an essential role in design.
+* By default, the members declared in `class` are accessible only within that class (for example, you cannot access these members directly in the `main` function), so if you need to access them from outside you just add `public:` line just before the members. In contrast, `struct` members by default can directly be accessed outside the class. You will learn more interesting examples where `public` and `private` scope qualifiers play an essential role in the design.
 </div>
 
 ## Example: Euclidean Distance
@@ -117,7 +117,7 @@ Now the application waits us to enter the values of the coordinates. Let's try t
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fpart-a%2Feuclidean_v3.cpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 
-This solution is useful in case we need to use `Point` to wrap to numbers of other types like `int`. In such case, we construct the template object `Point` as `Point<int>`.
+This solution is useful in case we need to use `Point` to wrap numbers of other types like `int`. In such case, we construct the template object `Point` as `Point<int>`. For example, in image processing we usually use integer coordinates to refer to the pixels in the images.
 
 
 **Testing:**
@@ -130,7 +130,7 @@ Enter the two points coordinates as following: x1 y1 x2 y2 [ENTER]
 
 ## Example: DNA Analysis
 
-Consider an application that counts the different bases in the DNA. Before diving into the DNA analysis example, let's explore different ways again to iterate on C++ data structures.
+Consider an application that counts the different bases in the DNA. But before diving into the DNA analysis example, let's explore different ways again to iterate on C++ data structures.
 
 ### Counting routines
 
