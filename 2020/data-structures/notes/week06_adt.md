@@ -9,3 +9,16 @@ by: "Asem"
 
 * TOC
 {:toc}
+
+## Stack
+
+## Queue
+
+
+## Stack Implamentation (using Array)
+
+## Stack Implementation (using Singly-linked list)
+
+## Queue Implementation (using circular Array)
+
+## Queue Implementation (using Doubly-linked list)
