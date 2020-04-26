@@ -1,44 +1,4 @@
-#include <iostream>
-#include <forward_list>
-
-template< typename T >
-class Stack
-{
-public:
-    bool isEmpty() const
-    {
-        return data.empty();
-    }
-
-    T front() const
-    {
-        if( isEmpty())
-        {
-            std::cout << "Error: stack is empty!\n";
-            exit( 1 ); // Crash.
-        }
-        return data.front();
-    }
-
-    void pop()
-    {
-        if( isEmpty())
-        {
-            std::cout << "Error: stack is empty!\n";
-            exit( 1 ); // Crash.
-        }
-        data.pop_front();
-    }
-
-    void push( T value )
-    {
-        data.push_front( value );
-    }
-
-private:
-    std::forward_list< T > data;
-};
-
+#include "StackSLL.hpp"
 
 std::string getDNAFromStream()
 {
@@ -71,7 +31,7 @@ std::string cDNA1( const std::string &dna )
 
 std::string cDNA2( const std::string &dna )
 {
-    Stack<char> cdna_stack;
+    StackSLL<char> cdna_stack;
     for( auto base : dna )
         cdna_stack.push( cBase( base ));
     std::string cdna;

@@ -1,59 +1,6 @@
 #include <iostream>
 #include <string>
-
-template< typename T , int MAX_SIZE = 1000 >
-class Stack
-{
-public:
-    Stack()
-    {
-        top = -1;
-    }
-
-    bool isEmpty() const
-    {
-        return top == -1;
-    }
-
-    bool isFull() const
-    {
-        return top + 1 == MAX_SIZE;
-    }
-
-    T front() const
-    {
-        if( isEmpty())
-        {
-            std::cout << "Error: stack is empty!\n";
-            exit( 1 ); // Crash.
-        }
-        return data[top];
-    }
-
-    void pop()
-    {
-        if( isEmpty())
-        {
-            std::cout << "Error: stack is empty!\n";
-            exit( 1 ); // Crash.
-        }
-        --top;
-    }
-
-    void push( T value )
-    {
-        if( isFull())
-        {
-            std::cout << "Error: stack is full!\n";
-            exit( 1 ); // Crash.
-        }
-        data[ ++top ] = value;
-    }
-
-private:
-    T data[ MAX_SIZE ];
-    int top;
-};
+#include "StackArray.hpp"
 
 
 std::string getDNAFromStream()
@@ -87,7 +34,7 @@ std::string cDNA1( const std::string &dna )
 
 std::string cDNA2( const std::string &dna )
 {
-    Stack<char, 10000> cdna_stack;
+    StackArray<char, 10000> cdna_stack;
     for( auto base : dna )
         cdna_stack.push( cBase( base ));
     std::string cdna;

@@ -2,49 +2,12 @@
 #include <list>
 #include <algorithm>
 #include <random>
-
-template< typename T >
-class Queue
-{
-public:
-    bool isEmpty() const
-    {
-        return data_.empty();
-    }
-
-    T front() const
-    {
-        if( data_.empty())
-        {
-            std::cout << "Error: queue is empty!\n";
-            exit( 1 ); // Crash.
-        }
-        return data_.front();
-    }
-
-    void dequeue()
-    {
-        if( isEmpty())
-        {
-            std::cout << "Error: queue is empty!\n";
-            exit( 1 ); // Crash.
-        }
-        data_.pop_front();
-    }
-
-    void enqueue( T value )
-    {
-        data_.push_back( value );
-    }
-
-private:
-    std::list< T > data_;
-};
+#include "QueueDLL.hpp"
 
 
 void selection_sort( std::list<int> &data )
 {
-    Queue< int > q;
+    QueueDLL< int > q;
     while( !data.empty())
     {
        auto min_it = std::min_element( data.begin(), data.end());
