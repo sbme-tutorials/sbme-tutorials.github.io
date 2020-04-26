@@ -81,6 +81,8 @@ Reasons:
 <img src="/2020/data-structures/media/interface.png" style=" margin-left: 100px;width:400px">
 
 
+<hr>
+<div class="small"><span>Image credits: <a class="alert-link" href="https://www.robotmissions.org/learn/operatorinterface/part11/">robotmissions.org</a></span></div>
 </div>
 
 ### Stack Implamentation (using Array)

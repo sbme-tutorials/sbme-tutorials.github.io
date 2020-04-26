@@ -91,6 +91,9 @@ private:
 
 - To comply with the definition.
 - To avoid client abusing the ADT.
+
+<div class="my-footer"><span>Image credits: <a href="https://www.robotmissions.org/learn/operatorinterface/part11/">robotmissions.org</a></span></div>
+
 ---
 ### Stack Implamentation (using Array)
 
