@@ -258,12 +258,12 @@ The same question, which is better? a singly-linked list or a doubly-linked list
 <script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fsection06_adt%2FQueueDLL.hpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 
-### Download the source files
+## Download the source files
 
 ```
 mkdir -p section06/part-b
 cd section06/part-b
-
+wget -i https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/section06/section06_adt/download.txt
 ```
 
 
