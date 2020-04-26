@@ -179,9 +179,22 @@ Stack< std::string, 500> s2; // stack of std::string with maximum capacity of 50
 
 #### Final Implementation for Stack Array
 
-### Stack Implamentation (using Singly Linked List)
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fsection06_adt%2FStackArray.hpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+### Stack Implamentation (using Singly-Linked List)
+
+This time we will provide an implementation for the stack using linked list. But which is better? singly-linked list or doubly-linked list.
+* Note that **stacks pushs and pops from the same side**, so if we need to implement stacks using a linked list:
+  * **Option 1**: push and pop from the back side (both $$O(1)$$ for doubly-linked list, while $$O(n)$$ for the singly-linked list)
+  * **Option 2**: push and pop from the front side (both $$O(1)$$ for both the doubly-linked list and the singly-linked list)
+* So we would go for using singly-linked list since it is more space efficient, and can provid $$O(1)$$ time for the stack operations.
+* C++ STL has an implementation for the singly-linked via `std::forward_list`.
+
 
 #### Final Implementation for Stack SLL
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fsection06_adt%2FStackSLL.hpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
 
 ## Queue
 
@@ -230,24 +243,29 @@ public:
 };
 ```
 
-
-<div class="alert alert-warning" markdown="1" role="alert">
-
-
-### <i class="fas fa-info-circle"></i> Important: don't expose the Queue implementation details outside the class
-
-</div>
-
-
-
 ### Queue Implementation (using circular Array)
 
-#### Final Code
-
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fsection06_adt%2FQueueArray.hpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
 
 ### Queue Implementation (using Doubly-linked list)
 
-#### Final Code
+The same question, which is better? a singly-linked list or a doubly-linked list?
+
+* Queues inserts (enqueues) and removes (dequeues) element from different sides.
+* We either **push front and pop back** for the enqueue and dequeue or **push back and remove front** for the enqueue and dequeue.
+* Singly-linked list can afford fast modification from one side only, so we go for doubly-linked list. 
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection06%2Fsection06_adt%2FQueueDLL.hpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+
+### Download the source files
+
+```
+mkdir -p section06/part-b
+cd section06/part-b
+
+```
+
 
 <!-- 
 ## Advanced: Intro to Build Systems

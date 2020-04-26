@@ -54,7 +54,6 @@ private:
         return (rear_ + 1) % MAX_SIZE == front_;
     }
 
-
     T data_[ MAX_SIZE ];
     int front_;
     int rear_;
