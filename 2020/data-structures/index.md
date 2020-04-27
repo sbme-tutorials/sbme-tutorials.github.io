@@ -83,7 +83,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * [Report assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week05_report.md %})
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab05_exercises.md %}){:target="_blank"}\]
 6. Section 6:
-   * Section slides:  \[[Part 2: Abstract Data Types (Stack & Queue)]({{ site.baseurl }}{% link 2020/data-structures/presentations/week06_adt.md %}){:target="_blank"}\]
+   * Section slides:  \[[Part 2: Abstract Data Types (Stack & Queue)]({{ site.baseurl }}{% link 2020/data-structures/presentations/week06_adt.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/week06_adt.pdf %}){:target="_blank"}\]
    * Section handouts: \[[Part 1: C++ Classes and Templates]({{ site.baseurl }}{% link 2020/data-structures/notes/week06_cpp.md %}){:target="_blank"}\] \[[Part 2: Abstract Data Types (Stack & Queue)]({{ site.baseurl }}{% link 2020/data-structures/notes/week06_adt.md %}){:target="_blank"}\]
 
 ## Resources & Useful Links
