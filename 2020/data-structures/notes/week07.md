@@ -78,10 +78,6 @@ In a similar way to insertion, when we pop the maximum of max-heap (its root), w
 | Heap property is violated (8 is greater than 4). Swapping the two elements 4 and 8 is enough to recover the heap.| <img src="/gallery/heapindel/Heap_delete_step2.svg" style="width:500px;">  |
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
 
-##### Heap - Extract: Complexity Analysis
-
-
-
 ### Min-heap Implementation Using Arrays
 
 #### Implementation: Class Members
@@ -211,6 +207,12 @@ private:
 
 #### Implementation: Insert & SiftUp
 
+1. The `insert` operation adds a new node as the left-most leaf
+2. To recover the heap properties the `siftUp` is applied on the new node: if node is greater than its parent, then heap is satisfied and terminate, otherwise, swap the node with parent and repeat recursively.
+
+* Worst case time: to go up along all levels $h= \lfloor \log(n) \rfloor$.
+* $O(T(n)) = O(h) = O(\log(n))$
+
 ```c++
 template< typename T >
 class Heap
@@ -251,6 +253,12 @@ private:
 ```
 
 #### Implementation: Extract & SiftDown
+
+1. The `extract` operation removes the root and replace it by the left-most leaf.
+2. To recover the heap properties the `siftDown` is applied on the new root: if root is less than its children, then heap is satisfied and terminate, otherwise, swap the root with the minimum children and repeat recursively.
+
+* Worst case time: to go down along all levels $h= \lfloor \log(n) \rfloor$.
+* $O(T(n)) = O(h) = O(\log(n))$
 
 ```c++
 template< typename T >
@@ -298,7 +306,7 @@ private:
         if (minimum != parent)
         {
             std::swap(data[minimum], data[parent]);
-            siftDown( minimum);
+            siftDown( minimum );
         }
     }
 
@@ -411,6 +419,11 @@ O(T(n)) &= O(n)
 <div class="small"><span><em>Reference (Heapify Analysis and O(n) derivation):</em> <a href="https://www.cs.umd.edu/~meesh/351/mount/lectures/lect14-heapsort-analysis-part.pdf" class="alert-link">Lecture 14: HeapSort Analysis and Partitioning - CMSC 251</a></span></div>
 </div>
 
+### Final Implementation of Heap
+
+<script src="https://emgithub.com/embed.js?target=https%3A%2F%2Fgithub.com%2Fsbme-tutorials%2Fsbme-tutorials.github.io%2Fblob%2Fmaster%2F2020%2Fdata-structures%2Fsnippets%2Fsection07%2FHeap%2FHeap.hpp&style=github&showBorder=on&showLineNumbers=on&showFileMeta=on"></script>
+
+
 ### Heap Applications: Heapsort
 
 
@@ -470,6 +483,23 @@ To understand what is happening:
 * [Heaps and Heap Sort](http://www.zutopedia.com/hs_vs_ms.html)
 
 
+
+## Download the source files
+
+```
+mkdir -p section07/Heap
+cd section07/Heap
+wget -i https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/section07/Heap/download.txt
+```
+
+To build:
+
+```
+mkdir build
+cd build
+cmake ..
+make
+```
 
 
 <!-- 
