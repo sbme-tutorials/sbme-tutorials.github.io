@@ -74,7 +74,9 @@ Important notes:
 * More than 1-2 scenarios lead to your program crash will affect your submission score.
 * Plagiarizing lines will not be tolerated.
 * Every member should have clear contribution in the task and that should be obvious through the git commits.
-
+* The user can open the application directly for deployment and load a model and an image to recognize faces.
+* At deployment, the user can update the current image by loading a new one, without crashes or a need to reload the model parameters.
+* At deployment, the user can also update the model parameters by loading a different file. 
 
 ### B) GUI Integration
 
