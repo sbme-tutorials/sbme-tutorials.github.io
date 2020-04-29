@@ -28,7 +28,7 @@ public:
         }
         size_t child = size() - 1;
         std::swap(data[child], data[0]);
-        int value = data.back();
+        T value = data.back();
         data.pop_back();
         siftDown(0);
         return value;

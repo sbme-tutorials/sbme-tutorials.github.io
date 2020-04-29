@@ -281,7 +281,7 @@ public:
         }
         size_t child = size() - 1;
         std::swap(data[child], data[0]);
-        int value = data.back();
+        T value = data.back();
         data.pop_back();
         siftDown(0);
         return value;
@@ -337,8 +337,8 @@ public:
         if( h.size() <= 1 ) return h;
 
         auto lastChild = h.size() - 1;
-        for( int subHeap = parentIdx( lastChild ); subHeap >= 0 ; --subHeap )
-            h.siftDown( subHeap );
+        for( int subHp = parentIdx( lastChild ); subHp >= 0 ; --subHp )
+            h.siftDown( subHp );
         return h;
     }
 private:
@@ -389,7 +389,7 @@ n + 1 &= 2^h + 2^h = 2^{h+1} \label{eq:nh}\tag{E2}
 
 - The power series: 
 $$\begin{equation}
-\sum_{j=0}^{\infty} x^j = \frac{1}{1-x};  |x|<0 \label{eq:PS1}\tag{PS1}
+\sum_{j=0}^{\infty} x^j = \frac{1}{1-x};  |x|<1 \label{eq:PS1}\tag{PS1}
 \end{equation}$$
 - Differentiating Equation \eqref{eq:PS1} with respect to $$x$$ yields:
 $$\begin{align*}

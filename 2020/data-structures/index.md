@@ -74,7 +74,7 @@ Feel free to request for additional office hours by sending me an email (`asem.a
     * Section handouts: \[[Static Arrays and Dynamic Arrays]({{ site.baseurl }}{% link 2020/data-structures/notes/week03.md %}){:target="_blank"}\]
     * [Assignment]({{ site.baseurl }}{% link 2020/data-structures/assignments/week03.md %}){:target="_blank"}
     * Lab: \[[Slides]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_slides.pdf %}){:target="_blank"} \] \[[Exercises]({{ site.baseurl }}{% link 2020/data-structures/labs/lab03_exercises.md %}){:target="_blank"}\]
-3. Section 4:
+4. Section 4:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week04.pdf %}){:target="_blank"}
     * Section handouts: \[[Time Complexity (Big O notation) & Sorting Algorithms (1)]({{ site.baseurl }}{% link 2020/data-structures/notes/week04.md %}){:target="_blank"}\] 
 5. Section 5:
@@ -85,6 +85,10 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 6. Section 6:
    * Section slides:  \[[Part 2: Abstract Data Types (Stack & Queue)]({{ site.baseurl }}{% link 2020/data-structures/presentations/week06_adt.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week06_adt.pdf %}){:target="_blank"}\]
    * Section handouts: \[[Part 1: C++ Classes and Templates]({{ site.baseurl }}{% link 2020/data-structures/notes/week06_cpp.md %}){:target="_blank"}\] \[[Part 2: Abstract Data Types (Stack & Queue)]({{ site.baseurl }}{% link 2020/data-structures/notes/week06_adt.md %}){:target="_blank"}\]
+7. Section 7:
+    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week07.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week07.pdf %}){:target="_blank"}
+    * Section handouts: \[[Heap & Priority Queue (ADT)]({{ site.baseurl }}{% link 2020/data-structures/notes/week07.md %}){:target="_blank"}\] 
+
 
 ## Resources & Useful Links
 

@@ -27,21 +27,18 @@ author: "Asem Alaa"
 
 #### Max-Heap Logical Representation
 
-![heaptree](/gallery/heaptree.png)
+<img src="/gallery/heaptree.png" width="490">
 
 #### Max-Heap Storage
 
-![heapconcrete](/gallery/heapconcrete.png)
+<img src="/gallery/heapconcrete.png" width="490">
 
 ---
 ## Heaps
 
+### Max-Heap
 
-| Max-Heap |
-|---------------|
-| ![heap1](/gallery/Heap-as-array.svg) |
-|  Creative Commons - [Maxinator](https://commons.wikimedia.org/w/index.php?title=User:Maxiantor&action=edit&redlink=1) |
-
+<img src="/gallery/Heap-as-array.svg" width="700">
 
 ---
 ## Heap Applications
@@ -152,6 +149,11 @@ private:
 
 .center[<img src="/gallery/btree-index.png" style="height:300px;">]
 
+* From parent to left child:  `parentIdx * 2 + 1`
+* From parent to right child:  `parentIdx * 2 + 2`
+* From left child (odd index) to parent: `(childIdx - 1) / 2`
+* From right child (even index) to parent: `(child - 2) / 2`
+
 ---
 #### Implementation: From Parent to Child (+vice versa)
 
@@ -205,16 +207,13 @@ private:
 
 ```c++
 template< typename T >
-class Heap
-{
+class Heap{
 public:
-    ...
     void insert(T value){
         data.push_back(value);
         size_t childIdx = size() - 1;
         siftUp( childIdx ); // Recover heap
     }
-    ...
 private:
     void siftUp( size_t child ){
         auto parent = parentIdx(child);
@@ -223,46 +222,37 @@ private:
             siftUp( parent );
         }
     }
-    ...
 };
 ```
 
 * Worst case time: $O(T(n)) = O(h) = O(\log(n))$
 
 ---
+class: small
 #### Implementation: Extract & SiftDown
 
 ```c++
-template< typename T >
-class Heap
-{
+template< typename T > class Heap{
 public:
-    ...
     T extract(){
         if( data.empty()) exit( 1 ); // Crash
         size_t child = size() - 1;
         std::swap(data[child], data[0]);
-        int value = data.back();
-        data.pop_back();
+        T value = data.back(); data.pop_back();
         siftDown(0);
         return value;
     }
 private:
     void siftDown( size_t parent){
-        size_t left = leftChildIdx(parent);
-        size_t right = rightChildIdx(parent);
-        size_t length = size();
-        size_t minimum = parent;
-        if (left < length && data[left] < data[minimum])
-            minimum = left;
-        if (right < length && data[right] < data[minimum])
-            minimum = right;
-        if (minimum != parent){
-            std::swap(data[minimum], data[parent]);
-            siftDown( minimum );
+        size_t left = leftChildIdx(parent), right = rightChildIdx(parent);
+        size_t min = parent;
+        if (left < size()  && data[left]  < data[min]) min = left;
+        if (right < size() && data[right] < data[min]) min = right;
+        if (min != parent){
+            std::swap(data[min], data[parent]);
+            siftDown( min );
         }
     }
-    ...
 };
 ```
 
@@ -276,7 +266,6 @@ template< typename T >
 class Heap
 {
 public:
-    ...
     static Heap make( std::vector< T > data )
     {
         Heap h;
@@ -284,26 +273,26 @@ public:
         if( h.size() <= 1 ) return h;
 
         auto lastChild = h.size() - 1;
-        for( int subHeap = parentIdx( lastChild ); subHeap >= 0 ; --subHeap )
-            h.siftDown( subHeap );
+        for( int subHp = parentIdx( lastChild ); subHp >= 0 ; --subHp )
+            h.siftDown( subHp );
         return h;
     }
-    ...
 };
 ```
 
 ---
+class: center
 #### Complexity Analysis: Heapifying Arbitrary Array
 
-<img src="/gallery/btree-levels.png">
+<img height="220" src="/gallery/btree-levels.png">
 
-| Level |  #Sub\_Heaps | Heapify Cost |
+.small[| Level |  #Sub\_Heaps | Heapify Cost |
 |---|---|---|
 |  $h$    |   $2^h$   |   0   |
 |  $h-1$  |   $2^{h-1}$ | 1  |
-|   ...   | ... | ... |
+| ... | ... | ... |
 |  1  | 2  | $h-1$ |
-|  0  | 1  | $h$ |
+|  0  | 1  | $h$ |]
 
 $$T(n) = 2^h \times 0 + 2^{h-1} \times 1 + \ldots + 2^0 \times h = \sum\_{j=0}^h j 2^{h-j} \label{eq:tn}\tag{E1}$$
 
@@ -312,32 +301,47 @@ $$T(n) = 2^h \times 0 + 2^{h-1} \times 1 + \ldots + 2^0 \times h = \sum\_{j=0}^h
 
 - The power series: 
 $$\begin{equation}
-\sum\_{j=0}^{\infty} x^j = \frac{1}{1-x};  |x|<0 \label{eq:PS1}\tag{PS1}
+\sum\_{j=0}^{\infty} x^j = \frac{1}{1-x};  |x|<1 \label{eq:PS1}\tag{PS1}
 \end{equation}$$
 - Differentiating Equation \eqref{eq:PS1} with respect to $x$ yields:
-$$\begin{align*}
-\sum\_{j=0}^{\infty} j x^{j-1} &= \frac{1}{(1-x)^2} \\ \quad &\textrm{multiplying by x:} \quad \\ \sum\_{j=0}^{\infty} j x^{j} &= \frac{x}{(1-x)^2}  \label{eq:PS2}\tag{PS2}
-\end{align*}$$
+$$\begin{align}
+\sum\_{j=0}^{\infty} j x^{j-1} &= \frac{1}{(1-x)^2} \\\ \quad &\textrm{multiplying by x:} \quad \\\ \sum\_{j=0}^{\infty} j x^{j} &= \frac{x}{(1-x)^2}  \label{eq:PS2}\tag{PS2}
+\end{align}$$
  
 ---
 ##### Evaluating $T(n)$ & $O(n)$
 
 From \eqref{eq:tn} we estimated $T(n)$ as:
-$$\begin{align*}
-T(n) &= \sum\_{j=0}^h j 2^{h-j} \\
-&= \sum\_{j=0}^h j \frac{2^h}{2^j} \\
-&= 2^h \sum\_{j=0}^h \frac{j}{2^j} \\
-\textrm{by substituting $x=\frac{1}{2}$ in \eqref{eq:PS2}:} \\
-\sum\_{j=0}^\infty \frac{j}{2^j} &= \sum\_{j=0}^\infty j(\frac{1}{2})^j = \frac{\frac{1}{2}}{(1 - \frac{1}{2})^2} = 2  \\
-\textrm{therefore: }& \\
- 2^h \sum\_{j=0}^h \frac{j}{2^j} &< 2^h \sum\_{j=0}^\infty \frac{j}{2^j} = 2^h (2) \\
-\textrm{therefore: } & \\
-T(n) &< 2^{h+1} \\
-\textrm{From \eqref{eq:nh}: } & \\
-T(n) &< n + 1 \\
-\textrm{therefore, the big-O notation of $T(n)$:}& \\ 
+$$\begin{align}
+T(n) &= \sum\_{j=0}^h j 2^{h-j} \\\
+&= \sum\_{j=0}^h j \frac{2^h}{2^j} \\\
+&= 2^h \sum\_{j=0}^h \frac{j}{2^j} \\\
+\end{align}$$
+
+---
+class: small
+##### Evaluating $T(n)$ & $O(n)$
+
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item list-group-item-success">$T(n) = 2^h \sum_{j=0}^h \frac{j}{2^j}$</li>
+  <li class="list-group-item list-group-item-success">$\hspace{-4em}n + 1 = 2^{h+1}\tag{E2}$</li>
+  <li class="list-group-item list-group-item-success">$\hspace{-4em}\sum_{j=0}^{\infty} j x^{j} = \frac{x}{(1-x)^2} \tag{PS2}$</li>
+
+  
+</ul> 
+
+$$\begin{align}
+\textrm{plug $x=\frac{1}{2}$ in \eqref{eq:PS2}:} \\\
+\sum\_{j=0}^\infty \frac{j}{2^j} &= \sum\_{j=0}^\infty j(\frac{1}{2})^j = \frac{\frac{1}{2}}{(1 - \frac{1}{2})^2} = 2  \\\
+\textrm{therefore: }& \\\
+T(n) = 2^h \sum\_{j=0}^h \frac{j}{2^j} &< 2^h \sum\_{j=0}^\infty \frac{j}{2^j} = 2^h (2) \\\
+\textrm{therefore: } & \\\
+T(n) &< 2^{h+1} \\\
+\textrm{From \eqref{eq:nh}: } & \\\
+T(n) &< n + 1 \\\
+\textrm{therefore, the big-O notation of $T(n)$:}& \\\ 
 O(T(n)) &= O(n)
-\end{align*}$$
+\end{align}$$
 
 
 <div class="my-footer"><span><em>Reference (Heapify Analysis and O(n) derivation):</em> <a href="https://www.cs.umd.edu/~meesh/351/mount/lectures/lect14-heapsort-analysis-part.pdf">Lecture 14: HeapSort Analysis and Partitioning - CMSC 251</a></span></div>
