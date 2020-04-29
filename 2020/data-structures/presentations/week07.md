@@ -23,36 +23,27 @@ author: "Asem Alaa"
 {% include presentation-margins.html %}
 
 ---
-
----
-layout: page
-course: "sbe201"
-category: "notes"
-year: "2020"
-title:  "Week 7: Heap & Priority Queue (ADT)"
-by: "Asem"
----
-
-* TOC
-{:toc}
-
 ## Heaps
 
-* Heap is a very useful data structure with many applications (e.g Heapsort and Priority Queues (ADT)). Heap elements are typically allocated as a dynamic array. However, the elements are conceptually forming a *complete* tree.
+#### Max-Heap Logical Representation
+
+![heaptree](/gallery/heaptree.png)
+
+#### Max-Heap Storage
+
+![heapconcrete](/gallery/heapconcrete.png)
+
+---
+## Heaps
 
 
-| Heap Logical Representation |
-|---------------------|
-| ![heaptree](/gallery/heaptree.png) |
-|---------------------|
-| ![heapconcrete](/gallery/heapconcrete.png) |
-
-| Heap Storage |
+| Max-Heap |
 |---------------|
 | ![heap1](/gallery/Heap-as-array.svg) |
 |  Creative Commons - [Maxinator](https://commons.wikimedia.org/w/index.php?title=User:Maxiantor&action=edit&redlink=1) |
 
 
+---
 ## Heap Applications
 
 * Sorting Algorithms (Heapsort)
@@ -60,53 +51,67 @@ by: "Asem"
 * Data Compression Algorithms (Huffman Tree)
 * Unsupervised Machine Learning (Agglomerative Clustering)
 
+<div class="row text-center">
+<div class="col-md-6 align-self-center" markdown="1">
+<img height="300" class="center-block" src="/gallery/trees/map.png">
+</div>
+<div class="col-md-6 align-self-center" markdown="1">
+<img height="300" class="center-block" src="/gallery/plot_lena_ward_segmentation_0012.png">
+</div>
+
+
+<div class="my-footer"><span><a href="https://scikit-learn.org/0.15/auto_examples/cluster/plot_lena_ward_segmentation.html">{A demo of structured Ward hierarchical clustering on Lena image}</a><a href="https://github.com/scikit-learn/scikit-learn/blob/4755ae76d2df10bbf41bc93fb7083b0142ef1044/sklearn/cluster/_agglomerative.py">{Agglomerative Clustering Algorithm Using Heap}</a></span></div>
+
+
+
+---
 ### Glossary
+
+.center[<img src="/gallery/btreefull.png" style="width:500px;">]
 
 * Complete Tree: A balanced tree in which the distance from the root to any leaf is either $\lfloor \log(n) \rfloor$ or $\lfloor \log(n)-1 \rfloor$. [source](https://www.cs.auckland.ac.nz/software/AlgAnim/heaps.html).
 
-### Operations
+---
+### Complete Tree: Relating $n$ to $h$
 
-#### Insert
+- $h$: the height of a full binary tree and 
+- $n$: the number of nodes
 
-Inserting an element at the end of the heap typically violates the heap property (i.e each parent is greater than its children for max-heaps), **so after each insertion we need to recover back the heap property**.
+.center[<img src="/gallery/btreefull.png" style="height:200px;">]
 
-The algorithm of insertion (source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap)):
+$$\begin{align} n &= 1 + 2 + 4 + \ldots + 2^h \\\
+n + 1 &= (1 + 1) + 2 + 4 + \ldots + 2^h \\\
+n + 1 &= (2 + 2) + 4 + \ldots + 2^h \\\
+&\vdots \\\
+n + 1 &= 2^h + 2^h \\\
+n + 1 &= 2^{h+1} \label{eq:nh}\tag{E2}
+\end{align}$$
 
-1. Insert the new element to the bottom level of the heap.
-1. Compare the added element with its parent; if they are in the correct order, stop.
-2. If not, swap the element with its parent and repeat step (2) recursively.
+---
+### Heap Operations: Insert
 
-##### Example: Insert 15
+| We first place the new element 15 in the position marked by the X as a leaf. | <img src="/gallery/heapindel/Heap_add_step1.svg.png" style="width:300px;"> |
+|--|--|
+|  However, the heap property is violated since 15 > 8, so we need to swap the 15 and the 8 |  <img src="/gallery/heapindel/Heap_add_step2.svg" style="width:300px;"> |
+| The heap property is still violated since 15 > 11, so we need to swap again | <img src="/gallery/heapindel/Heap_add_step3.svg" style="width:300px;"> |
 
-| Steps | Layout |
-|-------|--------|
-| We first place the new element 15 in the position marked by the X as a leaf. | <img src="/gallery/heapindel/Heap_add_step1.svg.png" style="width:500px;"> |
-|  However, the heap property is violated since 15 > 8, so we need to swap the 15 and the 8 |  <img src="/gallery/heapindel/Heap_add_step2.svg" style="width:500px;"> |
-| The heap property is still violated since 15 > 11, so we need to swap again | <img src="/gallery/heapindel/Heap_add_step3.svg" style="width:500px;"> |
-| Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
+<div class="my-footer"><span><a href="https://en.wikipedia.org/wiki/Binary_heap">{Binary_heap - Wikipedia}</a></span></div>
 
 
-##### Heap - Insert: Complexity Analysis
+---
+### Heap Operations: Extract
 
+| Extract element 11. | <img src="/gallery/heapindel/Heap_delete_step0.svg" style="width:300px;">  |
+|--|--|
+| 11 is replaced by the the left-most leaf 4. | <img src="/gallery/heapindel/Heap_delete_step1.svg" style="width:300px;">  |
+| Heap property is violated (8 is greater than 4). Swapping the two elements 4 and 8 is enough to recover the heap.| <img src="/gallery/heapindel/Heap_delete_step2.svg" style="width:300px;">  |
 
-#### Extract
+<div class="my-footer"><span><a href="https://en.wikipedia.org/wiki/Binary_heap">{Binary_heap - Wikipedia}</a></span></div>
 
-In a similar way to insertion, when we pop the maximum of max-heap (its root), we violate the heap property by replacing the last children in the heap to be the new root. In order to recover the heap property, we use the following procedures (source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap)):
+---
+### Min-heap Implementation 
 
-1. Replace the root of the heap with the last element on the last level.
-1. Compare the new root with its children; if they are in the correct order, stop.
-1. If not, swap the element with one of its children and repeat step (2). (Swap with its smaller child in a min-heap and its larger child in a max-heap.)
-
-| Steps | Layout |
-|-------|--------|
-| Extract element 11. | <img src="/gallery/heapindel/Heap_delete_step0.svg" style="width:500px;">  |
-| 11 is replaced by the the left-most leaf 4. | <img src="/gallery/heapindel/Heap_delete_step1.svg" style="width:500px;">  |
-| Heap property is violated (8 is greater than 4). Swapping the two elements 4 and 8 is enough to recover the heap.| <img src="/gallery/heapindel/Heap_delete_step2.svg" style="width:500px;">  |
-| Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
-
-### Min-heap Implementation Using Arrays
-
-#### Implementation: Class Members
+#### +Priority Queue Interface
 
 ```c++
 template< typename T >
@@ -115,22 +120,18 @@ class Heap
 public:
     // Return heap size
     size_t size() const {}
-
     // 1. Insert as leaf
     // 2. Recover heap properties
     void insert(T value){}
-
     // 1. Extract the root
     // 2. Recover heap properties
     T extract(){}
 private:
-    // Private methods
-private: 
-    // Private data members
+    // Private details
 };
 ```
 ---
-#### Implementation: Storage Array
+#### Implementation: Heap Storage
 
 ```c++
 template< typename T >
@@ -141,20 +142,22 @@ public:
     void insert(T value){}
     T extract(){}
 private:
-    // Private methods
-private: 
-    // Private data members
     std::vector< T > data;
 };
 ```
 
 ---
-#### Implementation: From Parent Index to Child Index + Vice versa
+#### Implementation: From Parent to Child (+vice versa)
+
+
+.center[<img src="/gallery/btree-index.png" style="height:300px;">]
+
+---
+#### Implementation: From Parent to Child (+vice versa)
 
 ```c++
 template< typename T >
-class Heap
-{
+class Heap {
 public:
     size_t size() const {}
     void insert(T value){}
@@ -169,8 +172,7 @@ private:
     static size_t parentIdx(size_t child){
         if (child % 2 == 1) return (child - 1) / 2;
         else return (child - 2) / 2;
-    }
-private: 
+    } 
     std::vector< T > data;
 };
 ```
@@ -307,18 +309,6 @@ $$T(n) = 2^h \times 0 + 2^{h-1} \times 1 + \ldots + 2^0 \times h = \sum\_{j=0}^h
 
 ---
 ##### Useful Equations
-
-- The relation between 
-  - $h$: the height of a full binary tree and 
-  - $n$: the number of nodes:
-
-$$\begin{align*}
-n &= 1 + 2 + 4 + \ldots + 2^h \\
-n + 1 &= (1 + 1) + 2 + 4 + \ldots + 2^h \\
-n + 1 &= (2 + 2) + 4 + \ldots + 2^h \\
-&\vdots \\
-n + 1 &= 2^h + 2^h = 2^{h+1} \label{eq:nh}\tag{E2}
-\end{align*}$$
 
 - The power series: 
 $$\begin{equation}

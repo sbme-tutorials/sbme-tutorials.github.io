@@ -15,13 +15,16 @@ by: "Asem"
 * Heap is a very useful data structure with many applications (e.g Heapsort and Priority Queues (ADT)). Heap elements are typically allocated as a dynamic array. However, the elements are conceptually forming a *complete* tree.
 
 
-| Heap Logical Representation |
-|---------------------|
+| Max-Heap Logical Representation |
+|-----|
 | ![heaptree](/gallery/heaptree.png) |
-|---------------------|
+
+
+| Max-Heap Storage |
+|----|
 | ![heapconcrete](/gallery/heapconcrete.png) |
 
-| Heap Storage |
+| Max-Heap |
 |---------------|
 | ![heap1](/gallery/Heap-as-array.svg) |
 |  Creative Commons - [Maxinator](https://commons.wikimedia.org/w/index.php?title=User:Maxiantor&action=edit&redlink=1) |
@@ -58,9 +61,6 @@ The algorithm of insertion (source: [wikipedia](https://en.wikipedia.org/wiki/Bi
 |  However, the heap property is violated since 15 > 8, so we need to swap the 15 and the 8 |  <img src="/gallery/heapindel/Heap_add_step2.svg" style="width:500px;"> |
 | The heap property is still violated since 15 > 11, so we need to swap again | <img src="/gallery/heapindel/Heap_add_step3.svg" style="width:500px;"> |
 | Source: [wikipedia](https://en.wikipedia.org/wiki/Binary_heap) |
-
-
-##### Heap - Insert: Complexity Analysis
 
 
 #### Extract

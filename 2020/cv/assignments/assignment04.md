@@ -3,7 +3,7 @@ layout: page
 course: "sbe404b"
 category: "assignment"
 year: "2020"
-title:  "Assignment 4: Face Recognition"
+title:  "Assignment 4: Eigenfaces"
 by: ["Eman Marzban","Asem Alaa"]
 pdf: true
 ---
@@ -11,10 +11,11 @@ pdf: true
 ## Objectives
 
 1. Given standard face datasets 
-   * http://www.face-rec.org/databases/ 
-2. Detect Faces (color or grayscale)
-3. Recognize faces based on PCA/Eigen analysis
-4. Report performance and plot ROC curve
+   * http://vis-www.cs.umass.edu/lfw/ 
+   * Consider images that contain only faces at different poses, lighting, expression, etc.
+2. Split the data set to training and test sets; e.g. 70% and 30% respectively.
+3. Use the training set to generate eigenfaces
+4. Use the test set to recognize faces and report the performance
 
 ## Deadline
 
@@ -49,22 +50,16 @@ Now you will find your work of the previous task uploaded to the new repository.
 
 You need to implement Python functions which will support the following tasks:
 
+1. Load standard face dataset that contain only faces at different poses, lighting, expression, etc.: 
+      * [http://vis-www.cs.umass.edu/lfw/](http://vis-www.cs.umass.edu/lfw/)
+2. Split the data set to training and test sets; e.g. 70% and 30% respectively.
+3. Construct the Eigenfaces from the training images, and keep the Eigenfaces that satisies a *given explained variance*.
+4. Project the training data to the selected Eigenfaces to get a vector of coefficients per training image. 
+5. Load the test set images (not used in the training) and project to the slected Eigenfaces to get a vector of coefficents per test image.
+6. Recognize the face in the test image using the *best match* or *k-Nearest Neighbor (kNN)* against the coefficients of training images. FYI, best match is *kNN* with *k=1*.
+7. Display the original image from test against the best match image from the training.
 
-1. Model Fitting (Training):
-   1. Given standard face datasets :http://www.face-rec.org/databases/
-   2. Detect Faces (color or grayscale)
-   3. Train a model to recognize faces based on PCA/Eigen analysis.
-   4. Report performance metrics.
-   5. Save model parameters to external file:
-      * See this [link](https://scikit-learn.org/stable/modules/model_persistence.html) or this [link](https://machinelearningmastery.com/save-load-machine-learning-models-python-scikit-learn/).
-      * Automate the filenaming to include at least information about the model and training date (e.g `svm-Aug-5-2020-19hr20mn`).
-2. Model Deployment:
-   1. Load the model from the parameters file.
-   2. Given a sample from the database (not used in the training)
-   3. Detect Faces (using the same function)
-   4. Recognize the face using the loaded model.
-
-Add new Python file `CV404Recognition.py` to organize your implementation of the core functionalities.
+* Add new Python file `CV404Recognition.py` to organize your implementation of the core functionalities.
 
 Important notes:
 
@@ -74,9 +69,6 @@ Important notes:
 * More than 1-2 scenarios lead to your program crash will affect your submission score.
 * Plagiarizing lines will not be tolerated.
 * Every member should have clear contribution in the task and that should be obvious through the git commits.
-* The user can open the application directly for deployment and load a model and an image to recognize faces.
-* At deployment, the user can update the current image by loading a new one, without crashes or a need to reload the model parameters.
-* At deployment, the user can also update the model parameters by loading a different file. 
 
 ### B) GUI Integration
 
