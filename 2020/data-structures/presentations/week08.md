@@ -150,9 +150,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static bool isEmpty( const BSTNode *t )
     {
         return t == nullptr;
@@ -166,9 +164,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static bool isLeaf( const BSTNode *t )
     {
         return !isEmpty(t)
@@ -185,9 +181,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static size_t size( const BSTNode *t )
     {
         if ( !isEmpty( t ) )
@@ -210,9 +204,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static BSTNode * insert( BSTNode *t, T data )
     {
         if ( isEmpty( t ))
@@ -240,9 +232,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static bool find( const BSTNode *t, T data )
     {
         if ( isEmpty( t ))
@@ -277,9 +267,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static void inorder( const BSTNode *t )
     {
         if( !isEmpty( t ))
@@ -302,9 +290,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static void preorder( const BSTNode *t )
     {
         if( !isEmpty( t ))
@@ -328,9 +314,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static void postorder( const BSTNode *t )
     {
         if( !isEmpty( t ))
@@ -353,9 +337,7 @@ class BST
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static void breadthfirst( const BSTNode *tree )
     {
         std::queue< const BSTNode * > q;
@@ -372,16 +354,12 @@ class BST
 };
 ```
 
-
-
 ---
 ### Operations (clear)
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
+class BST{ //...
     static void clear( BSTNode *t )
     {
         if ( !isEmpty( t )) {
@@ -482,8 +460,7 @@ class BST
 ```c++
 template< typename T >
 class BST
-{
-    ...
+{ //...
     static BSTNode * remove( BSTNode *t, T data )
     {
         if ( isEmpty( t )) return nullptr;
@@ -502,24 +479,18 @@ class:small
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
-    static BSTNode * minNode( BSTNode *t )
-    {
+class BST{ //...
+    static BSTNode * minNode( BSTNode *t ){
         auto min = t;
         while( min->left ) min = min->left;
         return min;
     }
-    static BSTNode * removeNode( BSTNode *t )
-    {
-        if ( !isEmpty( t->left ) && !isEmpty( t->right ))
-        {
+    static BSTNode * removeNode( BSTNode *t ){
+        if ( !isEmpty( t->left ) && !isEmpty( t->right )){
             BSTNode *minRight = minNode( t->right );
             t->data = minRight->data;
             t->right = remove( t->right, t->data );
-        } else
-        {
+        } else {
             BSTNode *discard = t;
             if ( isLeaf( t )) t = nullptr;
             else if ( !isEmpty( t->left )) t = t->left;
@@ -531,7 +502,6 @@ class BST
 };
 ```
 
-
 ---
 class: left, top
 
@@ -542,25 +512,32 @@ class: left, top
 * **BST**: efficient insertions and removals.
 * **modification**: in `insert` function, only insert unique values,
 
-
+```c++
+int main()
+{
+    std::mt19937 sampler; // random number sampler
+    std::uniform_int_distribution<int> udist(0,100); // distribution
+    std::set< int > s;
+    for( int i = 0; i < 100 ; ++i)
+        s.insert( udist(sampler) );
+    for( auto x : s2 )
+        std::cout << x << " ";
+}
+```
 
 ---
 #### Set: Add
 
---
-* Slight modification of `bst::insert`,
-* insertion is done only when it is not a duplicate of existing element
+* Slight modification of `BST::insert`,
+* Insertion is done only when the key doesn't exist.
 
 --
 ##### BST Insertion
 
 ```c++
 template< typename T >
-class BST
-{
-    ...
-    static BSTNode * insert( BSTNode *t, T data )
-    {
+class BST{ //...
+    static BSTNode * insert( BSTNode *t, T data ){
         if ( isEmpty( t ))
             return new BSTNode{ data , nullptr , nullptr };
         else
@@ -581,10 +558,8 @@ class BST
 ```c++
 template< typename T >
 class Set
-{
-    ...
-    static SetNode * insert( SetNode *t, T data )
-    {
+{ //...
+    static SetNode * insert( SetNode *t, T data ){
         if ( isEmpty( t ))
             return new SetNode{ data , nullptr , nullptr };
         else if ( data != t->data )
@@ -598,7 +573,6 @@ class Set
 };
 ```
 
-
 ---
 ##### Set: Insertion (solution 2)
 
@@ -607,9 +581,7 @@ class Set
 
 ```c++
 template< typename T >
-class Set
-{
-    ...
+class Set{ //...
 public:
     void add( T data )
     {
@@ -618,7 +590,6 @@ public:
     }
 };
 ```
-
 
 ---
 #### Excercises: Set Union
@@ -660,609 +631,255 @@ Synonyms: Associative containers, dictionary, symbol table.
 
 A **map** is a collection of searchable key-value pairs, where each key has a value.
 
----
+#### Map: Example Application 1
 
-#### Map: Example 1
+We can have a **map** (aka **dictionary**) to represent the count of words in a page or textbook, such that:
 
-we can have a **map** representing count of words in a page or textbook, so:
-
---
-1. the **key** here is the *word*,
-1. while the **value** is the count of this word.
+1. the **key** here is the *word* (`std::string`)
+1. the **value** is the count of this word (`int`).
 
 ---
-
-#### Map: Example 2
+#### Map: Example Application 2
 
 for the function that counts characters in **DNA**:
 
 ```c++
-int countCharacter( std::string dna, char query )
-    {
-        int count = 0;
-        for ( int i = 0; i < dna.size(); ++i)
-        {
-            if ( query == dna[i] )
-                ++count;
-        }
-        return count;
+int countCharacter( std::string dna, char query ){
+    int count = 0;
+    for ( int i = 0; i < dna.size(); ++i)
+        if ( query == dna[i] ) ++count;
+    return count;
 }
-int main( int argc, char **argv )
-{
-    if( argc == 2 )
-    {
-        std::string dna = getDNA( argv[1] );
-
-        int countA = countCharacter( dna , 'A');
-        int countC = countCharacter( dna , 'C');
-        int countG = countCharacter( dna , 'G');
-        int countT = countCharacter( dna , 'T');
-    }
-    return 0;
+int main( int argc, char **argv ){
+    std::string dna = readStream();
+    int countA = countCharacter( dna , 'A');
+    int countC = countCharacter( dna , 'C');
+    int countG = countCharacter( dna , 'G');
+    int countT = countCharacter( dna , 'T');
 }
 ```
 
 ---
+#### Map: Example Application 2
 
-#### Map: Example 2
-
-##### Elegant solution
+##### Map Elegant solution
 
 * `countCharacter` was called four times (i.e to count **A**, **C**, **G**, and **T**).
 * However, by using **map** data structure we can run this function to count all characters in a single run!
 
----
 
 ```c++
 #include <map>
-int main( int argc, char **argv )
-{
-    if( argc == 2 )
-    {
-        std::string dna = getDNA( argv[1] );
-
-        std::map< char, int > dnaCounter;
-
-        for( int i = 0 ; i < dna.size() ; ++i )
-            dnaCounter[ dna[i] ]++;
-    }
-
+int main( int argc, char **argv ){
+    std::string dna = readStream();
+    std::map< char, int > dnaCounter;
+    for( int i = 0 ; i < dna.size() ; ++i )
+        dnaCounter[ dna[i] ]++;
     return 0;
 }
 ```
 
 ---
-
 #### Implementing a Dictionary (i.e Map) Using BST
 
-Map implementation using **BST** would be as easy as implementing a **set** using the concrete routines of **BST**.
+Map implementation using **BST** would be as easy as implementing a **set**.
 
-1. `isEmpty`: checks if dictionary is empty.
-1. `size`: returns the size of the dictionary.
-1. `insert`: inserts new key to the dictionary.
-1. `remove`: remove an element by its key.
-1. `at`: returns a reference to the value associated with a given dictionary. Crashes if the key is not found.
-1. `value`: returns a reference to the value associated with a given key. If key not found, then insert a new key with the given key then returns a reference to the newly created value.
-1. `contains`: checks if a key exists in the dictionary.
-
----
 
 #### Dictionary Node Structure
-
-* Consider a dictionary that maps words to counts.
-
---
-```c++
-struct BSTNode
-{
-    std::string data;
-    BSTNode *left;
-    BSTNode *right;
-};
-```
-
----
-
-#### Dictionary Node Structure
-
-* Consider a dictionary that maps words to counts.
-
-
-```c++
-struct MapNode
-{
-    std::string data;
-    MapNode *left;
-    MapNode *right;
-};
-```
-
----
-
-#### Dictionary Node Structure
-
-* Consider a dictionary that maps words to counts.
-
-```c++
-struct MapNode
-{
-    std::string key;
-    int value;
-    MapNode *left;
-    MapNode *right;
-};
-```
-
----
-
-#### Dictionary Node Structure
-
-* Consider a dictionary that maps words to counts.
-
-```c++
-struct MapNode
-{
-    MapNode( const std::string &k, int v )
-    {
-        key = k;
-        value = v;
-        left = nullptr;
-        right = nullptr;
-    }
-
-    std::string key;
-    int value;
-    MapNode *left;
-    MapNode *right;
-};
-```
-
-
----
-```c++
-bool isEmpty( const MapNode *wmap )
-{
-
-}
-
-bool isLeaf( const MapNode *wmap )
-{
-
-}
-
-int size( const MapNode *wmap )
-{
-
-}
-
-bool find( const MapNode *wmap, const std::string &key )
-{
-
-}
-```
-
----
-```c++
-void insert( MapNode * &wmap, const std::string &key, int data )
-{
-
-}
-
-void remove( WordMap * &wmap, const std::string &key )
-{
-
-}
-
-void clear( MapNode * &wmap )
-{
-
-}
-
-void printAll( const MapNode *wmap )
-{
-
-}
-```
-
----
-#### Map: value
-
-
-```c++
-int &value( MapNode *&wmap, const std::string &key )
-{
-
-}
-```
-
----
-
-#### Map Declarations (procedural)
-
-```c++
-bool isEmpty( const MapNode *wmap ){ /* Logic */ }
-
-bool isLeaf( const MapNode *wmap ){ /* Logic */ }
-
-int size( const MapNode *wmap ){ /* Logic */ }
-
-bool find( const MapNode *wmap, const std::string &key ){ /* Logic */}
-
-void insert( MapNode * &wmap, const std::string &key, int data ){ /* Logic */}
-
-void remove( WordMap * &wmap, const std::string &key ){ /* Logic */}
-
-void clear( MapNode * &wmap ){ /* Logic */}
-
-void printAll( const MapNode *wmap ){ /* Logic */}
-
-int &value( MapNode *&wmap, const std::string &key ){ /* Logic */}
-```
-
----
-
-#### Map Declarations (OOP)
-
---
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    bool isEmpty( const MapNode *wmap ){ /* Logic */ }
-
-    bool isLeaf( const MapNode *wmap ){ /* Logic */ }
-
-    int size( const MapNode *wmap ){ /* Logic */ }
-
-    bool find( const MapNode *wmap, const std::string &key ){ /* Logic */}
-
-    void insert( MapNode * &wmap, const std::string &key, int data ){ /* Logic */}
-
-    void remove( WordMap * &wmap, const std::string &key ){ /* Logic */}
-
-    void clear( MapNode * &wmap ){ /* Logic */}
-
-    void printAll( const MapNode *wmap ){ /* Logic */}
-
-    int &value( MapNode *&wmap, const std::string &key ){ /* Logic */}
-};
-```
-
----
-
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    bool isEmpty() const { /* Logic */ }
-
-    bool isLeaf() const { /* Logic */ }
-
-    int size() const { /* Logic */ }
-
-    bool find( const std::string &key ) const { /* Logic */}
-
-    void insert( const std::string &key, int data ){ /* Logic */}
-
-    void remove(const std::string &key ) { /* Logic */}
-
-    void clear(){ /* Logic */}
-
-    void printAll() const { /* Logic */}
-
-    int &value( const std::string &key ){ /* Logic */}
-};
-```
-
---
-* .red[What is the problem?]
---
-* Hint: recursive functions!
-
-
----
-
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    ...
-
-    int size() const { /* Logic */ }
-
-    int size( const Map *root )
-    {
-        if( root )
-        {
-            return 1 + size( root->left ) + size( root->right );
-        } else return 0;
-    }
-    ...
-};
-```
-
----
-
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    ...
-
-    int size() const {  return size( root ); }
-
-    int size( const Map *root ) // Method or free function?!
-    {
-        if( root )
-        {
-            return 1 + size( root->left ) + size( root->right );
-        } else return 0;
-    }
-    ...
-};
-```
-
---
-* `static` methods.
-
----
-
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    ...
-
-    int size() const {  return size( root ); }
-
-    static int size( const Map *root ) // Method or free function?!
-    {
-        if( root )
-        {
-            return 1 + size( root->left ) + size( root->right );
-        } else return 0;
-    }
-    ...
-};
-```
-
---
-
-```c++
-// Client part
-Map m;
-std::cout << m.size();
-```
-
----
-
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    bool isEmpty() const { /* Logic */ }
-    bool isLeaf() const { /* Logic */ }
-
-    int size() const { /* Logic */ }
-    bool find( const std::string &key ) const { /* Logic */}
-    void insert( const std::string &key, int data ){ /* Logic */}
-    void remove(const std::string &key ) { /* Logic */}
-    void clear(){ /* Logic */}
-    void printAll() const { /* Logic */}
-    int &value( const std::string &key ){ /* Logic */}
-};
-```
-
----
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-    MapNode *root = nullptr;
-
-    bool isEmpty() const { /* Logic */ }
-    bool isLeaf() const { /* Logic */ }
-
-    int size() const { return size( root ); }
-    bool find( const std::string &key ) const { return find( root , key ); }
-    void insert( const std::string &key, int data ){ insert( root , key, data );}
-    void remove(const std::string &key ) { remove( root , key);}
-    void clear(){ clear( root ); }
-    void printAll() const { printAll( root ); }
-    int &value( const std::string &key ){  return value( root , key ); }
-};
-```
-
----
-#### Map Declarations (OOP)
-
-```c++
-struct Map
-{
-
-    MapNode *root = nullptr;
-
-    bool isEmpty() const { /* Logic */ }
-    bool isLeaf() const { /* Logic */ }
-
-    int size() const { return size( root ); }
-    bool find( const std::string &key ) const { return find( root , key ); }
-    void insert( const std::string &key, int data ){ insert( root , key, data );}
-    void remove(const std::string &key ) { remove( root , key);}
-    void clear(){ clear( root ); }
-    void printAll() const { printAll( root ); }
-    int &value( const std::string &key ){  return value( root , key ); }
-
-    static int size( const MapNode *root ) { /* Logic */ }
-    static bool find( const MapNode *root, const std::string &key ) { /* Logic */}
-    static void insert(  MapNode *&root , const std::string &key, int data ){ /* Logic */}
-    static void remove(  MapNode *&root , const std::string &key ) { /* Logic */}
-    static void clear(  MapNode *&root ){ /* Logic */}
-    static void printAll( const MapNode *root ) { /* Logic */}
-    static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
-};
-```
-
----
-#### Map Declarations (OOP + Encapsulation)
-
-```c++
-struct Map
-{
-private:
-    MapNode *root = nullptr;
-public:
-    bool isEmpty() const { /* Logic */ }
-    bool isLeaf() const { /* Logic */ }
-
-    int size() const { return size( root ); }
-    bool find( const std::string &key ) const { return find( root , key ); }
-    void insert( const std::string &key, int data ){ insert( root , key, data );}
-    void remove(const std::string &key ) { remove( root , key);}
-    void clear(){ clear( root ); }
-    void printAll() const { printAll( root ); }
-    int &value( const std::string &key ){  return value( root , key ); }
-private:
-    static int size( const MapNode *root ) { /* Logic */ }
-    static bool find( const MapNode *root, const std::string &key ) { /* Logic */}
-    static void insert(  MapNode *&root , const std::string &key, int data ){ /* Logic */}
-    static void remove(  MapNode *&root , const std::string &key ) { /* Logic */}
-    static void clear(  MapNode *&root ){ /* Logic */}
-    static void printAll( const MapNode *root ) { /* Logic */}
-    static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
-};
-```
-
----
-#### Map Declarations (OOP + Encapsulation + Template)
-
-
---
-```c++
-
-struct MapNode
-{
-    MapNode( const std::string &k, int v )
-    {
-        key = k;
-        value = v;
-        left = nullptr;
-        right = nullptr;
-    }
-
-    std::string key;
-    int value;
-    MapNode *left;
-    MapNode *right;
-};
-```
-
----
-#### Map Declarations (OOP + Encapsulation + Template)
 
 
 ```c++
 template< typename K, typename V >
-struct MapNode
+class Map
 {
-    MapNode( const K &k, V v )
+    struct MapNode
     {
-        key = k;
-        value = v;
-        left = nullptr;
-        right = nullptr;
-    }
-
-    K key;
-    V value;
-    MapNode *left;
-    MapNode *right;
+        K key;
+        V value;
+        MapNode *left;
+        MapNode *right;
+    };
 };
 ```
 
 ---
-#### Map Declarations (OOP + Encapsulation + Template)
+#### Implementing a Dictionary (i.e Map) Using BST
 
 ```c++
+template< typename K, typename V >
+class Map{ //...
+    static bool isEmpty( const MapNode *m ){ return m == nullptr; }
+    static bool isLeaf( const MapNode *m ){
+        return !isEmpty(m) && isEmpty(m->left) && isEmpty(m->right);
+    }
+    static size_t size( const MapNode *m ){
+        if ( !isEmpty( m )) 
+            return 1 + size( m->left ) + size( m->right );
+        else return 0;
+    }
+    static void clear( MapNode *m ){
+        if ( !isEmpty( m )){
+            clear( m->left );
+            clear( m->right );
+            delete m;
+        }
+    }
+};
+```
 
-struct Map
-{
+---
+#### Implementing a Dictionary (i.e Map) Using BST
+
+```c++
+template< typename K, typename V >
+class Map { //...
+    static bool find( const MapNode *m, K key )
+    {
+        // Same as BST
+    }
+
+    static MapNode * insert( MapNode *m, K key, V value ){
+        if ( isEmpty( m ))
+            return new MapNode{ key, value , nullptr , nullptr };
+        else if ( key != m->key ){
+            if ( key < m->key )
+                m->left = insert( m->left, key , value );
+            else m->right = insert( m->right, key , value );
+        }
+        return m;
+    }
+};
+```
+
+---
+#### Implementing a Dictionary (i.e Map) Using BST
+
+```c++
+template< typename K, typename V > class Map{ //...
+    static MapNode * remove( MapNode *m, K data )
+    {
+        // Same as BST
+    }
+    static MapNode * minNode( MapNode *m )
+    {
+        // Same as BST
+    }
+
+    static MapNode * removeNode( MapNode *m )
+    {
+        // Same as BST
+    }
+};
+```
+
+---
+#### Implementing a Dictionary (i.e Map) Using BST
+
+```c++
+template< typename K, typename V >
+class Map { //...
+    static V &at( MapNode *m , K key ){
+        if ( isEmpty( m )){
+            std::cout << "Key not found!\n";
+            exit( 1 );
+        }
+        else {
+            if ( key == m->key ) return m->value;
+            else if ( key < m->key ) return at( m->left , key );
+            else return at( m->right , key );
+        }
+    }
+};
+```
+
+---
+#### Implementing a Dictionary (i.e Map) Using BST
+
+```c++
+template< typename K, typename V >
+class Map{ //... 
+    template< typename Function >
+    static void forEach( MapNode *m , Function fn )
+    {
+        if( !isEmpty( m ))
+        {
+            forEach( m->left, fn );
+            fn( m->key , m->value );
+            forEach( m->right, fn );
+        }
+    }
+};
+```
+
+
+---
+#### Implementing a Dictionary (i.e Map) Using BST
+
+
+```c++
+template< typename K, typename V >
+class Map{ //...
 private:
     MapNode *root = nullptr;
 public:
-    bool isEmpty() const { /* Logic */ }
-    bool isLeaf() const { /* Logic */ }
+    bool isEmpty() const  { return isEmpty( root );}
+    size_t size() const  { return size( root ); }
 
-    int size() const { return size( root ); }
-    bool find( const std::string &key ) const { return find( root , key ); }
-    void insert( const std::string &key, int data ){ insert( root , key, data );}
-    void remove(const std::string &key ) { remove( root , key);}
-    void clear(){ clear( root ); }
-    void printAll() const { printAll( root ); }
-    int &value( const std::string &key ){  return value( root , key ); }
-private:
-    static int size( const MapNode *root ) { /* Logic */ }
-    static bool find( const MapNode *root, const std::string &key ) { /* Logic */}
-    static void insert(  MapNode *&root , const std::string &key, int data ){ /* Logic */}
-    static void remove(  MapNode *&root , const std::string &key ) { /* Logic */}
-    static void clear(  MapNode *&root ){ /* Logic */}
-    static void printAll( const MapNode *root ) { /* Logic */}
-    static int &value(  MapNode *&root , const std::string &key ){ /* Logic */}
+    void insert( K key, V value )
+    { root = insert( root , key , value );}
+
+    bool find( K key ) const{ return find( root , key );}
+
+    void clear()
+    {
+        clear( root );
+        root = nullptr;
+    }
+    void remove( K key ){ root = remove( root , key );}
 };
 ```
 
 ---
-#### Map Declarations (OOP + Encapsulation + Template)
+#### Implementing a Dictionary (i.e Map) Using BST
 
 ```c++
-template< typename K, typename V>
-struct Map
-{
-private:
-    MapNode< K, V > *root = nullptr;
-public:
-    bool isEmpty() const { /* Logic */ }
-    bool isLeaf() const { /* Logic */ }
+template< typename K, typename V >
+class Map{ //...
+    template< typename Function >
+    void forEach( Function fn ) const
+    { forEach( root , fn ); }
 
-    int size() const { return size( root ); }
-    bool find( const K &key ) const { return find( root , key ); }
-    void insert( const K &key, int data ){ insert( root , key, data );}
-    void remove(const K &key ) { remove( root , key);}
-    void clear(){ clear( root ); }
-    void printAll() const { printAll( root ); }
-    int &value( const K &key ){  return value( root , key ); }
-private:
-    static int size( const MapNode *root ) { /* Logic */ }
-    static bool find( const MapNode *root, const K &key ) { /* Logic */}
-    static void insert(  MapNode *&root , const K &key, V data ){ /* Logic */}
-    static void remove(  MapNode *&root , const K &key ) { /* Logic */}
-    static void clear(  MapNode *&root ){ /* Logic */}
-    static void printAll( const MapNode *root ) { /* Logic */}
-    static V &value(  MapNode *&root , const K &key ){ /* Logic */}
+    void print () const
+    {
+        forEach( []( K k, V v ){
+           std::cout << k << ":" << v << "\n";
+        });
+    }
 };
 ```
 
 ---
-### Exercise and Assignment: Text Processing
+#### Implementing a Dictionary (i.e Map) Using BST
 
-Clone your group lab work and assignment from this link: TBA.
+```c++
+template< typename K, typename V >
+class Map{ //...
+    V &at( const K &k )
+    {
+        return at( root, k );
+    }
+
+    V &operator[]( const K &k )
+    {
+        if( !find( k ))
+            insert( k , V() );
+        return at( k );
+    }    
+};
+```
+
+---
+### Exercise: Word Count
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wupToqz1e2g?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 

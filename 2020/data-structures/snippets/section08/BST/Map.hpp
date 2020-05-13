@@ -161,8 +161,8 @@ public:
 
     void print () const
     {
-        forEach( []( int x ){
-           std::cout << x << " ";
+        forEach( []( K k , V v ){
+           std::cout << k << ":" << v << "\n";
         });
     }
 

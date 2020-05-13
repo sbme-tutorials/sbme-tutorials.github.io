@@ -160,7 +160,6 @@ class BST
         return isBST( t->left ) && isBST( t->right );
     }
 
-
 public:
     bool isEmpty() const
     { return isEmpty( root );}

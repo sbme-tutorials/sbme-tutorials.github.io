@@ -143,7 +143,7 @@ public:
 
     void print () const
     {
-        forEach( []( int x ){
+        forEach( []( T x ){
            std::cout << x << " ";
         });
     }
