@@ -2,6 +2,9 @@ cmake_minimum_required(VERSION 2.8)
 
 project(BST)
 
+add_executable(oo operator_overloading.cpp)
+
+add_executable(lambda lambda.cpp)
 
 add_executable(bst bst.cpp BST.hpp)
 
