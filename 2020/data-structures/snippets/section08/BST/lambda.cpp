@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 #include <random>
 #include <algorithm>
@@ -8,9 +9,10 @@ struct Student
 {
 	std::string name;
 	int grade;
-	friend std::ostream &operator<<( std::ostream &output, const Student &v ) {
-		output << "(" << v.name << "," << v.grade << ")";
-		return output;
+	std::string toString() const {
+		std::stringstream s;
+		s << "(" << name << "," << grade << ")";
+		return s.str();
 	}
 };
 
@@ -58,18 +60,18 @@ int main()
 	// Example 3.
 	std::cout << "Example 3:\n";
 
-	std::vector< Student > students;
-	students.push_back({"Mahdy", 86});
-	students.push_back({"Ahmed",  70});
-	students.push_back({"Samar", 86});
-	students.push_back({"Zyad",  70});
+	std::vector< Student > students({ {"Mahdy", 86},
+									  {"Ahmed", 70},
+									  {"Samar", 86},
+									  {"Zyad",  70}});
 
 	std::sort( students.begin(), students.end(),
 			   []( Student &a, Student &b ){
 		return a.grade > b.grade;
 	});
 
-	for( auto stud : students ) std::cout << stud << " ";
+	for( auto &stud : students )
+		std::cout << stud.toString() << " ";
 	std::cout << "\n";
 
 	std::sort( students.begin(), students.end(),
@@ -77,7 +79,8 @@ int main()
 		return a.name < b.name;
 	});
 
-	for( auto stud : students ) std::cout << stud << " ";
+	for( auto &stud : students )
+		std::cout << stud.toString() << " ";
 	std::cout << "\n";
 }
 

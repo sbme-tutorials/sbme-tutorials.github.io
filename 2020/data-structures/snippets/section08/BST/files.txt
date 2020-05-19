@@ -7,4 +7,5 @@ BST.hpp
 Set.hpp
 Map.hpp
 CMakeLists.txt
-covid.fasta
+covid19.fasta
+blue_dot.txt

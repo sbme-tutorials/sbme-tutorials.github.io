@@ -25,13 +25,14 @@ author: "Asem Alaa"
 Section 8 Parts:
 
 1. C++ Operator Overloading & Lambdas
-   * `oo.cpp`/`lambda.cpp`
+   * {`oo.cpp`}{`lambda.cpp`}
 2. Binary Search Trees (BST)
-   * `BST.hpp`/`bst.cpp`
+   * {`BST.hpp`}{`bst.cpp`}
 3. Sets (ADT) & Maps (ADT)
-   * `Set.hpp`/`set.cpp`/`Map.hpp`/`map.cpp`
+   * {`Set.hpp`}{`set.cpp`}{`Map.hpp`}{`map.cpp`}
 
-Clone demo: <span style="font-size:8pt;bottom: 0px;left: 0px;height: 10px;">`wget -i </span>
+<div class="my-footer" style="bottom:30px;"><span>Demo: <br><code style="font-size:8pt;">wget -i https://raw.githubusercontent.com/sbme-tutorials/sbme-tutorials.github.io/master/2020/data-structures/snippets/section08/BST/files.txt</code></span></div>
+
 {% include presentation-margins.html %}
 
 ---
@@ -237,27 +238,29 @@ int main(){
 ```
 
 ---
-### C++: Lambda Expressions (Example 1)
+### C++: Lambda Expressions (Example 2)
 
 ```c++
 int main(){
-    // Random number generators
-    std::uniform_int_distribution<int> udist(0,100); 
-    std::mt19937 sampler; 
-    
-	std::vector< int > v;
-	for( int i = 0; i < 10 ; ++i) v.push_back(udist(sampler));
+  // Random number generators
+  std::uniform_int_distribution<int>udist(0,100); std::mt19937 sampler; 
 
-    for( auto x: v ) std::cout << x << " ";
-    // Prints: 82 13 91 84 12 97 92 22 63 31
-    std::cout << "\n";
+  std::vector< int > v;
+  for( int i = 0; i < 10 ; ++i) v.push_back(udist(sampler));
 
-	std::sort( v.begin(), v.end(), []( int a, int b){
-		return a > b;
-	});
+  for( auto x: v ) std::cout << x << " ";
+  // Prints: 82 13 91 84 12 97 92 22 63 31
+  std::cout << "\n";
 
-	for( auto x: v ) std::cout << x << " ";
-    // Prints: 97 92 91 84 82 63 31 22 13 12
+  std::sort( v.begin(), v.end());
+
+  for( auto x: v ) std::cout << x << " ";
+  // Prints: 12 13 22 31 63 82 84 91 92 97 
+  std::cout << "\n";
+
+  std::sort( v.begin(), v.end(), [](int a, int b){return a > b;});
+  for( auto x: v ) std::cout << x << " ";
+  // Prints: 97 92 91 84 82 63 31 22 13 12 
 }
 ```
 
@@ -265,6 +268,34 @@ int main(){
 class: small
 ### C++: Lambda Expressions (Example 2)
 
+
+```c++
+struct Student
+{
+	std::string name;
+	int grade;
+	std::string toString() const {
+		std::stringstream s;
+		s << "(" << name << "," << grade << ")";
+		return s.str(); // returns: (name,grade)
+	}
+};
+int main(){
+    std::vector< Student > students({ {"Mahdy", 86}, {"Ahmed", 70},
+									  {"Samar", 86}, {"Zyad",  70}});
+	std::sort( students.begin(), students.end(), []( Student &a, Student &b ){
+		return a.grade > b.grade;
+    });
+	for( auto &stud : students ) std::cout << stud.toString() << " ";
+	std::cout << "\n"; // out: (Mahdy,86) (Samar,86) (Ahmed,70) (Zyad,70)
+
+	std::sort( students.begin(), students.end(),[]( Student &a, Student &b ){
+		return a.name < b.name;
+	});
+	for( auto &stud : students ) std::cout << stud.toString() << " ";
+    std::cout << "\n"; // out: (Ahmed,70) (Mahdy,86) (Samar,86) (Zyad,70) 
+}
+```
 ---
 #### Comparing `std::string`s
 
@@ -279,12 +310,9 @@ int main()
 }
 ```
 
----
-| comparison value | explanation |
-|------------------|-------------|
-| positive | it means that `s1` comes after `s2` alphabetically, which is not the case |
-| negative | it means that `s1` precedes `s2` alphabetically, which is the case |
-| 0 | it means that `s1` equals `s2`, which is not the case |
+* `comparison  > 0`: `s1` comes after `s2` alphabetically.
+* `comparison  < 0`: `s1` precedes `s2` alphabetically.
+* `comparison == 0`: `s1` equals `s2`
 
 ---
 #### Comparing operators `std::string`s
@@ -504,7 +532,7 @@ class BST{ //...
 ---
 ### Operations (find)
 
-<img src="/gallery/trees/binary-search-tree-sorted-array-animation.gif">
+.center[<img src="/gallery/trees/binary-search-tree-sorted-array-animation.gif">]
 
 ---
 ### Operations (find)
@@ -538,7 +566,7 @@ class BST{ //...
 ---
 #### Traversal Operations: In-order
 
-<img src="/gallery/trees/InorderTrav.gif" style="width:80%;">
+.center[<img src="/gallery/trees/InorderTrav.gif" style="width:80%;">]
 
 
 ---
@@ -563,7 +591,7 @@ class BST{ //...
 ---
 #### Traversal Operations: Pre-order
 
-<img src="/gallery/trees/PreOrderTrav.gif" style="width:80%;">
+.center[<img src="/gallery/trees/PreOrderTrav.gif" style="width:80%;">]
 
 ---
 #### Traversal Operations: Pre-order
@@ -586,7 +614,7 @@ class BST{ //...
 ---
 #### Traversal Operations: Post-order
 
-<img src="/gallery/trees/PostorderTrav.gif" style="width:80%;"> 
+.center[<img src="/gallery/trees/PostorderTrav.gif" style="width:80%;">]
 
 ---
 #### Traversal Operations: Post-order
@@ -610,7 +638,7 @@ class BST{ //...
 ---
 #### Traversal Operations: Breadth-first
 
-<img src="/gallery/trees/bfs.gif" style="width:80%;">
+.center[<img src="/gallery/trees/bfs.gif" style="width:80%;">]
 
 ---
 #### Traversal Operations: Breadth-first
@@ -658,7 +686,7 @@ class BST{ //...
 
 ###### Example: `remove( tree , -4 )`
 
-![bst-del1](/gallery/trees/bst-remove-case-1.png)
+.center[![bst-del1](/gallery/trees/bst-remove-case-1.png)]
 
 
 ---
@@ -669,7 +697,8 @@ class BST{ //...
 ###### Example: `remove( tree , 18 )`
 
 ##### **Case II:** Node to be removed **has one child**
-![bst-del2a](/gallery/trees/bst-remove-case-2-1.png)
+
+.center[![bst-del2a](/gallery/trees/bst-remove-case-2-1.png)]
 
 
 ---
@@ -680,7 +709,8 @@ class BST{ //...
 ###### Example: `remove( tree , 18 )`
 
 ##### **Case II:** Node to be removed **has one child**
-![bst-del2b](/gallery/trees/bst-remove-case-2-2.png)
+
+.center[![bst-del2b](/gallery/trees/bst-remove-case-2-2.png)]
 
 
 ---
@@ -690,18 +720,8 @@ class BST{ //...
 
 ###### Example: `remove( tree , 18 )`
 
-![bst-del2c](/gallery/trees/bst-remove-case-2-3.png)
+.center[![bst-del2c](/gallery/trees/bst-remove-case-2-3.png)]
 
-
----
-### Operations (remove)
-
-##### **Case III:** Node to be removed **has two children**
-
-###### Example: `remove( tree , 18 )`
-
-##### **Case II:** Node to be removed **has one child**
-![bst-del3a](/gallery/trees/bst-remove-case-3-3.png)
 
 ---
 ### Operations (remove)
@@ -711,7 +731,8 @@ class BST{ //...
 ###### Example: `remove( tree , 18 )`
 
 ##### **Case II:** Node to be removed **has one child**
-![bst-del3b](/gallery/trees/bst-remove-case-3-4.png) 
+
+.center[![bst-del3a](/gallery/trees/bst-remove-case-3-3.png)]
 
 ---
 ### Operations (remove)
@@ -721,7 +742,8 @@ class BST{ //...
 ###### Example: `remove( tree , 18 )`
 
 ##### **Case II:** Node to be removed **has one child**
-![bst-del3c](/gallery/trees/bst-remove-case-3-5.png)
+
+.center[![bst-del3b](/gallery/trees/bst-remove-case-3-4.png)]
 
 ---
 ### Operations (remove)
@@ -731,7 +753,19 @@ class BST{ //...
 ###### Example: `remove( tree , 18 )`
 
 ##### **Case II:** Node to be removed **has one child**
-![bst-del3d](/gallery/trees/bst-remove-case-3-6.png)
+
+.center[![bst-del3c](/gallery/trees/bst-remove-case-3-5.png)]
+
+---
+### Operations (remove)
+
+##### **Case III:** Node to be removed **has two children**
+
+###### Example: `remove( tree , 18 )`
+
+##### **Case II:** Node to be removed **has one child**
+
+.center[![bst-del3d](/gallery/trees/bst-remove-case-3-6.png)]
 
 ---
 ### Operations (remove)
