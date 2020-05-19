@@ -14,6 +14,8 @@ struct Student
 	}
 };
 
+
+
 int main()
 {
 	// Example 1.
@@ -30,9 +32,10 @@ int main()
 
 	// Example 2.
 	std::cout << "Example 2:\n";
-
-	std::mt19937 sampler; // random number sampler
-	std::uniform_int_distribution<int> udist(0,100); // distribution
+	// random number sampler
+	std::mt19937 sampler;
+	// distribution
+	std::uniform_int_distribution<int> udist(0,100);
 	std::vector< int > v;
 	for( int i = 0; i < 10 ; ++i)
 		v.push_back(udist(sampler));
@@ -45,9 +48,6 @@ int main()
 	for( auto x: v ) std::cout << x << " ";
 	std::cout << "\n";
 
-	v.clear();
-	for( int i = 0; i < 10 ; ++i)
-		v.push_back(udist(sampler));
 	std::sort( v.begin(), v.end(), []( int a, int b){
 		return a > b;
 	});

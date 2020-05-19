@@ -7,7 +7,7 @@ course: "SBE201 Data Structures and Algorithms"
 category: "presentation"
 semester: "Spring"
 year: "2020"
-title: "Section 7: Binary Search Trees (BST), Sets (ADT) and Maps (ADT)"
+title: "Section 8: C++ Operator Overloading & Lambdas, Binary Search Trees (BST), Sets (ADT) & Maps (ADT)"
 by: "Asem Alaa"
 author: "Asem Alaa"
 ---
@@ -18,14 +18,24 @@ author: "Asem Alaa"
 
 # Section 8
 
-## Binary Search Trees (BST), Sets (ADT) and Maps (ADT)
+## C++ Operator Overloading & Lambdas, Binary Search Trees (BST), Sets (ADT) and Maps (ADT)
 
 ##### Presentation by *{{ page.author }}*
+
+Section 8 Parts:
+
+1. C++ Operator Overloading & Lambdas
+   * `oo.cpp`/`lambda.cpp`
+2. Binary Search Trees (BST)
+   * `BST.hpp`/`bst.cpp`
+3. Sets (ADT) & Maps (ADT)
+   * `Set.hpp`/`set.cpp`/`Map.hpp`/`map.cpp`
+
 
 {% include presentation-margins.html %}
 
 ---
-### C++: Operator Overloading
+### C++: Operator Overloading (Example 1)
 
 ```c++
 struct Vec2
@@ -45,7 +55,7 @@ int main()
 ```
 
 ---
-### C++: Operator Overloading
+### C++: Operator Overloading (Example 1)
 
 
 ```c++
@@ -69,7 +79,7 @@ int main()
 ```
 
 ---
-### C++: Operator Overloading
+### C++: Operator Overloading (Example 1)
 
 
 ```c++
@@ -89,7 +99,7 @@ int main()
 
 ---
 class: small
-### C++: Operator Overloading
+### C++: Operator Overloading (Example 1)
 
 
 ```c++
@@ -121,7 +131,7 @@ int main()
 
 ---
 class: small
-### C++: Operator Overloading
+### C++: Operator Overloading (Example 2)
 
 
 ```c++
@@ -149,7 +159,7 @@ int main()
 
 ---
 class: small
-### C++: Operator Overloading
+### C++: Operator Overloading (Example 2)
 
 
 ```c++
@@ -180,9 +190,119 @@ int main()
 }
 ```
 
+---
+### C++: Lambda Expressions (Example 1)
+
+Introduced in C++11
+
+Syntax:  <code><b>[</b></code> <span class="t-spar">captures</span> <code><b>]</b></code> <code><b>(</b></code> <span class="t-spar">params</span> <code><b>)</b></code> <code><b>{</b></code> <span class="t-spar">body</span> <code><b>} </b></code>
+
+Simplest lambda: `auto l = [](){};`
+
+```c++
+int main()
+{
+	auto sq = [](double a){ return a*a; };
+
+	std::vector< double > u = { 1.0, -2.0, 3.0, -4.0 };
+	for( auto &x : u )
+		x = sq( x );
+
+	for( auto x: u ) std::cout << x << " ";
+	std::cout << "\n"; // prints: 1.0 4.0 9.0 16.0
+}
+```
 
 ---
-### C++: Lambda Functions
+### C++: Lambda Expressions (Example 1)
+
+```c++
+int main(){
+    // Random number generators
+    std::uniform_int_distribution<int> udist(0,100); 
+    std::mt19937 sampler; 
+
+	std::vector< int > v;
+	for( int i = 0; i < 10 ; ++i) v.push_back(udist(sampler));
+
+    for( auto x: v ) std::cout << x << " ";
+    // Prints: 82 13 91 84 12 97 92 22 63 31
+    std::cout << "\n";
+
+	std::sort( v.begin(), v.end());
+
+	for( auto x: v ) std::cout << x << " ";
+    // Prints: 12 13 22 31 63 82 84 91 92 97
+}
+```
+
+---
+### C++: Lambda Expressions (Example 1)
+
+```c++
+int main(){
+    // Random number generators
+    std::uniform_int_distribution<int> udist(0,100); 
+    std::mt19937 sampler; 
+    
+	std::vector< int > v;
+	for( int i = 0; i < 10 ; ++i) v.push_back(udist(sampler));
+
+    for( auto x: v ) std::cout << x << " ";
+    // Prints: 82 13 91 84 12 97 92 22 63 31
+    std::cout << "\n";
+
+	std::sort( v.begin(), v.end(), []( int a, int b){
+		return a > b;
+	});
+
+	for( auto x: v ) std::cout << x << " ";
+    // Prints: 97 92 91 84 82 63 31 22 13 12
+}
+```
+
+---
+class: small
+### C++: Lambda Expressions (Example 2)
+
+---
+#### Comparing `std::string`s
+
+```c++
+#include <string>
+int main()
+{
+    std::string s1 = "batman";
+    std::string s2 = "superman";
+
+    int comparison = s1.compare( s2 );
+}
+```
+
+---
+| comparison value | explanation |
+|------------------|-------------|
+| positive | it means that `s1` comes after `s2` alphabetically, which is not the case |
+| negative | it means that `s1` precedes `s2` alphabetically, which is the case |
+| 0 | it means that `s1` equals `s2`, which is not the case |
+
+---
+#### Comparing operators `std::string`s
+
+```c++
+#include <string>
+#include <iostream>
+int main()
+{
+    std::string s1 = "batman";
+    std::string s2 = "superman";
+
+    if( s1 < s2 )
+        std::cout << s1 << " precedes " << s2;
+    else 
+        std::cout << s2 << " precedes " << s1;
+}
+```
 
 ---
 class: small
@@ -1047,7 +1167,7 @@ class Map{ //...
 ---
 Consider the following text for [Carl Sagan](https://en.wikipedia.org/wiki/Carl_Sagan)
 
-.smaller[Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there on a mote of dust suspended in a sunbeam. The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds. Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.]
+<span style="font-size:8pt;bottom: 0px;left: 0px;height: 10px;">Look again at that dot. That's here. That's home. That's us. On it everyone you love, everyone you know, everyone you ever heard of, every human being who ever was, lived out their lives. The aggregate of our joy and suffering, thousands of confident religions, ideologies, and economic doctrines, every hunter and forager, every hero and coward, every creator and destroyer of civilization, every king and peasant, every young couple in love, every mother and father, hopeful child, inventor and explorer, every teacher of morals, every corrupt politician, every "superstar," every "supreme leader," every saint and sinner in the history of our species lived there on a mote of dust suspended in a sunbeam. The Earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that, in glory and triumph, they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of this pixel on the scarcely distinguishable inhabitants of some other corner, how frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds. Our posturings, our imagined self-importance, the delusion that we have some privileged position in the Universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to save us from ourselves. The Earth is the only world known so far to harbor life. There is nowhere else, at least in the near future, to which our species could migrate. Visit, yes. Settle, not yet. Like it or not, for the moment the Earth is where we make our stand. It has been said that astronomy is a humbling and character-building experience. There is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly with one another, and to preserve and cherish the pale blue dot, the only home we've ever known.</span>
 
 
 ---
@@ -1056,45 +1176,5 @@ Consider the following text for [Carl Sagan](https://en.wikipedia.org/wiki/Carl_
 | Total count of words | count of words after removing duplicates (i.e word set) |
 |----------------------|-----------------------|
 | 362 | 205 |
-
-
----
-#### Comparing `std::string`s
-
-```c++
-#include <string>
-int main()
-{
-    std::string s1 = "batman";
-    std::string s2 = "superman";
-
-    int comparison = s1.compare( s2 );
-}
-```
-
----
-| comparison value | explanation |
-|------------------|-------------|
-| positive | it means that `s1` comes after `s2` alphabetically, which is not the case |
-| negative | it means that `s1` precedes `s2` alphabetically, which is the case |
-| 0 | it means that `s1` equals `s2`, which is not the case |
-
----
-#### Comparing operators `std::string`s
-
-```c++
-#include <string>
-#include <iostream>
-int main()
-{
-    std::string s1 = "batman";
-    std::string s2 = "superman";
-
-    if( s1 < s2 )
-        std::cout << s1 << " precedes " << s2;
-    else 
-        std::cout << s2 << " precedes " << s1;
-}
-```
 
 </textarea>

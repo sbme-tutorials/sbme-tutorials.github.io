@@ -88,7 +88,8 @@ Feel free to request for additional office hours by sending me an email (`asem.a
 7. Section 7:
     * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week07.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week07.pdf %}){:target="_blank"}
     * Section handouts: \[[Heap & Priority Queue (ADT)]({{ site.baseurl }}{% link 2020/data-structures/notes/week07.md %}){:target="_blank"}\] 
-
+8. Section 8:
+    * [Section slides]({{ site.baseurl }}{% link 2020/data-structures/presentations/week08.md %}){:target="_blank"} [<i class="far fa-file-pdf"></i>]({{ site.baseurl }}{% link 2020/data-structures/presentations/week08.pdf %}){:target="_blank"}
 
 ## Resources & Useful Links
 

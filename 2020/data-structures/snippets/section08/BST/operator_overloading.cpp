@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 
 struct Vec2
 {
@@ -50,6 +51,13 @@ struct Vec2
 		return Vec2{ x/val , y/val};
 	}
 
+	std::string toString() const
+	{
+		std::stringstream s;
+		s << "(" << x << "," << y << ")";
+		return s.str();
+	}
+
 	friend std::ostream &operator<<( std::ostream &output, const Vec2 &v ) {
 		output << "(" << v.x << "," << v.y << ")";
 		return output;
@@ -77,11 +85,17 @@ struct Image
 
 int main()
 {
+	// Example 1 (Vec2)
 	Vec2 u{1,1};
 	Vec2 v{4,6};
 	Vec2 d = -(u+v)*(u-v) / (v*u*2);
-	std::cout << d;
 
+	// Print like this
+	std::cout << d << "\n";
+	// Or
+	std::cout << d.toString() << "\n";
+
+	// Example 2 (Image)
 	Image img = Image(16, 16);
 
 	// How to get pixel at position (9,12)?
@@ -89,5 +103,6 @@ int main()
 	// Or
 	double val2 = img(9, 12);
 	// Modify
-	img(9, 9) = 1.0;
+	img(9, 9) = 1.6;
+	std::cout << img(9, 9) << "\n";
 }
