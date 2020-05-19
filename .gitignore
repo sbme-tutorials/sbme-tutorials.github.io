@@ -7,4 +7,5 @@ _site/*
 .vscode/*
 .ipynb_checkpoints
 **/CMakeLists.txt.user
+**/CMakeLists.txt.user*
 **/build-*

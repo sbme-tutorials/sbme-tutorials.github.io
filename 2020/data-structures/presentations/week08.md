@@ -31,7 +31,7 @@ Section 8 Parts:
 3. Sets (ADT) & Maps (ADT)
    * `Set.hpp`/`set.cpp`/`Map.hpp`/`map.cpp`
 
-
+Clone demo: <span style="font-size:8pt;bottom: 0px;left: 0px;height: 10px;">`wget -i </span>
 {% include presentation-margins.html %}
 
 ---

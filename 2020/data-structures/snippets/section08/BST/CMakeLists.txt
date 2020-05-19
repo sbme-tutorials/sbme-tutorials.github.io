@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(BST)
 
-add_executable(oo operator_overloading.cpp)
+add_executable(oo oo.cpp)
 
 add_executable(lambda lambda.cpp)
 
