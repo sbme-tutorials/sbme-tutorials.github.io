@@ -27,14 +27,19 @@ int main()
         counter2[b]++;
 
     std::cout << "\nMy Map content:\n";
-    counter.forEach( []( char base, int count ){
-        std::cout << base << ":" << count << "\n";
+	counter.forEach( []( char key, int val ){
+		std::cout << key << ":" << val << "\n";
     });
 
+	int sum = 0;
+	counter.forEach( [&]( char base, int count ){
+		sum += count;
+	});
 
     std::cout << "\nSTL Map content:\n";
     for( auto [base,count] : counter2 )
         std::cout << base << ":" << count << "\n";
+
 
     return 0;
 }

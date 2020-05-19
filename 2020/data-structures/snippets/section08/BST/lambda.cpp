@@ -16,7 +16,23 @@ struct Student
 	}
 };
 
+// A function to implement bubble sort
+void bubbleSort( std::vector<double> &v, int size )
+{
+	for ( int i = 0; i < size-1; i++ ) // T1 = n * T2
+		for ( int j = 0; j < size-1; j++ ) // T2 = n * T3
+			if ( !(v[j] < v[j+1]) ) // T3 = a
+				std::swap( v[j] , v[j+1] );
+}
 
+template<typename Cmp>
+void bubbleSort( std::vector<double> &v, int size, Cmp cmp )
+{
+	for ( int i = 0; i < size-1; i++ ) // T1 = n * T2
+		for ( int j = 0; j < size-1; j++ ) // T2 = n * T3
+			if ( !cmp(v[j], v[j+1] )) // T3 = a
+				std::swap( v[j] , v[j+1] );
+}
 
 int main()
 {
