@@ -696,8 +696,6 @@ class BST{ //...
 
 ###### Example: `remove( tree , 18 )`
 
-##### **Case II:** Node to be removed **has one child**
-
 .center[![bst-del2a](/gallery/trees/bst-remove-case-2-1.png)]
 
 
@@ -707,8 +705,6 @@ class BST{ //...
 ##### **Case II:** Node to be removed **has one child**
 
 ###### Example: `remove( tree , 18 )`
-
-##### **Case II:** Node to be removed **has one child**
 
 .center[![bst-del2b](/gallery/trees/bst-remove-case-2-2.png)]
 
@@ -728,9 +724,7 @@ class BST{ //...
 
 ##### **Case III:** Node to be removed **has two children**
 
-###### Example: `remove( tree , 18 )`
-
-##### **Case II:** Node to be removed **has one child**
+###### Example: `remove( tree , 12 )`
 
 .center[![bst-del3a](/gallery/trees/bst-remove-case-3-3.png)]
 
@@ -739,9 +733,7 @@ class BST{ //...
 
 ##### **Case III:** Node to be removed **has two children**
 
-###### Example: `remove( tree , 18 )`
-
-##### **Case II:** Node to be removed **has one child**
+###### Example: `remove( tree , 12 )`
 
 .center[![bst-del3b](/gallery/trees/bst-remove-case-3-4.png)]
 
@@ -750,9 +742,8 @@ class BST{ //...
 
 ##### **Case III:** Node to be removed **has two children**
 
-###### Example: `remove( tree , 18 )`
+###### Example: `remove( tree , 12 )`
 
-##### **Case II:** Node to be removed **has one child**
 
 .center[![bst-del3c](/gallery/trees/bst-remove-case-3-5.png)]
 
@@ -761,9 +752,7 @@ class BST{ //...
 
 ##### **Case III:** Node to be removed **has two children**
 
-###### Example: `remove( tree , 18 )`
-
-##### **Case II:** Node to be removed **has one child**
+###### Example: `remove( tree , 12 )`
 
 .center[![bst-del3d](/gallery/trees/bst-remove-case-3-6.png)]
 
