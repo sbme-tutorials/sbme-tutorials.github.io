@@ -74,6 +74,12 @@ def padded_slice(img, sl):
     output[dst[0]:dst[1],dst[2]:dst[3]] = img[src[0]:src[1],src[2]:src[3]]
     return output
 
+def segmentation_resize(img):
+    ratio = min(1, np.sqrt((512*512) / np.prod(img.shape[:2])))
+    newshape = list(map( lambda d : int(round(d*ratio)), img.shape[:2])) 
+    img = resize( img, newshape , anti_aliasing = True )
+    return img
+
 def sift_resize(img, ratio = None):
     ratio = ratio if ratio is not None else np.sqrt((1024*1024) / np.prod(img.shape[:2]))
     newshape = list(map( lambda d : int(round(d*ratio)), img.shape[:2])) 
