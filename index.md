@@ -6,6 +6,10 @@ layout: home
 ---
 # Tutorials and Course Announcements
 
+## Fall 2020
+* [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2020/sbe306DataBase/DB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
+* [Computer Systems (Database) \(HEMN230\)]({{ site.baseurl }}{% link 2020/hemn230DataBase/DB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
+
 ## Spring 2020 
 
 * [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2020/cv/index.md %}), by Prof. Ahmed M. Badawy, Eng. Eman Marzban, and [Eng. Asem Alaa](https://a-alaa.github.io).
