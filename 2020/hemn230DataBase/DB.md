@@ -90,21 +90,7 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
-    * [Notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek1.md %}){:target="_blank"}
-* Week 2
-    * [Notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek2.md %}){:target="_blank"}
-* Week 3
-    * [Lab-notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek3LabNotes.md %}){:target="_blank"}
-* Week 4
-    * [notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek4.md %}){:target="_blank"}
-    * [Introduction to python]({{ site.baseurl }}{% link 2019/Database/notes/pythonIntroduction.md %}){:target="_blank"}
-    * [python Mysql]({{ site.baseurl }}{% link 2019/Database/notes/pythonMysql.md %}){:target="_blank"}
-* Week 5
-    * [Lab-notes]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek5LabNotes.md %}){:target="_blank"}
-* Week 6
-    * [SQL-Revision]({{ site.baseurl }}{% link 2019/Database/notes/HEMweek6.md %}){:target="_blank"}
-    * [Flask-Application]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek5.md %}){:target="_blank"}
-* Week 7
-    * [Flask-Templates-Bootstrap]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek6.md %}){:target="_blank"}
-    * [Flask-dynamics]({{ site.baseurl }}{% link 2019/Database/notes/SBEweek7.md %}){:target="_blank"}
+    * [Notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek1.md %}){:target="_blank"}
 
+* Week 2
+    * [Notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek2.md %}){:target="_blank"}
