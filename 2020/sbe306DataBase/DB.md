@@ -37,10 +37,10 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 |------|-----------------|-----|
 |   1  | Introduction to full stack development and database management systems | ---- |
 |   2  | ER model and basic SQL statements | ---- |
-|   3  | SQL Relations and JOINs | ---- |
+<!-- |   3  | SQL Relations and JOINs | ---- |
 |   4  | Introduction to python and mysql-connector | ---- |
 |   5  | Python Flask Web-MicroFramework | ---- |
-|   6  | Flask Templates and style sheets | ---- |
+|   6  | Flask Templates and style sheets | ---- | -->
 
 ## Required installations
 
@@ -65,7 +65,7 @@ sudo /usr/local/ampps/Ampps
 You should see something like this indicating the server has started properly.
 ![](images/amppsStart.png)
 
-## common issues for LINUUX installation
+## common issues for LINUX installation
 
 if you have a problem installing ampps on linux type the following:
 
@@ -90,6 +90,12 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
     * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw1.md %}){:target="_blank"}
+    * Videos 
+        * [part-1](https://drive.google.com/file/d/1g7Lq_ph9wHPUdiiLCMsD9eiXtd8X7TQc/view?usp=sharing)
+        * [part-2](https://drive.google.com/file/d/1LguA_tJhiFX7cWYNBr_6mSPoqrHbvhLf/view?usp=sharing)
+        * [part-3](https://drive.google.com/file/d/1HcEF0jvhsT_39NcyJuMtg2MJ2zTMQQmp/view?usp=sharing)
 
 * Week 2
     * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw2.md %}){:target="_blank"}
+    * Videos 
+        * [part-1](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)

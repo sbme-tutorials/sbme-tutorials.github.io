@@ -88,7 +88,7 @@ WHERE columnN LIKE pattern;
 Patterns: 
 + LIKE 'x%' finds any string starts with x
 + LIKE '%x' finds any string ends with x
-+ LIKE '%x%' finds any string that contain s in any place
++ LIKE '%x%' finds any string that contain x in any place
 + LIKE '_x%' finds any string have x in seconds position
 
 **IN** operator used to check the values given found in the list or not moreover it acts like multiple **OR** statements.

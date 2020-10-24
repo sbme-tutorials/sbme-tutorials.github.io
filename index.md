@@ -7,6 +7,7 @@ layout: home
 # Tutorials and Course Announcements
 
 ## Fall 2020
+* [Data Structures and Algorithms \(CMP2241\)]({{ site.baseurl }}{% link 2020/data-structure-FALL/index.md %}), by Dr. Eman Marzaban, Eng. Ayman Anwar. 
 * [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2020/sbe306DataBase/DB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
 * [Computer Systems (Database) \(HEMN230\)]({{ site.baseurl }}{% link 2020/hemn230DataBase/DB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
 
