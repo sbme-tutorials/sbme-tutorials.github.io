@@ -28,13 +28,16 @@ Demonstrator:  Eng. Ayman Anwar
 | Sunday | from **9am** to **12pm** |
 | Thurusday | from **1pm** to **4pm** |
 
-Feel free to request for additional office hours by sending me an email (`ayman.anwar.bio@gmail.com)
+Feel free to request for additional office hours by sending me an email (ayman.m.anwar@eng.cu.edu.eg.com)
 
 ## Course Outline
 
 | Week | Content | Tasks |
 |------|----------------------|-----------|
-| 1 | Brief intro to the course; Python Basics;  |  |
+| 1 | Java Basics; OOB basics |  |
 
 ## Sections
-
+* Week 1:
+    * course Intro: [video](https://drive.google.com/file/d/1eOEX5aJuV5WMb1TvYun2YVzdWv1Pp1az/view?usp=sharing)
+    * Java Installation: [windows-installations](https://youtu.be/vRILBeMCOp4) [linux-installations](https://youtu.be/Vc3z48_Gx3E)
+    * Intro to Java:  [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week1.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1NqpNu_gORITvv4tkW3f7ca2murjxFc9o/view?usp=sharing)
