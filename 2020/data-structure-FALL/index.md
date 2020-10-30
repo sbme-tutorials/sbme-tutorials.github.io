@@ -28,7 +28,7 @@ Demonstrator:  Eng. Ayman Anwar
 | Sunday | from **9am** to **12pm** |
 | Thurusday | from **1pm** to **4pm** |
 
-Feel free to request for additional office hours by sending me an email (ayman.m.anwar@eng.cu.edu.eg.com)
+extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subject : EXOFH)
 
 ## Course Outline
 
