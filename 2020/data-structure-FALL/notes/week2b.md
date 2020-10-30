@@ -30,7 +30,9 @@ declared in the interface. In this way, interfaces enforce requirements that an 
 plementing class has methods with certain specified signatures.
 
 **For Example:**
+
 * Interface for objects that can be sold
+
 ```java
 /** 
  * Interface for objects that can be sold. 
