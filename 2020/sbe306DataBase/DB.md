@@ -96,6 +96,6 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
         * [part-3](https://drive.google.com/file/d/1HcEF0jvhsT_39NcyJuMtg2MJ2zTMQQmp/view?usp=sharing)
 
 * Week 2
-    * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw2.md %}){:target="_blank"}
-    * Videos 
-        * [part-1](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)
+    * SQL statements
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw2.md %}){:target="_blank"}
+        * [Videos](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)

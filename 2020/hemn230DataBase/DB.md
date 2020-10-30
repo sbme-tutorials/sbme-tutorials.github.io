@@ -95,8 +95,7 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
         * [part-1](https://drive.google.com/file/d/1g7Lq_ph9wHPUdiiLCMsD9eiXtd8X7TQc/view?usp=sharing)
         * [part-2](https://drive.google.com/file/d/1LguA_tJhiFX7cWYNBr_6mSPoqrHbvhLf/view?usp=sharing)
         * [part-3](https://drive.google.com/file/d/1HcEF0jvhsT_39NcyJuMtg2MJ2zTMQQmp/view?usp=sharing)
-
 * Week 2
-    * [Notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek2.md %}){:target="_blank"}
-    * Videos 
-        * [part-1](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)
+    * SQL statements
+        * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek2.md %}){:target="_blank"}
+        * [Videos](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)
