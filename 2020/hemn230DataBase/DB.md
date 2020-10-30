@@ -38,6 +38,8 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 |------|-----------------|-----|
 |   1  | Introduction to full stack development and database management systems | ---- |
 |   2  | ER model and basic SQL statements | ---- |
+|   3  | Introduction to python and mysql-connector | ---- |
+
 <!-- |   3  | SQL Relations and JOINs | ---- |
 |   4  | Introduction to python and mysql-connector | ---- |
 |   5  | Python Flask Web-MicroFramework | ---- |
@@ -99,3 +101,9 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * SQL statements
         * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek2.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)
+
+* week 3
+    * python installation: [windows](https://docs.anaconda.com/anaconda/install/windows/) [Linux](https://docs.anaconda.com/anaconda/install/linux/)    
+    * Python Introduction
+        * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/pythonIntroduction.md %}){:target="_blank"}
+        * [Videos]()

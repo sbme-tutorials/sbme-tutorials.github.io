@@ -35,6 +35,7 @@ Feel free to request for additional office hours by sending me an email (ayman.m
 | Week | Content | Tasks |
 |------|----------------------|-----------|
 | 1 | Java Basics; OOB basics |  |
+| 2 | Inheritance, Interfaces and Abstracts |  |
 
 ## Sections
 * Week 1:
