@@ -186,7 +186,6 @@ plt.show()
 
 ### Anaconda
 
-
 * Shipped +1000 Data Science Packages (DSP, Image Processing, Machine Learning, AI, Statistics).
 * Shipped with Python IDE (Spyder).
 * Shipped with Jupyter Notebook.
