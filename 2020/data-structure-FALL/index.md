@@ -43,5 +43,5 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
     * Java Installation: [windows-installations](https://youtu.be/vRILBeMCOp4) [linux-installations](https://youtu.be/Vc3z48_Gx3E)
     * Intro to Java:  [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week1.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1NqpNu_gORITvv4tkW3f7ca2murjxFc9o/view?usp=sharing)
 * week 2:
-    * Object-Oriented Design **Inheritance**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week2a.md %}){:target="_blank"} [video]()
-    * Object-Oriented Design **Interfaces and Abstracts**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week2b.md %}){:target="_blank"} [video]()
+    * Object-Oriented Design **Inheritance**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week2a.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1bJS0QksD4woKuSjlniy2Aasiu6VOSXPS/view?usp=sharing)
+    * Object-Oriented Design **Interfaces and Abstracts**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week2b.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1n1tq4yrlnTrjM8mqBGvXITECUBsDxVtT/view?usp=sharing)
