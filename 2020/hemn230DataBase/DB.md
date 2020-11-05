@@ -105,7 +105,7 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * Week 3
     * SQL Constrains **Primary Keys and Foreign Keys**
         * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek3.md %}){:target="_blank"}
-        * [Videos]()
+        * [Videos](https://drive.google.com/file/d/1I5fYwk5DC4tIq5oJNObd6oYiSJO6sxW1/view?usp=sharing)
 
 * week 4
     * python installation: [windows](https://docs.anaconda.com/anaconda/install/windows/) [Linux](https://docs.anaconda.com/anaconda/install/linux/)    
