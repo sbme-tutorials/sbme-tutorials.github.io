@@ -5,7 +5,7 @@
 layout: page
 category: "notes"
 course: "sbe306a"
-year: "2019"
+year: "2020"
 ---
 * TOC
 {:toc}

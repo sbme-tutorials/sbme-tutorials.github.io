@@ -4,8 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: page
 category: "notes"
-course: "sbe306a"
-year: "2019"
+course: "hemn224"
+year: "2020"
 ---
 * TOC
 {:toc}

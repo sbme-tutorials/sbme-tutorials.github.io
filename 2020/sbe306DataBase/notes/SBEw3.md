@@ -5,7 +5,7 @@
 layout: page
 category: "notes"
 course: "sbe306a"
-year: "2019"
+year: "2020"
 ---
 * TOC
 {:toc}
@@ -72,20 +72,6 @@ reference_option:
 ```
 if symbol is not existed index_name could be used.
 
-**Referential Actions:**
-
-For storage engines supporting foreign keys, MySQL rejects any INSERT or UPDATE operation that attempts to create a foreign key value in a child table if there is no a matching candidate key value in the parent table.
-
-When an UPDATE or DELETE operation affects a key value in the parent table that has matching rows in the child table, the result depends on the referential action specified using ON UPDATE and ON DELETE subclauses of the FOREIGN KEY clause. MySQL supports five options regarding the action to be taken, listed here: 
-
-+ CASCADE: Delete or update the row from the parent table, and automatically delete or update the matching rows in the child table. Both ON DELETE CASCADE and ON UPDATE CASCADE.
-
-+ SET NULL: Delete or update the row from the parent table, and set the foreign key column or columns in the child table to NULL. Both ON DELETE SET NULL and ON UPDATE SET NULL **make sure that you have not declared the columns in the child table as NOT NULL**.
-
-+ RESTRICT or NO ACTION: both of them are the same they Rejects the delete or update operation for the parent.
-
-**RESTRICT** is the default action.
-
 ### one to one/many relationships
 
 Example: lets create these two tables without stating any foreign ids
@@ -121,45 +107,6 @@ INSERT INTO child (name,id,parentId) VALUES ('nema',5,5);
 ```
 
 now we built a relational model lets join both tables and look at it. BUT first what are joins.
-
-### JOIN clause
-
-JOIN clause is used to combine rows from two or more tables, based on a related column between them.
-there is must be a relation between the two tables via certain column
-
-```
-SELECT table1_name.column1, table2_name.column1, Orders.OrderDate
-FROM table1_name
-(JOIN TYPE) JOIN table2_name ON table1_name.someID=table2_name.someID; 
-```
-
-Different type of JOINS
-
-| JOIN | Description |
-| ------------- |:-------------:|
-| INNER JOIN | Returns records that have matching values in both tables|
-| LEFT (OUTER) JOIN | Return all records from the left table, and the matched records from the right table |
-| RIGHT (OUTER) JOIN | Return all records from the right table, and the matched records from the left table |
-| FULL (OUTER) JOIN | Return all records when there is a match in either left or right table |
-
-Example
-
-```
-SELECT child.name ,parent.name 
-FROM child 
-JOIN parent ON child.parentID = parent.id 
-```
-
-### UNION clause
-
-UNION is used to combine results form more than one select statement if there is no relation between them but it must have
-same number of columns with similar datatype and consider the ordering.
-
-```
-SELECT column_name(s) FROM table1
-UNION
-SELECT column_name(s) FROM table2; 
-```
 
 ### many to many relationships
 
@@ -222,6 +169,60 @@ FROM parent_child
 JOIN parent on parent_child.parentID = parent.id
 JOIN child on parent_child.child_ID = child.id;
 ```
+### Referential Actions:
+
+For storage engines supporting foreign keys, MySQL rejects any INSERT or UPDATE operation that attempts to create a foreign key value in a child table if there is no a matching candidate key value in the parent table.
+
+When an UPDATE or DELETE operation affects a key value in the parent table that has matching rows in the child table, the result depends on the referential action specified using ON UPDATE and ON DELETE subclauses of the FOREIGN KEY clause. MySQL supports five options regarding the action to be taken, listed here: 
+
++ CASCADE: Delete or update the row from the parent table, and automatically delete or update the matching rows in the child table. Both ON DELETE CASCADE and ON UPDATE CASCADE.
+
++ SET NULL: Delete or update the row from the parent table, and set the foreign key column or columns in the child table to NULL. Both ON DELETE SET NULL and ON UPDATE SET NULL **make sure that you have not declared the columns in the child table as NOT NULL**.
+
++ RESTRICT or NO ACTION: both of them are the same they Rejects the delete or update operation for the parent.
+
+**RESTRICT** is the default action.
+
+
+## JOIN clause
+
+JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+there is must be a relation between the two tables via certain column
+
+```
+SELECT table1_name.column1, table2_name.column1, Orders.OrderDate
+FROM table1_name
+(JOIN TYPE) JOIN table2_name ON table1_name.someID=table2_name.someID; 
+```
+
+Different type of JOINS
+
+| JOIN | Description |
+| ------------- |:-------------:|
+| INNER JOIN | Returns records that have matching values in both tables|
+| LEFT (OUTER) JOIN | Return all records from the left table, and the matched records from the right table |
+| RIGHT (OUTER) JOIN | Return all records from the right table, and the matched records from the left table |
+| FULL (OUTER) JOIN | Return all records when there is a match in either left or right table |
+
+Example
+
+```
+SELECT child.name ,parent.name 
+FROM child 
+JOIN parent ON child.parentID = parent.id 
+```
+
+## UNION clause
+
+UNION is used to combine results form more than one select statement if there is no relation between them but it must have
+same number of columns with similar datatype and consider the ordering.
+
+```
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2; 
+```
+
 
 it is funny right and not that hard **it`s safe you can do it at home**.
 
