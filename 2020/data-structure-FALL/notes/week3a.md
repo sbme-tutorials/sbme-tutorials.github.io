@@ -144,7 +144,7 @@ with the fourth element, the fifth, and so on, until the whole array is sorted.
 		}
 ```
  
- ## Two-Dimensional Arrays and Positional Games
+## Two-Dimensional Arrays and Positional Games
 
 Many computer games, be they strategy games, simulation games, or first-person
 conflict games, involve objects that reside in a two-dimensional space. Software for

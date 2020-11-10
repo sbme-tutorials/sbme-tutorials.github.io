@@ -36,6 +36,7 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 |------|----------------------|-----------|
 | 1 | Java Basics; OOB basics |  |
 | 2 | Inheritance, Interfaces and Abstracts |  |
+| 3 | Fundamental Data Structure |  |
 
 ## Sections
 * Week 1:
