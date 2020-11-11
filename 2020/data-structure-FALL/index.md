@@ -47,5 +47,5 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
     * Object-Oriented Design **Inheritance**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week2a.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1bJS0QksD4woKuSjlniy2Aasiu6VOSXPS/view?usp=sharing)
     * Object-Oriented Design **Interfaces and Abstracts**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week2b.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1n1tq4yrlnTrjM8mqBGvXITECUBsDxVtT/view?usp=sharing)
 * week 3:
-    * Fundamental Data Structure **Arrays**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week3a.md %}){:target="_blank"} [video]()
-    * Fundamental Data Structure **Linked-Lists**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week3b.md %}){:target="_blank"} [video]()
+    * Fundamental Data Structure **Arrays**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week3a.md %}){:target="_blank"} [video](https://drive.google.com/file/d/1fsjv0i2i9Qa5KYkhtreY0UoMghwgwuAF/view?usp=sharing)
+    * Fundamental Data Structure **Linked-Lists**: [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week3b.md %}){:target="_blank"} [video](https://drive.google.com/file/d/12D1NJS0eKnmjFWJDau2kBOFubTUBBeXR/view?usp=sharing)
