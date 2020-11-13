@@ -111,4 +111,6 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * python installation: [windows](https://docs.anaconda.com/anaconda/install/windows/) [Linux](https://docs.anaconda.com/anaconda/install/linux/)    
     * Python Introduction
         * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/pythonIntroduction.md %}){:target="_blank"}
-        * [Videos]()
+        * [Videos](https://drive.google.com/file/d/1s35Uk6ClMgZgpuTI5Tx09gE7h4hvR5ge/view?usp=sharing)
+    * python quick source:[w3schools](https://www.w3schools.com/python/)
+    * python exercises:[exercism](https://exercism.io/)

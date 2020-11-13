@@ -26,7 +26,7 @@ public classMain{
 print("hello world")
 ```
 
-[why python] (https://www.makeuseof.com/tag/python-language-future/)
+[why python](https://www.makeuseof.com/tag/python-language-future/)
 
 ### Variables
 
@@ -139,57 +139,3 @@ def mean( list ):
 m = mean([1,12,42,1,23,12])
 print( m )
 ```
-
-### Importing Libraries
-
-```python 
-import numpy as np
-```
-
-### Numpy
-
-
-Reference: [{NumPy Reference}](https://docs.scipy.org/doc/numpy-1.13.0/reference/#numpy-reference)
-
-
-```python
-import numpy as np
-
-a = np.array([12,23,44,21,23])
-
-print( np.mean( a ))
-print( np.std( a ))
-```
-
-###  Matplotlib
-
-* `Matplotlib` is Matlab-like visualization library.
-
-
-```python
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-
-image1 = mpimg.imread("images.jpg")
-image2 = mpimg.imread("cameraman1.png")
-
-print( image1.shape )
-print( image2.shape )
-
-plt.imshow(image2)
-plt.show()
-
-```
-
-
-## Getting Started with Python: Installing Anaconda
-
-### Anaconda
-
-
-* Shipped +1000 Data Science Packages (DSP, Image Processing, Machine Learning, AI, Statistics).
-* Shipped with Python IDE (Spyder).
-* Shipped with Jupyter Notebook.
-
-[Download Anaconda 3 (Python 3)](https://www.anaconda.com/download)
-
