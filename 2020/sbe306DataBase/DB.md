@@ -37,12 +37,10 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 |------|-----------------|-----|
 |   1  | Introduction to full stack development and database management systems | ---- |
 |   2  | ER model and basic SQL statements | ---- |
-|   3  | Introduction to python and mysql-connector | ---- |
+|   3  | Join statment | ---- |
+|   4  | Introduction to python  | ---- |
+|   5  | python  with mysql-connector | ---- |
 
-<!-- |   3  | SQL Relations and JOINs | ---- |
-|   4  | Introduction to python and mysql-connector | ---- |
-|   5  | Python Flask Web-MicroFramework | ---- |
-|   6  | Flask Templates and style sheets | ---- | -->
 
 ## Required installations
 
@@ -110,7 +108,15 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * week 4
     * python installation: [windows](https://docs.anaconda.com/anaconda/install/windows/) [Linux](https://docs.anaconda.com/anaconda/install/linux/)    
     * Python Introduction
-        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/pythonIntroduction.md %}){:target="_blank"}
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw4pythonIntroduction.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1s35Uk6ClMgZgpuTI5Tx09gE7h4hvR5ge/view?usp=sharing)
     * python quick source:[w3schools](https://www.w3schools.com/python/)
     * python exercises:[exercism](https://exercism.io/)
+
+* week 5
+    * Python mySQL
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw5pythonMysql.md %}){:target="_blank"}
+        * [Videos]()
+    * HTML quick source:[w3schools](https://www.w3schools.com/html/default.asp)
+    * CSS exercises:[w3schools](https://www.w3schools.com/css/default.asp)
+    * Javascript exercises:[w3schools](https://www.w3schools.com/js/default.asp)
