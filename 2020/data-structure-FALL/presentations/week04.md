@@ -9,7 +9,7 @@ semester: "Fall"
 year: "2020"
 title: "Section 4: Time Complexity (Big O Notation) & Sorting Algorithms"
 by: "Ayman Anwar"
-author: "Ayman Anwar"
+author: "Ayman Anwar and Asem Alaa"
 ---
 
 <textarea id="source" markdown="1">
