@@ -108,7 +108,7 @@ the element with index
 **Complexity O(log n)**
 
 We have four cases:
-* f the target equals the median candidate, then we have found the item we are
+* If the target equals the median candidate, then we have found the item we are
 looking for, and the search terminates successfully.
 * If the target is less than the median candidate, then we recur on the first half
 of the sequence, that is, on the interval of indices from low to mid − 1.

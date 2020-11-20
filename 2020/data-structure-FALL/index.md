@@ -58,7 +58,7 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 * week 5:
     * Recursion: 
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week05a.md %}){:target="_blank"} 
-        * [video]()
+        * [video](https://drive.google.com/file/d/1oj-usExeBumaZiJweRv-53TyxoKOkXSS/view?usp=sharing)
     * sorting algorithms using  Divide and Conquer design pattern (merge and quick sorting):
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week05b.md %}){:target="_blank"} 
-        * [video]()
+        * [video](https://drive.google.com/file/d/1HAbltcJwgZwtcDctQKunj-5wEgcfJkON/view?usp=sharing)
