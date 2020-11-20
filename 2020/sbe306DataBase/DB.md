@@ -116,7 +116,7 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 * week 5
     * Python mySQL
         * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw5pythonMysql.md %}){:target="_blank"}
-        * [Videos]()
+        * [Videos](https://drive.google.com/file/d/1we9rIwgTtj3z7dDShztm_dpn_13p0fOe/view?usp=sharing)
     * HTML quick source:[w3schools](https://www.w3schools.com/html/default.asp)
     * CSS exercises:[w3schools](https://www.w3schools.com/css/default.asp)
     * Javascript exercises:[w3schools](https://www.w3schools.com/js/default.asp)

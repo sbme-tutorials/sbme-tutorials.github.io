@@ -54,4 +54,4 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
     * Time Complexity (Big O notation) & Sorting Algorithms: 
         * [presentation]({{ site.baseurl }}{% link 2020/data-structure-FALL/presentations/week04.md %})
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week04.md %}){:target="_blank"} 
-        * [video]()
+        * [video](https://drive.google.com/file/d/1rJwRwqmbm8xcVm8jnl8dUJdGp-FIRf9v/view?usp=sharing)
