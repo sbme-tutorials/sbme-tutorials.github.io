@@ -4,8 +4,8 @@
 # See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 layout: page
 category: "notes"
-course: "sbe306a"
-year: "2019"
+course: "hemn224"
+year: "2020"
 ---
 * TOC
 {:toc}
@@ -66,8 +66,7 @@ JOIN project ON DNUM = DNUMBER
 WHERE Plocation = "Stanfford"
 ```
 
-### **Q4** Retrieve the names of all employees in ‘Research’ department who work
-more than 10 hours per week on theProductX project.
+### **Q4** Retrieve the names of all employees in ‘Research’ department who work more than 10 hours per week on theProductX project.
 
 ```
 select FName,MINIT,LNAME
@@ -81,8 +80,7 @@ Where ESSN = SSN and PNUMBER = PNO and DNO = Dnumber and DName = ‘Research’ 
 PNAME = 'ProductX';
 ```
 
-### **Q5** List the names of all employees who have a dependent with the same first
-name as themselves.
+### **Q5** List the names of all employees who have a dependent with the same first name as themselves.
 
 ```
 select FNAME, MINIT, LNAME
@@ -90,8 +88,7 @@ from employee join dependent on ESSN =ssn
 where FNAME = DEPENDENT_NAME;
 ```
 
-### **Q6** For each project, list the project name and the total hours per week (by all
-employees) spent on that project.
+### **Q6** For each project, list the project name and the total hours per week (by all employees) spent on that project.
 
 ```
 select PNAME, sum(HOURS)
