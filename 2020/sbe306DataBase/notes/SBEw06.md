@@ -69,12 +69,16 @@ WHERE Plocation = "Stanfford"
 
 ### **Q4** Retrieve the names of all employees in ‘Research’ department who work more than 10 hours per week on theProductX project.
 
+* JOIN Query
 ```
 select FName,MINIT,LNAME
 from employee join works_on on ESSN = SSN join project on PNO = PNUMBER join department on DNO =
 DNUMBER
 where DNAME = ‘Research’ and PName = 'ProductX' and hours>10;
-OR
+```
+
+* cross product:
+```
 Select FNAME,MINIT,LNAME
 From employee,works_on,project,department
 Where ESSN = SSN and PNUMBER = PNO and DNO = Dnumber and DName = ‘Research’ and Hours > 10 and
