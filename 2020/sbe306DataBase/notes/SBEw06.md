@@ -10,15 +10,14 @@ year: "2019"
 * TOC
 {:toc}
 
-# Tutorial 4
+# Tutorial 6
 
 ## Exercises
 Regard the following Relational model
 
 ![](../images/pract1.png)
 
-### Cross Product and JOIN Query
-**Q1** Retrieve employees names who are working in the Research department.
+### **Q1** Retrieve employees names who are working in the Research department.
 
 * cross product:
 ```
@@ -33,7 +32,7 @@ employee JOIN department ON DNO = DNUMBER
 Where DNAME = 'Research'
 ```
 
-**Q2** Retrieve project names where the last name of the department manager is Wong
+### **Q2** Retrieve project names where the last name of the department manager is Wong
 
 * cross product:
 ```
@@ -50,7 +49,7 @@ JOIN project ON DNUM = DNUMBER
 WHERE LNAME = "Wong"
 ```
 
-**Q3** Retrieve managers names having projects in 'Stafford'
+### **Q3** Retrieve managers names having projects in 'Stafford'
 
 * cross product:
 ```
@@ -66,9 +65,50 @@ employee JOIN department ON MGRSSN = SSN
 JOIN project ON DNUM = DNUMBER 
 WHERE Plocation = "Stanfford"
 ```
-### Nested queries
 
-**Q1** Retrieve project names where the department manager last name is Wong or project names where employee smith is working in.
+### **Q4** Retrieve the names of all employees in ‘Research’ department who work
+more than 10 hours per week on theProductX project.
+
+```
+select FName,MINIT,LNAME
+from employee join works_on on ESSN = SSN join project on PNO = PNUMBER join department on DNO =
+DNUMBER
+where DNAME = ‘Research’ and PName = 'ProductX' and hours>10;
+OR
+Select FNAME,MINIT,LNAME
+From employee,works_on,project,department
+Where ESSN = SSN and PNUMBER = PNO and DNO = Dnumber and DName = ‘Research’ and Hours > 10 and
+PNAME = 'ProductX';
+```
+
+### **Q5** List the names of all employees who have a dependent with the same first
+name as themselves.
+
+```
+select FNAME, MINIT, LNAME
+from employee join dependent on ESSN =ssn
+where FNAME = DEPENDENT_NAME;
+```
+
+### **Q6** For each project, list the project name and the total hours per week (by all
+employees) spent on that project.
+
+```
+select PNAME, sum(HOURS)
+from project join works_on on PNO = PNUMBER
+group by PNAME;
+```
+
+### **Q7** Retrieve the names of all employees who do not work on any project.
+
+```
+select Fname
+from employee
+where SSN not in (select SSN from employee, works_on
+where SSN = ESSN );
+```
+
+### **Q8** Retrieve project names where the department manager last name is Wong or project names where employee smith is working in.
 
 * Nested Query
 ```
@@ -97,19 +137,4 @@ project JOIN works_on on Pnumber = Pno
 JOIN employee on SSN = ESSN
 WHERE Lname= "Smith"
 ```
-
-**Try to solve the following**
-
-1. Retrieve the names of all employees in ‘Research’ department who work
-more than 10 hours per week on the ProductX project.
-
-
-2. List the names of all employees who have a dependent with the same first
-name as themselves.
-
-
-3. For each project, list the project name and the total hours per week (by all
-employees) spent on that project.
-
-4. Retrieve the names of all employees who do not work on any project.
 

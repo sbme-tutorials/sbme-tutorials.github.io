@@ -89,7 +89,7 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 
 * Week 1
     * [Slides]({{ site.baseurl }}{% link 2019/Database/presentations/1_week1/index.md %}){:target="_blank"}
-    * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw1.md %}){:target="_blank"}
+    * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw01.md %}){:target="_blank"}
     * Videos 
         * [part-1](https://drive.google.com/file/d/1g7Lq_ph9wHPUdiiLCMsD9eiXtd8X7TQc/view?usp=sharing)
         * [part-2](https://drive.google.com/file/d/1LguA_tJhiFX7cWYNBr_6mSPoqrHbvhLf/view?usp=sharing)
@@ -97,26 +97,31 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 
 * Week 2
     * SQL statements
-        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw2.md %}){:target="_blank"}
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw02.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1ZybuoOmKNO_EsxSbjZ27E14is1mBME4r/view?usp=sharing)
         
 * Week 3
     * SQL Constrains
-        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw3.md %}){:target="_blank"}
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw03.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1I5fYwk5DC4tIq5oJNObd6oYiSJO6sxW1/view?usp=sharing)
         
 * week 4
     * python installation: [windows](https://docs.anaconda.com/anaconda/install/windows/) [Linux](https://docs.anaconda.com/anaconda/install/linux/)    
     * Python Introduction
-        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw4pythonIntroduction.md %}){:target="_blank"}
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw04pythonIntroduction.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1s35Uk6ClMgZgpuTI5Tx09gE7h4hvR5ge/view?usp=sharing)
     * python quick source:[w3schools](https://www.w3schools.com/python/)
     * python exercises:[exercism](https://exercism.io/)
 
 * week 5
     * Python mySQL
-        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw5pythonMysql.md %}){:target="_blank"}
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw05pythonMysql.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1we9rIwgTtj3z7dDShztm_dpn_13p0fOe/view?usp=sharing)
     * HTML quick source:[w3schools](https://www.w3schools.com/html/default.asp)
     * CSS exercises:[w3schools](https://www.w3schools.com/css/default.asp)
     * Javascript exercises:[w3schools](https://www.w3schools.com/js/default.asp)
+
+* week 6
+    * mySQL Exercise:
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw06.md %}){:target="_blank"}
+        * [Videos]()
