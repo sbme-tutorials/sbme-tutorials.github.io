@@ -66,7 +66,7 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 * week 6:
     * Stacks: 
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week06a.md %}){:target="_blank"} 
-        * [video]()
+        * [video](https://drive.google.com/file/d/182a2mt4E6UJo7yjjDPTbRxdzF8RmA0fY/view?usp=sharing)
     *  Queues:
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week06b.md %}){:target="_blank"} 
-        * [video]()
+        * [video](https://drive.google.com/file/d/1E7kN52qDsCIYK3kmobnoXxY5yBoWQNFX/view?usp=sharing)

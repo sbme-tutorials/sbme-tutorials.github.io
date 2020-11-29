@@ -28,7 +28,7 @@ but only the element that has been in the queue the longest can be next removed.
 1. enqueue: Adds element e to the back of queue.
 2. dequeue: Removes and returns the first element from the queue.
 
-### on-Essential Operations
+### Non-Essential Operations
 
 1. first: Returns the first element of the queue, without removing it.
 2. size: Returns the number of elements in the queue.
