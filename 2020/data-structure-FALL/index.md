@@ -70,3 +70,6 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
     *  Queues:
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week06b.md %}){:target="_blank"} 
         * [video](https://drive.google.com/file/d/1E7kN52qDsCIYK3kmobnoXxY5yBoWQNFX/view?usp=sharing)
+* week 7:
+    * [Revision Sheet]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week07.md %}){:target="_blank"} 
+    * [Extra Resources](https://www.cs.colorado.edu/~main/javasupp/question.html)
