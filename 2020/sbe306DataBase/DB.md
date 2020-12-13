@@ -40,6 +40,8 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 |   3  | Join statment | ---- |
 |   4  | Introduction to python  | ---- |
 |   5  | python  with mysql-connector | ---- |
+|   6  | Midterm | ---- |
+|   7  | Flask Apps | ---- |
 
 
 ## Required installations
@@ -125,3 +127,8 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * mySQL Exercise:
         * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw06.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/1vRASCxuPiETN4zBrIikrT68rFG5f9z4c/view?usp=sharing)
+
+* Week 7
+    * Basic Flask App:
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw07.md %}){:target="_blank"}
+        * [Videos](https://drive.google.com/file/d/15U_qQhuADQ5j4DVhsdvv1p1gCA7_i3Nn/view?usp=sharing)
