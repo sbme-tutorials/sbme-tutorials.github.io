@@ -73,7 +73,10 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 * week 7:
     * [Revision Sheet]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week07.md %}){:target="_blank"} 
     * [Extra Resources](https://www.cs.colorado.edu/~main/javasupp/question.html)
-* week 8:
     * List and Iterator ADTs: 
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week08.md %}){:target="_blank"} 
         * [video](https://drive.google.com/file/d/1eNvsyizjGr9EwEPuo0aNdGZHY6J4Hn6R/view?usp=sharing)
+* week 8:
+    * Binary Trees: 
+        * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week09.md %}){:target="_blank"} 
+        * [video](https://drive.google.com/file/d/1pKraOYmGhJV-JIWsn4xq0f1pp8BREqNs/view?usp=sharing)

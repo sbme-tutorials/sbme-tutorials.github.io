@@ -335,5 +335,254 @@ if p is not a leaf.
 an error occurs if p has two children.
 
 ```java
+import java.util.Iterator;
+
+public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
+
+	protected static class Node<E> implements Position<E> {
+		private E element;
+		private Node<E> parent;
+		private Node<E> left;
+		private Node<E> right;
+
+		public Node(E e, Node<E> above, Node<E> leftChild, Node<E> rightChild) {
+			element = e;
+			parent = above;
+			left = leftChild;
+			right = rightChild;
+		}
+
+		public E getElement() {
+			return element;
+		}
+
+		public Node<E> getParent() {
+			return parent;
+		}
+
+		public Node<E> getLeft() {
+			return left;
+		}
+
+		public Node<E> getRight() {
+			return right;
+		}
+
+		public void setElement(E e) {
+			element = e;
+		}
+
+		public void setParent(Node<E> parentNode) {
+			parent = parentNode;
+		}
+
+		public void setLeft(Node<E> leftChild) {
+			left = leftChild;
+		}
+
+		public void setRight(Node<E> rightChild) {
+			right = rightChild;
+		}
+	}
+
+	/** Factory function to create a new node storing element e. */
+	protected Node<E> createNode(E e, Node<E> parent, Node<E> left, Node<E> right) {
+		return new Node<E>(e, parent, left, right);
+	}
+
+	protected Node<E> root = null;
+	private int size = 0;
+
+	public LinkedBinaryTree() {
+	}
+
+	/** Validates the position and returns it as a node. */
+	protected Node<E> validate(Position<E> p) throws IllegalArgumentException {
+		if (!(p instanceof Node))
+			throw new IllegalArgumentException("Not valid position type");
+		Node<E> node = (Node<E>) p;
+		if (node.getParent() == node)
+			// our convention for defunct node
+			throw new IllegalArgumentException("p is no longer in the tree");
+		return node;
+	}
+
+	// accessor methods (not already implemented in AbstractBinaryTree)
+	/** Returns the number of nodes in the tree. */
+	public int size() {
+		return size;
+	}
+
+	/** Returns the root Position of the tree (or null if tree is empty). */
+	public Position<E> root() {
+		return root;
+	}
+
+	/** Returns the Position of p's parent (or null if p is root). */
+	public Position<E> parent(Position<E> p) throws IllegalArgumentException {
+		Node<E> node = validate(p);
+		return node.getParent();
+	}
+
+	/** Returns the Position of p's left child (or null if no child exists). */
+	public Position<E> left(Position<E> p) throws IllegalArgumentException {
+		Node<E> node = validate(p);
+		return node.getLeft();
+	}
+
+	/** Returns the Position of p's right child (or null if no child exists). */
+	public Position<E> right(Position<E> p) throws IllegalArgumentException {
+		Node<E> node = validate(p);
+		return node.getRight();
+	}
+
+	// update methods supported by this class
+	/**
+	 * Places element e at the root of an empty tree and returns its new Position.
+	 */
+	public Position<E> addRoot(E e) throws IllegalStateException {
+		if (!isEmpty())
+			throw new IllegalStateException("Tree is not empty");
+		root = createNode(e, null, null, null);
+		size = 1;
+		return root;
+	}
+
+	/**
+	 * Creates a new left child of Position p storing element e; returns its
+	 * Position.
+	 */
+	public Position<E> addLeft(Position<E> p, E e) throws IllegalArgumentException {
+		Node<E> parent = validate(p);
+		if (parent.getLeft() != null)
+			throw new IllegalArgumentException("p already has a left child");
+		Node<E> child = createNode(e, parent, null, null);
+		parent.setLeft(child);
+		size++;
+		return child;
+	}
+
+	/**
+	 * Creates a new right child of Position p storing element e; returns its
+	 * Position.
+	 */
+	public Position<E> addRight(Position<E> p, E e) throws IllegalArgumentException {
+		Node<E> parent = validate(p);
+		if (parent.getRight() != null)
+			throw new IllegalArgumentException("p already has a right child");
+		Node<E> child = createNode(e, parent, null, null);
+		parent.setRight(child);
+		size++;
+		return child;
+	}
+
+	/**
+	 * Replaces the element at Position p with e and returns the replaced element.
+	 */
+	public E set(Position<E> p, E e) throws IllegalArgumentException {
+		Node<E> node = validate(p);
+		E temp = node.getElement();
+		node.setElement(e);
+		return temp;
+	}
+
+	/** Removes the node at Position p and replaces it with its child, if any. */
+	public E remove(Position<E> p) throws IllegalArgumentException {
+		Node<E> node = validate(p);
+		if (numChildren(p) == 2)
+			throw new IllegalArgumentException("p has two children");
+		Node<E> child = (node.getLeft() != null ? node.getLeft() : node.getRight());
+		if (child != null)
+			child.setParent(node.getParent()); // child’s grandparent becomes its parent
+		if (node == root)
+			root = child;
+		else {
+			Node<E> parent = node.getParent();
+			if (node == parent.getLeft())
+				parent.setLeft(child);
+			else
+				parent.setRight(child);
+		}
+		size--;
+		E temp = node.getElement();
+		node.setElement(null);
+		node.setLeft(null);
+		node.setRight(null);
+		node.setParent(node);
+		return temp;
+	}
+
+	@Override
+	public Iterator<E> iterator() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<Position<E>> positions() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+```
+
+### Tree Traversal Algorithms
+
+traversal of a tree T is a systematic way of accessing, or “visiting,” all the posi-
+tions of T . The specific action associated with the “visit” of a position p depends
+on the application of this traversal, and could involve anything from increment-
+ing a counter to performing some complex computation for p.
+
+#### Preorder Traversals
+
+In a preorder traversal of a tree T , the root of T is visited first and then the sub-
+trees rooted at its children are traversed recursively. If the tree is ordered, then
+the subtrees are traversed according to the order of the children
 
 ```
+Algorithm preorder(p):
+	perform the “visit” action for position p { this happens before any recursion }
+	for each child c in children(p) do
+		preorder(c)			{ recursively traverse the subtree rooted at c }
+```
+![](../images/Tree06.png)
+
+#### Postorder Traversals
+
+postorder traversal. In some sense, this algorithm can be viewed as the opposite of the preorder traversal, be-
+cause it recursively traverses the subtrees rooted at the children of the root first, and
+then visits the root
+
+```
+Algorithm postorder(p):
+	for each child c in children(p) do
+		postorder(c) { recursively traverse the subtree rooted at c }
+	perform the “visit” action for position p { this happens after any recursion }
+```
+
+![](../images/Tree07.png)
+
+#### Inorder Traversals
+
+The standard preorder, postorder, and breadth-first traversals that were introduced
+for general trees can be directly applied to binary trees. In this section, we will
+introduce another common traversal algorithm specifically for a binary tree.
+
+During an inorder traversal, we visit a position between the recursive traver-
+sals of its left and right subtrees. The inorder traversal of a binary tree T can be
+informally viewed as visiting the nodes of T “from left to right.” Indeed, for every
+position p, the inorder traversal visits p after all the positions in the left subtree of
+p and before all the positions in the right subtree of p.
+
+```
+Algorithm inorder(p):
+	if p has a left child lc then
+		inorder(lc) { recursively traverse the left subtree of p }
+	perform the “visit” action for position p
+	if p has a right child rc then
+		inorder(rc) { recursively traverse the right subtree of p }
+```
+
+![](../images/Tree08.png)
+
+
