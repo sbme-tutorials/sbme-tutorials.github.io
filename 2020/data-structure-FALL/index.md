@@ -80,3 +80,5 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
     * Binary Trees: 
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week09.md %}){:target="_blank"} 
         * [video](https://drive.google.com/file/d/1pKraOYmGhJV-JIWsn4xq0f1pp8BREqNs/view?usp=sharing)
+        * [Assignment-1]({{ site.baseurl }}{% link 2020/data-structure-FALL/assignments/assignment1.md %}){:target="_blank"} 
+
