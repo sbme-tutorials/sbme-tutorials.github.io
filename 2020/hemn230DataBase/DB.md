@@ -133,7 +133,15 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
         * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek07.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/15U_qQhuADQ5j4DVhsdvv1p1gCA7_i3Nn/view?usp=sharing)
 
+* Week 8
+    * Dynamic Flask App:
+        * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek08.md %}){:target="_blank"}
+        * **Videos:**[part1](https://drive.google.com/file/d/1wc8tKi7nkLLnuL8QyWn4utnUxnYUHdf1/view?usp=sharing)[part2](https://drive.google.com/file/d/1DnHtbSPiBE7WpnOcRVm4arHmv4fM40L5/view?usp=sharing)
 
 ## Practical assignments:
 
 * [Task-1]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek07LabNotes.md %}){:target="_blank"}
+
+## Project
+
+* [main-statement]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMProjectStatment.md %}){:target="_blank"}

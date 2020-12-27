@@ -132,3 +132,12 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
     * Basic Flask App:
         * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw07.md %}){:target="_blank"}
         * [Videos](https://drive.google.com/file/d/15U_qQhuADQ5j4DVhsdvv1p1gCA7_i3Nn/view?usp=sharing)
+
+* Week 8
+    * Dynamic Flask App:
+        * [notes]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEw08.md %}){:target="_blank"}
+        * **Videos:**[part1](https://drive.google.com/file/d/1wc8tKi7nkLLnuL8QyWn4utnUxnYUHdf1/view?usp=sharing)[part2](https://drive.google.com/file/d/1DnHtbSPiBE7WpnOcRVm4arHmv4fM40L5/view?usp=sharing)
+
+## Project
+
+* [main-statement]({{ site.baseurl }}{% link 2020/sbe306DataBase/notes/SBEProjectStatment.md %}){:target="_blank"}
