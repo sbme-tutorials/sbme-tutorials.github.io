@@ -140,8 +140,14 @@ sudo QT_X11_NO_MITSHM=1 /usr/local/ampps/Ampps
 
 ## Practical assignments:
 
+<<<<<<< HEAD
 * [Task-1]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek07LabNotes.md %}){:target="_blank"}
 
 ## Project
 
 * [main-statement]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMProjectStatment.md %}){:target="_blank"}
+=======
+1. Assignment 1:
+    * [notes]({{ site.baseurl }}{% link 2020/hemn230DataBase/notes/HEMweek07LabNotes.md %}){:target="_blank"}
+    * [submissionLink](https://classroom.github.com/a/NPwYsVcJ)
+>>>>>>> c4a2e5a4be0882febb42de06b7c9b87d7955d4fb
