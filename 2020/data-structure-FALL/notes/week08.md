@@ -3,715 +3,586 @@ layout: page
 course: "cmp2241"
 category: "notes"
 year: "2020"
-title:  "Week 8: List and Iterator ADTs"
+title:  "Week 9: General Trees"
 by: "Ayman"
 ---
 
 * TOC
 {:toc}
 
-## List and Iterator ADTs
+## General Trees
 
-we introduced the stack, queue, and deque abstract data types, and
-discussed how either an array or a linked list could be used for storage in an efficient
-concrete implementation of each. Each of those ADTs represents a linearly ordered
-sequence of elements. The deque is the most general of the three, yet even so, it
-only allows insertions and deletions at the front or back of a sequence.
+Productivity experts say that breakthroughs come by thinking “nonlinearly.” In
+this Tutorial, we will discuss one of the most important nonlinear data structures in
+computing—trees. Tree structures are indeed a breakthrough in data organization,
+for they allow us to implement a host of algorithms much faster than when using
+linear data structures, such as arrays or linked lists. Trees also provide a natural
+organization for data, and consequently have become ubiquitous structures in file
+systems, graphical user interfaces, databases, websites, and many other computer
+systems.
 
-we explore several abstract data types that represent a linear se-
-quence of elements, but with more general support for adding or removing elements
-at arbitrary positions. However, designing a single abstraction that is well suited for
-efficient implementation with either an array or a linked list is challenging, given
-the very different nature of these two fundamental data structures.
+### Tree Definitions and Properties
 
-### List ADT
+A tree is an abstract data type that stores elements hierarchically. With the excep-
+tion of the top element, each element in a tree has a parent element and zero or
+more children elements. A tree is usually visualized by placing elements inside
+ovals or rectangles, and by drawing the connections between parents and children
+with straight lines.
 
-Java defines a general interface, java.util.List, that includes the following index-based methods (and more):
-* **size( )**: Returns the number of elements in the list.
-* **isEmpty( )**: Returns a boolean indicating whether the list is empty.
-* **get(i)**: Returns the element of the list having index i; an error condition occurs if i is not in range [0, size( ) − 1]
-* **set(i, e)**: Replaces the element at index i with e, and returns the old element that was replaced; an error condition occurs if i is not in range [0, size( ) − 1].
-* **add(i, e)**: Inserts a new element e into the list so that it has index i, moving all subsequent elements one index later in the list; an errorcondition occurs if i is not in range [0, size( )].
-* **remove(i)**: Removes and returns the element at index i, moving all subsequent elements one index earlier in the list; an error condition occurs if i is not in range [0, size( ) − 1].
+![](../images/Tree01.png)
 
-We note that the index of an existing element may change over time, as other
-elements are added or removed in front of it. We also draw attention to the fact that
-the range of valid indices for the add method includes the current size of the list, in
-which case the new element becomes the last.
+**Formal Tree Definition:** Formally, we define a tree T as a set of nodes storing elements such that the nodes
+have a parent-child relationship that satisfies the following properties:
+
+1. If T is nonempty, it has a special node, called the root of T , that has no parent.
+2. Each node v of T different from the root has a unique parent node w; every
+node with parent w is a child of w.
+3. Two nodes that are children of the same parent are siblings. A node v is external
+if v has no children. A node v is internal if it has one or more children. External
+nodes are also known as leaves.
+
+### Edges and Paths in Trees
+
+![](../images/Tree02.png)
+
+A node u is an ancestor of a node v if u = v or u is an ancestor of the parent
+of v. Conversely, we say that a node v is a descendant of a node u if u is an ancestor
+of v.
+
+1. cs252/ is an ancestor of papers/, and pr3 is a
+descendant of cs016/. The subtree of T rooted at a node v is the tree consisting of
+all the descendants of v in T (including v itself). 
+2. the subtree rooted at cs016/ consists of the nodes cs016/, grades, homeworks/, programs/, hw1, hw2,
+hw3, pr1, pr2, and pr3.
+
+An edge of tree T is a pair of nodes (u, v) such that u is the parent of v, or vice
+versa. A path of T is a sequence of nodes such that any two consecutive nodes in
+the sequence form an edge.
+
+1. The path (cs252/, projects/, demos/, market).
+
+### The Tree Abstract Data Type
+
+we define a tree ADT using the
+concept of a position as an abstraction for a node of a tree. An element is stored
+at each position, and positions satisfy parent-child relationships that define the tree
+structure. 
+
+1. A position object for a tree supports the method:
+
+    * **getElement( ):** Returns the element stored at this position.
+
+2. The tree ADT then supports the following accessor methods, allowing a user to navigate the various positions of a tree T:
+    * **root( )**: Returns the position of the root of the tree(or null if empty).
+    * **parent(p)**: Returns the position of the parent of position p (or null if p is the root).
+    * **children(p)**: Returns an iterable collection containing the children of position p (if any).
+    * **numChildren(p)**: Returns the number of children of position p.
+
+3. If a tree T is ordered, then children(p) reports the children of p in order. In addition to the above fundamental accessor methods, a tree supports the following query methods:
+    * **isInternal(p)**: Returns true if position p has at least one child.
+    * **isExternal(p)**: Returns true if position p does not have any children.
+    * **isRoot(p)**: Returns true if position p is the root of the tree.
+
+These methods make programming with trees easier and more readable, since we can use them in the conditionals of if statements and while loops.
+
+4. Trees support a number of more general methods, unrelated to the specific structure of the tree. These incude:
+    * **size( )**: Returns the number of positions (and hence elements) that are contained in the tree.
+    * **isEmpty( )**: Returns true if the tree does not contain any positions (and thus no elements).
+    * **iterator( )**: Returns an iterator for all elements in the tree (so that the tree itself is Iterable).
+    * **positions( )**: Returns an iterable collection of all positions of the tree.
+
+If an invalid position is sent as a parameter to any method of a tree, then an
+IllegalArgumentException is thrown.
+
+### Tree Interface in Java
+
+we declare the Tree interface
+to formally extend Java’s Iterable interface (and we include a declaration of the
+required iterator( ) method).
 
 ```java
-public interface List<E> {
+import java.util.Iterator;
 
-	/** Returns the number of elements in this list. */
+public interface Tree<E> extends Iterable<E> {
+	Position<E> root();
+
+	Position<E> parent(Position<E> p) throws IllegalArgumentException;
+
+	Iterable<Position<E>> children(Position<E> p) throws IllegalArgumentException;
+
+	int numChildren(Position<E> p) throws IllegalArgumentException;
+
+	boolean isInternal(Position<E> p) throws IllegalArgumentException;
+
+	boolean isExternal(Position<E> p) throws IllegalArgumentException;
+
+	boolean isRoot(Position<E> p) throws IllegalArgumentException;
+
 	int size();
 
-	/** Returns whether the list is empty. */
 	boolean isEmpty();
 
-	/** Returns (but does not remove) the element at index i. */
-	E get(int i) throws IndexOutOfBoundsException;
+	Iterator<E> iterator();
 
-	/** Replaces the element at index i with e, and returns the replaced element. */
-	E set(int i, E e) throws IndexOutOfBoundsException;
+	Iterable<Position<E>> positions();
+}
+```
+
+### AbstractTree Base Class in Java
+
+we discussed the role of interfaces and abstract classes in Java.
+While an interface is a type definition that includes public declarations of vari-
+ous methods, an interface cannot include definitions for any of those methods. In
+contrast, an abstract class may define concrete implementations for some of its
+methods, while leaving other abstract methods without definition.
+
+An abstract class is designed to serve as a base class, through inheritance, for
+one or more concrete implementations of an interface. When some of the func-
+tionality of an interface is implemented in an abstract class, less work remains to
+complete a concrete implementation. The standard Java libraries include many such
+abstract classes, including several within the Java Collections Framework. To make
+their purpose clear, those classes are conventionally named beginning with the word
+Abstract. For example, there is an AbstractCollection class that implements some
+of the functionality of the Collection interface, an AbstractQueue class that imple-
+ments some of the functionality of the Queue interface, and an AbstractList class
+that implements some of the functionality of the List interface.
+
+```java
+public abstract class AbstractTree<E> implements Tree<E> {
+
+	public boolean isInternal(Position<E> p) { return numChildren(p) > 0; }
+	public boolean isExternal(Position<E> p) { return numChildren(p) == 0; }
+	public boolean isRoot(Position<E> p) { return p == root( ); }
+	public boolean isEmpty( ) { return size( ) == 0; }
+	
+}
+```
+
+### Computing Depth Of The Tree
+
+![](../images/Tree01.png)
+
+Let p be a position within tree T . The depth of p is the number of ancestors of
+p, other than p itself. For example, in the tree of Figure above, the node storing
+International has depth 2. Note that this definition implies that the depth of the
+root of T is 0. The depth of p can also be recursively defined as follows:
+* If p is the root, then the depth of p is 0.
+* Otherwise, the depth of p is one plus the depth of the parent of p.
+
+```java
+public int depth(Position<E> p) {
+    if (isRoot(p))
+        return 0;
+    else
+        return 1 + depth(parent(p));
+}
+```
+
+### Computing Height Of The Tree
+
+![](../images/Tree01.png)
+
+We next define the height of a tree to be equal to the maximum of the depths of
+its positions (or zero, if the tree is empty). For example, the tree  above has
+height 4, as the node storing Africa (and its siblings) has depth 4. It is easy to see
+that the position with maximum depth must be a leaf.
+
+```java
+private int heightBad( ) {
+    int h = 0;
+    for (Position<E> p : positions( ))
+        if (isExternal(p))
+    h = Math.max(h, depth(p));
+    return h;
+}
+```
+### Binary Trees
+A binary tree is an ordered tree with the following properties:
+1. Every node has at most two children.
+2. Each child node is labeled as being either a left child or a right child.
+3. A left child precedes a right child in the order of children of a node.
+
+The subtree rooted at a left or right child of an internal node v is called a left subtree
+or right subtree, respectively, of v. A binary tree is proper if each node has either
+zero or two children. Some people also refer to such trees as being full binary
+trees. Thus, in a proper binary tree, every internal node has exactly two children.
+A binary tree that is not proper is improper.
+
+![](../images/Tree03.png)
+
+### The Binary Tree Abstract Data Type
+
+As an abstract data type, a binary tree is a specialization of a tree that supports three
+additional accessor methods:
+* **left(p)**: Returns the position of the left child of p
+(or null if p has no left child).
+* **right(p)**: Returns the position of the right child of p
+(or null if p has no right child).
+* **sibling(p)**: Returns the position of the sibling of p
+(or null if p has no sibling).
+
+**Defining a BinaryTree Interface**
+
+```java
+public interface BinaryTree<E> extends Tree<E> {
+	Position<E> left(Position<E> p) throws IllegalArgumentException;
+
+	Position<E> right(Position<E> p) throws IllegalArgumentException;
+
+	Position<E> sibling(Position<E> p) throws IllegalArgumentException;
+}
+```
+
+**Defining an AbstractBinaryTree Base Class**
+
+We continue our use of abstract base classes to promote greater reusability within
+our code. The AbstractBinaryTree class:
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements BinaryTree<E> {
+	/** Returns the Position of p's sibling (or null if no sibling exists). */
+	public Position<E> sibling(Position<E> p) {
+		Position<E> parent = parent(p);
+		if (parent == null)
+			return null;
+		if (p == left(parent))
+			return right(parent);
+		else
+			return left(parent);
+	}
+
+	/** Returns the number of children of Position p. */
+	public int numChildren(Position<E> p) {
+		int count = 0;
+		if (left(p) != null)
+			count++;
+		if (right(p) != null)
+			count++;
+		return count;
+	}
 
 	/**
-	 * Inserts element e to be at index i, shifting all subsequent elements later.
+	 * Returns an iterable collection of the Positions representing p's children.
 	 */
-	void add(int i, E e) throws IndexOutOfBoundsException;
-
-	/**
-	 * Removes/returns the element at index i, shifting subsequent elements earlier.
-	 */
-	E remove(int i) throws IndexOutOfBoundsException;
-}
-```
-
-**List Operations Examples**
-
-![](../images/List01.png)
-
-### Array Lists
-
-An obvious choice for implementing the list ADT is to use an array A, where ```A[i]```
-stores (a reference to) the element with index i. We will begin by assuming that we
-have a fixed-capacity array,
-
-```java
-
-public class ArrayList<E> implements List<E> {
-
-	public static final int CAPACITY = 16;
-	private E[] data;
-	private int size = 0;
-
-	public ArrayList() {
-		this(CAPACITY);
-	}
-
-	public ArrayList(int capacity) {
-		data = (E[]) new Object[capacity];
-	}
-
-	@Override
-	public int size() {
-		return size;
-	}
-
-	@Override
-	public boolean isEmpty() {
-		return size == 0;
-	}
-
-	@Override
-	public E get(int i) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-		return data[i];
-	}
-
-	@Override
-	public E set(int i, E e) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-		E temp = data[i];
-		data[i] = e;
-		return temp;
-	}
-
-	@Override
-	public void add(int i, E e) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-
-		if (size == data.length)
-			throw new IllegalStateException("Array is full");
-
-		for (int k = size - 1; k >= i; k--)
-			data[k + 1] = data[k];
-		data[i] = e;
-		size++;
-	}
-
-	@Override
-	public E remove(int i) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-
-		E temp = data[i];
-		for (int k = i; k < size - 1; k++)
-			data[k] = data[k + 1];
-		data[size - 1] = null;
-		size--;
-		return temp;
-	}
-
-	public static void main(String[] args) {
-		ArrayList<Integer> A = new ArrayList<>();
-		System.out.println("Current Size" + A.size());
-		A.add(0, 5);
-		System.out.println(A.get(0));
-		A.set(0, 3);
-		System.out.println(A.get(0));
-		A.add(0, 2);
-		System.out.println(A.get(0));
-		System.out.println(A.get(1));
-		A.remove(0);
-		System.out.println(A.get(0));
-
-
+	public Iterable<Position<E>> children(Position<E> p) {
+		List<Position<E>> snapshot = new ArrayList<>(2); // max capacity of 2
+		if (left(p) != null)
+			snapshot.add(left(p));
+		if (right(p) != null)
+			snapshot.add(right(p));
+		return snapshot;
 
 	}
 }
 ```
 
-### Positional Lists
+### Properties of Binary Trees
 
-When working with array-based sequences, integer indices provide an excellent
-means for describing the location of an element, or the location at which an inser-
-tion or deletion should take place. However, numeric indices are not a good choice
-for describing positions within a linked list because, knowing only an element’s in-
-dex, the only way to reach it is to traverse the list incrementally from its beginning
-or end, counting elements along the way.
+Binary trees have several interesting properties dealing with relationships between
+their heights and number of nodes. We denote the set of all nodes of a tree T at the
+same depth d as level d of T . In a binary tree, level 0 has at most one node (the
+root), level 1 has at most two nodes (the children of the root), level 2 has at most
+four nodes, and so on.  In general, level d has at most ```2^d``` nodes.
 
-Furthermore, indices are not a good abstraction for describing a more local
-view of a position in a sequence, because the index of an entry changes over time
-due to insertions or deletions that happen earlier in the sequence. For example, it
-may not be convenient to describe the location of a person waiting in line based on
-the index, as that requires knowledge of precisely how far away that person is from
-the front of the line. We prefer an abstraction in which there is some other means for describing a position.
+![](../images/Tree04.png)
 
-![](../images/List04.png)
+### Tree Implementation (using Liked Structures)
 
-#### Positions
+natural way to realize a binary tree T is to use a linked structure, with a node
+in the following graph that maintains references to the element stored at a position p
+and to the nodes associated with the children and parent of p. If p is the root
+of T , then the parent field of p is null. Likewise, if p does not have a left child
+(respectively, right child), the associated field is null. The tree itself maintains an
+instance variable storing a reference to the root node (if any), and a variable, called
+size, that represents the overall number of nodes of T .
 
-To provide a general abstraction for the location of an element within a structure,
-we define a simple position abstract data type. A position supports the following
-single method:
-* **getElement( )**: Returns the element stored at this position.
+![](../images/Tree05.png)
 
-A position acts as a marker or token within a broader positional list. A position
-p, which is associated with some element e in a list L, does not change, even if the
-index of e changes in L due to insertions or deletions elsewhere in the list. Nor does
-position p change if we replace the element e stored at p with another element. The
-only way in which a position becomes invalid is if that position (and its element)
-are explicitly removed from the list.
+### Operations for Updating a Linked Binary Tree
 
-#### The Positional List Abstract Data Type
+The Tree and BinaryTree interfaces define a variety of methods for inspecting an
+existing tree, yet they do not declare any update methods. Presuming that a newly
+constructed tree is empty, we would like to have means for changing the structure
+of content of a tree.
 
-We now view a positional list as a collection of positions, each of which stores an
-element. The accessor methods provided by the positional list ADT include the
-following, for a list L:
-* **first( )**: Returns the position of the first element of L (or null if empty).
-* **last( )**: Returns the position of the last element of L (or null if empty).
-* **before(p)**: Returns the position of L immediately before position p
-(or null if p is the first position).
-* **after(p)**: Returns the position of L immediately after position p
-(or null if p is the last position).
-* **isEmpty( )**: Returns true if list L does not contain any elements.
-* **size( )**: Returns the number of elements in list L.
+Although the principle of encapsulation suggests that the outward behaviors of
+an abstract data type need not depend on the internal representation, the efficiency of
+the operations depends greatly upon the representation. We therefore prefer to have
+each concrete implementation of a tree class support the most suitable behaviors for
+updating a tree. In the case of a linked binary tree, we suggest that the following
+update methods be supported:
 
-An error occurs if a position p, sent as a parameter to a method, is not a valid
-position for the list.
-
-**Note** well that the first( ) and last( ) methods of the positional list ADT return
-the associated positions, not the elements.
-
-The positional list ADT also includes the following update methods:
-
-* **addFirst(e)**: Inserts a new element e at the front of the list, returning the
-position of the new element.
-* **addLast(e)**: Inserts a new element e at the back of the list, returning the
-position of the new element.
-* **addBefore(p, e)**: Inserts a new element e in the list, just before position p,
-returning the position of the new element.
-* **addAfter(p, e)**: Inserts a new element e in the list, just after position p,
-returning the position of the new element.
-* **set(p, e)**: Replaces the element at position p with element e, return-
-ing the element formerly at position p.
-* **remove(p)**: Removes and returns the element at position p in the list,
-invalidating the position.
-
-**Positional List Operations Examples**
-
-![](../images/List02.png)
+* **addRoot(e)**: Creates a root for an empty tree, storing e as the element,
+and returns the position of that root; an error occurs if the
+tree is not empty.
+* **addLeft(p, e)**: Creates a left child of position p, storing element e, and
+returns the position of the new node; an error occurs if p
+already has a left child.
+* **addRight(p, e)**: Creates a right child of position p, storing element e, and
+returns the position of the new node; an error occurs if p
+already has a right child.
+* **set(p, e)**: Replaces the element stored at position p with element e,
+and returns the previously stored element.
+* **attach(p, T 1 , T 2 )**: Attaches the internal structure of trees T 1 and T 2 as the
+respective left and right subtrees of leaf position p and
+resets T 1 and T 2 to empty trees; an error condition occurs
+if p is not a leaf.
+* **remove(p)**: Removes the node at position p, replacing it with its child
+(if any), and returns the element that had been stored at p;
+an error occurs if p has two children.
 
 ```java
-public interface Position<E> {
-	/**
-	 * Returns the element stored at this position.
-	 *
-	 * @return the stored element
-	 * @throws IllegalStateException if position no longer
-	 */
-	E getElement() throws IllegalStateException;
-}
-```
+import java.util.Iterator;
 
-```java
-public interface PositionalList<E> {
-	/* Returns the number of elements in the list. */
-	int size();
+public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
 
-	/* Tests whether the list is empty. */
-	boolean isEmpty();
-
-	/* Returns the first Position in the list (or null, if empty). */
-	Position<E> first();
-
-	/* Returns the last Position in the list (or null, if empty). */
-	Position<E> last();
-
-	/*
-	 * Returns the Position immediately before Position p (or null, if p is first).
-	 */
-	Position<E> before(Position<E> p) throws IllegalArgumentException;
-
-	/* Returns the Position immediately after Position p (or null, if p is last). */
-	Position<E> after(Position<E> p) throws IllegalArgumentException;
-
-	/* Inserts element e at the front of the list and returns its new Position. */
-	Position<E> addFirst(E e);
-
-	/* Inserts element e at the back of the list and returns its new Position. */
-	Position<E> addLast(E e);
-
-	/*
-	 * Inserts element e immediately before Position p and returns its new Position.
-	 */
-	Position<E> addBefore(Position<E> p, E e) throws IllegalArgumentException;
-
-	/*
-	 * Inserts element e immediately after Position p and returns its new Position.
-	 */
-	Position<E> addAfter(Position<E> p, E e) throws IllegalArgumentException;
-
-	/*
-	 * Replaces the element stored at Position p and returns the replaced element.
-	 */
-	E set(Position<E> p, E e) throws IllegalArgumentException;
-
-	/* Removes the element stored at Position p and returns it (invalidating p). */
-	E remove(Position<E> p) throws IllegalArgumentException;
-}
-```
-
-#### Doubly Linked List Implementation for positional lists
-
-```java
-public class LinkedPositionalList<E> implements PositionalList<E> {
-
-	private static class Node<E> implements Position<E> {
+	protected static class Node<E> implements Position<E> {
 		private E element;
-		// reference to the element stored at this node
-		private Node<E> prev;
-		// reference to the previous node in the list
-		private Node<E> next;
+		private Node<E> parent;
+		private Node<E> left;
+		private Node<E> right;
 
-		// reference to the subsequent node in the list
-		public Node(E e, Node<E> p, Node<E> n) {
+		public Node(E e, Node<E> above, Node<E> leftChild, Node<E> rightChild) {
 			element = e;
-			prev = p;
-			next = n;
+			parent = above;
+			left = leftChild;
+			right = rightChild;
 		}
 
-		public E getElement() throws IllegalStateException {
-			if (next == null)
-				// convention for defunct node
-				throw new IllegalStateException("Position no longer valid");
+		public E getElement() {
 			return element;
 		}
 
-		public Node<E> getPrev() {
-			return prev;
+		public Node<E> getParent() {
+			return parent;
 		}
 
-		public Node<E> getNext() {
-			return next;
+		public Node<E> getLeft() {
+			return left;
+		}
+
+		public Node<E> getRight() {
+			return right;
 		}
 
 		public void setElement(E e) {
 			element = e;
 		}
 
-		public void setPrev(Node<E> p) {
-			prev = p;
+		public void setParent(Node<E> parentNode) {
+			parent = parentNode;
 		}
 
-		public void setNext(Node<E> n) {
-			next = n;
+		public void setLeft(Node<E> leftChild) {
+			left = leftChild;
 		}
-	} // ----------- end of nested Node class -----------
-		// instance variables of the LinkedPositionalList
 
-	private Node<E> header;
-	// header sentinel
-	private Node<E> trailer;
-	// trailer sentinel
+		public void setRight(Node<E> rightChild) {
+			right = rightChild;
+		}
+	}
+
+	/** Factory function to create a new node storing element e. */
+	protected Node<E> createNode(E e, Node<E> parent, Node<E> left, Node<E> right) {
+		return new Node<E>(e, parent, left, right);
+	}
+
+	protected Node<E> root = null;
 	private int size = 0;
 
-	// number of elements in the list
-	/** Constructs a new empty list. */
-	public LinkedPositionalList() {
-		header = new Node<>(null, null, null);
-		// create header
-		trailer = new Node<>(null, header, null);
-		// trailer is preceded by header
-		header.setNext(trailer);
-		// header is followed by trailer
+	public LinkedBinaryTree() {
 	}
 
 	/** Validates the position and returns it as a node. */
-	private Node<E> validate(Position<E> p) throws IllegalArgumentException {
+	protected Node<E> validate(Position<E> p) throws IllegalArgumentException {
 		if (!(p instanceof Node))
-			throw new IllegalArgumentException("Invalid p");
+			throw new IllegalArgumentException("Not valid position type");
 		Node<E> node = (Node<E>) p;
-		// safe cast
-		if (node.getNext() == null)
-			// convention for defunct node
-			throw new IllegalArgumentException("p is no longer in the list");
+		if (node.getParent() == node)
+			// our convention for defunct node
+			throw new IllegalArgumentException("p is no longer in the tree");
 		return node;
 	}
 
-	/** Returns the given node as a Position (or null, if it is a sentinel). */
-	private Position<E> position(Node<E> node) {
-		if (node == header || node == trailer)
-			return null;
-		// do not expose user to the sentinels
-		return node;
-	}
-
-	@Override
+	// accessor methods (not already implemented in AbstractBinaryTree)
+	/** Returns the number of nodes in the tree. */
 	public int size() {
-		// TODO Auto-generated method stub
 		return size;
 	}
 
-	@Override
-	public boolean isEmpty() {
-		return size == 0;
+	/** Returns the root Position of the tree (or null if tree is empty). */
+	public Position<E> root() {
+		return root;
 	}
 
-	@Override
-	public Position<E> first() {
-		return position(header.getNext());
-	}
-
-	@Override
-	public Position<E> last() {
-		return position(trailer.getPrev());
-	}
-
-	@Override
-	public Position<E> before(Position<E> p) throws IllegalArgumentException {
+	/** Returns the Position of p's parent (or null if p is root). */
+	public Position<E> parent(Position<E> p) throws IllegalArgumentException {
 		Node<E> node = validate(p);
-		return position(node.getPrev());
+		return node.getParent();
 	}
 
-	@Override
-	public Position<E> after(Position<E> p) throws IllegalArgumentException {
+	/** Returns the Position of p's left child (or null if no child exists). */
+	public Position<E> left(Position<E> p) throws IllegalArgumentException {
 		Node<E> node = validate(p);
-		return position(node.getNext());
+		return node.getLeft();
 	}
 
-	private Position<E> addBetween(E e, Node<E> pred, Node<E> succ) {
-		Node<E> newest = new Node<>(e, pred, succ); // create and link a new node
-		pred.setNext(newest);
-		succ.setPrev(newest);
+	/** Returns the Position of p's right child (or null if no child exists). */
+	public Position<E> right(Position<E> p) throws IllegalArgumentException {
+		Node<E> node = validate(p);
+		return node.getRight();
+	}
+
+	// update methods supported by this class
+	/**
+	 * Places element e at the root of an empty tree and returns its new Position.
+	 */
+	public Position<E> addRoot(E e) throws IllegalStateException {
+		if (!isEmpty())
+			throw new IllegalStateException("Tree is not empty");
+		root = createNode(e, null, null, null);
+		size = 1;
+		return root;
+	}
+
+	/**
+	 * Creates a new left child of Position p storing element e; returns its
+	 * Position.
+	 */
+	public Position<E> addLeft(Position<E> p, E e) throws IllegalArgumentException {
+		Node<E> parent = validate(p);
+		if (parent.getLeft() != null)
+			throw new IllegalArgumentException("p already has a left child");
+		Node<E> child = createNode(e, parent, null, null);
+		parent.setLeft(child);
 		size++;
-		return newest;
+		return child;
 	}
 
-	@Override
-	public Position<E> addFirst(E e) {
-		return addBetween(e, header, header.getNext());
+	/**
+	 * Creates a new right child of Position p storing element e; returns its
+	 * Position.
+	 */
+	public Position<E> addRight(Position<E> p, E e) throws IllegalArgumentException {
+		Node<E> parent = validate(p);
+		if (parent.getRight() != null)
+			throw new IllegalArgumentException("p already has a right child");
+		Node<E> child = createNode(e, parent, null, null);
+		parent.setRight(child);
+		size++;
+		return child;
 	}
 
-	@Override
-	public Position<E> addLast(E e) {
-		return addBetween(e, trailer.getPrev(), trailer);
-	}
-
-	@Override
-	public Position<E> addBefore(Position<E> p, E e) throws IllegalArgumentException {
-		Node<E> node = validate(p);
-		return addBetween(e, node.getPrev(), node);
-	}
-
-	@Override
-	public Position<E> addAfter(Position<E> p, E e) throws IllegalArgumentException {
-		Node<E> node = validate(p);
-		return addBetween(e, node, node.getNext());
-	}
-
-	@Override
+	/**
+	 * Replaces the element at Position p with e and returns the replaced element.
+	 */
 	public E set(Position<E> p, E e) throws IllegalArgumentException {
 		Node<E> node = validate(p);
-		E answer = node.getElement();
+		E temp = node.getElement();
 		node.setElement(e);
-		return answer;
+		return temp;
 	}
 
-	@Override
+	/** Removes the node at Position p and replaces it with its child, if any. */
 	public E remove(Position<E> p) throws IllegalArgumentException {
 		Node<E> node = validate(p);
-		Node<E> predecessor = node.getPrev();
-		Node<E> successor = node.getNext();
-		predecessor.setNext(successor);
-		successor.setPrev(predecessor);
+		if (numChildren(p) == 2)
+			throw new IllegalArgumentException("p has two children");
+		Node<E> child = (node.getLeft() != null ? node.getLeft() : node.getRight());
+		if (child != null)
+			child.setParent(node.getParent()); // child’s grandparent becomes its parent
+		if (node == root)
+			root = child;
+		else {
+			Node<E> parent = node.getParent();
+			if (node == parent.getLeft())
+				parent.setLeft(child);
+			else
+				parent.setRight(child);
+		}
 		size--;
-		E answer = node.getElement();
+		E temp = node.getElement();
 		node.setElement(null);
-		node.setNext(null);
-		node.setPrev(null);
-		return answer;
+		node.setLeft(null);
+		node.setRight(null);
+		node.setParent(node);
+		return temp;
 	}
-}
 
-```
-
-### Iterators
-
-An iterator is a software design pattern that abstracts the process of scanning
-through a sequence of elements, one element at a time. The underlying elements
-might be stored in a container class, streaming through a network, or generated by
-a series of computations.
-
-In order to unify the treatment and syntax for iterating objects in a way that is
-independent from a specific organization, Java defines the java.util.Iterator inter-
-face with the following two methods:
-* **hasNext( )**: Returns true if there is at least one additional element in the
-sequence, and false otherwise.
-* **next( )**: Returns the next element in the sequence.
-
-The interface uses Java’s generic framework, with the next( ) method return-
-ing a parameterized element type. For example, the Scanner class formally implements the Iterator```<String>``` interface, with its ```next( )```
-method returning a String instance.
-If the ```next( )``` method of an iterator is called when no further elements are avail-
-able, a NoSuchElementException is thrown. Of course, the hasNext( ) method can
-be used to detect that condition before calling ```next( )```.
-The combination of these two methods allows a general loop construct for pro-
-cessing elements of the iterator. For example, if we let variable, iter, denote an
-instance of the Iterator```<String>``` type, then we can write the following:
-```java
-while (iter.hasNext( )) {
-String value = iter.next( );
-System.out.println(value);
-}
-```
-The java.util.Iterator interface contains a third method, which is optionally
-supported by some iterators:
-
-* **remove( )**: Removes from the collection the element returned by the most
-recent call to next( ). Throws an IllegalStateException if next
-has not yet been called, or if remove was already called since
-the most recent call to next.
-
-This method can be used to filter a collection of elements, for example to dis-
-card all negative numbers from a data set.
-
-#### The Iterable Interface and Java’s For-Each Loop
-
-A single iterator instance supports only one pass through a collection; calls to next
-can be made until all elements have been reported, but there is no way to “reset”
-the iterator back to the beginning of the sequence.
-
-However, a data structure that wishes to allow repeated iterations can support
-a method that returns a new iterator, each time it is called. To provide greater
-standardization, Java defines another parameterized interface, named Iterable, that
-includes the following single method:
-
-* **iterator( )**: Returns an iterator of the elements in the collection.
-
-An instance of a typical collection class in Java, such as an ArrayList, is iterable
-(but not itself an iterator); it produces an iterator for its collection as the return value
-of the iterator( ) method. Each call to iterator( ) returns a new iterator instance,
-thereby allowing multiple (even simultaneous) traversals of a collection.
-
-```java
-for (ElementType variable : collection) {
-    loopBody
-}
-```
-
-is supported for any instance, collection, of an iterable class. ElementType must be
-the type of object returned by its iterator, and variable will take on element values
-within the loopBody. Essentially, this syntax is shorthand for the following:
-
-```java
-Iterator<ElementType> iter = collection.iterator( );
-while (iter.hasNext( )) {
-    ElementType variable = iter.next( );
-    loopBody
-}
-```
-
-We note that the iterator’s remove method cannot be invoked when using the
-for-each loop syntax. Instead, we must explicitly use an iterator. As an example,
-the following loop can be used to remove all negative numbers from an ArrayList
-of floating-point values.
-
-```java
-ArrayList<Double> data; // populate with random numbers (not shown)
-Iterator<Double> walk = data.iterator( );
-while (walk.hasNext( ))
-    if (walk.next( ) < 0.0)
-        walk.remove( );
-```
-
-#### Implementing Iterators
-There are two general styles for implementing iterators that differ in terms of what
-work is done when the iterator instance is first created, and what work is done each
-time the iterator is advanced with a call to next( ).
-
-1. **snapshot iterator**:maintains its own private copy of the sequence of elements,
-which is constructed at the time the iterator object is created. It effectively records
-a “snapshot” of the sequence of elements at the time the iterator is created, and is
-therefore unaffected by any subsequent changes to the primary collection that may
-occur. Implementing snapshot iterators tends to be very easy, as it requires a simple
-traversal of the primary structure. The downside of this style of iterator is that it
-requires O(n) time and O(n) auxiliary space, upon construction, to copy and store
-a collection of n elements.
-
-2. **lazy iterator**: is one that does not make an upfront copy, instead perform-
-ing a piecewise traversal of the primary structure only when the next( ) method is
-called to request another element. The advantage of this style of iterator is that
-it can typically be implemented so the iterator requires only O(1) space and O(1)
-construction time.
-
-#### Iterations with the ArrayList class (Lazy Iterator):
-
-We will have it im-
-plement the Iterable<E> interface. (In fact, that requirement is already part of
-Java’s List interface.) Therefore, we must add an iterator( ) method to that class
-definition, which returns an instance of an object that implements the Iterator<E>
-interface. For this purpose, we define a new class, ArrayIterator, as a nonstatic
-nested class of ArrayList . The
-advantage of having the iterator as an inner class is that it can access private fields
-(such as the array A) that are members of the containing list.
-
-```java
-import java.util.Iterator;
-import java.util.NoSuchElementException;
-
-public class ArrayList<E> implements List<E> {
-
-	private class ArrayIterator implements Iterator<E> {
-		private int j = 0;
-		// index of the next element to report
-		private boolean removable = false; // can remove be called at this time?
-
-		/**
-		 * Tests whether the iterator has a next object.
-		 * 
-		 * @return true if there are further objects, false otherwise
-		 */
-		public boolean hasNext() {
-			return j < size;
-		} // size is field of outer instance
-
-		/**
-		 * Returns the next object in the iterator.
-		 *
-		 * @return next object
-		 * @throws NoSuchElementException if there are no further elements
-		 */
-		public E next() throws NoSuchElementException {
-			if (j == size)
-				throw new NoSuchElementException("No next element");
-			removable = true; // this element can subsequently be removed
-			return data[j++]; // post-increment j, so it is ready for future call to next
-		}
-
-	} // ------------ end of nested ArrayIterator class ------------
-
-	/** Returns an iterator of the elements stored in the list. */
+	@Override
 	public Iterator<E> iterator() {
-		return new ArrayIterator();
-		// create a new instance of the inner class
-	}
-
-	public static final int CAPACITY = 16;
-	private E[] data;
-	private int size = 0;
-
-	public ArrayList() {
-		this(CAPACITY);
-	}
-
-	public ArrayList(int capacity) {
-		data = (E[]) new Object[capacity];
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
-	public int size() {
-		return size;
+	public Iterable<Position<E>> positions() {
+		// TODO Auto-generated method stub
+		return null;
 	}
-
-	@Override
-	public boolean isEmpty() {
-		return size == 0;
-	}
-
-	@Override
-	public E get(int i) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-		return data[i];
-	}
-
-	@Override
-	public E set(int i, E e) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-		E temp = data[i];
-		data[i] = e;
-		return temp;
-	}
-
-	@Override
-	public void add(int i, E e) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-
-		if (size == data.length)
-			throw new IllegalStateException("Array is full");
-
-		for (int k = size - 1; k >= i; k--)
-			data[k + 1] = data[k];
-		data[i] = e;
-		size++;
-	}
-
-	@Override
-	public E remove(int i) throws IndexOutOfBoundsException {
-		if (i < 0 || (i >= size && size != 0))
-			throw new IndexOutOfBoundsException("Illegal index: " + i);
-
-		E temp = data[i];
-		for (int k = i; k < size - 1; k++)
-			data[k] = data[k + 1];
-		data[size - 1] = null;
-		size--;
-		return temp;
-	}
-
-	public static void main(String[] args) {
-		ArrayList<Integer> A = new ArrayList<>();
-		A.add(0, 5);
-		A.add(0, 2);
-		A.add(0, 47);
-		System.out.println(A.get(0));
-		System.out.println(A.get(1));
-		System.out.println(A.get(2));
-		System.out.println("##################");
-		Iterator<Integer> iteratorA = A.iterator();
-		while (iteratorA.hasNext()) {
-			System.out.println(iteratorA.next());
-		}
-		A.remove(0);
-		System.out.println(A.get(0));
-
-	}
-
 }
 ```
+
+### Tree Traversal Algorithms
+
+traversal of a tree T is a systematic way of accessing, or “visiting,” all the posi-
+tions of T . The specific action associated with the “visit” of a position p depends
+on the application of this traversal, and could involve anything from increment-
+ing a counter to performing some complex computation for p.
+
+#### Preorder Traversals
+
+In a preorder traversal of a tree T , the root of T is visited first and then the sub-
+trees rooted at its children are traversed recursively. If the tree is ordered, then
+the subtrees are traversed according to the order of the children
+
+```
+Algorithm preorder(p):
+	perform the “visit” action for position p { this happens before any recursion }
+	for each child c in children(p) do
+		preorder(c)			{ recursively traverse the subtree rooted at c }
+```
+![](../images/Tree06.png)
+
+#### Postorder Traversals
+
+postorder traversal. In some sense, this algorithm can be viewed as the opposite of the preorder traversal, be-
+cause it recursively traverses the subtrees rooted at the children of the root first, and
+then visits the root
+
+```
+Algorithm postorder(p):
+	for each child c in children(p) do
+		postorder(c) { recursively traverse the subtree rooted at c }
+	perform the “visit” action for position p { this happens after any recursion }
+```
+
+![](../images/Tree07.png)
+
+#### Inorder Traversals
+
+The standard preorder, postorder, and breadth-first traversals that were introduced
+for general trees can be directly applied to binary trees. In this section, we will
+introduce another common traversal algorithm specifically for a binary tree.
+
+During an inorder traversal, we visit a position between the recursive traver-
+sals of its left and right subtrees. The inorder traversal of a binary tree T can be
+informally viewed as visiting the nodes of T “from left to right.” Indeed, for every
+position p, the inorder traversal visits p after all the positions in the left subtree of
+p and before all the positions in the right subtree of p.
+
+```
+Algorithm inorder(p):
+	if p has a left child lc then
+		inorder(lc) { recursively traverse the left subtree of p }
+	perform the “visit” action for position p
+	if p has a right child rc then
+		inorder(rc) { recursively traverse the right subtree of p }
+```
+
+![](../images/Tree08.png)
+
+

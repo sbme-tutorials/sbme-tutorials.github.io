@@ -59,5 +59,5 @@ Deadline for online submission will be  on  **Friday 15/1/2020 11:59 PM**
 
 ### Submitting
 
-1. Each team will provide at 10 min presentation of the selected topics. In addition to descriping the implemented department.
+1. Each team will provide at 10 min presentation of the selected topics. In addition to describing the implemented department.
 2. Submission will be on the deadline day which could be changed with dr ahmed 
