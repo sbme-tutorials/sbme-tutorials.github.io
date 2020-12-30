@@ -85,4 +85,4 @@ extra office hours requested via E-Mail to **ayman.m.anwar@eng.cu.edu.eg** (Subj
 * week 8:
     * Priority Queues: 
         * [notes]({{ site.baseurl }}{% link 2020/data-structure-FALL/notes/week09.md %}){:target="_blank"} 
-        * [video]()
+        * [video](https://drive.google.com/file/d/1zczYm6OD7tEx7tqEugJ3bad7LPV4InHN/view?usp=sharing)

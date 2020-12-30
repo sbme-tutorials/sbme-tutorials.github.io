@@ -152,7 +152,7 @@ priority queue constructor. The priority queue will use that comparator anytime 
 needs to compare two keys to each other.
 
 ```java
-ublic class DefaultComparator<E> implements Comparator<E> {
+public class DefaultComparator<E> implements Comparator<E> {
     public int compare(E a, E b) throws ClassCastException {
         return ((Comparable<E>) a).compareTo(b);
     }
