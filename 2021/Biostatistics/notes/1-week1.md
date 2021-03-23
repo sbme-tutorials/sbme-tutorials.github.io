@@ -14,7 +14,7 @@ title: "Introduction to Python"
 
 * Interpreted language 
 * Untyped language
-* Indentation
+* Indentation (No Brackets)
 * Cross platform
 
 ## Installation 
@@ -436,44 +436,6 @@ myset
     {1, 2, 3, 4}
 
 
-
-
-```python
-print(myset.pop())
-myset
-```
-
-    1
-
-
-
-
-
-    {2, 3, 4}
-
-
-
-
-```python
-print(set.pop.__doc__)
-```
-
-    Remove and return an arbitrary set element.
-    Raises KeyError if the set is empty.
-
-
-
-```python
-print(sum.__doc__)
-```
-
-    Return the sum of a 'start' value (default: 0) plus an iterable of numbers
-    
-    When the iterable is empty, return the start value.
-    This function is intended specifically for use with numeric values and may
-    reject non-numeric types.
-
-
 ## Basic Operators
 
 ### Numerical 
@@ -736,43 +698,6 @@ else:
 ```
 
 
-```python
-# Exercise 
-
-# change this code to make all conditions True
-number = 0
-second_number = 0
-first_array = []
-second_array = []
-
-if number > 15:
-    print("1")
-
-if first_array:
-    print("2")
-
-if len(second_array) == 2:
-    print("3")
-
-if len(first_array) + len(second_array) == 5:
-    print("4")
-
-if first_array and first_array[0] == 1:
-    print("5")
-
-if not second_number:
-    print("6")
-```
-
-    1
-    2
-    3
-    4
-    5
-    6
-
-
-
 ## Loops 
 
 ### For Loop
@@ -917,141 +842,9 @@ result
 ```
 
 
-
-
     15
 
 
-
-
-```python
-# Exercise
-def mean(data):
-    pass
-```
-
-
-```python
-data = [10, 20, 30, 40, 50]
-mean(data)
-```
-
-
-## Task 1 
-
-Given a list of numbers implement the functions that perform the following 
-
-```python
-def get_max_value(numbers):
-    """Get the maximum value of a list of numbers 
-
-    Args:
-        numbers: The list of numbers
-    
-    Returns:
-        int: the maximum value
-    
-    Example:
-        numbers = [1, 5, 3, 2]
-        max_value = get_max_value(numbers)
-        assert(max_value == 5)
-    """
-    pass
-
-def get_min_value(numbers):
-    """Get the minimum value of a list of numbers 
-
-    Args:
-        numbers: The list of numbers
-    
-    Returns:
-        int: the minimum value
-    
-    Example:
-        numbers = [1, 5, 3, 2]
-        min_value = get_min_value(numbers)
-        assert(min_value == 1)
-    """
-    pass
-
-
-def get_total_sum(numbers):
-    """Sum values a list of numbers
-
-    Args:
-        numbers: The list of numbers
-    
-    Returns:
-        int: total sum
-    
-    Example:
-        numbers = [1, 5, 3, 2]
-        total_sum = get_total_sum(numbers)
-        assert(total_sum == 11)
-    """
-    pass
-
-def get_average_value(numbers):
-    """Get the average value of a list of numbers (Total/Length)
-
-    Args:
-        numbers: The list of numbers
-    
-    Returns:
-        float: average value
-    
-    Example:
-        numbers = [1, 3, 2]
-        average = get_average_value(numbers)
-        assert(average == 2)
-    """
-    pass
-
-
-```
-### Bonus
-
-```python
-
-
-def sort_numbers(numbers):
-     """Sort a list of numbers in ascending order
-
-    Args:
-        numbers: The list of numbers
-    
-    Returns:
-        list: the numbers after sorting 
-    
-    Example:
-        numbers = [1, 5, 3, 2]
-        numbers_after_sorting = sort_numbers(numbers)
-        assert(numbers_after_sorting == [1, 2, 3, 5])
-    """
-    pass
-
-def get_median_value(numbers):
-    """Get the median value of list of numbers
-
-    Args:
-        numbers: The list of numbers
-
-    Returns:
-        float: the median value
-    
-    Notes:
-    To get the median value you need to 
-        1. Sort the list
-        2. Select the middle value
-    In case of list of odd length you can get the middle values easily 
-    Ex: [1, 5, 3] -> [1, 3, 5] -> median = 3
-
-    But in case of even length you need to get average of the two middle values
-
-    Ex: [1, 5, 3, 2] -> [1, 2, 3, 5] -> median = (2+3)/2 = 2.5
-    """
-    pass
-```
 ## References and useful links
 
 * [learnpython](https://www.learnpython.org/)

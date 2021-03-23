@@ -48,7 +48,7 @@ Teaching Assistant:  Eng. Eslam Adel
 
 * Week 1: Introduction to Python
     * [Notes]({{ site.baseurl }}{% link 2021/Biostatistics/notes/1-week1.md %}){:target="_blank"}
-
+    * [Video](https://drive.google.com/file/d/1ypIsTctuHkT1CstHowqBvjDNTiu981hI/view?usp=sharing){:target="_blank"}
 
 ## Assignments
 
