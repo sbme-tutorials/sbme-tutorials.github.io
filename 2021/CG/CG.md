@@ -45,6 +45,7 @@ Teaching Assistants:  Eng. Ayman Anwar and Eng. Eslam Adel
 
 * Week 1: Introduction to Computer Graphics
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/1-week1.md %}){:target="_blank"}
+    * [Video](https://drive.google.com/file/d/13OieQvtWHXZBZ4JB3yQK6ac4icwpo7Zs/view?usp=sharing){:target="_blank"}
 
 
 
