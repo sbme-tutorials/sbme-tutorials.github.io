@@ -5,12 +5,12 @@ course: "SBE2240"
 year: "2021"
 title: "Python Basics Cont,"
 ---
+# Python Basics Cont, Introduction to Probability Theory.
 
 * TOC
 {:toc}
 
 
-# Python Basics Cont
 
 ## Classes and Objects
 
