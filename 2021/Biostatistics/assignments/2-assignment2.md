@@ -48,7 +48,6 @@ The data frame has the following columns
 
 * Specify your **Name**, **Section**, and **BN** in the **README.md** file in your repository. 
 * Submission without names will not be considered. 
-* Using build in functions is not permitted for this assignment.
 
 
 
