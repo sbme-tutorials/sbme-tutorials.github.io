@@ -6,6 +6,10 @@ layout: home
 ---
 # Tutorials and Course Announcements
 
+## Spring 2021
+* [Computer Vision \(SBE404\)]({{ site.baseurl }}{% link 2021/cv/cv.md %}), by Prof. Ahmed M. Badawy, Eng. Ayman Anwar.
+* [Computer Systems (Database) \(CMP2242\)]({{ site.baseurl }}{% link 2020/sbe306DataBase/DB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
+
 ## Fall 2020
 * [Data Structures and Algorithms \(CMP2241\)]({{ site.baseurl }}{% link 2020/data-structure-FALL/index.md %}), by Dr. Eman Marzaban, Eng. Ayman Anwar. 
 * [Computer Systems (Database) \(SBE306\)]({{ site.baseurl }}{% link 2020/sbe306DataBase/DB.md %}), by Dr. Ahmed Kandil, Eng. Ayman Anwar. 
