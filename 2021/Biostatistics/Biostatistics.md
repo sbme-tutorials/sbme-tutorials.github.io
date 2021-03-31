@@ -34,8 +34,8 @@ Teaching Assistant:  Eng. Eslam Adel
 
 | Item | Percent  |
 |-----|-----------|
-| Final Exam | 70%  |
-| Semester work grades (Total) | 30 % |
+| Final Exam | 60%  |
+| Semester work grades (Total) | 40 % |
 
 
 ## Course Outline
