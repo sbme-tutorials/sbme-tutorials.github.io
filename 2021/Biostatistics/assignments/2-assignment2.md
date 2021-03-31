@@ -3,7 +3,7 @@ layout: page
 course: "SBE2240"
 category: "assignment"
 year: "2021"
-title:  "Assignment 1: Python"
+title:  "Assignment 2: Python Modules"
 pdf: true
 ---
 
