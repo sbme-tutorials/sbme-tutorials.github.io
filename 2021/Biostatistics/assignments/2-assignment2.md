@@ -47,7 +47,7 @@ The data frame has the following columns
 ## Important Notes
 
 * Specify your **Name**, **Section**, and **BN** in the **README.md** file in your repository. 
-* Submission without names will not be considered. 
+* Submission without name will not be considered. 
 
 
 

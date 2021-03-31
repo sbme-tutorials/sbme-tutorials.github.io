@@ -44,11 +44,13 @@ Report all details about your implementations in markdown file (Report.md). Repo
 ## Important Notes 
 * Specify your **Name** and **Code** in the Report.md file. 
 
+* Submissions without name will not be considered. 
+
 * You are allowed to discuss task problems with your mates. But code must be on your own.
 
 * You can get code lines from internet and include them in your own code and you must cite the source.
 * Sharing few code lines of your own with your classmates is allowed for identifying and fixing bugs, it is not allowed to see others solution before submitting.
-* Report must include summary about your implementation, sample results and issues that you faced and how you fixed it.**MARKDOWN**
+* Report must include summary about your implementation, sample results and issues that you faced and how you fixed it.
 * You must mention any kind of contribution of other mates.
 
 ### Submitting
