@@ -13,7 +13,7 @@ pdf: true
 * Modeling a 3D object
 * Apply transformations to animate the model
 * Interaction with the scene using keyboard
-* Report all of that
+* Reporting results. 
 
 ## Deadline
 
