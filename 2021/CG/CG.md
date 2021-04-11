@@ -40,6 +40,7 @@ Teaching Assistants:  Eng. Ayman Anwar and Eng. Eslam Adel
 | Week | Content |  Assignments
 |------|-----------------|-----|
 |   1  | Introduction to Computer Graphics| |
+|   2  | Transformations| Assignment-1 Robotic Arm|
 
 ## Tutorials
 
@@ -47,6 +48,13 @@ Teaching Assistants:  Eng. Ayman Anwar and Eng. Eslam Adel
     * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/1-week1.md %}){:target="_blank"}
     * [Video](https://drive.google.com/file/d/13OieQvtWHXZBZ4JB3yQK6ac4icwpo7Zs/view?usp=sharing){:target="_blank"}
 
+* Week 2: Transformations
+    * [Notes]({{ site.baseurl }}{% link 2020/CG/notes/2-week2.md %}){:target="_blank"}
+    
+
+## Assignments 
+
+* [Assignment-1]({{ site.baseurl }}{% link 2021/CG/assignments/1-assignment1.md %}){:target="_blank"} : Robotic Arm. 
 
 
 
