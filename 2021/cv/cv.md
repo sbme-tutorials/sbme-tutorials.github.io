@@ -58,7 +58,8 @@ Demonstrators: Eng. Ayman Anwar and Eng. Leila Abas.
     * [Slides]({{ site.baseurl }}{% link 2021/cv/presentations/3_week3/index.md %}){:target="_blank"}
 * Week 4. Hough Transform (Line and Circle Detection):
     * [Section Notes]({% link 2021/cv/notes/4_week4.md %}){:target="_blank"}
-
+* Week 5. Harris operator , MOOPS and SIFT:
+    * [Slides]({{ site.baseurl }}{% link 2021/cv/presentations/5_week5/index.md %}){:target="_blank"}
 
 <!-- * Week 5. Harris operator, Otsu thresholding, and Revision:
     * [Slides]({{ site.baseurl }}{% link 2021/cv/presentations/5_week5/index.md %}){:target="_blank"}
@@ -69,8 +70,3 @@ Demonstrators: Eng. Ayman Anwar and Eng. Leila Abas.
 * Week 8. Principle Component Analysis(PCA) and face recognition:
     * [Section Notes]({% link 2021/cv/notes/8_week8.md %}){:target="_blank"} -->
 
-
-## Assignments
-
-
-## Announcements
