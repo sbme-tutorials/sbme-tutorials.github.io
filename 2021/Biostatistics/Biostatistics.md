@@ -60,6 +60,11 @@ Teaching Assistant:  Eng. Eslam Adel
     * [Video1](https://drive.google.com/file/d/1psYYeV2MaLJSkf--n_y0ZjlRrYAwdLnY/view){:target="_blank"}
     * [Video2](https://drive.google.com/file/d/1YCU2l3ZZTPNLgX84LCRWOA1HKEjNGEWY/view){:target="_blank"}
 
+
+* Week 4: Introduction to Probability Theory II.
+    * [Notes]({{ site.baseurl }}{% link 2021/Biostatistics/notes/4-week4.md %}){:target="_blank"}
+
+
 ## Assignments
 
 * [Assignment-1]({{ site.baseurl }}{% link 2021/Biostatistics/assignments/1-assignment1.md %}){:target="_blank"} : Python basics assignment.
