@@ -70,3 +70,6 @@ Demonstrators: Eng. Ayman Anwar and Eng. Leila Abas.
 * Week 8. Principle Component Analysis(PCA) and face recognition:
     * [Section Notes]({% link 2021/cv/notes/8_week8.md %}){:target="_blank"} -->
 
+## Projects
+
+* [Project 2 submission link](https://classroom.github.com/g/ynU7WKPO)
