@@ -1,6 +1,6 @@
 ---
 layout: page
-course: "hemn224"
+course: "sbe306"
 category: "assignment"
 year: "2021"
 title:  "Assignment 2: Robotic Body and Camera movement"
@@ -23,7 +23,7 @@ Deadline for online submission will be  on  **Thurusday 6/5/2021 11:59 PM**
 
 This is an individual assignment 
 
-1. Go to the [Assignment Page](https://classroom.github.com/a/AHdki-Bt).
+1. Go to the [Assignment Page](https://classroom.github.com/a/c0_udpkg).
 2. Accept the assignment.
 3. Wait till your repository created.
 4. Open the link and Clone repository.

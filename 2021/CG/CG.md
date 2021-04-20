@@ -61,6 +61,7 @@ Teaching Assistants:  Eng. Ayman Anwar and Eng. Eslam Adel
 ## Assignments 
 
 * [Assignment-1]({{ site.baseurl }}{% link 2021/CG/assignments/1-assignment1.md %}){:target="_blank"} : Robotic Arm. 
+* [Assignment-2]({{ site.baseurl }}{% link 2021/CG/assignments/2-assignment2.md %}){:target="_blank"} : Robotic Body and Camera Movements. 
 
 
 
