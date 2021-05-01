@@ -2,7 +2,7 @@
 layout: page
 course: "sbe306"
 category: "assignment"
-year: "2020"
+year: "2021"
 title:  "SBE306: Project"
 pdf: true
 ---
@@ -12,11 +12,8 @@ pdf: true
 * Learn Front end technologies (HTML,CSS,JS). 
 * Learn Python Flask Web MicroFramwork. 
 * Hospital Information Systems(HIS).
+* ERD and SQL DBMS.
 
-
-## Deadline
-
-Deadline for online submission will be  on  **Friday 15/1/2020 11:59 PM**
 
 ## Required
 
@@ -49,20 +46,17 @@ Deadline for online submission will be  on  **Friday 15/1/2020 11:59 PM**
 
 
 ## Important Notes 
+
 * You are allowed to discuss task problems with your mates. But code must be on your own.
 * You can get code lines from internet and include them in your own code and you must cite the source.
 * Sharing few code lines of your own with your classmates is allowed for identifying and fixing bugs, it is not allowed to see others solution before submitting.
 * You must mention any kind of contribution of other mates.
 
-## Presentation Topics
-1. Machine Learning
-2. Data mining
-3. Big Data Analysis
-4. Blockchain
-5. Bioinformatics
-6. ICD, FHIR, and DICOM standard
-7. Soft Robotics
-8. Blue Brain Project
+## Deadlines
+
+1. Phase one: **20th of may** submission of project ERD and database schema with SQL creation scripts.
+2. phase two: **3rd of June** project deliverable (project progress)
+2. phase Three: **17rd of June** Final project deliverable 
 
 ### Submitting
 

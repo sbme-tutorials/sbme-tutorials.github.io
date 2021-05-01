@@ -7,11 +7,11 @@ category: "coursepage"
 course: "sbe306a"
 year: "2020"
 ---
-# Computer systems(Database) \(SBE306\) - Fall 2020
+# Computer systems(Database) \(SBE306\) - Spring 2021
 
 ## Teaching Staff
 
-Instructor: Dr. Ahmed Kandil.
+Instructor: Dr. Mohamed Ibrahim.
 
 Demonstrators:  Eng. Ayman Anwar.  
 
@@ -20,8 +20,8 @@ Demonstrators:  Eng. Ayman Anwar.
 
 | Section | Day | Time Slot |
 |---------|-----|-----------|
-|   1     | Thursday | 1st  |
-|   2     | Thursday | 2nd |
+|   1     | Wenesday | 1st  |
+|   2     | Wenesday | 2nd |
 
 ## Office Hours
 
