@@ -29,7 +29,6 @@ pdf: true
     * Ophthalmology Department
     * Internal Medicine Departement
     * Surgery Departement
-
     * Obstertrics and Gynecology Departement
 2. Build a full stack web application fot that department
 3. Design implementation left for your design but the application should be a dynamic as much as you can.
