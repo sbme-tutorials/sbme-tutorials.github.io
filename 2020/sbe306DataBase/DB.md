@@ -7,7 +7,7 @@ category: "coursepage"
 course: "sbe306a"
 year: "2020"
 ---
-# Computer systems(Database) \(SBE306\) - Spring 2021
+# Computer systems(Database) \(CMP2242\) - Spring 2021
 
 ## Teaching Staff
 

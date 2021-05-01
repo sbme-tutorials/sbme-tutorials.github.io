@@ -3,7 +3,7 @@ layout: page
 course: "sbe306"
 category: "assignment"
 year: "2021"
-title:  "SBE306: Project"
+title:  "CMP2242: Project"
 pdf: true
 ---
 
