@@ -61,6 +61,7 @@ Demonstrators: Eng. Ayman Anwar and Eng. Leila Abas.
 * Week 5. Harris operator , MOOPS and SIFT:
     * [Slides]({{ site.baseurl }}{% link 2021/cv/presentations/5_week5/index.md %}){:target="_blank"}
 
+
 <!-- * Week 5. Harris operator, Otsu thresholding, and Revision:
     * [Slides]({{ site.baseurl }}{% link 2021/cv/presentations/5_week5/index.md %}){:target="_blank"}
 * Week 6. Region Growing and Clustering Segmentation:
