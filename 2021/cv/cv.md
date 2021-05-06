@@ -73,3 +73,5 @@ Demonstrators: Eng. Ayman Anwar and Eng. Leila Abas.
 ## Projects
 
 * [Project 2 submission link](https://classroom.github.com/g/ynU7WKPO)
+
+* [Project 3 submission link](https://classroom.github.com/g/WskAC5d9)
