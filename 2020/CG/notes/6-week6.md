@@ -6,7 +6,7 @@ layout: page
 category: "notes"
 course: "sbe306"
 year: "2020"
-title: "Textue Mapping"
+title: "Texture Mapping & Object Loading"
 ---
 * TOC
 {:toc}
@@ -102,6 +102,12 @@ glTexCoord2f(...)
 
 * Free 3D models [here](http://www.sweethome3d.com/freeModels.jsp)
 
+![](../images/sweethouse_3d.png)
+
+for example this is the apple ibook model
+
+![](../images/Model_107.png)
+
 
 ## 3D model with texture mapping 
 
@@ -111,7 +117,7 @@ Example
 |----|-------|-----|
 |  ![](../images/Pan1Texture.jpg) **+**|![](../images/hotDog2.png)  | **=**![](../images/hotDog.png)|
 
-Note: 
+**Note:**
 
 Models with texture images are not required in this course.
 
